@@ -1,0 +1,16 @@
+mixin dropdown(title)
+	label.input-title #{title}
+	.iqdropdown
+		p.iqdropdown-selection(data-seletion-text="item" data-text-plural="items") Сколько гостей
+		svg.icon-dropdown.expand-more
+			use(xlink:href="#expand_more")
+		.iqdropdown-menu
+			.iqdropdown-menu-option(data-id=item)
+				p.iqdropdown-item Item 1 
+				p.iqdropdown-description A short description
+			.iqdropdown-menu-option(data-id=item)
+				p.iqdropdown-item Item 2 
+				p.iqdropdown-description A short description
+			.iqdropdown-menu-option(data-id=item)
+				p.iqdropdown-item Item 3 
+				p.iqdropdown-description A short description

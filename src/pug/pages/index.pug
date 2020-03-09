@@ -1,0 +1,22 @@
+extends ../layout/main
+
+include ../includes/modules/input.pug
+include ../includes/modules/dropdown.pug
+include ../includes/modules/date-dropdown.pug
+
+
+block content
+	section
+		.container
+			.item
+				+input("text field","text", "Email","Email")
+				br
+				+dropdown("dropdown")
+				+input("masked text field","text", "ДД.ММ.ГГГГ","Email", "date-field")
+				br
+				//- +dateDropdown("masked text field","text", "ДД.ММ.ГГГГ","Email", "date-field")
+
+
+
+block script
+	script(type='text/javascript').

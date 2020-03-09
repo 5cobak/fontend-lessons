@@ -1,0 +1,7 @@
+.iqdropdown {
+	width: 100%;
+	max-width: 320px;
+	color: $ds75;
+	margin-bottom: 14px;
+	@include borderAnimation;
+}

@@ -1,0 +1,14 @@
+.input-title {
+	text-transform: uppercase;
+	font-family: $mySecondFont;
+	font-size: $smallFontSize;
+}
+.input {
+	max-width: 320px;
+	width: 100%;
+	background-color: #fff;
+	padding: 15px;
+	transition: $trFast;
+	margin-bottom: 14px;
+	@include borderAnimation;
+}

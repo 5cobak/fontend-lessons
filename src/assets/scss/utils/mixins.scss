@@ -1,0 +1,58 @@
+// px to rem
+@function rem($pixels, $context: $mainFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1rem;
+}
+
+@mixin size($width,$height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
+
+// animation hover/focus on input/dropdown elements (start)
+@mixin borderInput {
+  border: 1px solid rgba(31,32,65,0.25);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+@mixin borderInputHover {
+  border: 1px solid rgba(31,32,65,0.5);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+@mixin borderAnimation {
+  @include borderInput;
+  &::placeholder {
+    color: $ds25;
+    transition: $trFast;
+    font-size: 14px;
+  }
+  &:hover {
+    @include borderInputHover;
+    &::placeholder {
+      color: $ds75;
+    }
+  }
+  &:focus {
+    @include borderInputHover;
+    &::placeholder {
+      color: $ds75;
+    }
+  }
+}
+// (end)
