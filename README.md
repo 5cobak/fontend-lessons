@@ -1,1 +1,1 @@
-https://5cobak.github.io/frontend-lessons/ "github pages"
+https://5cobak.github.io/frontend-lessons/dist "github pages"
