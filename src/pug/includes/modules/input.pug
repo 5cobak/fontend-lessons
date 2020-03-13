@@ -1,4 +1,7 @@
-mixin input(title,type, placeholder, name, className)
+mixin input(title, wrappClass, type, placeholder, className, name)
 	label.input-title #{title}
 		br
-		input(type=type placeholder=placeholder name=name class=className).input.dropdown
+		.input-wrapper(class=wrappClass)
+			input(type=type placeholder=placeholder class=className name=name).input
+			svg.icon-dropdown.expand-more
+				use(xlink:href="#expand_more")

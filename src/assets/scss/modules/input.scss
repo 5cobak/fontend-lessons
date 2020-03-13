@@ -3,12 +3,40 @@
 	font-family: $mySecondFont;
 	font-size: $smallFontSize;
 }
-.input {
+.input-wrapper {
 	max-width: 320px;
 	width: 100%;
 	background-color: #fff;
-	padding: 15px;
+	font-size: $secondFontSize;
+	padding: 10px 15px;
 	transition: $trFast;
-	margin-bottom: 14px;
+	// margin-bottom: 14px;
 	@include borderAnimation;
+	display: flex;
+	justify-content: space-between;
+	svg {
+		display: none;
+	}
+}
+.input {
+	&::placeholder {
+		color: $ds25;
+		font-size: $secondFontSize;
+	}
+	max-width: 80%
+}
+
+.input.dropdown {
+	&::placeholder {
+		color: $ds75;
+	}
+	svg {
+		display: block;
+	}
+}
+
+.input-wrapper.dropdown {
+	svg {
+		display: block;
+	}
 }

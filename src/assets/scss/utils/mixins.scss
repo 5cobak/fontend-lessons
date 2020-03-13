@@ -32,7 +32,6 @@
 @mixin borderInputHover {
   border: 1px solid rgba(31,32,65,0.5);
   box-sizing: border-box;
-  border-radius: 4px;
 }
 
 @mixin borderAnimation {
