@@ -1,8 +1,8 @@
 extends ../layout/main
 
 include ../includes/modules/input.pug
-include ../includes/modules/dropdown.pug
 include ../includes/modules/date-dropdown.pug
+include ../includes/modules/dropdown.pug
 
 
 block content
@@ -12,9 +12,10 @@ block content
 				+input("text field","text", "Email","Email")
 				br
 				+dropdown("dropdown")
-				+input("masked text field","text", "ДД.ММ.ГГГГ","Email", "date-field")
 				br
-				//- +dateDropdown("masked text field","text", "ДД.ММ.ГГГГ","Email", "date-field")
+				+input("masked text field","","text", "ДД.ММ.ГГГГ","date-field","Email")
+				br
+				+input("dropdown","dropdown date-dropdown","text", "ДД.ММ.ГГГГ","date-field dropdown datepicker-here","Email")
 
 
 
