@@ -28,7 +28,3 @@ import $ from 'jquery';
  
 global.jQuery = $;
 global.$ = $;
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
