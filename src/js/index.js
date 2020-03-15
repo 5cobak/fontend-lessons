@@ -71,8 +71,17 @@ fetch(`https://mycdn.com/img/icons.svg`).then(res => {
 });
 
 
+<<<<<<< Updated upstream
 //borderBottomFocus on dropdown elements 
 
 $('.iqdropdown').click(function(){
 	$(this).addClass('borderBottomFocus');
 }) 
+=======
+// air-datePicker 
+
+// $('.datepicker-here').datepicker();
+
+// Доступ к экземпляру объекта
+// $('.datepicker-here').data('datepicker');
+>>>>>>> Stashed changes

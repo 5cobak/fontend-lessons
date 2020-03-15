@@ -1,4 +1,4 @@
-
+const webpack = require('webpack')
 const path = require('path')
 const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -136,6 +136,11 @@ module.exports = {
 	},
 	plugins: [
 		new VueLoaderPlugin(),
+
+		new webpack.ProvidePlugin({
+			$: 'jquery',
+			jQuery: 'jquery'
+		}),
 
 		new MiniCssExtractPlugin({
 			filename: `${PATHS.assets}css/[name].[hash].css`,
