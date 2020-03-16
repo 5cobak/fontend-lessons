@@ -96,30 +96,21 @@
 		position: relative;
 	}
 	.icon-decrement {
+
 		&::after {
-			content: "";
+			content: "-";
 			display: block;
-			width: 10px;
-			height: 2px;
-			background-color: $ds50;
+			color: $ds50;
 		}
 	}
 	.icon-increment {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		&::after {
-			content: "";
+			content: "+";
 			display: block;
-			width: 10px;
-			height: 2px;
-			background-color: $ds50;
-		}
-		&::before {
-			content: "";
-			display: block;
-			width: 2px;
-			height: 10px;
-			background-color: $ds50;
-			position: absolute;
-			left: calc(50% - 1px);
+			color: $ds50;
 		}
 	}
 	.iqdropdown-menu {
@@ -169,14 +160,17 @@
 	}
 	.iqdropdown-item-controls {
 		display: flex;
+		align-items: center;
+		margin-top: 10px;
 		.counter {
-			// color: #4A4A4A;
-			font-family: "OpenSans",sans-serif;
-			font-size: $secondFontSize;
-			font-weight: 400;
-			border-bottom: 1px solid #E2E2E2;
-			border-top: 1px solid #E2E2E2;
-			padding: 11px 20px;
+			font-family: $mySecondFont;
+			font-size: $smallFontSize;
+			font-weight: 600;
+			color: $ds100;
+			margin: 0 10px;
+			margin-bottom: 3px;
+			min-width: 15px;
+			text-align: center;
 		}
 		button {
 			align-items: center;
@@ -230,12 +224,19 @@
 	padding-right: 10px;
 }
 .iqdropdown-item {
-	color: #000;
+	color: $ds100;
 	font-family: $mySecondFont;
 	font-size: $smallFontSize;
 	font-weight: $bold;
 	text-transform: uppercase;
 }
+
+.button-decrement {
+	&_opacity {
+		opacity: .5;
+	}
+}
+
 @media only screen and (max-width: 640px) {
 	.iqdropdown {
 		.iqdropdown-menu.mobile-top-menu {
