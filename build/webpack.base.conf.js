@@ -94,7 +94,8 @@ module.exports = {
       options: {
 		    extract: false,
 		    spriteFilename: './assets/img/icons/icons.svg',
-		    runtimeCompat: true
+		    runtimeCompat: true,
+		    esModule: false
 		  }
     },
     {

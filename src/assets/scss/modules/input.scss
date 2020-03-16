@@ -4,15 +4,15 @@
 	font-size: $smallFontSize;
 }
 .input-wrapper {
+	display: inline-flex;
 	max-width: 320px;
-	width: 100%;
+	width: 320px;
 	background-color: #fff;
 	font-size: $secondFontSize;
 	padding: 10px 15px;
 	transition: $trFast;
 	// margin-bottom: 14px;
 	@include borderAnimation;
-	display: flex;
 	justify-content: space-between;
 	svg {
 		display: none;

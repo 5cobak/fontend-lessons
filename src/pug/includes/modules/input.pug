@@ -1,7 +1,7 @@
 mixin input(title, wrappClass, type, placeholder, className, name)
-	label.input-title #{title}
+	label(for=inputWrapper).input-title #{title}
 		br
-		.input-wrapper(class=wrappClass)
+		span.input-wrapper(class=wrappClass)
 			input(type=type placeholder=placeholder class=className name=name).input
 			svg.icon-dropdown.expand-more
 				use(xlink:href="#expand_more")
