@@ -95,14 +95,22 @@
 		justify-content: center;
 		position: relative;
 	}
-	.icon-decrement {
-
+	.button-decrement {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.icon-decrement {
+			display: none;
+		}
 		&::after {
-			content: "-";
+			content: "";
 			display: block;
-			color: $ds50;
+			width: 5px;
+			height: 1px;
+			background-color: $ds50;
 		}
 	}
+	
 	.icon-increment {
 		display: flex;
 		align-items: center;
