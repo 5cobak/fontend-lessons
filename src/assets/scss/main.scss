@@ -1,13 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap&subset=cyrillic');
+@import "utils/fonts";
 @import "utils/libs";
 @import "utils/vars";
 @import "utils/mixins";
-@import "utils/fonts";
 @import "utils/reset";
 
 html {
   line-height: $mainLineHeight;
-	font-size: $mainFontSize;
-	color: $mainFontColor;
+	font-size:MontserratSize;
+	color:MontserratColor;
   height: 100%;
   @media screen and (max-width: $desktopWidth) {
 		font-size: 16px;
@@ -23,8 +24,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: $mainFont;
-	font-size: $mainFontSize;
+  @include Mont;
+	font-size:MontserratSize;
   font-weight: $normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -65,7 +66,7 @@ input, label {
   cursor: pointer;
 }
 input {
-  font-size: $mainFontSize;
+  font-size:MontserratSize;
 }
 
 section, .section {
@@ -119,3 +120,4 @@ section, .section {
 @import "modules/svg-icons";
 @import "modules/expand_more";
 @import "modules/date-dropdown";
+@import "modules/buttons-actions";

@@ -28,7 +28,7 @@ module.exports = {
 	},
 	entry: {
 		app: PATHS.src,
-		// module: `${PATHS.src}/your-module.js`,
+		// module: `${PATHS.src}/index.js`,
 	},
 	output: {
 		filename: `${PATHS.assets}js/[name].[hash].js`,
@@ -144,7 +144,7 @@ module.exports = {
 		}),
 
 		new MiniCssExtractPlugin({
-			filename: `${PATHS.assets}css/[name].[hash].css`,
+			filename: `${PATHS.assets}[name].[hash].css`,
 		}),
 		new CopyWebpackPlugin([
 			{ from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },

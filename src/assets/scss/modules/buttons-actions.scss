@@ -1,0 +1,17 @@
+.buttons-actions {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 5px 10px 10px;
+
+	button {
+		text-transform: uppercase;
+		@include MontBold;
+	}
+	&__clean-off {
+		color: $ds50;
+	}
+	&__apply {
+		color: $purple;
+		margin-left: auto;
+	}
+}

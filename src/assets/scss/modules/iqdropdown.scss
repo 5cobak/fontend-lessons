@@ -1,6 +1,40 @@
 /*# sourceMappingURL=item-quantity-dropdown.min.css.map*/
 
 .iqdropdown {
+	width: 100%;
+	max-width: 320px;
+	color: $ds75;
+	font-size: $secondFontSize;
+	@include borderAnimation;
+	max-width: 320px;
+	width: 100%;
+	background-color: #fff;
+	font-size: $secondFontSize;
+	padding: 9.5px 15px;
+	transition: $trFast;
+	// margin-bottom: 14px;
+	@include borderAnimation;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+
+// .iqdropdown-menu {
+// 	display: block;
+// 	position: absolute;
+// 	border: 1px solid rgba(31,32,65,0.5);
+// 	width: calc(100% + 2px);
+// 	top: 35px;
+// 	left: -1px;
+// 	background-color: #fff;
+// }
+
+.iqdropdown.borderBottomFocus {
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0
+}
+
+.iqdropdown {
 	-webkit-tap-highlight-color: transparent;
 	box-sizing: border-box;
 	align-items: center;
@@ -9,7 +43,6 @@
 	cursor: pointer;
 	display: flex;
 	justify-content: space-between;
-	padding: 0 15px;
 	position: relative;
 	width: 100%;
 	* {
@@ -72,7 +105,7 @@
 		background: none;
 		border: 0;
 		cursor: pointer;
-		margin: 0;
+		// margin: 0;
 		padding: 0;
 	}
 	select {
@@ -124,6 +157,7 @@
 	.iqdropdown-menu {
 		background-color: #FFFFFF;
 		@include borderInputHover;
+		border-radius: 4px;
     &::placeholder {
       color: $ds75;
     }		
@@ -136,7 +170,7 @@
 		margin: -2px -1px -1px;
 		position: absolute;
 		right: 0;
-		top: 44px;
+		top: 41px;
 		transition: all 0.2s ease-in-out;
 		z-index: 99999;
 	}
@@ -171,9 +205,8 @@
 		align-items: center;
 		margin-top: 10px;
 		.counter {
-			font-family: $mySecondFont;
+			@include MontBold;
 			font-size: $smallFontSize;
-			font-weight: 600;
 			color: $ds100;
 			margin: 0 10px;
 			margin-bottom: 3px;
@@ -193,10 +226,16 @@
 			}
 			border-radius: 50%;
 		}
+		button.button-decrement_opacity {
+			&:hover {
+				background-color: #fff;
+				cursor: default;
+			}
+		}
 	}
 	.iqdropdown-selection {
 		// color: #4A4A4A;
-		font-family: $mainFont;
+		font-family:Montserrat;
 		font-size: $secondFontSize;
 		font-weight: 400;
 		flex: 1;
@@ -217,8 +256,15 @@
 	}
 }
 .iqdropdown.menu-open {
+	-webkit-box-shadow: 1px 1px 31px -35px rgba(0,0,0,0.48);
+-moz-box-shadow: 1px 1px 31px -35px rgba(0,0,0,0.48);
+box-shadow: 1px 1px 31px -35px rgba(0,0,0,0.48);
 	.iqdropdown-menu {
 		display: block;
+		-webkit-box-shadow: 1px 10px 31px -35px rgba(0,0,0,0.48);
+-moz-box-shadow: 1px 10px 31px -35px rgba(0,0,0,0.48);
+box-shadow: 1px 10px 31px -35px rgba(0,0,0,0.48);
+
 	}
 	border-color: $ds50;
 	.iqdropdown-selection {
@@ -233,16 +279,13 @@
 }
 .iqdropdown-item {
 	color: $ds100;
-	font-family: $mySecondFont;
+	@include MontBold;
 	font-size: $smallFontSize;
-	font-weight: $bold;
 	text-transform: uppercase;
 }
 
-.button-decrement {
-	&_opacity {
-		opacity: .5;
-	}
+.disabled-button {
+	opacity: .5;
 }
 
 @media only screen and (max-width: 640px) {
@@ -252,3 +295,5 @@
 		}
 	}
 }
+
+

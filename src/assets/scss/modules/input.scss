@@ -1,7 +1,8 @@
 .input-title {
 	text-transform: uppercase;
-	font-family: $mySecondFont;
+	@include MontBold;
 	font-size: $smallFontSize;
+
 }
 .input-wrapper {
 	display: inline-flex;
@@ -17,13 +18,28 @@
 	svg {
 		display: none;
 	}
+	&:hover {
+		.input {
+			&::placeholder {
+				color: $ds75;
+				font-size: $secondFontSize;
+			}
+		}
+	}
 }
 .input {
 	&::placeholder {
 		color: $ds25;
 		font-size: $secondFontSize;
+		transition: $trFast;
 	}
-	max-width: 80%
+	max-width: 80%;
+	&:focus {
+		&::placeholder {
+			color: $ds75;
+			font-size: $secondFontSize;
+		}
+	}
 }
 
 .input.dropdown {
