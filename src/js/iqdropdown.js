@@ -84,6 +84,14 @@
           $('.iqdropdown.guests').removeClass('menu-open');
           $('.iqdropdown.guests').removeClass('borderBottomFocus');
         });
+        $(document).click(function(){
+          $('.iqdropdown.guests').removeClass('menu-open');
+          $('.iqdropdown.guests').removeClass('borderBottomFocus');
+        });
+         $('.iqdropdown.guests').click(function(e){
+          e.stopPropagation();
+        });
+
 
         $item.children('div').addClass(settings.controls.displayCls);
         $controls.append($decrementButton, $counter, $incrementButton);

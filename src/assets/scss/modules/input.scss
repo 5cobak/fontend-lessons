@@ -56,3 +56,9 @@
 		display: block;
 	}
 }
+
+.input.date-dropdown-2 {
+	&:-ms-value {
+		text-transform: uppercase;
+	}
+}
