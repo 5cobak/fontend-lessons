@@ -27,8 +27,8 @@
 
 .-in-range- {
   &.datepicker--cell-day.-other-month-, &.datepicker--cell-year.-other-decade- {
-    background-color: rgba(92, 196, 239, 0.1);
-    color: #cccccc;
+    background: linear-gradient(180deg, rgba(188, 156, 255,.25) 0%, rgba(139, 164, 249,.25) 100%);
+    color: $ds75;
   }
 
   &.-focus- {
@@ -95,7 +95,9 @@
     border-radius: 50%;
     background:  linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     &:hover {
-      color: #fff;
+      background: rgba(92, 196, 239, 0.1);
+      color: #4a4a4a;
+      border-radius: 0;
     }
     &.-focus- {
       color: #4a4a4a;
@@ -103,15 +105,14 @@
     }
 
     &.-in-range- {
-      color: #4EB5E6;
+      color: $ds75;
     }
   }
 
   &.-in-range- {
-    background: rgba(92, 196, 239, 0.1);
-    color: #4a4a4a;
+    background: linear-gradient(180deg, rgba(188, 156, 255,.25) 0%, rgba(139, 164, 249,.25) 100%);
+    color: $ds75;
     border-radius: 0;
-
     &.-focus- {
       background-color: rgba(92, 196, 239, 0.2);
     }
@@ -135,15 +136,17 @@
   }
 
   &.-range-from- {
-    border: 1px solid rgba(92, 196, 239, 0.5);
     background-color: rgba(92, 196, 239, 0.1);
     border-radius: 4px 0 0 4px;
+    position: relative;
+    z-index: 10;
   }
 
   &.-range-to- {
-    border: 1px solid rgba(92, 196, 239, 0.5);
     background-color: rgba(92, 196, 239, 0.1);
     border-radius: 0 4px 4px 0;
+    position: relative;
+    z-index: 10;
   }
 
   &.-range-from-.-range-to- {
@@ -237,7 +240,7 @@
 
 .datepicker--cell-day,.datepicker--cell-day.-other-month-:hover, .datepicker--cell-year.-other-decade-:hover {
   color: #c5c5c5;
-  border-radius: 50%;
+  // border-radius: 50%;
 }
 
 .-disabled-.-focus- {
@@ -261,8 +264,8 @@
 
 .-in-range- {
   &.datepicker--cell-day.-other-month-, &.datepicker--cell-year.-other-decade- {
-    background-color: rgba(92, 196, 239, 0.1);
-    color: #cccccc;
+    background: linear-gradient(180deg, rgba(188, 156, 255,.25) 0%, rgba(139, 164, 249,.25) 100%);
+    color: $ds75;
   }
 
   &.-focus- {
@@ -437,7 +440,7 @@
 
 .datepicker--cell-day.-other-month-:hover, .datepicker--cell-year.-other-decade-:hover {
   color: #c5c5c5;
-  border-radius: 50%;
+  // border-radius: 50%;
 }
 
 .-disabled-.-focus- {
@@ -461,8 +464,8 @@
 
 .-in-range- {
   &.datepicker--cell-day.-other-month-, &.datepicker--cell-year.-other-decade- {
-    background-color: rgba(92, 196, 239, 0.1);
-    color: #cccccc;
+    background: linear-gradient(180deg, rgba(188, 156, 255,.25) 0%, rgba(139, 164, 249,.25) 100%);
+    color: $ds75;
   }
 
   &.-focus- {
@@ -602,11 +605,12 @@
 
 .datepicker--cell-day.-other-month-, .datepicker--cell-year.-other-decade- {
   color: $ds25;
-  border-radius: 50%;
+  // border-radius: 50%;
 }
 
 .datepicker--cell-day.-other-month-:hover, .datepicker--cell-year.-other-decade-:hover {
   color: #c5c5c5;
+  background: gradient(linear,left top,left bottom,from(#bc9cff),to(#8ba4f9));
 }
 
 .-disabled-.-focus- {
@@ -630,8 +634,8 @@
 
 .-in-range- {
   &.datepicker--cell-day.-other-month-, &.datepicker--cell-year.-other-decade- {
-    background-color: rgba(92, 196, 239, 0.1);
-    color: #cccccc;
+    background-color: linear-gradient(180deg, rgba(188, 156, 255,.25) 0%, #8BA4F9 100%,);
+    color: $ds75;
   }
 
   &.-focus- {
@@ -889,8 +893,8 @@
 
 .-in-range- {
   &.datepicker--cell-day.-other-month-, &.datepicker--cell-year.-other-decade- {
-    background-color: rgba(92, 196, 239, 0.1);
-    color: #cccccc;
+    background: linear-gradient(180deg, rgba(188, 156, 255,.25) 0%, rgba(139, 164, 249,.25) 100%);
+    color: $ds75;;
   }
 
   &.-focus- {
@@ -904,3 +908,27 @@
   background: none;
   border: none;
 }
+
+.after-range-from {
+  display: block;
+  position: absolute;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(188, 156, 255,.25) 0%, rgba(139, 164, 249,.25) 100%);
+  color: #4a4a4a;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+.after-range-to {
+  display: block;
+  position: absolute;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(188, 156, 255,.25) 0%, rgba(139, 164, 249,.25) 100%);
+  color: #4a4a4a;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+

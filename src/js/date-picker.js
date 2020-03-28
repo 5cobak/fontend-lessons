@@ -1601,22 +1601,23 @@
                 if (dp.isSame(minRange, date, type)) classes += ' -range-from-';
                 if (dp.isSame(maxRange, date, type)) classes += ' -range-to-';
 
-                if (parent.selectedDates.length == 1 && parent.focused) {
-                    if (
-                        (dp.bigger(minRange, date) && dp.less(parent.focused, date)) ||
-                        (dp.less(maxRange, date) && dp.bigger(parent.focused, date)))
-                    {
-                        classes += ' -in-range-'
-                    }
+                // if (parent.selectedDates.length == 1 && parent.focused) {
+                //     if (
+                //         (dp.bigger(minRange, date) && dp.less(parent.focused, date)) ||
+                //         (dp.less(maxRange, date) && dp.bigger(parent.focused, date)))
+                //     {
+                //         classes += ' -in-range-'
+                //     }
 
-                    if (dp.less(maxRange, date) && dp.isSame(parent.focused, date)) {
-                        classes += ' -range-from-'
-                    }
-                    if (dp.bigger(minRange, date) && dp.isSame(parent.focused, date)) {
-                        classes += ' -range-to-'
-                    }
+                //     if (dp.less(maxRange, date) && dp.isSame(parent.focused, date)) {
+                //         classes += ' -range-from-'
+                //     }
+                //     if (dp.bigger(minRange, date) && dp.isSame(parent.focused, date)) {
+                //         classes += ' -range-to-'
+                //     }
 
-                } else if (parent.selectedDates.length == 2) {
+                // } 
+                if (parent.selectedDates.length == 2) {
                     if (dp.bigger(minRange, date) && dp.less(maxRange, date)) {
                         classes += ' -in-range-'
                     }

@@ -1,5 +1,20 @@
 /*# sourceMappingURL=item-quantity-dropdown.min.css.map*/
 
+// .iqdropdown-menu {
+// 	display: block;
+// 	position: absolute;
+// 	border: 1px solid rgba(31,32,65,0.5);
+// 	width: calc(100% + 2px);
+// 	top: 35px;
+// 	left: -1px;
+// 	background-color: #fff;
+// }
+
+.iqdropdown.borderBottomFocus {
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0
+}
+
 .iqdropdown {
 	width: 100%;
 	max-width: 320px;
@@ -17,28 +32,9 @@
 	display: flex;
 	justify-content: space-between;
 	position: relative;
-}
-
-// .iqdropdown-menu {
-// 	display: block;
-// 	position: absolute;
-// 	border: 1px solid rgba(31,32,65,0.5);
-// 	width: calc(100% + 2px);
-// 	top: 35px;
-// 	left: -1px;
-// 	background-color: #fff;
-// }
-
-.iqdropdown.borderBottomFocus {
-	border-bottom-right-radius: 0;
-	border-bottom-left-radius: 0
-}
-
-.iqdropdown {
 	-webkit-tap-highlight-color: transparent;
 	box-sizing: border-box;
 	align-items: center;
-	border: 1px solid #E2E2E2;
 	border-radius: 4px;
 	cursor: pointer;
 	display: flex;

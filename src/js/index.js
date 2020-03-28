@@ -71,7 +71,8 @@ $(document).ready(function(){
 		clearButton: true,
 		range: true,
 		dateFormat: "d M",
-		multipleDatesSeparator: " - "
+		multipleDatesSeparator: " - ",
+		// inline: true
 	});
 	const myDatepicker1 = $('.datepicker-here.date-dropdown-1').datepicker().data('datepicker');
 	const myDatepicker2 = $('.datepicker-here.date-dropdown-2').datepicker().data('datepicker');
@@ -81,10 +82,37 @@ $(document).ready(function(){
 		myDatepicker2.hide();
 	});
 
-	// keypress off on range date
+	// keypress off on filter date dropdown
 	$('.date-dropdown-2').keypress(function(){
 		return false;
 	});
+	// add style for range elements in 
+
+	$(document).click(function(){
+		if($('.-range-to-').hasClass('-selected-')) {
+				$('.-range-from-').find('.after-range-from').remove();
+			  $('.-range-to-').find('.after-range-to').remove();
+				$('.-range-from-').append('<div class="after-range-from"></div>');
+				$('.-range-to-').append('<div class="after-range-to"></div>');
+			}
+			else {
+				$('.-range-from-').find('.after-range-from').remove();
+			  $('.-range-to-').find('.after-range-to').remove();
+			}
+		if($('.-range-to-').hasClass('-selected-')) {
+			$('.-range-from-').find('.after-range-from').remove();
+			$('.-range-to-').find('.after-range-to').remove();
+			$('.-range-from-').append('<div class="after-range-from"></div>');
+			$('.-range-to-').append('<div class="after-range-to"></div>');
+		}
+
+		// if(!$('.-range-to-').hasClass('-selected-')) {
+		// 	$(".-range-to-").remove();
+		// }
+	});
+	// mousemove for -range-from- 
+  
+		
 	// $('.datepicker-here.date-dropdown-2').change(function(){
 	// 	console.log($(this).val().length);
 	// 	if($(this).val().length < 12) {
