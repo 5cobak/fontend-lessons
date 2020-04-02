@@ -25,7 +25,7 @@
 	width: 100%;
 	background-color: #fff;
 	font-size: $secondFontSize;
-	padding: 9.5px 15px;
+	padding: 12px 15px;
 	transition: $trFast;
 	// margin-bottom: 14px;
 	@include borderAnimation;
@@ -41,6 +41,9 @@
 	justify-content: space-between;
 	position: relative;
 	width: 100%;
+	&_w266 {
+		max-width: 266px;
+	}
 	* {
 		-webkit-tap-highlight-color: transparent;
 		box-sizing: border-box;
@@ -166,14 +169,15 @@
 		margin: -2px -1px -1px;
 		position: absolute;
 		right: 0;
-		top: 41px;
+		top: 46px;
 		transition: all 0.2s ease-in-out;
 		z-index: 99999;
 	}
 	.iqdropdown-menu-option {
-		align-items: center;
 		display: flex;
-		padding: 0 15px;
+		align-items: center;
+		padding: 0 5px 0 15px;
+		margin-top: 6px;
 		&:last-child {
 			border: 0;
 		}
@@ -199,7 +203,6 @@
 	.iqdropdown-item-controls {
 		display: flex;
 		align-items: center;
-		margin-top: 10px;
 		.counter {
 			@include MontBold;
 			font-size: $smallFontSize;
@@ -252,15 +255,18 @@
 	}
 }
 .iqdropdown.menu-open {
+	svg.expand-more {
+		fill: $ds75;
+		transform: rotate(180deg);
+	}
 	-webkit-box-shadow: 1px 1px 31px -35px rgba(0,0,0,0.48);
 -moz-box-shadow: 1px 1px 31px -35px rgba(0,0,0,0.48);
 box-shadow: 1px 1px 31px -35px rgba(0,0,0,0.48);
 	.iqdropdown-menu {
 		display: block;
 		-webkit-box-shadow: 1px 10px 31px -35px rgba(0,0,0,0.48);
--moz-box-shadow: 1px 10px 31px -35px rgba(0,0,0,0.48);
+		-moz-box-shadow: 1px 10px 31px -35px rgba(0,0,0,0.48);
 box-shadow: 1px 10px 31px -35px rgba(0,0,0,0.48);
-
 	}
 	border-color: $ds50;
 	.iqdropdown-selection {

@@ -48,7 +48,7 @@
    ------------------------------------------------- */
 .datepicker-here {
    &::placeholder {
-    color: $ds25;
+    color: $ds75;
     font-size: $secondFontSize;
     transition: $trFast;
   }
@@ -337,7 +337,7 @@
   &.active {
     opacity: 1;
     // -webkit-transform: translate(0);
-    transform: translate(-15px,0);
+    transform: translate(0px,-10px);
     transition: opacity 0.3s ease;
   }
 }
