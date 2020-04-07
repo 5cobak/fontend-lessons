@@ -1,9 +1,4 @@
-.input-title {
-	text-transform: uppercase;
-	@include MontBold;
-	font-size: $smallFontSize;
 
-}
 .input-wrapper {
 	display: inline-flex;
 	max-width: 320px;

@@ -1,0 +1,5 @@
+.title-element {
+	text-transform: uppercase;
+	@include MontBold;
+	font-size: $smallFontSize;
+}

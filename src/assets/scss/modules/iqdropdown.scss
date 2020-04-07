@@ -155,24 +155,28 @@
 	}
 	.iqdropdown-menu {
 		background-color: #FFFFFF;
-		@include borderInputHover;
+		// @include borderInputHover;
 		border-radius: 4px;
-    &::placeholder {
-      color: $ds75;
-    }		
-    border-top: 0;
-    cursor: default;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-		display: none;
+		&::placeholder {
+			color: $ds75;
+		}		
+		border-top: 0;
+		cursor: default;
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+		@include borderInputHover; 
+		border-top: 0;
+		border-bottom: 0;
+		max-height: 0;
+		overflow: hidden;
 		left: 0;
 		margin: -2px -1px -1px;
 		position: absolute;
 		right: 0;
 		top: 46px;
-		transition: all 0.2s ease-in-out;
-		z-index: 99999;
-	}
+		transition: $trFast;
+		z-index: 100;
+}
 	.iqdropdown-menu-option {
 		display: flex;
 		align-items: center;
@@ -260,13 +264,17 @@
 		transform: rotate(180deg);
 	}
 	-webkit-box-shadow: 1px 1px 31px -35px rgba(0,0,0,0.48);
--moz-box-shadow: 1px 1px 31px -35px rgba(0,0,0,0.48);
-box-shadow: 1px 1px 31px -35px rgba(0,0,0,0.48);
+	-moz-box-shadow: 1px 1px 31px -35px rgba(0,0,0,0.48);
+	box-shadow: 1px 1px 31px -35px rgba(0,0,0,0.48);
 	.iqdropdown-menu {
-		display: block;
+		// display: block;
+		max-height: 155px;
+		@include borderInputHover; 
+		border-top: 0;
+		z-index: 101;
 		-webkit-box-shadow: 1px 10px 31px -35px rgba(0,0,0,0.48);
 		-moz-box-shadow: 1px 10px 31px -35px rgba(0,0,0,0.48);
-box-shadow: 1px 10px 31px -35px rgba(0,0,0,0.48);
+		box-shadow: 1px 10px 31px -35px rgba(0,0,0,0.48);
 	}
 	border-color: $ds50;
 	.iqdropdown-selection {

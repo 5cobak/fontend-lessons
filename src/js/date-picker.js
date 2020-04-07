@@ -814,6 +814,7 @@
 
             this.setPosition(this.opts.position);
             this.$datepicker.addClass('active');
+            this.$datepicker.addClass('datepicker_show');
             this.visible = true;
 
             if (onShow) {
@@ -823,12 +824,15 @@
 
         hide: function () {
             var onHide = this.opts.onHide;
-
-            this.$datepicker
-                .removeClass('active')
+            let th = this;
+            setTimeout(function(){
+                th.$datepicker
                 .css({
                     left: '-100000px'
                 });
+            },250);
+            this.$datepicker
+                .removeClass('active datepicker_show')
 
             this.focused = '';
             this.keys = [];

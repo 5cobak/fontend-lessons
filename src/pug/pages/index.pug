@@ -4,7 +4,12 @@ include ../includes/modules/input.pug
 include ../includes/modules/date-dropdown.pug
 include ../includes/modules/dropdown-guests.pug
 include ../includes/modules/dropdown-bedrooms.pug
-
+include ../includes/modules/checkbox-item.pug
+include ../includes/modules/checkbox.pug
+include ../includes/modules/checkbox-2.pug
+include ../includes/modules/radio-button.pug
+include ../includes/modules/toggle.pug
+include ../includes/modules/toggle-checkbox.pug
 
 block content
 	section
@@ -23,6 +28,20 @@ block content
 					+input("text field","input-wrapper_w266 input-wrapper_icon-show subscription-text-field","text", "You email adress","email","","arrow-forward","#arrow_forward")
 					br
 					+dropdown-bedrooms("dropdown","bedrooms iqdropdown_w266")
+					br
+					+checkbox("Expandable checkbox list","checkbox-wrapper_w266 checkbox-wrapper_dropdown","checkbox-wrapper__ul_dropdown","Завтрак","Письменный стол","Кроватка","Телевизор","Шампунь","Телевизор","Шампунь")
+				.col
+					+checkbox("Expandable checkbox list","checkbox-wrapper_w222","","Можно курить","Можно с питомцами","Можно пригласить гостей (до 10 человек)")
+					br 
+					+checkbox-2("Expandable checkbox list","checkbox-wrapper_w266 checkbox-wrapper_second","","Широкий коридор","Ширина коридоров в номере не менее 91 см.","Помощник для инвалидов","На 1 этаже вас встретит специалист  и проводит до номера.") 
+					br
+					+radio-button("radio buttons")
+					br
+					+toggle('toggle',"Получать спецпредложения","Получать спецпредложения")
+
+
+					
+
 
 	
 

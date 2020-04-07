@@ -93,7 +93,7 @@ module.exports = {
       loader: 'svg-sprite-loader',
       options: {
 		    extract: false,
-		    spriteFilename: './assets/img/icons/icons.svg',
+		    spriteFilename: './assets/img/icons/sprite.svg',
 		    runtimeCompat: true,
 		    esModule: false
 		  }

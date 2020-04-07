@@ -33,4 +33,5 @@ import './js/date-picker.js'
 import './js/air-datepicker.js'
 import './js/iqdropdown.js'
 import './js/mask.js'
+import './js/checkbox.js'
 

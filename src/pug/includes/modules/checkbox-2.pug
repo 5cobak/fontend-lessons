@@ -1,10 +1,10 @@
-mixin checkbox(title,className,uldrop, ...subtitle)
+mixin checkbox-2(title,className,uldrop,sub1,description1,sub2,description2)
 	.checkbox-wrapper(class=className)
 		.checkbox-wrapper__head
 			span.title-element #{title}
 			svg.expand-more.icon-dropdown
 				use(xlink:href="#expand_more")
 		ul.checkbox-wrapper__ul(class=uldrop)
-			each sub in subtitle
-				+checkbox-item(sub,description)
+			+checkbox-item(sub1,description1)
+			+checkbox-item(sub2,description2)
 		

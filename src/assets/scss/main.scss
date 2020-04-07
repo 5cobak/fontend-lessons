@@ -124,6 +124,7 @@ section, .section {
 }
 
 // Modules
+@import "modules/title-element";
 @import "modules/input-wrapper";
 @import "modules/iqdropdown";
 @import "modules/svg-icons";
@@ -132,3 +133,6 @@ section, .section {
 @import "modules/bad-value";
 @import "modules/date-picker";
 @import "modules/arrow-forward";
+@import "modules/checkbox";
+@import "modules/radio";
+@import "modules/toggle";

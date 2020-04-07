@@ -1,0 +1,10 @@
+mixin checkbox-item (title,description)
+	li.checkbox-wrapper__li
+		label.checkbox-wrapper__label 
+			input.checkbox-wrapper__checkbox(type="checkbox")
+			span.checkbox-wrapper__checkmark
+				svg
+					use(xlink:href="#check")
+			.checkbox-wrapper__sub-wrap
+				span.checkbox-wrapper__subtitle #{title}
+				span.checkbox-wrapper__description #{description}
