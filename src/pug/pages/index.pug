@@ -10,6 +10,7 @@ include ../includes/modules/checkbox-2.pug
 include ../includes/modules/radio-button.pug
 include ../includes/modules/toggle.pug
 include ../includes/modules/toggle-checkbox.pug
+include ../includes/modules/like-dislike.pug
 
 block content
 	section
@@ -38,6 +39,10 @@ block content
 					+radio-button("radio buttons")
 					br
 					+toggle('toggle',"Получать спецпредложения","Получать спецпредложения")
+					br
+					.title-element like button
+					+like-dislike()
+					
 
 
 					

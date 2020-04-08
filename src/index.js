@@ -34,4 +34,5 @@ import './js/air-datepicker.js'
 import './js/iqdropdown.js'
 import './js/mask.js'
 import './js/checkbox.js'
+import './js/like-dislike.js'
 

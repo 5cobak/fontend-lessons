@@ -107,20 +107,35 @@ section, .section {
   margin: 0 auto;
   max-width: $desktopWidth;
   @media screen and (max-width: $smDesktopWidth) {
-    max-width: tableWidth;
+    max-width: $tableWidth;
   }
   @media screen and (max-width: $tableWidth) {
-    max-width: phoneWidth;
+    max-width: $phoneWidth;
+    
   }
   @media screen and (max-width: $phoneWidth) {
-    max-width: smPhoneWidth;
+    max-width: $smPhoneWidth;
   }
 }
 .row {
   display: flex;
+  @media screen and (max-width: $tableWidth) {
+    flex-wrap: wrap;    
+  }
+  @media screen and (max-width: $phoneWidth) {
+    flex-direction: column;
+  }
 }
 .col {
   flex: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+  @media screen and (max-width: $tableWidth) {
+
+  }
+  @media screen and (max-width: $phoneWidth) {
+
+  }
 }
 
 // Modules
@@ -136,3 +151,4 @@ section, .section {
 @import "modules/checkbox";
 @import "modules/radio";
 @import "modules/toggle";
+@import "modules/like-button";
