@@ -25,6 +25,10 @@
 	&__input {
 		width: 100%;
 		padding: 12px 15px;
+		&_date-picker {
+			color: transparent;
+			text-shadow: 0 0 0 $ds75;
+		}
 		@include borderAnimation;
 		&:focus {
 			.input-wrapper {
@@ -42,7 +46,7 @@
 	}
 	&_color75 {
 		&::placeholder {
-			color: $ds75;
+			// color: $ds75;
 		}
 	}
 	&_icon-show {
@@ -58,10 +62,5 @@
 	}
 	&_w320 {
 		max-width: 320px;
-	}
-	&_focus {
-		svg {
-			transform: rotate(180deg);
-		}
 	}
 }

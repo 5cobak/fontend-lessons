@@ -18,8 +18,4 @@ fetch(`https://mycdn.com/img/icons.svg`).then(res => {
 
 // mask 
 
-$(document).ready(function(){
-
-});
-
 

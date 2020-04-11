@@ -47,7 +47,7 @@
 	}
 	&_active {
 		svg {
-			transform: rotateY(360deg);
+			transform: rotateZ(-360deg);
 			animation-duration: $trFast;
 			animation-name: changeSize;
 		}

@@ -1,0 +1,14 @@
+.range {
+	position: relative;
+	max-width: 266px;
+	&__price {
+		color: $ds50;
+		position: absolute;
+		right: 0;
+		top: -17px;
+		font-size: $smallFontSize;
+	}
+	i {
+		font-style: normal;
+	}
+}

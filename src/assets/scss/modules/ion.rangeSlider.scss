@@ -1,0 +1,34 @@
+.irs--round .irs-handle {
+  cursor: pointer;
+  background: $greenGr;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  top: 32px;
+  box-shadow: none;
+  transition: transform $trFast;
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+.irs-to,.irs-from {
+  display: none;
+}
+.irs--round .irs-bar {
+  background: $greenGr ;
+  height: 6px;
+}
+
+.irs--round .irs-line {
+  height: 6px;
+  background-color: #fff;
+  border: 1px solid $ds25;
+  max-width: 266px;
+}
+.irs-single {
+  display: none;
+}
+.irs--round {
+  // height: 10px;
+  top: -15px;
+}

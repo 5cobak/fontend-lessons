@@ -64,7 +64,8 @@ input, label {
   cursor: pointer;
 }
 input {
-  color: $ds75;
+  // color: $ds75;
+  text-shadow: none;
   @include Mont;
 }
 
@@ -152,3 +153,6 @@ section, .section {
 @import "modules/radio";
 @import "modules/toggle";
 @import "modules/like-button";
+@import "modules/rate";
+@import "modules/ion.rangeSlider";
+@import "modules/range";

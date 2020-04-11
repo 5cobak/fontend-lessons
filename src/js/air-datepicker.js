@@ -48,24 +48,20 @@ $(document).ready(function(){
 	
   
 	// change fill svg when focus or blur on .input-wrapper
-	$('.input-wrapper__input').focus(function(){
-		$(this).parent().find('svg.expand-more').css('fill','rgba(31, 32, 65, 0.75)');
-		$(this).parent().find('svg.expand-more').css('transform','rotate(180deg)');
+	$('.input-wrapper__input').focus(function(e){
+		if($(this).parent().find('svg.expand-more').hasClass('expand-more_active')){
+			$(this).parent().find('svg.expand-more').removeClass('expand-more_active');
+		}else $(this).parent().find('svg.expand-more').addClass('expand-more_active');
+		
 	});
-		$('.input-wrapper__input').blur(function(){
-		$(this).parent().find('svg.expand-more').css('fill','rgba(31, 32, 65, 0.5)');
-		$(this).parent().find('svg.expand-more').css('transform','rotate(0deg)');
+	$('.input-wrapper__input').blur(function(){
+		$(this).parent().find('svg.expand-more').removeClass('expand-more_active');
 	});
 	$('.iqdropdown-selection').focus(function(){
 		$(this).parent().find('svg').css('fill','rgba(31, 32, 65, 0.75)');
 	});
 		$('.iqdropdown-selection').blur(function(){
 		$(this).parent().find('svg').css('fill','rgba(31, 32, 65, 0.5)');
-	});
-
-	// rotate svg-icon in input-elements
-	$(".input-wrapper_input").focus(function(){
-			$(this).parent().toggleClass("input-wrapper_focus");
 	});
 });
 

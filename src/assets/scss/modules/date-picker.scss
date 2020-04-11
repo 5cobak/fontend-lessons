@@ -48,13 +48,12 @@
    ------------------------------------------------- */
 .datepicker-here {
    &::placeholder {
-    color: $ds75;
+    color: transparent;
     font-size: $secondFontSize;
     transition: $trFast;
   }
   &:focus {
     &::placeholder {
-      color: $ds75;
       font-size: $secondFontSize;
     }
   }

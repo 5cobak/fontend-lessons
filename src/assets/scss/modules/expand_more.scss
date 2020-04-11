@@ -4,4 +4,9 @@
 	transition: $trFast;
 	align-self: center;
 	fill: $ds50;
+	pointer-events: none;
+	&_active {
+		transform: rotate(180deg);
+		fill: $ds75;
+	}
 }
