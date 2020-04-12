@@ -1,7 +1,6 @@
 extends ../layout/main
 
 include ../includes/modules/input.pug
-include ../includes/modules/date-dropdown.pug
 include ../includes/modules/dropdown-guests.pug
 include ../includes/modules/dropdown-bedrooms.pug
 include ../includes/modules/checkbox-item.pug
@@ -24,7 +23,7 @@ block content
 					+dropdown-guests("dropdown","guests")
 					+input("masked text field","","text", "ДД.ММ.ГГГГ","date-field-1","Date")
 					br
-					+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","datepicker-here input-wrapper__input_date-picker date-dropdown-1 dropdown ","Date","icon-dropdown expand-more","#expand_more")
+					+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","datepicker-here input-wrapper__input_date-picker date-dropdown-1 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
 					br
 					+input("Filter date dropdown","input-wrapper_w266 input-wrapper_icon-show filter-date-dropdown","text", "Дата въезда - выезда","datepicker-here date-dropdown-2 dropdown input-wrapper__input_date-picker","Date","icon-dropdown expand-more","#expand_more","true")
 					br
