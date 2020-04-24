@@ -2,4 +2,10 @@
 	text-transform: uppercase;
 	@include MontBold;
 	font-size: $smallFontSize;
+	&_margin-1 {
+
+	}
+	&_margin-b {
+		margin-bottom: 16.6px;
+	}
 }

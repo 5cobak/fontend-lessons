@@ -4,7 +4,6 @@ const baseWebpackConfig = require('./webpack.base.conf')
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   // DEV config
-  
   mode: 'development',
   devtool: 'cheap-module-eval-source-map',
   devServer: {
@@ -15,18 +14,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       errors: true
     }
   },
-  plugins: [
-  
-    new webpack.SourceMapDevToolPlugin({
-      filename: '[file].map'
-    }),
-
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
-    })
-
-  ]
 })
 
 module.exports = new Promise((resolve, reject) => {

@@ -1,11 +1,13 @@
-const webpack = require('webpack')
+
 const path = require('path')
+const webpack = require('webpack')
 const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
+const tinyPngWebpackPlugin = require('tinypng-webpack-plugin');
 
 // Main const
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#main-const
@@ -28,12 +30,12 @@ module.exports = {
 	},
 	entry: {
 		app: PATHS.src,
-		// module: `${PATHS.src}/index.js`,
+		// module: `${PATHS.src}/your-module.js`,
 	},
 	output: {
 		filename: `${PATHS.assets}js/[name].[hash].js`,
 		path: PATHS.dist,
-		publicPath: ''
+		// publicPath: '/'
 	},
 	optimization: {
 		splitChunks: {
@@ -60,98 +62,91 @@ module.exports = {
 				{
 					use: ['pug-loader']
 				}
-			]
-		}, {
-			test: /\.js$/,
-			loader: 'babel-loader',
-			exclude: path.resolve(__dirname, '../node_modules/'),
-		}, {
-			test: /\.vue$/,
-			loader: 'vue-loader',
-			options: {
-				loader: {
-					scss: 'vue-style-loader!css-loader!sass-loader'
+				]
+			}, {
+				test: /\.js$/,
+				loader: 'babel-loader',
+				exclude: path.resolve(__dirname, '../node_modules/'),
+			}, {
+				test: /\.vue$/,
+				loader: 'vue-loader',
+				options: {
+					loader: {
+						scss: 'vue-style-loader!css-loader!sass-loader'
+					}
 				}
-			}
-		}, 
-		{
-			test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-			loader: 'file-loader',
-			exclude: path.resolve(__dirname, '../src/assets/img/icons/'),
-			options: {
-				name: '[name].[ext]'
-			}
-		}, {
-			test: /\.(png|jpg|gif|svg)$/,
-			loader: 'file-loader',
-			exclude: path.resolve(__dirname, '../src/assets/img/icons/'),
-			options: {
-				name: '[name].[ext]'
-			}
-		},{
-      test: /\.svg$/,
-      loader: 'svg-sprite-loader',
-      options: {
-		    extract: false,
-		    spriteFilename: './assets/img/icons/sprite.svg',
-		    runtimeCompat: true,
-		    esModule: false
-		  }
-    },
-    {
-			test: /\.scss$/,
-			use: [
+			}, 
+			{
+				test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+				loader: 'url-loader',
+				exclude: path.resolve(__dirname, '../src/assets/img/icons/'),
+				options: {
+					name: '[name].[ext]',
+				}
+			}, {
+				test: /\.(png|jpg|gif|svg)$/,
+				loader: 'file-loader',
+				exclude: path.resolve(__dirname, '../src/assets/img/icons/'),
+				options: {
+					name: '[name].[ext]'
+				}
+			},{
+				test: /\.svg$/,
+				loader: 'svg-sprite-loader',
+				options: {
+					extract: false,
+					spriteFilename: './assets/img/icons/icons.svg',
+					runtimeCompat: true,
+				}
+			},
+			{
+				test: /\.scss$/,
+				use: [
 				'style-loader',
 				MiniCssExtractPlugin.loader,
 				{
 					loader: 'css-loader',
-					options: { sourceMap: true }
+					options: { sourceMap: true, url: false}
 				}, {
 					loader: 'postcss-loader',
 					options: { sourceMap: true, config: { path: `./postcss.config.js` } }
 				}, {
 					loader: 'sass-loader',
-					options: { sourceMap: true }
+					options: { sourceMap: true}
 				}
-			]
-		}, {
-			test: /\.css$/,
-			use: [
+				]
+			}, {
+				test: /\.css$/,
+				use: [
 				'style-loader',
 				MiniCssExtractPlugin.loader,
 				{
 					loader: 'css-loader',
-					options: { sourceMap: true }
+					options: { sourceMap: true, url: false},
 				}, {
 					loader: 'postcss-loader',
 					options: { sourceMap: true, config: { path: `./postcss.config.js` } }
 				}
-			]
-		}]
-	},
-	resolve: {
-		alias: {
-			'~': PATHS.src,
-			'vue$': 'vue/dist/vue.js',
-		}
-	},
-	plugins: [
+				]
+			}]
+		},
+		resolve: {
+			alias: {
+				'~': PATHS.src,
+				'vue$': 'vue/dist/vue.js',
+			}
+		},
+		plugins: [
 		new VueLoaderPlugin(),
 
-		new webpack.ProvidePlugin({
-			$: 'jquery',
-			jQuery: 'jquery'
-		}),
-
 		new MiniCssExtractPlugin({
-			filename: `${PATHS.assets}[name].[hash].css`,
+			filename: `${PATHS.assets}css/[name].[hash].css`,
 		}),
 		new CopyWebpackPlugin([
 			{ from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
 			{ from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
 			{ from: `${PATHS.src}/static`, to: '' },
-		]),
-
+			]),
 		// Automatic creation any html pages (Don't forget to RERUN dev server)
 		// see more: https://github.com/vedees/webpack-template/blob/master/README.md#create-another-html-files
 		// best way to create pages: https://github.com/vedees/webpack-template/blob/master/README.md#third-method-best
@@ -161,7 +156,18 @@ module.exports = {
 		})),
 		new SpriteLoaderPlugin({
 			plainSprite: true
-		})
-	]
-}
+		}),
+		new tinyPngWebpackPlugin({
+			key:"JBFlLgpjZlhNhmDB83LmnrKL3JlYcG43",
+			ext: ['png', 'jpeg', 'jpg']
+		}),
+		new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
+     new webpack.SourceMapDevToolPlugin({
+      filename: '[file].map'
+    })
+		]
+	}
 

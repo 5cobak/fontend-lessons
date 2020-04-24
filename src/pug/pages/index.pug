@@ -16,40 +16,42 @@ include ../includes/modules/range-slider.pug
 block content
 	section
 		.container
-			.row
-				.col
-					+input("text field","","text", "Email","email","","","")
-					br
-					+dropdown-guests("dropdown","guests")
-					+input("masked text field","","text", "ДД.ММ.ГГГГ","date-field-1","Date")
-					br
-					+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","datepicker-here input-wrapper__input_date-picker date-dropdown-1 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
-					br
-					+input("Filter date dropdown","input-wrapper_w266 input-wrapper_icon-show filter-date-dropdown","text", "Дата въезда - выезда","datepicker-here date-dropdown-2 dropdown input-wrapper__input_date-picker","Date","icon-dropdown expand-more","#expand_more","true")
-					br
-					+input("text field","input-wrapper_w266 input-wrapper_icon-show subscription-text-field","text", "You email adress","email","","arrow-forward","#arrow_forward")
-					br
-					+dropdown-bedrooms("dropdown","bedrooms iqdropdown_w266")
-					br
-					+checkbox("Expandable checkbox list","checkbox-wrapper_w266 checkbox-wrapper_dropdown","checkbox-wrapper__ul_dropdown","Завтрак","Письменный стол","Кроватка","Телевизор","Шампунь","Телевизор","Шампунь")
-				.col
-					+checkbox("Expandable checkbox list","checkbox-wrapper_w222","","Можно курить","Можно с питомцами","Можно пригласить гостей (до 10 человек)")
-					
-					br
-					+radio-button("radio buttons")
-					br
-					+toggle('toggle',"Получать спецпредложения","Получать спецпредложения")
-					br
-					.title-element like button
-					+like-dislike()
-					br
-					.title-element rate button
-					+rate()
-					br 
-					+checkbox-2("Expandable checkbox list","checkbox-wrapper_w266 checkbox-wrapper_second","","Широкий коридор","Ширина коридоров в номере не менее 91 см.","Помощник для инвалидов","На 1 этаже вас встретит специалист  и проводит до номера.") 
-				.col 
-					.title-element range slider
-					+range-slider()
+			.ui-kit
+				.row
+					.col
+						+input("text field","","text", "Email","email","","","")
+						br
+						+dropdown-guests("dropdown","guests")
+						+input("masked text field","","text", "ДД.ММ.ГГГГ","date-field-1","Date")
+						br
+						+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","datepicker-here input-wrapper__input_date-picker date-dropdown-1 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
+						br
+						+input("Filter date dropdown","input-wrapper_w266 input-wrapper_icon-show filter-date-dropdown","text", "Дата въезда - выезда","datepicker-here date-dropdown-2 dropdown input-wrapper__input_date-picker","Date","icon-dropdown expand-more","#expand_more","true")
+						br
+						+input("text field","input-wrapper_w266 input-wrapper_icon-show subscription-text-field","text", "You email adress","email","","arrow-forward","#arrow_forward")
+						br
+						+dropdown-bedrooms("dropdown","bedrooms iqdropdown_w266")
+						br
+						+checkbox("Expandable checkbox list","checkbox-wrapper_w266 checkbox-wrapper_dropdown","checkbox-wrapper__ul_dropdown","Завтрак","Письменный стол","Кроватка","Телевизор","Шампунь","Телевизор","Шампунь")
+					.col
+						+checkbox("Expandable checkbox list","checkbox-wrapper_w222","","Можно курить","Можно с питомцами","Можно пригласить гостей (до 10 человек)")
+						
+						br
+						+radio-button("radio buttons")
+						br
+						+toggle('toggle',"Получать спецпредложения","Получать спецпредложения")
+						br
+						.title-element like button
+						+like-dislike()
+						br
+						.title-element rate button
+						+rate()
+						br 
+						.title-element rich checkbox button
+						+checkbox-2("Expandable checkbox list","checkbox-wrapper_w266 checkbox-wrapper_second","","Широкий коридор","Ширина коридоров в номере не менее 91 см.","Помощник для инвалидов","На 1 этаже вас встретит специалист  и проводит до номера.") 
+					.col 
+						.title-element range slider
+						+range-slider()
 
 
 
