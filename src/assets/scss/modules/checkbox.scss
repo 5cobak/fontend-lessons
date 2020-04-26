@@ -20,7 +20,7 @@
     span:first-child {
       display: block;
       @include MontBold;
-      font-size: $secondFontSize;
+      font-size: rem(14);
       color: $ds100;
     }
     span:last-child {
@@ -44,7 +44,7 @@
     text-transform: uppercase;
     @include MontBold;
     display: inline-block;
-    font-size: $smallFontSize;
+    font-size: rem(12);
   }
   &__label {
     display: inline-flex;
@@ -99,6 +99,6 @@
   &__li {
     margin-bottom: 10px;
     color: $ds50;
-    font-size: $secondFontSize;
+    font-size: rem(14);
   }
 }

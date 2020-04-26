@@ -49,12 +49,12 @@
 .datepicker-here {
    &::placeholder {
     color: transparent;
-    font-size: $secondFontSize;
+    font-size: rem(14);
     transition: $trFast;
   }
   &:focus {
     &::placeholder {
-      font-size: $secondFontSize;
+      font-size: rem(14);
     }
   }
 }
@@ -206,7 +206,7 @@
   -ms-flex: 1;
   // flex: 1;
   text-align: center;
-  font-size: .8em;
+  font-size: rem(14);
   min-height: 40px;
 }
 
@@ -301,7 +301,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   box-sizing: content-box;
-  font-size: 14px;
+  font-size: rem(14);
   color: #4a4a4a;
   max-width: 320px;
   width: 320px;
@@ -507,7 +507,7 @@
 }
 
 .datepicker--nav-title {
-  font-size: $middleFontSize;
+  font-size: rem(19);
   font-family: "OpenSans", Arial, sans-serif;
   font-weight: $bold;
   display: -webkit-flex;
@@ -690,7 +690,7 @@
 
 .datepicker--time-label {
   display: none;
-  font-size: 12px;
+  font-size: rem(12);
 }
 
 .datepicker--time-current {
@@ -703,7 +703,7 @@
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  font-size: 14px;
+  font-size: rem(14);
   text-align: center;
   margin: 0 0 0 10px;
 }
@@ -715,7 +715,7 @@
 
 .datepicker--time-current-hours, .datepicker--time-current-minutes {
   line-height: 1;
-  font-size: 19px;
+  font-size: rem(19);
   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   position: relative;
   z-index: 1;

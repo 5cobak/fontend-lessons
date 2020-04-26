@@ -1,4 +1,12 @@
-mixin item(title, descr)
-  .item
-    h2.item-title= title
-    p.item-descr= descr
+mixin advantage(href, title, description)
+	.advantage
+		svg.advantage__icon
+			use(xlink:href=href)
+		span.advantage__text
+			span.advantage__title #{title}
+			span.advantage__description #{description}
+
+mixin list(listClass,array)
+	ul.list(class=listClass)
+		each val in array
+			li.list-li= val

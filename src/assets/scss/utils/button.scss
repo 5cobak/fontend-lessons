@@ -6,7 +6,7 @@
 	color: $white;
 	text-transform: uppercase;
 	@include MontBold;
-	font-size: $smallFontSize;
+	font-size: rem(12);
 	transition: $trFast;
 	cursor: pointer;
 	&:hover {
@@ -16,7 +16,12 @@
 	&_big {
 		position: relative;
 		display: block;
-		min-width: 320px;
+		width: 100%;
+		max-width: 320px;
+		@media screen and (max-width: $phoneWidth) {
+	    max-width: 320px;
+	  }
+		width: 100%;
 		.arrow-forward {
 			position: absolute;
 			right: 12px;

@@ -1,0 +1,27 @@
+.list {
+	color: $ds75;
+	font-size: rem(14);
+	li {
+		margin-bottom: 10px;
+	}
+	&_bullet {
+		li {
+			display: block;
+			margin-left: 1.5rem;
+			max-width: 230px;
+			position: relative;
+			line-height: rem(24);
+			&:before {
+				content: "";
+				display: inline-block;
+				position: absolute;
+				left: -1.5rem;
+				top: 6px;
+				width: 10px;
+				height: 10px;
+				background-color: $ds25;
+				border-radius: 50%;
+			}
+		}
+	}
+}

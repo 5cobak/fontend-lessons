@@ -2,7 +2,7 @@
 	display: block;
 	text-transform: uppercase;
 	@include MontBold;
-	font-size: $smallFontSize;
+	font-size: rem(12);
 	margin-bottom: 3px;
 	&_margin-1 {
 

@@ -38,7 +38,7 @@
 		opacity: 0;
 	}
 	&__likes {
-		font-size: $smallFontSize;
+		font-size: rem(12);
 		color: $ds25;
 		position: absolute;
 		right: 9px;

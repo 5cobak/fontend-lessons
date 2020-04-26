@@ -1,13 +1,6 @@
 $(document).ready(function(){
 		// air-datePicker 
 
-	$('.datepicker-here.date-dropdown-1').change(function(){
-		console.log(1);
-		myDatepicker1.$datepicker.hasClass('active') ? this.parent().find('svg.expand-more').addClass('expand-more_active') 
-		: this.parent().find('svg.expand-more').removeClass('expand-more_active');
-	});
-
-
 	$('.datepicker-here.date-dropdown-1').datepicker({
 		// minDate: new Date()
 		clearButton: true,

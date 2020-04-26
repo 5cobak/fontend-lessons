@@ -2,13 +2,17 @@
 .input-wrapper {
 	display: inline-flex;
 	max-width: 320px;
-	width: 320px;
+	width: 100%;
+	max-width: 320px;
 	background-color: #fff;
-	font-size: $secondFontSize;
+	font-size: rem(14);
 	transition: $trFast;
 	position: relative;
 	// margin-bottom: 14px;
 	justify-content: space-between;
+	@media screen and (max-width: $phoneWidth) {
+    width: 100%;
+  }
 	svg {
 		display: none;
 		position: absolute;
@@ -18,13 +22,13 @@
 		&__input {
 			&::placeholder {
 				color: $ds75;
-				font-size: $secondFontSize;
+				font-size: rem(14);
 			}
 		}
 	}
 	&__input {
 		width: 100%;
-		padding: 12px 15px;
+		padding: rem(12) rem(15);
 		&_date-picker {
 			color: transparent;
 			text-shadow: 0 0 0 $ds75;
@@ -37,7 +41,7 @@
 		}
 		&::placeholder {
 			color: $ds25;
-			font-size: $secondFontSize;
+			font-size: rem(14);
 			transition: $trFast;
 			&::focus {
 				color: $ds75;

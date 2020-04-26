@@ -12,7 +12,7 @@
   margin-bottom: 10px;
 }
 .pagination-text {
-  font-size: $secondFontSize;
+  font-size: rem(14);
   color: $ds75;
 }
 ul.simple-pagination {
@@ -25,6 +25,7 @@ ul.simple-pagination {
   padding: 0 5px 5px 0;
   margin: 0;
   min-width: 241px; 
+  max-width: 320px;
   user-select: none;
   ul {
     list-style: none;
@@ -40,8 +41,8 @@ ul.simple-pagination {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 40px;
-    height: 40px;
+    width: rem(40);
+    height: rem(40);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,6 +55,7 @@ ul.simple-pagination {
     }
   }
   a {
+    font-size: rem(12);
     color: $ds50;
   }
   .active {
@@ -61,20 +63,24 @@ ul.simple-pagination {
   background: $purpleGr;
   color: $white;
   @include MontBold;
+  font-size: rem(12);
 }
-.current {
+  .current {
 
-}
-.disabled {
-  opacity: .5;
-}
+  }
+  .disabled {
+    opacity: .5;
+  }
+  span.ellipse.clickable {
+    cursor: pointer;
+  }
+  .ellipse {
+    font-size: rem(12);
+  }
+  .ellipse input {
+    width: 3em;
+  }
 }
 
-span.ellipse.clickable {
-  cursor: pointer;
-}
 
-.ellipse input {
-  width: 3em;
-}
 

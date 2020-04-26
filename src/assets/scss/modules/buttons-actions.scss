@@ -6,7 +6,7 @@
 	button {
 		text-transform: uppercase;
 		@include MontBold;
-		font-size: $smallFontSize;
+		font-size: rem(12);
 	}
 	&__clean-off {
 		color: $ds50;

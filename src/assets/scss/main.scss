@@ -7,15 +7,16 @@
 
 html {
   line-height: $mainLineHeight;
+  font-size: $mainFontSize;
   height: 100%;
   @media screen and (max-width: $desktopWidth) {
-		font-size: 16px;
+    font-size: 16px;
   }
   @media screen and (max-width: $tableWidth) {
-		font-size: 15px;
+    font-size: 15px;
   }
   @media screen and (max-width: $phoneWidth) {
-		font-size: 14px;
+    font-size: 14px;
   }
 }
 
@@ -23,7 +24,7 @@ body {
   margin: 0;
   padding: 0;
   @include Mont;
-	font-size:MontserratSize;
+  font-size: $mainFontSize;
   font-weight: $normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -34,22 +35,17 @@ body {
 h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 h1 {
-  font-size: 1.7em;
   color: $ds100;
 }
 
 h2 {
-  font-size: 19px;
   color: $ds100;
 }
 
 h3 {
-  font-size: 12px;
   color: $ds100;
   text-transform: uppercase;
 }
-
-
 
 
 a { text-decoration: none; }
@@ -71,7 +67,7 @@ input {
 
 section, .section {
   position: relative;
-  padding: 40px 0;
+  padding: rem(40) 0;
   @media screen and (max-width: $desktopWidth) {
     padding: 36px 0;
   }
@@ -106,6 +102,7 @@ section, .section {
   flex: 0 0 auto;
   position: relative;
   margin: 0 auto;
+  padding: 0 1rem;
   max-width: $desktopWidth;
   @media screen and (max-width: $smDesktopWidth) {
     max-width: $tableWidth;
@@ -119,23 +116,35 @@ section, .section {
   }
 }
 .row {
-  display: flex;
-  @media screen and (max-width: $tableWidth) {
-    flex-wrap: wrap;    
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  margin-bottom: 3rem;
+  @media (min-width: $phoneWidth) and (max-width: $tableWidth) {
+    grid-template-columns: repeat(2,1fr);    
   }
-  @media screen and (max-width: $phoneWidth) {
-    flex-direction: column;
+  @media (min-width: $smPhoneWidth) and (max-width: $phoneWidth) {
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (max-width: $smPhoneWidth) {
+    grid-template-columns: 1fr;
   }
 }
 .col {
-  flex: 1;
-  margin-left: 10px;
-  margin-right: 10px;
-  @media screen and (max-width: $tableWidth) {
 
+}
+
+.last {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 1rem;
+
+  @media (min-width: $phoneWidth) and (max-width: $tableWidth) {
+    grid-template-columns: 1fr 1fr;
   }
   @media screen and (max-width: $phoneWidth) {
-
+    grid-template-columns: 1fr;
   }
 }
 
@@ -157,4 +166,7 @@ section, .section {
 @import "modules/range";
 @import "modules/logo";
 @import "modules/simplePagination";
+@import "modules/list";
+@import "modules/advantage";
+@import "modules/review";
 

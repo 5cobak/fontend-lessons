@@ -19,12 +19,12 @@
 	width: 100%;
 	max-width: 320px;
 	color: $ds75;
-	font-size: $secondFontSize;
+	font-size: rem(14);
 	@include borderAnimation;
 	max-width: 320px;
 	width: 100%;
 	background-color: #fff;
-	font-size: $secondFontSize;
+	font-size: rem(14);
 	padding: 12px 15px;
 	transition: $trFast;
 	// margin-bottom: 14px;
@@ -210,7 +210,7 @@
 		align-items: center;
 		.counter {
 			@include MontBold;
-			font-size: $smallFontSize;
+			font-size: rem(12);
 			color: $ds100;
 			margin: 0 10px;
 			margin-bottom: 3px;
@@ -240,7 +240,7 @@
 	.iqdropdown-selection {
 		// color: #4A4A4A;
 		font-family:Montserrat;
-		font-size: $secondFontSize;
+		font-size: rem(14);
 		font-weight: 400;
 		flex: 1;
 		position: relative;
@@ -291,7 +291,7 @@
 .iqdropdown-item {
 	color: $ds100;
 	@include MontBold;
-	font-size: $smallFontSize;
+	font-size: rem(12);
 	text-transform: uppercase;
 }
 
