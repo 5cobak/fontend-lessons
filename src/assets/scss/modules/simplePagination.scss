@@ -53,10 +53,24 @@ ul.simple-pagination {
         fill: $white;
       }
     }
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
   }
   a {
     font-size: rem(12);
     color: $ds50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
   }
   .active {
   border-radius: 50%;
