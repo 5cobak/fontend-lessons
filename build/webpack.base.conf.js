@@ -8,6 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 const tinyPngWebpackPlugin = require('tinypng-webpack-plugin');
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
 
 // Main const
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#main-const
@@ -163,7 +164,9 @@ module.exports = {
 		}),
 		new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery'
+	    '$': 'jquery',
+	    jquery: 'jquery',
+	    jQuery: 'jquery'
     }),
      new webpack.SourceMapDevToolPlugin({
       filename: '[file].map'

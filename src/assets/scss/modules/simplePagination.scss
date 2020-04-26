@@ -1,0 +1,80 @@
+/**
+* CSS themes for simplePagination.js
+* Author: Flavius Matis - http://flaviusmatis.github.com/
+* URL: https://github.com/flaviusmatis/simplePagination.js
+*/
+.simple-pagination {
+  padding: 0;
+  margin-bottom: 10px;
+}
+.pagination.simple-pagination {
+  padding: 0;
+  margin-bottom: 10px;
+}
+.pagination-text {
+  font-size: $secondFontSize;
+  color: $ds75;
+}
+ul.simple-pagination {
+  list-style: none;
+}
+
+.simple-pagination {
+  display: flex;
+  overflow: hidden;
+  padding: 0 5px 5px 0;
+  margin: 0;
+  min-width: 241px; 
+  user-select: none;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    @include Mont;
+    
+  }
+
+  li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    &:last-child {
+      background: $greenGr;
+      svg {
+        fill: $white;
+      }
+    }
+  }
+  a {
+    color: $ds50;
+  }
+  .active {
+  border-radius: 50%;
+  background: $purpleGr;
+  color: $white;
+  @include MontBold;
+}
+.current {
+
+}
+.disabled {
+  opacity: .5;
+}
+}
+
+span.ellipse.clickable {
+  cursor: pointer;
+}
+
+.ellipse input {
+  width: 3em;
+}
+

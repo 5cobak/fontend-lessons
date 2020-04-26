@@ -1,0 +1,89 @@
+.button {
+	display: inline-block;
+	padding: 15px 20px;
+	background: $purpleGr;
+	border-radius: 22px;
+	color: $white;
+	text-transform: uppercase;
+	@include MontBold;
+	font-size: $smallFontSize;
+	transition: $trFast;
+	cursor: pointer;
+	&:hover {
+		background: $purpleGr-hover;
+		color: $white;
+	}
+	&_big {
+		position: relative;
+		display: block;
+		min-width: 320px;
+		.arrow-forward {
+			position: absolute;
+			right: 12px;
+			top: calc(50% - 10px);
+		}
+	}
+	&_disable {
+		opacity: .5;
+		&:hover {
+			background: $purpleGr;
+		}
+	}
+	&_white {
+		display: inline-flex;
+		align-items: center;
+		padding: 13px 18px;
+		justify-content: space-between;
+		cursor: pointer;
+		background: #fff;
+		position: relative;
+		transition: $trFast;
+		color: $purple;
+		margin: 2px;
+		&:after {
+			content: "";
+			position: absolute;
+			left: -2px;
+			display: block;
+			width: calc(100% +4px);
+			height: calc(100% +4px);
+			z-index: -1;
+			border-radius: 22px;
+			background: $purple;
+			transition: $trFast;
+		}
+	}
+	&_white-disable {
+		opacity: 1;
+		&:after {
+			opacity: .5;
+		}
+		&:hover {
+			color: $purple;
+			background: $white;
+		}
+	}
+	&_no-bg {
+		background: none;
+		padding: 0;
+		border-radius: 0;
+		color: $purple;
+	}
+	&_no-bg {
+		color: $purple;
+		&:hover {
+			color: $purple;
+			background: none;
+		}
+	}
+	&_no-bg-disable {
+		color: $ds50;
+		&:hover {
+			color: $ds50;
+			background: none;
+		}
+	}
+	&_margin-r {
+		margin-right: 19px;
+	}
+}

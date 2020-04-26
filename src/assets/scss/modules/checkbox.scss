@@ -8,8 +8,10 @@
   }
   svg.expand-more {
     display: none;
+    margin-bottom: 16.6px;
   }
   &_dropdown {
+    cursor: pointer;
     svg.expand-more {
       display: block;
     }
@@ -31,7 +33,6 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    cursor: pointer;
     &_active {
       svg {
         transform: rotate(180deg);

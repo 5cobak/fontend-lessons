@@ -2,5 +2,8 @@
 	width: 20px;
 	height: 20px;
 	align-self: center;
-	fill: $ds50;
+	fill: $purple;
+	&_white {
+		fill: $white;
+	}
 }

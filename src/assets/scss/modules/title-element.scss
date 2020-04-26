@@ -1,7 +1,9 @@
 .title-element {
+	display: block;
 	text-transform: uppercase;
 	@include MontBold;
 	font-size: $smallFontSize;
+	margin-bottom: 3px;
 	&_margin-1 {
 
 	}

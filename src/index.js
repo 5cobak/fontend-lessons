@@ -1,12 +1,12 @@
 
 // SCSS
 import './assets/scss/main.scss'
-// import '../node_modules/item-quantity-dropdown/lib/item-quantity-dropdown.min.js'
-import '../node_modules/jquery-mask-plugin/src/jquery.mask.js'
-// import '../node_modules/air-datepicker/dist/js/datepicker.min.js'
-// import '../node_modules/air-datepicker/dist/css/datepicker.min.css''
+import '../node_modules/item-quantity-dropdown/lib/item-quantity-dropdown.min.js'
+import '../node_modules/jquery-mask-plugin/dist/jquery.mask.min.js'
+import '../node_modules/air-datepicker/dist/js/datepicker.min.js'
 import '../node_modules/ion-rangeslider/js/ion.rangeSlider.js'
 import '../node_modules/ion-rangeslider/css/ion.rangeSlider.css'
+
 
 // JS
 import './js/'
@@ -31,12 +31,16 @@ import $ from 'jquery';
 global.jQuery = $;
 global.$ = $;
 
+// plugins 
+import './js/plugins/air-datepicker.js'
+import './js/plugins/jquery.simplePagination.js'
+
 import './js/date-picker.js'
-import './js/air-datepicker.js'
 import './js/iqdropdown.js'
 import './js/mask.js'
 import './js/checkbox.js'
 import './js/like-dislike.js'
 import './js/rate.js'
 import './js/range-slider.js'
+import './js/pagination.js'
 

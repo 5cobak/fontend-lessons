@@ -3,6 +3,7 @@
 @import "utils/vars";
 @import "utils/mixins";
 @import "utils/reset";
+@import "utils/button";
 
 html {
   line-height: $mainLineHeight;
@@ -154,3 +155,6 @@ section, .section {
 @import "modules/rate";
 @import "modules/ion.rangeSlider";
 @import "modules/range";
+@import "modules/logo";
+@import "modules/simplePagination";
+

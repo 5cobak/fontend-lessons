@@ -14,44 +14,76 @@ include ../includes/modules/rate.pug
 include ../includes/modules/range-slider.pug
 
 block content
-	section
+	svg.logo
+		use(xlink:href="#logo")
+	.ui-kit
 		.container
-			.ui-kit
 				.row
 					.col
-						+input("text field","","text", "Email","email","","","")
+						label(for="Email-1").title-element text field
+						+input("Email-1","","text", "Email","email","","","")
 						br
 						+dropdown-guests("dropdown","guests")
-						+input("masked text field","","text", "ДД.ММ.ГГГГ","date-field-1","Date")
 						br
+						label(for="Date-1").title-element masked text field
+						+input("Date-1","","text", "ДД.ММ.ГГГГ","date-field-1","Date")
+						br
+						span.title-element date dropdown
 						+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","datepicker-here input-wrapper__input_date-picker date-dropdown-1 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
 						br
+						span.title-element filter date dropdown
 						+input("Filter date dropdown","input-wrapper_w266 input-wrapper_icon-show filter-date-dropdown","text", "Дата въезда - выезда","datepicker-here date-dropdown-2 dropdown input-wrapper__input_date-picker","Date","icon-dropdown expand-more","#expand_more","true")
 						br
-						+input("text field","input-wrapper_w266 input-wrapper_icon-show subscription-text-field","text", "You email adress","email","","arrow-forward","#arrow_forward")
+						label(for="Email-subscribe").title-element subscription text field
+						+input("Email-subscribe","input-wrapper_w266 input-wrapper_icon-show subscription-text-field","text", "You email adress","email","","arrow-forward","#arrow_forward")
 						br
 						+dropdown-bedrooms("dropdown","bedrooms iqdropdown_w266")
 						br
 						+checkbox("Expandable checkbox list","checkbox-wrapper_w266 checkbox-wrapper_dropdown","checkbox-wrapper__ul_dropdown","Завтрак","Письменный стол","Кроватка","Телевизор","Шампунь","Телевизор","Шампунь")
 					.col
-						+checkbox("Expandable checkbox list","checkbox-wrapper_w222","","Можно курить","Можно с питомцами","Можно пригласить гостей (до 10 человек)")
+						+checkbox("Checkbox list","checkbox-wrapper_w222","","Можно курить","Можно с питомцами","Можно пригласить гостей (до 10 человек)")
 						
 						br
 						+radio-button("radio buttons")
 						br
 						+toggle('toggle',"Получать спецпредложения","Получать спецпредложения")
 						br
-						.title-element like button
+						span.title-element.title-element_margin-b like button
 						+like-dislike()
 						br
-						.title-element rate button
+						span.title-element rate button
 						+rate()
 						br 
-						.title-element rich checkbox button
+						span.title-element rich checkbox button
 						+checkbox-2("Expandable checkbox list","checkbox-wrapper_w266 checkbox-wrapper_second","","Широкий коридор","Ширина коридоров в номере не менее 91 см.","Помощник для инвалидов","На 1 этаже вас встретит специалист  и проводит до номера.") 
 					.col 
-						.title-element range slider
+						span.title-element range slider
 						+range-slider()
+						span.title-element.title-element_margin-b buttons
+						button.button.button_margin-r click me
+						button.button.button_disable click me
+						br
+						br
+						button.button.button_white.button_margin-r click me
+						button.button.button_white.button_white-disable click me
+						br
+						br
+						button.button.button_no-bg.button_margin-r click me
+						button.button.button_no-bg.button_no-bg-disable click me
+						br
+						br
+						button.button.button_big перейти к оплате
+							svg.arrow-forward.arrow-forward_white
+								use(xlink:href="#arrow_forward")
+						br
+						span.title-element.title-element_margin-b pagination
+						.pagination-container
+							.pagination 
+							span.pagination-text 1 – 12 из 100+ вариантов аренды
+
+
+						
+
 
 
 
