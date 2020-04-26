@@ -7,8 +7,8 @@
 node_modules
 
 # Dist & test
-# test
-dist
+test
+# dist
 
 # BD, logs
 *.log
