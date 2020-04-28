@@ -177,6 +177,15 @@
 		top: 46px;
 		transition: $trFast;
 		z-index: 100;
+	@media screen and (max-width: $desktopWidth) {
+    top: 44px;
+  }
+  @media screen and (max-width: $tableWidth) {
+    top: 43px;
+  }
+  @media screen and (max-width: $phoneWidth) {
+    top: 44px;
+  }
 }
 	.iqdropdown-menu-option {
 		display: flex;
