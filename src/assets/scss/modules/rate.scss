@@ -1,6 +1,7 @@
 .rate {
 	min-width: 120px;
 	margin-top: 16.6px;
+	user-select: none;
 	&__star-wrap {
 		display: inline-flex;
 		margin-right: 5px;

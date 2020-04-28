@@ -1818,8 +1818,8 @@
         '<div class="datepicker--nav-action" data-action="prev">#{prevHtml}</div>' +
         '<div class="datepicker--nav-title">#{title}</div>' +
         '<div class="datepicker--nav-action" data-action="next">#{nextHtml}</div>',
-        buttonsContainerTemplate = '<div class="datepicker--buttons"><span class="datepicker--button-apply" data-action="">Применить</span></div>',
-        button = '<span class="datepicker--button" data-action="#{action}">#{label}</span>',
+        buttonsContainerTemplate = '<div class="datepicker--buttons"><span class="datepicker--button-apply button button_no-bg" data-action="">Применить</span></div>',
+        button = '<span class="datepicker--button button button_no-bg" data-action="#{action}">#{label}</span>',
         buttonApply = '<span class="datepicker--button" data-action="#{action}">#{label}</span>',
         datepicker = $.fn.datepicker,
         dp = datepicker.Constructor;

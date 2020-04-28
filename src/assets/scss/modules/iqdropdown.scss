@@ -147,7 +147,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-family: OpenSans, Arial, sans-serif;
+		font-family: Arial, sans-serif;
 		&::after {
 			content: "+";
 			display: block;
@@ -234,14 +234,13 @@
 			width: 30px;
 			height: 30px;
 			transition: all 0.2s ease-in-out;
-			&:hover {
-				background-color: #eee;
-			}
+			// &:hover {
+			// 	background-color: #eee;
+			// }
 			border-radius: 50%;
 		}
 		button.button-decrement_opacity {
 			&:hover {
-				background-color: #fff;
 				cursor: default;
 			}
 		}
