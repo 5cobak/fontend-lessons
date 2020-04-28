@@ -176,6 +176,7 @@ $(document).ready(() => {
   // optionally can use setSelectionText function to override selectionText
   setSelectionText: (itemCount, totalItems) => {
      // line declination function
+     let babies = itemCount.item3;
      function declination(n, text_forms){
 
       n = Math.abs(n) % 100; var n1 = n % 10;
@@ -188,9 +189,14 @@ $(document).ready(() => {
 
     };
     if (totalItems == 0) return declination(totalItems, ["гость", "гостя", "гостей", "Сколько гостей"]);
+    else if(babies > 0) {
+      return (totalItems) + " " +declination(totalItems, ["гость", "гостя", "гостей", "Сколько гостей"]) + ", " +
+      babies + " " + declination(babies, ["младенец", "младенца", "младенцев", "Сколько гостей"]);
+    }
     else return totalItems + " " +declination(totalItems, ["гость", "гостя", "гостей", "Сколько гостей"]);
-
+      
   },
+  // declination(babies, ["младенец", "младенца", "младенцев", "Сколько гостей"]);
   controls: {
     counterCls: 'counter'
   },

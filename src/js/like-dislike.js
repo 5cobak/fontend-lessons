@@ -1,6 +1,6 @@
-let countLike = +$(".like-button").find('.like-button__likes').text();
-    $('.like-button').click(function(){
 
+    $('.like-button').click(function(){
+        let countLike = +$(this).find('.like-button__likes').text();
         if(!$(this).hasClass('like-button_active')) {
             $(this).find("svg.like-button__like").css('opacity','0');
             $(this).find("svg.like-button__like-purple").css('opacity','1');

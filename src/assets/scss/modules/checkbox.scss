@@ -60,9 +60,9 @@
         opacity: 1;
       }
     }
-    &:checked ~ .checkbox-wrapper__sub-wrap {
-      color: $ds75;
-    }
+    // &:checked ~ .checkbox-wrapper__sub-wrap {
+    //   color: $ds75;
+    // }
   }
   &__checkmark {
     display: inline-flex;

@@ -9,10 +9,6 @@
 	font-size: rem(12);
 	transition: $trFast;
 	cursor: pointer;
-	&:hover {
-		background: $purpleGr-hover;
-		color: $white;
-	}
 	&_big {
 		position: relative;
 		display: block;
@@ -30,9 +26,6 @@
 	}
 	&_disable {
 		opacity: .5;
-		&:hover {
-			background: $purpleGr;
-		}
 	}
 	&_white {
 		display: inline-flex;

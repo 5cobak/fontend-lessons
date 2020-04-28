@@ -48,7 +48,7 @@
             todayButton: false,
             clearButton: false,
 
-            showEvent: 'focus',
+            showEvent: 'click',
             autoClose: false,
 
             // navigation
@@ -1126,7 +1126,7 @@
         _onShowEvent: function (e) {
             if (!this.visible) {
                 this.show();
-            }
+            } else this.hide();
         },
 
         _onBlur: function () {

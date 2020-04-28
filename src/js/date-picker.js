@@ -1,5 +1,7 @@
 $(document).ready(function(){
 		// air-datePicker 
+	const myDatepicker1 = $('.datepicker-here.date-dropdown-1').datepicker().data('datepicker');
+	const myDatepicker2 = $('.datepicker-here.date-dropdown-2').datepicker().data('datepicker');
 
 	$('.datepicker-here.date-dropdown-1').datepicker({
 		// minDate: new Date()
@@ -13,12 +15,14 @@ $(document).ready(function(){
 		: myDatepicker1.$el.parent().find('svg.expand-more').removeClass('expand-more_active');
 		}
 	});
+
 	$('.datepicker-here.date-dropdown-2').datepicker({
 		// minDate: new Date()
 		clearButton: true,
 		range: true,
 		dateFormat: "d M",
 		multipleDatesSeparator: " - ",
+		showEvent: "click",
 		onShow: function(){
 			myDatepicker2.$datepicker.hasClass('active') ? myDatepicker2.$el.parent().find('svg.expand-more').addClass('expand-more_active') 
 		: myDatepicker2.$el.parent().find('svg.expand-more').removeClass('expand-more_active');
@@ -31,8 +35,7 @@ $(document).ready(function(){
 		// 	$('.datepicker-here.date-dropdown-2').parent().find('svg.expand-more').removeClass('expand-more_active')
 		// inline: true
 	});
-	const myDatepicker1 = $('.datepicker-here.date-dropdown-1').datepicker().data('datepicker');
-	const myDatepicker2 = $('.datepicker-here.date-dropdown-2').datepicker().data('datepicker');
+
 
 	$('.datepicker').find('.datepicker--button-apply').click(function(){
 		myDatepicker1.hide();
@@ -43,7 +46,9 @@ $(document).ready(function(){
 	$('.date-dropdown-2').keypress(function(){
 		return false;
 	});
+
 	// add style for range elements in 
+
 
 	$(document).click(function(){
 		if($('.-range-to-').hasClass('-selected-')) {
