@@ -1,5 +1,7 @@
 .checkbox-wrapper {
   user-select: none;
+  display: flex;
+  flex-direction: column;
   &_w266 {
     max-width: 266px;
   }
