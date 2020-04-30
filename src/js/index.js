@@ -16,6 +16,12 @@ fetch(`https://mycdn.com/img/icons.svg`).then(res => {
 	document.getElementById('svg-icons').innerHTML = data;
 });
 
+
+//clone datepikcer for cards-page
+
+// $('.date-picker-container').append(cloneDatepicker);
+
+
 // mask 
 
 

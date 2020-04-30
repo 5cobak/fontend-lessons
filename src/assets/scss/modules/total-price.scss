@@ -1,0 +1,43 @@
+.price-calculator {
+	font-size: rem(14);
+	color: $ds75;
+	&__item {
+		display: flex;
+		margin-bottom: rem(10);
+		line-height: rem(24);
+		&:last-child {
+			margin-bottom: rem(30);
+		}
+	}
+	&__first-price {
+		margin-left: auto;
+	}
+	&__info {
+		max-width: rem(225);
+	}
+	&__icon {
+		width: rem(20);
+		height: rem(20);
+		margin-left: rem(5);
+	}
+	&__discont {
+		margin-left: auto;
+	}
+	&__total-item {
+		display: flex;
+		align-items: flex-end;
+		@include MontBold;
+		font-size: rem(19);
+		line-height: rem(12);
+	}
+	&__border {
+		width: 100%;
+		max-width: rem(173);
+		border-bottom: 1px dashed $ds25;
+		height: 1px;
+		margin: 0 rem(5);
+	}
+	&__total-item {
+		display: flex;
+	}
+}

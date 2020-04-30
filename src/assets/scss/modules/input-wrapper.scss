@@ -10,6 +10,9 @@
 	position: relative;
 	// margin-bottom: 14px;
 	justify-content: space-between;
+	&_margin-b {
+		margin-bottom: rem(10);
+	}
 	@media screen and (max-width: $phoneWidth) {
     width: 100%;
   }

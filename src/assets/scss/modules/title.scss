@@ -1,0 +1,9 @@
+.title {
+	display: block;
+	width: 100%;
+	max-width: 320px;
+	font-size: rem(24);
+	@include MontBold;
+	line-height: rem(30);
+	margin-bottom: rem(20);
+}

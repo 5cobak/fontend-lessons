@@ -1,0 +1,19 @@
+.swiper-pagination {
+	text-align: right;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+	margin: 0 rem(2);
+	&:last-child {
+		margin-right: rem(15);
+	}
+}
+.swiper-pagination-bullet {
+	opacity: 1;
+	background: none;
+	border: 1px solid $white;
+
+}
+.swiper-pagination-bullet-active {
+	background: $white;
+	border: 1px solid $white;
+}

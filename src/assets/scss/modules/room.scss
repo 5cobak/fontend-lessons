@@ -1,0 +1,50 @@
+.room {
+	line-height: rem(24);
+	&_padding {
+		padding: rem(20);
+	}
+	&__num-token {
+		font-size: rem(14);
+		@include MontBold;
+	}
+	&__number {
+		// display: inline-flex;
+		// align-items: flex-start; 
+	}
+	&__num {
+		font-size: rem(24);
+		@include MontBold;
+		&_small {
+			font-size: rem(19);
+		}
+	}
+	&__type {
+		font-size: rem(12);
+		color: $purple;
+		@include MontBold;
+		text-transform: uppercase;
+	}
+	&__price {
+		color: $ds50;
+	}
+	&__price-num {
+		font-size: rem(14);
+		@include MontBold;
+	}
+	&__time {
+		font-size: rem(12);
+	}
+	&__rate {
+		padding-top: rem(8);
+		margin-top: rem(7);
+		border-top: 1px solid $ds25;
+	}
+	&__review {
+		font-size: rem(14);
+		color: $ds50;
+		@include MontBold;
+		span {
+			@include Mont;
+		}
+	}
+}

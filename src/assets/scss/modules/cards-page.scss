@@ -1,0 +1,11 @@
+.cards-page {
+	background-color: #F4F4F6;
+	width: 100%;
+	min-height: 100vh;
+	&__wrapper {
+		margin-top: rem(150px);
+	}
+	.card {
+		margin-bottom: 40px;
+	}
+}

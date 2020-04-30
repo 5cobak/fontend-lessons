@@ -1,0 +1,13 @@
+.card {
+	background-color: $white;
+	box-shadow: $bs-2;
+	border-radius: 4px;
+	&_with-padding {
+		padding: 40px 30px 30px 30px;
+		width: 100%;
+		max-width: 380px;
+	}
+	.datepicker {
+		max-height: 370px;
+	}
+}

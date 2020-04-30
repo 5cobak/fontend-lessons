@@ -1,0 +1,15 @@
+.wrap-element {
+	&_border-b {
+		border-bottom: 1px solid $ds25;
+	}
+	&_margin-b-30 {
+		margin-bottom: rem(30);
+	}
+	&_margin-b-20 {
+		margin-bottom: rem(20);
+	}
+	&_inline {
+		display: flex;
+		justify-content: space-between;
+	}
+}

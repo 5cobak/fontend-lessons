@@ -6,6 +6,9 @@ import '../node_modules/jquery-mask-plugin/dist/jquery.mask.min.js'
 import '../node_modules/air-datepicker/dist/js/datepicker.min.js'
 import '../node_modules/ion-rangeslider/js/ion.rangeSlider.js'
 import '../node_modules/ion-rangeslider/css/ion.rangeSlider.css'
+import '../node_modules/masonry-layout/dist/masonry.pkgd.min.js'
+
+import '../node_modules/swiper/css/swiper.min.css'
 
 
 // JS
@@ -43,4 +46,6 @@ import './js/like-dislike.js'
 import './js/rate.js'
 import './js/range-slider.js'
 import './js/pagination.js'
+import './js/mansory.js'
+import './js/swiper.js'
 

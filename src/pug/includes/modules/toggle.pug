@@ -1,6 +1,5 @@
-mixin toggle(title, ...subtitle)
+mixin toggle(...subtitle)
 	.toggle(class=className)
-		span.title-element #{title}
 		ul.toggle__ul
 			each sub in subtitle
 				+toggle-checkbox(sub)

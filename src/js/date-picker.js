@@ -2,6 +2,7 @@ $(document).ready(function(){
 		// air-datePicker 
 	const myDatepicker1 = $('.datepicker-here.date-dropdown-1').datepicker().data('datepicker');
 	const myDatepicker2 = $('.datepicker-here.date-dropdown-2').datepicker().data('datepicker');
+	const myDatepicker3 = $('.datepicker-here.date-dropdown-2').datepicker().data('datepicker');
 
 	$('.datepicker-here.date-dropdown-1').datepicker({
 		// minDate: new Date()
@@ -16,13 +17,21 @@ $(document).ready(function(){
 		}
 	});
 
+	$('.card.datepicker-here').datepicker({
+		// minDate: new Date()
+		inline: true,
+		clearButton: true,
+		range: true,
+	});
+
+// let cloneDatepicker = $(myDatepicker1).clone(true);
+
 	$('.datepicker-here.date-dropdown-2').datepicker({
 		// minDate: new Date()
 		clearButton: true,
 		range: true,
 		dateFormat: "d M",
 		multipleDatesSeparator: " - ",
-		showEvent: "click",
 		onShow: function(){
 			myDatepicker2.$datepicker.hasClass('active') ? myDatepicker2.$el.parent().find('svg.expand-more').addClass('expand-more_active') 
 		: myDatepicker2.$el.parent().find('svg.expand-more').removeClass('expand-more_active');

@@ -540,9 +540,9 @@
   -ms-user-select: none;
   user-select: none;
 
-  &:hover {
-    background: #f0f0f0;
-  }
+  // &:hover {
+  //   background: #f0f0f0;
+  // }
 
   &.-disabled- {
     visibility: hidden;
@@ -569,9 +569,9 @@
     margin-left: 5px;
   }
 
-  &:hover {
-    background: #f0f0f0;
-  }
+  // &:hover {
+  //   background: #f0f0f0;
+  // }
 
   &.-disabled- {
     cursor: default;

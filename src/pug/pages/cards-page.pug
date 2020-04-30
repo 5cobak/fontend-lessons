@@ -1,0 +1,173 @@
+extends ../layout/main
+
+include ../includes/modules/input.pug
+include ../includes/modules/dropdown-guests.pug
+include ../includes/modules/dropdown-bedrooms.pug
+include ../includes/modules/checkbox-item.pug
+include ../includes/modules/checkbox.pug
+include ../includes/modules/checkbox-2.pug
+include ../includes/modules/radio-button.pug
+include ../includes/modules/toggle.pug
+include ../includes/modules/toggle-checkbox.pug
+include ../includes/modules/like-dislike.pug
+include ../includes/modules/rate.pug
+include ../includes/modules/range-slider.pug
+
+block content
+	.cards-page
+		svg.logo
+				use(xlink:href="#logo")
+		.container
+			.cards-page__wrapper
+				.card.card_with-padding
+					form
+						span.title Найдем номера под ваши пожелания
+						.wrap-element.wrap-element_inline.wrap-element_margin-b-20
+							.wrap-item
+								span.title-element прибытие
+								+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","input-wrapper__input_date-picker date-dropdown-1 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
+							.wrap-item
+								span.title-element выезд
+								+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","input-wrapper__input_date-picker date-dropdown-1 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
+						.wrap-element.wrap-element_margin-b-30
+							+dropdown-guests("Гости","guests")
+						button.button.button_big Подобрать номер
+							svg.arrow-forward.arrow-forward_white
+									use(xlink:href="#arrow_forward")
+				.card.card_with-padding
+					.room.wrap-element_inline.wrap-element.wrap-element_margin-b-20
+						.room__number
+							span.room__num-token № 
+							span.room__num 888 
+							span.room__type люкс
+						.room__price
+							span.room__price-num 9 990₽ 
+							span.room__time в сутки
+					form
+						.wrap-element.wrap-element_inline.wrap-element_margin-b-20
+							.wrap-item
+								span.title-element прибытие
+								+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","input-wrapper__input_date-picker date-dropdown-1 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
+							.wrap-item
+								span.title-element выезд
+								+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","input-wrapper__input_date-picker date-dropdown-1 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
+						.wrap-element.wrap-element_margin-b-20
+							+dropdown-guests("Гости","guests")
+						.price-calculator
+							.wrap-element.wrap-element_margin-b-30
+								.price-calculator__item
+									.price-calculator__info 9 990₽ x 4 суток
+									.price-calculator__first-price 39 990₽
+								.price-calculator__item
+									.price-calculator__info Сборы за услуги: скидка 2 179₽ 
+									svg.price-calculator__icon
+										use(xlink:href="#info")
+									.price-calculator__discont 0₽
+								.price-calculator__item
+									.price-calculator__info Сборы за дополнительные услуги 
+									svg.price-calculator__icon
+										use(xlink:href="#info")
+										.price-calculator__discont 39 990₽
+							.wrap-element.wrap-element_margin-b-20
+								.price-calculator__total-item
+									.price-calculator__total Итого
+									.price-calculator__border
+									.price-calculator__price 38 081₽
+							button.button.button_big перейти к оплате
+				.card.card-wrap.datepicker-here
+				.card
+					.card-room
+						.swiper-container.swiper-room
+							.swiper-wrapper
+								.swiper-slide 
+									img(src="assets/img/room-1.jpg").card-room__img
+								.swiper-slide 
+									img(src="assets/img/room-1.jpg").card-room__img
+								.swiper-slide 
+									img(src="assets/img/room-1.jpg").card-room__img
+								.swiper-slide 
+									img(src="assets/img/room-1.jpg").card-room__img
+							.swiper-pagination
+						.room.room_padding
+							.wrap-element_inline.wrap-element
+								.room__number
+									span.room__num-token № 
+									span.room__num.room__num_small 840 
+									span.room__type люкс
+								.room__price
+									span.room__price-num 9 990₽ 
+									span.room__time в сутки
+							.room__rate.wrap-element.wrap-element_inline
+								+rate()
+								span.room__review 65 
+									span Отзывов
+				.card.card_with-padding
+					.title Регистрация аккаунта
+					form.form
+						.wrap-element.wrap-element_margin-b-20
+							+input("Name","","text", "Имя","name input-wrapper_margin-b","","","")
+							+input("SecondName","","text", "Фамилия","SecondName input-wrapper_margin-b","","","")
+							+radio-button("")
+						.wrap-element.wrap-element_margin-b-20
+							label(for="Date-1").title-element дата рождения
+							+input("Date-1","","text", "ДД.ММ.ГГГГ","date-field-1","Date")
+						.wrap-element.wrap-element_margin-b-20
+							label(for="Email-1").title-element данные для входа в сервис
+							+input("Email-1","","text", "Email","email input-wrapper_margin-b","","","")
+							+input("Password","","text", "Пароль","Password input-wrapper_margin-b","","","")
+							+toggle("Получать спецпредложения")
+						.wrap-element.wrap-element_margin-b-30
+							button.button.button_big перейти к оплате
+								svg.arrow-forward.arrow-forward_white
+									use(xlink:href="#arrow_forward")
+						.form__sing-in Уже есть аккаунт на Toxin?
+							button.button.button_white войти					
+				.card.card_with-padding
+					.title Войти
+					form.form
+						.wrap-element.wrap-element_margin-b-20
+							+input("Email-1","","text", "Email","email input-wrapper_margin-b","","","")
+							+input("Password","","text", "Пароль","Password","","","")
+						.wrap-element.wrap-element_margin-b-20
+							button.button.button_big войти
+								svg.arrow-forward.arrow-forward_white
+									use(xlink:href="#arrow_forward")
+						.form__sing-in Нет аккаунта на Toxin?
+							button.button.button_white создать
+				.card
+					.card-room
+						.swiper-container.swiper-room
+							.swiper-wrapper
+								.swiper-slide 
+									img(src="assets/img/room-1.jpg").card-room__img
+								.swiper-slide 
+									img(src="assets/img/room-1.jpg").card-room__img
+								.swiper-slide 
+									img(src="assets/img/room-1.jpg").card-room__img
+								.swiper-slide 
+									img(src="assets/img/room-1.jpg").card-room__img
+							.swiper-pagination
+						.room.room_padding
+							.wrap-element_inline.wrap-element
+								.room__number
+									span.room__num-token № 
+									span.room__num.room__num_small 840 
+									span.room__type люкс
+								.room__price
+									span.room__price-num 9 990₽ 
+									span.room__time в сутки
+							.room__rate.wrap-element.wrap-element_inline
+								+rate()
+								span.room__review 65 
+									span Отзывов
+					
+
+
+					
+							
+
+
+
+
+block script
+	script(type='text/javascript').
