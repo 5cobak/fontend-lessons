@@ -4,12 +4,16 @@
 	&__star-wrap {
 		display: inline-flex;
 		margin-right: 5px;
+		cursor: default;
 		&:last-child{
 			margin-right: 0;
 		}
 	}
 	&__rating {
 		display: none;
+		&:disabled ~ div > .rate__star {
+			cursor: default;
+		}
 	}
 	&__star {
 		display: block;

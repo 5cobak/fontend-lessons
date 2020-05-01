@@ -18,6 +18,9 @@ html {
   @media screen and (max-width: $phoneWidth) {
     font-size: 14px;
   }
+  @media screen and (max-width: $smPhoneWidth ) {
+    font-size: 13px;
+  }
 }
 
 body {
@@ -112,7 +115,8 @@ section, .section {
     
   }
   @media screen and (max-width: $phoneWidth) {
-    max-width: $smPhoneWidth;
+    max-width: 100vw;
+    padding: 0 auto;
   }
 }
 .row {

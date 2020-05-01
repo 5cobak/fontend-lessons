@@ -1,4 +1,5 @@
 .wrap-element {
+
 	&_border-b {
 		border-bottom: 1px solid $ds25;
 	}
@@ -11,5 +12,13 @@
 	&_inline {
 		display: flex;
 		justify-content: space-between;
+	}
+	&__item {
+		@media screen and (max-width: $phoneWidth) {
+			margin-right: 5px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
 	}
 }

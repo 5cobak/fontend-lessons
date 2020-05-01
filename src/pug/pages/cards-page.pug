@@ -23,10 +23,10 @@ block content
 					form
 						span.title Найдем номера под ваши пожелания
 						.wrap-element.wrap-element_inline.wrap-element_margin-b-20
-							.wrap-item
+							.wrap-element__item
 								span.title-element прибытие
 								+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","input-wrapper__input_date-picker date-dropdown-1 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
-							.wrap-item
+							.wrap-element__item
 								span.title-element выезд
 								+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","input-wrapper__input_date-picker date-dropdown-1 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
 						.wrap-element.wrap-element_margin-b-30
@@ -45,10 +45,10 @@ block content
 							span.room__time в сутки
 					form
 						.wrap-element.wrap-element_inline.wrap-element_margin-b-20
-							.wrap-item
+							.wrap-element__item
 								span.title-element прибытие
 								+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","input-wrapper__input_date-picker date-dropdown-1 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
-							.wrap-item
+							.wrap-element__item
 								span.title-element выезд
 								+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","input-wrapper__input_date-picker date-dropdown-1 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
 						.wrap-element.wrap-element_margin-b-20
@@ -98,7 +98,7 @@ block content
 									span.room__price-num 9 990₽ 
 									span.room__time в сутки
 							.room__rate.wrap-element.wrap-element_inline
-								+rate()
+								+rate("true")
 								span.room__review 65 
 									span Отзывов
 				.card.card_with-padding
@@ -157,7 +157,7 @@ block content
 									span.room__price-num 9 990₽ 
 									span.room__time в сутки
 							.room__rate.wrap-element.wrap-element_inline
-								+rate()
+								+rate("true")
 								span.room__review 65 
 									span Отзывов
 					

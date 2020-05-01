@@ -9,8 +9,9 @@ $(document).ready(function(){
 	});
 
 	$('.rate__star-wrap').click(function(){
-		
-		$(this).toggleClass('rate__star-wrap_rated');
+		if($(this).find("input").attr('disabled')) return ;
+		else {
+			$(this).toggleClass('rate__star-wrap_rated');
 		if($(this).hasClass('rate__star-wrap_rated')) {
 
 			$(this).find("input").attr('checked', 'true');
@@ -33,6 +34,8 @@ $(document).ready(function(){
 				// $(value).replaceWith(star);
 			});
 		}
+		}
+		
 		
 	});
 });
