@@ -317,8 +317,8 @@
   transition: max-height $trFast ease;
   transform: translate(0px,-12px);
 
-  @media screen and (max-width: $phoneWidth) {
-    width: 300px;
+  @media screen and (max-width: 390px) {
+    width: rem(330);
   }
   &_show {
     max-height: 450px;
