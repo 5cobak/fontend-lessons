@@ -29,6 +29,7 @@
 	}
 	&__input {
 		width: 100%;
+		display: block;
 		padding: 12px 15px;
 		&_date-picker {
 			color: transparent;
@@ -60,7 +61,7 @@
 		}
 	}
 	&_w150 {
-		max-width: 150px;
+		width: 150px;
 	}
 	&_w266 {
 		max-width: 266px;

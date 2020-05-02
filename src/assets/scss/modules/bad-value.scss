@@ -1,7 +1,11 @@
 .bad-value {
+	position: absolute;
 	display: block;
-	font-size: rem(12);
+	font-size: rem(10);
 	color: $danger-color;
 	text-transform: none;
 	font-weight: normal;
+	&_max-w {
+		max-width: 150px;
+	}
 }

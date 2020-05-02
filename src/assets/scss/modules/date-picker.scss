@@ -212,7 +212,10 @@
 
 .datepicker--cell-day {
   width: 14.28571%;
-  min-height: rem(40);
+  min-height: 40px;
+  @media screen and (max-width: $phoneWidth) {
+    min-height: 35px;
+  }
 }
 
 .datepicker--cells-months {
@@ -512,7 +515,7 @@
 
 .datepicker--nav-title {
   font-size: rem(19);
-  font-family: "OpenSans", Arial, sans-serif;
+  @include MontBold;
   font-weight: $bold;
   display: -webkit-flex;
   display: -ms-flexbox;

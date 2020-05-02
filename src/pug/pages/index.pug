@@ -28,8 +28,13 @@ block content
 						label(for="Date-1").title-element masked text field
 						+input("Date-1","","text", "ДД.ММ.ГГГГ","date-field-1","Date")
 						br
-						span.title-element date dropdown
-						+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","datepicker-here input-wrapper__input_date-picker date-dropdown-1 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
+						.wrap-element.wrap-element_inline.wrap-element_max-w-320
+							.wrap-item
+								span.title-element date dropdown
+								+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","datepicker-here input-wrapper__input_date-picker date-dropdown-start dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
+							.wrap-item
+								span.title-element date dropdown
+								+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ"," input-wrapper__input_date-picker date-dropdown-end dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
 						br
 						span.title-element filter date dropdown
 						+input("Filter date dropdown","input-wrapper_w266 input-wrapper_icon-show filter-date-dropdown","text", "Дата въезда - выезда","datepicker-here date-dropdown-2 dropdown input-wrapper__input_date-picker","Date","icon-dropdown expand-more","#expand_more","true")
