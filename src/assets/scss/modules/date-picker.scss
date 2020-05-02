@@ -306,7 +306,7 @@
   box-sizing: content-box;
   font-size: rem(14);
   color: #4a4a4a;
-  width: 320px;
+  max-width: 320px;
   position: absolute;
   left: -15000px;
   top: 333px;
@@ -318,7 +318,7 @@
   transform: translate(0px,-12px);
 
   @media screen and (max-width: 390px) {
-    width: rem(330);
+    // width: rem(330);
   }
   &_show {
     max-height: 450px;

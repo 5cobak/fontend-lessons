@@ -165,6 +165,8 @@ $('.card.datepicker-here').datepicker({
 	$('.iqdropdown-selection').blur(function(){
 		$(this).parent().find('svg').css('fill','rgba(31, 32, 65, 0.5)');
 	});
+
+	$('.datepicker').width($('.wrap-element').width());
 });
 
 
