@@ -25,12 +25,26 @@ block content
 						.wrap-element.wrap-element_inline.wrap-element_margin-b-20
 							.wrap-element__item
 								span.title-element прибытие
-								+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","datepicker-here input-wrapper__input_date-picker date-start-1 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
+								+input("input-wrapper_w150 input-wrapper_icon-show",
+								"text", 
+								"ДД.ММ.ГГГГ",
+								"datepicker-here input-wrapper__input_date-picker date-start-1 dropdown ",
+								"Date",
+								"icon-dropdown expand-more",
+								"#expand_more",
+								"false")
 							.wrap-element__item
 								span.title-element выезд
-								+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ"," input-wrapper__input_date-picker date-end-1 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
+								+input("input-wrapper_w150 input-wrapper_icon-show",
+								"text",
+								"ДД.ММ.ГГГГ",
+								" input-wrapper__input_date-picker date-end-1 dropdown ",
+								"Date","icon-dropdown expand-more",
+								"#expand_more",
+								"false")
 						.wrap-element.wrap-element_margin-b-30
-							+dropdown-guests("Гости","guests")
+							+dropdown-guests("Гости",
+							"guests")
 						button.button.button_big Подобрать номер
 							svg.arrow-forward.arrow-forward_white
 									use(xlink:href="#arrow_forward")
@@ -47,12 +61,25 @@ block content
 						.wrap-element.wrap-element_inline.wrap-element_margin-b-20
 							.wrap-element__item
 								span.title-element прибытие
-								+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","datepicker-here input-wrapper__input_date-picker date-start-2 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
+								+input("input-wrapper_w150 input-wrapper_icon-show",
+								"text",
+								"ДД.ММ.ГГГГ",
+								"datepicker-here input-wrapper__input_date-picker date-start-2 dropdown ",
+								"Date",
+								"icon-dropdown expand-more",
+								"#expand_more","true")
 							.wrap-element__item
 								span.title-element выезд
-								+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ"," input-wrapper__input_date-picker date-end-2 dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
+								+input("input-wrapper_w150 input-wrapper_icon-show",
+								"text",
+								"ДД.ММ.ГГГГ",
+								" input-wrapper__input_date-picker date-end-2 dropdown ",
+								"Date",
+								"icon-dropdown expand-more",
+								"#expand_more","true")
 						.wrap-element.wrap-element_margin-b-20
-							+dropdown-guests("Гости","guests")
+							+dropdown-guests("Гости",
+							"guests")
 						.price-calculator
 							.wrap-element.wrap-element_margin-b-30
 								.price-calculator__item
@@ -105,16 +132,48 @@ block content
 					.title Регистрация аккаунта
 					form.form
 						.wrap-element.wrap-element_margin-b-20
-							+input("Name","","text", "Имя","name input-wrapper_margin-b","","","")
-							+input("SecondName","","text", "Фамилия","SecondName input-wrapper_margin-b","","","")
+							+input("",
+							"text",
+							"Имя",
+							"name input-wrapper_margin-b",
+							"first-name",
+							"",
+							"",
+							"")
+							+input("",
+							"text",
+							"Фамилия",
+							"SecondName input-wrapper_margin-b",
+							"second-name",
+							"",
+							"",
+							"")
 							+radio-button("")
 						.wrap-element.wrap-element_margin-b-20
-							label(for="Date-1").title-element дата рождения
-							+input("Date-1","","text", "ДД.ММ.ГГГГ","date-field-1","Date")
+							span.title-element дата рождения
+							+input("",
+							"text",
+							"ДД.ММ.ГГГГ",
+							"date-field-1",
+							"Date-1")
 						.wrap-element.wrap-element_margin-b-20
-							label(for="Email-1").title-element данные для входа в сервис
-							+input("Email-1","","text", "Email","email input-wrapper_margin-b","","","")
-							+input("Password","","text", "Пароль","Password input-wrapper_margin-b","","","")
+							span.title-element данные для входа в сервис
+							+input("",
+							"text",
+							"Email",
+							"email input-wrapper_margin-b",
+							"Email-1",
+							"",
+							"",
+							"")
+							+input("",
+							"text",
+							"Пароль",
+							"Password input-wrapper_margin-b",
+							"Password",
+							"",
+							"",
+							"")
 							+toggle("Получать спецпредложения")
 						.wrap-element.wrap-element_margin-b-30
 							button.button.button_big перейти к оплате
@@ -126,8 +185,22 @@ block content
 					.title Войти
 					form.form
 						.wrap-element.wrap-element_margin-b-20
-							+input("Email-1","","text", "Email","email input-wrapper_margin-b","","","")
-							+input("Password","","text", "Пароль","Password","","","")
+							+input("",
+							"text",
+							"Email",
+							"email input-wrapper_margin-b",
+							"Email",
+							"",
+							"",
+							"")
+							+input("",
+							"text",
+							"Пароль",
+							"Password input-wrapper_margin-b",
+							"Password",
+							"",
+							"",
+							"")
 						.wrap-element.wrap-element_margin-b-20
 							button.button.button_big войти
 								svg.arrow-forward.arrow-forward_white

@@ -1,0 +1,22 @@
+{
+	"extends": ["airbnb/base"],
+	"plugins": [
+				"jquery",   // eslint-plugin-jquery
+		],
+	 "env": {
+				"jquery": true,
+				"browser": true,
+				"es6": true,
+				"node": true
+		},
+		"parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+		"rules": {
+
+		}
+}

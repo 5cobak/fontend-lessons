@@ -64,10 +64,20 @@ module.exports = {
 					use: ['pug-loader']
 				}
 				]
-			}, {
+			},
+			{	
+				enforce: 'pre',
+				test: /\.js$/,
+				loader: 'eslint-loader',
+				exclude: path.resolve(__dirname, '../node_modules/'),
+				options: {
+					cache: true,
+				}
+			},
+				{
 				test: /\.js$/,
 				loader: 'babel-loader',
-				exclude: path.resolve(__dirname, '../node_modules/'),
+				exclude: path.resolve(__dirname, '../node_modules/')
 			}, {
 				test: /\.vue$/,
 				loader: 'vue-loader',

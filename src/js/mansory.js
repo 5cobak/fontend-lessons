@@ -1,10 +1,12 @@
+import jQueryBridget from 'jquery-bridget';
 
-$(document).ready(function(){
-	var Masonry = require('masonry-layout');
+const Masonry = require('masonry-layout');
 
-	var msnry = new Masonry( '.cards-page__wrapper', {
-	  itemSelector: '.card',
-	  columnWidth: '.card',
-	  gutter: 40,
-	});
-})
+jQueryBridget('masonry', Masonry, $);
+$(document).ready(() => {
+  $('.cards-page__wrapper').masonry({
+    itemSelector: '.card',
+    columnWidth: '.card',
+    gutter: 40,
+  });
+});

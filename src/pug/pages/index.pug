@@ -20,38 +20,92 @@ block content
 		.container
 				.row
 					.col
-						label(for="Email-1").title-element text field
-						+input("Email-1","","text", "Email","email","","","")
+						span.title-element text field
+						+input("",
+						"text", 
+						"Email",
+						"email",
+						"Email-1",
+						"",
+						"")
 						br
 						+dropdown-guests("dropdown","guests")
 						br
-						label(for="Date-1").title-element masked text field
-						+input("Date-1","","text", "ДД.ММ.ГГГГ","date-field-1","Date")
+						span.title-element masked text field
+						+input("",
+						"text",
+						 "ДД.ММ.ГГГГ",
+						 "date-field-1",
+						 "Date-1")
 						br
 						.wrap-element.wrap-element_inline.wrap-element_max-w-320
 							.wrap-element__item
 								span.title-element date dropdown
-								+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ","datepicker-here input-wrapper__input_date-picker date-dropdown-start dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
+								+input("input-wrapper_w150 input-wrapper_icon-show",
+								"text",
+								 "ДД.ММ.ГГГГ",
+								 "input-wrapper__input_date-picker date-dropdown-start dropdown ",
+								 "Date",
+								 "icon-dropdown expand-more",
+								 "#expand_more",
+								 "true")
 							.wrap-element__item
 								span.title-element date dropdown
-								+input("date dropdown","input-wrapper_w150 input-wrapper_icon-show","text", "ДД.ММ.ГГГГ"," input-wrapper__input_date-picker date-dropdown-end dropdown ","Date","icon-dropdown expand-more","#expand_more","true")
+								+input("input-wrapper_w150 input-wrapper_icon-show",
+								"text",
+								 "ДД.ММ.ГГГГ",
+								 "input-wrapper__input_date-picker date-dropdown-end dropdown ",
+								 "Date",
+								 "icon-dropdown expand-more",
+								 "#expand_more","true")
 						br
 						span.title-element filter date dropdown
-						+input("Filter date dropdown","input-wrapper_w266 input-wrapper_icon-show filter-date-dropdown","text", "Дата въезда - выезда","datepicker-here date-dropdown-2 dropdown input-wrapper__input_date-picker","Date","icon-dropdown expand-more","#expand_more","true")
+						+input("input-wrapper_w266 input-wrapper_icon-show filter-date-dropdown",
+						"text",
+						 "Дата въезда - выезда",
+						 "datepicker-here date-dropdown-2 dropdown input-wrapper__input_date-picker",
+						 "Date",
+						 "icon-dropdown expand-more",
+						 "#expand_more",
+						 "true")
 						br
-						label(for="Email-subscribe").title-element subscription text field
-						+input("Email-subscribe","input-wrapper_w266 input-wrapper_icon-show subscription-text-field","text", "You email adress","email","","arrow-forward","#arrow_forward")
+						span.title-element subscription text field
+						+input("input-wrapper_w266 input-wrapper_icon-show subscription-text-field",
+						"text", 
+						"You email adress",
+						"email",
+						"subscription",
+						"arrow-forward",
+						"#arrow_forward")
 						br
-						+dropdown-bedrooms("dropdown","bedrooms iqdropdown_w266")
+						+dropdown-bedrooms("dropdown",
+						"bedrooms iqdropdown_w266")
 						br
-						+checkbox("Expandable checkbox list","checkbox-wrapper_w266 checkbox-wrapper_dropdown","checkbox-wrapper__ul_dropdown","Завтрак","Письменный стол","Кроватка","Телевизор","Шампунь","Телевизор","Шампунь")
+						+checkbox("Expandable checkbox list",
+						"checkbox-wrapper_w266 checkbox-wrapper_dropdown",
+						"checkbox-wrapper__ul_dropdown",
+						"Завтрак",
+						"Письменный стол",
+						"Кроватка",
+						"Телевизор",
+						"Шампунь",
+						"Телевизор",
+						"Шампунь")
 					.col
-						+checkbox("Checkbox list","checkbox-wrapper_w222","","Можно курить","Можно с питомцами","Можно пригласить гостей (до 10 человек)")
+						+checkbox("Checkbox list",
+						"checkbox-wrapper_w222",
+						"",
+						"Можно курить",
+						"Можно с питомцами",
+						"Можно пригласить гостей (до 10 человек)")
 						
 						br
-						+radio-button("radio buttons")
+						span.title-element.title-element_margin-b radio buttons
+						+radio-button()
 						br
-						+toggle("Получать спецпредложения","Получать спецпредложения")
+						span.title-element.title-element_margin-b toggle
+						+toggle("Получать спецпредложения",
+						"Получать спецпредложения")
 						br
 						span.title-element.title-element_margin-b like button
 						+like-dislike()
@@ -60,7 +114,13 @@ block content
 						+rate()
 						br 
 						span.title-element.title-element_margin-b rich checkbox button
-						+checkbox-2("Expandable checkbox list","checkbox-wrapper_w266 checkbox-wrapper_second","","Широкий коридор","Ширина коридоров в номере не менее 91 см.","Помощник для инвалидов","На 1 этаже вас встретит специалист  и проводит до номера.") 
+						+checkbox-2("Expandable checkbox list",
+						"checkbox-wrapper_w266 checkbox-wrapper_second",
+						"",
+						"Широкий коридор",
+						"Ширина коридоров в номере не менее 91 см.",
+						"Помощник для инвалидов",
+						"На 1 этаже вас встретит специалист  и проводит до номера.") 
 					.col 
 						span.title-element range slider
 						+range-slider()
@@ -94,8 +154,12 @@ block content
 						)
 				.last
 						.advantages
-							+advantage("#insert_emoticon","Комфорт","Шумопоглощающие стены")
-							+advantage("#location_city","Удобство","Окно в каждой из спален")
+							+advantage("#insert_emoticon",
+							"Комфорт",
+							"Шумопоглощающие стены")
+							+advantage("#location_city",
+							"Удобство",
+							"Окно в каждой из спален")
 						.review
 							.review__head
 								img(src="assets/img/murad.png" alt="hotel-owner").review__img 
@@ -117,4 +181,4 @@ block content
 
 
 block script
-	script(type='text/javascript').
+	script

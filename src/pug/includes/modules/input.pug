@@ -1,6 +1,12 @@
-mixin input(idInput,wrappClass, type, placeholder, className, name, classNameForIcon, xlink, boolean)
-		.input-container
-			span.input-wrapper(class=wrappClass)
-				input.input-wrapper__input(id=idInput type=type placeholder=placeholder class=className name=name readonly=boolean)
+mixin input(wrappClass, type, placeholder, className, name, classNameForIcon, xlink, readOnly)
+	.input-container
+		span.input-wrapper(class=wrappClass)
+			if readOnly
+				input.input-wrapper__input(type=type placeholder=placeholder class=className name=name readonly)
 				svg(class=classNameForIcon)
 					use(xlink:href=xlink)
+			else
+				input.input-wrapper__input(type=type placeholder=placeholder class=className name=name)
+				svg(class=classNameForIcon)
+					use(xlink:href=xlink)
+				
