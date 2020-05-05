@@ -1,5 +1,5 @@
-
-$('.like-button').click(() => {
+// eslint-disable-next-line
+$('.like-button').click(function() {
   let countLike = +$(this).find('.like-button__likes').text();
   if (!$(this).hasClass('like-button_active')) {
     $(this).find('svg.like-button__like').css('opacity', '0');
