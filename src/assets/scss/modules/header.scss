@@ -1,1 +1,74 @@
-// header style
+.header {
+	background-color: $white;
+	&_bs {
+		box-shadow: $bs-2;
+	}
+	&__content {
+		padding: rem(15) 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@media screen and (max-width: $smDesktopWidth) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 2fr;
+		}
+	}
+	&__buttons {
+		@media screen and (max-width: $smDesktopWidth) {
+			margin-left: auto;
+			grid-column: 2 / 3;
+			grid-row: 1 / 1;
+		}
+	}
+	&__nav {
+		margin-left: auto;
+		@media screen and (max-width: $smDesktopWidth) {
+			margin: auto;
+			display: block;
+			grid-column: 1 / 3;
+		}
+		@media screen and (max-width: $phoneWidth) {
+			display: none;
+		}
+		
+	}
+	&__nav-li {
+		display: inline-block;
+		margin-right: rem(30);
+		font-size: rem(14);
+		transition: $trFast;
+		&:first-child {
+			@include MontBold;
+		}
+	}
+	&__nav-link {
+		color: $ds50;
+		&:hover {
+			color: $ds75;
+		}
+		&_dropdown {
+			position:  relative;
+			margin-right: rem(10);
+		}
+	}
+	&__arrow-drop {
+		border: 2px solid $ds50;
+		border-top: none;
+		border-left: none;
+		width: rem(8);
+		height: rem(8);
+		position: absolute;
+		top: calc(50% - 6px);
+		transform: rotate(45deg);
+		right: -15px;
+	}
+	&__cosmin {
+		display: flex;
+		align-items: center;
+		font-size: rem(14);
+		padding: rem(7) 0  rem(7) rem(30);
+		border-left: 1px solid rgba(31, 32, 65, 0.1);
+		color: $ds50;
+	}
+}

@@ -1,0 +1,20 @@
+extends ../layout/main
+
+include ../includes/modules/input.pug
+
+block content
+	.grey-wrapper
+		svg.logo.logo_grey
+					use(xlink:href="#logo")
+		.grey-wrapper__wrapper
+			.wrap-element.wrap-element_margin-b-40
+				header.header.header_bs
+					.container
+						+header-content(true)
+			.wrap-element.wrap-element_margin-b-40
+				header.header.header_bs
+					.container
+						+header-content()
+
+block script
+	script

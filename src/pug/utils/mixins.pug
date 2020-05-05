@@ -10,3 +10,33 @@ mixin list(listClass,array)
 	ul.list(class=listClass)
 		each val in array
 			li.list-li= val
+
+mixin header-content(buttons)
+	.header__content
+		a(href="/").logo-block
+			svg.logo.logo_colored
+				use(xlink:href="#logo-colored")
+			svg.logo.logo_toxin
+				use(xlink:href="#TOXIN")
+		ul.header__nav 
+			li.header__nav-li
+				a(href="#").header__nav-link Home
+			li.header__nav-li
+				a(href="#").header__nav-link About Us
+			li.header__nav-li
+				a(href="#").header__nav-link.header__nav-link_dropdown Services
+					.header__arrow-drop
+			li.header__nav-li
+				a(href="#").header__nav-link Careers
+			li.header__nav-li
+				a(href="#").header__nav-link News
+			li.header__nav-li
+				a(href="#").header__nav-link Documentation
+		if buttons
+			.header__buttons
+				.wrap-element
+					button.button.button_white.button_header.button_margin-r Login
+					button.button.button_header register
+		else
+			span.header__cosmin Cosmin Negoita 
+

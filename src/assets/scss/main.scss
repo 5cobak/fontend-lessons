@@ -9,17 +9,14 @@ html {
   line-height: $mainLineHeight;
   font-size: $mainFontSize;
   height: 100%;
-  @media screen and (max-width: $desktopWidth) {
+  @media screen and (max-width: $tableWidth) {
     font-size: 16px;
   }
-  @media screen and (max-width: $tableWidth) {
+  @media screen and (max-width: $phoneWidth) {
     font-size: 15px;
   }
-  @media screen and (max-width: $phoneWidth) {
-    font-size: 14px;
-  }
   @media screen and (max-width: $smPhoneWidth ) {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
@@ -107,6 +104,12 @@ section, .section {
   margin: 0 auto;
   padding: 0 1rem;
   max-width: $desktopWidth;
+  @media screen and (max-width: $desktopWidth) {
+    max-width: $mdDesktopWidth;
+  }
+  @media screen and (max-width: $mdDesktopWidth) {
+    max-width: $smDesktopWidth;
+  }
   @media screen and (max-width: $smDesktopWidth) {
     max-width: $tableWidth;
   }
@@ -153,6 +156,7 @@ section, .section {
 }
 
 // Modules
+@import "modules/header";
 @import "modules/ui-kit";
 @import "modules/title-element";
 @import "modules/input-wrapper";

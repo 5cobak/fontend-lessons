@@ -9,6 +9,13 @@
 	font-size: rem(12);
 	transition: $trFast;
 	cursor: pointer;
+	line-height: 1;
+	&_margin-r {
+		margin-right: rem(30);
+	}
+	&_header {
+		padding: rem(10) rem(20);
+	}
 	&_big {
 		position: relative;
 		display: block;
@@ -37,8 +44,8 @@
 		z-index: 1;
 		transition: $trFast;
 		color: $purple;
-		margin: 2px;
 		border: none;
+		font-size: rem(12);
 		&:after {
 			content: "";
 			position: absolute;
