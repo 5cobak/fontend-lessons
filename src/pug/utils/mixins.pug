@@ -11,7 +11,7 @@ mixin list(listClass,array)
 		each val in array
 			li.list-li= val
 
-mixin header-content(buttons)
+mixin header(buttons)
 	.header__content
 		a(href="/").logo-block
 			svg.logo.logo_colored
@@ -35,8 +35,110 @@ mixin header-content(buttons)
 		if buttons
 			.header__buttons
 				.wrap-element
-					button.button.button_white.button_header.button_margin-r Login
-					button.button.button_header register
+					button.button.button_white.button_header Войти
+					button.button.button_header зарегистрироваться
+			.header__gamburger 
 		else
-			span.header__cosmin Cosmin Negoita 
+			span.header__cosmin Cosmin Negoita
+			.header__gamburger 
+		ul.header__drop-list
+			li.header__drop-li
+				a(href="#").header__drop-link Home
+			li.header__drop-li
+				a(href="#").header__drop-link About Us
+			li.header__drop-li
+				a(href="#").header__drop-link.header__nav-link_dropdown
+					span.header__dropdown-link Services 
+						.header__arrow-drop 
+			li.header__drop-li
+				a(href="#").header__drop-link Careers
+			li.header__drop-li
+				a(href="#").header__drop-link News
+			li.header__drop-li
+				a(href="#").header__drop-link Documentation
+
+mixin footer(fullContent)
+	.footer__wrap-inner
+		if fullContent
+			.container
+				.footer__full-content
+					.footer__description
+						a(href="#").logo-block
+							.wrap-element.wrap-element_margin-b-20
+								svg.logo.logo_colored
+									use(xlink:href="#logo-colored")
+								svg.logo.logo_toxin
+									use(xlink:href="#TOXIN")
+						.footer__logo-text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+					nav.footer__nav
+						+footer-list("Navigation","About Us","News","Support","Products")
+						+footer-list("About us","Who we are","Our team","Careers","Investors")
+						+footer-list("Support","Documentaion","Community","Get in Touch")
+					form.footer__form
+						.wrap-element.wrap-element_margin-b-20
+							span.title-element subscribe to our newsletter
+						.wrap-element.wrap-element_margin-b-20
+							span.footer__form-description Receive our latest news and promotions in your inbox!
+						+input("input-wrapper_w266 input-wrapper_icon-show subscription-text-field",
+									"email", 
+									"You email adress",
+									"email",
+									"subscription",
+									"arrow-forward",
+									"#arrow_forward")
+			.footer__basement 
+				.container
+					.footer__basement-inner
+						.footer__copyright Copyright © 2018 Toxin UI Kit. All rights reserved.
+						nav.nav-social
+							ul.nav-social__list
+								li.nav-social__li
+									a(href="#").nav-social__link
+										svg.nav-social__icon
+											use(xlink:href="#twitter")
+								li.nav-social__li
+									a(href="#").nav-social-link
+										svg.nav-social__icon
+											use(xlink:href="#facebook")
+								li.nav-social__li
+									a(href="#").nav-social-link
+										svg.nav-social__icon
+											use(xlink:href="#insta")
+		else 
+			.container
+				.footer__ease-content
+					.footer__description.footer__description_center
+						a(href="#").logo-block
+							.wrap-element.wrap-element_margin-b-20
+								svg.logo.logo_colored
+									use(xlink:href="#logo-colored")
+								svg.logo.logo_toxin
+									use(xlink:href="#TOXIN")
+						.footer__logo-text.footer__logo-text_width-560 Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+					nav.nav-social
+						ul.nav-social__list
+							li.nav-social__li
+								a(href="#").nav-social__link
+									svg.nav-social__icon
+										use(xlink:href="#twitter")
+							li.nav-social__li
+								a(href="#").nav-social-link
+									svg.nav-social__icon
+										use(xlink:href="#facebook")
+							li.nav-social__li
+								a(href="#").nav-social-link
+									svg.nav-social__icon
+										use(xlink:href="#insta")
+
+
+
+
+mixin footer-list(title, ...array)
+	ul.footer__nav-list
+		li.footer__nav-li #{title}
+		each val in array
+			li.footer__nav-li 
+				a(href="#").footer__nav-link=val
+			
+
 

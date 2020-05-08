@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 const path = require('path')
 const webpack = require('webpack')
 const fs = require('fs')
@@ -143,7 +143,7 @@ module.exports = {
 		},
 		resolve: {
 			alias: {
-				'~': PATHS.src,
+				'~': path.join(__dirname, '../node_modules'),
 				'vue$': 'vue/dist/vue.js',
 			}
 		},

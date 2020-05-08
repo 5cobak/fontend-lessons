@@ -10,6 +10,16 @@
 	transition: $trFast;
 	cursor: pointer;
 	line-height: 1;
+	&:hover {
+		opacity: .5;
+	}
+	&_subscribe {
+		position: absolute;
+		right: 0;
+		top: calc(50% - 10px);
+		padding: 0;
+		border-radius: none;
+	}
 	&_margin-r {
 		margin-right: rem(30);
 	}
@@ -18,7 +28,6 @@
 	}
 	&_big {
 		position: relative;
-		display: block;
 		width: 100%;
 		max-width: 320px;
 		@media screen and (max-width: $phoneWidth) {
@@ -27,25 +36,34 @@
 		width: 100%;
 		.arrow-forward {
 			position: absolute;
-			right: 12px;
+			right: 1rem;
 			top: calc(50% - 10px);
 		}
-	}
-	&_disable {
-		opacity: .5;
 	}
 	&_white {
 		display: inline-flex;
 		align-items: center;
 		justify-content: space-between;
 		cursor: pointer;
-		background: $purple;
 		position: relative;
 		z-index: 1;
 		transition: $trFast;
 		color: $purple;
 		border: none;
 		font-size: rem(12);
+		background: none;
+		&:before {
+			content: "";
+			position: absolute;
+			background: $purple;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			top: 0;
+			z-index: -1;
+			border-radius: 22px;
+			transition: $trFast;
+		}
 		&:after {
 			content: "";
 			position: absolute;
@@ -58,15 +76,21 @@
 			background: $white;
 			transition: $trFast;
 		}
-	}
-	&_white-disable {
-		opacity: .5;
+		&:hover {
+			opacity: 1;
+			&:before {
+				opacity: .5;
+			}
+		}
 	}
 	&_no-bg {
 		background: none;
 		padding: 0;
 		border-radius: 0;
 		color: $purple;
+		&:hover {
+			opacity: 1;
+		}
 	}
 	&_no-bg-grey {
 		color: $ds50;

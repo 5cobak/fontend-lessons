@@ -1,4 +1,5 @@
-$(document).ready(() => {
+// eslint-disable-next-line
+$(document).ready(function() {
   function maskForDate(input) {
     input.mask('00.00.0000');
     const $regDate = '(0?[1-9]|[12][0-9]|3[01]).(0?[1-9]|1[012]).((19|20)\\d\\d)';
@@ -11,8 +12,8 @@ $(document).ready(() => {
 
       return false;
     }
-
-    input.change(() => {
+    // eslint-disable-next-line
+    input.change(function() {
       const $dateField = $(this);
       /* запускаем нашу функцию проверки. Передаем идентификатор input и шаблон выражения */
       const date = isValid($dateField, $regDate);
@@ -40,8 +41,8 @@ $(document).ready(() => {
 
       return false;
     }
-
-    input.change(() => {
+    // eslint-disable-next-line
+    input.change(function() {
       const $dateField = $(this);
       /* запускаем нашу функцию проверки. Передаем идентификатор input и шаблон выражения */
       const date = isValid($dateField, $regDate);

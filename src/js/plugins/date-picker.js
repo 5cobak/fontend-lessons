@@ -103,9 +103,14 @@ $(document).ready(() => {
   $('.iqdropdown-selection').blur(() => {
     $(this).parent().find('svg').css('fill', 'rgba(31, 32, 65, 0.5)');
   });
-
-  $('.datepicker').width($('.wrap-element').width());
-
+  // esline-disable-next-line
+  
+  $(document).ready(() => {
+     $('.datepicker').each(function(){
+      $(this).width($('.wrap-element_inline').width());
+    });
+  });
+ 
   //mask for range input
 
   function maskForRangeDate(input1, input2) {

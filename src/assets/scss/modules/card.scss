@@ -6,6 +6,12 @@
 		padding: 40px 30px 30px 30px;
 		width: 100%;
 		max-width: 380px;
+		@media screen and (max-width: $phoneWidth) {
+			margin: 0 auto;
+		}
+	}
+	&_center {
+		margin: auto;
 	}
 	.datepicker {
 		max-height: 370px;

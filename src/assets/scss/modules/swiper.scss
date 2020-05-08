@@ -19,10 +19,11 @@
 }
 
 .swiper-button-next, .swiper-button-prev, .swiper-button-disabled {
+	height: 100%;
+	width: 30px;
+	top: 0;
 	opacity: 0;
 	transition: $trFast;
-	width: rem(10);
-	height: rem(10);
 	margin: 0;
 	&:after {
 		content: "";
@@ -33,14 +34,12 @@
 	}
 }
 .swiper-button-next {
-	right: rem(20);
 	&:after {
 		border-left: none;
 		border-bottom: none;
 	}
 }
 .swiper-button-prev {
-	left: rem(20);
 	&:after {
 		border-right: none;
 		border-top: none;

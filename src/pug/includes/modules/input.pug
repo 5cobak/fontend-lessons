@@ -7,6 +7,7 @@ mixin input(wrappClass, type, placeholder, className, name, classNameForIcon, xl
 					use(xlink:href=xlink)
 			else
 				input.input-wrapper__input(type=type placeholder=placeholder class=className name=name)
-				svg(class=classNameForIcon)
-					use(xlink:href=xlink)
+				button.button.button_subscribe
+					svg(class=classNameForIcon)
+						use(xlink:href=xlink)
 				

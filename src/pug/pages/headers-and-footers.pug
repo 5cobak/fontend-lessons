@@ -10,11 +10,17 @@ block content
 			.wrap-element.wrap-element_margin-b-40
 				header.header.header_bs
 					.container
-						+header-content(true)
+						+header(true)
 			.wrap-element.wrap-element_margin-b-40
 				header.header.header_bs
 					.container
-						+header-content()
-
+						+header(false)
+						
+			.wrap-element.wrap-element_margin-b-40
+				footer.footer.footer_bs
+					+footer(true)
+			.wrap-element.wrap-element_margin-b-40
+				footer.footer.footer_bs
+					+footer(false)
 block script
 	script
