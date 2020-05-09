@@ -10,7 +10,6 @@ include ../includes/modules/radio-button.pug
 include ../includes/modules/toggle.pug
 include ../includes/modules/toggle-checkbox.pug
 include ../includes/modules/like-dislike.pug
-include ../includes/modules/rate.pug
 include ../includes/modules/range-slider.pug
 
 block content
@@ -22,7 +21,7 @@ block content
 				.card.card_with-padding
 					form
 						span.title Найдем номера под ваши пожелания
-						.wrap-element.wrap-element_inline.wrap-element_margin-b-20
+						.wrap-element.wrap-element_inline.wrap-element_margin-b-20.wrap-element_datepicker
 							.wrap-element__item
 								span.title-element прибытие
 								+input("input-wrapper_w150 input-wrapper_icon-show",
@@ -58,7 +57,7 @@ block content
 							span.room__price-num 9 990₽ 
 							span.room__time в сутки
 					form
-						.wrap-element.wrap-element_inline.wrap-element_margin-b-20
+						.wrap-element.wrap-element_inline.wrap-element_margin-b-20.wrap-element_datepicker
 							.wrap-element__item
 								span.title-element прибытие
 								+input("input-wrapper_w150 input-wrapper_icon-show",

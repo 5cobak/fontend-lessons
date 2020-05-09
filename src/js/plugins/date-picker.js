@@ -107,7 +107,7 @@ $(document).ready(() => {
   
   $(document).ready(() => {
      $('.datepicker').each(function(){
-      $(this).width($('.wrap-element_inline').width());
+      $(this).width($('.wrap-element_datepicker').width());
     });
   });
  

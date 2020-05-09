@@ -1,11 +1,21 @@
 .section-main {
 	position: relative;
 	min-height: 830px;
-	background-image: url('../img/Landing-page-bg.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
+	&_flex {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 	@media screen and (max-width: $mdDesktopWidth) {
  		min-height: 100vh;
+  }
+  &_bg-1 {
+  	background-image: url('../img/Landing-page-bg.jpg');
+  }
+  &_bg-2 {
+  	background-image: url('../img/Landing-page-bg-2.jpg');
   }
 	&__inner-wrap {
 		padding-top: rem(70);

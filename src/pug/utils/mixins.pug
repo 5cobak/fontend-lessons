@@ -1,3 +1,26 @@
+mixin rate(boolen)
+	.rate
+		label.rate__star-wrap
+			input.rate__rating(type="radio" name="example" value="1" disabled=boolen)
+			svg.rate__star
+				use(xlink:href="#star")
+		label.rate__star-wrap
+			input.rate__rating(type="radio" name="example" value="2" disabled=boolen)
+			svg.rate__star
+				use(xlink:href="#star")
+		label.rate__star-wrap
+			input.rate__rating(type="radio" name="example" value="3" disabled=boolen)
+			svg.rate__star
+				use(xlink:href="#star")
+		label.rate__star-wrap
+			input.rate__rating(type="radio" name="example" value="4" disabled=boolen)
+			svg.rate__star
+				use(xlink:href="#star")
+		label.rate__star-wrap
+			input.rate__rating(type="radio" name="example" value="5" disabled=boolen) 
+			svg.rate__star
+				use(xlink:href="#star")
+
 mixin advantage(href, title, description)
 	.advantage
 		svg.advantage__icon
@@ -38,24 +61,43 @@ mixin header(buttons)
 					button.button.button_white.button_header Войти
 					button.button.button_header зарегистрироваться
 			.header__gamburger 
+			ul.header__drop-list
+				li.header__drop-li
+					a(href="#").header__drop-link Home
+				li.header__drop-li
+					a(href="#").header__drop-link About Us
+				li.header__drop-li
+					a(href="#").header__drop-link.header__nav-link_dropdown
+						span.header__dropdown-link Services 
+							.header__arrow-drop 
+				li.header__drop-li
+					a(href="#").header__drop-link Careers
+				li.header__drop-li
+					a(href="#").header__drop-link News
+				li.header__drop-li
+					a(href="#").header__drop-link Documentation
+				li.header__dorp-li
+					button.button.button_header зарегистрироваться
+				li.header-dorp-li
+					button.button.button_white.button_header Войти
 		else
 			span.header__cosmin Cosmin Negoita
 			.header__gamburger 
-		ul.header__drop-list
-			li.header__drop-li
-				a(href="#").header__drop-link Home
-			li.header__drop-li
-				a(href="#").header__drop-link About Us
-			li.header__drop-li
-				a(href="#").header__drop-link.header__nav-link_dropdown
-					span.header__dropdown-link Services 
-						.header__arrow-drop 
-			li.header__drop-li
-				a(href="#").header__drop-link Careers
-			li.header__drop-li
-				a(href="#").header__drop-link News
-			li.header__drop-li
-				a(href="#").header__drop-link Documentation
+			ul.header__drop-list
+				li.header__drop-li
+					a(href="#").header__drop-link Home
+				li.header__drop-li
+					a(href="#").header__drop-link About Us
+				li.header__drop-li
+					a(href="#").header__drop-link.header__nav-link_dropdown
+						span.header__dropdown-link Services 
+							.header__arrow-drop 
+				li.header__drop-li
+					a(href="#").header__drop-link Careers
+				li.header__drop-li
+					a(href="#").header__drop-link News
+				li.header__drop-li
+					a(href="#").header__drop-link Documentation
 
 mixin footer(fullContent)
 	.footer__wrap-inner
@@ -142,3 +184,31 @@ mixin footer-list(title, ...array)
 			
 
 
+mixin card-room(path)
+	.card-room.card-room_bs
+		.swiper-container.swiper-room
+			.swiper-wrapper
+				.swiper-slide 
+					img(src=path).card-room__img
+				.swiper-slide 
+					img(src=path).card-room__img
+				.swiper-slide 
+					img(src=path).card-room__img
+				.swiper-slide 
+					img(src=path).card-room__img
+			.swiper-pagination
+			.swiper-button-prev
+			.swiper-button-next
+		.room.room_padding
+			.wrap-element_inline.wrap-element
+				.room__number
+					span.room__num-token № 
+					span.room__num.room__num_small 840 
+					span.room__type люкс
+				.room__price
+					span.room__price-num 9 990₽ 
+					span.room__time в сутки
+			.room__rate.wrap-element.wrap-element_inline
+				+rate("true")
+				span.room__review 65 
+					span Отзывов

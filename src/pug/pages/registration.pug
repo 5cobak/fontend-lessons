@@ -1,0 +1,80 @@
+extends ../layout/main
+
+include ../includes/modules/input.pug
+include ../includes/modules/dropdown-guests.pug
+include ../includes/modules/dropdown-bedrooms.pug
+include ../includes/modules/checkbox-item.pug
+include ../includes/modules/checkbox.pug
+include ../includes/modules/checkbox-2.pug
+include ../includes/modules/radio-button.pug
+include ../includes/modules/toggle.pug
+include ../includes/modules/toggle-checkbox.pug
+include ../includes/modules/like-dislike.pug
+include ../includes/modules/range-slider.pug
+
+block content
+	header.header
+		.container
+			+header(true)
+	section.section.section-main.section-main_bg-2.section-main_flex
+		.conatainer
+			.card.card_with-padding
+				.title Регистрация аккаунта
+				form.form
+					.wrap-element.wrap-element_margin-b-20
+						+input("",
+						"text",
+						"Имя",
+						"name input-wrapper_margin-b",
+						"first-name",
+						"",
+						"",
+						"")
+						+input("",
+						"text",
+						"Фамилия",
+						"SecondName input-wrapper_margin-b",
+						"second-name",
+						"",
+						"",
+						"")
+						+radio-button("")
+					.wrap-element.wrap-element_margin-b-20
+						span.title-element дата рождения
+						+input("",
+						"text",
+						"ДД.ММ.ГГГГ",
+						"date-field-1",
+						"Date-1")
+					.wrap-element.wrap-element_margin-b-20
+						span.title-element данные для входа в сервис
+						+input("",
+						"text",
+						"Email",
+						"email input-wrapper_margin-b",
+						"Email-1",
+						"",
+						"",
+						"")
+						+input("",
+						"text",
+						"Пароль",
+						"Password input-wrapper_margin-b",
+						"Password",
+						"",
+						"",
+						"")
+						+toggle("Получать спецпредложения")
+					.wrap-element.wrap-element_margin-b-30
+						button.button.button_big перейти к оплате
+							svg.arrow-forward.arrow-forward_white
+								use(xlink:href="#arrow_forward")
+					.form__sing-in Уже есть аккаунт на Toxin?
+						button.button.button_white войти	
+	+footer(true)
+
+	
+
+
+block script
+	script

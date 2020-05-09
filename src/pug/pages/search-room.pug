@@ -1,0 +1,88 @@
+extends ../layout/main
+
+include ../includes/modules/input.pug
+include ../includes/modules/dropdown-guests.pug
+include ../includes/modules/dropdown-bedrooms.pug
+include ../includes/modules/checkbox-item.pug
+include ../includes/modules/checkbox.pug
+include ../includes/modules/checkbox-2.pug
+include ../includes/modules/radio-button.pug
+include ../includes/modules/toggle.pug
+include ../includes/modules/toggle-checkbox.pug
+include ../includes/modules/like-dislike.pug
+include ../includes/modules/range-slider.pug
+
+block content
+	header.header.header_bs
+		.container
+			+header(true)
+	section.section.section-search
+		.container
+			.section-search__inner-wrapp
+				form.section-search__form
+					.wrap-element.wrap-element_datepicker.wrap-element_margin-b-20
+						span.title-element Даты пребывания в отеле
+						+input("input-wrapper_w266 input-wrapper_icon-show filter-date-dropdown",
+							"text",
+							 "Дата въезда - выезда",
+							 "datepicker-here date-dropdown-2 dropdown input-wrapper__input_date-picker",
+							 "Date",
+							 "icon-dropdown expand-more",
+							 "#expand_more",
+							 "true")
+					.wrap-element.wrap-element_datepicker.wrap-element_margin-b-20
+						+dropdown-guests("гости","guests")
+					.wrap-element.wrap-element_datepicker.wrap-element_margin-b-30
+						span.title-element диапазон цен
+						+range-slider()
+						span.section-search__form-span Cтоимость за сутки пребывания в номере
+					.wrap-element.wrap-element_datepicker.wrap-element_margin-b-30
+						+checkbox("checkbox button",
+						"checkbox-wrapper_w222",
+						"",
+						"Можно курить",
+						"Можно с питомцами",
+						"Можно пригласить гостей (до 10 человек)")
+					.wrap-element.wrap-element_datepicker.wrap-element_margin-b-30
+						span.title-element.title-element_margin-b доступность
+						+checkbox-2("",
+						"checkbox-wrapper_w266 checkbox-wrapper_second",
+						"",
+						"Широкий коридор",
+						"Ширина коридоров в номере не менее 91 см.",
+						"Помощник для инвалидов",
+						"На 1 этаже вас встретит специалист  и проводит до номера.") 
+					.wrap-element.wrap-element_datepicker.wrap-element_margin-b-20
+						+dropdown-bedrooms("удобства номера",
+						"bedrooms iqdropdown_w266")
+					.wrap-element
+						+checkbox("дополнительные удобства",
+						"checkbox-wrapper_w266 checkbox-wrapper_dropdown",
+						"checkbox-wrapper__ul_dropdown",
+						"Завтрак",
+						"Письменный стол",
+						"Кроватка",
+						"Телевизор",
+						"Шампунь",
+						"Телевизор",
+						"Шампунь") 
+				.section-search__catalog
+					+card-room("assets/img/room-1.jpg")
+					+card-room("assets/img/room-1.jpg")
+					+card-room("assets/img/room-1.jpg")
+					+card-room("assets/img/room-1.jpg")
+					+card-room("assets/img/room-1.jpg")
+					+card-room("assets/img/room-1.jpg")
+					+card-room("assets/img/room-1.jpg")
+					+card-room("assets/img/room-1.jpg")
+					+card-room("assets/img/room-1.jpg")
+					+card-room("assets/img/room-1.jpg")
+					+card-room("assets/img/room-1.jpg")
+					+card-room("assets/img/room-1.jpg")
+	+footer(true)
+
+	
+
+
+block script
+	script

@@ -1,5 +1,8 @@
 .card-room {
 	max-width: 270px;
+	&_bs {
+		box-shadow: $bs-2;
+	}
 	&__img {
 		width: 100%;
 		max-height: rem(151);

@@ -1,4 +1,7 @@
 https://5cobak.github.io/frontend-lessons/dist/index.html "form-element.page"  
 https://5cobak.github.io/frontend-lessons/dist/cards-page.html "cards-page"
 https://5cobak.github.io/frontend-lessons/dist/headers-and-footers.html "cards-page"
-https://5cobak.github.io/frontend-lessons/dist/Landing-page.html "cards-page"
+https://5cobak.github.io/frontend-lessons/dist/Landing-page.html "Landing-page"
+https://5cobak.github.io/frontend-lessons/dist/registration.html "registration"
+https://5cobak.github.io/frontend-lessons/dist/sing-in.html "sing-in"
+https://5cobak.github.io/frontend-lessons/dist/search-room.html "search room"

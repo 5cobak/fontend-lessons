@@ -1,0 +1,21 @@
+.section-search {
+	padding-top: rem(30);
+	&__inner-wrapp {
+		grid-gap: rem(60);
+		display: grid;
+		grid-template-columns: auto auto;
+	}
+	&__form-span {
+		font-size: rem(12);
+		color: $ds50;
+	}
+	&__form {
+		max-width: 266px;
+	}
+	&__catalog {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+		grid-gap: rem(20);
+	}
+}

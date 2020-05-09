@@ -4,10 +4,10 @@
 	border-radius: 4px;
 	&_with-padding {
 		padding: 40px 30px 30px 30px;
-		width: 100%;
-		max-width: 380px;
+		width: 380px;
 		@media screen and (max-width: $phoneWidth) {
-			margin: 0 auto;
+			width: 100%;
+			max-width: 380px;
 		}
 	}
 	&_center {
