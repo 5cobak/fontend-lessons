@@ -43,18 +43,17 @@ mixin header(buttons)
 				use(xlink:href="#TOXIN")
 		ul.header__nav 
 			li.header__nav-li
-				a(href="#").header__nav-link Home
+				a(href="#").header__nav-link О нас
 			li.header__nav-li
-				a(href="#").header__nav-link About Us
-			li.header__nav-li
-				a(href="#").header__nav-link.header__nav-link_dropdown Services
+				a(href="#").header__nav-link.header__nav-link_dropdown  Услуги
 					.header__arrow-drop
 			li.header__nav-li
-				a(href="#").header__nav-link Careers
+				a(href="#").header__nav-link Вакансии 
 			li.header__nav-li
-				a(href="#").header__nav-link News
+				a(href="#").header__nav-link Новости
 			li.header__nav-li
-				a(href="#").header__nav-link Documentation
+				a(href="#").header__nav-link.header__nav-link_dropdown  Соглашения
+					.header__arrow-drop
 		if buttons
 			.header__buttons
 				.wrap-element
@@ -63,19 +62,19 @@ mixin header(buttons)
 			.header__gamburger 
 			ul.header__drop-list
 				li.header__drop-li
-					a(href="#").header__drop-link Home
+					a(href="#").header__drop-link О нас
 				li.header__drop-li
-					a(href="#").header__drop-link About Us
+					a(href="#").header__drop-link Услуги
 				li.header__drop-li
 					a(href="#").header__drop-link.header__nav-link_dropdown
-						span.header__dropdown-link Services 
+						span.header__dropdown-link Вакансии 
 							.header__arrow-drop 
 				li.header__drop-li
-					a(href="#").header__drop-link Careers
+					a(href="#").header__drop-link Новости
 				li.header__drop-li
-					a(href="#").header__drop-link News
-				li.header__drop-li
-					a(href="#").header__drop-link Documentation
+					a(href="#").header__drop-link.header__nav-link_dropdown
+						span.header__dropdown-link Соглашения 
+							.header__arrow-drop 
 				li.header__dorp-li
 					button.button.button_header зарегистрироваться
 				li.header-dorp-li
@@ -85,19 +84,20 @@ mixin header(buttons)
 			.header__gamburger 
 			ul.header__drop-list
 				li.header__drop-li
-					a(href="#").header__drop-link Home
+					a(href="#").header__drop-link О нас
 				li.header__drop-li
-					a(href="#").header__drop-link About Us
+					a(href="#").header__drop-link Услуги
 				li.header__drop-li
 					a(href="#").header__drop-link.header__nav-link_dropdown
-						span.header__dropdown-link Services 
+						span.header__dropdown-link Вакансии 
 							.header__arrow-drop 
 				li.header__drop-li
-					a(href="#").header__drop-link Careers
+					a(href="#").header__drop-link Новости
 				li.header__drop-li
-					a(href="#").header__drop-link News
-				li.header__drop-li
-					a(href="#").header__drop-link Documentation
+					a(href="#").header__drop-link.header__nav-link_dropdown
+						span.header__dropdown-link Соглашения 
+							.header__arrow-drop 
+
 
 mixin footer(fullContent)
 	.footer__wrap-inner
@@ -111,19 +111,19 @@ mixin footer(fullContent)
 									use(xlink:href="#logo-colored")
 								svg.logo.logo_toxin
 									use(xlink:href="#TOXIN")
-						.footer__logo-text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+						.footer__logo-text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 					nav.footer__nav
-						+footer-list("Navigation","About Us","News","Support","Products")
-						+footer-list("About us","Who we are","Our team","Careers","Investors")
-						+footer-list("Support","Documentaion","Community","Get in Touch")
+						+footer-list("навигация","О нас","Новости","Служба поддержки","Услуги")
+						+footer-list("О нас","О сервисе","Наша команда","Вакансии","Инвесторы")
+						+footer-list("Служба поддержки","Соглашения","Сообщества","Связь с нами")
 					form.footer__form
 						.wrap-element.wrap-element_margin-b-20
-							span.title-element subscribe to our newsletter
+							span.title-element Подписка
 						.wrap-element.wrap-element_margin-b-20
-							span.footer__form-description Receive our latest news and promotions in your inbox!
+							span.footer__form-description Получайте специальные предложения и новости сервиса
 						+input("input-wrapper_w266 input-wrapper_icon-show subscription-text-field",
 									"email", 
-									"You email adress",
+									"Email",
 									"email",
 									"subscription",
 									"arrow-forward",
@@ -131,7 +131,7 @@ mixin footer(fullContent)
 			.footer__basement 
 				.container
 					.footer__basement-inner
-						.footer__copyright Copyright © 2018 Toxin UI Kit. All rights reserved.
+						.footer__copyright Copyright © 2018 Toxin Отель. Все права защищены.
 						nav.nav-social
 							ul.nav-social__list
 								li.nav-social__li
@@ -156,7 +156,7 @@ mixin footer(fullContent)
 									use(xlink:href="#logo-colored")
 								svg.logo.logo_toxin
 									use(xlink:href="#TOXIN")
-						.footer__logo-text.footer__logo-text_width-560 Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+						.footer__logo-text.footer__logo-text_width-560 Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 					nav.nav-social
 						ul.nav-social__list
 							li.nav-social__li
@@ -212,3 +212,52 @@ mixin card-room(path)
 				+rate("true")
 				span.room__review 65 
 					span Отзывов
+
+mixin search-form(classForm)
+	form.section-search__form(class=classForm)
+		.wrap-element.wrap-element_datepicker.wrap-element_margin-b-20
+			span.title-element Даты пребывания в отеле
+			+input("input-wrapper_w266 input-wrapper_icon-show filter-date-dropdown",
+				"text",
+				 "Дата въезда - выезда",
+				 "datepicker-here date-dropdown-2 dropdown input-wrapper__input_date-picker",
+				 "Date",
+				 "icon-dropdown expand-more",
+				 "#expand_more",
+				 "true")
+		.wrap-element.wrap-element_datepicker.wrap-element_margin-b-20
+			+dropdown-guests("гости","guests")
+		.wrap-element.wrap-element_datepicker.wrap-element_margin-b-30
+			span.title-element диапазон цен
+			+range-slider()
+			span.section-search__form-span Cтоимость за сутки пребывания в номере
+		.wrap-element.wrap-element_datepicker.wrap-element_margin-b-30
+			+checkbox("checkbox button",
+			"checkbox-wrapper_w222",
+			"",
+			"Можно курить",
+			"Можно с питомцами",
+			"Можно пригласить гостей (до 10 человек)")
+		.wrap-element.wrap-element_datepicker.wrap-element_margin-b-30
+			span.title-element.title-element_margin-b доступность
+			+checkbox-2("",
+			"checkbox-wrapper_w266 checkbox-wrapper_second",
+			"",
+			"Широкий коридор",
+			"Ширина коридоров в номере не менее 91 см.",
+			"Помощник для инвалидов",
+			"На 1 этаже вас встретит специалист  и проводит до номера.") 
+		.wrap-element.wrap-element_datepicker.wrap-element_margin-b-20
+			+dropdown-bedrooms("удобства номера",
+			"bedrooms iqdropdown_w266")
+		.wrap-element
+			+checkbox("дополнительные удобства",
+			"checkbox-wrapper_w266 checkbox-wrapper_dropdown",
+			"checkbox-wrapper__ul_dropdown",
+			"Завтрак",
+			"Письменный стол",
+			"Кроватка",
+			"Телевизор",
+			"Шампунь",
+			"Телевизор",
+			"Шампунь") 

@@ -58,9 +58,11 @@
 		@media (min-width: $phoneWidth) and (max-width: $tableWidth) {
 			grid-row: 2 / 2;
 			grid-column: 1 / 4;
+			text-align: center;
 		}
 		@media screen and (max-width: $phoneWidth) {
 			margin: 0 auto;
+			text-align: center;
 		}
 	}
 	&__nav-li {

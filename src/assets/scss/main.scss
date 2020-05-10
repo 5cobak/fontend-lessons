@@ -113,12 +113,13 @@ section, .section {
   }
   @media screen and (max-width: $mdDesktopWidth) {
     max-width: $smDesktopWidth;
+    padding: 0 rem(10);
   }
   @media screen and (max-width: $smDesktopWidth) {
-    max-width: $tableWidth;
+    width: 100%;
   }
   @media (min-width: $phoneWidth) and (max-width: $tableWidth) {
-    max-width: $phoneWidth;
+    width: 100%;
     padding: 0 1rem;
   }
   @media (min-width: $smPhoneWidth) and (max-width: $phoneWidth) {
@@ -178,7 +179,7 @@ section, .section {
 @import "modules/ion.rangeSlider";
 @import "modules/range";
 @import "modules/logo";
-@import "modules/simplePagination";
+@import "modules/pagination";
 @import "modules/list";
 @import "modules/advantage";
 @import "modules/review";

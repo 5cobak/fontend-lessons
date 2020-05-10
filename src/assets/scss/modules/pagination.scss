@@ -9,30 +9,34 @@
 }
 .pagination.simple-pagination {
   padding: 0;
+  margin: 0 auto;
   margin-bottom: 10px;
 }
 .pagination-text {
+  max-width: 320px;
+  margin: 0 auto;
   font-size: rem(14);
   color: $ds75;
+}
+.pagination-container {
+  display: inline-block;
+  margin: 0 auto;
 }
 ul.simple-pagination {
   list-style: none;
 }
 
 .simple-pagination {
-  display: flex;
   overflow: hidden;
   padding: 0 5px 5px 0;
   margin: 0;
-  min-width: 241px; 
   max-width: 320px;
   user-select: none;
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    width: 100%;
+    display: inline-flex;
     @include Mont;
     
   }

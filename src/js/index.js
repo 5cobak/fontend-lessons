@@ -21,3 +21,8 @@ fetch('https://mycdn.com/img/icons.svg').then((res) => res.text()).then((data) =
 
 
 // mask
+$(window).scroll(() => {
+  const topY = $(document).scrollTop();
+  if (topY < 300) $('.header').css({ top: '0', position: 'relative' });
+  else $('.header').css({ top: '0', position: 'fixed' });
+});
