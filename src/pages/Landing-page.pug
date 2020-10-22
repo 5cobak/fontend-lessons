@@ -1,0 +1,58 @@
+//- extends ../layout/main
+
+//- include ../includes/modules/input.pug
+//- include ../includes/modules/dropdown-guests.pug
+//- include ../includes/modules/dropdown-bedrooms.pug
+//- include ../includes/modules/checkbox-item.pug
+//- include ../includes/modules/checkbox.pug
+//- include ../includes/modules/checkbox-2.pug
+//- include ../includes/modules/radio-button.pug
+//- include ../includes/modules/toggle.pug
+//- include ../includes/modules/toggle-checkbox.pug
+//- include ../includes/modules/like-dislike.pug
+//- include ../includes/modules/range-slider.pug
+
+//- block content
+//- 	header.header
+//- 		.container
+//- 			+header(true)
+//- 	section.section.section-main.section-main_bg-1
+//- 			.container
+//- 				.section-main__inner-wrap
+//- 					.card.card_with-padding
+//- 						form
+//- 							span.title Найдем номера под ваши пожелания
+//- 							.wrap-element.wrap-element_inline.wrap-element_margin-b-20.wrap-element_datepicker
+//- 								.wrap-element__item
+//- 									span.title-element прибытие
+//- 									+input("input-wrapper_w150 input-wrapper_icon-show",
+//- 									"text", 
+//- 									"ДД.ММ.ГГГГ",
+//- 									"datepicker-here input-wrapper__input_date-picker date-start-1 dropdown ",
+//- 									"Date",
+//- 									"icon-dropdown expand-more",
+//- 									"#expand_more",
+//- 									"false")
+//- 								.wrap-element__item
+//- 									span.title-element выезд
+//- 									+input("input-wrapper_w150 input-wrapper_icon-show",
+//- 									"text",
+//- 									"ДД.ММ.ГГГГ",
+//- 									" input-wrapper__input_date-picker date-end-1 dropdown ",
+//- 									"Date","icon-dropdown expand-more",
+//- 									"#expand_more",
+//- 									"false")
+//- 							.wrap-element.wrap-element_margin-b-30
+//- 								+dropdown-guests("Гости",
+//- 								"guests")
+//- 							button.button.button_big Подобрать номер
+//- 								svg.arrow-forward.arrow-forward_white
+//- 										use(xlink:href="#arrow_forward")
+//- 					h3.section-main__title Лучшие номера для вашего отдыха и просто вдохновления
+//- 	+footer(true)
+
+	
+
+
+//- block script
+//- 	script

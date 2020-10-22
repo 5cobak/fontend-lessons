@@ -1,0 +1,28 @@
+extends ../main
+
+include ../blocks/textField/textField.pug
+//- include ../includes/modules/dropdown-guests.pug
+//- include ../includes/modules/dropdown-bedrooms.pug
+//- include ../includes/modules/checkbox-item.pug
+//- include ../includes/modules/checkbox.pug
+//- include ../includes/modules/checkbox-2.pug
+//- include ../includes/modules/radio-button.pug
+//- include ../includes/modules/toggle.pug
+//- include ../includes/modules/toggle-checkbox.pug
+//- include ../includes/modules/like-dislike.pug
+//- include ../includes/modules/range-slider.pug
+
+block content
+	svg.logo.logo_grey
+		use(xlink:href="#logo")
+	.ui-kit
+		.container
+				.row
+					.col
+						+textField({title: 'text field', placeholder: 'Email', type: 'email'})
+						.js-dropdown-guests
+						svg
+
+
+block script
+	script

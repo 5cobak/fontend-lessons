@@ -1,49 +1,49 @@
 .rate {
-	min-width: 120px;
-	user-select: none;
-	&__star-wrap {
-		display: inline-flex;
-		margin-right: 5px;
-		cursor: default;
-		&:last-child{
-			margin-right: 0;
-		}
-	}
-	&__rating {
-		display: none;
-		&:disabled ~ div > .rate__star {
-			cursor: default;
-		}
-	}
-	&__star {
-		display: block;
-		width: 20px;
-		height: 20px;
-		cursor: pointer;
-		transition: $trFast;
-		transform: rotate(-360deg);
-		&_full {
-			// stroke: $purple;
-			animation-duration: $trFast;
-			animation-name: starAnimate;
-		}
-	}
+  min-width: 120px;
+  user-select: none;
+  &__star-wrap {
+    display: inline-flex;
+    margin-right: 5px;
+    cursor: default;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__rating {
+    display: none;
+    &:disabled ~ div > .rate__star {
+      cursor: default;
+    }
+  }
+  &__star {
+    display: block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: $trFast;
+    transform: rotate(-360deg);
+    &_full {
+      // stroke: $purple;
+      animation-duration: $trFast;
+      animation-name: starAnimate;
+    }
+  }
 }
 
 @keyframes starAnimate {
-	0% {
-		opacity: 0;
-	}
-	25% {
-		opacity: .5;
-	}
-	50% {
-		opacity: 1;
-	}
-	75% {
-		opacity: .5;
-	}
-	100 {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
