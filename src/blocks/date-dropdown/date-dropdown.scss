@@ -1,0 +1,52 @@
+.date-dropdown {
+  max-width: 320px;
+  &__title {
+    text-transform: uppercase;
+    font-size: rem(12);
+    font-family: 'MontserratBold', sans-serif;
+  }
+  &__input {
+    font-size: rem(14);
+    border: $border;
+    border-radius: rem(4);
+    padding: 12px 15px;
+    transition: $trFast;
+    max-width: 150px;
+    &:first-child {
+      margin-right: rem(20);
+    }
+    &:focus {
+      border: $borderHover;
+    }
+    &:hover {
+      border: $borderHover;
+    }
+  }
+  &__calendar {
+    max-width: 320px;
+  }
+  &__days-name {
+    max-width: rem(280);
+    display: flex;
+    justify-content: space-between;
+  }
+  &__day-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: rem(40);
+    min-height: rem(40);
+  }
+  &__days {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: rem(280);
+  }
+  &__day {
+    min-width: rem(40);
+    min-height: rem(40);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

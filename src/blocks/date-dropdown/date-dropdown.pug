@@ -1,0 +1,7 @@
+mixin date-dropdown({className})
+  .date-dropdown
+    label
+      span.date-dropdown__title date dropdown
+      .date-dropdown__inputs
+        input(type='text' placeholder="ДД.ММ.ГГГГ" class=className readonly).date-dropdown__input#js-date-dropdown
+        input(type='text' placeholder="ДД.ММ.ГГГГ" class=className readonly).date-dropdown__input

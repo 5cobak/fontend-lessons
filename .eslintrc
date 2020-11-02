@@ -3,18 +3,10 @@
     "browser": true,
     "es6": true,
     "node": true,
-    "jquery": true,
-    "jest": true
+    "jquery": true
   },
   "root": true,
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint/eslint-plugin"],
-  "extends": [
-    "airbnb/base",
-    "plugin:fsd/all",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
+  "extends": ["airbnb/base", "plugin:fsd/all"],
   "rules": {
     "linebreak-style": 0,
     "no-tabs": "off",
@@ -33,7 +25,12 @@
     "object-curly-newline": "off",
     "operator-linebreak": 0,
     "no-shadow": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "no-useless-return": "off",
+    "comma-dangle": "off",
+    "consistent-return": "off",
+    "no-else-return": "off",
+    "no-param-reassign": "off"
   },
   "parserOptions": {
     "ecmaVersion": 11,

@@ -1,7 +1,9 @@
 extends ../main
 
 include ../blocks/textField/textField.pug
-//- include ../includes/modules/dropdown-guests.pug
+include ../blocks/masked-textfield/masked-textfield.pug
+include ../blocks/dropdown-choose/dropdown-choose.pug
+include ../blocks/date-dropdown/date-dropdown.pug
 //- include ../includes/modules/dropdown-bedrooms.pug
 //- include ../includes/modules/checkbox-item.pug
 //- include ../includes/modules/checkbox.pug
@@ -10,7 +12,7 @@ include ../blocks/textField/textField.pug
 //- include ../includes/modules/toggle.pug
 //- include ../includes/modules/toggle-checkbox.pug
 //- include ../includes/modules/like-dislike.pug
-//- include ../includes/modules/range-slider.pug
+//- include ../includes/modules/range-slider.pug1
 
 block content
 	svg.logo.logo_grey
@@ -19,10 +21,26 @@ block content
 		.container
 				.row
 					.col
-						+textField({title: 'text field', placeholder: 'Email', type: 'email'})
-						.js-dropdown-guests
-						svg
-
+						+textField(
+							{
+								title: 'text field', 
+								placeholder: 'Email', 
+								type: 'email', 
+								pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$',
+								required: true
+							}
+						)
+						+masked-textfield(
+							{
+								title: 'masked text field',
+								placeholder: 'ДД.ММ.ГГГГ', 
+								type: 'text', 
+								className: 'js-date-masked'
+							 }
+						)
+						+dropdown-choose({className: 'js-dropdown-guests'})
+						+dropdown-choose({className: 'js-dropdown-beds'})
+						+date-dropdown({className: 'js-date-masked'})
 
 block script
 	script

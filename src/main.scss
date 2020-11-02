@@ -160,10 +160,17 @@ section,
   }
 }
 
+.validate-error {
+  font-size: rem(12);
+  color: $danger-color;
+}
+
 // Modules
 @import './blocks/textField/textField';
+@import './blocks/masked-textfield/masked-textfield';
 @import './blocks/dropdown-choose/dropdown-choose';
-// @import 'modules/header';
+@import './blocks/date-dropdown/date-dropdown';
+@import './blocks/datepicker/datepicker.scss';
 // @import 'modules/ui-kit';
 // @import 'modules/title-element';
 // @import 'modules/input-wrapper';

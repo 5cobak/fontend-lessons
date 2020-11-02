@@ -1,6 +1,12 @@
-mixin textField({title, type, placeholder})
-	label.text-field
-		span.text-field__title #{title}
-		input.text-field__input(type=type placeholder=placeholder name=type)
+mixin textField({title, type, placeholder,pattern, required})
+	label.textfield
+		span.textfield__title #{title}
+		input.textfield__input(
+			type=type 
+			name=type
+			placeholder=placeholder
+			pattern=pattern 
+			required=required
+		)
 
 

@@ -3,8 +3,19 @@
   border-radius: rem(4);
   font-size: rem(14);
   user-select: none;
+  transition: $trFast;
+
+  &:hover {
+    border: $borderHover;
+  }
   &_active {
     border: $borderHover;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  }
+  &__title {
+    text-transform: uppercase;
+    font-family: 'MontserratBold', Arial, sans-serif;
+    font-size: rem(12);
   }
   &__upper-field {
     padding: 12px 15px;
@@ -45,19 +56,21 @@
     padding: 0 7px 7px 15px;
     display: flex;
     justify-content: space-between;
-
-    &:last-child {
-      padding-bottom: 15px;
-    }
+    align-items: center;
     &:first-child {
-      padding-top: 15px;
+      padding-top: 6px;
     }
+  }
+  &__item-count {
+    font-family: 'MontserratBold', Arial, sans-serif;
+    font-size: rem(12);
   }
   &__item-text {
     font-family: 'MontserratBold', Arial, sans-serif;
     text-transform: uppercase;
     font-size: rem(12);
     max-width: 50%;
+    line-height: 15px;
   }
   &__count-block {
     display: flex;
@@ -80,5 +93,24 @@
       border: 1px solid $ds25;
       cursor: initial;
     }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 7px 15px 7px;
+    text-transform: uppercase;
+    font-family: 'MontserratBold', Arial, sans-serif;
+    font-size: rem(12);
+  }
+  &__btn-clear {
+    cursor: pointer;
+    color: $ds50;
+    &_hidden {
+      visibility: hidden;
+    }
+  }
+  &__btn-access {
+    cursor: pointer;
+    color: $purple;
   }
 }

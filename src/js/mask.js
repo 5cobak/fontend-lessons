@@ -1,70 +1,53 @@
-// eslint-disable-next-line
-$(document).ready(function() {
-  function maskForDate(input) {
-    input.mask('00.00.0000');
-    const $regDate = '(0?[1-9]|[12][0-9]|3[01]).(0?[1-9]|1[012]).((19|20)\\d\\d)';
-    function isValid(element, pat) {
-      const value = input.val();
-      const pattern = new RegExp(`^${pat}`, 'i');
-      if (pattern.test(value) && value !== '') {
-        return true;
-      }
-
-      return false;
+$(document).ready(() => {
+  function validateDate(value, element) {
+    function appendError(message) {
+      const err = `
+        <div class="validate-error">${message}</div>
+      `;
+      element.parentElement.insertAdjacentHTML('beforeend', err);
     }
-    // eslint-disable-next-line
-    input.change(function() {
-      const $dateField = $(this);
-      /* запускаем нашу функцию проверки. Передаем идентификатор input и шаблон выражения */
-      const date = isValid($dateField, $regDate);
-      if (date) {
-        $dateField.parent().parent().find('.bad-value').remove();
-        $dateField.parent().parent().find('.br').remove();
-      } else {
-        $dateField.parent().parent().find('.bad-value').remove();
-        $dateField.parent().parent().find('.br').remove();
-        $dateField.parent().parent().append('<br class="br"><span class="bad-value">Заполните, пожалуйста, корректно.<span>');
-        if ($dateField.hasClass('date-dropdown-2')) $dateField.val();
-        else $dateField.val('');
-      }
-    });
-  }
-
-  function maskForEmail(input) {
-    const $regDate = '@.';
-    function isValid(element, pat) {
-      const value = input.val();
-      const pattern = new RegExp(pat);
-      if (pattern.test(value) && value !== '') {
-        return true;
-      }
-
-      return false;
+    function deleteError() {
+      const err = element.parentElement.querySelector('.validate-error');
+      if (err) err.remove();
     }
-    // eslint-disable-next-line
-    input.change(function() {
-      const $dateField = $(this);
-      /* запускаем нашу функцию проверки. Передаем идентификатор input и шаблон выражения */
-      const date = isValid($dateField, $regDate);
-      if (date) {
-        $dateField.parent().parent().find('.bad-value').remove();
-        $dateField.parent().parent().find('.br').remove();
-      } else {
-        $dateField.parent().parent().find('.bad-value').remove();
-        $dateField.parent().parent().find('.br').remove();
-        $dateField.parent().parent().append('<br class="br"><span class="bad-value">Заполните, пожалуйста, корректно.<span>');
-        $dateField.val('');
-      }
-    });
-  }
-  // const start1 = $('.datepicker-here.date-start-1');
-  // const end1 = $('.date-end-1');
-  // const start2 = $('.datepicker-here.date-start-2');
-  // const end2 = $('.date-end-2');
+    const arrD = value.split('.');
 
-  maskForDate($('.date-field-1'));
-  maskForDate($('.datepicker-here.date-dropdown-2'));
-  // maskForRangeDate(start1, end1);
-  // maskForRangeDate(start2, end2);
-  maskForEmail($('.email'));
+    arrD[1] -= 1;
+
+    const date = new Date(arrD[2], arrD[1], arrD[0]);
+
+    if (date.getFullYear() !== +arrD[2]) {
+      deleteError();
+      appendError('Введена некорректная дата!');
+      element.value = 'ДД.ММ.ГГГГ';
+      element.focus();
+      return false;
+    } else if (date.getMonth() !== +arrD[1]) {
+      deleteError();
+      appendError('Введена некорректная дата!');
+      element.value = 'ДД.ММ.ГГГГ';
+      element.focus();
+      return false;
+    } else if (date.getDate() !== +arrD[0]) {
+      deleteError();
+      appendError('Введена некорректная дата!');
+      element.value = 'ДД.ММ.ГГГГ';
+      element.focus();
+      return false;
+    } else {
+      deleteError();
+      return true;
+    }
+  }
+  const elements = document.querySelectorAll('.js-date-masked');
+
+  elements.forEach((item) => {
+    $(item).inputmask('99.99.9999', {
+      placeholder: 'ДД.ММ.ГГГГ',
+      oncomplete: () => {
+        const val = $('.js-date-masked').val();
+        validateDate(val, item);
+      },
+    });
+  });
 });
