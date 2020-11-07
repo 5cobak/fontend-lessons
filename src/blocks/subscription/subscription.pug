@@ -1,0 +1,12 @@
+mixin subscription({title,placeholder, required})
+	label.subscription__title
+		span.subscription__title #{title}
+		input.subscription__input(
+			type='email' 
+			name='email'
+			placeholder=placeholder
+			pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' 
+			required=required
+		)
+
+

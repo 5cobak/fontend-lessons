@@ -1,0 +1,43 @@
+.subscription {
+  display: block;
+  max-width: 320px;
+  &:hover & {
+    &__input {
+      border: $borderHover;
+      &::placeholder {
+        color: $ds75;
+      }
+    }
+  }
+  &__title {
+    text-transform: uppercase;
+    font-family: 'MontserratBold', Arial, sans-serif;
+    font-size: rem(12);
+  }
+  &__input {
+    display: block;
+    min-width: 266px;
+    border: $border;
+    border-radius: rem(4);
+    transition: $trFast;
+    padding: 12px 15px;
+    font-size: rem(14);
+    color: $ds75;
+    font-family: 'MontserratMedium', sans-serif;
+    background-image: url('./assets/img/arrow_forward.jpg');
+    background-repeat: no-repeat;
+    background-position-x: 96%;
+    background-position-y: 50%;
+    &::placeholder {
+      font-size: rem(14);
+      color: $ds25;
+      transition: $trFast;
+    }
+    &:focus {
+      border: $borderHover;
+      &::placeholder {
+        color: $ds75;
+      }
+    }
+  }
+}

@@ -4,8 +4,11 @@ include ../blocks/textField/textField.pug
 include ../blocks/masked-textfield/masked-textfield.pug
 include ../blocks/dropdown-choose/dropdown-choose.pug
 include ../blocks/date-dropdown/date-dropdown.pug
-//- include ../includes/modules/dropdown-bedrooms.pug
-//- include ../includes/modules/checkbox-item.pug
+include ../blocks/filter-date/filter-date.pug
+include ../blocks/subscription/subscription.pug
+include ../blocks/expand-list/expand-list.pug
+include ../blocks/checkbox-buttons/checkbox-buttons.pug
+include ../blocks/radio-buttons/radio-buttons.pug
 //- include ../includes/modules/checkbox.pug
 //- include ../includes/modules/checkbox-2.pug
 //- include ../includes/modules/radio-button.pug
@@ -26,7 +29,6 @@ block content
 								title: 'text field', 
 								placeholder: 'Email', 
 								type: 'email', 
-								pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$',
 								required: true
 							}
 						)
@@ -38,9 +40,15 @@ block content
 								className: 'js-date-masked'
 							 }
 						)
-						+dropdown-choose({className: 'js-dropdown-guests'})
-						+dropdown-choose({className: 'js-dropdown-beds'})
-						+date-dropdown({className: 'js-date-masked'})
+						+dropdown-choose({className: 'js-dropdown-guests', title:'dropdown'})
+						+dropdown-choose({className: 'js-dropdown-beds', title: 'dropdown'})
+						+date-dropdown({className: 'js-date-masked', title: 'date dropdown'})
+						+filter-date({className: 'js-filter-date', title: 'filter date dropdown'})
+						+subscription({title: 'subscription', placeholder: 'Email'})
+						+expand-list({title: 'expandable checkbox list', className: 'js-expand-list'})
 
+					.col
+						+checkbox-buttons({title: 'checkbox buttons'})
+						+radio-buttons({title: 'radio buttons'})
 block script
 	script

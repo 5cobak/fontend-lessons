@@ -1,0 +1,74 @@
+.expand-list {
+  display: block;
+  max-width: 266px;
+  user-select: none;
+  cursor: pointer;
+
+  &__title {
+    display: block;
+    text-transform: uppercase;
+    font-family: 'MontserratBold', Arial, sans-serif;
+    font-size: rem(12);
+    position: relative;
+    &:before {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      border: 2px solid $ds50;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg);
+      position: absolute;
+      right: 6%;
+      top: calc(50% - 5px);
+      transition: $trFast;
+    }
+    &_active {
+      &:before {
+        transform: rotate((225deg));
+      }
+    }
+  }
+  &__dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: $trFast;
+    &_active {
+      margin-top: rem(18);
+      max-height: 1000px;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      line-height: 1;
+    }
+  }
+  &__item {
+    margin-bottom: rem(10);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__custom-checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: $border;
+    border-radius: 4px;
+    margin-right: rem(10);
+  }
+  &__text {
+    font-size: rem(14);
+    color: $ds50;
+  }
+  input {
+    display: none;
+  }
+  input:checked + span {
+    border-color: $purple;
+    background-image: url('./assets/img/Vector.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+}

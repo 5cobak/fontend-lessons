@@ -10,6 +10,8 @@ import '~/inputmask/dist/jquery.inputmask.min';
 // import '~/swiper/css/swiper.min.css';
 import './js/mask';
 import './blocks/date-dropdown/date-dropdown-js/date-dropdown';
+import './blocks/filter-date/filter-date';
+import './blocks/expand-list/expand-list';
 import './js';
 // import './js/plugins/jquery.simplePagination';
 // import './js/plugins/iqdropdown' ;
