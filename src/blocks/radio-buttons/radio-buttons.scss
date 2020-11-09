@@ -1,20 +1,31 @@
 .radio-buttons {
+  $self: &;
   user-select: none;
-  display: inline-flex;
   align-items: center;
   position: relative;
   cursor: pointer;
   font-size: rem(14);
-  color: $ds50;
-  margin-right: 20px;
   &:last-child {
     margin-right: 0;
+  }
+  label {
+    display: inline-flex;
+    margin-right: rem(20);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__title {
+    text-transform: uppercase;
+    font-family: 'MontserratBold', Arial, sans-serif;
+    font-size: rem(12);
+    color: $ds100;
   }
   input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-    &:checked ~ .radio__checkmark {
+    &:checked ~ #{$self}__checkmark {
       border-color: $purple;
       &:after {
         opacity: 1;
@@ -23,7 +34,7 @@
     &:checked ~ label {
       color: $ds100;
     }
-    &:checked ~ .radio__text {
+    &:checked ~ #{$self}__text {
       color: $ds75;
     }
   }

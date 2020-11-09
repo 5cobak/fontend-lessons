@@ -1,0 +1,74 @@
+.like-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 38px;
+  min-height: 18px;
+  @include Mont;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  transition: $trFast;
+  user-select: none;
+  &:after {
+    content: '';
+    position: absolute;
+    left: -1px;
+    display: block;
+    min-width: 40px;
+    min-height: 20px;
+    z-index: -1;
+    border-radius: 12px;
+    background-color: $ds25;
+    transition: $trFast;
+  }
+  &__like {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 4px;
+    transition: $trFast;
+  }
+  &__like-purple {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 4px;
+    transition: $trFast;
+    opacity: 0;
+  }
+  &__likes {
+    font-size: rem(12);
+    color: $ds25;
+    position: absolute;
+    right: 9px;
+    transition: $trFast;
+  }
+  &_active {
+    svg {
+      transform: rotateZ(-360deg);
+      animation-duration: $trFast;
+      animation-name: changeSize;
+    }
+    span {
+      color: $purple;
+    }
+    &:after {
+      background: $purpleGr;
+      transition: $trFast;
+    }
+  }
+}
+
+@keyframes changeSize {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

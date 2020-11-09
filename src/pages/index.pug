@@ -9,6 +9,8 @@ include ../blocks/subscription/subscription.pug
 include ../blocks/expand-list/expand-list.pug
 include ../blocks/checkbox-buttons/checkbox-buttons.pug
 include ../blocks/radio-buttons/radio-buttons.pug
+include ../blocks/toggle-buttons/toggle-buttons.pug
+include ../blocks/like-button/like-button.pug
 //- include ../includes/modules/checkbox.pug
 //- include ../includes/modules/checkbox-2.pug
 //- include ../includes/modules/radio-button.pug
@@ -50,5 +52,8 @@ block content
 					.col
 						+checkbox-buttons({title: 'checkbox buttons'})
 						+radio-buttons({title: 'radio buttons'})
+						+toggle-buttons({title: 'toggle buttons'})
+						.block-title
+							+like-button()
 block script
 	script

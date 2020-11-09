@@ -1,12 +1,15 @@
+/* eslint-disable implicit-arrow-linebreak */
 const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const fs = require('fs');
+const SVGSpriteLoader = require('svg-sprite-loader');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -115,12 +118,9 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
     }),
-    // new CopyWebpackPlugin([
-    // 	{
-    // 		from: 'src/assets/**/*',
-    // 		to: './assets',
-    // 	},
-    // ]),
+    // new CopyWebpackPlugin({
+    //   patterns: [{ from: `${PATHS.src}/static`, to: '' }],
+    // }),
     new MiniCssExtractPlugin({
       filename: filename('css'),
     }),
@@ -131,6 +131,9 @@ module.exports = {
           filename: `./${page.replace(/\.pug/, '.html')}`,
         })
     ),
+    new SpriteLoaderPlugin({
+      plainSprite: true,
+    }),
   ],
   module: {
     rules: [
@@ -143,12 +146,20 @@ module.exports = {
         use: cssLoaders('sass-loader'),
       },
       {
-        test: /\.(png|jpg|svg|gif)$/,
-        use: ['file-loader'],
+        test: /\.(png|jpg|gif)$/,
+        loader: 'file-loader',
+        exclude: `${PATHS.src}/assets/img/icons/`,
+        options: {
+          outputPath: 'assets/img',
+        },
       },
       {
         test: /\.(ttf|eot|svg|woff|woff2|eot)$/,
-        use: ['file-loader'],
+        loader: 'file-loader',
+        exclude: `${PATHS.src}/assets/img/icons/`,
+        options: {
+          outputPath: 'assets/fonts',
+        },
       },
       {
         test: /\.js$/,
@@ -162,10 +173,11 @@ module.exports = {
       {
         test: /\.svg$/,
         loader: 'svg-sprite-loader',
+        include: [path.resolve(__dirname, `${PATHS.src}/assets/img/icons/`)],
         options: {
-          extract: false,
-          spriteFilename: './assets/img/icons/icons.svg',
-          runtimeCompat: true,
+          extract: true,
+          spriteFilename: 'icons.svg',
+          outputPath: './assets/img/icons/',
         },
       },
     ],
