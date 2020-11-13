@@ -1,0 +1,14 @@
+.ui-kit {
+  &__first-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  &__last-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1rem;
+    margin-bottom: 3rem;
+  }
+}

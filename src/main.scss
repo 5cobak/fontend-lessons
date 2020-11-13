@@ -131,10 +131,6 @@ section,
   }
 }
 .row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1rem;
-  margin-bottom: 3rem;
   @media (min-width: $phoneWidth) and (max-width: $tableWidth) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -166,49 +162,24 @@ section,
 }
 
 // Modules
+@import './blocks/ui-kit/ui-kit';
+@import './blocks/block-title/block-title';
 @import './blocks/textField/textField';
 @import './blocks/masked-textfield/masked-textfield';
 @import './blocks/dropdown-choose/dropdown-choose';
 @import './blocks/date-dropdown/date-dropdown';
-@import './blocks/datepicker/datepicker.scss';
-@import './blocks/filter-date/filter-date.scss';
-@import './blocks/subscription/subscription.scss';
-@import './blocks/expand-list/expand-list.scss';
-@import './blocks/checkbox-buttons/checkbox-buttons.scss';
-@import './blocks/radio-buttons/radio-buttons.scss';
-@import './blocks/toggle-buttons/toggle-buttons.scss';
-@import './blocks/like-button/like-button.scss';
-// @import 'modules/ui-kit';
-// @import 'modules/title-element';
-// @import 'modules/input-wrapper';
-// @import 'modules/iqdropdown';
-// @import 'modules/expand_more';
-// @import 'modules/buttons-actions';
-// @import 'modules/bad-value';
-// @import 'modules/date-picker';
-// @import 'modules/arrow-forward';
-// @import 'modules/checkbox';
-// @import 'modules/radio';
-// @import 'modules/toggle';
-// @import 'modules/like-button';
-// @import 'modules/rate';
-// @import 'modules/ion.rangeSlider';
-// @import 'modules/range';
-// @import 'modules/logo';
-// @import 'modules/pagination';
-// @import 'modules/list';
-// @import 'modules/advantage';
-// @import 'modules/review';
-// @import 'modules/cards-page';
-// @import 'modules/card';
-// @import 'modules/title';
-// @import 'modules/wrap-element';
-// @import 'modules/room';
-// @import 'modules/total-price';
-// @import 'modules/form';
-// @import 'modules/card-room';
-// @import 'modules/swiper';
-// @import 'modules/nav-social';
-// @import 'modules/footer';
-// @import 'modules/section-main';
-// @import 'modules/section-search';
+@import './blocks/datepicker/datepicker';
+@import './blocks/filter-date/filter-date';
+@import './blocks/subscription/subscription';
+@import './blocks/expand-list/expand-list';
+@import './blocks/checkbox-buttons/checkbox-buttons';
+@import './blocks/radio-buttons/radio-buttons';
+@import './blocks/toggle-buttons/toggle-buttons';
+@import './blocks/like-button/like-button';
+@import './blocks/rate-buttons/rate-buttons';
+@import './blocks/range-slider/range-slider';
+@import './blocks/pagination/pagination';
+@import './blocks/rich-list/rich-list';
+@import './blocks/bullet-list/bullet-list';
+@import './blocks/advantages/advantages';
+@import './blocks/review/review';

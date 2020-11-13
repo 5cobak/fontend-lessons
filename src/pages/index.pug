@@ -10,7 +10,14 @@ include ../blocks/expand-list/expand-list.pug
 include ../blocks/checkbox-buttons/checkbox-buttons.pug
 include ../blocks/radio-buttons/radio-buttons.pug
 include ../blocks/toggle-buttons/toggle-buttons.pug
-include ../blocks/like-button/like-button.pug
+include ../blocks/like-button/like-button
+include ../blocks/rate-buttons/rate-buttons
+include ../blocks/range-slider/range-slider
+include ../blocks/pagination/pagination
+include ../blocks/rich-list/rich-list
+include ../blocks/bullet-list/bullet-list
+include ../blocks/advantages/advantages
+include ../blocks/review/review
 //- include ../includes/modules/checkbox.pug
 //- include ../includes/modules/checkbox-2.pug
 //- include ../includes/modules/radio-button.pug
@@ -25,35 +32,65 @@ block content
 	.ui-kit
 		.container
 				.row
-					.col
-						+textField(
-							{
-								title: 'text field', 
-								placeholder: 'Email', 
-								type: 'email', 
-								required: true
-							}
-						)
-						+masked-textfield(
-							{
-								title: 'masked text field',
-								placeholder: 'ДД.ММ.ГГГГ', 
-								type: 'text', 
-								className: 'js-date-masked'
-							 }
-						)
-						+dropdown-choose({className: 'js-dropdown-guests', title:'dropdown'})
-						+dropdown-choose({className: 'js-dropdown-beds', title: 'dropdown'})
-						+date-dropdown({className: 'js-date-masked', title: 'date dropdown'})
-						+filter-date({className: 'js-filter-date', title: 'filter date dropdown'})
-						+subscription({title: 'subscription', placeholder: 'Email'})
-						+expand-list({title: 'expandable checkbox list', className: 'js-expand-list'})
+					section.ui-kit__first-row
+						.col
+							+textField(
+								{
+									title: 'text field', 
+									placeholder: 'Email', 
+									type: 'email', 
+									required: true
+								}
+							)
+							+masked-textfield(
+								{
+									title: 'masked text field',
+									placeholder: 'ДД.ММ.ГГГГ', 
+									type: 'text', 
+									className: 'js-date-masked'
+								}
+							)
+							+dropdown-choose({className: 'js-dropdown-guests', title:'dropdown'})
+							+dropdown-choose({className: 'js-dropdown-beds', title: 'dropdown'})
+							+date-dropdown({className: 'js-date-masked', title: 'date dropdown'})
+							+filter-date({className: 'js-filter-date', title: 'filter date dropdown'})
+							+subscription({title: 'subscription', placeholder: 'Email'})
+							+expand-list({title: 'expandable checkbox list', className: 'js-expand-list'})
 
-					.col
-						+checkbox-buttons({title: 'checkbox buttons'})
-						+radio-buttons({title: 'radio buttons'})
-						+toggle-buttons({title: 'toggle buttons'})
-						.block-title
-							+like-button()
+						.col
+							+checkbox-buttons({title: 'checkbox buttons'})
+							+radio-buttons({title: 'radio buttons'})
+							+toggle-buttons({title: 'toggle buttons'})
+							.block-title like buttons
+							.block-title
+							+like-button({className: '', count: 0})
+							.block-title rate button
+							+rate-buttons()
+							.block-title rich checkbox button
+							+rich-list()
+						.col
+							+range-slider({title: 'range', interval: '5000₽ - 10000₽'})
+							.block-title buttons
+							input(type='submit' value='click me').button
+							br
+							br 
+							button(type='submit').button.button_white click me
+							br
+							br
+							input(type='submit' value='click me').button.button_white.button_no-bg
+							br
+							br
+							button(type='submit').button.button_big перейти к оплате
+							.block-title pagination
+							+pagination()
+							.block-title bullet-list
+							+bullet-list()
+					.row
+						.ui-kit__last-row
+							.col
+								+advantages()
+							.col
+								+review({src: 'maga.png'})
+
 block script
 	script

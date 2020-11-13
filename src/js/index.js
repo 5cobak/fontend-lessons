@@ -1,17 +1,17 @@
 /* eslint-disable no-unused-vars */
 import DropdownChoose from '../blocks/dropdown-choose/dropdown-choose';
 // svg-sprite
-function requireAll(r) {
-  r.keys().forEach(r);
-}
+// function requireAll(r) {
+//   r.keys().forEach(r);
+// }
 
-requireAll(require.context('../assets/img/icons/', true, /\.svg$/));
+// requireAll(require.context('../assets/img/icons/', true, /\.svg$/));
 
-fetch('https://mycdn.com/img/icons.svg')
-  .then((res) => res.text())
-  .then((data) => {
-    document.getElementById('svg-icons').innerHTML = data;
-  });
+// fetch('./assets/img/icons/icons.svg')
+//   .then((res) => res.text())
+//   .then((data) => {
+//     document.getElementById('svg-icons').innerHTML = data;
+//   });
 
 // дропдаун гостей
 const guests = document.querySelector('.js-dropdown-guests');

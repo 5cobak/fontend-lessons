@@ -1,20 +1,22 @@
 /* eslint-disable */
-import './main.scss';
 import '~/air-datepicker/dist/js/datepicker.min';
 import '~/air-datepicker/dist/css/datepicker.min.css';
-
 import '~/inputmask/dist/jquery.inputmask.min';
-import './js';
-// import '~/ion-rangeslider/js/ion.rangeSlider';
-// import '~/ion-rangeslider/css/ion.rangeSlider.css';
+import '~/ion-rangeslider/js/ion.rangeSlider';
+import '~/ion-rangeslider/css/ion.rangeSlider.css';
 // import '~/masonry-layout/dist/masonry.pkgd.min';
 // import '~/swiper/css/swiper.min.css';
+import './main.scss';
+import './js';
+import './js/plugins/jquery.simplePagination.js';
 import './js/mask';
 import './blocks/date-dropdown/date-dropdown-js/date-dropdown';
 import './blocks/filter-date/filter-date';
 import './blocks/expand-list/expand-list';
-
-// import './js/plugins/jquery.simplePagination';
+import './blocks/like-button/like-button';
+import './blocks/rate-buttons/rate-buttons';
+import './blocks/range-slider/range-slider';
+import './blocks/pagination/pagination';
 // import './js/plugins/iqdropdown' ;
 // import './js/plugins/date-picker';
 

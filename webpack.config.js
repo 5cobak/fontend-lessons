@@ -9,7 +9,6 @@ const OptimizeCssAssetPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const fs = require('fs');
-const SVGSpriteLoader = require('svg-sprite-loader');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -109,18 +108,14 @@ module.exports = {
   },
   devtool: isDev ? 'source-map' : '',
   plugins: [
-    // new HTMLWebpackPlugin({
-    // 	template: './index.html',
-    // 	collapseWhitespace: isProd,
-    // }),
     new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
     }),
-    // new CopyWebpackPlugin({
-    //   patterns: [{ from: `${PATHS.src}/static`, to: '' }],
-    // }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: `${PATHS.src}/static`, to: '' }],
+    }),
     new MiniCssExtractPlugin({
       filename: filename('css'),
     }),
@@ -131,9 +126,7 @@ module.exports = {
           filename: `./${page.replace(/\.pug/, '.html')}`,
         })
     ),
-    new SpriteLoaderPlugin({
-      plainSprite: true,
-    }),
+    new SpriteLoaderPlugin(),
   ],
   module: {
     rules: [
@@ -175,11 +168,20 @@ module.exports = {
         loader: 'svg-sprite-loader',
         include: [path.resolve(__dirname, `${PATHS.src}/assets/img/icons/`)],
         options: {
-          extract: true,
+          publicPath: '',
+          extract: false,
           spriteFilename: 'icons.svg',
           outputPath: './assets/img/icons/',
         },
       },
+      // {
+      //   test: /\.svg$/,
+      //   loader: 'svgo-loader',
+      //   include: [path.resolve(__dirname, `${PATHS.src}/assets/img/icons/`)],
+      //   options: {
+      //     plugins: [{ removeAttrs: { attrs: ['fill', 'stroke'] } }],
+      //   },
+      // },
     ],
   },
 };

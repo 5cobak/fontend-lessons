@@ -1,0 +1,13 @@
+mixin review({src: path})
+  .review
+    .review__head
+      img.review__avatar(src=require('../assets/img/' + path).default alt='guest')
+      .review__head-text
+        .review__name Мурад Сарафанов
+        .review__date 5 дней назад
+    .review__content
+      +like-button({className: 'review__like', count: 11})
+      p.review__text
+        | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. 
+        | И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто
+        | не жаловался из соседей.

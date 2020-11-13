@@ -1,7 +1,7 @@
-mixin like-button()
-  button.like-button
+mixin like-button({className, count})
+  button.like-button(class=className)
     svg.like-button__like
       use(xlink:href="#like-noactive")
-    svg.like-button__like-purple
-      use(xlink:href="#like-purple")
-    span.like-button__likes 0
+    svg.like-button__like-favorite
+      use(xlink:href="#favorite")
+    span.like-button__likes #{count}

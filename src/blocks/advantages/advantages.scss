@@ -1,0 +1,30 @@
+.advantages {
+  display: flex;
+  justify-content: flex-start;
+  &__li {
+    display: block;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+  }
+  &__svg {
+    max-width: 38px;
+    max-height: 38px;
+    margin-top: rem(24);
+    margin-right: rem(10);
+  }
+  &__text {
+    display: inline-flex;
+    flex-direction: column;
+    line-height: rem(24);
+    padding-bottom: rem(19);
+  }
+  &__head {
+    @include MontBold;
+    font-size: rem(14);
+    display: inline-block;
+  }
+  &__description {
+    @include Mont;
+    font-size: rem(14);
+    color: $ds75;
+  }
+}
