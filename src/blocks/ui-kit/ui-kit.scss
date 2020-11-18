@@ -1,4 +1,6 @@
 .ui-kit {
+  margin-top: rem(140);
+  margin-bottom: rem(130);
   &__first-row {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

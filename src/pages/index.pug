@@ -18,17 +18,10 @@ include ../blocks/rich-list/rich-list
 include ../blocks/bullet-list/bullet-list
 include ../blocks/advantages/advantages
 include ../blocks/review/review
-//- include ../includes/modules/checkbox.pug
-//- include ../includes/modules/checkbox-2.pug
-//- include ../includes/modules/radio-button.pug
-//- include ../includes/modules/toggle.pug
-//- include ../includes/modules/toggle-checkbox.pug
-//- include ../includes/modules/like-dislike.pug
-//- include ../includes/modules/range-slider.pug1
 
 block content
-	svg.logo.logo_grey
-		use(xlink:href="#logo")
+	svg.logo.logo_gray
+		use(xlink:href="#logo-gray")
 	.ui-kit
 		.container
 				.row
@@ -52,7 +45,9 @@ block content
 							)
 							+dropdown-choose({className: 'js-dropdown-guests', title:'dropdown'})
 							+dropdown-choose({className: 'js-dropdown-beds', title: 'dropdown'})
-							+date-dropdown({className: 'js-date-masked', title: 'date dropdown'})
+							+date-dropdown({className: 'js-date-masked', 
+							title: 'date dropdown', 
+							titleSecond: 'date dropdown'})
 							+filter-date({className: 'js-filter-date', title: 'filter date dropdown'})
 							+subscription({title: 'subscription', placeholder: 'Email'})
 							+expand-list({title: 'expandable checkbox list', className: 'js-expand-list'})
@@ -60,17 +55,16 @@ block content
 						.col
 							+checkbox-buttons({title: 'checkbox buttons'})
 							+radio-buttons({title: 'radio buttons'})
-							+toggle-buttons({title: 'toggle buttons'})
-							.block-title like buttons
-							.block-title
+							+toggle-buttons({title: 'toggle'})
+							.block-title.block-title_margin-b-16 like buttons
 							+like-button({className: '', count: 0})
-							.block-title rate button
+							.block-title.block-title_margin-b-16 rate button
 							+rate-buttons()
-							.block-title rich checkbox button
-							+rich-list()
+							+rich-list({title: 'rich checkbox buttons'})
 						.col
-							+range-slider({title: 'range', interval: '5000₽ - 10000₽'})
-							.block-title buttons
+							+range-slider({title: 'range slider', interval: '5000₽ - 10000₽'})
+							.block-title.block-title_margin-b-16 buttons
+							br
 							input(type='submit' value='click me').button
 							br
 							br 
@@ -81,10 +75,11 @@ block content
 							br
 							br
 							button(type='submit').button.button_big перейти к оплате
-							.block-title pagination
+							br
+							.block-title.block-title_margin-b-16 pagination
+							br
 							+pagination()
-							.block-title bullet-list
-							+bullet-list()
+							+bullet-list({title: 'bullet list'})
 					.row
 						.ui-kit__last-row
 							.col

@@ -1,8 +1,8 @@
 mixin toggle-buttons({title})
   .toggle-buttons(class=className)
-    span.toggle-buttons__title #{title}
-    br
-    label.toggle-buttons__label 
-      input.toggle-buttons__checkbox(type="checkbox")
-      span.toggle-buttons__checkmark
-      span.toggle-buttons__subtitle Получать спецпредложения
+    span.block-title.block-title_margin-b-16 #{title}
+    .toggle-buttons__container
+      label.toggle-buttons__label 
+        input.toggle-buttons__checkbox(type="checkbox")
+        span.toggle-buttons__checkmark
+        span.toggle-buttons__subtitle Получать спецпредложения

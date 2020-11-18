@@ -6,6 +6,12 @@
     font-size: rem(12);
     font-family: 'MontserratBold', sans-serif;
   }
+  &__inputs {
+    display: flex;
+  }
+  &__first-block {
+    margin-right: rem(10);
+  }
   &__input {
     font-size: rem(14);
     border: $border;

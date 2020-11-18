@@ -14,34 +14,45 @@ import DropdownChoose from '../blocks/dropdown-choose/dropdown-choose';
 //   });
 
 // дропдаун гостей
-const guests = document.querySelector('.js-dropdown-guests');
-const dropdownGuests = new DropdownChoose({
-  element: guests,
-  placeholder: 'Сколько человек',
-  titles: ['взрослые', 'дети', 'младенцы'],
-  declinations: [
-    ['взрослый', 'взрослых', 'взрослых'],
-    ['дитё', 'детей', 'детей'],
-    ['младенец', 'младенцев', 'младенцев'],
-  ],
-  maxWidth: 320,
-  textLength: 30,
-  buttons: true,
-});
+const guestsList = document.querySelectorAll('.js-dropdown-guests');
+
+if (guestsList) {
+  guestsList.forEach((item) => {
+    const dropodown = new DropdownChoose({
+      element: item,
+      placeholder: 'Сколько человек',
+      titles: ['взрослые', 'дети', 'младенцы'],
+      declinations: [
+        ['взрослый', 'взрослых', 'взрослых'],
+        ['дитё', 'детей', 'детей'],
+        ['младенец', 'младенцев', 'младенцев'],
+      ],
+      maxWidth: 320,
+      textLength: 30,
+      buttons: true,
+    });
+  });
+}
+
 // дропдаун кроватей
-const beds = document.querySelector('.js-dropdown-beds');
-const dropdownBeds = new DropdownChoose({
-  element: beds,
-  placeholder: 'Сколько спален',
-  titles: ['спальни', 'кровати', 'ванные комнаты'],
-  declinations: [
-    ['спальня', 'спальни', 'спальня'],
-    ['кровать', 'кровати', 'кроватей'],
-    ['ванная комната', 'ванные комнаты', 'ванных комнат'],
-  ],
-  maxWidth: 266,
-  textLength: 15,
-  buttons: false,
-});
+const bedsList = document.querySelectorAll('.js-dropdown-beds');
+
+if (bedsList) {
+  bedsList.forEach((item) => {
+    const dropodown = new DropdownChoose({
+      element: item,
+      placeholder: 'Сколько спален',
+      titles: ['спальни', 'кровати', 'ванные комнаты'],
+      declinations: [
+        ['спальня', 'спальни', 'спальня'],
+        ['кровать', 'кровати', 'кроватей'],
+        ['ванная комната', 'ванные комнаты', 'ванных комнат'],
+      ],
+      maxWidth: 266,
+      textLength: 15,
+      buttons: false,
+    });
+  });
+}
 
 // дропдаун даты

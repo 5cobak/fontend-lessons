@@ -162,6 +162,8 @@ section,
 }
 
 // Modules
+@import './blocks/svg-icons/svg-icons';
+@import './blocks/logo/logo';
 @import './blocks/ui-kit/ui-kit';
 @import './blocks/block-title/block-title';
 @import './blocks/textField/textField';
@@ -183,3 +185,7 @@ section,
 @import './blocks/bullet-list/bullet-list';
 @import './blocks/advantages/advantages';
 @import './blocks/review/review';
+@import './blocks/cards-page/cards-page';
+@import './blocks/card-selection/card-selection';
+@import './blocks/card-book/card-book';
+@import './blocks/card-checkin/card-checkin';

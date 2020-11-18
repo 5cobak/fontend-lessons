@@ -3,6 +3,7 @@
   &__head {
     display: flex;
     justify-content: space-between;
+    margin-bottom: rem(20);
   }
   &__values {
     font-size: rem(12);

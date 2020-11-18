@@ -1,5 +1,6 @@
-mixin bullet-list() 
+mixin bullet-list({title}) 
   .bullet-list
+    span.block-title.block-title_margin-b-16 #{title}
     ul.bullet-list__ul
       li.bullet-list__li
         span.bullet-list__text

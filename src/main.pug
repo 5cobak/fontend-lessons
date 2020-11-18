@@ -12,10 +12,9 @@ html(lang='en')
 
   body(class=pageClass)
     .wrapper
-      #app
-        //- include ../includes/modules/header
-        .content-wrapper
-          block content
+      //- include ../includes/modules/header
+      .content-wrapper
+        block content
 
         #svg-icons
           svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
@@ -111,6 +110,6 @@ html(lang='en')
             use#twitter-usage.sprite-symbol-usage(xlink:href='#twitter')
 
 
-        //- include ../includes/modules/footer
+      //- include ../includes/modules/footer
 
     block script

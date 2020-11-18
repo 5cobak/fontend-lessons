@@ -1,0 +1,51 @@
+mixin card-book()
+  .card-book
+    .card-book__content
+      .card-book__head
+        span.card-book__number
+          | № 
+          span.card-book__head-num
+            | 888
+          span.card-book__type
+            | люкс
+        span.card-book__head-price
+          span.card-book__head-sum
+            span
+              | 9 990₽ 
+          | в сутки
+      .card-book__block
+        +date-dropdown({
+              className: 'js-date-masked', 
+              title: 'прибытие', 
+              titleSecond: 'выезд'
+              })
+      .card-book__block
+        +dropdown-choose({className: 'js-dropdown-guests', title:'Гости'})
+
+      .card-book__block
+        .card-book__calculation
+          .card-book__calc-item
+            span.card-book__calc-option
+              | 9 990₽ х 4 суток
+            span.card-book__calc-sum
+              | 39 960₽
+          .card-book__calc-item
+            span.card-book__calc-option
+              | Сбор за услуги: скидка 2 179₽ 
+            span.card-book__calc-info i
+            span.card-book__calc-sum
+              | 0₽
+          .card-book__calc-item
+            span.card-book__calc-option
+              | Сбор за дополнительные 
+              | услуги
+            span.card-book__calc-info i
+            span.card-book__calc-sum
+              | 300₽
+        .card-book__calc-total
+          span.card-book__total
+            | Итого 
+          span.card-book__dotted-line
+          span.card-book__total-price
+            | 38 081₽
+        button.button.button_big Забронировать

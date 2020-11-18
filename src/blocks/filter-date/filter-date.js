@@ -1,6 +1,10 @@
 $(document).ready(() => {
   const $inputFilterDate = $('#js-filter-date');
+
+  if (!$inputFilterDate[0]) return;
+
   let newFormat;
+
   $inputFilterDate.datepicker({
     showEvent: 'click',
     offset: 5,
