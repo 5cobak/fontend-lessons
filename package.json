@@ -56,7 +56,10 @@
   },
   "dependencies": {
     "jquery": "^3.5.1",
+    "jquery-bridget": "^2.0.1",
+    "masonry-layout": "^4.2.2",
     "normalize.css": "^8.0.1",
-    "source-map": "^0.7.3"
+    "source-map": "^0.7.3",
+    "swiper": "^6.3.5"
   }
 }

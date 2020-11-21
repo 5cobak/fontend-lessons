@@ -30,13 +30,14 @@
     color: $ds75;
     text-transform: uppercase;
     font-size: rem(12);
+    white-space: pre;
   }
   &__description {
     @include Mont;
     font-size: rem(12);
     color: $ds50;
     line-height: rem(14);
-    white-space: pre;
+    white-space: pre-wrap;
   }
   input {
     display: none;

@@ -30,7 +30,7 @@
   &__text {
     font-size: rem(14);
     color: $ds75;
-    white-space: pre;
+    white-space: pre-wrap;
     line-height: rem(24);
   }
 }

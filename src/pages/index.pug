@@ -18,14 +18,15 @@ include ../blocks/rich-list/rich-list
 include ../blocks/bullet-list/bullet-list
 include ../blocks/advantages/advantages
 include ../blocks/review/review
+include ../blocks/card-room/card-room
 
 block content
-	svg.logo.logo_gray
+	svg.logo.logo_gray(role='image' aria-label='toxin-logo')
 		use(xlink:href="#logo-gray")
-	.ui-kit
+	main.ui-kit
 		.container
 				.row
-					section.ui-kit__first-row
+					.ui-kit__first-row
 						.col
 							+textField(
 								{
@@ -43,7 +44,9 @@ block content
 									className: 'js-date-masked'
 								}
 							)
+							h4.block-title dropdown
 							+dropdown-choose({className: 'js-dropdown-guests', title:'dropdown'})
+							h4.block-title dropdown
 							+dropdown-choose({className: 'js-dropdown-beds', title: 'dropdown'})
 							+date-dropdown({className: 'js-date-masked', 
 							title: 'date dropdown', 
@@ -54,8 +57,10 @@ block content
 
 						.col
 							+checkbox-buttons({title: 'checkbox buttons'})
+							span.block-title.block-title_margin-b-16 radio button
 							+radio-buttons({title: 'radio buttons'})
-							+toggle-buttons({title: 'toggle'})
+							span.block-title.block-title_margin-b-16 toggle
+							+toggle-buttons()
 							.block-title.block-title_margin-b-16 like buttons
 							+like-button({className: '', count: 0})
 							.block-title.block-title_margin-b-16 rate button

@@ -1,22 +1,62 @@
 mixin card-checkin()
   .card-checkin
     .card-checkin__content
-      h3.card-checkin__title
       from.card-checkin__form
-        +textField(
-                  {
-                    title: 'text field', 
-                    placeholder: 'Email', 
-                    type: 'email', 
-                    required: true
-                  }
-                )
-        +textField(
-                  {
-                    title: 'text field', 
-                    placeholder: 'Email', 
-                    type: 'email', 
-                    required: true
-                  }
-                )
-    
+        fieldset
+          legend
+            h3.card-checkin__title
+              | Регистрация аккаунта
+          .card-checkin__item.card-checkin__item_margin-b-10
+            +textField(
+                      {
+                        title: '', 
+                        placeholder: 'Имя', 
+                        type: 'text', 
+                        required: true
+                      }
+                    )
+          .card-checkin__item.card-checkin__item_margin-b-10
+            +textField(
+                      {
+                        title: '', 
+                        placeholder: 'Фамилия', 
+                        type: 'text', 
+                        required: true
+                      }
+                    )
+          .card-checkin__item.card-checkin__item_margin-b-25
+            +radio-buttons({title: ''})
+          .card-checkin__item.card-checkin__item_margin-b-20
+            +masked-textfield(
+                    {
+                      title: 'Дата рождения',
+                      placeholder: 'ДД.ММ.ГГГГ', 
+                      type: 'text', 
+                      className: 'js-date-masked'
+                    }
+                  )
+          .card-checkin__item.card-checkin__item_margin-b-10
+            +textField(
+                    {
+                      title: 'Данные для входа в сервис', 
+                      placeholder: 'Email', 
+                      type: 'email', 
+                      required: true
+                    }
+                  )
+          .card-checkin__item.card-checkin__item_margin-b-10
+            +textField(
+                    {
+                      title: '', 
+                      placeholder: 'Пароль', 
+                      type: 'password', 
+                      required: true
+                    }
+                  )
+          .card-checkin__item.card-checkin__item_margin-b-20
+            +toggle-buttons({title: ''})
+          button.button.button_big.card-checkin__button-pay Перейти к оплате
+          .card-checkin__sing-in 
+            span.card-checkin__sing-in-text
+              | Уже есть аккаунт на Toxin
+            button.button.button_white Войти

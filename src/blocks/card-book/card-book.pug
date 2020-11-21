@@ -20,6 +20,8 @@ mixin card-book()
               titleSecond: 'выезд'
               })
       .card-book__block
+        h4.block-title
+          | Гости
         +dropdown-choose({className: 'js-dropdown-guests', title:'Гости'})
 
       .card-book__block

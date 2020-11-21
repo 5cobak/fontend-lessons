@@ -16,6 +16,7 @@
     flex-direction: column;
     line-height: rem(24);
     padding-bottom: rem(19);
+    white-space: pre-wrap;
   }
   &__head {
     @include MontBold;

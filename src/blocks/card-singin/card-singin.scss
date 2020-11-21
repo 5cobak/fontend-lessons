@@ -1,7 +1,9 @@
-.card-checkin {
-  max-width: 380px;
+.card-singin {
   background-color: $white;
+  max-width: 380px;
+  min-width: 380px;
   border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   &__content {
     padding: rem(40) rem(30) rem(30) rem(30);
@@ -9,30 +11,25 @@
   &__title {
     @include MontBold;
     font-size: rem(24);
-    line-height: rem(29);
     margin-bottom: rem(20);
   }
   &__item {
     &_margin-b-10 {
       margin-bottom: rem(10);
     }
-    &_margin-b-25 {
-      margin-bottom: rem(25);
-    }
-
-    &_margin-b-20 {
+    &_margin-b-30 {
       margin-bottom: rem(20);
     }
   }
-  &__button-pay {
+  &__button-in {
     margin-bottom: rem(30);
   }
-  &__sing-in {
+  &__check-in {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  &__sing-in-text {
+  &__check-in-text {
     font-size: rem(14);
   }
 }

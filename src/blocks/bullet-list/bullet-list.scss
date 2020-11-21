@@ -1,4 +1,5 @@
 .bullet-list {
+  max-width: 292px;
   &__li {
     display: flex;
     align-items: flex-start;
@@ -11,6 +12,8 @@
       display: block;
       width: 10px;
       height: 10px;
+      min-width: 10px;
+      min-width: 10px;
       background-color: $ds25;
       border-radius: 50%;
       margin-right: rem(10);
@@ -23,5 +26,6 @@
     color: $ds75;
     white-space: pre;
     line-height: rem(24);
+    white-space: pre-wrap;
   }
 }

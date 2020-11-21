@@ -20,9 +20,6 @@ $(document).ready(() => {
     },
   });
   const $calendarEl = $inputFilterDate.datepicker().data('datepicker').$datepicker;
-  function onFocusSecondInput() {
-    $inputFilterDate.trigger('click');
-  }
 
   const $clearButton = $calendarEl.find('.datepicker--button');
   const $buttonsParent = $calendarEl.find('.datepicker--buttons');

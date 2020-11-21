@@ -4,7 +4,6 @@
   font-size: rem(14);
   user-select: none;
   transition: $trFast;
-
   &:hover {
     border: $borderHover;
   }
@@ -21,6 +20,7 @@
     padding: 12px 15px;
     position: relative;
     color: $ds75;
+    line-height: rem(18);
     font-family: 'MontserratMedium', Arial, sans-serif;
     cursor: pointer;
     &_active {

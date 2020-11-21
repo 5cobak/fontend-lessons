@@ -5,7 +5,7 @@ import '~/inputmask/dist/jquery.inputmask.min';
 import '~/ion-rangeslider/js/ion.rangeSlider';
 import '~/ion-rangeslider/css/ion.rangeSlider.css';
 // import '~/masonry-layout/dist/masonry.pkgd.min';
-// import '~/swiper/css/swiper.min.css';
+import 'swiper/swiper-bundle.css';
 import './main.scss';
 import './js';
 import './js/plugins/jquery.simplePagination.js';
@@ -18,6 +18,8 @@ import './blocks/like-button/like-button';
 import './blocks/rate-buttons/rate-buttons';
 import './blocks/range-slider/range-slider';
 import './blocks/pagination/pagination';
+import './blocks/card-room/card-room';
+import './blocks/cards-page/cards-page';
 // import './js/plugins/iqdropdown' ;
 // import './js/plugins/date-picker';
 

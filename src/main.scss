@@ -55,7 +55,6 @@ h2 {
 
 h3 {
   color: $ds100;
-  text-transform: uppercase;
 }
 
 a {
@@ -76,12 +75,15 @@ button {
 input,
 label {
   cursor: pointer;
+  line-height: rem(15);
 }
 input {
   text-shadow: none;
   @include Mont;
 }
-
+fieldset {
+  border: 0 none;
+}
 section,
 .section {
   position: relative;
@@ -189,3 +191,5 @@ section,
 @import './blocks/card-selection/card-selection';
 @import './blocks/card-book/card-book';
 @import './blocks/card-checkin/card-checkin';
+@import './blocks/card-singin/card-singin';
+@import './blocks/card-room/card-room';

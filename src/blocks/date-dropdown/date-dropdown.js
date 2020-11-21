@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  const inputs = document.querySelectorAll('.js-date-dropdown');
+  const inputs = document.querySelectorAll('.js-date-dropdown__input');
   inputs.forEach((input) => {
     const $firstInput = $(input);
     const $secondInput = $firstInput.parent().next().find('input');

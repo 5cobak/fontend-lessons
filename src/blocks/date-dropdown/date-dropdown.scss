@@ -1,16 +1,26 @@
 .date-dropdown {
+  $self: &;
   max-width: 320px;
   user-select: none;
+  display: flex;
+  justify-content: space-between;
   &__title {
     text-transform: uppercase;
     font-size: rem(12);
     font-family: 'MontserratBold', sans-serif;
   }
-  &__inputs {
-    display: flex;
+  &__label {
+    display: inline-flex;
+    flex-direction: column;
+    &:last-child {
+      #{$self}__input {
+        margin-right: 0;
+      }
+    }
   }
-  &__first-block {
-    margin-right: rem(10);
+
+  &__input {
+    line-height: rem(18);
   }
   &__input {
     font-size: rem(14);

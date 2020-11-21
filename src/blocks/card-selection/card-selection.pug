@@ -1,14 +1,19 @@
 mixin card-selection()
   .card-selection
     .card-selection__content
-      h3.card-selection__title Найдем номера под ваши пожелания
       form.card-selection__form
-        .card-selection__block.card-selection__block_margin-b-15
-          +date-dropdown({
-            className: 'js-date-masked', 
-            title: 'прибытие', 
-            titleSecond: 'выезд'
-            })
-        .card-selection__block.card-selection__block_margin-b-30
-          +dropdown-choose({className: 'js-dropdown-guests', title:'Гости'})
-        button(type='submit').button.button_big перейти к оплате
+        fieldset
+          legend
+            h3.card-selection__title 
+              | Найдем номера под ваши пожелания
+          .card-selection__block.card-selection__block_margin-b-15
+            +date-dropdown({
+              className: 'js-date-masked', 
+              title: 'прибытие', 
+              titleSecond: 'выезд'
+              })
+          .card-selection__block.card-selection__block_margin-b-30
+            h4.block-title
+              | Гости
+            +dropdown-choose({className: 'js-dropdown-guests', title:'Гости'})
+          button(type='submit').button.button_big перейти к оплате
