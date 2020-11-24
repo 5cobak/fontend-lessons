@@ -1,0 +1,18 @@
+extends ../main
+
+include ../blocks/textField/textField
+include ../blocks/header/header
+
+block content
+	svg.logo.logo_grey(role='image' aria-label='toxin logo')
+		use(xlink:href="#logo-gray")
+	main.headers-footers
+		.headers-footers__content
+			.headers-footers__block
+				+header({isEntered: false})
+			.headers-footers__block
+				+header({isEntered: true})
+
+
+block script
+	script

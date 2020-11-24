@@ -1,0 +1,121 @@
+.header {
+  background-color: $white;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: rem(15);
+    padding-bottom: rem(15);
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    @media (max-width: $smDesktopWidth) {
+      display: none;
+    }
+  }
+  &__list {
+    display: inline-flex;
+  }
+  &__list-item {
+    display: inline-flex;
+    margin-right: rem(20);
+    cursor: pointer;
+    &_dropdown {
+      margin-right: rem(25);
+      &:after {
+        content: '';
+        display: inline-block;
+        min-width: 8px;
+        min-height: 8px;
+        max-width: 8px;
+        max-height: 8px;
+        border: 2px solid $ds50;
+        border-top: none;
+        border-left: none;
+        transform: rotate(45deg);
+        margin-left: rem(10);
+        margin-top: rem(4);
+      }
+    }
+  }
+  &__link {
+    font-size: rem(14);
+    line-height: rem(17);
+    color: $ds50;
+  }
+  &__button {
+    margin-right: rem(20);
+    padding: rem(10) rem(20);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__cabinet {
+    font-size: 14px;
+    line-height: 17px;
+    color: $ds50;
+    border-left: 1px solid rgba(31, 32, 65, 0.1);
+    padding: rem(10) 0 rem(10) rem(20);
+  }
+  &__burger {
+    cursor: pointer;
+    display: none;
+    width: 30px;
+    height: 3px;
+    background-color: $purple;
+    position: relative;
+    z-index: 10;
+    border-radius: rem(50);
+    margin-left: rem(30);
+    animation-name: Fade;
+    animation-duration: 0.5s;
+    &:after {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: $purple;
+      position: absolute;
+      top: rem(-9);
+      z-index: 10;
+      border-radius: rem(50);
+    }
+    &:before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: $purple;
+      position: absolute;
+      top: 8px;
+      z-index: 10;
+      border-radius: rem(50);
+    }
+    &_active {
+      height: 30px;
+      background-color: $white;
+      border: 2px solid $purple;
+      border-radius: 50%;
+      transition: $trFast;
+      animation-name: Fade;
+      animation-duration: $trFast;
+      &:after {
+        transform: rotate(45deg);
+        top: calc(50% - 1px);
+        width: 20px;
+        left: calc(50% - 10px);
+      }
+      &:before {
+        transform: rotate(-45deg);
+        top: calc(50% - 1px);
+        left: calc(50% - 10px);
+        width: 20px;
+      }
+    }
+    @media (max-width: $smDesktopWidth) {
+      display: block;
+    }
+  }
+}

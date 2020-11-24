@@ -1,0 +1,37 @@
+mixin header({isEntered})
+  .header
+    .container
+      .header__content
+        svg(class='logo logo_colored header__logo' role='image' aria-label='toxin logo')
+          use(xlink:href="#logo-colored")
+        nav.header__nav
+          ul.header__list
+            li.header__list-item
+              a.header__link(href='https://mock-adress' aria-label='информация о нас')
+                | О нас
+
+            li.header__list-item.header__list-item_dropdown
+              a.header__link(href='https://mock-adress' aria-label='информация о нас')
+                | Услуги
+
+            li.header__list-item
+              a.header__link(href='https://mock-adress' aria-label='информация о нас')
+                | Вакансии
+
+            li.header__list-item
+              a.header__link(href='https://mock-adress' aria-label='информация о нас')
+                | Новости
+
+            li.header__list-item.header__list-item_dropdown
+              a.header__link(href='https://mock-adress' aria-label='информация о нас')
+                | Соглашения
+          if !isEntered
+            .header__buttons
+              a(href='/mock-address').button.button_white.header__button
+                | Войти
+              a(href='/mock-address').button.header__button
+                | Зарегистрироваться
+          else 
+            a(href='/mock-adress').header__cabinet
+              | Юлий Цезарь
+        .header__burger(role='navigation' aria-label='menu')
