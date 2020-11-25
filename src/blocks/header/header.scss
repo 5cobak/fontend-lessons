@@ -1,6 +1,8 @@
 .header {
+  $self: &;
   background-color: $white;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  position: relative;
   &__content {
     display: flex;
     justify-content: space-between;
@@ -13,6 +15,66 @@
     align-items: center;
     @media (max-width: $smDesktopWidth) {
       display: none;
+      text-align: center;
+    }
+    &_dropdown {
+      display: none;
+      overflow: hidden;
+      max-height: 0;
+      min-width: 100%;
+      transition: $trFast;
+      @media (max-width: $smDesktopWidth) {
+        display: block;
+      }
+      &-active {
+        display: block;
+        max-height: 1000px;
+      }
+      #{$self}__list {
+        display: block;
+        margin-bottom: rem(10);
+        text-align: center;
+      }
+      #{$self}__list-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: rem(20) 0;
+        margin: 0;
+        border-radius: rem(2);
+        transition: $trFast;
+        &:after {
+          margin-left: rem(10);
+          margin-bottom: rem(4);
+        }
+        &:hover {
+          background-color: $purple;
+          #{$self}__link {
+            color: $white;
+          }
+        }
+      }
+      #{$self}__link {
+        display: inline-block;
+        font-size: rem(18);
+        vertical-align: center;
+      }
+      #{$self}__buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #{$self}__button {
+        display: inline-block;
+        margin-bottom: rem(20);
+      }
+      #{$self}__cabinet {
+        display: inline-block;
+        min-width: 50%;
+        border: none;
+        border-top: 1px solid rgba(31, 32, 65, 0.1);
+        padding: rem(20) rem(10);
+      }
     }
   }
   &__list {

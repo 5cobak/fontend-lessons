@@ -41,7 +41,7 @@
     }
   }
   &__item {
-    margin-bottom: rem(10);
+    padding-bottom: rem(10);
     display: flex;
     align-items: flex-start;
     &:last-child {
@@ -64,10 +64,10 @@
     line-height: rem(18);
     white-space: pre-wrap;
   }
-  input {
+  &__checkbox {
     display: none;
   }
-  input:checked + span {
+  &__checkbox:checked + span {
     border-color: $purple;
     background-image: url('./assets/img/Vector.jpg');
     background-repeat: no-repeat;

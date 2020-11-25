@@ -1,0 +1,77 @@
+mixin footer()
+  footer.footer
+    .container
+      .footer__content
+        .footer__block-text
+          svg.footer__logo.logo.logo_colored
+            use(xlink:href='#logo-colored')
+          p.footer__achivement
+            | Бронирование номеров в лучшем 
+            | отеле 2019 года по версии 
+            | ассоциации «Отельные взгляды»
+        nav.footer__nav
+          ul.footer__list
+            li.footer__list-item
+              span.block-title
+                | Навигация
+            li.footer__list-item
+              a.footer__link(href='/mock-adress/')
+                | О нас
+            li.footer__list-item
+              a.footer__link(href='/mock-adress/')
+                | Новости
+            li.footer__list-item
+              a.footer__link(href='/mock-adress/')
+                | Служба поддержки
+            li.footer__list-item
+              a.footer__link(href='/mock-adress/')
+                | Услуги
+        ul.footer__list
+          li.footer__list-item
+            span.block-title
+              | О нас
+          li.footer__list-item
+            a.footer__link(href='/mock-adress/')
+              | О сервисе
+          li.footer__list-item
+            a.footer__link(href='/mock-adress/')
+              | Наша команда
+          li.footer__list-item
+            a.footer__link(href='/mock-adress/')
+              | Вакансии
+          li.footer__list-item
+            a.footer__link(href='/mock-adress/')
+              | Инвесторы    
+        ul.footer__list
+          li.footer__list-item
+            span.block-title
+              | Служба поддержки
+          li.footer__list-item
+            a.footer__link(href='/mock-adress/')
+              | Соглашения
+          li.footer__list-item
+            a.footer__link(href='/mock-adress/')
+              | Сообщества
+          li.footer__list-item
+            a.footer__link(href='/mock-adress/')
+              | Связь с нами 
+        .footer__subscribe
+          span.block-title.footer__subscribe-title
+            | Подписка
+          p.footer__subscribe-text
+            | Получайте специальные 
+            | предложения и новости сервиса
+          +subscription({title: '', placeholder: 'Email', required: true})
+    .footer__basement
+      .container
+        .footer__basement-content
+          span.footer__copyright
+            | Copyright © 2018 Toxin отель. Все права зачищены.
+          .footer__social(aria-label='Социальные сети')
+            svg.footer__soc-icon
+              use(xlink:href='#twitter')
+            svg.footer__soc-icon
+              use(xlink:href='#facebook')
+            svg.footer__soc-icon
+              use(xlink:href='#inst')
+

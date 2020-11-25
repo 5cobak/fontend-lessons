@@ -11,5 +11,10 @@ $(document).ready(() => {
       $(dropdownMenu).toggleClass('expand-list__dropdown_active');
     }
     title.addEventListener('click', toggleClass);
+
+    const checkboxes = item.querySelectorAll('.expand-list__checkbox');
+
+    function stopBubble(e) {}
+    checkboxes.forEach((item) => item.addEventListener('click', stopBubble));
   });
 });
