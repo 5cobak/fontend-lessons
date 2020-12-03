@@ -4,12 +4,19 @@
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   max-width: 380px;
+  @media (max-width: $phoneWidth) {
+    max-width: 100%;
+    margin: 0 auto;
+  }
   &__content {
-    padding: 40px 30px 30px;
+    padding: rem(40) rem(30) rem(30);
+    @media (max-width: $phoneWidth) {
+      max-width: 320px;
+    }
   }
   &__title {
     @include MontBold;
-    font-size: 24px;
+    font-size: rem(24);
     line-height: rem(29);
     text-transform: initial;
     display: inline-block;

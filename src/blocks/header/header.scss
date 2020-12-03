@@ -18,17 +18,24 @@
       text-align: center;
     }
     &_dropdown {
-      display: none;
       overflow: hidden;
       max-height: 0;
-      min-width: 100%;
+      max-width: 0;
       transition: $trFast;
+      position: absolute;
+      background-color: $white;
+      box-shadow: -200px 0px 0px 0px rgba(185, 101, 185, 0.98);
+      z-index: 1000;
+      top: 100%;
+      right: 0;
       @media (max-width: $smDesktopWidth) {
         display: block;
       }
       &-active {
         display: block;
-        max-height: 1000px;
+        width: 100%;
+        max-width: 80%;
+        min-height: 100vh;
       }
       #{$self}__list {
         display: block;

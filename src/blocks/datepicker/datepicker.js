@@ -1,3 +1,4 @@
+/* eslint-disable fsd/jq-use-js-prefix-in-selector */
 $(document).ready(() => {
   const inlinePickersCollection = document.querySelectorAll('.js-datepicker-inline');
 
@@ -6,6 +7,9 @@ $(document).ready(() => {
       range: true,
       inline: true,
       clearButton: true,
+      navTitles: {
+        days: 'MM<br>yyyy',
+      },
     });
 
     const $calendarEl = $(item).datepicker().data('datepicker').$datepicker;

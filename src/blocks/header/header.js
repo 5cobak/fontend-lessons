@@ -8,6 +8,7 @@ $(document).ready(() => {
     function hideShowMenu() {
       $(burger).toggleClass('header__burger_active');
       $(headerDropdown).toggleClass('header__nav_dropdown-active');
+      $('body').toggleClass('stop-scrolling');
     }
     $(burger).on('click', hideShowMenu);
   });

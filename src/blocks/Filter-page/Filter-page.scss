@@ -1,0 +1,39 @@
+.filter-page {
+  &__content {
+    padding: rem(30) 0 rem(70);
+    display: flex;
+  }
+  &__form {
+    max-width: 266px;
+    margin-right: rem(60);
+  }
+  &__form-input {
+    min-width: 100%;
+  }
+  &__form-block {
+    &_margin-20 {
+      margin-bottom: rem(15);
+    }
+    &_margin-30 {
+      margin-bottom: rem(28);
+    }
+  }
+  &__range-description {
+    padding-top: rem(10);
+    font-size: rem(12);
+    line-height: rem(14);
+    color: $ds50;
+  }
+  &__rooms-title {
+    @include MontBold;
+    font-size: rem(24);
+    line-height: rem(29);
+    margin-bottom: rem(20);
+  }
+  &__rooms {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: rem(20);
+    grid-column-gap: rem(12);
+  }
+}

@@ -162,6 +162,12 @@ section,
   font-size: rem(12);
   color: $danger-color;
 }
+.stop-scrolling {
+  width: 100%;
+  height: 100%;
+  // position: fixed;
+  overflow: hidden;
+}
 
 // Modules
 @import './blocks/svg-icons/svg-icons';
@@ -196,3 +202,7 @@ section,
 @import './blocks/headers&footers-page/headrs&footers-page';
 @import './blocks/header/header';
 @import './blocks/footer/footer';
+@import './blocks/Landing-page/Landing-page';
+@import './blocks/Registration-page/Registration-page';
+@import './blocks/Singin-page/Singin-page';
+@import './blocks/Filter-page/Filter-page';

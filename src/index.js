@@ -11,6 +11,7 @@ import './js';
 import './js/plugins/jquery.simplePagination.js';
 import './js/mask';
 import './blocks/date-dropdown/date-dropdown';
+import './blocks/dropdown-choose/dropdown-choose';
 import './blocks/datepicker/datepicker';
 import './blocks/filter-date/filter-date';
 import './blocks/expand-list/expand-list';

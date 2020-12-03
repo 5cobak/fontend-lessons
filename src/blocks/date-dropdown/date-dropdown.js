@@ -20,6 +20,9 @@ $(document).ready(() => {
         onSelect(formattedDate);
       },
       clearButton: true,
+      navTitles: {
+        days: 'MM<br>yyyy',
+      },
     });
     const $calendarEl = $firstInput.datepicker().data('datepicker').$datepicker;
     function onFocusSecondInput() {

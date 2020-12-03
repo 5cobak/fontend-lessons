@@ -5,6 +5,9 @@
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  @media (max-width: $phoneWidth) {
+    min-width: 300px;
+  }
   &__content {
     padding: rem(40) rem(30) rem(30) rem(30);
   }

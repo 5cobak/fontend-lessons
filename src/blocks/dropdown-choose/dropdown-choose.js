@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export default class DropdownChoose {
   constructor({ element, placeholder, titles, declinations, maxWidth, textLength, buttons }) {
     this.placeholder = placeholder;
@@ -86,6 +87,7 @@ export default class DropdownChoose {
   addEventsByClickOnItems() {
     function show(e) {
       const targetField = e.target.closest('.dropdown-choose__upper-field');
+
       if (!targetField) return;
       const menu = targetField.parentElement.querySelector('.dropdown-choose__menu');
       const arrow = targetField.parentElement.querySelector('.dropdown-choose__arrow');
@@ -95,6 +97,19 @@ export default class DropdownChoose {
       $(arrow).toggleClass('dropdown-choose__arrow_active');
       $(targetField).toggleClass('dropdown-choose__upper-field_active');
     }
+    function hideAll(e) {
+      const target = e.target.closest('.dropdown-choose');
+      if (target) return;
+      const $targetField = $('.dropdown-choose__upper-field');
+      const $menu = $('.dropdown-choose__menu');
+      const $arrow = $('.dropdown-choose__arrow');
+
+      $($targetField).parent().removeClass('dropdown-choose_active');
+      $($menu).removeClass('dropdown-choose__menu_active');
+      $($arrow).removeClass('dropdown-choose__arrow_active');
+      $($targetField).removeClass('dropdown-choose__upper-field_active');
+    }
+    $(document).on('click', hideAll);
     $(this.parentElement).on('click', show);
   }
 
@@ -205,3 +220,46 @@ export default class DropdownChoose {
     $(accessBtn).on('click', accessValue);
   }
 }
+
+$(document).ready(() => {
+  const guestsList = document.querySelectorAll('.js-dropdown-guests');
+
+  if (guestsList) {
+    guestsList.forEach((item) => {
+      const dropodown = new DropdownChoose({
+        element: item,
+        placeholder: 'Сколько человек',
+        titles: ['взрослые', 'дети', 'младенцы'],
+        declinations: [
+          ['взрослый', 'взрослых', 'взрослых'],
+          ['дитё', 'детей', 'детей'],
+          ['младенец', 'младенцев', 'младенцев'],
+        ],
+        maxWidth: 320,
+        textLength: 25,
+        buttons: true,
+      });
+    });
+  }
+
+  // дропдаун кроватей
+  const bedsList = document.querySelectorAll('.js-dropdown-beds');
+
+  if (bedsList) {
+    bedsList.forEach((item) => {
+      const dropodown = new DropdownChoose({
+        element: item,
+        placeholder: 'Сколько спален',
+        titles: ['спальни', 'кровати', 'ванные комнаты'],
+        declinations: [
+          ['спальня', 'спальни', 'спальня'],
+          ['кровать', 'кровати', 'кроватей'],
+          ['ванная комната', 'ванные комнаты', 'ванных комнат'],
+        ],
+        maxWidth: 266,
+        textLength: 25,
+        buttons: false,
+      });
+    });
+  }
+});
