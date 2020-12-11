@@ -1,0 +1,169 @@
+.datepicker {
+  min-width: 320px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: rem(12);
+  @media (max-width: $phoneWidth) {
+    min-width: 280px;
+  }
+  &--pointer {
+    display: none;
+  }
+  &--nav {
+    padding: 20px;
+    border: none;
+  }
+  &--nav-title {
+    font-size: rem(19);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+  &--nav-action {
+    position: relative;
+    &:after {
+      position: absolute;
+      content: '';
+      left: 10px;
+      width: 14px;
+      height: 2px;
+      background-color: $purple;
+    }
+    &:before {
+      content: '';
+      border: 2px solid $purple;
+      border-right: none;
+      border-top: none;
+      width: 10px;
+      height: 10px;
+      transform: rotate(45deg);
+    }
+    svg {
+      display: none;
+    }
+    &:last-child {
+      transform: rotate(-180deg);
+    }
+  }
+  &--cells {
+    display: flex;
+    justify-content: center;
+  }
+  &--cell {
+    min-height: 40px;
+    &-day {
+      max-width: 40px;
+      min-height: 40px;
+      color: $ds50;
+    }
+  }
+  &--days-names {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  &--day-name {
+    font-size: rem(12);
+    color: $purple;
+    font-family: 'MontserratBold', Arial, sans-serif;
+    max-width: 40px;
+    min-height: 40px;
+    text-transform: initial;
+  }
+  &--buttons {
+    border: none;
+    padding-top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 20px 20px;
+    span {
+      display: inline-block;
+      flex: none;
+      height: auto;
+      text-transform: uppercase;
+      font-size: rem(12);
+      font-family: 'MontserratBold', Arial, sans-serif;
+      cursor: pointer;
+      &:first-child {
+        color: $ds50;
+        &:hover {
+          background: none;
+          color: $ds50;
+        }
+      }
+      &:last-child {
+        color: $purple;
+      }
+    }
+  }
+}
+.datepicker--nav-title {
+  text-align: center;
+  @include MontBold;
+}
+.datepicker--cell.-range-from-.-selected- {
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25));
+  }
+}
+
+.datepicker--cell.-range-to- {
+  border-radius: 50%;
+}
+
+.datepicker--cell.-range-from- {
+  border-radius: 50%;
+}
+
+.datepicker--cell.-range-to-.-selected- {
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25));
+  }
+}
+
+.datepicker--cell.-selected-,
+.datepicker--cell.-selected-.-current- {
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  font-family: 'MontserratBold', Arial, sans-serif;
+}
+.datepicker--cell.-in-range- {
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25));
+}
+
+.datepicker--cell.-current- {
+  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  color: $white;
+  border-radius: 50%;
+  &:hover {
+    color: $white;
+  }
+}
+.datepicker--cell.-current-.-in-range- {
+  color: $white;
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25));
+  }
+}

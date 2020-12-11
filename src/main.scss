@@ -1,0 +1,210 @@
+@import 'utils/utils-scss/fonts';
+@import 'utils/utils-scss/libs';
+@import 'utils/utils-scss/vars';
+@import 'utils/utils-scss/mixins';
+@import 'utils/utils-scss/reset';
+@import 'utils/utils-scss/button';
+
+html {
+  line-height: $mainLineHeight;
+  font-size: $mainFontSize;
+  height: 100%;
+  @media screen and (max-width: $tableWidth) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: $smPhoneWidth) {
+    font-size: 14px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  @include Mont;
+  font-size: $mainFontSize;
+  font-weight: $normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 {
+  color: $ds100;
+}
+
+h2 {
+  color: $ds100;
+}
+
+h3 {
+  color: $ds100;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+button {
+  padding: 0;
+}
+
+input,
+label {
+  cursor: pointer;
+  line-height: rem(15);
+}
+input {
+  text-shadow: none;
+  @include Mont;
+}
+fieldset {
+  border: 0 none;
+}
+section,
+.section {
+  position: relative;
+}
+
+::spelling-error {
+  color: #fff;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  flex: 0 0 auto;
+  margin: 0 auto;
+  padding: 0;
+  max-width: $desktopWidth;
+  @media screen and (max-width: $desktopWidth) {
+    max-width: $mdDesktopWidth;
+  }
+  @media screen and (max-width: $mdDesktopWidth) {
+    max-width: $smDesktopWidth;
+    padding: 0 rem(10);
+  }
+  @media screen and (max-width: $smDesktopWidth) {
+    width: 100%;
+  }
+  @media (min-width: $phoneWidth) and (max-width: $tableWidth) {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  @media (min-width: $smPhoneWidth) and (max-width: $phoneWidth) {
+    max-width: 100vw;
+    padding: 0 rem(10);
+  }
+}
+.row {
+  @media (min-width: $phoneWidth) and (max-width: $tableWidth) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: $smPhoneWidth) and (max-width: $phoneWidth) {
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (max-width: $smPhoneWidth) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.last {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 1rem;
+
+  @media (min-width: $phoneWidth) and (max-width: $tableWidth) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (max-width: $phoneWidth) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.validate-error {
+  font-size: rem(12);
+  color: $danger-color;
+}
+.stop-scrolling {
+  width: 100%;
+  height: 100%;
+  // position: fixed;
+  overflow: hidden;
+}
+
+// Modules
+@import './blocks/svg-icons/svg-icons';
+@import './blocks/logo/logo';
+@import './blocks/ui-kit/ui-kit';
+@import './blocks/block-title/block-title';
+@import './blocks/textField/textField';
+@import './blocks/masked-textfield/masked-textfield';
+@import './blocks/dropdown-choose/dropdown-choose';
+@import './blocks/date-dropdown/date-dropdown';
+@import './blocks/datepicker/datepicker';
+@import './blocks/filter-date/filter-date';
+@import './blocks/subscription/subscription';
+@import './blocks/expand-list/expand-list';
+@import './blocks/checkbox-buttons/checkbox-buttons';
+@import './blocks/radio-buttons/radio-buttons';
+@import './blocks/toggle-buttons/toggle-buttons';
+@import './blocks/like-button/like-button';
+@import './blocks/rate-buttons/rate-buttons';
+@import './blocks/range-slider/range-slider';
+@import './blocks/pagination/pagination';
+@import './blocks/rich-list/rich-list';
+@import './blocks/bullet-list/bullet-list';
+@import './blocks/advantages/advantages';
+@import './blocks/review/review';
+@import './blocks/cards-page/cards-page';
+@import './blocks/card-selection/card-selection';
+@import './blocks/card-book/card-book';
+@import './blocks/card-checkin/card-checkin';
+@import './blocks/card-singin/card-singin';
+@import './blocks/card-room/card-room';
+@import './blocks/headers&footers-page/headrs&footers-page';
+@import './blocks/header/header';
+@import './blocks/footer/footer';
+@import './blocks/Landing-page/Landing-page';
+@import './blocks/Registration-page/Registration-page';
+@import './blocks/Singin-page/Singin-page';
+@import './blocks/Filter-page/Filter-page';
+@import './blocks/Room-details/room-details';
+@import './blocks/circle-diagram/circle-diagram';

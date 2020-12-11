@@ -1,0 +1,46 @@
+.checkbox-buttons {
+  display: block;
+  max-width: 222px;
+  user-select: none;
+  cursor: pointer;
+
+  &__title {
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: 'MontserratBold', Arial, sans-serif;
+    font-size: rem(12);
+    position: relative;
+  }
+  &__item {
+    margin-bottom: rem(10);
+    display: flex;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__custom-checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    border: $border;
+    border-radius: 4px;
+    margin-right: rem(10);
+  }
+  &__text {
+    font-size: rem(14);
+    color: $ds50;
+    white-space: pre-wrap;
+    line-height: rem(18);
+  }
+  input {
+    display: none;
+  }
+  input:checked + span {
+    border-color: $purple;
+    background-image: url('./assets/img/Vector.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+}

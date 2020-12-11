@@ -1,0 +1,33 @@
+.textfield {
+  display: block;
+  max-width: 320px;
+  &:hover & {
+    &__input {
+      border: $borderHover;
+      &::placeholder {
+        color: $ds75;
+      }
+    }
+  }
+  &__input {
+    width: 100%;
+    border: $border;
+    border-radius: rem(4);
+    transition: $trFast;
+    padding: 13px 15px;
+    font-size: rem(14);
+    color: $ds75;
+    font-family: 'MontserratMedium', sans-serif;
+    &::placeholder {
+      font-size: rem(14);
+      color: $ds25;
+      transition: $trFast;
+    }
+    &:focus {
+      border: $borderHover;
+      &::placeholder {
+        color: $ds75;
+      }
+    }
+  }
+}

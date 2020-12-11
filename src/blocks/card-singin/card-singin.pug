@@ -1,0 +1,29 @@
+mixin card-singin()
+  .card-singin
+    .card-singin__content
+      h3.card-singin__title
+        | Войти
+      form.card-singin__form
+        .card-singin__item.card-singin__item_margin-b-10
+          +textField(
+                    {
+                      title: '', 
+                      placeholder: 'Email', 
+                      type: 'email', 
+                      required: true
+                    }
+                  )
+        .card-singin__item.card-singin__item_margin-b-30
+          +textField(
+                    {
+                      title: '', 
+                      placeholder: 'Пароль', 
+                      type: 'text', 
+                      required: true
+                    }
+                  )
+        button.button.button_big.card-singin__button-in Войти
+        .card-singin__check-in 
+          span.card-singin__check-in-text
+            | Уже есть аккаунт на Toxin
+          button.button.button_white Войти

@@ -1,0 +1,26 @@
+.filter-date {
+  max-width: 320px;
+  &__title {
+    text-transform: uppercase;
+    font-size: rem(12);
+    font-family: 'MontserratBold', sans-serif;
+  }
+  &__input {
+    font-size: rem(14);
+    border: $border;
+    border-radius: rem(4);
+    padding: 12px 15px;
+    transition: $trFast;
+    min-width: 266px;
+    background-image: url('./assets/img/expand_more.jpg');
+    background-repeat: no-repeat;
+    background-position-x: 93%;
+    background-position-y: 50%;
+    &:focus {
+      border: $borderHover;
+    }
+    &:hover {
+      border: $borderHover;
+    }
+  }
+}

@@ -8,373 +8,391 @@
 * http://flaviusmatis.github.com/license.html
 */
 
-(function ($) {
-  var methods = {
-    init(options) {
-      const o = $.extend({
-        items: 1,
-        itemsOnPage: 1,
-        pages: 0,
-        displayedPages: 5,
-        edges: 2,
-        currentPage: 0,
-        useAnchors: true,
-        hrefTextPrefix: '#page-',
-        hrefTextSuffix: '',
-        prevText: 'Prev',
-        nextText: 'Next',
-        ellipseText: '&hellip;',
-        ellipsePageSet: true,
-        cssStyle: 'light-theme',
-        listStyle: '',
-        labelMap: [],
-        selectOnClick: true,
-        nextAtFront: false,
-        invertPageOrder: false,
-        useStartEdge: true,
-        useEndEdge: true,
-        onPageClick(pageNumber, event) {
-          // Callback triggered when a page is clicked
-          // Page number is given as an optional parameter
-        },
-        onInit() {
-          // Callback triggered immediately after initialization
-        },
-      }, options || {});
+(function($){
 
-      const self = this;
+	var methods = {
+		init: function(options) {
+			var o = $.extend({
+				items: 1,
+				itemsOnPage: 1,
+				pages: 0,
+				displayedPages: 5,
+				edges: 2,
+				currentPage: 0,
+				useAnchors: true,
+				hrefTextPrefix: '#page-',
+				hrefTextSuffix: '',
+				prevText: 'Prev',
+				nextText: 'Next',
+				ellipseText: '&hellip;',
+				ellipsePageSet: true,
+				cssStyle: 'light-theme',
+				listStyle: '',
+				labelMap: [],
+				selectOnClick: true,
+				nextAtFront: false,
+				invertPageOrder: false,
+				useStartEdge : true,
+				useEndEdge : true,
+				onPageClick: function(pageNumber, event) {
+					// Callback triggered when a page is clicked
+					// Page number is given as an optional parameter
+				},
+				onInit: function() {
+					// Callback triggered immediately after initialization
+				}
+			}, options || {});
 
-      o.pages = o.pages ? o.pages : Math.ceil(o.items / o.itemsOnPage) ? Math.ceil(o.items / o.itemsOnPage) : 1;
-      if (o.currentPage) o.currentPage -= 1;
-      else { o.currentPage = !o.invertPageOrder ? 0 : o.pages - 1; }
-      o.halfDisplayed = o.displayedPages / 2;
+			var self = this;
 
-      this.each(() => {
-        self.addClass(`${o.cssStyle} simple-pagination`).data('pagination', o);
-        methods._draw.call(self);
-      });
+			o.pages = o.pages ? o.pages : Math.ceil(o.items / o.itemsOnPage) ? Math.ceil(o.items / o.itemsOnPage) : 1;
+			if (o.currentPage)
+				o.currentPage = o.currentPage - 1;
+			else
+				o.currentPage = !o.invertPageOrder ? 0 : o.pages - 1;
+			o.halfDisplayed = o.displayedPages / 2;
 
-      o.onInit();
+			this.each(function() {
+				self.addClass(o.cssStyle + ' simple-pagination').data('pagination', o);
+				methods._draw.call(self);
+			});
 
-      return this;
-    },
+			o.onInit();
 
-    selectPage(page) {
-      methods._selectPage.call(this, page - 1);
-      return this;
-    },
+			return this;
+		},
 
-    prevPage() {
-      const o = this.data('pagination');
-      if (!o.invertPageOrder) {
-        if (o.currentPage > 0) {
-          methods._selectPage.call(this, o.currentPage - 1);
-        }
-      } else if (o.currentPage < o.pages - 1) {
-        methods._selectPage.call(this, o.currentPage + 1);
-      }
-      return this;
-    },
+		selectPage: function(page) {
+			methods._selectPage.call(this, page - 1);
+			return this;
+		},
 
-    nextPage() {
-      const o = this.data('pagination');
-      if (!o.invertPageOrder) {
-        if (o.currentPage < o.pages - 1) {
-          methods._selectPage.call(this, o.currentPage + 1);
-        }
-      } else if (o.currentPage > 0) {
-        methods._selectPage.call(this, o.currentPage - 1);
-      }
-      return this;
-    },
+		prevPage: function() {
+			var o = this.data('pagination');
+			if (!o.invertPageOrder) {
+				if (o.currentPage > 0) {
+					methods._selectPage.call(this, o.currentPage - 1);
+				}
+			} else {
+				if (o.currentPage < o.pages - 1) {
+					methods._selectPage.call(this, o.currentPage + 1);
+				}
+			}
+			return this;
+		},
 
-    getPagesCount() {
-      return this.data('pagination').pages;
-    },
+		nextPage: function() {
+			var o = this.data('pagination');
+			if (!o.invertPageOrder) {
+				if (o.currentPage < o.pages - 1) {
+					methods._selectPage.call(this, o.currentPage + 1);
+				}
+			} else {
+				if (o.currentPage > 0) {
+					methods._selectPage.call(this, o.currentPage - 1);
+				}
+			}
+			return this;
+		},
 
-    setPagesCount(count) {
-      this.data('pagination').pages = count;
-    },
+		getPagesCount: function() {
+			return this.data('pagination').pages;
+		},
 
-    getCurrentPage() {
-      return this.data('pagination').currentPage + 1;
-    },
+		setPagesCount: function(count) {
+			this.data('pagination').pages = count;
+		},
 
-    destroy() {
-      this.empty();
-      return this;
-    },
+		getCurrentPage: function () {
+			return this.data('pagination').currentPage + 1;
+		},
 
-    drawPage(page) {
-      const o = this.data('pagination');
-      o.currentPage = page - 1;
-      this.data('pagination', o);
-      methods._draw.call(this);
-      return this;
-    },
+		destroy: function(){
+			this.empty();
+			return this;
+		},
 
-    redraw() {
-      methods._draw.call(this);
-      return this;
-    },
+		drawPage: function (page) {
+			var o = this.data('pagination');
+			o.currentPage = page - 1;
+			this.data('pagination', o);
+			methods._draw.call(this);
+			return this;
+		},
 
-    disable() {
-      const o = this.data('pagination');
-      o.disabled = true;
-      this.data('pagination', o);
-      methods._draw.call(this);
-      return this;
-    },
+		redraw: function(){
+			methods._draw.call(this);
+			return this;
+		},
 
-    enable() {
-      const o = this.data('pagination');
-      o.disabled = false;
-      this.data('pagination', o);
-      methods._draw.call(this);
-      return this;
-    },
+		disable: function(){
+			var o = this.data('pagination');
+			o.disabled = true;
+			this.data('pagination', o);
+			methods._draw.call(this);
+			return this;
+		},
 
-    updateItems(newItems) {
-      const o = this.data('pagination');
-      o.items = newItems;
-      o.pages = methods._getPages(o);
-      this.data('pagination', o);
-      methods._draw.call(this);
-    },
+		enable: function(){
+			var o = this.data('pagination');
+			o.disabled = false;
+			this.data('pagination', o);
+			methods._draw.call(this);
+			return this;
+		},
 
-    updateItemsOnPage(itemsOnPage) {
-      const o = this.data('pagination');
-      o.itemsOnPage = itemsOnPage;
-      o.pages = methods._getPages(o);
-      this.data('pagination', o);
-      methods._selectPage.call(this, 0);
-      return this;
-    },
+		updateItems: function (newItems) {
+			var o = this.data('pagination');
+			o.items = newItems;
+			o.pages = methods._getPages(o);
+			this.data('pagination', o);
+			methods._draw.call(this);
+		},
 
-    getItemsOnPage() {
-      return this.data('pagination').itemsOnPage;
-    },
+		updateItemsOnPage: function (itemsOnPage) {
+			var o = this.data('pagination');
+			o.itemsOnPage = itemsOnPage;
+			o.pages = methods._getPages(o);
+			this.data('pagination', o);
+			methods._selectPage.call(this, 0);
+			return this;
+		},
 
-    _draw() {
-      const	o = this.data('pagination');
-      const interval = methods._getInterval(o);
-      let i;
-      let tagName;
+		getItemsOnPage: function() {
+			return this.data('pagination').itemsOnPage;
+		},
 
-      methods.destroy.call(this);
+		_draw: function() {
+			var	o = this.data('pagination'),
+				interval = methods._getInterval(o),
+				i,
+				tagName;
 
-      tagName = (typeof this.prop === 'function') ? this.prop('tagName') : this.attr('tagName');
+			methods.destroy.call(this);
 
-      const $panel = tagName === 'UL' ? this : $(`<ul${o.listStyle ? ` class="${o.listStyle}"` : ''}></ul>`).appendTo(this);
+			tagName = (typeof this.prop === 'function') ? this.prop('tagName') : this.attr('tagName');
 
-      // Generate Prev link
-      if (o.prevText) {
-        methods._appendItem.call(this, !o.invertPageOrder ? o.currentPage - 1 : o.currentPage + 1, { text: o.prevText, classes: 'prev' });
-      }
+			var $panel = tagName === 'UL' ? this : $('<ul' + (o.listStyle ? ' class="' + o.listStyle + '"' : '') + '></ul>').appendTo(this);
 
-      // Generate Next link (if option set for at front)
-      if (o.nextText && o.nextAtFront) {
-        methods._appendItem.call(this, !o.invertPageOrder ? o.currentPage + 1 : o.currentPage - 1, { text: o.nextText, classes: 'next' });
-      }
+			// Generate Prev link
+			if (o.prevText) {
+				methods._appendItem.call(this, !o.invertPageOrder ? o.currentPage - 1 : o.currentPage + 1, {text: o.prevText, classes: 'prev'});
+			}
 
-      // Generate start edges
-      if (!o.invertPageOrder) {
-        if (interval.start > 0 && o.edges > 0) {
-          if (o.useStartEdge) {
-            var end = Math.min(o.edges, interval.start);
-            for (i = 0; i < end; i++) {
-              methods._appendItem.call(this, i);
-            }
-          }
-          if (o.edges < interval.start && (interval.start - o.edges != 1)) {
-            $panel.append(`<li class="disabled"><span class="ellipse">${o.ellipseText}</span></li>`);
-          } else if (interval.start - o.edges == 1) {
-            methods._appendItem.call(this, o.edges);
-          }
-        }
-      } else if (interval.end < o.pages && o.edges > 0) {
-        if (o.useStartEdge) {
-          var begin = Math.max(o.pages - o.edges, interval.end);
-          for (i = o.pages - 1; i >= begin; i--) {
-            methods._appendItem.call(this, i);
-          }
-        }
+			// Generate Next link (if option set for at front)
+			if (o.nextText && o.nextAtFront) {
+				methods._appendItem.call(this, !o.invertPageOrder ? o.currentPage + 1 : o.currentPage - 1, {text: o.nextText, classes: 'next'});
+			}
 
-        if (o.pages - o.edges > interval.end && (o.pages - o.edges - interval.end != 1)) {
-          $panel.append(`<li class="disabled"><span class="ellipse">${o.ellipseText}</span></li>`);
-        } else if (o.pages - o.edges - interval.end == 1) {
-          methods._appendItem.call(this, interval.end);
-        }
-      }
+			// Generate start edges
+			if (!o.invertPageOrder) {
+				if (interval.start > 0 && o.edges > 0) {
+					if(o.useStartEdge) {
+						var end = Math.min(o.edges, interval.start);
+						for (i = 0; i < end; i++) {
+							methods._appendItem.call(this, i);
+						}
+					}
+					if (o.edges < interval.start && (interval.start - o.edges != 1)) {
+						$panel.append('<li class="disabled"><span class="ellipse">' + o.ellipseText + '</span></li>');
+					} else if (interval.start - o.edges == 1) {
+						methods._appendItem.call(this, o.edges);
+					}
+				}
+			} else {
+				if (interval.end < o.pages && o.edges > 0) {
+					if(o.useStartEdge) {
+						var begin = Math.max(o.pages - o.edges, interval.end);
+						for (i = o.pages - 1; i >= begin; i--) {
+							methods._appendItem.call(this, i);
+						}
+					}
 
-      // Generate interval links
-      if (!o.invertPageOrder) {
-        for (i = interval.start; i < interval.end; i++) {
-          methods._appendItem.call(this, i);
-        }
-      } else {
-        for (i = interval.end - 1; i >= interval.start; i--) {
-          methods._appendItem.call(this, i);
-        }
-      }
+					if (o.pages - o.edges > interval.end && (o.pages - o.edges - interval.end != 1)) {
+						$panel.append('<li class="disabled"><span class="ellipse">' + o.ellipseText + '</span></li>');
+					} else if (o.pages - o.edges - interval.end == 1) {
+						methods._appendItem.call(this, interval.end);
+					}
+				}
+			}
 
-      // Generate end edges
-      if (!o.invertPageOrder) {
-        if (interval.end < o.pages && o.edges > 0) {
-          if (o.pages - o.edges > interval.end && (o.pages - o.edges - interval.end != 1)) {
-            $panel.append(`<li class="disabled"><span class="ellipse">${o.ellipseText}</span></li>`);
-          } else if (o.pages - o.edges - interval.end == 1) {
-            methods._appendItem.call(this, interval.end);
-          }
-          if (o.useEndEdge) {
-            var begin = Math.max(o.pages - o.edges, interval.end);
-            for (i = begin; i < o.pages; i++) {
-              methods._appendItem.call(this, i);
-            }
-          }
-        }
-      } else if (interval.start > 0 && o.edges > 0) {
-        if (o.edges < interval.start && (interval.start - o.edges != 1)) {
-          $panel.append(`<li class="disabled"><span class="ellipse">${o.ellipseText}</span></li>`);
-        } else if (interval.start - o.edges == 1) {
-          methods._appendItem.call(this, o.edges);
-        }
+			// Generate interval links
+			if (!o.invertPageOrder) {
+				for (i = interval.start; i < interval.end; i++) {
+					methods._appendItem.call(this, i);
+				}
+			} else {
+				for (i = interval.end - 1; i >= interval.start; i--) {
+					methods._appendItem.call(this, i);
+				}
+			}
 
-        if (o.useEndEdge) {
-          var end = Math.min(o.edges, interval.start);
-          for (i = end - 1; i >= 0; i--) {
-            methods._appendItem.call(this, i);
-          }
-        }
-      }
+			// Generate end edges
+			if (!o.invertPageOrder) {
+				if (interval.end < o.pages && o.edges > 0) {
+					if (o.pages - o.edges > interval.end && (o.pages - o.edges - interval.end != 1)) {
+						$panel.append('<li class="disabled"><span class="ellipse">' + o.ellipseText + '</span></li>');
+					} else if (o.pages - o.edges - interval.end == 1) {
+						methods._appendItem.call(this, interval.end);
+					}
+					if(o.useEndEdge) {
+						var begin = Math.max(o.pages - o.edges, interval.end);
+						for (i = begin; i < o.pages; i++) {
+							methods._appendItem.call(this, i);
+						}
+					}
+				}
+			} else {
+				if (interval.start > 0 && o.edges > 0) {
+					if (o.edges < interval.start && (interval.start - o.edges != 1)) {
+						$panel.append('<li class="disabled"><span class="ellipse">' + o.ellipseText + '</span></li>');
+					} else if (interval.start - o.edges == 1) {
+						methods._appendItem.call(this, o.edges);
+					}
 
-      // Generate Next link (unless option is set for at front)
-      if (o.nextText && !o.nextAtFront) {
-        methods._appendItem.call(this, !o.invertPageOrder ? o.currentPage + 1 : o.currentPage - 1, { text: o.nextText, classes: 'next' });
-      }
+					if(o.useEndEdge) {
+						var end = Math.min(o.edges, interval.start);
+						for (i = end - 1; i >= 0; i--) {
+							methods._appendItem.call(this, i);
+						}
+					}
+				}
+			}
 
-      if (o.ellipsePageSet && !o.disabled) {
-        methods._ellipseClick.call(this, $panel);
-      }
-    },
+			// Generate Next link (unless option is set for at front)
+			if (o.nextText && !o.nextAtFront) {
+				methods._appendItem.call(this, !o.invertPageOrder ? o.currentPage + 1 : o.currentPage - 1, {text: o.nextText, classes: 'next'});
+			}
 
-    _getPages(o) {
-      const pages = Math.ceil(o.items / o.itemsOnPage);
-      return pages || 1;
-    },
+			if (o.ellipsePageSet && !o.disabled) {
+				methods._ellipseClick.call(this, $panel);
+			}
 
-    _getInterval(o) {
-      return {
-        start: Math.ceil(o.currentPage > o.halfDisplayed ? Math.max(Math.min(o.currentPage - o.halfDisplayed, (o.pages - o.displayedPages)), 0) : 0),
-        end: Math.ceil(o.currentPage > o.halfDisplayed ? Math.min(o.currentPage + o.halfDisplayed, o.pages) : Math.min(o.displayedPages, o.pages)),
-      };
-    },
+		},
 
-    _appendItem(pageIndex, opts) {
-      const self = this; let options; let $link; const o = self.data('pagination'); const $linkWrapper = $('<li></li>'); const
-        $ul = self.find('ul');
+		_getPages: function(o) {
+			var pages = Math.ceil(o.items / o.itemsOnPage);
+			return pages || 1;
+		},
 
-      pageIndex = pageIndex < 0 ? 0 : (pageIndex < o.pages ? pageIndex : o.pages - 1);
+		_getInterval: function(o) {
+			return {
+				start: Math.ceil(o.currentPage > o.halfDisplayed ? Math.max(Math.min(o.currentPage - o.halfDisplayed, (o.pages - o.displayedPages)), 0) : 0),
+				end: Math.ceil(o.currentPage > o.halfDisplayed ? Math.min(o.currentPage + o.halfDisplayed, o.pages) : Math.min(o.displayedPages, o.pages))
+			};
+		},
 
-      options = {
-        text: pageIndex + 1,
-        classes: '',
-      };
+		_appendItem: function(pageIndex, opts) {
+			var self = this, options, $link, o = self.data('pagination'), $linkWrapper = $('<li></li>'), $ul = self.find('ul');
 
-      if (o.labelMap.length && o.labelMap[pageIndex]) {
-        options.text = o.labelMap[pageIndex];
-      }
+			pageIndex = pageIndex < 0 ? 0 : (pageIndex < o.pages ? pageIndex : o.pages - 1);
 
-      options = $.extend(options, opts || {});
+			options = {
+				text: pageIndex + 1,
+				classes: ''
+			};
 
-      if (pageIndex == o.currentPage || o.disabled) {
-        if (o.disabled || options.classes === 'prev' || options.classes === 'next') {
-          $linkWrapper.addClass('disabled');
-        } else {
-          $linkWrapper.addClass('active');
-        }
-        $link = $(`<span class="current">${options.text}</span>`);
-      } else {
-        if (o.useAnchors) {
-          $link = $(`<a href="${o.hrefTextPrefix}${pageIndex + 1}${o.hrefTextSuffix}" class="page-link">${options.text}</a>`);
-        } else {
-          $link = $(`<span >${options.text}</span>`);
-        }
-        $link.click((event) => methods._selectPage.call(self, pageIndex, event));
-      }
+			if (o.labelMap.length && o.labelMap[pageIndex]) {
+				options.text = o.labelMap[pageIndex];
+			}
 
-      if (options.classes) {
-        $link.addClass(options.classes);
-      }
+			options = $.extend(options, opts || {});
 
-      $linkWrapper.append($link);
+			if (pageIndex == o.currentPage || o.disabled) {
+				if (o.disabled || options.classes === 'prev' || options.classes === 'next') {
+					$linkWrapper.addClass('disabled');
+				} else {
+					$linkWrapper.addClass('active');
+				}
+				$link = $('<span class="current">' + (options.text) + '</span>');
+			} else {
+				if (o.useAnchors) {
+					$link = $('<a href="' + o.hrefTextPrefix + (pageIndex + 1) + o.hrefTextSuffix + '" class="page-link">' + (options.text) + '</a>');
+				} else {
+					$link = $('<span >' + (options.text) + '</span>');
+				}
+				$link.click(function(event){
+					return methods._selectPage.call(self, pageIndex, event);
+				});
+			}
 
-      if ($ul.length) {
-        $ul.append($linkWrapper);
-      } else {
-        self.append($linkWrapper);
-      }
-    },
+			if (options.classes) {
+				$link.addClass(options.classes);
+			}
 
-    _selectPage(pageIndex, event) {
-      const o = this.data('pagination');
-      o.currentPage = pageIndex;
-      if (o.selectOnClick) {
-        methods._draw.call(this);
-      }
-      return o.onPageClick(pageIndex + 1, event);
-    },
+			$linkWrapper.append($link);
+
+			if ($ul.length) {
+				$ul.append($linkWrapper);
+			} else {
+				self.append($linkWrapper);
+			}
+		},
+
+		_selectPage: function(pageIndex, event) {
+			var o = this.data('pagination');
+			o.currentPage = pageIndex;
+			if (o.selectOnClick) {
+				methods._draw.call(this);
+			}
+			return o.onPageClick(pageIndex + 1, event);
+		},
 
 
-    _ellipseClick($panel) {
-      const self = this;
-      const o = this.data('pagination');
-      const $ellip = $panel.find('.ellipse');
-      $ellip.addClass('clickable').parent().removeClass('disabled');
-      $ellip.click(function (event) {
-        if (!o.disable) {
-          const $this = $(this);
-          const val = (parseInt($this.parent().prev().text(), 10) || 0) + 1;
-          $this
-            .html(`<input type="number" min="1" max="${o.pages}" step="1" value="${val}">`)
-            .find('input')
-            .focus()
-            .click((event) => {
-              // prevent input number arrows from bubbling a click event on $ellip
-              event.stopPropagation();
-            })
-            .keyup(function (event) {
-              const val = $(this).val();
-              if (event.which === 13 && val !== '') {
-                // enter to accept
-                if ((val > 0) && (val <= o.pages)) { methods._selectPage.call(self, val - 1); }
-              } else if (event.which === 27) {
-                // escape to cancel
-                $ellip.empty().html(o.ellipseText);
-              }
-            })
-            .bind('blur', function (event) {
-              const val = $(this).val();
-              if (val !== '') {
-                methods._selectPage.call(self, val - 1);
-              }
-              $ellip.empty().html(o.ellipseText);
-              return false;
-            });
-        }
-        return false;
-      });
-    },
+		_ellipseClick: function($panel) {
+			var self = this,
+				o = this.data('pagination'),
+				$ellip = $panel.find('.ellipse');
+			$ellip.addClass('clickable').parent().removeClass('disabled');
+			$ellip.click(function(event) {
+				if (!o.disable) {
+					var $this = $(this),
+						val = (parseInt($this.parent().prev().text(), 10) || 0) + 1;
+					$this
+						.html('<input type="number" min="1" max="' + o.pages + '" step="1" value="' + val + '">')
+						.find('input')
+						.focus()
+						.click(function(event) {
+							// prevent input number arrows from bubbling a click event on $ellip
+							event.stopPropagation();
+						})
+						.keyup(function(event) {
+							var val = $(this).val();
+							if (event.which === 13 && val !== '') {
+								// enter to accept
+								if ((val>0)&&(val<=o.pages))
+								methods._selectPage.call(self, val - 1);
+							} else if (event.which === 27) {
+								// escape to cancel
+								$ellip.empty().html(o.ellipseText);
+							}
+						})
+						.bind('blur', function(event) {
+							var val = $(this).val();
+							if (val !== '') {
+								methods._selectPage.call(self, val - 1);
+							}
+							$ellip.empty().html(o.ellipseText);
+							return false;
+						});
+				}
+				return false;
+			});
+		}
 
-  };
+	};
 
-  $.fn.pagination = function (method) {
-    // Method calling logic
-    if (methods[method] && method.charAt(0) != '_') {
-      return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-    } if (typeof method === 'object' || !method) {
-      return methods.init.apply(this, arguments);
-    }
-    $.error(`Method ${method} does not exist on jQuery.pagination`);
-  };
-}(jQuery));
+	$.fn.pagination = function(method) {
+
+		// Method calling logic
+		if (methods[method] && method.charAt(0) != '_') {
+			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+		} else if (typeof method === 'object' || !method) {
+			return methods.init.apply(this, arguments);
+		} else {
+			$.error('Method ' +  method + ' does not exist on jQuery.pagination');
+		}
+
+	};
+
+})(jQuery);

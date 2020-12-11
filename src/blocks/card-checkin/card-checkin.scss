@@ -1,0 +1,38 @@
+.card-checkin {
+  max-width: 380px;
+  background-color: $white;
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  &__content {
+    padding: rem(40) rem(30) rem(30) rem(30);
+  }
+  &__title {
+    @include MontBold;
+    font-size: rem(24);
+    line-height: rem(29);
+    margin-bottom: rem(20);
+  }
+  &__item {
+    &_margin-b-10 {
+      margin-bottom: rem(10);
+    }
+    &_margin-b-25 {
+      margin-bottom: rem(25);
+    }
+
+    &_margin-b-20 {
+      margin-bottom: rem(20);
+    }
+  }
+  &__button-pay {
+    margin-bottom: rem(30);
+  }
+  &__sing-in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__sing-in-text {
+    font-size: rem(14);
+  }
+}

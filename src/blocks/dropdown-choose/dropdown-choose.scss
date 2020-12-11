@@ -1,0 +1,129 @@
+.dropdown-choose {
+  border: $border;
+  border-radius: rem(4);
+  font-size: rem(14);
+  user-select: none;
+  transition: $trFast;
+  position: relative;
+  &:hover {
+    border: $borderHover;
+  }
+  &_active {
+    border: $borderHover;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  }
+  &__title {
+    text-transform: uppercase;
+    font-family: 'MontserratBold', Arial, sans-serif;
+    font-size: rem(12);
+  }
+  &__upper-field {
+    padding: 12px 15px;
+    position: relative;
+    color: $ds75;
+    line-height: rem(18);
+    font-family: 'MontserratMedium', Arial, sans-serif;
+    cursor: pointer;
+    &_active {
+      border-bottom: 1px solid $ds75;
+    }
+  }
+  &__arrow {
+    position: absolute;
+    border-left: 2px solid $ds50;
+    border-bottom: 2px solid $ds50;
+    width: 8px;
+    height: 8px;
+    right: rem(17);
+    top: calc(50% - 8px);
+    transform: rotate(-45deg);
+    transition: $trFast;
+    &_active {
+      transform: rotate(135deg);
+      top: calc(50% - 4px);
+    }
+  }
+  &__menu {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 100;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $trFast;
+    background-color: #fff;
+    margin: -2px -1px -1px;
+    border: $borderHover;
+    border-bottom: none;
+    border-top: none;
+    border-bottom-left-radius: rem(4);
+    border-bottom-right-radius: rem(4);
+    width: calc(100% + 2px);
+    &_active {
+      border-top: $borderHover;
+      border-bottom: $borderHover;
+      max-height: 500px;
+    }
+  }
+  &__item {
+    padding: 0 7px 7px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:first-child {
+      padding-top: 6px;
+    }
+  }
+  &__item-count {
+    font-family: 'MontserratBold', Arial, sans-serif;
+    font-size: rem(12);
+  }
+  &__item-text {
+    font-family: 'MontserratBold', Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: rem(12);
+    max-width: 50%;
+    line-height: 15px;
+  }
+  &__count-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 92px;
+  }
+
+  &__plus,
+  &__minus {
+    width: rem(30);
+    height: rem(30);
+    border: $borderHover;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &_noactive {
+      border: 1px solid $ds25;
+      cursor: initial;
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 7px 15px 7px;
+    text-transform: uppercase;
+    font-family: 'MontserratBold', Arial, sans-serif;
+    font-size: rem(12);
+  }
+  &__btn-clear {
+    cursor: pointer;
+    color: $ds50;
+    &_hidden {
+      visibility: hidden;
+    }
+  }
+  &__btn-access {
+    cursor: pointer;
+    color: $purple;
+  }
+}

@@ -1,0 +1,58 @@
+extends ../main
+
+include ../blocks/textField/textField.pug
+include ../blocks/masked-textfield/masked-textfield.pug
+include ../blocks/dropdown-choose/dropdown-choose.pug
+include ../blocks/date-dropdown/date-dropdown.pug
+include ../blocks/filter-date/filter-date.pug
+include ../blocks/subscription/subscription.pug
+include ../blocks/expand-list/expand-list.pug
+include ../blocks/checkbox-buttons/checkbox-buttons.pug
+include ../blocks/radio-buttons/radio-buttons.pug
+include ../blocks/toggle-buttons/toggle-buttons.pug
+include ../blocks/like-button/like-button
+include ../blocks/rate-buttons/rate-buttons
+include ../blocks/range-slider/range-slider
+include ../blocks/pagination/pagination
+include ../blocks/rich-list/rich-list
+include ../blocks/bullet-list/bullet-list
+include ../blocks/advantages/advantages
+include ../blocks/review/review
+include ../blocks/card-selection/card-selection
+include ../blocks/card-book/card-book
+include ../blocks/card-checkin/card-checkin
+include ../blocks/card-singin/card-singin
+include ../blocks/card-room/card-room
+
+block content
+	svg.logo.logo_grey(role='image' aria-label='toxin logo')
+		use(xlink:href="#logo-gray")
+	main.cards-page
+		.container
+			.cards-page__content.js-cards-page__content
+				.cards-page__card
+					+card-selection()
+				.cards-page__card
+					+card-book()
+				.cards-page__card 
+					.js-datepicker-inline
+				.cards-page__card
+					+card-singin()
+				.cards-page__card
+					+card-checkin()
+				.cards-page__card
+					+card-room({src: ['room-2.jpg','room-2.jpg','room-2.jpg','room-2.jpg']})
+				.cards-page__card
+					+card-room({src: ['room-1.jpg','room-1.jpg','room-1.jpg','room-1.jpg']})
+				
+				
+				
+				
+				
+				
+				
+				
+				
+
+block script
+	script

@@ -1,0 +1,98 @@
+.card-book {
+  background-color: $white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  max-width: 380px;
+  @media (min-width: $phoneWidth) {
+    min-width: 380px;
+  }
+  @media (max-width: $phoneWidth) {
+    max-width: 320px;
+  }
+  &__content {
+    padding: rem(40) rem(30) rem(30);
+  }
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    @include MontBold;
+    margin-bottom: rem(20);
+    line-height: rem(17);
+  }
+  &__block {
+    margin-bottom: rem(15);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__number {
+    font-size: rem(14);
+  }
+  &__head-num {
+    font-size: rem(24);
+    line-height: rem(30);
+  }
+  &__type {
+    font-size: rem(14);
+    line-height: rem(15);
+    color: $purple;
+  }
+  &__head-price {
+    @include Mont;
+    font-size: rem(12);
+    color: $ds50;
+    line-height: rem(18);
+  }
+  &__head-sum {
+    font-size: rem(14);
+    @include MontBold;
+  }
+  &__calculation {
+    font-size: rem(14);
+    color: $ds75;
+    margin-bottom: rem(25);
+  }
+  &__calc-item {
+    display: flex;
+    align-items: flex-start;
+    white-space: pre;
+    margin-bottom: rem(10);
+    line-height: rem(24);
+  }
+  &__calc-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: rem(20);
+    max-height: rem(20);
+    min-width: rem(20);
+    border: 1px solid $ds25;
+    border-radius: 50%;
+    color: $ds25;
+  }
+  &__calc-sum {
+    margin-left: auto;
+  }
+  &__calc-total {
+    line-height: rem(12);
+    display: flex;
+  }
+  &__dotted-line {
+    display: block;
+    width: 100%;
+    max-width: 70%;
+    border-bottom: 1px dotted $ds50;
+    margin-left: rem(5);
+    margin-right: rem(5);
+  }
+  &__calc-total {
+    @include MontBold;
+    margin-bottom: rem(25);
+  }
+  &__total-price {
+    margin-left: auto;
+    white-space: nowrap;
+  }
+}

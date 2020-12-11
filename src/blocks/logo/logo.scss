@@ -1,0 +1,14 @@
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  max-width: rem(48);
+  max-height: rem(48);
+  &_colored {
+    position: initial;
+    width: 100%;
+    height: 100%;
+    max-width: rem(40);
+    max-width: rem(105);
+  }
+}

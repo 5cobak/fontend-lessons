@@ -1,0 +1,52 @@
+.range-slider {
+  max-width: 266px;
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(20);
+  }
+  &__values {
+    font-size: rem(12);
+    color: $ds50;
+  }
+}
+
+.irs--round {
+  max-width: 266px;
+  height: 6px;
+  cursor: pointer;
+}
+.irs--round .irs-line {
+  background-color: #fff;
+  border: 1px solid $ds25;
+  height: 6px;
+  top: 0;
+}
+.irs--round .irs-bar {
+  background: $greenGr;
+  top: 0px;
+  height: 6px;
+}
+
+.irs--round .irs-handle {
+  top: -4.5px;
+  border: 2px solid $white;
+  width: 15px;
+  height: 15px;
+  background: $greenGr;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.irs-from,
+.irs-to,
+.irs-single {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+.irs--round .irs-from,
+.irs--round .irs-to,
+.irs--round .irs-single {
+  padding: 0;
+}

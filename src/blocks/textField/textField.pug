@@ -1,0 +1,12 @@
+mixin textField({title, type, placeholder, required})
+	label.textfield
+		span.block-title #{title}
+		input.textfield__input(
+			type=type 
+			name=type
+			placeholder=placeholder
+			pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$' 
+			required=required
+		)
+
+

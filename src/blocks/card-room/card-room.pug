@@ -1,0 +1,37 @@
+mixin card-room({src: PATHS})
+  .card-room
+    .card-room__slider
+      .swiper-container.js-swiper-container.card-room__swiper-container
+        .swiper-pagination.card-room__pagination
+        .swiper-button-prev.card-room__button-prev
+        .swiper-button-next.card-room__button-next
+        .swiper-wrapper
+          .swiper-slide.card-room__slide
+            img(src=require('../assets/img/' + PATHS[0]).default alt='фотография конматы').card-room__slider-img
+          .swiper-slide.card-room__slide
+            img(src=require('../assets/img/' + PATHS[1]).default alt='фотография конматы').card-room__slider-img
+          .swiper-slide.card-room__slide
+            img(src=require('../assets/img/' + PATHS[2]).default alt='фотография конматы').card-room__slider-img
+            z
+          .swiper-slide.card-room__slide
+            img(src=require('../assets/img/' + PATHS[3]).default alt='фотография конматы').card-room__slider-img
+            z
+    .card-room__content
+      .card-room__head
+        span.card-room__number
+          | № 
+          span.card-room__head-num
+            | 888
+          span.card-room__type
+            | люкс
+        span.card-room__head-price
+          span.card-room__head-sum
+            span
+              | 9 990₽ 
+          | в сутки
+      .card-room__bottom
+        +rate-buttons()
+        .card-room__reviews
+          span.card-room__reviews-num
+            | 145 
+          | Отзывов

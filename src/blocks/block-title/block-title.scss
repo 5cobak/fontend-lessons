@@ -1,0 +1,16 @@
+.block-title {
+  text-transform: uppercase;
+  font-family: 'MontserratBold', Arial, sans-serif;
+  font-size: rem(12);
+  display: inline-block;
+  line-height: rem(15);
+  margin-bottom: rem(5);
+  white-space: pre-wrap;
+  color: $ds100;
+  &_margin-b-16 {
+    margin-bottom: rem(16);
+  }
+  &_margin-b-20 {
+    margin-bottom: rem(20);
+  }
+}

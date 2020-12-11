@@ -1,0 +1,121 @@
+.button {
+  display: inline-block;
+  padding: 15px 20px;
+  background: $purpleGr;
+  border-radius: 22px;
+  color: $white;
+  text-transform: uppercase;
+  @include MontBold;
+  font-size: rem(12);
+  transition: $trFast;
+  cursor: pointer;
+  line-height: 1;
+  &:hover {
+    opacity: 0.5;
+  }
+  &_subscribe {
+    position: absolute;
+    right: 0;
+    top: calc(50% - 10px);
+    padding: 0;
+    border-radius: none;
+  }
+  &_big {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    &:hover {
+      opacity: 0.9;
+    }
+    @media screen and (max-width: $phoneWidth) {
+      max-width: 320px;
+    }
+    width: 100%;
+    &:after {
+      content: '';
+      display: block;
+      width: 14px;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      right: 5%;
+      top: 50%;
+    }
+    &:before {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 12px;
+      border: 2px solid $white;
+      border-bottom: none;
+      border-left: none;
+      transform: rotate(45deg);
+      position: absolute;
+      right: 5%;
+      top: calc(50% - 5.5px);
+    }
+  }
+  &_white {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    transition: $trFast;
+    color: $purple;
+    border: none;
+    font-size: rem(12);
+    background: none;
+    &:before {
+      content: '';
+      position: absolute;
+      background: $purple;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: -1;
+      border-radius: 22px;
+      transition: $trFast;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      top: 2px;
+      z-index: -1;
+      border-radius: 22px;
+      background: $white;
+      transition: $trFast;
+    }
+    &:hover {
+      opacity: 1;
+      &:before {
+        opacity: 0.5;
+      }
+    }
+  }
+  &_no-bg {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    color: $purple;
+    &:hover {
+      opacity: 1;
+      color: $ds50;
+    }
+  }
+  &_no-bg-grey {
+    color: $ds50;
+    &:hover {
+      color: $ds50;
+      background: none;
+    }
+  }
+  &_margin-r {
+    margin-right: 19px;
+  }
+}

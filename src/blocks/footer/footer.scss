@@ -1,0 +1,105 @@
+.footer {
+  $self: &;
+  background-color: #fff;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  color: $ds75;
+  font-size: rem(14);
+  white-space: pre-wrap;
+  @media (max-width: $smDesktopWidth) {
+    padding: rem(120) 0;
+  }
+  &__content {
+    padding-top: rem(100);
+    padding-bottom: rem(140);
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $smDesktopWidth) {
+      justify-content: center;
+      padding-bottom: 0;
+      padding: 0;
+    }
+  }
+  &__block-text {
+    max-width: 260px;
+    @media (max-width: $smDesktopWidth) {
+      text-align: center;
+    }
+  }
+  &__logo {
+    margin-bottom: rem(20);
+    @media (max-width: $smDesktopWidth) {
+      margin-bottom: 0;
+    }
+  }
+  &__achivement {
+    line-height: rem(24);
+    @media (max-width: $smDesktopWidth) {
+      display: none;
+    }
+  }
+  &__list {
+    @media (max-width: $smDesktopWidth) {
+      display: none;
+    }
+  }
+  &__list-item {
+    margin-bottom: rem(20);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__link {
+    color: $ds75;
+  }
+  &__subscribe {
+    max-width: 260px;
+    @media (max-width: $smDesktopWidth) {
+      display: none;
+    }
+  }
+  &__subscribe-title {
+    margin-bottom: rem(20);
+  }
+  &__subscribe-text {
+    line-height: rem(24);
+  }
+  &__basement {
+    border-top: 1px solid rgba(31, 32, 65, 0.1);
+    @media (max-width: $smDesktopWidth) {
+      border: none;
+      padding-top: rem(20);
+    }
+  }
+  &__basement-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem(23) 0;
+    @media (max-width: $smDesktopWidth) {
+      display: block;
+      text-align: center;
+      padding: 0;
+    }
+  }
+  &__copyright {
+    line-height: rem(17);
+  }
+  &__social {
+    @media (max-width: $smDesktopWidth) {
+      margin-top: rem(20);
+    }
+  }
+  &__social-link {
+    display: inline-block;
+    margin-right: rem(20);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__soc-icon {
+    min-width: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+  }
+}

@@ -1,0 +1,41 @@
+.advantages {
+  display: flex;
+  justify-content: flex-start;
+  &__li {
+    display: block;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    position: relative;
+    &:not(:first-child) {
+      margin-top: rem(20);
+    }
+    &:not(:last-child) {
+      padding-bottom: rem(20);
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &__svg {
+    max-width: 38px;
+    max-height: 38px;
+    position: absolute;
+    top: 5px;
+  }
+  &__text {
+    display: inline-flex;
+    flex-direction: column;
+    line-height: rem(24);
+    white-space: pre-wrap;
+    margin-left: 55px;
+  }
+  &__head {
+    @include MontBold;
+    font-size: rem(14);
+    display: inline-block;
+  }
+  &__description {
+    @include Mont;
+    font-size: rem(14);
+    color: $ds75;
+  }
+}
