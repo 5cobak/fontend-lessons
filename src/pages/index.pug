@@ -88,9 +88,27 @@ block content
 					.row
 						.ui-kit__last-row
 							.col
-								+advantages()
+								+advantages({items: [
+									{
+										title: 'Комфорт',
+										description: 'Шумопоглащиющие стены',
+										href: '#insert_emoticon'
+									},
+									{
+										title: 'Удобство',
+										description: 'Окно в каждой из спален',
+										href: '#location_city'
+									},
+
+								]})
 							.col
-								+review({src: 'maga.png'})
+								+review({
+									src: 'maga.png',
+									name: 'Мурад Сарафанов',
+									date: '5 дней назад',
+									text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. \nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.',
+									like: 11
+								})
 
 block script
 	script

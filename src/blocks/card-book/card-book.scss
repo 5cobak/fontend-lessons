@@ -4,9 +4,14 @@
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   max-width: 380px;
-  min-width: 380px;
+  @media (min-width: $phoneWidth) {
+    min-width: 380px;
+  }
+  @media (max-width: $phoneWidth) {
+    max-width: 320px;
+  }
   &__content {
-    padding: 40px 30px 30px 30px;
+    padding: rem(40) rem(30) rem(30);
   }
   &__head {
     display: flex;

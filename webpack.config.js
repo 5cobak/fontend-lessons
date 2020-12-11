@@ -169,7 +169,7 @@ module.exports = {
         include: [path.resolve(__dirname, `${PATHS.src}/assets/img/icons/`)],
         options: {
           publicPath: '',
-          extract: false,
+          extract: true,
           spriteFilename: 'icons.svg',
           outputPath: './assets/img/icons/',
         },

@@ -22,6 +22,8 @@ import './blocks/pagination/pagination';
 import './blocks/card-room/card-room';
 import './blocks/cards-page/cards-page';
 import './blocks/header/header';
+import './blocks/circle-diagram/circle-diagram';
+
 // import './js/plugins/iqdropdown' ;
 // import './js/plugins/date-picker';
 

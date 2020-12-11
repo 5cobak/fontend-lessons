@@ -68,10 +68,13 @@ mixin footer()
           span.footer__copyright
             | Copyright © 2018 Toxin отель. Все права зачищены.
           .footer__social(aria-label='Социальные сети')
-            svg.footer__soc-icon
-              use(xlink:href='#twitter')
-            svg.footer__soc-icon
-              use(xlink:href='#facebook')
-            svg.footer__soc-icon
-              use(xlink:href='#inst')
+            a(href='/mock-adress/').footer__social-link
+              svg.footer__soc-icon
+                use(xlink:href='#twitter')
+            a(href='/mock-adress/').footer__social-link
+              svg.footer__soc-icon
+                use(xlink:href='#facebook')
+            a(href='/mock-adress/').footer__social-link
+              svg.footer__soc-icon
+                use(xlink:href='#inst')
 

@@ -89,14 +89,17 @@
       margin-top: rem(20);
     }
   }
+  &__social-link {
+    display: inline-block;
+    margin-right: rem(20);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
   &__soc-icon {
     min-width: 24px;
     max-width: 24px;
     min-height: 24px;
     max-height: 24px;
-    margin-right: rem(20);
-    &:last-child {
-      margin-right: 0;
-    }
   }
 }

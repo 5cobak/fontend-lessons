@@ -1,6 +1,6 @@
-mixin bullet-list({title}) 
+mixin bullet-list({title,className}) 
   .bullet-list
-    span.block-title.block-title_margin-b-16 #{title}
+    span.block-title.block-title_margin-b-16(class=className) #{title}
     ul.bullet-list__ul
       li.bullet-list__li
         span.bullet-list__text

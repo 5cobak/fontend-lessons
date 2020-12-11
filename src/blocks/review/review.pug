@@ -1,14 +1,11 @@
-mixin review({src: path})
+mixin review({src: path, name, date, text, like})
   .review
     .review__head
       img.review__avatar(src=require('../assets/img/' + path).default alt='guest')
       .review__head-text
-        .review__name Мурад Сарафанов
-        .review__date 5 дней назад
+        .review__name #{name}
+        .review__date #{date}
     .review__content
-      +like-button({className: 'review__like', count: 11})
+      +like-button({className: 'review__like', count: like})
       article.reiview__article
-        p.review__text
-          | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. 
-          | И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто
-          | не жаловался из соседей.
+        p.review__text #{text}

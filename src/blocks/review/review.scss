@@ -1,4 +1,7 @@
 .review {
+  &:not(:last-child) {
+    margin-bottom: rem(20);
+  }
   &__head {
     display: flex;
     margin-bottom: rem(10);
