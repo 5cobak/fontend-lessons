@@ -12,6 +12,7 @@
 5. https://5cobak.github.io/toxin/Registration.html "Registration page"
 6. https://5cobak.github.io/toxin/Sing-in.html "Sing-in page"
 7. https://5cobak.github.io/toxin/Room-details.html "Room-details page"
+8. https://5cobak.github.io/toxin/Filter-page.html "Filter page"
 
 ## Команды Вебпака
 

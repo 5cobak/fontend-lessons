@@ -125,6 +125,7 @@ module.exports = {
         new HTMLWebpackPlugin({
           template: `${PAGES_DIR}/${page}`,
           filename: `./${page.replace(/\.pug/, '.html')}`,
+          minify: false,
         })
     ),
     new SpriteLoaderPlugin(),
@@ -162,7 +163,14 @@ module.exports = {
       },
       {
         test: /\.pug$/,
-        loader: 'pug-loader',
+        use: [
+          {
+            loader: 'pug-loader',
+            options: {
+              pretty: false,
+            },
+          },
+        ],
       },
       {
         test: /\.svg$/,
