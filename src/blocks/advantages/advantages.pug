@@ -3,7 +3,7 @@ mixin advantages({items})
     ul.advantages__ul 
       each val, index in items
         li.advantages__li
-          svg.advantages__svg(role='image' aria-label='emotion')
+          svg.advantages__svg
             use(xlink:href=items[index].href)
           span.advantages__text
             span.advantages__head
