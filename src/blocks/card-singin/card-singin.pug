@@ -1,7 +1,7 @@
 mixin card-singin()
   .card-singin
     .card-singin__content
-      h3.card-singin__title
+      h1.card-singin__title
         | Войти
       form.card-singin__form
         .card-singin__item.card-singin__item_margin-b-10
@@ -25,5 +25,5 @@ mixin card-singin()
         button.button.button_big.card-singin__button-in Войти
         .card-singin__check-in 
           span.card-singin__check-in-text
-            | Уже есть аккаунт на Toxin
-          button.button.button_white Войти
+            | Нет аккаунта на Toxin?
+          a(href='registration-page.html').button.button_white Создать

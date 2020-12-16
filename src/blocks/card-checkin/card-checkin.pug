@@ -4,7 +4,7 @@ mixin card-checkin()
       form.card-checkin__form
         fieldset
           legend
-            h3.card-checkin__title
+            h1.card-checkin__title
               | Регистрация аккаунта
           .card-checkin__item.card-checkin__item_margin-b-10
             +textField(
@@ -59,4 +59,4 @@ mixin card-checkin()
           .card-checkin__sing-in 
             span.card-checkin__sing-in-text
               | Уже есть аккаунт на Toxin
-            button.button.button_white Войти
+            a(href='singin-page.html').button.button_white Войти

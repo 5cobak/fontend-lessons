@@ -27,9 +27,9 @@ mixin header({isEntered})
                 | Соглашения
           if !isEntered
             .header__buttons
-              a(href='/mock-address').button.button_white.header__button
+              a(href='singin-page.html').button.button_white.header__button
                 | Войти
-              a(href='/mock-address').button.header__button
+              a(href='registration-page.html').button.header__button
                 | Зарегистрироваться
           else 
             a(href='/mock-adress').header__cabinet
@@ -59,10 +59,10 @@ mixin header({isEntered})
             a.header__link(href='https://mock-adress' aria-label='информация о нас')
               | Соглашения
         if !isEntered
-          a(href='/mock-address').button.button_white.header__button
+          a(href='singin-page.html').button.button_white.header__button
             | Войти
           br
-          a(href='/mock-address').button.header__button
+          a(href='registration-page.html').button.header__button
             | Зарегистрироваться
         else 
           a(href='/mock-adress').header__cabinet

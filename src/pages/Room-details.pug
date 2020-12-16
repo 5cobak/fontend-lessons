@@ -26,7 +26,7 @@ block content
           section.room-details__info
             .room-details__info-head
               .room-details__block
-                h3.block-title.room-details__title
+                span.block-title.room-details__title
                   | Сведения о номере
                 +advantages({items: [
                         {
@@ -47,12 +47,12 @@ block content
 
                       ]})
               .room-details__block
-                h3.block-title.room-details__title
+                span.block-title.room-details__title
                   | Впечатления от номера
                 +circle-diagram()
             .room-details__reviews
               .room-details__reviews-head
-                h3.room-details__title.block-title
+                span.room-details__title.block-title
                   | Отзывы посетителей номера
                 span.room-details__reviews-count
                   | 2 отзыва
@@ -74,7 +74,7 @@ block content
             .room-details__rules-block
               +bullet-list({title: 'Правила', className: 'room-details__title room-details__title_margin-l-20'})
               .room-details__cancel-rule
-                h3.block-title.room-details__title
+                span.block-title.room-details__title
                   | Отмена
                 p.room-details__cancel-text
                   | Бесплатная отмена в течение 48 ч. После

@@ -8,11 +8,11 @@
 1. https://5cobak.github.io/toxin/index.html "form-element.page"
 2. https://5cobak.github.io/toxin/cards-page.html "cards page"
 3. https://5cobak.github.io/toxin/headers-&-footers.html "cards-page"
-4. https://5cobak.github.io/toxin/Landing-page.html "Landing-page"
-5. https://5cobak.github.io/toxin/Registration.html "Registration page"
-6. https://5cobak.github.io/toxin/Sing-in.html "Sing-in page"
-7. https://5cobak.github.io/toxin/Room-details.html "Room-details page"
-8. https://5cobak.github.io/toxin/Filter-page.html "Filter page"
+4. https://5cobak.github.io/toxin/landing-page.html "Landing-page"
+5. https://5cobak.github.io/toxin/registration-page.html "Registration page"
+6. https://5cobak.github.io/toxin/sing-in.html "Sing-in page"
+7. https://5cobak.github.io/toxin/room-details.html "Room-details page"
+8. https://5cobak.github.io/toxin/filter-page.html "Filter page"
 
 ## Команды Вебпака
 
