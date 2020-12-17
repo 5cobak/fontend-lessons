@@ -1,7 +1,7 @@
 export default {
       id: "expand_more-usage",
       viewBox: "0 0 12 8",
-      url: "" + "C:\\Users\\Исмагиль\\Documents\\GitHub\\toxin\\src\\assets\\img\\icons\\expand_more.svg",
+      url: "" + "C:\\toxin\\toxin\\src\\assets\\img\\icons\\expand_more.svg",
       toString: function () {
         return this.url;
       }

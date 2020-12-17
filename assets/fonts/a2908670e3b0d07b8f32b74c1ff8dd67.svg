@@ -1,7 +1,7 @@
 export default {
       id: "whatshot-usage",
       viewBox: "0 0 34 43",
-      url: "" + "C:\\Users\\Исмагиль\\Documents\\GitHub\\toxin\\src\\assets\\img\\icons\\whatshot.svg",
+      url: "" + "C:\\toxin\\toxin\\src\\assets\\img\\icons\\whatshot.svg",
       toString: function () {
         return this.url;
       }

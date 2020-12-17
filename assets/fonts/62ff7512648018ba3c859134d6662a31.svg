@@ -1,7 +1,7 @@
 export default {
       id: "inst-usage",
       viewBox: "0 0 22 22",
-      url: "" + "C:\\Users\\Исмагиль\\Documents\\GitHub\\toxin\\src\\assets\\img\\icons\\inst.svg",
+      url: "" + "C:\\toxin\\toxin\\src\\assets\\img\\icons\\inst.svg",
       toString: function () {
         return this.url;
       }
