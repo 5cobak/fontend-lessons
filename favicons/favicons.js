@@ -1,0 +1,1 @@
+$(document).ready(()=>{const e=require.context("!!file-loader?name=favicons/[name].[ext]!.",!0,/\.(svg|png|ico|xml|json)$/);e.keys().forEach(e)});
