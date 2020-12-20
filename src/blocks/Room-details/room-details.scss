@@ -112,6 +112,7 @@
     justify-content: space-between;
   }
   &__cancel-rule {
+    max-width: 340px;
     @media (max-width: $phoneWidth) {
       margin-left: 5px;
     }

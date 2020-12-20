@@ -39,6 +39,7 @@
     }
   }
   &__list {
+    max-width: 150px;
     @media (max-width: $smDesktopWidth) {
       display: none;
     }

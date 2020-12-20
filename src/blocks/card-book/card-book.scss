@@ -61,7 +61,12 @@
     margin-bottom: rem(10);
     line-height: rem(24);
   }
+  &_calc-option {
+    display: inline-block;
+    max-width: 215px;
+  }
   &__calc-info {
+    margin-left: rem(5);
     display: flex;
     justify-content: center;
     align-items: center;
