@@ -11,6 +11,7 @@ mixin card-singin()
                       placeholder: 'Email', 
                       type: 'email', 
                       required: true
+
                     }
                   )
         .card-singin__item.card-singin__item_margin-b-30
@@ -19,7 +20,8 @@ mixin card-singin()
                       title: '', 
                       placeholder: 'Пароль', 
                       type: 'text', 
-                      required: true
+                      required: true,
+                      pat: '(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'
                     }
                   )
         button.button.button_big.card-singin__button-in Войти

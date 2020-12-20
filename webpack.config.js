@@ -97,7 +97,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
 
     // turn on thath publicPath for deploy
-    publicPath: '/toxin/',
+    // publicPath: '/toxin/',
   },
   resolve: {
     extensions: ['.jsx', '.ts', '.js'],

@@ -12,7 +12,8 @@ mixin card-checkin()
                         title: '', 
                         placeholder: 'Имя', 
                         type: 'text', 
-                        required: true
+                        required: true,
+                        pat: '[A-Za-zА-Яа-яЁё]{3,}'
                       }
                     )
           .card-checkin__item.card-checkin__item_margin-b-10
@@ -21,7 +22,8 @@ mixin card-checkin()
                         title: '', 
                         placeholder: 'Фамилия', 
                         type: 'text', 
-                        required: true
+                        required: true,
+                        pat: '[A-Za-zА-Яа-яЁё]{3,}'
                       }
                     )
           .card-checkin__item.card-checkin__item_margin-b-25
@@ -41,7 +43,7 @@ mixin card-checkin()
                       title: 'Данные для входа в сервис', 
                       placeholder: 'Email', 
                       type: 'email', 
-                      required: true
+                      required: true,
                     }
                   )
           .card-checkin__item.card-checkin__item_margin-b-10
@@ -50,7 +52,8 @@ mixin card-checkin()
                       title: '', 
                       placeholder: 'Пароль', 
                       type: 'password', 
-                      required: true
+                      required: true,
+                      pat: '(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'
                     }
                   )
           .card-checkin__item.card-checkin__item_margin-b-20
