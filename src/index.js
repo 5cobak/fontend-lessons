@@ -8,7 +8,7 @@ import '~/ion-rangeslider/css/ion.rangeSlider.css';
 import 'swiper/swiper-bundle.css';
 import './main.scss';
 import './js';
-import './js/plugins/jquery.simplePagination.js';
+import './js/plugins/simplePagination.js';
 import './js/mask';
 import './blocks/date-dropdown/date-dropdown';
 import './blocks/dropdown-choose/dropdown-choose';

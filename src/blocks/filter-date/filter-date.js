@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  const $inputFilterDate = $('#js-filter-date');
+  const $inputFilterDate = $('.js-filter-date__input');
 
   if (!$inputFilterDate[0]) return;
 

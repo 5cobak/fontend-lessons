@@ -8,6 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const fs = require('fs');
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -116,9 +117,9 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
     }),
-    new CopyWebpackPlugin({
-      patterns: [{ from: `${PATHS.src}/static`, to: '' }],
-    }),
+    // new CopyWebpackPlugin({
+    // patterns: [{ from: `${PATHS.src}/static/`, to: 'assets/' }],
+    // }),
     new MiniCssExtractPlugin({
       filename: filename('css'),
     }),
@@ -131,6 +132,19 @@ module.exports = {
         })
     ),
     new SpriteLoaderPlugin(),
+    new FaviconsWebpackPlugin({
+      logo: `${PATHS.src}/static/star.svg`,
+      prefix: '/static/',
+      outputPath: 'static',
+      cache: false,
+      favicons: {
+        // developerURL: null,
+        icons: {
+          coast: false,
+          yandex: false,
+        },
+      },
+    }),
   ],
   module: {
     rules: [

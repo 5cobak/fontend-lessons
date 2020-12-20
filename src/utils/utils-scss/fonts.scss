@@ -1,45 +1,27 @@
-// Fonts here
-// see more: https://github.com/vedees/webpack-template/blob/master/README.md#import-js-files
-
 @font-face {
   font-family: 'Montserrat';
-  src: url('./assets/fonts/montserrat/Montserrat-Regular.eot'); /* IE9 Compat Modes */
-  src: url('./assets/fonts/montserrat/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
-    /* IE6-IE8 */ url('./assets/fonts/montserrat/Montserrat-Regular.woff') format('woff'),
-    /* Pretty Modern Browsers */ url('./assets/fonts/montserrat/Montserrat-Regular.ttf') format('truetype'),
-    /* Safari, Android, iOS */ url('./assets/fonts/Montserrat/Montserrat-Regular.svg') format('svg'); /* Legacy iOS */
-}
-
-@font-face {
-  font-family: 'MontserratMedium';
-  src: url('./assets/fonts/montserrat-medium/Montserrat-Medium.eot'); /* IE9 Compat Modes */
-  src: url('./assets/fonts/montserrat-medium/Montserrat-Medium.eot?#iefix') format('embedded-opentype'),
-    /* IE6-IE8 */ url('./assets/fonts/montserrat-medium/Montserrat-Medium.woff') format('woff'),
-    /* Pretty Modern Browsers */ url('./assets/fonts/montserrat-medium/Montserrat-Medium.ttf') format('truetype'),
-    /* Safari, Android, iOS */ url('./assets/fonts/montserrat-medium/Montserrat-Medium.svg') format('svg'); /* Legacy iOS */
+  src: url('./assets/fonts/montserrat/montserrat-regular.woff2'), url('./assets/fonts/montserrat/montserrat-regular.woff');
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'MontserratBold';
-  src: url('./assets/fonts/montserrat/Montserrat-Bold.eot'); /* IE9 Compat Modes */
-  src: url('./assets/fonts/montserrat/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
-    /* IE6-IE8 */ url('./assets/fonts/montserrat/Montserrat-Bold.woff') format('woff'),
-    /* Pretty Modern Browsers */ url('./assets/fonts/montserrat/Montserrat-Bold.ttf') format('truetype'),
-    /* Safari, Android, iOS */ url('./assets/fonts/montserrat/Montserrat-Bold.svg') format('svg'); /* Legacy iOS */
+  src: url('./assets/fonts/montserrat/montserrat-bold.woff2'), url('./assets/fonts/montserrat/montserrat-bold.woff');
+  font-weight: 600;
+  font-style: normal;
 }
+
 @font-face {
   font-family: 'OpenSans';
-  src: url('./assets/fonts/open-sans/OpenSans-Regular.eot'); /* IE9 Compat Modes */
-  src: url('./assets/fonts/open-sans/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
-    /* IE6-IE8 */ url('./assets/fonts/open-sans/OpenSans-Regular.woff') format('woff'),
-    /* Pretty Modern Browsers */ url('./assets/fonts/open-sans/OpenSans-Regular.ttf') format('truetype'),
-    /* Safari, Android, iOS */ url('./assets/fonts/open-sans/OpenSans-Regular.svg') format('svg'); /* Legacy */
+  src: url('./assets/fonts/open-sans/open-sans-regular.woff2'), url('./assets/fonts/open-sans/open-sans-regular.woff');
+  // font-weight: 600;
+  font-style: normal;
 }
+
 @font-face {
   font-family: 'OpenSansBold';
-  src: url('./assets/fonts/open-sans-bold/OpenSans-Bold.eot'); /* IE9 Compat Modes */
-  src: url('./assets/fonts/open-sans-bold/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
-    /* IE6-IE8 */ url('./assets/fonts/open-sans-bold/OpenSans-Bold.woff') format('woff'),
-    /* Pretty Modern Browsers */ url('./assets/fonts/open-sans-bold/OpenSans-Bold.ttf') format('truetype'),
-    /* Safari, Android, iOS */ url('./assets/fonts/open-sans-bold/OpenSans-Bold.svg') format('svg'); /* Legacy */
+  src: url('./assets/fonts/open-sans/open-sans-bold.woff2'), url('./assets/fonts/open-sans/open-sans-bold.woff');
+  font-weight: 600;
+  font-style: normal;
 }

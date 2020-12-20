@@ -10,7 +10,7 @@
 3. https://5cobak.github.io/toxin/headers-&-footers.html "headers & footers"
 4. https://5cobak.github.io/toxin/landing-page.html "Landing-page"
 5. https://5cobak.github.io/toxin/registration-page.html "Registration page"
-6. https://5cobak.github.io/toxin/sing-in.html "Sing-in page"
+6. https://5cobak.github.io/toxin/singin-page.html "Sing-in page"
 7. https://5cobak.github.io/toxin/room-details.html "Room-details page"
 8. https://5cobak.github.io/toxin/filter-page.html "Filter page"
 

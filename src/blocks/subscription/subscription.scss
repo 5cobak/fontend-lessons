@@ -17,6 +17,7 @@
   &__input {
     display: block;
     min-width: 266px;
+    max-width: 266px;
     border: $border;
     border-radius: rem(4);
     transition: $trFast;

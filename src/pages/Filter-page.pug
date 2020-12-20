@@ -27,26 +27,26 @@ block content
             .filter-page__form-block.filter-page__form-block_margin-20
               +filter-date({className: '', title: 'Даты пребывания в отеле'})
             .filter-page__form-block.filter-page__form-block_margin-30
-              h4.block-title
+              span.block-title
                 | Гости
               +dropdown-choose({className: 'js-dropdown-guests', title: 'Гости'})
             .filter-page__form-block.filter-page__form-block_margin-30
               +range-slider({title: 'Диапазон цены', interval: '5000₽ - 10000₽'})
-              h6.filter-page__range-description
+              span.filter-page__range-description
                 | Стоимость за сутки пребывания в отеле
             .filter-page__form-block.filter-page__form-block_margin-30
               +checkbox-buttons({title: 'Правила дома'})
             .filter-page__form-block.filter-page__form-block_margin-30
               +rich-list({title: 'Доступность'})
             .filter-page__form-block.filter-page__form-block_margin-30
-              h4.block-title
+              span.block-title
                 | Удобства номера
               +dropdown-choose({className: 'js-dropdown-beds', title: 'Гости'})
             .filter-page__form-block.filter-page__form-block_margin-30
               +expand-list({title: 'Дополнительные удобства', className: 'js-expand-list'})
 
           .filter-page__rooms-container
-            h2.filter-page__rooms-title
+            h1.filter-page__rooms-title
               | Номера, которые мы для вас подобрали
             .filter-page__rooms
               +card-room({src: ['room-2.jpg','room-2.jpg','room-2.jpg','room-2.jpg']})
