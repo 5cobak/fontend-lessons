@@ -1,0 +1,21 @@
+.registration-page {
+  background-image: url('assets/img/Landing-page-bg-2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-position: center;
+  &__main {
+    margin: rem(20) 0;
+    display: flex;
+    justify-content: center;
+  }
+  &__description {
+    text-align: right;
+    padding-bottom: rem(20);
+    white-space: pre-wrap;
+    font-size: rem(14);
+    line-height: rem(24);
+    color: $ds75;
+    align-self: flex-end;
+  }
+}
