@@ -1,5 +1,9 @@
 .filter-date {
   max-width: 320px;
+  position: relative;
+  &__label {
+    position: relative;
+  }
   &__title {
     text-transform: uppercase;
     font-size: rem(12);
@@ -12,7 +16,6 @@
     padding: 12px 15px;
     transition: $trFast;
     min-width: 266px;
-    background-image: url('./assets/img/expand_more.jpg');
     background-repeat: no-repeat;
     background-position-x: 93%;
     background-position-y: 50%;
@@ -22,5 +25,14 @@
     &:hover {
       border: $borderHover;
     }
+  }
+  &__arrow {
+    max-width: 12px;
+    min-width: 12px;
+    max-height: 12px;
+    position: absolute;
+    right: 15px;
+    top: calc(50% + 10px);
+    fill: $ds50;
   }
 }

@@ -13,6 +13,7 @@
     font-family: 'MontserratBold', sans-serif;
   }
   &__label {
+    position: relative;
     display: inline-flex;
     flex-direction: column;
     &:last-child {
@@ -35,10 +36,6 @@
     @media (max-width: $phoneWidth) {
       max-width: 125px;
     }
-    background-image: url('./assets/img/expand_more.jpg');
-    background-repeat: no-repeat;
-    background-position-x: 90%;
-    background-position-y: 50%;
     &:first-child {
       margin-right: rem(20);
     }
@@ -48,5 +45,14 @@
     &:hover {
       border: $borderHover;
     }
+  }
+  &__arrow {
+    max-width: 12px;
+    min-width: 12px;
+    max-height: 12px;
+    position: absolute;
+    right: 15px;
+    top: calc(50% + 4px);
+    fill: $ds50;
   }
 }
