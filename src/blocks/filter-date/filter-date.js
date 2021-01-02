@@ -1,35 +1,43 @@
 $(document).ready(() => {
-  const $inputFilterDate = $('.js-filter-date__input');
+  class FilterDate {
+    constructor(elem) {
+      this.input = elem;
+      this.init();
+    }
 
-  if (!$inputFilterDate[0]) return;
+    init() {
+      const input = this.input;
+      let newFormat;
+      if (!this.input[0]) return;
+      this.input.datepicker({
+        showEvent: 'click',
+        offset: 5,
+        range: true,
+        clearButton: true,
+        dateFormat: 'd M',
+        onSelect: (formattedDate) => {
+          newFormat = formattedDate.split(',').join(' - ');
+          input.val(newFormat);
+        },
+        onHide: () => {
+          input.val(newFormat);
+        },
+      });
 
-  let newFormat;
+      this.calendar = input.datepicker().data('datepicker').$datepicker;
+      const $clearButton = this.calendar.find('.datepicker--button');
+      const $buttonsParent = this.calendar.find('.datepicker--buttons');
+      $buttonsParent.append('<span class="datepicker--button-access">Применить</span>');
 
-  $inputFilterDate.datepicker({
-    showEvent: 'click',
-    offset: 5,
-    range: true,
-    clearButton: true,
-    dateFormat: 'd M',
-    onSelect: (formattedDate) => {
-      newFormat = formattedDate.split(',').join(' - ');
-      $inputFilterDate.val(newFormat);
-    },
-    onHide: () => {
-      $inputFilterDate.val(newFormat);
-    },
-  });
-  const $calendarEl = $inputFilterDate.datepicker().data('datepicker').$datepicker;
+      const $buttonAcces = $clearButton.next();
 
-  const $clearButton = $calendarEl.find('.datepicker--button');
-  const $buttonsParent = $calendarEl.find('.datepicker--buttons');
-  $buttonsParent.append('<span class="datepicker--button-access">Применить</span>');
+      function onClickButtonAcces() {
+        input.datepicker().data('datepicker').hide();
+      }
 
-  const $buttonAcces = $clearButton.next();
-
-  function onClickButtonAcces() {
-    $inputFilterDate.datepicker().data('datepicker').hide();
+      $buttonAcces.on('mouseup', onClickButtonAcces);
+    }
   }
 
-  $buttonAcces.on('mouseup', onClickButtonAcces);
+  const filterDate = new FilterDate($('.js-filter-date__input'));
 });
