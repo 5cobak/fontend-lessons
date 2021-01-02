@@ -24,35 +24,41 @@ include ../blocks/card-checkin/card-checkin
 include ../blocks/card-singin/card-singin
 include ../blocks/card-room/card-room
 
+block head
+  link(rel='apple-touch-icon' sizes='180x180' href='favicons/apple-touch-icon.png')
+  link(rel='icon' type='image/png' sizes='32x32' href='favicons/favicon-32x32.png')
+  link(rel='icon' type='image/png' sizes='16x16' href='favicons/favicon-16x16.png')
+  link(rel='manifest' href='favicons/site.webmanifest')
+
 block content
-	svg.logo.logo_grey(role='image' aria-label='toxin logo')
-		use(xlink:href="#logo-gray")
-	main.cards-page
-		.container
-			.cards-page__content.js-cards-page__content
-				.cards-page__card
-					+card-selection()
-				.cards-page__card
-					+card-book()
-				.cards-page__card 
-					.js-datepicker-inline
-				.cards-page__card
-					+card-singin()
-				.cards-page__card
-					+card-checkin()
-				.cards-page__card
-					+card-room({src: ['room-2.jpg','room-2.jpg','room-2.jpg','room-2.jpg']})
-				.cards-page__card
-					+card-room({src: ['room-1.jpg','room-1.jpg','room-1.jpg','room-1.jpg']})
-				
-				
-				
-				
-				
-				
-				
-				
-				
+  svg.logo.logo_grey(role='image' aria-label='toxin logo')
+    use(xlink:href="#logo-gray")
+  main.cards-page
+    .container
+      .cards-page__content.js-cards-page__content
+        .cards-page__card
+          +card-selection()
+        .cards-page__card
+          +card-book()
+        .cards-page__card 
+          .js-datepicker-inline
+        .cards-page__card
+          +card-singin()
+        .cards-page__card
+          +card-checkin()
+        .cards-page__card
+          +card-room({src: ['room-2.jpg','room-2.jpg','room-2.jpg','room-2.jpg']})
+        .cards-page__card
+          +card-room({src: ['room-1.jpg','room-1.jpg','room-1.jpg','room-1.jpg']})
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
 block script
-	script
+  script

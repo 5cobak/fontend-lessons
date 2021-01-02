@@ -20,95 +20,100 @@ include ../blocks/advantages/advantages
 include ../blocks/review/review
 include ../blocks/card-room/card-room
 
+block head
+  link(rel='apple-touch-icon' sizes='180x180' href='favicons/apple-touch-icon.png')
+  link(rel='icon' type='image/png' sizes='32x32' href='favicons/favicon-32x32.png')
+  link(rel='icon' type='image/png' sizes='16x16' href='favicons/favicon-16x16.png')
+  link(rel='manifest' href='favicons/site.webmanifest')
 block content
-	svg.logo.logo_gray(role='image' aria-label='toxin-logo')
-		use(xlink:href="#logo-gray")
-	main.ui-kit
-		.container
-				.row
-					.ui-kit__first-row
-						.col
-							+textField(
-								{
-									title: 'text field', 
-									placeholder: 'Email', 
-									type: 'email', 
-									required: true
-								}
-							)
-							+masked-textfield(
-								{
-									title: 'masked text field',
-									placeholder: 'ДД.ММ.ГГГГ', 
-									type: 'text', 
-									className: 'js-date-masked'
-								}
-							)
-							span.block-title dropdown
-							+dropdown-choose({className: 'js-dropdown-guests', title:'dropdown'})
-							+date-dropdown({className: 'js-date-masked', 
-							title: 'date dropdown', 
-							titleSecond: 'date dropdown'})
-							+filter-date({className: 'js-filter-date', title: 'filter date dropdown'})
-							+subscription({title: 'subscription', placeholder: 'Email'})
-							span.block-title dropdown
-							+dropdown-choose({className: 'js-dropdown-beds', title: 'dropdown'})
-							+expand-list({title: 'expandable checkbox list', className: 'js-expand-list'})
+  svg.logo.logo_gray(role='image' aria-label='toxin-logo')
+    use(xlink:href="#logo-gray")
+  main.ui-kit
+    .container
+        .row
+          .ui-kit__first-row
+            .col
+              +textField(
+                {
+                  title: 'text field', 
+                  placeholder: 'Email', 
+                  type: 'email', 
+                  required: true
+                }
+              )
+              +masked-textfield(
+                {
+                  title: 'masked text field',
+                  placeholder: 'ДД.ММ.ГГГГ', 
+                  type: 'text', 
+                  className: 'js-date-masked'
+                }
+              )
+              span.block-title dropdown
+              +dropdown-choose({className: 'js-dropdown-guests', title:'dropdown'})
+              +date-dropdown({className: 'js-date-masked', 
+              title: 'date dropdown', 
+              titleSecond: 'date dropdown'})
+              +filter-date({className: 'js-filter-date', title: 'filter date dropdown'})
+              +subscription({title: 'subscription', placeholder: 'Email'})
+              span.block-title dropdown
+              +dropdown-choose({className: 'js-dropdown-beds', title: 'dropdown'})
+              +expand-list({title: 'expandable checkbox list', className: 'js-expand-list'})
 
-						.col
-							+checkbox-buttons({title: 'checkbox buttons'})
-							span.block-title.block-title_margin-b-16 radio button
-							+radio-buttons({title: 'radio buttons'})
-							span.block-title.block-title_margin-b-16 toggle
-							+toggle-buttons()
-							.block-title.block-title_margin-b-16 like buttons
-							+like-button({className: '', count: 0})
-							.block-title.block-title_margin-b-16 rate button
-							+rate-buttons()
-							+rich-list({title: 'rich checkbox buttons'})
-						.col
-							+range-slider({title: 'range slider', interval: '5000₽ - 10000₽'})
-							.block-title.block-title_margin-b-16 buttons
-							br
-							input(type='submit' value='click me').button
-							br
-							br 
-							button(type='submit').button.button_white click me
-							br
-							br
-							input(type='submit' value='click me').button.button_white.button_no-bg
-							br
-							br
-							button(type='submit').button.button_big перейти к оплате
-							br
-							.block-title.block-title_margin-b-16 pagination
-							br
-							+pagination()
-							+bullet-list({title: 'bullet list'})
-					.row
-						.ui-kit__last-row
-							.col
-								+advantages({items: [
-									{
-										title: 'Комфорт',
-										description: 'Шумопоглащиющие стены',
-										href: '#insert_emoticon'
-									},
-									{
-										title: 'Удобство',
-										description: 'Окно в каждой из спален',
-										href: '#location_city'
-									},
+            .col
+              +checkbox-buttons({title: 'checkbox buttons'})
+              span.block-title.block-title_margin-b-16 radio button
+              +radio-buttons({title: 'radio buttons'})
+              span.block-title.block-title_margin-b-16 toggle
+              +toggle-buttons()
+              .block-title.block-title_margin-b-16 like buttons
+              +like-button({className: '', count: 0})
+              .block-title.block-title_margin-b-16 rate button
+              +rate-buttons()
+              +rich-list({title: 'rich checkbox buttons'})
+            .col
+              +range-slider({title: 'range slider', interval: '5000₽ - 10000₽'})
+              .block-title.block-title_margin-b-16 buttons
+              br
+              input(type='submit' value='click me').button
+              br
+              br 
+              button(type='submit').button.button_white click me
+              br
+              br
+              input(type='submit' value='click me').button.button_white.button_no-bg
+              br
+              br
+              button(type='submit').button.button_big перейти к оплате
+              br
+              .block-title.block-title_margin-b-16 pagination
+              br
+              +pagination()
+              +bullet-list({title: 'bullet list'})
+          .row
+            .ui-kit__last-row
+              .col
+                +advantages({items: [
+                  {
+                    title: 'Комфорт',
+                    description: 'Шумопоглащиющие стены',
+                    href: '#insert_emoticon'
+                  },
+                  {
+                    title: 'Удобство',
+                    description: 'Окно в каждой из спален',
+                    href: '#location_city'
+                  },
 
-								]})
-							.col
-								+review({
-									src: 'maga.png',
-									name: 'Мурад Сарафанов',
-									date: '5 дней назад',
-									text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. \nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.',
-									like: 11
-								})
+                ]})
+              .col
+                +review({
+                  src: 'maga.png',
+                  name: 'Мурад Сарафанов',
+                  date: '5 дней назад',
+                  text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. \nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.',
+                  like: 11
+                })
 
 block script
-	script
+  script
