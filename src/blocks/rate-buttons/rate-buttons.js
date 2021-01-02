@@ -1,8 +1,8 @@
 $(document).ready(() => {
-  const rateButtons = document.querySelectorAll('.rate-buttons');
+  const rateButtons = document.querySelectorAll('.js-rate-buttons');
 
   rateButtons.forEach((item) => {
-    const inputs = item.querySelectorAll('input');
+    const inputs = item.querySelectorAll('.js-rate-button__input');
 
     inputs.forEach((item) => {
       function paintStars(e) {

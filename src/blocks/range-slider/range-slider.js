@@ -2,7 +2,7 @@ $(document).ready(() => {
   const input = document.querySelectorAll('.js-range-slider__input');
   input.forEach((item) => {
     const parentEl = item.parentElement;
-    const domValues = parentEl.querySelector('.range-slider__values');
+    const domValues = parentEl.querySelector('.js-range-slider__values');
 
     function writeValues() {
       const from = parentEl.querySelector('.irs-from');

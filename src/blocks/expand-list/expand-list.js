@@ -2,8 +2,8 @@ $(document).ready(() => {
   const dropdownElements = document.querySelectorAll('.js-expand-list');
 
   dropdownElements.forEach((item) => {
-    const title = item.querySelector('.expand-list__title');
-    const dropdownMenu = item.querySelector('.expand-list__dropdown');
+    const title = item.querySelector('.js-expand-list__title');
+    const dropdownMenu = item.querySelector('.js-expand-list__dropdown');
     function toggleClass(e) {
       e.preventDefault();
 
@@ -12,9 +12,6 @@ $(document).ready(() => {
     }
     title.addEventListener('click', toggleClass);
 
-    const checkboxes = item.querySelectorAll('.expand-list__checkbox');
-
-    function stopBubble(e) {}
-    checkboxes.forEach((item) => item.addEventListener('click', stopBubble));
+    const checkboxes = item.querySelectorAll('.js-expand-list__checkbox');
   });
 });

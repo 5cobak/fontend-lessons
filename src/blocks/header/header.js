@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  const headers = document.querySelectorAll('.header');
+  const headers = document.querySelectorAll('.js-header');
 
   headers.forEach((header) => {
     const burger = header.querySelector('.js-header__burger');

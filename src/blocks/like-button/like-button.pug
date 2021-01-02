@@ -1,7 +1,7 @@
 mixin like-button({className, count})
   button.like-button(class=className)
-    svg.like-button__like
+    svg.like-button__like.js-like-button__like
       use(xlink:href="#like-noactive")
-    svg.like-button__like-favorite
+    svg.like-button__like-favorite.js-like-button__like-favorite
       use(xlink:href="#favorite")
-    span.like-button__likes #{count}
+    span.like-button__likes.js-like-button__likes #{count}
