@@ -7,7 +7,7 @@ $(document).ready(() => {
     edges: 1,
     cssStyle: 'light-theme',
     prevText: '',
-    nextText: '<svg class="pagination__arrow-forward" role="image" aria-label="icon next page"><use xlink:href="#arrow_forward"></use></svg>',
+    nextText: '<svg class="pagination__arrow-forward" role="image" aria-label="icon next page"><use xlink:href="#arrow-forward"></use></svg>',
     onPageClick: () => {
       if ($('.current').text === 1) this.prevText = '';
       else this.prevText = 'Prev';
