@@ -12,14 +12,14 @@
   &__input {
     width: 100%;
     border: $border;
-    border-radius: rem(4);
+    border-radius: 4px;
     transition: $trFast;
     padding: 13px 15px;
-    font-size: rem(14);
+    font-size: 14px;
     color: $ds75;
-    font-family: 'MontserratMedium', sans-serif;
+    @include MontMedium;
     &::placeholder {
-      font-size: rem(14);
+      font-size: 14px;
       color: $ds25;
       transition: $trFast;
     }
@@ -27,6 +27,12 @@
       border: $borderHover;
       &::placeholder {
         color: $ds75;
+      }
+    }
+    @media (max-width: $phoneWidth) {
+      font-size: 12px;
+      &::placeholder {
+        font-size: 12px;
       }
     }
   }

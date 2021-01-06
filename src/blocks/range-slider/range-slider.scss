@@ -3,11 +3,14 @@
   &__head {
     display: flex;
     justify-content: space-between;
-    margin-bottom: rem(20);
+    margin-bottom: 20px;
   }
   &__values {
-    font-size: rem(12);
+    font-size: 12px;
     color: $ds50;
+    @media (max-width: $phoneWidth) {
+      font-size: 10px;
+    }
   }
 }
 
@@ -24,7 +27,7 @@
 }
 .irs--round .irs-bar {
   background: $greenGr;
-  top: 0px;
+  top: 0;
   height: 6px;
 }
 

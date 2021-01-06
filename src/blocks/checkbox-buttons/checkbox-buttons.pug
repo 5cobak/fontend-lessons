@@ -3,17 +3,17 @@ mixin checkbox-buttons({title})
     span.block-title.block-title_margin-b-16 #{title}
     label.checkbox-buttons__item
       input(type="checkbox").checkbox-buttons__checkbox
-      span.checkbox-buttons__custom-checkbox 
+      span.checkbox-buttons__custom-checkbox(tabindex='0')
       span.checkbox-buttons__text
         | Можно курить
     label.checkbox-buttons__item
       input(type="checkbox").checkbox-buttons__checkbox
-      span.checkbox-buttons__custom-checkbox 
+      span.checkbox-buttons__custom-checkbox(tabindex='0') 
       span.checkbox-buttons__text
         | Можно с питомцами
     label.checkbox-buttons__item
       input(type="checkbox").checkbox-buttons__checkbox
-      span.checkbox-buttons__custom-checkbox 
+      span.checkbox-buttons__custom-checkbox(tabindex='0') 
       span.checkbox-buttons__text
         |Можно пригласить гостей
         |(до 10 человек)

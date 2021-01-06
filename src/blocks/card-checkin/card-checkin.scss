@@ -1,32 +1,40 @@
 .card-checkin {
-  max-width: 380px;
-  max-height: 643px;
   background-color: $white;
+  max-width: 380px;
+  width: 100%;
   border-radius: 4px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  @media (max-width: $phoneWidth) {
+  }
   &__content {
-    padding: rem(40) rem(30) rem(30) rem(30);
+    padding: 40px 30px 30px 30px;
   }
   &__title {
     @include MontBold;
-    font-size: rem(24);
-    line-height: rem(29);
-    margin-bottom: rem(20);
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 20px;
+    @media (max-width: $phoneWidth) {
+      font-size: 20px;
+      line-height: 25px;
+      margin-bottom: 10px;
+    }
   }
   &__item {
     &_margin-b-10 {
-      margin-bottom: rem(10);
+      margin-bottom: 10px;
     }
     &_margin-b-25 {
-      margin-bottom: rem(25);
+      margin-bottom: 25px;
     }
 
     &_margin-b-20 {
-      margin-bottom: rem(20);
+      margin-bottom: 20px;
     }
   }
   &__button-pay {
-    margin-bottom: rem(30);
+    margin-bottom: 30px;
   }
   &__sing-in {
     display: flex;
@@ -34,6 +42,9 @@
     align-items: center;
   }
   &__sing-in-text {
-    font-size: rem(14);
+    font-size: 14px;
+    @media (max-width: $phoneWidth) {
+      font-size: 12px;
+    }
   }
 }

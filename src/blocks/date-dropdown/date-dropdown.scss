@@ -1,5 +1,6 @@
 .date-dropdown {
   $self: &;
+  width: 100%;
   max-width: 320px;
   user-select: none;
   display: flex;
@@ -7,37 +8,35 @@
   @media (max-width: $phoneWidth) {
     max-width: 100%;
   }
-  &__title {
-    text-transform: uppercase;
-    font-size: rem(12);
-    font-family: 'MontserratBold', sans-serif;
-  }
   &__label {
     position: relative;
     display: inline-flex;
     flex-direction: column;
-    &:last-child {
-      #{$self}__input {
-        margin-right: 0;
+    @media (max-width: $tableWidth) {
+      &:first-child {
+        margin-right: 10px;
       }
     }
   }
 
   &__input {
-    line-height: rem(18);
+    line-height: 18px;
+    @media (max-width: $phoneWidth) {
+      line-height: 15px;
+    }
   }
   &__input {
-    font-size: rem(14);
+    font-size: 14px;
     border: $border;
-    border-radius: rem(4);
+    border-radius: 4px;
     padding: 12px 15px;
     transition: $trFast;
+    width: 100%;
     max-width: 150px;
     @media (max-width: $phoneWidth) {
-      max-width: 125px;
-    }
-    &:first-child {
-      margin-right: rem(20);
+      max-width: 130px;
+      font-size: 12px;
+      padding: 10px 12px;
     }
     &:focus {
       border: $borderHover;

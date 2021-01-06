@@ -14,8 +14,11 @@
 .pagination-wrap__text {
   max-width: 320px;
   margin: 0 auto;
-  font-size: rem(14);
+  font-size: 14px;
   color: $ds75;
+  @media (max-width: $phoneWidth) {
+    font-size: 12px;
+  }
 }
 .pagination-container {
   display: inline-block;
@@ -43,8 +46,8 @@ ul.simple-pagination {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: rem(40);
-    height: rem(40);
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,7 +68,7 @@ ul.simple-pagination {
     }
   }
   a {
-    font-size: rem(12);
+    font-size: 12px;
     color: $ds50;
     display: flex;
     justify-content: center;
@@ -73,13 +76,19 @@ ul.simple-pagination {
     width: 100%;
     height: 100%;
     text-align: center;
+    @media (max-width: $phoneWidth) {
+      font-size: 10px;
+    }
   }
   .active {
     border-radius: 50%;
     background: $purpleGr;
     color: $white;
     @include MontBold;
-    font-size: rem(12);
+    font-size: 12px;
+    @media (max-width: $phoneWidth) {
+      font-size: 10px;
+    }
   }
 
   .disabled {
@@ -89,9 +98,12 @@ ul.simple-pagination {
     cursor: pointer;
   }
   .ellipse {
-    font-size: rem(12);
+    font-size: 12px;
+    @media (max-width: $phoneWidth) {
+      font-size: 10px;
+    }
   }
   .ellipse input {
-    width: 3em;
+    width: 54px;
   }
 }

@@ -49,18 +49,21 @@
   }
   &__title {
     text-transform: initial;
-    font-size: rem(19);
-    line-height: rem(23);
-    margin-bottom: rem(20);
+    font-size: 19px;
+    line-height: 23px;
+    margin-bottom: 20px;
     &_margin-l-20 {
-      margin-left: rem(20);
+      margin-left: 20px;
+    }
+    @media (max-width: $phoneWidth) {
+      font-size: 15px;
     }
   }
   &__main {
     display: flex;
     justify-content: space-between;
-    padding-top: rem(70);
-    padding-bottom: rem(70);
+    padding-top: 70px;
+    padding-bottom: 70px;
     @media (max-width: $smDesktopWidth) {
       display: block;
     }
@@ -69,33 +72,38 @@
       margin: 0 auto;
     }
   }
+  &__block {
+    @media (max-width: $phoneWidth) {
+      margin-bottom: 50px;
+    }
+  }
   &__text-content {
     border-bottom: 1px solid rgba(31, 32, 65, 0.1);
   }
   &__info {
-    margin-right: rem(10);
+    margin-bottom: 10px;
     @media (max-width: $smDesktopWidth) {
       margin: 0;
-      margin-bottom: rem(30);
+      margin-bottom: 30px;
     }
   }
   &__info-head {
     display: flex;
     justify-content: space-between;
-    margin-bottom: rem(30);
+    margin-bottom: 30px;
     @media (max-width: $tableWidth) {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-column-gap: 1rem;
+      grid-column-gap: 18px;
     }
     @media (max-width: $phoneWidth) {
       display: grid;
       grid-template-columns: 1fr;
-      grid-row-gap: 1rem;
+      grid-row-gap: 18px;
     }
   }
   &__reviews {
-    margin-bottom: rem(30);
+    margin-bottom: 30px;
   }
   &__reviews-head {
     display: flex;
@@ -103,9 +111,13 @@
     align-items: baseline;
   }
   &__reviews-count {
-    font-size: rem(14);
-    line-height: rem(14);
+    font-size: 14px;
+    line-height: 14px;
     color: $ds50;
+    @media (max-width: $phoneWidth) {
+      font-size: 12px;
+      line-height: 12px;
+    }
   }
   &__rules-block {
     display: flex;
@@ -119,9 +131,13 @@
   }
   &__cancel-text {
     white-space: pre-wrap;
-    font-size: rem(14);
-    line-height: rem(24);
+    font-size: 14px;
+    line-height: 24px;
     color: $ds75;
+    @media (max-width: $phoneWidth) {
+      font-size: 12px;
+      line-height: 20px;
+    }
   }
   &__aside {
     @media (max-width: $smDesktopWidth) {

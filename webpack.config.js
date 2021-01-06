@@ -143,17 +143,16 @@ module.exports = {
         use: cssLoaders('sass-loader'),
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
-        exclude: `${PATHS.src}/assets/img/icons/`,
+        exclude: [path.resolve(__dirname, `${PATHS.src}/assets/img/icons/`)],
         options: {
           outputPath: 'assets/img',
         },
       },
       {
-        test: /\.(ttf|eot|svg|woff|woff2|eot)$/,
+        test: /\.(woff|woff2)$/,
         loader: 'file-loader',
-        exclude: `${PATHS.src}/assets/img/icons/`,
         options: {
           outputPath: 'assets/fonts',
         },
@@ -183,6 +182,7 @@ module.exports = {
           extract: true,
           spriteFilename: 'icons.svg',
           outputPath: './assets/img/icons/',
+          esModule: false,
         },
       },
       // {

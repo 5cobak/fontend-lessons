@@ -1,0 +1,7 @@
+.validate-error {
+  font-size: 12;
+  color: $danger-color;
+  @media (max-width: $phoneWidth) {
+    font-size: 10px;
+  }
+}

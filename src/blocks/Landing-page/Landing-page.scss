@@ -5,16 +5,16 @@
   background-origin: content-box;
   background-position: center;
   &__main {
-    margin: rem(70) 0 rem(386);
+    margin: 70px 0 386px;
     display: flex;
     justify-content: space-between;
   }
   &__description {
     text-align: right;
-    padding-bottom: rem(20);
+    padding-bottom: 20px;
     white-space: pre-wrap;
-    font-size: rem(14);
-    line-height: rem(24);
+    font-size: 14px;
+    line-height: 24px;
     color: $ds75;
     align-self: flex-end;
   }

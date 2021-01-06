@@ -13,6 +13,11 @@
   position: relative;
   transition: $trFast;
   user-select: none;
+  &:focus {
+    &:after {
+      background-color: $ds75;
+    }
+  }
   &:after {
     content: '';
     position: absolute;
@@ -41,7 +46,7 @@
     opacity: 0;
   }
   &__likes {
-    font-size: rem(12);
+    font-size: 12px;
     color: $ds25;
     position: absolute;
     right: 9px;

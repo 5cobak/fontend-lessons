@@ -21,6 +21,7 @@ export default class DropdownChoose {
   createEl(element) {
     const dropdown = document.createElement('div');
     dropdown.className = 'dropdown-choose';
+    dropdown.tabIndex = 0;
     dropdown.style.maxWidth = `${this.maxWidth}px`;
     element.append(dropdown);
     return dropdown;
@@ -91,7 +92,6 @@ export default class DropdownChoose {
       if (!targetField) return;
       const menu = targetField.parentElement.querySelector('.dropdown-choose__menu');
       const arrow = targetField.parentElement.querySelector('.dropdown-choose__arrow');
-
       $(targetField.parentElement).toggleClass('dropdown-choose_active');
       $(menu).toggleClass('dropdown-choose__menu_active');
       $(arrow).toggleClass('dropdown-choose__arrow_active');

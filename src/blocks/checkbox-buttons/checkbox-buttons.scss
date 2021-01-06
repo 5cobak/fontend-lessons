@@ -3,19 +3,14 @@
   max-width: 222px;
   user-select: none;
   cursor: pointer;
-
-  &__title {
-    display: inline-block;
-    text-transform: uppercase;
-    font-family: 'MontserratBold', Arial, sans-serif;
-    font-size: rem(12);
-    position: relative;
-  }
   &__item {
-    margin-bottom: rem(10);
+    margin-bottom: 10px;
     display: flex;
     &:last-child {
       margin-bottom: 0;
+    }
+    @media (max-width: $phoneWidth) {
+      margin-bottom: 5px;
     }
   }
   &__custom-checkbox {
@@ -26,15 +21,24 @@
     min-height: 20px;
     border: $border;
     border-radius: 4px;
-    margin-right: rem(10);
+    margin-right: 10px;
+    @media (max-width: $phoneWidth) {
+      margin-right: 5px;
+    }
+    &:focus {
+      border: $borderHover;
+    }
   }
   &__text {
-    font-size: rem(14);
+    font-size: 14px;
     color: $ds50;
     white-space: pre-wrap;
-    line-height: rem(18);
+    line-height: 20px;
+    @media (max-width: $phoneWidth) {
+      font-size: 12px;
+    }
   }
-  input {
+  &__checkbox {
     display: none;
   }
   input:checked + span {

@@ -1,32 +1,6 @@
 .toggle-buttons {
   $self: &;
   user-select: none;
-  &__title {
-    font-family: 'MontserratBold', Arial, sans-serif;
-    font-size: rem(12);
-    text-transform: uppercase;
-  }
-
-  &__head {
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    cursor: pointer;
-    margin-bottom: 16.6px;
-    &_active {
-      svg {
-        transform: rotate(180deg);
-        fill: $ds100;
-      }
-    }
-  }
-  &__title {
-    text-transform: uppercase;
-    @include MontBold;
-    display: inline-block;
-    font-size: rem(12);
-  }
   &__label {
     display: inline-flex;
     justify-content: center;
@@ -39,8 +13,7 @@
       border-color: $purple;
       &:after {
         background: $purpleGr;
-        left: none;
-        left: calc(100% - 12px - 3px);
+        left: calc(100% - 15px);
       }
     }
     &:checked ~ #{$self}__subtitle {
@@ -59,6 +32,9 @@
     overflow: hidden;
     margin-right: 10px;
     transition: $trFast;
+    &:focus {
+      border: $borderHover;
+    }
     &:after {
       content: '';
       display: block;
@@ -73,8 +49,11 @@
   }
   &__subtitle {
     color: $ds75;
-    font-size: rem(14);
-    line-height: rem(18);
+    font-size: 14px;
+    line-height: 20px;
     white-space: pre-wrap;
+    @media (max-width: $phoneWidth) {
+      font-size: 12px;
+    }
   }
 }

@@ -1,9 +1,10 @@
 .datepicker {
   min-width: 320px;
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-size: rem(12);
+  @include Mont;
+  font-size: 12px;
   @media (max-width: $phoneWidth) {
     min-width: 280px;
+    font-size: 10px;
   }
   &--pointer {
     display: none;
@@ -13,34 +14,27 @@
     border: none;
   }
   &--nav-title {
-    font-size: rem(19);
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    @include Mont;
     font-weight: bold;
   }
   &--nav-action {
-    position: relative;
-    &:after {
-      position: absolute;
-      content: '';
-      left: 10px;
-      width: 14px;
-      height: 2px;
-      background-color: $purple;
+    &:first-child {
+      background-image: url('assets/img/arrow-forward.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: rotate(-180deg);
     }
-    &:before {
-      content: '';
-      border: 2px solid $purple;
-      border-right: none;
-      border-top: none;
-      width: 10px;
-      height: 10px;
-      transform: rotate(45deg);
+    &:last-child {
+      background-image: url('assets/img/arrow-forward.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &:hover {
+      background-color: $white;
     }
     svg {
       display: none;
-    }
-    &:last-child {
-      transform: rotate(-180deg);
     }
   }
   &--cells {
@@ -61,9 +55,9 @@
     margin: 0;
   }
   &--day-name {
-    font-size: rem(12);
+    font-size: 12px;
     color: $purple;
-    font-family: 'MontserratBold', Arial, sans-serif;
+    @include MontBold;
     max-width: 40px;
     min-height: 40px;
     text-transform: initial;
@@ -79,9 +73,13 @@
       flex: none;
       height: auto;
       text-transform: uppercase;
-      font-size: rem(12);
-      font-family: 'MontserratBold', Arial, sans-serif;
+      font-size: 12px;
+      @include MontBold;
+
       cursor: pointer;
+      @media (max-width: $phoneWidth) {
+        font-size: 10px;
+      }
       &:first-child {
         color: $ds50;
         &:hover {
@@ -139,7 +137,7 @@
 .datepicker--cell.-selected-,
 .datepicker--cell.-selected-.-current- {
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-  font-family: 'MontserratBold', Arial, sans-serif;
+  @include MontBold;
 }
 .datepicker--cell.-in-range- {
   background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25));

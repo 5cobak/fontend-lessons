@@ -1,16 +1,16 @@
 .ui-kit {
-  margin-top: rem(140);
-  margin-bottom: rem(130);
+  margin-top: 140px;
+  margin-bottom: 130px;
   &__first-row {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1rem;
-    margin-bottom: 3rem;
+    grid-gap: 18px;
+    margin-bottom: 54px;
   }
   &__last-row {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-gap: 1rem;
-    margin-bottom: 3rem;
+    grid-gap: 18px;
+    margin-bottom: 54px;
   }
 }

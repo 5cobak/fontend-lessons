@@ -9,20 +9,15 @@
       }
     }
   }
-  &__title {
-    text-transform: uppercase;
-    font-family: 'MontserratBold', Arial, sans-serif;
-    font-size: rem(12);
-  }
   &__input {
     display: block;
     width: 100%;
     max-width: 266px;
     border: $border;
-    border-radius: rem(4);
+    border-radius: 4px;
     transition: $trFast;
     padding: 12px 40px 12px 15px;
-    font-size: rem(14);
+    font-size: 14px;
     color: $ds75;
     font-family: 'MontserratMedium', sans-serif;
     background-image: url('./assets/img/arrow-forward.jpg');
@@ -30,7 +25,7 @@
     background-position-x: 96%;
     background-position-y: 50%;
     &::placeholder {
-      font-size: rem(14);
+      font-size: 14px;
       color: $ds25;
       transition: $trFast;
     }

@@ -1,40 +1,49 @@
 .review {
   max-width: 710px;
   &:not(:last-child) {
-    margin-bottom: rem(20);
+    margin-bottom: 20px;
   }
   &__head {
     display: flex;
-    margin-bottom: rem(10);
-    line-height: rem(24);
+    margin-bottom: 10px;
+    line-height: 24px;
   }
   &__name {
     @include MontBold;
-    font-size: rem(14);
+    font-size: 14px;
     color: $ds75;
+    @media (max-width: $phoneWidth) {
+      font-size: 12px;
+    }
   }
   &__date {
-    font-size: rem(14);
+    font-size: 14px;
     color: $ds75;
+    @media (max-width: $phoneWidth) {
+      font-size: 12px;
+    }
   }
   &__avatar {
     max-width: 48px;
     max-height: 48px;
     border-radius: 50%;
-    margin-right: rem(10);
+    margin-right: 10px;
   }
   &__content {
     display: flex;
   }
   &__like {
-    margin-top: rem(5);
+    margin-top: 5px;
     margin-right: 15px;
     margin-left: 5px;
   }
   &__text {
-    font-size: rem(14);
+    font-size: 14px;
     color: $ds75;
     white-space: pre-wrap;
-    line-height: rem(24);
+    line-height: 24px;
+    @media (max-width: $phoneWidth) {
+      font-size: 12px;
+    }
   }
 }

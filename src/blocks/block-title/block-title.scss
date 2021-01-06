@@ -1,16 +1,27 @@
 .block-title {
   text-transform: uppercase;
-  font-family: 'MontserratBold', Arial, sans-serif;
-  font-size: rem(12);
+  @include MontBold;
+  font-size: 12px;
   display: inline-block;
-  line-height: rem(15);
-  margin-bottom: rem(5);
+  line-height: 15px;
+  margin-bottom: 5px;
   white-space: pre-wrap;
   color: $ds100;
+  @media (max-width: $phoneWidth) {
+    font-size: 10px;
+    line-height: 12px;
+    margin-bottom: 3px;
+  }
   &_margin-b-16 {
-    margin-bottom: rem(16);
+    margin-bottom: 16px;
+    @media (max-width: $phoneWidth) {
+      margin-bottom: 13px;
+    }
   }
   &_margin-b-20 {
-    margin-bottom: rem(20);
+    margin-bottom: 20px;
+    @media (max-width: $phoneWidth) {
+      margin-bottom: 15px;
+    }
   }
 }

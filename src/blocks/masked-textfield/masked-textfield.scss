@@ -9,22 +9,19 @@
       }
     }
   }
-  &__title {
-    text-transform: uppercase;
-    font-family: 'MontserratBold', Arial, sans-serif;
-    font-size: rem(12);
-  }
   &__input {
     width: 100%;
     border: $border;
-    border-radius: rem(4);
+    border-radius: 4px;
     transition: $trFast;
     padding: 13px 15px;
-    font-size: rem(14);
+    @include MontMedium;
+    font-size: 14px;
     color: $ds75;
-    font-family: 'MontserratMedium', sans-serif;
+    @media (max-width: $phoneWidth) {
+      font-size: 12px;
+    }
     &::placeholder {
-      font-size: rem(14);
       color: $ds25;
       transition: $trFast;
     }

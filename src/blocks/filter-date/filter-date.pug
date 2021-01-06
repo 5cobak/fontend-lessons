@@ -3,5 +3,4 @@ mixin filter-date({className, title})
     label.filter-date__label
       span.block-title #{title}
       input(type="text" placeholder="от и до" class=className readonly required).filter-date__input.js-filter-date__input
-      svg.filter-date__arrow
-        use(xlink:href="#expand_more")
+      div.filter-date__arrow
