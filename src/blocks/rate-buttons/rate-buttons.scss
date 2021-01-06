@@ -16,12 +16,12 @@
 
   &__input:checked + &__star &__svg:last-child {
     opacity: 1;
-    width: 20px;
-    height: 20px;
+    width: rem(20);
+    height: rem(20);
   }
   &__svg {
-    width: 20px;
-    height: 20px;
+    width: rem(20);
+    height: rem(20);
     &:last-child {
       opacity: 0;
       width: 0;

@@ -1,10 +1,10 @@
 .card-room {
   $self: &;
   background-color: $white;
-  max-width: 270px;
-  min-width: 270px;
-  border-radius: 4px;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  max-width: rem(270);
+  min-width: rem(270);
+  border-radius: rem(4);
+  box-shadow: 0 rem(10) rem(20) rgba(31, 32, 65, 0.05);
   box-sizing: content-box;
   overflow: hidden;
   &__slider {
@@ -28,14 +28,14 @@
   .swiper-pagination-bullet {
     opacity: 1;
     background: none;
-    border: 1px solid $white;
-    box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.1);
+    border: rem(1) solid $white;
+    box-shadow: 0 rem(5) rem(5) rgba(31, 32, 65, 0.1);
     margin-right: 0;
   }
   .swiper-pagination-bullet-active {
     background: $white;
-    border: 1px solid $white;
-    box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+    border: rem(1) solid $white;
+    box-shadow: 0 rem(5) rem(5) rgba(31, 32, 65, 0.3);
   }
   .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0;
@@ -52,7 +52,7 @@
       display: block;
       width: 100%;
       height: 100%;
-      box-shadow: -50px 0 50px -23px rgba(0, 0, 0, 0.5) inset, 50px 0 50px -23px rgba(0, 0, 0, 0.5) inset;
+      box-shadow: rem(-50) 0 rem(50) rem(23) rgba(0, 0, 0, 0.5) inset, rem(50) 0 rem(50) rem(23) rgba(0, 0, 0, 0.5) inset;
       position: absolute;
       top: 0;
       z-index: 10;
@@ -65,15 +65,13 @@
   &__button-prev,
   &__button-next {
     height: 100%;
-    top: 22px;
+    top: rem(22);
 
     &:after {
       color: $white;
-      font-size: 12px;
+      font-size: rem(12);
       font-weight: bold;
     }
-  }
-  &__button-next {
   }
   &__content {
     padding: rem(20) rem(17) rem(19) rem(20);
@@ -86,7 +84,7 @@
     margin-bottom: rem(15);
     line-height: rem(17);
     padding-bottom: rem(12);
-    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    border-bottom: rem(1) solid rgba(31, 32, 65, 0.1);
     margin-bottom: rem(12);
   }
   &__number {

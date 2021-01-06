@@ -24,7 +24,7 @@
   }
   &__input {
     position: absolute;
-    opacity: 0;
+    visibility: hidden;
     cursor: pointer;
     &:checked ~ #{$self}__checkmark {
       border-color: $purple;
@@ -43,18 +43,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20px;
-    width: 20px;
+    height: rem(20);
+    width: rem(20);
     background-color: #fff;
-    border: 1px solid $ds25;
+    border: rem(1) solid $ds25;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: rem(10);
+    &:focus {
+      border: $borderHover;
+    }
     &:after {
       content: '';
       display: block;
       opacity: 0;
-      width: 12px;
-      height: 12px;
+      width: rem(12);
+      height: rem(12);
       border-radius: 50%;
       background: $purpleGr;
       transition: $trFast;

@@ -1,9 +1,8 @@
 .card-checkin {
-  max-width: 380px;
-  max-height: 643px;
+  max-width: rem(380);
   background-color: $white;
-  border-radius: 4px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: rem(4);
+  box-shadow: 0 0 rem(25) rgba(0, 0, 0, 0.2);
   &__content {
     padding: rem(40) rem(30) rem(30) rem(30);
   }

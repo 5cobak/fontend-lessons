@@ -1,5 +1,5 @@
 .bullet-list {
-  max-width: 292px;
+  max-width: rem(292);
   &__li {
     display: flex;
     align-items: flex-start;
@@ -10,10 +10,10 @@
     &:before {
       content: '';
       display: block;
-      width: 10px;
-      height: 10px;
-      min-width: 10px;
-      min-width: 10px;
+      width: rem(10);
+      height: rem(10);
+      min-width: rem(10);
+      min-width: rem(10);
       background-color: $ds25;
       border-radius: 50%;
       margin-right: rem(10);

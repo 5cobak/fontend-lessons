@@ -1,5 +1,5 @@
 .range-slider {
-  max-width: 266px;
+  max-width: rem(266);
   &__head {
     display: flex;
     justify-content: space-between;
@@ -12,27 +12,27 @@
 }
 
 .irs--round {
-  max-width: 266px;
-  height: 6px;
+  max-width: rem(266);
+  height: rem(6);
   cursor: pointer;
 }
 .irs--round .irs-line {
   background-color: #fff;
-  border: 1px solid $ds25;
-  height: 6px;
+  border: rem(1) solid $ds25;
+  height: rem(6);
   top: 0;
 }
 .irs--round .irs-bar {
   background: $greenGr;
-  top: 0px;
-  height: 6px;
+  top: 0;
+  height: rem(6);
 }
 
 .irs--round .irs-handle {
-  top: -4.5px;
-  border: 2px solid $white;
-  width: 15px;
-  height: 15px;
+  top: rem(-4.5);
+  border: rem(2) solid $white;
+  width: rem(15);
+  height: rem(15);
   background: $greenGr;
   box-shadow: none;
   cursor: pointer;

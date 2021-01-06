@@ -1,6 +1,6 @@
 .subscription {
   display: block;
-  max-width: 320px;
+  max-width: rem(320);
   &:hover & {
     &__input {
       border: $borderHover;
@@ -17,11 +17,11 @@
   &__input {
     display: block;
     width: 100%;
-    max-width: 266px;
+    max-width: rem(266);
     border: $border;
     border-radius: rem(4);
     transition: $trFast;
-    padding: 12px 40px 12px 15px;
+    padding: rem(12) rem(40) rem(12) rem(15);
     font-size: rem(14);
     color: $ds75;
     font-family: 'MontserratMedium', sans-serif;

@@ -8,9 +8,12 @@
   &:hover {
     border: $borderHover;
   }
+  &:focus {
+    border: $borderHover;
+  }
   &_active {
     border: $borderHover;
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    box-shadow: 0 rem(10) rem(20) rgba(31, 32, 65, 0.05);
   }
   &__title {
     text-transform: uppercase;
@@ -18,29 +21,29 @@
     font-size: rem(12);
   }
   &__upper-field {
-    padding: 12px 15px;
+    padding: rem(12) rem(15);
     position: relative;
     color: $ds75;
     line-height: rem(18);
     font-family: 'MontserratMedium', Arial, sans-serif;
     cursor: pointer;
     &_active {
-      border-bottom: 1px solid $ds75;
+      border-bottom: rem(1) solid $ds75;
     }
   }
   &__arrow {
     position: absolute;
-    border-left: 2px solid $ds50;
-    border-bottom: 2px solid $ds50;
-    width: 8px;
-    height: 8px;
+    border-left: rem(2) solid $ds50;
+    border-bottom: rem(2) solid $ds50;
+    width: rem(8);
+    height: rem(8);
     right: rem(17);
-    top: calc(50% - 8px);
+    top: calc(50% - 0.444rem);
     transform: rotate(-45deg);
     transition: $trFast;
     &_active {
       transform: rotate(135deg);
-      top: calc(50% - 4px);
+      top: calc(50% - 0.222rem);
     }
   }
   &__menu {
@@ -62,11 +65,11 @@
     &_active {
       border-top: $borderHover;
       border-bottom: $borderHover;
-      max-height: 500px;
+      max-height: rem(500);
     }
   }
   &__item {
-    padding: 0 7px 7px 15px;
+    padding: 0 rem(7) rem(7) rem(15);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,13 +86,13 @@
     text-transform: uppercase;
     font-size: rem(12);
     max-width: 50%;
-    line-height: 15px;
+    line-height: rem(15);
   }
   &__count-block {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 92px;
+    min-width: rem(92);
   }
 
   &__plus,
@@ -103,14 +106,14 @@
     align-items: center;
     cursor: pointer;
     &_noactive {
-      border: 1px solid $ds25;
+      border: rem(1) solid $ds25;
       cursor: initial;
     }
   }
   &__buttons {
     display: flex;
     justify-content: space-between;
-    padding: 14px 7px 15px 7px;
+    padding: rem(14) rem(7) rem(15) rem(7);
     text-transform: uppercase;
     font-family: 'MontserratBold', Arial, sans-serif;
     font-size: rem(12);

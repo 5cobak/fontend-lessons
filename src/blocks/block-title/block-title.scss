@@ -1,6 +1,6 @@
 .block-title {
   text-transform: uppercase;
-  font-family: 'MontserratBold', Arial, sans-serif;
+  @include MontBold;
   font-size: rem(12);
   display: inline-block;
   line-height: rem(15);

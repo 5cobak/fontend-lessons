@@ -5,7 +5,7 @@
 
     overflow: hidden;
     @media (max-width: $desktopWidth) {
-      max-height: 485px;
+      max-height: rem(485);
     }
     @media (max-width: $smDesktopWidth) {
       max-height: 100%;
@@ -14,7 +14,7 @@
   }
   &__photo {
     @media (max-width: $smDesktopWidth) {
-      border: 5px solid $white;
+      border: rem(5) solid $white;
     }
   }
 
@@ -23,7 +23,7 @@
     min-height: 100%;
 
     @media (max-width: $desktopWidth) {
-      max-height: 485px;
+      max-height: rem(485);
     }
   }
   &__another-photos {
@@ -38,7 +38,7 @@
     min-width: 100%;
     min-height: 50%;
     @media (max-width: $desktopWidth) {
-      max-height: calc(485px / 2);
+      max-height: calc(26.944rem / 2);
     }
     @media (max-width: $smDesktopWidth) {
       min-width: 50%;
@@ -70,7 +70,7 @@
     }
   }
   &__text-content {
-    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    border-bottom: rem(1) solid rgba(31, 32, 65, 0.1);
   }
   &__info {
     margin-right: rem(10);
@@ -112,9 +112,9 @@
     justify-content: space-between;
   }
   &__cancel-rule {
-    max-width: 340px;
+    max-width: rem(340);
     @media (max-width: $phoneWidth) {
-      margin-left: 5px;
+      margin-left: rem(5);
     }
   }
   &__cancel-text {

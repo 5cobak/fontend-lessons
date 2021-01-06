@@ -1,46 +1,39 @@
 .datepicker {
-  min-width: 320px;
-  font-family: 'Montserrat', Arial, sans-serif;
+  min-width: rem(320);
+  @include Mont;
   font-size: rem(12);
   @media (max-width: $phoneWidth) {
-    min-width: 280px;
+    min-width: rem(280);
   }
   &--pointer {
     display: none;
   }
   &--nav {
-    padding: 20px;
+    padding: rem(20);
     border: none;
   }
   &--nav-title {
     font-size: rem(19);
-    font-family: Arial, Helvetica, sans-serif;
+    @include Mont;
     font-weight: bold;
   }
   &--nav-action {
-    position: relative;
-    &:after {
-      position: absolute;
-      content: '';
-      left: 10px;
-      width: 14px;
-      height: 2px;
-      background-color: $purple;
+    &:first-child {
+      background-image: url('assets/img/arrow-forward.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: rotate(-180deg);
     }
-    &:before {
-      content: '';
-      border: 2px solid $purple;
-      border-right: none;
-      border-top: none;
-      width: 10px;
-      height: 10px;
-      transform: rotate(45deg);
+    &:last-child {
+      background-image: url('assets/img/arrow-forward.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &:hover {
+      background-color: $white;
     }
     svg {
       display: none;
-    }
-    &:last-child {
-      transform: rotate(-180deg);
     }
   }
   &--cells {
@@ -48,10 +41,10 @@
     justify-content: center;
   }
   &--cell {
-    min-height: 40px;
+    min-height: rem(40);
     &-day {
-      max-width: 40px;
-      min-height: 40px;
+      max-width: rem(40);
+      min-height: rem(40);
       color: $ds50;
     }
   }
@@ -63,9 +56,9 @@
   &--day-name {
     font-size: rem(12);
     color: $purple;
-    font-family: 'MontserratBold', Arial, sans-serif;
-    max-width: 40px;
-    min-height: 40px;
+    @include MontBold;
+    max-width: rem(40);
+    min-height: rem(40);
     text-transform: initial;
   }
   &--buttons {
@@ -73,14 +66,14 @@
     padding-top: 0;
     display: flex;
     justify-content: space-between;
-    padding: 20px 20px 20px 20px;
+    padding: rem(20) rem(20) rem(20) rem(20);
     span {
       display: inline-block;
       flex: none;
       height: auto;
       text-transform: uppercase;
       font-size: rem(12);
-      font-family: 'MontserratBold', Arial, sans-serif;
+      @include MontBold;
       cursor: pointer;
       &:first-child {
         color: $ds50;
@@ -139,7 +132,7 @@
 .datepicker--cell.-selected-,
 .datepicker--cell.-selected-.-current- {
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-  font-family: 'MontserratBold', Arial, sans-serif;
+  @include MontBold;
 }
 .datepicker--cell.-in-range- {
   background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25));

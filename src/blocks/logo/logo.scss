@@ -1,7 +1,7 @@
 .logo {
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: rem(30);
+  left: rem(30);
   max-width: rem(48);
   max-height: rem(48);
   &_colored {

@@ -1,6 +1,6 @@
 .filter-page {
   &__main {
-    border-bottom: 1px solid rgba(31, 32, 65, 0.25);
+    border-bottom: rem(1) solid rgba(31, 32, 65, 0.25);
   }
   &__content {
     padding: rem(30) 0 rem(70);
@@ -12,7 +12,7 @@
     }
   }
   &__form {
-    max-width: 266px;
+    max-width: rem(266);
     margin-right: rem(60);
   }
   &__form-input {

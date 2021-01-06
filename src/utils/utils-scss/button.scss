@@ -1,8 +1,8 @@
 .button {
   display: inline-block;
-  padding: 15px 20px;
+  padding: rem(15) rem(20);
   background: $purpleGr;
-  border-radius: 22px;
+  border-radius: rem(22);
   color: $white;
   text-transform: uppercase;
   @include MontBold;
@@ -13,46 +13,35 @@
   &:hover {
     opacity: 0.5;
   }
+  &:focus {
+    border: $borderHover;
+  }
   &_subscribe {
     position: absolute;
     right: 0;
-    top: calc(50% - 10px);
+    top: calc(50% - 0.556rem);
     padding: 0;
     border-radius: none;
   }
   &_big {
     position: relative;
     width: 100%;
-    max-width: 320px;
+    max-width: rem(320);
+    overflow: hidden;
     &:hover {
       opacity: 0.9;
     }
-    @media screen and (max-width: $phoneWidth) {
-      max-width: 320px;
-    }
-    width: 100%;
     &:after {
       content: '';
       display: block;
-      width: 14px;
-      height: 2px;
-      background-color: #fff;
+      background-image: url('assets/img/arrow-forward.svg');
+      background-repeat: no-repeat;
+      background-position: center;
       position: absolute;
-      right: 5%;
-      top: 50%;
-    }
-    &:before {
-      content: '';
-      display: block;
-      width: 12px;
-      height: 12px;
-      border: 2px solid $white;
-      border-bottom: none;
-      border-left: none;
-      transform: rotate(45deg);
-      position: absolute;
-      right: 5%;
-      top: calc(50% - 5.5px);
+      right: rem(10);
+      top: 0;
+      width: rem(20);
+      min-height: 100%;
     }
   }
   &_white {
@@ -71,23 +60,23 @@
       content: '';
       position: absolute;
       background: $purple;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
+      left: rem(0);
+      right: rem(0);
+      bottom: rem(0);
+      top: rem(0);
       z-index: -1;
-      border-radius: 22px;
+      border-radius: rem(22);
       transition: $trFast;
     }
     &:after {
       content: '';
       position: absolute;
-      left: 2px;
-      right: 2px;
-      bottom: 2px;
-      top: 2px;
+      left: rem(2);
+      right: rem(2);
+      bottom: rem(2);
+      top: rem(2);
       z-index: -1;
-      border-radius: 22px;
+      border-radius: rem(22);
       background: $white;
       transition: $trFast;
     }
@@ -116,6 +105,6 @@
     }
   }
   &_margin-r {
-    margin-right: 19px;
+    margin-right: rem(19);
   }
 }

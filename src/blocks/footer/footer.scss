@@ -1,7 +1,7 @@
 .footer {
   $self: &;
   background-color: #fff;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  box-shadow: 0 rem(10) rem(20) rgba(31, 32, 65, 0.05);
   color: $ds75;
   font-size: rem(14);
   white-space: pre-wrap;
@@ -20,7 +20,7 @@
     }
   }
   &__block-text {
-    max-width: 260px;
+    max-width: rem(260);
     @media (max-width: $smDesktopWidth) {
       text-align: center;
     }
@@ -39,7 +39,7 @@
     }
   }
   &__list {
-    max-width: 150px;
+    max-width: rem(150);
     @media (max-width: $smDesktopWidth) {
       display: none;
     }
@@ -54,7 +54,7 @@
     color: $ds75;
   }
   &__subscribe {
-    max-width: 260px;
+    max-width: rem(260);
     @media (max-width: $smDesktopWidth) {
       display: none;
     }
@@ -67,7 +67,7 @@
     white-space: pre-wrap;
   }
   &__basement {
-    border-top: 1px solid rgba(31, 32, 65, 0.1);
+    border-top: rem(1) solid rgba(31, 32, 65, 0.1);
     @media (max-width: $smDesktopWidth) {
       border: none;
       padding-top: rem(20);
@@ -100,9 +100,9 @@
     }
   }
   &__soc-icon {
-    min-width: 24px;
-    max-width: 24px;
-    min-height: 24px;
-    max-height: 24px;
+    min-width: rem(24);
+    max-width: rem(24);
+    min-height: rem(24);
+    max-height: rem(24);
   }
 }

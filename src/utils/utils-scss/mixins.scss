@@ -39,3 +39,9 @@
 @mixin MontBold {
   font-family: 'MontserratBold', Arial, sans-serif;
 }
+@mixin OsBold {
+  font-family: 'OpenSansBold', Arial, sans-serif;
+}
+@mixin Os {
+  font-family: 'OpenSans', Arial, sans-serif;
+}

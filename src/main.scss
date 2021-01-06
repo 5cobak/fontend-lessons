@@ -1,5 +1,4 @@
 @import 'utils/utils-scss/fonts';
-@import 'utils/utils-scss/libs';
 @import 'utils/utils-scss/vars';
 @import 'utils/utils-scss/mixins';
 @import 'utils/utils-scss/reset';
@@ -34,6 +33,9 @@ body {
 *:before,
 *:after {
   box-sizing: border-box;
+  &:focus {
+    border: $borderHover;
+  }
 }
 
 h1,
@@ -158,19 +160,10 @@ section,
   }
 }
 
-.validate-error {
-  font-size: rem(12);
-  color: $danger-color;
-}
-.stop-scrolling {
-  width: 100%;
-  height: 100%;
-  // position: fixed;
-  overflow: hidden;
-}
-
 // Modules
 @import './blocks/svg-icons/svg-icons';
+@import './blocks/validate-error/validate-error';
+@import './blocks/stop-scrolling/stop-scrolling';
 @import './blocks/logo/logo';
 @import './blocks/ui-kit/ui-kit';
 @import './blocks/block-title/block-title';

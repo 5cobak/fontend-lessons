@@ -1,10 +1,10 @@
 .advantages {
   display: flex;
   justify-content: flex-start;
-  max-width: 300px;
+  max-width: rem(300);
   &__li {
     display: block;
-    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    border-bottom: rem(1) solid rgba(31, 32, 65, 0.1);
     position: relative;
     &:not(:first-child) {
       margin-top: rem(20);
@@ -17,17 +17,17 @@
     }
   }
   &__svg {
-    max-width: 38px;
-    max-height: 38px;
+    max-width: rem(38);
+    max-height: rem(38);
     position: absolute;
-    top: 5px;
+    top: rem(5);
   }
   &__text {
     display: inline-flex;
     flex-direction: column;
     line-height: rem(24);
     white-space: pre-wrap;
-    margin-left: 55px;
+    margin-left: rem(55);
   }
   &__head {
     @include MontBold;

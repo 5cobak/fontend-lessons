@@ -1,5 +1,5 @@
 .filter-date {
-  max-width: 320px;
+  max-width: rem(320);
   position: relative;
   &__label {
     position: relative;
@@ -13,9 +13,9 @@
     font-size: rem(14);
     border: $border;
     border-radius: rem(4);
-    padding: 12px 15px;
+    padding: rem(12) rem(15);
     transition: $trFast;
-    min-width: 266px;
+    min-width: rem(266);
     background-repeat: no-repeat;
     background-position-x: 93%;
     background-position-y: 50%;
@@ -27,12 +27,12 @@
     }
   }
   &__arrow {
-    max-width: 12px;
-    min-width: 12px;
-    max-height: 12px;
+    max-width: rem(12);
+    min-width: rem(12);
+    max-height: rem(12);
     position: absolute;
-    right: 15px;
-    top: calc(50% + 10px);
+    right: rem(15);
+    top: calc(50% + 0.556rem);
     fill: $ds50;
   }
 }

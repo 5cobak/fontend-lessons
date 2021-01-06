@@ -1,6 +1,6 @@
 .masked-textfield {
   display: block;
-  max-width: 320px;
+  max-width: rem(320);
   &:hover & {
     &__input {
       border: $borderHover;
@@ -19,7 +19,7 @@
     border: $border;
     border-radius: rem(4);
     transition: $trFast;
-    padding: 13px 15px;
+    padding: rem(13) rem(15);
     font-size: rem(14);
     color: $ds75;
     font-family: 'MontserratMedium', sans-serif;
