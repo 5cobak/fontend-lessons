@@ -5,6 +5,7 @@
   color: $ds75;
   font-size: 14px;
   white-space: pre-wrap;
+  flex: 0 0 auto;
   @media (max-width: $smDesktopWidth) {
     padding: 120px 0;
   }

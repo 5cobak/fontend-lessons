@@ -10,7 +10,7 @@
   transition: $trFast;
   cursor: pointer;
   line-height: 1;
-  box-sizing: content-box;
+  border: 1px solid transparent;
   @media (max-width: $phoneWidth) {
     font-size: 10px;
   }

@@ -13,7 +13,7 @@
   }
   &__form {
     max-width: 266px;
-    margin-bottom: 60px;
+    margin-right: 60px;
   }
   &__form-input {
     min-width: 100%;
@@ -66,7 +66,9 @@
     }
   }
   &__rooms-container {
-    text-align: center;
+    @media (max-width: $phoneWidth) {
+      text-align: center;
+    }
   }
   &__pagination {
     display: flex;

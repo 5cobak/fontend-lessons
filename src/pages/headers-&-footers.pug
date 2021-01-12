@@ -15,13 +15,15 @@ block content
   svg.logo.logo_grey(role='image' aria-label='toxin logo')
     use(xlink:href="#logo-gray")
   main.headers-footers
-    .headers-footers__content
-      .headers-footers__block
-        +header({isEntered: false})
-      .headers-footers__block
-        +header({isEntered: true})
-    .header-footers__block
-      +footer()
+    .wrapper
+      .headers-footers__content
+        .headers-footers__block
+          +header({isEntered: false})
+        .headers-footers__block
+          +header({isEntered: true})
+      .content
+      .header-footers__block
+        +footer()
 
 
 block script

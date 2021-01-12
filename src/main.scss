@@ -102,10 +102,8 @@ section,
   min-height: 100vh;
 }
 
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+.content {
+  flex: 1 0 auto;
 }
 
 .container {
