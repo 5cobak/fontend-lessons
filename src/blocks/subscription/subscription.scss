@@ -19,7 +19,7 @@
     padding: 12px 40px 12px 15px;
     font-size: 14px;
     color: $ds75;
-    font-family: 'MontserratMedium', sans-serif;
+    @include MontMedium;
     background-image: url('./assets/img/arrow-forward.jpg');
     background-repeat: no-repeat;
     background-position-x: 96%;

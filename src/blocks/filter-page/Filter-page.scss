@@ -1,0 +1,76 @@
+.filter-page {
+  &__main {
+    border-bottom: 1px solid rgba(31, 32, 65, 0.25);
+  }
+  &__content {
+    padding: 30px 0 70px;
+    display: flex;
+    @media (max-width: $smDesktopWidth) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__form {
+    max-width: 266px;
+    margin-bottom: 60px;
+  }
+  &__form-input {
+    min-width: 100%;
+  }
+  &__form-block {
+    &_margin-20 {
+      margin-bottom: 15px;
+    }
+    &_margin-30 {
+      margin-bottom: 28px;
+    }
+  }
+  &__range-description {
+    padding-top: 10px;
+    font-size: 12px;
+    line-height: 14px;
+    color: $ds50;
+    @media (max-width: $phoneWidth) {
+      font-size: 10px;
+    }
+  }
+  &__rooms-title {
+    @include MontBold;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 20px;
+    @media (max-width: $phoneWidth) {
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+  &__rooms {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 20px;
+    grid-column-gap: 12px;
+    @media (max-width: $desktopWidth) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media (max-width: $mdDesktopWidth) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: $smDesktopWidth) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: $tableWidth) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__rooms-container {
+    text-align: center;
+  }
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 70px;
+  }
+}

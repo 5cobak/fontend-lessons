@@ -20,7 +20,7 @@
   }
   &__title {
     text-transform: uppercase;
-    font-family: 'MontserratBold', Arial, sans-serif;
+    @include MontBold;
     font-size: 12px;
     @media (max-width: $phoneWidth) {
       font-size: 10px;
@@ -31,7 +31,7 @@
     position: relative;
     color: $ds75;
     line-height: 18px;
-    font-family: 'MontserratMedium', Arial, sans-serif;
+    @include MontMedium;
     background-color: #fff;
     border-radius: 4px;
     cursor: pointer;
@@ -51,7 +51,7 @@
     transition: $trFast;
     &_active {
       transform: rotate(135deg);
-      top: calc(50% - 4px);
+      top: calc(50% - 0.222rem);
     }
   }
   &__menu {
@@ -86,11 +86,11 @@
     }
   }
   &__item-count {
-    font-family: 'MontserratBold', Arial, sans-serif;
+    @include MontBold;
     font-size: 12px;
   }
   &__item-text {
-    font-family: 'MontserratBold', Arial, sans-serif;
+    @include MontBold;
     text-transform: uppercase;
     font-size: 12px;
     max-width: 50%;
@@ -126,7 +126,7 @@
     justify-content: space-between;
     padding: 14px 7px 15px 7px;
     text-transform: uppercase;
-    font-family: 'MontserratBold', Arial, sans-serif;
+    @include MontBold;
     font-size: 12px;
     @media (max-width: $phoneWidth) {
       font-size: 10px;

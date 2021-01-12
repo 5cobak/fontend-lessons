@@ -23,7 +23,7 @@
   &_subscribe {
     position: absolute;
     right: 0;
-    top: calc(50% - 10px);
+    top: calc(50% - 0.556rem);
     padding: 0;
     border-radius: none;
   }
@@ -45,6 +45,7 @@
       right: 10px;
       top: 0;
       width: 20px;
+
       min-height: 100%;
     }
   }

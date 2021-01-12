@@ -24,8 +24,8 @@
     }
   }
   &__block-text {
-    max-width: 260px;
-    @media (max-width: $smDesktopWidth) {
+    max-width: 260px);
+    @media (max-widh: $smDesktopWidth) {
       text-align: center;
     }
   }
@@ -107,6 +107,6 @@
     min-width: 24px;
     max-width: 24px;
     min-height: 24px;
-    max-height: 24px;
+    max-height:24px;
   }
 }
