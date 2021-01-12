@@ -117,7 +117,7 @@ module.exports = {
       jQuery: 'jquery',
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: `${PATHS.src}/favicons/`, to: 'favicons' }],
+      patterns: [{ from: `${PATHS.src}/assets/favicons/`, to: 'assets/favicons' }],
     }),
     new MiniCssExtractPlugin({
       filename: filename('css'),

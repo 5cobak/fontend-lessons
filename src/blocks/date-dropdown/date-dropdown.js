@@ -11,8 +11,6 @@ $(document).ready(() => {
     }
 
     $firstInput.datepicker({
-      // startDate: new Date(2019, 7, 1),
-      // inline: true,
       showEvent: 'click',
       offset: 5,
       range: true,

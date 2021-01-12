@@ -24,7 +24,6 @@ $(document).ready(() => {
         {
           label: '# of Votes',
           data: [2.5, 2.5, 5, 0],
-          // labels: ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'],
           backgroundColor: [gradientPurple, gradientGreen, gradientOrange],
           borderWidth: 2,
         },
@@ -33,15 +32,6 @@ $(document).ready(() => {
     options: {
       maintainAspectRatio: false,
       cutoutPercentage: 90,
-      // scales: {
-      //   xAxes: [
-      //     {
-      //       ticks: {
-      //         padding: 20,
-      //       },
-      //     },
-      //   ],
-      // },
     },
   });
 });

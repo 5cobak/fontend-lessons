@@ -4,7 +4,6 @@ import '~/air-datepicker/dist/css/datepicker.min.css';
 import '~/inputmask/dist/jquery.inputmask.min';
 import '~/ion-rangeslider/js/ion.rangeSlider';
 import '~/ion-rangeslider/css/ion.rangeSlider.css';
-// import '~/masonry-layout/dist/masonry.pkgd.min';
 import 'swiper/swiper-bundle.css';
 import './main.scss';
 import './js';
@@ -24,17 +23,3 @@ import './blocks/cards-page/cards-page';
 import './blocks/header/header';
 import './blocks/circle-diagram/circle-diagram';
 import './favicons/favicons';
-
-// import './js/plugins/iqdropdown' ;
-// import './js/plugins/date-picker';
-
-// import './js/mask';
-// import './js/checkbox';
-// import './js/like-dislike';
-// import './js/rate';
-// import './js/range-slider';
-// import './js/pagination';
-// import './js/mansory';
-// import './js/swiper';
-// import './js/gamburger';
-// import './js/section-main';
