@@ -164,10 +164,10 @@ export default class DropdownChoose {
     items.forEach((item) => {
       const plus = item.querySelector('.dropdown-choose__plus');
       const minus = item.querySelector('.dropdown-choose__minus');
-      const countItem = item.querySelector('.dropdown-choose__item-count');
-      let count = 0;
 
       function incrementCount() {
+        const countItem = item.querySelector('.dropdown-choose__item-count');
+        let count = Number(countItem.innerText);
         $(minus).removeClass('dropdown-choose__minus_noactive');
         count += 1;
         countItem.innerHTML = count;
@@ -175,6 +175,8 @@ export default class DropdownChoose {
       }
 
       function decrementCount() {
+        const countItem = item.querySelector('.dropdown-choose__item-count');
+        let count = Number(countItem.innerText);
         if (count === 0) return;
         count -= 1;
         countItem.innerHTML = count;
@@ -196,6 +198,7 @@ export default class DropdownChoose {
     const clearBtn = this.menu.querySelector('.dropdown-choose__btn-clear');
     const accessBtn = this.menu.querySelector('.dropdown-choose__btn-access');
     const arrow = this.parentElement.querySelector('.dropdown-choose__arrow');
+
     function clearUpperTextField() {
       const itemCounts = menu.querySelectorAll('.dropdown-choose__item-count');
       itemCounts.map = [].map;
@@ -203,6 +206,7 @@ export default class DropdownChoose {
         item.innerText = 0;
         return item;
       });
+
       const minuses = menu.querySelectorAll('.dropdown-choose__minus');
       minuses.forEach((item) => item.classList.add('dropdown-choose__minus_noactive'));
       mainText.innerText = that.placeholder;
