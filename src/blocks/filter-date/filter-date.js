@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 $(document).ready(() => {
   class FilterDate {
     constructor(elem) {

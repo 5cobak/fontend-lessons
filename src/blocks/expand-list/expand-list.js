@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 $(document).ready(() => {
   const dropdownElements = document.querySelectorAll('.js-expand-list');
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const Chart = require('chart.js');
 
 $(document).ready(() => {
