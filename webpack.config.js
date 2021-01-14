@@ -83,7 +83,29 @@ const PATHS = {
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#html-dir-folder
 // const PAGES_DIR = PATHS.src
 const PAGES_DIR = `${PATHS.src}/pages/`;
-const PAGES = fs.readdirSync(PAGES_DIR).filter((fileName) => fileName.endsWith('.pug'));
+
+const SUB_DIRS = [];
+
+function deepGetDirectories(distPath) {
+  return fs
+    .readdirSync(distPath)
+    .filter((file) => {
+      SUB_DIRS.push(file);
+      return fs.statSync(`${distPath}/${file}`).isDirectory();
+    })
+    .reduce(
+      (all, subDir) => [
+        ...all,
+        ...fs
+          .readdirSync(`${distPath}/${subDir}`)
+          .map((e) => `${subDir}/${e}`)
+          .filter((e) => e.endsWith('.pug')),
+      ],
+      []
+    );
+}
+
+const PAGES_WITH_DIR = deepGetDirectories(PAGES_DIR);
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -122,11 +144,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: filename('css'),
     }),
-    ...PAGES.map(
+    ...PAGES_WITH_DIR.map(
       (page) =>
         new HTMLWebpackPlugin({
           template: `${PAGES_DIR}/${page}`,
-          filename: `./${page.replace(/\.pug/, '.html')}`,
+          filename: `${page.substring(page.lastIndexOf('/') + 1, page.length).replace(/\.pug/, '.html')}`,
           minify: false,
         })
     ),

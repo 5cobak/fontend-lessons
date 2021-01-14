@@ -1,16 +1,16 @@
 extends ../main
 
-include ../blocks/header/header
-include ../blocks/footer/footer
-include ../blocks/subscription/subscription
-include ../blocks/card-book/card-book
-include ../blocks/date-dropdown/date-dropdown
-include ../blocks/dropdown-choose/dropdown-choose
-include ../blocks/advantages/advantages
-include ../blocks/circle-diagram/circle-diagram
-include ../blocks/review/review
-include ../blocks/like-button/like-button
-include ../blocks/bullet-list/bullet-list
+include ../../blocks/header/header
+include ../../blocks/footer/footer
+include ../../blocks/subscription/subscription
+include ../../blocks/card-book/card-book
+include ../../blocks/date-dropdown/date-dropdown
+include ../../blocks/dropdown-choose/dropdown-choose
+include ../../blocks/advantages/advantages
+include ../../blocks/circle-diagram/circle-diagram
+include ../../blocks/review/review
+include ../../blocks/like-button/like-button
+include ../../blocks/bullet-list/bullet-list
 
 block head
   link(rel='apple-touch-icon' sizes='180x180' href='assets/favicons/apple-touch-icon.png')
@@ -23,10 +23,10 @@ block content
   .content
     .room-details
       .room-details__room-photos
-        img(src=require('../assets/img/room-d-1.jpg').default alt='Комната в отеле' class='room-details__main-photo room-details__photo')
+        img(src=require('./room-d-1.jpg').default alt='Комната в отеле' class='room-details__main-photo room-details__photo')
         .room-details__another-photos
-          img(src=require('../assets/img/room-d-2.jpg').default alt='Комната в отеле' class='room-details__another-photo room-details__photo')
-          img(src=require('../assets/img/room-d-3.jpg').default alt='Комната в отеле' class='room-details__another-photo room-details__photo')
+          img(src=require('./room-d-2.jpg').default alt='Комната в отеле' class='room-details__another-photo room-details__photo')
+          img(src=require('./room-d-3.jpg').default alt='Комната в отеле' class='room-details__another-photo room-details__photo')
       .room-details__text-content
         .container
           main.room-details__main 

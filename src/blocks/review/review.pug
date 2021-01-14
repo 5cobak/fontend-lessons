@@ -1,7 +1,7 @@
 mixin review({src: path, name, date, text, like})
   .review
     .review__head
-      img.review__avatar(src=require("../assets/img/" + path).default alt="guest")
+      img.review__avatar(src=require("./" + path).default alt="guest")
       .review__head-text
         .review__name #{name}
         .review__date #{date}
