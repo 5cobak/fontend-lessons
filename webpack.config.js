@@ -32,11 +32,6 @@ const cssLoaders = (extra) => {
   const loaders = [
     {
       loader: MiniCssExtractPlugin.loader,
-      options: {
-        hmr: isDev,
-        reloadAll: true,
-        sourceMap: isDev,
-      },
     },
     'css-loader',
   ];
@@ -44,6 +39,7 @@ const cssLoaders = (extra) => {
   if (extra) {
     loaders.push(extra);
   }
+
   return loaders;
 };
 
@@ -161,7 +157,7 @@ module.exports = {
         use: cssLoaders(),
       },
       {
-        test: /\.s[ac]ss$/,
+        test: /\.scss$/,
         use: cssLoaders('sass-loader'),
       },
       {

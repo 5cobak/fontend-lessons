@@ -34,12 +34,12 @@
   &__button-pay {
     margin-bottom: 30px;
   }
-  &__sing-in {
+  &__sign-in {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  &__sing-in-text {
+  &__sign-in-text {
     font-size: 14px;
     @media (max-width: $phoneWidth) {
       font-size: 12px;
