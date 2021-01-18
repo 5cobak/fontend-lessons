@@ -23,10 +23,10 @@ block content
   .content
     .room-details
       .room-details__room-photos
-        img(src=require('./room-d-1.jpg').default alt='Комната в отеле' class='room-details__main-photo room-details__photo')
+        img(src=require('./images/room-d-1.jpg').default alt='Комната в отеле' class='room-details__main-photo room-details__photo')
         .room-details__another-photos
-          img(src=require('./room-d-2.jpg').default alt='Комната в отеле' class='room-details__another-photo room-details__photo')
-          img(src=require('./room-d-3.jpg').default alt='Комната в отеле' class='room-details__another-photo room-details__photo')
+          img(src=require('./images/room-d-2.jpg').default alt='Комната в отеле' class='room-details__another-photo room-details__photo')
+          img(src=require('./images/room-d-3.jpg').default alt='Комната в отеле' class='room-details__another-photo room-details__photo')
       .room-details__text-content
         .container
           main.room-details__main 
@@ -64,14 +64,14 @@ block content
                   span.room-details__reviews-count
                     | 2 отзыва
                 +review({
-                  src: 'maga.png',
+                  src: 'images/maga.png',
                   name: 'Мурад Сарафанов',
                   date: '5 дней назад',
                   text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.',
                   like: 11
                 })
                 +review({
-                  src: 'patric.png',
+                  src: 'images/patric.png',
                   name: 'Патрисия Стёклышкина',
                   date: 'Неделю назад',
                   text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать,\nкаждый день новое блюдо и десерт как комплимент',

@@ -19,7 +19,7 @@ import './components/rate-buttons/rate-buttons';
 import './components/range-slider/range-slider';
 import './components/pagination/pagination';
 import './components/card-room/card-room';
-import './components/cards-page/cards-page';
+import './pages/cards-page/cards-page';
 import './components/header/header';
 import './components/circle-diagram/circle-diagram';
 import './assets/favicons/favicons';

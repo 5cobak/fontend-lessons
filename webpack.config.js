@@ -31,7 +31,7 @@ const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
 const cssLoaders = (extra) => {
   const loaders = [
     {
-      loader: MiniCssExtractPlugin.loader,
+      loader: 'style-loader',
     },
     'css-loader',
   ];
@@ -135,10 +135,10 @@ module.exports = {
       jQuery: 'jquery',
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: `${PATHS.src}/assets/favicons/`, to: 'assets/favicons' }],
-    }),
-    new MiniCssExtractPlugin({
-      filename: filename('css'),
+      patterns: [
+        { from: `${PATHS.src}/assets/favicons/`, to: 'assets/favicons' },
+        // { from: `${PATHS.src}/assets/css/`, to: '' },
+      ],
     }),
     ...PAGES_WITH_DIR.map(
       (page) =>
@@ -148,6 +148,10 @@ module.exports = {
           minify: false,
         })
     ),
+    new MiniCssExtractPlugin({
+      filename: filename('css'),
+      linkType: false,
+    }),
     new SpriteLoaderPlugin(),
   ],
   module: {

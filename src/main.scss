@@ -1,3 +1,9 @@
+@import './utils/utils-scss/vars.scss';
+@import './utils/utils-scss/button.scss';
+@import './utils/utils-scss/mixins.scss';
+@import './utils/utils-scss/reset.scss';
+@import './utils/utils-scss/fonts.scss';
+
 html {
   line-height: $mainLineHeight;
   font-size: $mainFontSize;
@@ -132,7 +138,7 @@ section,
 @import './components/validate-error/validate-error';
 @import './components/stop-scrolling/stop-scrolling';
 @import './components/logo/logo';
-@import './components/ui-kit/ui-kit';
+@import './pages/index/ui-kit';
 @import './components/block-title/block-title';
 @import './components/textField/textField';
 @import './components/masked-textfield/masked-textfield';
@@ -153,18 +159,18 @@ section,
 @import './components/bullet-list/bullet-list';
 @import './components/advantages/advantages';
 @import './components/review/review';
-@import './components/cards-page/cards-page';
+@import './pages/cards-page/cards-page';
 @import './components/card-selection/card-selection';
 @import './components/card-book/card-book';
 @import './components/card-checkin/card-checkin';
-@import './components/card-singin/card-singin';
+@import './components/card-signin/card-signin';
 @import './components/card-room/card-room';
-@import './components/headers&footers-page/headrs&footers-page';
+@import './pages/headers-&-footers/headrs&footers-page';
 @import './components/header/header';
 @import './components/footer/footer';
-@import './components/landing-page/landing-page';
-@import './components/registration-page/registration-page';
-@import './components/sign-in-page/sign-in-page';
-@import './components/filter-page/filter-page';
-@import './components/room-details/room-details';
+@import './pages/landing-page/landing-page';
+@import './pages/registration-page/registration-page';
+@import './pages/sign-in-page/sign-in-page';
+@import './pages/filter-page/filter-page';
+@import './pages/room-details/room-details';
 @import './components/circle-diagram/circle-diagram';
