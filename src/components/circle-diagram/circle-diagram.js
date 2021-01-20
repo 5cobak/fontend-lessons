@@ -22,14 +22,17 @@ $(document).ready(() => {
     data: {
       datasets: [
         {
-          label: '# of Votes',
-          data: [2.5, 2.5, 5, 0],
+          data: [5, 5, 10, 0],
           backgroundColor: [gradientPurple, gradientGreen, gradientOrange],
           borderWidth: 2,
         },
       ],
+      labels: ['Удовлетворительно', 'Хорошо', 'Великолепно'],
     },
     options: {
+      legend: {
+        display: false,
+      },
       maintainAspectRatio: false,
       cutoutPercentage: 90,
     },

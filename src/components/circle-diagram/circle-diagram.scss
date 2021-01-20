@@ -12,6 +12,12 @@
     justify-content: center;
     align-items: center;
   }
+  &__wrapper {
+    position: absolute;
+    z-index: 10;
+    width: 135px;
+    height: 135px;
+  }
   &__voices {
     position: absolute;
     white-space: pre-wrap;
