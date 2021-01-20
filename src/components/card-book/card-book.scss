@@ -91,10 +91,6 @@
       line-height: 20px;
     }
   }
-  &_calc-option {
-    display: inline-block;
-    max-width: 215px;
-  }
   &__calc-info {
     margin-left: 5px;
     display: flex;
@@ -110,6 +106,10 @@
     @media (max-width: $phoneWidth) {
       margin-left: 3px;
     }
+  }
+  &__tax {
+    display: block;
+    margin-left: auto;
   }
   &__calc-sum {
     margin-left: auto;

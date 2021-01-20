@@ -3,8 +3,9 @@ mixin footer()
     .container
       .footer__content
         .footer__block-text
-          svg.footer__logo.logo.logo_colored
-            use(xlink:href="#logo-colored")
+          a(href="index.html")
+            svg.footer__logo.logo.logo_colored
+              use(xlink:href="#logo-colored")
           p.footer__achivement
             | Бронирование номеров в лучшем
             | отеле 2019 года по версии

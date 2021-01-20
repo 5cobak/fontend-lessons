@@ -2,8 +2,9 @@ mixin header({isEntered})
   header.header.js-header
     .container
       .header__content
-        svg(class="logo logo_colored header__logo" aria-label="toxin logo")
-          use(xlink:href="#logo-colored")
+        a(href="index.html")
+          svg(class="logo logo_colored header__logo" aria-label="toxin logo")
+            use(xlink:href="#logo-colored")
         nav.header__nav
           ul.header__list
             li.header__list-item

@@ -1,5 +1,5 @@
 mixin card-book()
-  .card-book
+  .card-book.js-card-book
     .card-book__content
       .card-book__head
         span.card-book__number
@@ -10,12 +10,12 @@ mixin card-book()
             | люкс 
         span.card-book__head-price
           span.card-book__head-sum
-            span
-              | 9 990₽ 
+            | 9 990₽ 
           | в сутки
       .card-book__block
         +date-dropdown({
-              className: 'js-date-masked', 
+              classNameFirstInput: 'js-date-masked js-card-book__dropdown-input', 
+              classNameSecondInput: 'js-date-masked', 
               title: 'прибытие', 
               titleSecond: 'выезд'
               })
@@ -27,29 +27,41 @@ mixin card-book()
       .card-book__block
         .card-book__calculation
           .card-book__calc-item
-            span.card-book__calc-option
-              | 9 990₽ х 4 суток
-            span.card-book__calc-sum.js-card-book__calc-sum
-              | 39 960₽
+            span.card-book__price-for-one-day.js-card-book__price-for-one-day
+              | 9 990₽ х 
+              span.card-book__days.js-card-book__days
+                | 4 суток
+            span.card-book__calc-sum.js-card-book__clean-sum
+              | 39 960
+              span.card-book__rub
+                | ₽
           .card-book__calc-item
             span.card-book__calc-option
-              | Сбор за услуги: скидка 2 179₽
+              | Сбор за услуги: 
+              span.card-book__discont.js-card-book__discont
+                | скидка 2 179
+                span.card-book__rub
+                  | ₽
             span.card-book__calc-info
               | i
-            span.card-book__calc-sum
-              | 0₽
+            span.card-book__tax.js-card-book__tax
+              | 1 000
+              span.card-book__rub
+              | ₽
           .card-book__calc-item
             span.card-book__calc-option
               | Сбор за дополнительные 
               | услуги
             span.card-book__calc-info
               | i
-            span.card-book__calc-sum
+            span.card-book__tax.js-card-book__tax
               | 300₽
         .card-book__calc-total
           span.card-book__total
             | Итого 
           span.card-book__dotted-line
-          span.card-book__total-price
-            | 38 081₽
+          span.card-book__total-price.js-card-book__total-price
+            | 38 081
+            span.card-book__rub
+              | ₽
         button.button.button_big Забронировать

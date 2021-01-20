@@ -8,7 +8,8 @@ mixin card-selection()
               | Найдем номера под ваши пожелания
           .card-selection__block.card-selection__block_margin-b-15
             +date-dropdown({
-              className: 'js-date-masked', 
+              classNameFirstInput: 'js-date-masked js-date-dropdown__input', 
+              classNameSecondInput: 'js-date-masked',
               title: 'прибытие', 
               titleSecond: 'выезд'
               })

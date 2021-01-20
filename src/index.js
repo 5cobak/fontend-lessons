@@ -18,6 +18,7 @@ import './components/like-button/like-button';
 import './components/rate-buttons/rate-buttons';
 import './components/range-slider/range-slider';
 import './components/pagination/pagination';
+import './components/card-book/card-book';
 import './components/card-room/card-room';
 import './pages/cards-page/cards-page';
 import './components/header/header';

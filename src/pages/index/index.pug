@@ -51,7 +51,8 @@ block content
               )
               span.block-title dropdown
               +dropdown-choose({className: 'js-dropdown-guests', title:'dropdown'})
-              +date-dropdown({className: 'js-date-masked', 
+              +date-dropdown({classNameFirstInput: 'js-date-masked js-date-dropdown__input', 
+              classNameSecondInput: 'js-date-masked',
               title: 'date dropdown', 
               titleSecond: 'date dropdown'})
               span.block-title filter date dropdown
