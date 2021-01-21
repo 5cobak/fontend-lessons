@@ -48,7 +48,7 @@
     transition: $trFast;
     &_active {
       transform: rotate(135deg);
-      top: calc(50% - 0.222rem);
+      top: calc(50% - 4px);
     }
   }
   &__menu {

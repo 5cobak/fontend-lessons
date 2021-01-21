@@ -1,4 +1,5 @@
 /* eslint-disable */
+import '~/focus-visible/dist/focus-visible.min';
 import '~/air-datepicker/dist/js/datepicker.min';
 import '~/air-datepicker/dist/css/datepicker.min.css';
 import '~/inputmask/dist/jquery.inputmask.min';
@@ -6,7 +7,6 @@ import '~/ion-rangeslider/js/ion.rangeSlider';
 import '~/ion-rangeslider/css/ion.rangeSlider.css';
 import 'swiper/swiper-bundle.css';
 import './main.scss';
-import './js';
 import './js/plugins/simplePagination.js';
 import './js/mask';
 import './components/date-dropdown/date-dropdown';

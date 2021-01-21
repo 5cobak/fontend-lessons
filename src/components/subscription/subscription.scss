@@ -30,6 +30,7 @@
       transition: $trFast;
     }
     &:focus {
+      outline: none;
       border: $borderHover;
       &::placeholder {
         color: $ds75;

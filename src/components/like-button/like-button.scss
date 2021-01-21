@@ -13,11 +13,7 @@
   position: relative;
   transition: $trFast;
   user-select: none;
-  &:focus {
-    &:after {
-      background-color: $ds75;
-    }
-  }
+
   &:after {
     content: '';
     position: absolute;

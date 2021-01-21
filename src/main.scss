@@ -33,66 +33,10 @@ body {
 *:before,
 *:after {
   box-sizing: border-box;
-  &:focus {
-    border: $borderHover;
-  }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
-
-h1 {
-  color: $ds100;
-}
-
-h2 {
-  color: $ds100;
-}
-
-h3 {
-  color: $ds100;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul,
-li {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-button {
-  padding: 0;
-}
-
-input,
-label {
-  cursor: pointer;
-  line-height: 15px;
-}
-input {
-  text-shadow: none;
-  @include Mont;
-}
-fieldset {
-  border: 0 none;
-}
-section,
-.section {
-  position: relative;
-}
-
-::spelling-error {
-  color: #fff;
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
 }
 
 .wrapper {

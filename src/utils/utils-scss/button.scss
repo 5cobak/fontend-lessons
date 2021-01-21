@@ -13,20 +13,16 @@
   transition: $trFast;
   cursor: pointer;
   line-height: 1;
-  border: 1px solid transparent;
   @media (max-width: $phoneWidth) {
     font-size: 10px;
   }
   &:hover {
     opacity: 0.5;
   }
-  &:focus {
-    border: $borderHover;
-  }
   &_subscribe {
     position: absolute;
     right: 0;
-    top: calc(50% - 0.556rem);
+    top: calc(50% - 10px);
     padding: 0;
     border-radius: none;
   }

@@ -5,6 +5,7 @@
     position: relative;
   }
   &__input {
+    cursor: pointer;
     font-size: 14px;
     border: $border;
     border-radius: 4px;
@@ -15,6 +16,7 @@
     background-position-x: 93%;
     background-position-y: 50%;
     &:focus {
+      outline: none;
       border: $borderHover;
     }
     &:hover {
@@ -25,6 +27,7 @@
     }
   }
   &__arrow {
+    cursor: pointer;
     max-width: 12px;
     min-width: 12px;
     min-height: 12px;

@@ -60,6 +60,7 @@
   "dependencies": {
     "chart.js": "^2.9.4",
     "cssnano": "^4.1.10",
+    "focus-visible": "^5.2.0",
     "jquery": "^3.5.1",
     "jquery-bridget": "^2.0.1",
     "masonry-layout": "^4.2.2",

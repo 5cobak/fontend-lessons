@@ -3,6 +3,10 @@
 
   &__label {
     display: flex;
+
+    &:focus {
+      outline: 2px solid $purple;
+    }
   }
   &__input {
     display: none;
