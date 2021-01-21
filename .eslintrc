@@ -18,7 +18,7 @@
     "prefer-destructuring": "off",
     "no-param-resassign": "off",
     "semi": "off",
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off",
     "space-in-parens": "off",
     "import/no-unresolved": "off",
     "import/extensions": "off",
