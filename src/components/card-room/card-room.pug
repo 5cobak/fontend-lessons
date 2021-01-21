@@ -1,4 +1,4 @@
-mixin card-room({src: PATHS})
+mixin card-room(image)
   .card-room
     .card-room__slider
       .swiper-container.js-swiper-container.card-room__swiper-container
@@ -6,14 +6,9 @@ mixin card-room({src: PATHS})
         .swiper-button-prev.card-room__button-prev
         .swiper-button-next.card-room__button-next
         .swiper-wrapper
-          .swiper-slide.card-room__slide
-            img(src=require('./images/' + PATHS[0]).default alt="фотография конматы").card-room__slider-img
-          .swiper-slide.card-room__slide
-            img(src=require('./images/' + PATHS[1]).default alt="фотография конматы").card-room__slider-img
-          .swiper-slide.card-room__slide
-            img(src=require('./images/' + PATHS[2]).default alt="фотография конматы").card-room__slider-img
-          .swiper-slide.card-room__slide
-            img(src=require('./images/' + PATHS[3]).default alt="фотография конматы").card-room__slider-img
+          each val, index in image
+            .swiper-slide.card-room__slide
+              img(src=require('./images/' + val.src ).default alt="фотография конматы").card-room__slider-img
     .card-room__content
       .card-room__head
         span.card-room__number
