@@ -30,7 +30,8 @@
     "comma-dangle": "off",
     "consistent-return": "off",
     "no-else-return": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "implicit-arrow-linebreak": "off"
   },
   "parserOptions": {
     "ecmaVersion": 11,

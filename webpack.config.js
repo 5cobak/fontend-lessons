@@ -1,4 +1,3 @@
-/* eslint-disable implicit-arrow-linebreak */
 const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
@@ -108,14 +107,10 @@ module.exports = {
   mode: 'development',
   entry: {
     main: ['@babel/polyfill', './index.js'],
-    // some other entry point
   },
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
-
-    // turn on that publicPath for deploy
-    // publicPath: '/toxin/',
   },
   resolve: {
     extensions: ['.jsx', '.ts', '.js'],
@@ -135,10 +130,7 @@ module.exports = {
       jQuery: 'jquery',
     }),
     new CopyWebpackPlugin({
-      patterns: [
-        { from: `${PATHS.src}/assets/favicons/`, to: 'assets/favicons' },
-        // { from: `${PATHS.src}/assets/css/`, to: '' },
-      ],
+      patterns: [{ from: `${PATHS.src}/assets/favicons/`, to: 'assets/favicons' }],
     }),
     ...PAGES_WITH_DIR.map(
       (page) =>
@@ -207,14 +199,6 @@ module.exports = {
           esModule: false,
         },
       },
-      // {
-      //   test: /\.svg$/,
-      //   loader: 'svgo-loader',
-      //   include: [path.resolve(__dirname, `${PATHS.src}/assets/img/icons/`)],
-      //   options: {
-      //     plugins: [{ removeAttrs: { attrs: ['fill', 'stroke'] } }],
-      //   },
-      // },
     ],
   },
 };
