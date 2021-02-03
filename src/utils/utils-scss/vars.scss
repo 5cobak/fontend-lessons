@@ -5,6 +5,10 @@ $mainFontSize: 18px;
 $normal: 400;
 $bold: 700;
 
+// font-family
+
+$font-family-primary: 'Montserrat', Arial, sans-serif;
+$font-family-secondary: 'OpenSans', Arial, sans-serif;
 // line-height
 $mainLineHeight: 1.4;
 
@@ -19,7 +23,10 @@ $smPhoneWidth: 320px;
 
 // Main color
 $danger-color: #fc5c65;
-$warningColor: #fed330;
+$buttonBgColor: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+
+$text-color-primary: #1f2041;
+$text-color-secondary: rgba(31, 32, 65, 0.75);
 
 $ds100: #1f2041;
 $ds75: rgba(31, 32, 65, 0.75);

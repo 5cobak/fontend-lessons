@@ -12,23 +12,3 @@
     @content;
   }
 }
-
-// (end)
-
-// fonts
-
-@mixin Mont {
-  font-family: 'Montserrat', Arial, sans-serif;
-}
-@mixin MontBold {
-  font-family: 'MontserratBold', Arial, sans-serif;
-}
-@mixin MontMedium {
-  font-family: 'MontserratMedium', Arial, sans-serif;
-}
-@mixin OsBold {
-  font-family: 'OpenSansBold', Arial, sans-serif;
-}
-@mixin Os {
-  font-family: 'OpenSans', Arial, sans-serif;
-}
