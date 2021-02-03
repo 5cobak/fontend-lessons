@@ -1,7 +1,7 @@
 .circle-diagram {
   display: flex;
   align-items: flex-end;
-  @media (max-width: $tableWidth) {
+  @media (max-width: $table-width) {
     display: block;
   }
   &__container {
@@ -26,8 +26,9 @@
     max-height: 35px;
     font-size: 16px;
     line-height: 15px;
-    color: $purple;
-    @include MontBold;
+    color: $primary-color;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     i {
       font-size: 24px;
       line-height: 29px;
@@ -40,8 +41,8 @@
     margin-left: 20px;
     font-size: 14px;
     line-height: 24px;
-    color: $ds75;
-    @media (max-width: $phoneWidth) {
+    color: $text-color-brightness-75;
+    @media (max-width: $phone-width) {
       font-size: 12px;
       line-height: 20px;
     }

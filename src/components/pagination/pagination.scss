@@ -15,8 +15,8 @@
   max-width: 320px;
   margin: 0 auto;
   font-size: 14px;
-  color: $ds75;
-  @media (max-width: $phoneWidth) {
+  color: $text-color-brightness-75;
+  @media (max-width: $phone-width) {
     font-size: 12px;
   }
 }
@@ -39,7 +39,7 @@ ul.simple-pagination {
     padding: 0;
     margin: 0;
     display: inline-flex;
-    @include Mont;
+    font-family: $font-family-primary;
   }
 
   li {
@@ -53,9 +53,9 @@ ul.simple-pagination {
     align-items: center;
     border-radius: 50%;
     &:last-child {
-      background: $greenGr;
+      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
       svg {
-        fill: $white;
+        fill: #fff;
       }
     }
     span {
@@ -69,24 +69,25 @@ ul.simple-pagination {
   }
   a {
     font-size: 12px;
-    color: $ds50;
+    color: $text-color-brightness-50;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
     text-align: center;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 10px;
     }
   }
   .active {
     border-radius: 50%;
-    background: $purpleGr;
-    color: $white;
-    @include MontBold;
+    background: $button-color-primary;
+    color: #fff;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     font-size: 12px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 10px;
     }
   }
@@ -99,7 +100,7 @@ ul.simple-pagination {
   }
   .ellipse {
     font-size: 12px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 10px;
     }
   }

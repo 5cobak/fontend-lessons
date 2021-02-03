@@ -1,6 +1,6 @@
 .card-room {
   $self: &;
-  background-color: $white;
+  background-color: $bg-color-primary;
   max-width: 270px;
   min-width: 270px;
   border-radius: 4px;
@@ -28,13 +28,13 @@
   .swiper-pagination-bullet {
     opacity: 1;
     background: none;
-    border: 1px solid $white;
+    border: 1px solid #fff;
     box-shadow: 0 5px 5px rgba(31, 32, 65, 0.1);
     margin-right: 0;
   }
   .swiper-pagination-bullet-active {
-    background: $white;
-    border: 1px solid $white;
+    background: #fff;
+    border: 1px solid #fff;
     box-shadow: 0 5px 5px rgba(31, 32, 65, 0.3);
   }
   .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
@@ -56,7 +56,7 @@
       position: absolute;
       top: 0;
       z-index: 10;
-      transition: $trFast;
+      transition: $tr-fast;
     }
   }
   &__slider-img {
@@ -68,7 +68,7 @@
     top: 22px;
 
     &:after {
-      color: $white;
+      color: #fff;
       font-size: 12px;
       font-weight: bold;
     }
@@ -80,7 +80,8 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    @include MontBold;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     margin-bottom: 15px;
     line-height: 17px;
     padding-bottom: 12px;
@@ -93,7 +94,7 @@
   &__head-num {
     font-size: 14px;
     line-height: 23px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 12px;
       line-height: 18px;
     }
@@ -101,26 +102,27 @@
   &__type {
     font-size: 14px;
     line-height: 15px;
-    color: $purple;
-    @media (max-width: $phoneWidth) {
+    color: $primary-color;
+    @media (max-width: $phone-width) {
       font-size: 12px;
       line-height: 10px;
     }
   }
   &__head-price {
-    @include Mont;
+    font-family: $font-family-primary;
     font-size: 12px;
-    color: $ds50;
+    color: $text-color-brightness-50;
     line-height: 18px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 10px;
       line-height: 15px;
     }
   }
   &__head-sum {
     font-size: 14px;
-    @include MontBold;
-    @media (max-width: $phoneWidth) {
+    font-family: $font-family-primary;
+    font-weight: $bold;
+    @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
@@ -131,13 +133,14 @@
   }
   &__reviews {
     font-size: 14px;
-    color: $ds50;
-    @include Mont;
-    @media (max-width: $phoneWidth) {
+    color: $text-color-brightness-50;
+    font-family: $font-family-primary;
+    @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
   &__reviews-num {
-    @include MontBold;
+    font-family: $font-family-primary;
+    font-weight: $bold;
   }
 }

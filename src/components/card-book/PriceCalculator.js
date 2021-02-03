@@ -11,18 +11,17 @@ export default class PriceCalculator {
     const elementOfPrice = card.querySelector('.js-card-book__calc-sum');
     const priceForOneDayStr = card.querySelector('.js-card-book__price-for-one-day').innerHTML;
     const priceForOneDayNum = parseFloat(priceForOneDayStr.replace(/\s/g, ''));
-    const discontStr = card.querySelector('.js-card-book__discont').innerHTML;
-    const discontNum = parseFloat(discontStr.replace(/\s/g, '').match(/\d+/));
+    const discountStr = card.querySelector('.js-card-book__discont').innerHTML;
+    const discountNum = parseFloat(discountStr.replace(/\s/g, '').match(/\d+/));
     const taxes = card.querySelectorAll('.js-card-book__tax');
 
     taxes.map = [].map;
-    const taxWithDiscont = parseFloat(taxes[0].innerHTML.replace(/\s/g, '').match(/\d+/));
+    const taxWithDiscount = parseFloat(taxes[0].innerHTML.replace(/\s/g, '').match(/\d+/));
     const taxesSum = taxes.map((tax) => parseFloat(tax.innerHTML.replace(/\s/g, ''))).reduce((acc, val) => acc + val);
     let cleanSum = daysLag * priceForOneDayNum;
-    let totalSum = cleanSum + taxesSum - discontNum;
-    if (discontNum) {
-      totalSum += taxWithDiscont;
-      console.log(taxWithDiscont);
+    let totalSum = cleanSum + taxesSum - discountNum;
+    if (discountNum) {
+      totalSum += taxWithDiscount;
     }
     totalSum = `${totalSum}`.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
     cleanSum = `${cleanSum}`.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
@@ -58,7 +57,7 @@ export default class PriceCalculator {
     const inputs = this.parent.querySelectorAll('.js-card-book__dropdown-input');
     const customDateDropdown = {};
     customDateDropdown.callback = this.injectHTML.bind(this);
-    const ExtendendDropdown = Object.assign(new DateDropdown(inputs), customDateDropdown);
-    this.dateDropdown = ExtendendDropdown;
+    const ExtendedDropdown = Object.assign(new DateDropdown(inputs), customDateDropdown);
+    this.dateDropdown = ExtendedDropdown;
   }
 }

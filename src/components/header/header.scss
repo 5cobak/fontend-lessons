@@ -1,6 +1,6 @@
 .header {
   $self: &;
-  background-color: $white;
+  background-color: $bg-color-primary;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   position: relative;
   &__content {
@@ -9,12 +9,13 @@
     align-items: center;
     padding-top: 15px;
     padding-bottom: 15px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       padding-top: 5px;
       padding-bottom: 5px;
     }
   }
   &__nav-shadow {
+    display: none;
     position: absolute;
     z-index: 900;
     top: 100%;
@@ -24,15 +25,18 @@
     min-height: 100vh;
     transition: 0.1;
     background-color: rgba(185, 101, 185, 0.98);
+    @media (max-width: $sm-desktop-width) {
+      display: block;
+    }
     &_active {
-      transition: $trMid;
+      transition: $tr-mid;
       max-width: 100%;
     }
   }
   &__nav {
     display: flex;
     align-items: center;
-    @media (max-width: $smDesktopWidth) {
+    @media (max-width: $sm-desktop-width) {
       display: none;
       text-align: center;
     }
@@ -41,13 +45,13 @@
       min-height: 100vh;
       width: 100%;
       max-width: 0;
-      transition: $trFast;
+      transition: $tr-fast;
       position: absolute;
-      background-color: $white;
+      background-color: $bg-color-primary;
       z-index: 1000;
       top: 100%;
       right: 0;
-      @media (max-width: $smDesktopWidth) {
+      @media (max-width: $sm-desktop-width) {
         display: block;
       }
       &-active {
@@ -65,15 +69,15 @@
         padding: 20px 0;
         margin: 0;
         border-radius: 2px;
-        transition: $trFast;
+        transition: $tr-fast;
         &:after {
           margin-left: 10px;
           margin-bottom: 4px;
         }
         &:hover {
-          background-color: $purple;
+          background-color: $primary-color;
           #{$self}__link {
-            color: $white;
+            color: #fff;
           }
         }
       }
@@ -81,7 +85,7 @@
         display: inline-block;
         font-size: 18px;
         vertical-align: center;
-        @media (max-width: $phoneWidth) {
+        @media (max-width: $phone-width) {
           font-size: 16px;
         }
       }
@@ -119,7 +123,7 @@
         min-height: 8px;
         max-width: 8px;
         max-height: 8px;
-        border: 2px solid $ds50;
+        border: 2px solid $text-color-brightness-50;
         border-top: none;
         border-left: none;
         transform: rotate(45deg);
@@ -131,12 +135,12 @@
   &__link {
     font-size: 14px;
     line-height: 17px;
-    color: $ds50;
+    color: $text-color-brightness-50;
   }
   &__button {
     margin-right: 20px;
     padding: 10px 20px;
-    @media (max-width: $smDesktopWidth) {
+    @media (max-width: $sm-desktop-width) {
       margin-right: 0;
     }
     &:last-child {
@@ -146,24 +150,28 @@
   &__cabinet {
     font-size: 14px;
     line-height: 17px;
-    color: $ds50;
+    color: $text-color-brightness-50;
     border-left: 1px solid rgba(31, 32, 65, 0.1);
     padding: 10px 0 10px 20px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
   &__burger {
+    display: none;
     min-width: 30px;
     min-height: 30px;
     position: relative;
     cursor: pointer;
+    @media (max-width: $sm-desktop-width) {
+      display: block;
+    }
   }
   &__burger-layout {
     display: none;
     width: 30px;
     height: 3px;
-    background-color: $purple;
+    background-color: $primary-color;
     position: absolute;
     top: 50%;
     z-index: 10;
@@ -173,7 +181,7 @@
       display: block;
       width: 30px;
       height: 3px;
-      background-color: $purple;
+      background-color: $primary-color;
       position: absolute;
       top: -9px;
       z-index: 10;
@@ -184,7 +192,7 @@
       display: block;
       width: 30px;
       height: 3px;
-      background-color: $purple;
+      background-color: $primary-color;
       position: absolute;
       top: 8px;
       z-index: 10;
@@ -193,10 +201,10 @@
     &_active {
       top: 0;
       height: 30px;
-      background-color: $white;
-      border: 2px solid $purple;
+      background-color: $bg-color-primary;
+      border: 2px solid $primary-color;
       border-radius: 50%;
-      transition: $trFast;
+      transition: $tr-fast;
       &:after {
         transform: rotate(45deg);
         top: calc(50% - 1px);
@@ -210,7 +218,7 @@
         width: 20px;
       }
     }
-    @media (max-width: $smDesktopWidth) {
+    @media (max-width: $sm-desktop-width) {
       display: block;
     }
   }

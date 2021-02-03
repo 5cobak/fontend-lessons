@@ -1,5 +1,5 @@
 .card-singin {
-  background-color: $white;
+  background-color: $bg-color-primary;
   max-width: 380px;
   width: 100%;
   border-radius: 4px;
@@ -9,10 +9,11 @@
     padding: 40px 30px 30px 30px;
   }
   &__title {
-    @include MontBold;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     font-size: 24px;
     margin-bottom: 20px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 20px;
       margin-bottom: 10px;
     }
@@ -36,7 +37,7 @@
   &__check-in-text {
     font-size: 14px;
     max-width: 150px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }

@@ -1,5 +1,5 @@
 // font-size
-$mainFontSize: 18px;
+$main-font-size: 18px;
 // font-weight
 
 $normal: 400;
@@ -10,48 +10,41 @@ $bold: 700;
 $font-family-primary: 'Montserrat', Arial, sans-serif;
 $font-family-secondary: 'OpenSans', Arial, sans-serif;
 // line-height
-$mainLineHeight: 1.4;
+$line-height-primary: 1.4;
 
 // media size
 
-$desktopWidth: 1440px;
-$mdDesktopWidth: 1160px;
-$smDesktopWidth: 980px;
-$tableWidth: 768px;
-$phoneWidth: 480px;
-$smPhoneWidth: 320px;
+$desktop-width: 1440px;
+$md-desktop-width: 1160px;
+$sm-desktop-width: 980px;
+$table-width: 768px;
+$phone-width: 480px;
+$sm-phone-width: 320px;
 
-// Main color
+// buttons color
+$button-color-primary: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+$button-color-primaryHover: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+$button-color-secondary: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+
+// text color
+$text-color: #1f2041;
+$text-color-brightness-75: rgba(31, 32, 65, 0.75);
+$text-color-brightness-50: rgba(31, 32, 65, 0.5);
+$text-color-brightness-25: rgba(31, 32, 65, 0.25);
+$button-text-color-primary: #fff;
+$button-text-color-secondary: #bc9cff;
+
+// other
+$primary-color: #bc9cff;
+$secondary-color: #6fcf97;
+$body-color: #e5e5e5;
+$bg-color-primary: #ffffff;
 $danger-color: #fc5c65;
-$buttonBgColor: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-
-$text-color-primary: #1f2041;
-$text-color-secondary: rgba(31, 32, 65, 0.75);
-
-$ds100: #1f2041;
-$ds75: rgba(31, 32, 65, 0.75);
-$ds50: rgba(31, 32, 65, 0.5);
-$ds25: rgba(31, 32, 65, 0.25);
-$ds5: rgba(31, 32, 65, 0.05);
-$purple: #bc9cff;
-$green: #6fcf97;
-$bodyColor: #e5e5e5;
-$white: #ffffff;
-
-// box-shadow
-
-$bs-2: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
 // transition
+$tr-fast: 0.25s;
+$tr-mid: 0.5s;
 
-$trFast: 0.25s;
-$trMid: 0.5s;
-
-// gradients
-
-$purpleGr: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-$purpleGr-hover: linear-gradient(180deg, #bc9cff 0%, #bc9cff 100%);
-$greenGr: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-
-$border: 1px solid rgba(31, 32, 65, 0.25);
-$borderHover: 1px solid rgba(31, 32, 65, 0.5);
+// border
+$border-input: 1px solid rgba(31, 32, 65, 0.25);
+$border-input-hover: 1px solid rgba(31, 32, 65, 0.5);

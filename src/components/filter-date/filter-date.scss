@@ -7,22 +7,22 @@
   &__input {
     cursor: pointer;
     font-size: 14px;
-    border: $border;
+    border: $border-input;
     border-radius: 4px;
     padding: 12px 15px;
-    transition: $trFast;
+    transition: $tr-fast;
     min-width: 266px;
     background-repeat: no-repeat;
     background-position-x: 93%;
     background-position-y: 50%;
     &:focus {
       outline: none;
-      border: $borderHover;
+      border: $border-input-hover;
     }
     &:hover {
-      border: $borderHover;
+      border: $border-input-hover;
     }
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
@@ -34,7 +34,7 @@
     position: absolute;
     right: 15px;
     top: calc(50% - 6px);
-    fill: $ds50;
+    fill: $text-color-brightness-50;
     background-image: url('assets/img/expand-more.svg');
     background-repeat: no-repeat;
     background-position: center;

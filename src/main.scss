@@ -5,16 +5,16 @@
 @import './utils/utils-scss/fonts.scss';
 
 html {
-  line-height: $mainLineHeight;
-  font-size: $mainFontSize;
+  line-height: $line-height-primary;
+  font-size: $main-font-size;
   height: 100%;
-  @media screen and (max-width: $tableWidth) {
+  @media screen and (max-width: $table-width) {
     font-size: 16px;
   }
-  @media screen and (max-width: $phoneWidth) {
+  @media screen and (max-width: $phone-width) {
     font-size: 15px;
   }
-  @media screen and (max-width: $smPhoneWidth) {
+  @media screen and (max-width: $sm-phone-width) {
     font-size: 14px;
   }
 }
@@ -22,8 +22,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  @include Mont;
-  font-size: $mainFontSize;
+  font-family: $font-family-primary;
+  font-size: $main-font-size;
   font-weight: $normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -56,22 +56,22 @@ body {
   flex: 0 0 auto;
   margin: 0 auto;
   padding: 0;
-  max-width: $desktopWidth;
-  @media screen and (max-width: $desktopWidth) {
-    max-width: $mdDesktopWidth;
+  max-width: $desktop-width;
+  @media screen and (max-width: $desktop-width) {
+    max-width: $md-desktop-width;
   }
-  @media screen and (max-width: $mdDesktopWidth) {
-    max-width: $smDesktopWidth;
+  @media screen and (max-width: $md-desktop-width) {
+    max-width: $sm-desktop-width;
     padding: 0 10px;
   }
-  @media screen and (max-width: $smDesktopWidth) {
+  @media screen and (max-width: $sm-desktop-width) {
     width: 100%;
   }
-  @media (min-width: $phoneWidth) and (max-width: $tableWidth) {
+  @media (min-width: $phone-width) and (max-width: $table-width) {
     width: 100%;
     padding: 0 18px;
   }
-  @media (min-width: $smPhoneWidth) and (max-width: $phoneWidth) {
+  @media (min-width: $sm-phone-width) and (max-width: $phone-width) {
     max-width: 100vw;
     padding: 0 10px;
   }

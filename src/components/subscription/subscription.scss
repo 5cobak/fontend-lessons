@@ -3,9 +3,9 @@
   max-width: 320px;
   &:hover & {
     &__input {
-      border: $borderHover;
+      border: $border-input-hover;
       &::placeholder {
-        color: $ds75;
+        color: $text-color-brightness-75;
       }
     }
   }
@@ -13,27 +13,28 @@
     display: block;
     width: 100%;
     max-width: 266px;
-    border: $border;
+    border: $border-input;
     border-radius: 4px;
-    transition: $trFast;
+    transition: $tr-fast;
     padding: 12px 40px 12px 15px;
     font-size: 14px;
-    color: $ds75;
-    @include MontMedium;
+    color: $text-color-brightness-75;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     background-image: url('./assets/img/arrow-forward.jpg');
     background-repeat: no-repeat;
     background-position-x: 96%;
     background-position-y: 50%;
     &::placeholder {
       font-size: 14px;
-      color: $ds25;
-      transition: $trFast;
+      color: $text-color-brightness-25;
+      transition: $tr-fast;
     }
     &:focus {
       outline: none;
-      border: $borderHover;
+      border: $border-input-hover;
       &::placeholder {
-        color: $ds75;
+        color: $text-color-brightness-75;
       }
     }
   }

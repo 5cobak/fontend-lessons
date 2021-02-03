@@ -94,7 +94,7 @@ a {
     outline: none;
   }
   &:focus {
-    outline: 2px solid $purple;
+    outline: 2px solid $primary-color;
   }
 }
 
@@ -169,7 +169,7 @@ button {
   margin: 0;
   outline: none;
   &:focus {
-    outline: 2px solid $purple;
+    outline: 2px solid $primary-color;
   }
 }
 button,

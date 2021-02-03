@@ -3,34 +3,35 @@
   max-width: 320px;
   &:hover & {
     &__input {
-      border: $borderHover;
+      border: $border-input-hover;
       &::placeholder {
-        color: $ds75;
+        color: $text-color-brightness-75;
       }
     }
   }
   &__input {
     width: 100%;
-    border: $border;
+    border: $border-input;
     border-radius: 4px;
-    transition: $trFast;
+    transition: $tr-fast;
     padding: 13px 15px;
     font-size: 14px;
-    color: $ds75;
-    @include MontMedium;
+    color: $text-color-brightness-75;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     &::placeholder {
       font-size: 14px;
-      color: $ds25;
-      transition: $trFast;
+      color: $text-color-brightness-25;
+      transition: $tr-fast;
     }
     &:focus {
       outline: none;
-      border: $borderHover;
+      border: $border-input-hover;
       &::placeholder {
-        color: $ds75;
+        color: $text-color-brightness-75;
       }
     }
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 12px;
       &::placeholder {
         font-size: 12px;

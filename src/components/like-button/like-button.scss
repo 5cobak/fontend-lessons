@@ -6,12 +6,12 @@
   height: 18px;
   min-width: 38px;
   min-height: 18px;
-  @include Mont;
+  font-family: $font-family-primary;
   cursor: pointer;
   background-color: #fff;
   border-radius: 10px;
   position: relative;
-  transition: $trFast;
+  transition: $tr-fast;
   user-select: none;
 
   &:after {
@@ -23,44 +23,44 @@
     min-height: 20px;
     z-index: -1;
     border-radius: 12px;
-    background-color: $ds25;
-    transition: $trFast;
+    background-color: $text-color-brightness-25;
+    transition: $tr-fast;
   }
   &__like {
     width: 10px;
     height: 10px;
     position: absolute;
     left: 4px;
-    transition: $trFast;
+    transition: $tr-fast;
   }
   &__like-favorite {
     width: 10px;
     height: 10px;
     position: absolute;
     left: 4px;
-    transition: $trFast;
+    transition: $tr-fast;
     opacity: 0;
   }
   &__likes {
     font-size: 12px;
-    color: $ds25;
+    color: $text-color-brightness-25;
     position: absolute;
     right: 9px;
-    transition: $trFast;
+    transition: $tr-fast;
   }
   &_active {
     svg {
       transform: rotateZ(-360deg);
-      animation-duration: $trFast;
+      animation-duration: $tr-fast;
       animation-name: changeSize;
-      fill: $purple;
+      fill: $primary-color;
     }
     span {
-      color: $purple;
+      color: $primary-color;
     }
     &:after {
-      background: $purpleGr;
-      transition: $trFast;
+      background: $button-color-primary;
+      transition: $tr-fast;
     }
   }
 }

@@ -6,17 +6,17 @@
     grid-template-columns: 2fr 1fr;
 
     overflow: hidden;
-    @media (max-width: $desktopWidth) {
+    @media (max-width: $desktop-width) {
       max-height: 485px;
     }
-    @media (max-width: $smDesktopWidth) {
+    @media (max-width: $sm-desktop-width) {
       max-height: 100%;
       display: block;
     }
   }
   &__photo {
-    @media (max-width: $smDesktopWidth) {
-      border: 5px solid $white;
+    @media (max-width: $sm-desktop-width) {
+      border: 5px solid #fff;
     }
   }
 
@@ -24,28 +24,28 @@
     min-width: 100%;
     min-height: 100%;
 
-    @media (max-width: $desktopWidth) {
+    @media (max-width: $desktop-width) {
       max-height: 485px;
     }
   }
   &__another-photos {
-    @media (max-width: $smDesktopWidth) {
+    @media (max-width: $sm-desktop-width) {
       display: flex;
     }
-    @media (max-width: $tableWidth) {
+    @media (max-width: $table-width) {
       display: block;
     }
   }
   &__another-photo {
     min-width: 100%;
     min-height: 50%;
-    @media (max-width: $desktopWidth) {
+    @media (max-width: $desktop-width) {
       max-height: calc(485px / 2);
     }
-    @media (max-width: $smDesktopWidth) {
+    @media (max-width: $sm-desktop-width) {
       min-width: 50%;
     }
-    @media (max-width: $tableWidth) {
+    @media (max-width: $table-width) {
       min-width: 100%;
     }
   }
@@ -57,7 +57,7 @@
     &_margin-l-20 {
       margin-left: 20px;
     }
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 15px;
     }
   }
@@ -66,16 +66,16 @@
     justify-content: space-between;
     padding-top: 70px;
     padding-bottom: 70px;
-    @media (max-width: $smDesktopWidth) {
+    @media (max-width: $sm-desktop-width) {
       display: block;
     }
-    @media (max-width: $smDesktopWidth) {
-      max-width: $tableWidth;
+    @media (max-width: $sm-desktop-width) {
+      max-width: $table-width;
       margin: 0 auto;
     }
   }
   &__block {
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       margin-bottom: 50px;
     }
   }
@@ -84,7 +84,7 @@
   }
   &__info {
     margin-bottom: 10px;
-    @media (max-width: $smDesktopWidth) {
+    @media (max-width: $sm-desktop-width) {
       margin: 0;
       margin-bottom: 30px;
     }
@@ -93,12 +93,12 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
-    @media (max-width: $tableWidth) {
+    @media (max-width: $table-width) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 18px;
     }
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       display: grid;
       grid-template-columns: 1fr;
       grid-row-gap: 18px;
@@ -115,8 +115,8 @@
   &__reviews-count {
     font-size: 14px;
     line-height: 14px;
-    color: $ds50;
-    @media (max-width: $phoneWidth) {
+    color: $text-color-brightness-50;
+    @media (max-width: $phone-width) {
       font-size: 12px;
       line-height: 12px;
     }
@@ -127,7 +127,7 @@
   }
   &__cancel-rule {
     max-width: 340px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       margin-left: 5px;
     }
   }
@@ -135,14 +135,14 @@
     white-space: pre-wrap;
     font-size: 14px;
     line-height: 24px;
-    color: $ds75;
-    @media (max-width: $phoneWidth) {
+    color: $text-color-brightness-75;
+    @media (max-width: $phone-width) {
       font-size: 12px;
       line-height: 20px;
     }
   }
   &__aside {
-    @media (max-width: $smDesktopWidth) {
+    @media (max-width: $sm-desktop-width) {
       display: flex;
       justify-content: center;
     }

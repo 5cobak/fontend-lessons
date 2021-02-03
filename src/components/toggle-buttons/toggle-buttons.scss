@@ -10,14 +10,14 @@
   &__checkbox {
     display: none;
     &:checked ~ #{$self}__checkmark {
-      border-color: $purple;
+      border-color: $primary-color;
       &:after {
-        background: $purpleGr;
+        background: $button-color-primary;
         left: calc(100% - 15px);
       }
     }
     &:checked ~ #{$self}__subtitle {
-      color: $ds75;
+      color: $text-color-brightness-75;
     }
   }
   &__checkmark {
@@ -28,12 +28,12 @@
     min-height: 20px;
     min-width: 40px;
     border-radius: 10px;
-    border: 1px solid $ds25;
+    border: 1px solid $text-color-brightness-25;
     overflow: hidden;
     margin-right: 10px;
-    transition: $trFast;
+    transition: $tr-fast;
     &:focus {
-      border: $borderHover;
+      border: $border-input-hover;
     }
     &:after {
       content: '';
@@ -43,16 +43,16 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background: $ds25;
-      transition: $trFast;
+      background: $text-color-brightness-25;
+      transition: $tr-fast;
     }
   }
   &__subtitle {
-    color: $ds75;
+    color: $text-color-brightness-75;
     font-size: 14px;
     line-height: 20px;
     white-space: pre-wrap;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }

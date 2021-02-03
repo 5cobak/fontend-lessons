@@ -1,26 +1,27 @@
 .block-title {
   text-transform: uppercase;
-  @include MontBold;
+  font-family: $font-family-primary;
+  font-weight: $bold;
   font-size: 12px;
   display: inline-block;
   line-height: 15px;
   margin-bottom: 5px;
   white-space: pre-wrap;
-  color: $ds100;
-  @media (max-width: $phoneWidth) {
+  color: $text-color;
+  @media (max-width: $phone-width) {
     font-size: 10px;
     line-height: 12px;
     margin-bottom: 3px;
   }
   &_margin-b-16 {
     margin-bottom: 16px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       margin-bottom: 13px;
     }
   }
   &_margin-b-20 {
     margin-bottom: 20px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       margin-bottom: 15px;
     }
   }

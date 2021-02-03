@@ -8,7 +8,7 @@
   &:last-child {
     margin-right: 0;
   }
-  @media (max-width: $phoneWidth) {
+  @media (max-width: $phone-width) {
     font-size: 12px;
   }
   &__label {
@@ -24,16 +24,16 @@
     visibility: hidden;
     cursor: pointer;
     &:checked ~ #{$self}__checkmark {
-      border-color: $purple;
+      border-color: $primary-color;
       &:after {
         opacity: 1;
       }
     }
     &:checked ~ label {
-      color: $ds100;
+      color: $text-color;
     }
     &:checked ~ #{$self}__text {
-      color: $ds75;
+      color: $text-color-brightness-75;
     }
   }
   &__checkmark {
@@ -45,14 +45,14 @@
     height: 20px;
     width: 20px;
     background-color: #fff;
-    border: 1px solid $ds25;
+    border: 1px solid $text-color-brightness-25;
     border-radius: 50%;
     margin-right: 10px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       margin-right: 5px;
     }
     &:focus {
-      border: $borderHover;
+      border: $border-input-hover;
     }
     &:after {
       content: '';
@@ -62,11 +62,11 @@
       height: 14px;
       max-width: 14px;
       border-radius: 50%;
-      background: $purpleGr;
-      transition: $trFast;
+      background: $button-color-primary;
+      transition: $tr-fast;
     }
   }
   &__text {
-    color: $ds50;
+    color: $text-color-brightness-50;
   }
 }

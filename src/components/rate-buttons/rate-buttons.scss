@@ -5,7 +5,7 @@
     display: flex;
 
     &:focus {
-      outline: 2px solid $purple;
+      outline: 2px solid $primary-color;
     }
   }
   &__input {

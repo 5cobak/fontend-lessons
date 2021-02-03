@@ -5,7 +5,7 @@
   cursor: pointer;
   $self: &;
   &:focus {
-    outline: 2px solid $purple;
+    outline: 2px solid $primary-color;
   }
   &__title {
     cursor: pointer;
@@ -22,13 +22,13 @@
       background-image: url('assets/img/expand-more.svg');
       background-repeat: no-repeat;
       background-position: center;
-      transition: $trFast;
+      transition: $tr-fast;
       margin-right: 20px;
       margin-bottom: 0;
-      @media (max-width: $phoneWidth) {
+      @media (max-width: $phone-width) {
         margin-right: 10px;
       }
-      @media (max-width: $phoneWidth) {
+      @media (max-width: $phone-width) {
         font-size: 10px;
       }
     }
@@ -42,7 +42,7 @@
     top: 100%;
     max-height: 0;
     overflow: hidden;
-    transition: $trFast;
+    transition: $tr-fast;
     &_active {
       padding-top: 10px;
       max-height: 1000px;
@@ -66,23 +66,23 @@
     height: 20px;
     min-width: 20px;
     min-height: 20px;
-    border: $border;
+    border: $border-input;
     border-radius: 4px;
     margin-right: 10px;
 
     &:focus {
-      border: $borderHover;
+      border: $border-input-hover;
     }
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       margin-right: 5px;
     }
   }
   &__text {
     font-size: 14px;
-    color: $ds50;
+    color: $text-color-brightness-50;
     line-height: 20px;
     white-space: pre-wrap;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
@@ -90,7 +90,7 @@
     display: none;
   }
   &__checkbox:checked + span {
-    border-color: $purple;
+    border-color: $primary-color;
     background-image: url('./assets/img/Vector.jpg');
     background-repeat: no-repeat;
     background-position: 50% 50%;

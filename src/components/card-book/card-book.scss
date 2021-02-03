@@ -1,16 +1,16 @@
 .card-book {
-  background-color: $white;
+  background-color: $bg-color-primary;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   max-width: 380px;
   min-width: 380px;
-  @media (max-width: $phoneWidth) {
+  @media (max-width: $phone-width) {
     min-width: 300px;
   }
   &__content {
     padding: 40px 30px 40px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       padding: 30px 20px 30px;
     }
   }
@@ -18,10 +18,11 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    @include MontBold;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     margin-bottom: 20px;
     line-height: 17px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       margin-bottom: 15px;
       line-height: 13px;
     }
@@ -34,14 +35,14 @@
   }
   &__number {
     font-size: 14px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
   &__head-num {
     font-size: 24px;
     line-height: 30px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 20px;
       line-height: 15px;
     }
@@ -49,33 +50,34 @@
   &__type {
     font-size: 14px;
     line-height: 15px;
-    color: $purple;
-    @media (max-width: $phoneWidth) {
+    color: $primary-color;
+    @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
   &__head-price {
-    @include Mont;
+    font-family: $font-family-primary;
     font-size: 12px;
-    color: $ds50;
+    color: $text-color-brightness-50;
     line-height: 18px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 12px;
       line-height: 15px;
     }
   }
   &__head-sum {
     font-size: 14px;
-    @include MontBold;
-    @media (max-width: $phoneWidth) {
+    font-family: $font-family-primary;
+    font-weight: $bold;
+    @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
   &__calculation {
     font-size: 14px;
-    color: $ds75;
+    color: $text-color-brightness-75;
     margin-bottom: 25px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 12px;
       margin-bottom: 20px;
     }
@@ -86,7 +88,7 @@
     white-space: pre;
     margin-bottom: 10px;
     line-height: 24px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       margin-bottom: 5px;
       line-height: 20px;
     }
@@ -99,11 +101,11 @@
     max-width: 20px;
     max-height: 20px;
     min-width: 20px;
-    border: 1px solid $ds25;
+    border: 1px solid $text-color-brightness-25;
 
     border-radius: 50%;
-    color: $ds25;
-    @media (max-width: $phoneWidth) {
+    color: $text-color-brightness-25;
+    @media (max-width: $phone-width) {
       margin-left: 3px;
     }
   }
@@ -122,12 +124,13 @@
     display: block;
     width: 100%;
     max-width: 70%;
-    border-bottom: 1px dotted $ds50;
+    border-bottom: 1px dotted $text-color-brightness-50;
     margin-left: 5px;
     margin-right: 5px;
   }
   &__calc-total {
-    @include MontBold;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     margin-bottom: 25px;
   }
   &__total-price {

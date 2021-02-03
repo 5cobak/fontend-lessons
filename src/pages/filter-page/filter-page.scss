@@ -9,7 +9,7 @@
     padding: 30px 0 70px;
     display: flex;
     justify-content: center;
-    @media (max-width: $smDesktopWidth) {
+    @media (max-width: $sm-desktop-width) {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -34,17 +34,18 @@
     padding-top: 10px;
     font-size: 12px;
     line-height: 14px;
-    color: $ds50;
-    @media (max-width: $phoneWidth) {
+    color: $text-color-brightness-50;
+    @media (max-width: $phone-width) {
       font-size: 10px;
     }
   }
   &__rooms-title {
-    @include MontBold;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     font-size: 24px;
     line-height: 29px;
     margin-bottom: 20px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 20px;
       line-height: 25px;
     }
@@ -54,20 +55,20 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-row-gap: 20px;
     grid-column-gap: 12px;
-    @media (max-width: $mdDesktopWidth) {
+    @media (max-width: $md-desktop-width) {
       grid-template-columns: 1fr 1fr;
     }
-    @media (max-width: $smDesktopWidth) {
+    @media (max-width: $sm-desktop-width) {
       grid-template-columns: 1fr 1fr;
     }
-    @media (max-width: $tableWidth) {
+    @media (max-width: $table-width) {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
   }
   &__rooms-container {
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       text-align: center;
     }
   }

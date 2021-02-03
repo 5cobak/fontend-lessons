@@ -5,19 +5,19 @@
   user-select: none;
   display: flex;
   justify-content: space-between;
-  @media (max-width: $phoneWidth) {
+  @media (max-width: $phone-width) {
     max-width: 100%;
   }
   &__label {
     position: relative;
     display: inline-flex;
     flex-direction: column;
-    @media (max-width: $tableWidth) {
+    @media (max-width: $table-width) {
       &:first-child {
         margin-right: 10px;
       }
     }
-    @media (max-width: $tableWidth) {
+    @media (max-width: $table-width) {
       &:first-child {
         margin-right: 10px;
       }
@@ -26,30 +26,30 @@
 
   &__input {
     line-height: 18px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       line-height: 15px;
     }
   }
   &__input {
     cursor: pointer;
     font-size: 14px;
-    border: $border;
+    border: $border-input;
     border-radius: 4px;
     padding: 12px 15px;
-    transition: $trFast;
+    transition: $tr-fast;
     width: 100%;
     max-width: 150px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       max-width: 130px;
       font-size: 12px;
       padding: 10px 12px;
     }
     &:focus {
       outline: none;
-      border: $borderHover;
+      border: $border-input-hover;
     }
     &:hover {
-      border: $borderHover;
+      border: $border-input-hover;
     }
   }
   &__arrow {
@@ -59,6 +59,6 @@
     position: absolute;
     right: 15px;
     top: calc(50% + 4px);
-    fill: $ds50;
+    fill: $text-color-brightness-50;
   }
 }

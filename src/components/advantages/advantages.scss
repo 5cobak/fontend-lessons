@@ -8,13 +8,13 @@
     position: relative;
     &:not(:first-child) {
       margin-top: 20px;
-      @media (max-width: $phoneWidth) {
+      @media (max-width: $phone-width) {
         margin-top: 10px;
       }
     }
     &:not(:last-child) {
       padding-bottom: 20px;
-      @media (max-width: $phoneWidth) {
+      @media (max-width: $phone-width) {
         padding-bottom: 10px;
       }
     }
@@ -35,24 +35,25 @@
     white-space: pre-wrap;
     margin-left: 55px;
     max-width: 200px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       line-height: 20px;
       margin-left: 45px;
     }
   }
   &__head {
-    @include MontBold;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     font-size: 14px;
     display: inline-block;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
   &__description {
-    @include Mont;
+    font-family: $font-family-primary;
     font-size: 14px;
-    color: $ds75;
-    @media (max-width: $phoneWidth) {
+    color: $text-color-brightness-75;
+    @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }

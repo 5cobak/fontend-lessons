@@ -9,17 +9,18 @@
     line-height: 24px;
   }
   &__name {
-    @include MontBold;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     font-size: 14px;
-    color: $ds75;
-    @media (max-width: $phoneWidth) {
+    color: $text-color-brightness-75;
+    @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
   &__date {
     font-size: 14px;
-    color: $ds75;
-    @media (max-width: $phoneWidth) {
+    color: $text-color-brightness-75;
+    @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
@@ -39,10 +40,10 @@
   }
   &__text {
     font-size: 14px;
-    color: $ds75;
+    color: $text-color-brightness-75;
     white-space: pre-wrap;
     line-height: 24px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }

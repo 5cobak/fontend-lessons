@@ -1,51 +1,53 @@
 .dropdown-choose {
-  border: $border;
+  border: $border-input;
   border-radius: 4px;
   font-size: 14px;
   user-select: none;
-  transition: $trFast;
+  transition: $tr-fast;
   position: relative;
-  @media (max-width: $phoneWidth) {
+  @media (max-width: $phone-width) {
     font-size: 12px;
   }
   &:hover {
-    border: $borderHover;
+    border: $border-input-hover;
   }
   &:focus {
-    border: $borderHover;
+    border: $border-input-hover;
   }
   &_active {
-    border: $borderHover;
+    border: $border-input-hover;
     box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   }
   &__title {
     text-transform: uppercase;
-    @include MontBold;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     font-size: 12px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 10px;
     }
   }
   &__upper-field {
     padding: 12px 15px;
     position: relative;
-    color: $ds75;
+    color: $text-color-brightness-75;
     line-height: 18px;
-    @include MontMedium;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     background-color: #fff;
     border-radius: 4px;
     cursor: pointer;
   }
   &__arrow {
     position: absolute;
-    border-left: 2px solid $ds50;
-    border-bottom: 2px solid $ds50;
+    border-left: 2px solid $text-color-brightness-50;
+    border-bottom: 2px solid $text-color-brightness-50;
     width: 8px;
     height: 8px;
     right: 17px;
     top: calc(50% - 8px);
     transform: rotate(-45deg);
-    transition: $trFast;
+    transition: $tr-fast;
     &_active {
       transform: rotate(135deg);
       top: calc(50% - 4px);
@@ -60,18 +62,18 @@
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    transition: opacity $trFast;
+    transition: opacity $tr-fast;
     transition-timing-function: ease-in-out;
     background-color: #fff;
-    border: $borderHover;
+    border: $border-input-hover;
     border-bottom: none;
     border-top: none;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     width: calc(100% + 2px);
     &_active {
-      border-top: $borderHover;
-      border-bottom: $borderHover;
+      border-top: $border-input-hover;
+      border-bottom: $border-input-hover;
       max-height: 500px;
       opacity: 1;
     }
@@ -86,16 +88,18 @@
     }
   }
   &__item-count {
-    @include MontBold;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     font-size: 12px;
   }
   &__item-text {
-    @include MontBold;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     text-transform: uppercase;
     font-size: 12px;
     max-width: 50%;
     line-height: 15px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 10px;
     }
   }
@@ -110,14 +114,14 @@
   &__minus {
     width: 30px;
     height: 30px;
-    border: $borderHover;
+    border: $border-input-hover;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     &_noactive {
-      border: 1px solid $ds25;
+      border: 1px solid $text-color-brightness-25;
       cursor: initial;
     }
   }
@@ -126,21 +130,22 @@
     justify-content: space-between;
     padding: 14px 7px 15px 7px;
     text-transform: uppercase;
-    @include MontBold;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     font-size: 12px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 10px;
     }
   }
   &__btn-clear {
     cursor: pointer;
-    color: $ds50;
+    color: $text-color-brightness-50;
     &_hidden {
       visibility: hidden;
     }
   }
   &__btn-access {
     cursor: pointer;
-    color: $purple;
+    color: $primary-color;
   }
 }

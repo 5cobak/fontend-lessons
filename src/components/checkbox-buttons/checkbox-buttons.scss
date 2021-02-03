@@ -9,7 +9,7 @@
     &:last-child {
       margin-bottom: 0;
     }
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       margin-bottom: 5px;
     }
   }
@@ -19,22 +19,22 @@
     height: 20px;
     min-width: 20px;
     min-height: 20px;
-    border: $border;
+    border: $border-input;
     border-radius: 4px;
     margin-right: 10px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       margin-right: 5px;
     }
     &:focus {
-      border: $borderHover;
+      border: $border-input-hover;
     }
   }
   &__text {
     font-size: 14px;
-    color: $ds50;
+    color: $text-color-brightness-50;
     white-space: pre-wrap;
     line-height: 20px;
-    @media (max-width: $phoneWidth) {
+    @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
@@ -42,7 +42,7 @@
     display: none;
   }
   input:checked + span {
-    border-color: $purple;
+    border-color: $primary-color;
     background-image: url('./assets/img/Vector.jpg');
     background-repeat: no-repeat;
     background-position: 50% 50%;

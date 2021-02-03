@@ -1,8 +1,8 @@
 .datepicker {
   min-width: 320px;
-  @include Mont;
+  font-family: $font-family-primary;
   font-size: 12px;
-  @media (max-width: $phoneWidth) {
+  @media (max-width: $phone-width) {
     min-width: 280px;
     font-size: 10px;
   }
@@ -15,7 +15,7 @@
   }
   &--nav-title {
     font-size: 19px;
-    @include Mont;
+    font-family: $font-family-primary;
     font-weight: bold;
   }
   &--nav-action {
@@ -31,7 +31,7 @@
       background-position: center;
     }
     &:hover {
-      background-color: $white;
+      background-color: #fff;
     }
     svg {
       display: none;
@@ -46,7 +46,7 @@
     &-day {
       max-width: 40px;
       min-height: 40px;
-      color: $ds50;
+      color: $text-color-brightness-50;
     }
   }
   &--days-names {
@@ -56,8 +56,9 @@
   }
   &--day-name {
     font-size: 12px;
-    color: $purple;
-    @include MontBold;
+    color: $primary-color;
+    font-family: $font-family-primary;
+    font-weight: $bold;
     max-width: 40px;
     min-height: 40px;
     text-transform: initial;
@@ -74,28 +75,30 @@
       height: auto;
       text-transform: uppercase;
       font-size: 12px;
-      @include MontBold;
+      font-family: $font-family-primary;
+      font-weight: $bold;
 
       cursor: pointer;
-      @media (max-width: $phoneWidth) {
+      @media (max-width: $phone-width) {
         font-size: 10px;
       }
       &:first-child {
-        color: $ds50;
+        color: $text-color-brightness-50;
         &:hover {
           background: none;
-          color: $ds50;
+          color: $text-color-brightness-50;
         }
       }
       &:last-child {
-        color: $purple;
+        color: $primary-color;
       }
     }
   }
 }
 .datepicker--nav-title {
   text-align: center;
-  @include MontBold;
+  font-family: $font-family-primary;
+  font-weight: $bold;
 }
 .datepicker--cell.-range-from-.-selected- {
   border-radius: 50%;
@@ -137,7 +140,8 @@
 .datepicker--cell.-selected-,
 .datepicker--cell.-selected-.-current- {
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-  @include MontBold;
+  font-family: $font-family-primary;
+  font-weight: $bold;
 }
 .datepicker--cell.-in-range- {
   background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25));
@@ -145,14 +149,14 @@
 
 .datepicker--cell.-current- {
   background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-  color: $white;
+  color: #fff;
   border-radius: 50%;
   &:hover {
-    color: $white;
+    color: #fff;
   }
 }
 .datepicker--cell.-current-.-in-range- {
-  color: $white;
+  color: #fff;
   position: relative;
   &:after {
     content: '';
