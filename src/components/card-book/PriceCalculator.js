@@ -21,7 +21,8 @@ export default class PriceCalculator {
     let cleanSum = daysLag * priceForOneDayNum;
     let totalSum = cleanSum + taxesSum - discontNum;
     if (discontNum) {
-      totalSum -= taxWithDiscont;
+      totalSum += taxWithDiscont;
+      console.log(taxWithDiscont);
     }
     totalSum = `${totalSum}`.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
     cleanSum = `${cleanSum}`.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');

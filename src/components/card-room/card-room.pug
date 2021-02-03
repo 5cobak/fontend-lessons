@@ -1,4 +1,4 @@
-mixin card-room(image)
+mixin card-room(images,roomDetails)
   .card-room
     .card-room__slider
       .swiper-container.js-swiper-container.card-room__swiper-container
@@ -6,7 +6,7 @@ mixin card-room(image)
         .swiper-button-prev.card-room__button-prev
         .swiper-button-next.card-room__button-next
         .swiper-wrapper
-          each val, index in image
+          each val, index in images
             .swiper-slide.card-room__slide
               img(src=require('./images/' + val.src ).default alt="фотография конматы").card-room__slider-img
     .card-room__content
@@ -14,17 +14,17 @@ mixin card-room(image)
         span.card-room__number
           | № 
           span.card-room__head-num
-            | 888
+            | #{roomDetails.number}
           span.card-room__type
-            | люкс
+            | #{roomDetails.type}
         span.card-room__head-price
           span.card-room__head-sum
             span.card-room__head-num
-              | 9 990₽ 
+              | #{roomDetails.priceForOneDay}₽ 
           | в сутки
       .card-room__bottom
         +rate-buttons()
         .card-room__reviews
           span.card-room__reviews-num
-            | 145 
+            | #{roomDetails.reviews} 
           | Отзывов

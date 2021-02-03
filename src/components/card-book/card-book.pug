@@ -1,16 +1,16 @@
-mixin card-book()
+mixin card-book(details)
   .card-book.js-card-book
     .card-book__content
       .card-book__head
         span.card-book__number
           | № 
           span.card-book__head-num
-            | 888
+            | #{details.number}
           span.card-book__type
-            | люкс 
+            | #{details.type} 
         span.card-book__head-price
           span.card-book__head-sum
-            | 9 990₽ 
+            | #{details.priceForOneDay}₽ 
           | в сутки
       .card-book__block
         +date-dropdown({
@@ -28,24 +28,24 @@ mixin card-book()
         .card-book__calculation
           .card-book__calc-item
             span.card-book__price-for-one-day.js-card-book__price-for-one-day
-              | 9 990₽ х 
+              | #{details.priceForOneDay}₽ х 
               span.card-book__days.js-card-book__days
-                | 4 суток
+                | 0 суток
             span.card-book__calc-sum.js-card-book__clean-sum
-              | 39 960
+              | 0
               span.card-book__rub
                 | ₽
           .card-book__calc-item
             span.card-book__calc-option
               | Сбор за услуги: 
               span.card-book__discont.js-card-book__discont
-                | скидка 2 179
+                | скидка #{details.discont}
                 span.card-book__rub
                   | ₽
             span.card-book__calc-info
               | i
             span.card-book__tax.js-card-book__tax
-              | 1 000
+              | #{details.taxes[0]}
               span.card-book__rub
               | ₽
           .card-book__calc-item
@@ -55,13 +55,13 @@ mixin card-book()
             span.card-book__calc-info
               | i
             span.card-book__tax.js-card-book__tax
-              | 300₽
+              | #{details.taxes[1]}₽
         .card-book__calc-total
           span.card-book__total
             | Итого 
           span.card-book__dotted-line
           span.card-book__total-price.js-card-book__total-price
-            | 38 081
+            | 0
             span.card-book__rub
               | ₽
         button.button.button_big Забронировать

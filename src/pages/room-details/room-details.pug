@@ -89,7 +89,13 @@ block content
                     | прибытия вы получите полный возврат за
                     | вычетом сбора за услуги.
             aside.room-details__aside
-              +card-book()
+              +card-book({
+                number: 888,
+                type: 'люкс',
+                priceForOneDay: '9 990',
+                discont: '2 179',
+                taxes: ['1 000', '300']
+              })
 
 
 

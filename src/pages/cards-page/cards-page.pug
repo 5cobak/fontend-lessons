@@ -31,7 +31,13 @@ block content
         .cards-page__card
           +card-selection()
         .cards-page__card
-          +card-book()
+          +card-book({
+            number: 888,
+            type: 'люкс',
+            priceForOneDay: '9 990',
+            discont: '2 179',
+            taxes: ['1 000', '300']
+          })
         .cards-page__card 
           .js-datepicker-inline
         .cards-page__card
@@ -44,14 +50,26 @@ block content
           {src: 'room-2.jpg'},
           {src: 'room-2.jpg'},
           {src: 'room-2.jpg'}
-          ])
+          ],
+          {
+            type: 'люкс',
+            number: 888,
+            priceForOneDay: '9 990',
+            reviews: 145
+          })
         .cards-page__card
           +card-room([
           {src: 'room-1.jpg'},
           {src: 'room-1.jpg'},
           {src: 'room-1.jpg'},
           {src: 'room-1.jpg'}
-          ])
+          ],
+          {
+            type: 'люкс',
+            number: 888,
+            priceForOneDay: '9 990',
+            reviews: 145
+          })
         
         
         
