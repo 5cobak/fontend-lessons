@@ -4,7 +4,7 @@ export default class RangeSlider {
     this.init();
   }
 
-  init() {
+  createRangeSlider() {
     this.inputs.forEach((item) => {
       const parentEl = item.parentElement;
       const domValues = parentEl.querySelector('.js-range-slider__values');
@@ -23,14 +23,14 @@ export default class RangeSlider {
         max: 15000,
         from: 5000,
         to: 10000,
-        onFinish: () => {
-          writeValues();
-        },
-        onChange: () => {
-          writeValues();
-        },
+        onFinish: writeValues,
+        onChange: writeValues,
         hide_min_max: true,
       });
     });
+  }
+
+  init() {
+    this.createRangeSlider();
   }
 }

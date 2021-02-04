@@ -1,20 +1,6 @@
 export default class DropdownChoose {
   constructor({ element, placeholder, titles, declinations, maxWidth, textLength, buttons }) {
-    this.placeholder = placeholder;
-    this.declinations = declinations;
-    this.textLength = textLength;
-    this.isButtons = buttons;
-    this.maxWidth = maxWidth;
-    this.parentElement = this.createEl(element);
-    this.totalCount = 0;
-    this.createUpperField();
-    this.menu = this.createMenu();
-    this.addEventsByClickOnItems();
-    this.items = this.createItems(titles);
-    this.buttons = this.createButtons();
-    this.menu.insertAdjacentHTML('afterbegin', [this.items, this.buttons].join(''));
-    this.setEventsForPlusMinus();
-    this.setEventsForButtons();
+    this.init(element, placeholder, titles, declinations, maxWidth, textLength, buttons);
   }
 
   createEl(element) {
@@ -44,7 +30,7 @@ export default class DropdownChoose {
   }
 
   createPlusMinus() {
-    return `
+    this.plusMinusEl = `
     <div class='dropdown-choose__count-block'>
       <div class='dropdown-choose__minus dropdown-choose__minus_noactive'>
         -
@@ -60,13 +46,14 @@ export default class DropdownChoose {
   }
 
   createItems(items) {
+    this.createPlusMinus();
     const itemsArray = items.map(
       (item) => `
       <div class='dropdown-choose__item'>
         <div class='dropdown-choose__item-text'>
           ${item}
         </div>
-        ${this.createPlusMinus()}
+        ${this.plusMinusEl}
       </div>
       `
     );
@@ -76,7 +63,7 @@ export default class DropdownChoose {
   createButtons() {
     if (!this.isButtons) return;
 
-    return `
+    this.buttons = `
       <div class='dropdown-choose__buttons'>
         <div class='dropdown-choose__btn-clear dropdown-choose__btn-clear_hidden'>Отчистить</div>
         <div class='dropdown-choose__btn-access'>Применить</div>
@@ -85,7 +72,7 @@ export default class DropdownChoose {
   }
 
   addEventsByClickOnItems() {
-    function show(e) {
+    function showCurrent(e) {
       const targetField = e.target.closest('.dropdown-choose__upper-field');
 
       if (!targetField) return;
@@ -109,7 +96,7 @@ export default class DropdownChoose {
       $($targetField).removeClass('dropdown-choose__upper-field_active');
     }
     $(document).on('click', hideAll);
-    $(this.parentElement).on('click', show);
+    $(this.parentElement).on('click', showCurrent);
   }
 
   changeTextInUpperField() {
@@ -129,17 +116,17 @@ export default class DropdownChoose {
     currentItems = items.map((item, index) => {
       const count = item.querySelector('.dropdown-choose__item-count').innerText;
       if (count === 0) {
-        return;
+        return false;
       } else {
         const declinedWord = `${count} ${declOfNum(count, this.declinations[index])}`;
         return declinedWord;
       }
     });
     this.totalCount = 0;
-    const countElemns = this.menu.querySelectorAll('.dropdown-choose__item-count');
-    countElemns.map = [].map;
-    countElemns.reduce = [].reduce;
-    const sumOfCounts = countElemns.map((item) => +item.innerText).reduce((acc, item) => acc + item);
+    const countElements = this.menu.querySelectorAll('.dropdown-choose__item-count');
+    countElements.map = [].map;
+    countElements.reduce = [].reduce;
+    const sumOfCounts = countElements.map((item) => +item.innerText).reduce((acc, item) => acc + item);
     this.totalCount = sumOfCounts;
 
     if (this.totalCount === 0) $(buttonClear).addClass('dropdown-choose__btn-clear_hidden');
@@ -167,7 +154,7 @@ export default class DropdownChoose {
       function incrementCount() {
         const countItem = item.querySelector('.dropdown-choose__item-count');
         let count = Number(countItem.innerText);
-        $(minus).removeClass('dropdown-choose__minus_noactive');
+        $(minus).removeClass('dropdown-choose__minus_no-active');
         count += 1;
         countItem.innerHTML = count;
         changePlaceHolder();
@@ -180,7 +167,7 @@ export default class DropdownChoose {
         count -= 1;
         countItem.innerHTML = count;
 
-        if (count === 0) $(minus).addClass('dropdown-choose__minus_noactive');
+        if (count === 0) $(minus).addClass('dropdown-choose__minus_no-active');
         changePlaceHolder();
       }
 
@@ -190,7 +177,7 @@ export default class DropdownChoose {
   }
 
   setEventsForButtons() {
-    const menu = this.menu;
+    const { menu } = this;
     const mainText = this.parentElement.querySelector('.dropdown-choose__main-text');
     const upperField = mainText.parentElement;
     const that = this;
@@ -202,8 +189,9 @@ export default class DropdownChoose {
       const itemCounts = menu.querySelectorAll('.dropdown-choose__item-count');
       itemCounts.map = [].map;
       itemCounts.map((item) => {
-        item.innerText = 0;
-        return item;
+        const newItems = item;
+        newItems.innerText = 0;
+        return newItems;
       });
 
       const minuses = menu.querySelectorAll('.dropdown-choose__minus');
@@ -212,7 +200,7 @@ export default class DropdownChoose {
       $(clearBtn).addClass('dropdown-choose__btn-clear_hidden');
     }
 
-    function accessValue() {
+    function hideDropdownMenu() {
       $(upperField.parentElement).removeClass('dropdown-choose_active');
       $(menu).removeClass('dropdown-choose__menu_active');
       $(arrow).removeClass('dropdown-choose__arrow_active');
@@ -220,6 +208,24 @@ export default class DropdownChoose {
     }
 
     $(clearBtn).on('click', clearUpperTextField);
-    $(accessBtn).on('click', accessValue);
+    $(accessBtn).on('click', hideDropdownMenu);
+  }
+
+  init(element, placeholder, titles, declinations, maxWidth, textLength, buttons) {
+    this.placeholder = placeholder;
+    this.declinations = declinations;
+    this.textLength = textLength;
+    this.isButtons = buttons;
+    this.maxWidth = maxWidth;
+    this.parentElement = this.createEl(element);
+    this.totalCount = 0;
+    this.createUpperField();
+    this.menu = this.createMenu();
+    this.addEventsByClickOnItems();
+    this.items = this.createItems(titles);
+    this.createButtons();
+    this.menu.insertAdjacentHTML('afterbegin', [this.items, this.buttons].join(''));
+    this.setEventsForPlusMinus();
+    this.setEventsForButtons();
   }
 }

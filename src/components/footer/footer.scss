@@ -26,7 +26,7 @@
   }
   &__block-text {
     max-width: 260px;
-    @media (max-widh: $sm-desktop-width) {
+    @media (max-width: $sm-desktop-width) {
       text-align: center;
     }
   }

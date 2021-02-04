@@ -1,17 +1,15 @@
-export default class LikeBbutton {
+export default class LikeButton {
   constructor($elem) {
     this.$elem = $elem;
     this.countLike = +$elem.find('.js-like-button__likes').text();
-
     this.init();
   }
 
-  init() {
-    const $elem = this.$elem;
+  addEvents() {
+    const { $elem } = this;
     let count = this.countLike;
 
     function toggleLike() {
-      const countLike = +$elem.find('.js-like-button__likes').text();
       if (!$elem.hasClass('like-button_active')) {
         $elem.find('.js-like-button__like').css('opacity', '0');
         $elem.find('.js-like-button__like-favorite').css('opacity', '1');
@@ -27,5 +25,9 @@ export default class LikeBbutton {
     }
 
     $elem.on('click', toggleLike);
+  }
+
+  init() {
+    this.addEvents();
   }
 }

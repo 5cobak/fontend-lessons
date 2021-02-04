@@ -4,17 +4,21 @@ export default class ExpandList {
     this.init();
   }
 
-  init() {
+  addEvents() {
     this.els.forEach((item) => {
       const title = item.querySelector('.js-expand-list__title');
       const dropdownMenu = item.querySelector('.js-expand-list__dropdown');
-      function toggleClass(e) {
+      function showHide(e) {
         e.preventDefault();
 
         $(title).toggleClass('expand-list__title_active');
         $(dropdownMenu).toggleClass('expand-list__dropdown_active');
       }
-      title.addEventListener('click', toggleClass);
+      title.addEventListener('click', showHide);
     });
+  }
+
+  init() {
+    this.addEvents();
   }
 }

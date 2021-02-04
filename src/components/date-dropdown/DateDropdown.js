@@ -21,7 +21,7 @@ export default class DateDropdown {
     if (this.callback) this.callback(this.daysLag);
   }
 
-  init(inputs) {
+  createDateDropdown(inputs) {
     const that = this;
     this.inputs = inputs;
 
@@ -30,20 +30,22 @@ export default class DateDropdown {
     this.inputs.forEach((input) => {
       const $firstInput = $(input);
       const $secondInput = $firstInput.parent().next().find('input');
-      function onSelect(formattedDate) {
+      function formatDate(formattedDate) {
         const secondDate = formattedDate.split(',')[1];
         if (!secondDate) return;
         $secondInput.val(secondDate);
+      }
+
+      function addEventsOnSelect(formattedDate) {
+        formatDate(formattedDate);
+        getDaysLag();
       }
 
       $firstInput.datepicker({
         showEvent: 'click',
         offset: 5,
         range: true,
-        onSelect: (formattedDate) => {
-          onSelect(formattedDate);
-          getDaysLag();
-        },
+        onSelect: addEventsOnSelect,
         clearButton: true,
         navTitles: {
           days: 'MM<br>yyyy',
@@ -52,11 +54,11 @@ export default class DateDropdown {
       that.datepicker = $firstInput.datepicker().data('datepicker');
 
       const $calendarEl = $firstInput.datepicker().data('datepicker').$datepicker;
-      function onFocusSecondInput() {
+      function showDatepicker() {
         $firstInput.trigger('click');
       }
 
-      $secondInput.on('click', onFocusSecondInput);
+      $secondInput.on('click', showDatepicker);
 
       function clearInputVal() {
         $secondInput.val('');
@@ -67,13 +69,17 @@ export default class DateDropdown {
       $buttonsParent.append('<span class="datepicker--button-access">Применить</span>');
       $clearButton.on('click', clearInputVal);
 
-      const $buttonAcces = $clearButton.next();
+      const $buttonAccess = $clearButton.next();
 
-      function onClickButtonAcces() {
+      function hideDatePicker() {
         $firstInput.datepicker().data('datepicker').hide();
       }
 
-      $buttonAcces.on('mouseup', onClickButtonAcces);
+      $buttonAccess.on('mouseup', hideDatePicker);
     });
+  }
+
+  init(inputs) {
+    this.createDateDropdown(inputs);
   }
 }

@@ -12,8 +12,8 @@ include ../../components/like-button/like-button
 include ../../components/rate-buttons/rate-buttons
 include ../../components/card-selection/card-selection
 include ../../components/card-book/card-book
-include ../../components/card-checkin/card-checkin
-include ../../components/card-signin/card-signin
+include ../../components/card-check-in/card-check-in
+include ../../components/card-sign-in/card-sign-in
 include ../../components/card-room/card-room
 
 block head
@@ -35,15 +35,15 @@ block content
             number: 888,
             type: 'люкс',
             priceForOneDay: '9 990',
-            discont: '2 179',
+            discount: '2 179',
             taxes: ['1 000', '300']
           })
         .cards-page__card 
           .js-datepicker-inline
         .cards-page__card
-          +card-singin()
+          +card-sing-in()
         .cards-page__card
-          +card-checkin()
+          +card-check-in()
         .cards-page__card
           +card-room([
           {src: 'room-2.jpg'},

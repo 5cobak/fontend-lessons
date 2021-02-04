@@ -6,7 +6,7 @@ $(document).ready(() => {
 
   if (guestsList) {
     guestsList.forEach((item) => {
-      const dropodown = new DropdownChoose({
+      new DropdownChoose({
         element: item,
         placeholder: 'Сколько человек',
         titles: ['взрослые', 'дети', 'младенцы'],
@@ -27,7 +27,7 @@ $(document).ready(() => {
 
   if (bedsList) {
     bedsList.forEach((item) => {
-      const dropodown = new DropdownChoose({
+      new DropdownChoose({
         element: item,
         placeholder: 'Сколько спален',
         titles: ['спальни', 'кровати', 'ванные комнаты'],

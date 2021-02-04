@@ -1,12 +1,12 @@
-mixin card-checkin()
-  .card-checkin
-    .card-checkin__content
-      form.card-checkin__form
-        fieldset.card-checkin__form-fieldset
-          legend.card-checkin__form-legend
-            h1.card-checkin__title
+mixin card-check-in()
+  .card-check-in
+    .card-check-in__content
+      form.card-check-in__form
+        fieldset.card-check-in__form-fieldset
+          legend.card-check-in__form-legend
+            h1.card-check-in__title
               | Регистрация аккаунта
-          .card-checkin__item.card-checkin__item_margin-b-10
+          .card-check-in__item.card-check-in__item_margin-b-10
             +textField(
                       {
                         title: '', 
@@ -16,7 +16,7 @@ mixin card-checkin()
                         pat: '[A-Za-zА-Яа-яЁё]{3,}'
                       }
                     )
-          .card-checkin__item.card-checkin__item_margin-b-10
+          .card-check-in__item.card-check-in__item_margin-b-10
             +textField(
                       {
                         title: '', 
@@ -26,9 +26,9 @@ mixin card-checkin()
                         pat: '[A-Za-zА-Яа-яЁё]{3,}'
                       }
                     )
-          .card-checkin__item.card-checkin__item_margin-b-25
+          .card-check-in__item.card-check-in__item_margin-b-25
             +radio-buttons({title: ''})
-          .card-checkin__item.card-checkin__item_margin-b-20
+          .card-check-in__item.card-check-in__item_margin-b-20
             +masked-textfield(
                     {
                       title: 'Дата рождения',
@@ -37,7 +37,7 @@ mixin card-checkin()
                       className: 'js-date-masked'
                     }
                   )
-          .card-checkin__item.card-checkin__item_margin-b-10
+          .card-check-in__item.card-check-in__item_margin-b-10
             +textField(
                     {
                       title: 'Данные для входа в сервис', 
@@ -46,7 +46,7 @@ mixin card-checkin()
                       required: true,
                     }
                   )
-          .card-checkin__item.card-checkin__item_margin-b-10
+          .card-check-in__item.card-check-in__item_margin-b-10
             +textField(
                     {
                       title: '', 
@@ -56,10 +56,10 @@ mixin card-checkin()
                       pat: '(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'
                     }
                   )
-          .card-checkin__item.card-checkin__item_margin-b-20
+          .card-check-in__item.card-check-in__item_margin-b-20
             +toggle-buttons({title: ''})
-          button.button.button_big.card-checkin__button-pay Перейти к оплате
-          .card-checkin__sign-in 
-            span.card-checkin__sign-in-text
+          button.button.button_big.card-check-in__button-pay Перейти к оплате
+          .card-check-in__sign-in 
+            span.card-check-in__sign-in-text
               | Уже есть аккаунт на Toxin
             a(href="sign-in-page.html").button.button_white Войти

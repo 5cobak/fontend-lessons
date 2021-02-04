@@ -4,7 +4,7 @@ export default class Burger {
     this.init();
   }
 
-  init() {
+  addEvents() {
     this.parents.forEach((header) => {
       const burger = header.querySelector('.js-header__burger');
       const layout = header.querySelector('.js-header__burger-layout');
@@ -19,5 +19,9 @@ export default class Burger {
       }
       $(burger).on('click', hideShowMenu);
     });
+  }
+
+  init() {
+    this.addEvents();
   }
 }

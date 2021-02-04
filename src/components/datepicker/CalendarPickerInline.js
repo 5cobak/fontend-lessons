@@ -4,7 +4,7 @@ export default class CalendarPickerInline {
     this.init();
   }
 
-  init() {
+  createCalendar() {
     this.els.forEach((item) => {
       $(item).datepicker({
         range: true,
@@ -19,5 +19,9 @@ export default class CalendarPickerInline {
       const $buttonsParent = $calendarEl.find('.datepicker--buttons');
       $buttonsParent.append('<span class="datepicker--button-access">Применить</span>');
     });
+  }
+
+  init() {
+    this.createCalendar();
   }
 }

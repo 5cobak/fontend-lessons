@@ -1,15 +1,15 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
 
 export default class CardRoom {
-  constructor(elemensList) {
-    this.elementsList = elemensList;
+  constructor(elementsList) {
+    this.elementsList = elementsList;
     this.init();
   }
 
-  init() {
+  createSwiper() {
     this.elementsList.forEach((domEl) => {
       Swiper.use([Navigation, Pagination]);
-      const swiper = new Swiper(domEl, {
+      new Swiper(domEl, {
         pagination: {
           el: '.swiper-pagination',
         },
@@ -19,5 +19,9 @@ export default class CardRoom {
         },
       });
     });
+  }
+
+  init() {
+    this.createSwiper();
   }
 }

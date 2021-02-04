@@ -6,7 +6,7 @@ export default class CircleDiagram {
     this.init();
   }
 
-  init() {
+  createCircleDiagram() {
     const el = this.parent;
     if (!el) return;
     const gradientOrange = el.getContext('2d').createLinearGradient(0, 0, 0, 100);
@@ -22,7 +22,7 @@ export default class CircleDiagram {
     gradientGreen.addColorStop(0, ' #6FCF99');
     gradientGreen.addColorStop(1, '#6BD0BE');
 
-    const myChart = new Chart(el, {
+    new Chart(el, {
       type: 'doughnut',
       data: {
         datasets: [
@@ -42,5 +42,9 @@ export default class CircleDiagram {
         cutoutPercentage: 90,
       },
     });
+  }
+
+  init() {
+    this.createCircleDiagram();
   }
 }

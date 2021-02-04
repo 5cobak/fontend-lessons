@@ -4,7 +4,7 @@ export default class PaginationSite {
     this.init();
   }
 
-  init() {
+  createPagination() {
     this.$elem.pagination({
       items: 15,
       itemsOnPage: 1,
@@ -19,5 +19,9 @@ export default class PaginationSite {
         else this.prevText = 'Prev';
       },
     });
+  }
+
+  init() {
+    this.createPagination();
   }
 }

@@ -1,4 +1,4 @@
-.card-singin {
+.card-check-in {
   background-color: $bg-color-primary;
   max-width: 380px;
   width: 100%;
@@ -12,9 +12,11 @@
     font-family: $font-family-primary;
     font-weight: $bold;
     font-size: 24px;
+    line-height: 29px;
     margin-bottom: 20px;
     @media (max-width: $phone-width) {
       font-size: 20px;
+      line-height: 25px;
       margin-bottom: 10px;
     }
   }
@@ -22,21 +24,24 @@
     &_margin-b-10 {
       margin-bottom: 10px;
     }
-    &_margin-b-30 {
+    &_margin-b-25 {
+      margin-bottom: 25px;
+    }
+
+    &_margin-b-20 {
       margin-bottom: 20px;
     }
   }
-  &__button-in {
+  &__button-pay {
     margin-bottom: 30px;
   }
-  &__check-in {
+  &__sign-in {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  &__check-in-text {
+  &__sign-in-text {
     font-size: 14px;
-    max-width: 150px;
     @media (max-width: $phone-width) {
       font-size: 12px;
     }

@@ -4,8 +4,9 @@ export default class MaskInput {
     this.init();
   }
 
-  init() {
-    function validateDate(value, element) {
+  validateDate() {
+    function validate(value, element) {
+      const input = element;
       function appendError(message) {
         const err = `
           <div class="validate-error">${message}</div>
@@ -25,19 +26,19 @@ export default class MaskInput {
       if (date.getFullYear() !== +arrD[2]) {
         deleteError();
         appendError('Введена некорректная дата!');
-        element.value = 'ДД.ММ.ГГГГ';
+        input.value = 'ДД.ММ.ГГГГ';
         element.focus();
         return false;
       } else if (date.getMonth() !== +arrD[1]) {
         deleteError();
         appendError('Введена некорректная дата!');
-        element.value = 'ДД.ММ.ГГГГ';
+        input.value = 'ДД.ММ.ГГГГ';
         element.focus();
         return false;
       } else if (date.getDate() !== +arrD[0]) {
         deleteError();
         appendError('Введена некорректная дата!');
-        element.value = 'ДД.ММ.ГГГГ';
+        input.value = 'ДД.ММ.ГГГГ';
         element.focus();
         return false;
       } else {
@@ -45,16 +46,20 @@ export default class MaskInput {
         return true;
       }
     }
-    const elements = document.querySelectorAll('.js-date-masked');
+    const elements = this.inputs;
 
     elements.forEach((item) => {
       $(item).inputmask('99.99.9999', {
         placeholder: 'ДД.ММ.ГГГГ',
         oncomplete: () => {
           const val = $('.js-date-masked').val();
-          validateDate(val, item);
+          validate(val, item);
         },
       });
     });
+  }
+
+  init() {
+    this.validateDate();
   }
 }

@@ -8,10 +8,9 @@ export default class PriceCalculator {
   calculate(daysLag) {
     const card = this.parent;
 
-    const elementOfPrice = card.querySelector('.js-card-book__calc-sum');
     const priceForOneDayStr = card.querySelector('.js-card-book__price-for-one-day').innerHTML;
     const priceForOneDayNum = parseFloat(priceForOneDayStr.replace(/\s/g, ''));
-    const discountStr = card.querySelector('.js-card-book__discont').innerHTML;
+    const discountStr = card.querySelector('.js-card-book__discount').innerHTML;
     const discountNum = parseFloat(discountStr.replace(/\s/g, '').match(/\d+/));
     const taxes = card.querySelectorAll('.js-card-book__tax');
 
