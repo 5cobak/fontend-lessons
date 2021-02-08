@@ -4,21 +4,23 @@ export default class RateButton {
     this.init();
   }
 
+  paintStars(e) {
+    const inputs = this.parents[0].querySelectorAll('.js-rate-button__input');
+    inputs.forEach((input) => {
+      const star = input.nextSibling;
+      const starLeft = star.offsetLeft;
+      const currentStarLeft = e.target.nextSibling.offsetLeft;
+      if (starLeft <= currentStarLeft) {
+        input.checked = true;
+      } else input.checked = false;
+    });
+  }
+
   addEvents() {
     this.parents.forEach((parent) => {
       const inputs = parent.querySelectorAll('.js-rate-button__input');
-
+      const paintStars = this.paintStars.bind(this);
       inputs.forEach((item) => {
-        function paintStars(e) {
-          inputs.forEach((input) => {
-            input.checked = false;
-          });
-          e.target.checked = true;
-          for (let i = 0; i < 5; i += 1) {
-            if (inputs[i] === e.target) break;
-            else inputs[i].checked = true;
-          }
-        }
         item.addEventListener('change', paintStars);
       });
     });

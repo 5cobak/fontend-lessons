@@ -4,18 +4,31 @@ export default class FilterDate {
     this.init();
   }
 
+  hideDatePicker() {
+    this.input.datepicker().data('datepicker').hide();
+  }
+
+  setNewFormat(datepicker) {
+    this.input.val(datepicker.customFormattedDate);
+  }
+
+  formatDate(formattedDate) {
+    let newFormat = formattedDate;
+
+    newFormat = formattedDate.split(',').join(' - ');
+    this.datepicker = this.input.datepicker().data('datepicker');
+    this.datepicker.customFormattedDate = newFormat;
+
+    this.setNewFormat(this.datepicker);
+  }
+
   createDatepicker() {
     const { input } = this;
-    let newFormat;
     if (!this.input[0]) return;
-    function setNewFormat() {
-      input.val(newFormat);
-    }
-    function formatDate(formattedDate) {
-      newFormat = formattedDate.split(',').join(' - ');
-      setNewFormat();
-    }
 
+    const hideDatePicker = this.hideDatePicker.bind(this);
+    const setNewFormat = this.setNewFormat.bind(this);
+    const formatDate = this.formatDate.bind(this);
     this.input.datepicker({
       showEvent: 'click',
       offset: 5,
@@ -32,10 +45,6 @@ export default class FilterDate {
     $buttonsParent.append('<span class="datepicker--button-access">Применить</span>');
 
     const $buttonAccess = $clearButton.next();
-
-    function hideDatePicker() {
-      input.datepicker().data('datepicker').hide();
-    }
 
     $buttonAccess.on('mouseup', hideDatePicker);
   }

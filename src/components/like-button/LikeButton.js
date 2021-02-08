@@ -5,24 +5,25 @@ export default class LikeButton {
     this.init();
   }
 
+  toggleLike() {
+    const { $elem } = this;
+    if (!$elem.hasClass('like-button_active')) {
+      $elem.find('.js-like-button__like').css('opacity', '0');
+      $elem.find('.js-like-button__like-favorite').css('opacity', '1');
+      this.countLike += 1;
+      $elem.find('.js-like-button__likes').text(this.countLike);
+    } else {
+      $elem.find('.js-like-button__like').css('opacity', '1');
+      $elem.find('.js-like-button__like-favorite').css('opacity', '0');
+      this.countLike -= 1;
+      $elem.find('.js-like-button__likes').text(this.countLike);
+    }
+    $elem.toggleClass('like-button_active');
+  }
+
   addEvents() {
     const { $elem } = this;
-    let count = this.countLike;
-
-    function toggleLike() {
-      if (!$elem.hasClass('like-button_active')) {
-        $elem.find('.js-like-button__like').css('opacity', '0');
-        $elem.find('.js-like-button__like-favorite').css('opacity', '1');
-        count += 1;
-        $elem.find('.js-like-button__likes').text(count);
-      } else {
-        $elem.find('.js-like-button__like').css('opacity', '1');
-        $elem.find('.js-like-button__like-favorite').css('opacity', '0');
-        count -= 1;
-        $elem.find('.js-like-button__likes').text(count);
-      }
-      $elem.toggleClass('like-button_active');
-    }
+    const toggleLike = this.toggleLike.bind(this);
 
     $elem.on('click', toggleLike);
   }

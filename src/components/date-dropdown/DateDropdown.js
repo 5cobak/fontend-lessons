@@ -21,25 +21,46 @@ export default class DateDropdown {
     if (this.callback) this.callback(this.daysLag);
   }
 
+  formatDate(formattedDate, input) {
+    const secondDate = formattedDate.split(',')[1];
+    this.formattedDate = formattedDate;
+    if (!secondDate) return;
+    input.val(secondDate);
+  }
+
+  addEventsOnSelect(formattedDate, ...rest) {
+    const $secondInput = $(rest[1].el.parentElement.nextSibling.querySelector('input'));
+
+    this.formatDate(formattedDate, $secondInput);
+
+    this.getDaysLag();
+  }
+
+  showDatepicker(e) {
+    const $firstInput = $(e.target.parentElement.previousSibling.querySelector('input'));
+
+    $firstInput.trigger('click');
+  }
+
+  clearInputVal($secondInput) {
+    $secondInput.val('');
+  }
+
+  hideDatePicker($firstInput) {
+    $firstInput.datepicker().data('datepicker').hide();
+  }
+
   createDateDropdown(inputs) {
     const that = this;
     this.inputs = inputs;
-
-    const getDaysLag = this.getDaysLag.bind(this);
+    const showDatepicker = this.showDatepicker.bind(this);
+    const addEventsOnSelect = this.addEventsOnSelect.bind(this);
+    const clearInputVal = this.clearInputVal.bind(this);
+    const hideDatePicker = this.hideDatePicker.bind(this);
 
     this.inputs.forEach((input) => {
       const $firstInput = $(input);
       const $secondInput = $firstInput.parent().next().find('input');
-      function formatDate(formattedDate) {
-        const secondDate = formattedDate.split(',')[1];
-        if (!secondDate) return;
-        $secondInput.val(secondDate);
-      }
-
-      function addEventsOnSelect(formattedDate) {
-        formatDate(formattedDate);
-        getDaysLag();
-      }
 
       $firstInput.datepicker({
         showEvent: 'click',
@@ -54,28 +75,18 @@ export default class DateDropdown {
       that.datepicker = $firstInput.datepicker().data('datepicker');
 
       const $calendarEl = $firstInput.datepicker().data('datepicker').$datepicker;
-      function showDatepicker() {
-        $firstInput.trigger('click');
-      }
 
       $secondInput.on('click', showDatepicker);
 
-      function clearInputVal() {
-        $secondInput.val('');
-      }
       const $clearButton = $calendarEl.find('.datepicker--button');
       const $buttonsParent = $calendarEl.find('.datepicker--buttons');
 
       $buttonsParent.append('<span class="datepicker--button-access">Применить</span>');
-      $clearButton.on('click', clearInputVal);
+      $clearButton.on('click', clearInputVal.bind(null, $secondInput));
 
       const $buttonAccess = $clearButton.next();
 
-      function hideDatePicker() {
-        $firstInput.datepicker().data('datepicker').hide();
-      }
-
-      $buttonAccess.on('mouseup', hideDatePicker);
+      $buttonAccess.on('mouseup', hideDatePicker.bind(null, $firstInput));
     });
   }
 

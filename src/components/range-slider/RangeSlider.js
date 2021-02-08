@@ -4,18 +4,19 @@ export default class RangeSlider {
     this.init();
   }
 
+  writeValues() {
+    const parentEl = this.inputs[0].parentElement;
+    const domValues = parentEl.querySelector('.js-range-slider__values');
+
+    const from = parentEl.querySelector('.irs-from');
+    const to = parentEl.querySelector('.irs-to');
+
+    domValues.innerHTML = `${from.innerHTML}₽ - ${to.innerHTML}₽`;
+  }
+
   createRangeSlider() {
+    const writeValues = this.writeValues.bind(this);
     this.inputs.forEach((item) => {
-      const parentEl = item.parentElement;
-      const domValues = parentEl.querySelector('.js-range-slider__values');
-
-      function writeValues() {
-        const from = parentEl.querySelector('.irs-from');
-        const to = parentEl.querySelector('.irs-to');
-
-        domValues.innerHTML = `${from.innerHTML}₽ - ${to.innerHTML}₽`;
-      }
-
       $(item).ionRangeSlider({
         type: 'double',
         skin: 'round',

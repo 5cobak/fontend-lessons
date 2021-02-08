@@ -1,4 +1,5 @@
 import DateDropdown from '../date-dropdown/DateDropdown';
+import declOfNum from './declOfNum';
 
 export default class PriceCalculator {
   constructor(parent) {
@@ -40,9 +41,7 @@ export default class PriceCalculator {
     const totalSumEl = card.querySelector('.js-card-book__total-price');
     const data = this.calculate(this.dateDropdown.daysLag);
     const rub = '<span class="card-book__rub">₽</span>';
-    function declOfNum(number, words) {
-      return words[number % 100 > 4 && number % 100 < 20 ? 2 : [2, 0, 1, 1, 1, 2][number % 10 < 5 ? number % 10 : 5]];
-    }
+
     daysEl.innerHTML = '';
     daysEl.insertAdjacentHTML('beforeEnd', `${data.daysLag} ${declOfNum(data.daysLag, ['сутки', 'суток', 'суток'])}`);
     cleanSumEl.innerHTML = '';
