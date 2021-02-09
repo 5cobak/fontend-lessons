@@ -60,10 +60,28 @@ block content
               +subscription({title: 'subscription', placeholder: 'Email'})
               span.block-title dropdown
               +dropdown-choose({className: 'js-dropdown-beds', title: 'dropdown'})
-              +expand-list({title: 'expandable checkbox list', className: 'js-expand-list'})
+              +expand-list({
+                title: 'expandable checkbox list',
+                className: 'js-expand-list',
+                items: [
+                  "Завтрак",
+                  "Письменный стол",
+                  "Стул для кормления",
+                  "Кроватка",
+                  "Телевизор",
+                  "Шампунь",
+                ]
+               })
 
             .col
-              +checkbox-buttons({title: 'checkbox buttons'})
+              +checkbox-buttons({
+                title: 'checkbox buttons',
+                items: [
+                  'Можно курить',
+                  'Можно с питомцами',
+                  'Можно пригласить гостей (до 10 человек)',
+                ]
+                })
               span.block-title.block-title_margin-b-16 radio button
               +radio-buttons({title: 'radio buttons'})
               span.block-title.block-title_margin-b-16 toggle
@@ -72,7 +90,19 @@ block content
               +like-button({className: '', count: 0})
               .block-title.block-title_margin-b-16 rate button
               +rate-buttons()
-              +rich-list({title: 'rich checkbox buttons'})
+              +rich-list({
+                title: 'rich checkbox buttons',
+                items: [
+                  {
+                    title: 'Широкий коридор',
+                    description: 'Ширина коридоров в номере не менее 91 см.'
+                  },
+                  {
+                    title: 'Помощник для инвалидов',
+                    description: 'На 1 этаже вас встретит специалист  и проводит до номера.'
+                  }
+                ]
+              })
             .col
               +range-slider({title: 'range slider', interval: '5000₽ - 10000₽'})
               .block-title.block-title_margin-b-16 buttons
@@ -91,14 +121,21 @@ block content
               .block-title.block-title_margin-b-16 pagination
               br
               +pagination()
-              +bullet-list({title: 'bullet list'})
+              +bullet-list({
+                title: 'bullet list',
+                items: [
+                  'Нельзя с питомцами',
+                  'Без вечеринок и мероприятий',
+                  'Время прибытия — после 13:00, а выезд до 12:00',
+                ]
+              })
           .row
             .ui-kit__last-row
               .col
                 +advantages({items: [
                   {
                     title: 'Комфорт',
-                    description: 'Шумопоглащиющие стены',
+                    description: 'Шумопоглощающие стены',
                     href: '#insert-emoticon'
                   },
                   {

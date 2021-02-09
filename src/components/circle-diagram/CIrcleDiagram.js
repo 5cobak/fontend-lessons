@@ -1,13 +1,26 @@
+import declOfNum from './declOfNum';
+
 const Chart = require('chart.js');
 
 export default class CircleDiagram {
   constructor(parent) {
-    this.parent = parent;
+    this.mainEl = parent;
     this.init();
   }
 
+  injectReviews() {
+    const { mainEl } = this;
+
+    const { voices } = mainEl.dataset;
+    const voicesEl = mainEl.querySelector('.circle-diagram__voices');
+    const voicesNumEl = voicesEl.querySelector('.circle-diagram__num');
+    const voicesText = `<div class='circle-diagram__voices-text'>${declOfNum(voices, ['голос', 'голоса', 'голосов'])}</div>`;
+    voicesNumEl.innerHTML = voices;
+    voicesEl.insertAdjacentHTML('beforeEnd', voicesText);
+  }
+
   createCircleDiagram() {
-    const el = this.parent;
+    const el = this.mainEl.querySelector('#CircleDiagram');
     if (!el) return;
     const gradientOrange = el.getContext('2d').createLinearGradient(0, 0, 0, 100);
     const gradientPurple = el.getContext('2d').createLinearGradient(0, 0, 0, 100);
@@ -45,6 +58,7 @@ export default class CircleDiagram {
   }
 
   init() {
+    this.injectReviews();
     this.createCircleDiagram();
   }
 }

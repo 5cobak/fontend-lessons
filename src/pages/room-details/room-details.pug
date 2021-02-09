@@ -56,7 +56,26 @@ block content
                 .room-details__block
                   span.block-title.room-details__title
                     | Впечатления от номера
-                  +circle-diagram()
+                  +circle-diagram({
+                    voices: [
+                       {
+                        grade: 'великолепно',
+                        num: 130
+                      },
+                      {
+                        grade: 'хорошо',
+                        num: 65
+                      },
+                       {
+                        grade: 'удовлетворительно',
+                        num: 65
+                      },
+                       {
+                        grade: 'разочарован',
+                        num: 0
+                      },
+                    ]
+                  })
               .room-details__reviews
                 .room-details__reviews-head
                   span.room-details__title.block-title
@@ -79,7 +98,15 @@ block content
                   }
                   )
               .room-details__rules-block
-                +bullet-list({title: 'Правила', className: 'room-details__title room-details__title_margin-l-20'})
+                +bullet-list({
+                  title: 'Правила', 
+                  className: 'room-details__title room-details__title_margin-l-20',
+                  items: [
+                    'Нельзя с питомцами',
+                    'Без вечеринок и мероприятий',
+                    'Время прибытия — после 13:00, а выезд до 12:00',
+                  ]
+              })
                 .room-details__cancel-rule
                   span.block-title.room-details__title
                     | Отмена

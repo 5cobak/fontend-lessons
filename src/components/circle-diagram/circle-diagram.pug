@@ -1,18 +1,16 @@
-mixin circle-diagram()
-  .circle-diagram
+mixin circle-diagram(data)
+  -var {voices} = data
+  -var voicesNum = 0;
+  -function sumVoices(){return voices.map((item) => item.num).reduce((acc, item)=>acc+item)}
+  .circle-diagram(data-voices=sumVoices())
     .circle-diagram__container
       .circle-diagram__voices
-        i.card-diagram__num 
-          | 260 
-        | голосов
+        i.circle-diagram__num 
+          | 0
+        br
       .circle-diagram__wrapper
         canvas(id="CircleDiagram")
     ul.circle-diagram__list
-      li.circle-diagram__list-item
-        | Великолепно
-      li.circle-diagram__list-item
-        | Хорошо  
-      li.circle-diagram__list-item
-        | Удовлетворительно  
-      li.circle-diagram__list-item
-        | Разочарован  
+      each val in voices
+        li.circle-diagram__list-item
+          | #{val.grade}

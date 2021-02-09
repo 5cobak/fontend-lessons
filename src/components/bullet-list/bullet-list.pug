@@ -1,14 +1,8 @@
-mixin bullet-list({title,className}) 
+mixin bullet-list({title,className, items}) 
   .bullet-list
     span.block-title.block-title_margin-b-16(class=className) #{title}
     ul.bullet-list__ul
-      li.bullet-list__li
-        span.bullet-list__text
-          | Нельзя с питомцами
-      li.bullet-list__li
-        span.bullet-list__text
-          | Без вечеринок и мероприятий
-      li.bullet-list__li
-        span.bullet-list__text
-          | Время прибытия — после 13:00,
-          | а выезд до 12:00
+      each val in items
+        li.bullet-list__li
+          span.bullet-list__text
+            | #{val}

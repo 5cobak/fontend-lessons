@@ -42,15 +42,43 @@ block content
                 span.filter-page__range-description
                   | Стоимость за сутки пребывания в отеле
               .filter-page__form-block.filter-page__form-block_margin-30
-                +checkbox-buttons({title: 'Правила дома'})
+                +checkbox-buttons({
+                  title: 'Правила дома',
+                  items: [
+                    'Можно курить',
+                    'Можно с питомцами',
+                    'Можно пригласить гостей (до 10 человек)',
+                  ]})
               .filter-page__form-block.filter-page__form-block_margin-30
-                +rich-list({title: 'Доступность'})
+                +rich-list({
+                  title: 'Доступность',
+                  items: [
+                    {
+                      title: 'Широкий коридор',
+                      description: 'Ширина коридоров в номере не менее 91 см.'
+                    },
+                    {
+                      title: 'Помощник для инвалидов',
+                      description: 'На 1 этаже вас встретит специалист  и проводит до номера.'
+                    }
+                  ]})
               .filter-page__form-block.filter-page__form-block_margin-30
                 span.block-title
                   | Удобства номера
                 +dropdown-choose({className: 'js-dropdown-beds', title: 'Гости'})
               .filter-page__form-block.filter-page__form-block_margin-30
-                +expand-list({title: 'Дополнительные удобства', className: 'js-expand-list'})
+                +expand-list({
+                 title: 'Дополнительные удобства',
+                 className: 'js-expand-list',
+                 items: [
+                  "Завтрак",
+                  "Письменный стол",
+                  "Стул для кормления",
+                  "Кроватка",
+                  "Телевизор",
+                  "Шампунь",
+                ]
+               })
 
             .filter-page__rooms-container
               h1.filter-page__rooms-title
