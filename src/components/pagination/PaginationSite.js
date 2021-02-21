@@ -13,11 +13,6 @@ export default class PaginationSite {
       cssStyle: 'light-theme',
       prevText: '',
       nextText: '<svg class="pagination__arrow-forward" role="image" aria-label="icon next page"><use xlink:href="#arrow-forward"></use></svg>',
-      onPageClick: () => {
-        const $current = $('.current');
-        if ($current.text === 1) this.prevText = '';
-        else this.prevText = 'Prev';
-      },
     });
   }
 
