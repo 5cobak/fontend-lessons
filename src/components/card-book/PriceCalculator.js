@@ -1,5 +1,5 @@
 import DateDropdown from '../date-dropdown/DateDropdown';
-import declOfNum from './declOfNum';
+import declination from '../helpers/declination';
 
 export default class PriceCalculator {
   constructor(parent) {
@@ -43,7 +43,7 @@ export default class PriceCalculator {
     const rub = '<span class="card-book__rub">₽</span>';
 
     daysEl.innerHTML = '';
-    daysEl.insertAdjacentHTML('beforeEnd', `${data.daysLag} ${declOfNum(data.daysLag, ['сутки', 'суток', 'суток'])}`);
+    daysEl.insertAdjacentHTML('beforeEnd', `${data.daysLag} ${declination(data.daysLag, ['сутки', 'суток', 'суток'])}`);
     cleanSumEl.innerHTML = '';
     cleanSumEl.insertAdjacentHTML('beforeEnd', `${data.cleanSum}${rub}`);
     totalSumEl.innerHTML = '';

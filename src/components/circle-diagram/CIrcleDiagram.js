@@ -1,4 +1,4 @@
-import declOfNum from './declOfNum';
+import declination from '../helpers/declination';
 
 const Chart = require('chart.js');
 
@@ -14,7 +14,7 @@ export default class CircleDiagram {
     const { voices } = mainEl.dataset;
     const voicesEl = mainEl.querySelector('.circle-diagram__voices');
     const voicesNumEl = voicesEl.querySelector('.circle-diagram__num');
-    const voicesText = `<div class='circle-diagram__voices-text'>${declOfNum(voices, ['голос', 'голоса', 'голосов'])}</div>`;
+    const voicesText = `<div class='circle-diagram__voices-text'>${declination(voices, ['голос', 'голоса', 'голосов'])}</div>`;
     voicesNumEl.innerHTML = voices;
     voicesEl.insertAdjacentHTML('beforeEnd', voicesText);
   }

@@ -1,4 +1,4 @@
-import declOfNum from './declOfNum';
+import declination from '../helpers/declination';
 
 export default class DropdownChoose {
   constructor({ element, placeholder, titles, declinations, maxWidth, textLength, buttons }) {
@@ -120,7 +120,7 @@ export default class DropdownChoose {
       if (count === 0) {
         return false;
       } else {
-        const declinedWord = `${count} ${declOfNum(count, this.declinations[index])}`;
+        const declinedWord = `${count} ${declination(count, this.declinations[index])}`;
         return declinedWord;
       }
     });
