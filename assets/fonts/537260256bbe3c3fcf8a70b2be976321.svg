@@ -1,8 +1,0 @@
-export default {
-      id: "star_border-usage",
-      viewBox: "0 0 20 19",
-      url: "" + "C:\\toxin\\toxin\\src\\assets\\img\\icons\\star_border.svg",
-      toString: function () {
-        return this.url;
-      }
-    }

@@ -1,8 +1,0 @@
-export default {
-      id: "logo-gray-usage",
-      viewBox: "0 0 48 48",
-      url: "" + "C:\\toxin\\toxin\\src\\assets\\img\\icons\\logo-gray.svg",
-      toString: function () {
-        return this.url;
-      }
-    }

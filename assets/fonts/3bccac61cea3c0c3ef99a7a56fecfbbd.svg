@@ -1,8 +1,0 @@
-export default {
-      id: "insert_emoticon-usage",
-      viewBox: "0 0 40 40",
-      url: "" + "C:\\toxin\\toxin\\src\\assets\\img\\icons\\insert_emoticon.svg",
-      toString: function () {
-        return this.url;
-      }
-    }

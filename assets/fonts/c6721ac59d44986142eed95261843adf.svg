@@ -1,8 +1,0 @@
-export default {
-      id: "location_city-usage",
-      viewBox: "0 0 36 38",
-      url: "" + "C:\\toxin\\toxin\\src\\assets\\img\\icons\\location_city.svg",
-      toString: function () {
-        return this.url;
-      }
-    }

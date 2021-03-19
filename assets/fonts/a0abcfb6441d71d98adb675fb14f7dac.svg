@@ -1,8 +1,0 @@
-export default {
-      id: "like-noactive-usage",
-      viewBox: "0 0 10 8",
-      url: "" + "C:\\toxin\\toxin\\src\\assets\\img\\icons\\like-noactive.svg",
-      toString: function () {
-        return this.url;
-      }
-    }

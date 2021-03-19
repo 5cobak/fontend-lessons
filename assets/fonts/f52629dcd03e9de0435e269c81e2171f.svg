@@ -1,8 +1,0 @@
-export default {
-      id: "arrow_forward-usage",
-      viewBox: "0 0 18 17",
-      url: "" + "C:\\toxin\\toxin\\src\\assets\\img\\icons\\arrow_forward.svg",
-      toString: function () {
-        return this.url;
-      }
-    }
