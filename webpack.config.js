@@ -29,16 +29,14 @@ const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
 
 const cssLoaders = (extra) => {
   const loaders = [
-    {
-      loader: 'style-loader',
-    },
+    'style-loader',
     'css-loader',
   ];
 
   if (extra) {
     loaders.push(extra);
   }
-
+  
   return loaders;
 };
 
@@ -74,9 +72,6 @@ const PATHS = {
   assets: 'assets/',
 };
 
-// Pages const for HtmlWebpackPlugin
-// see more: https://github.com/vedees/webpack-template/blob/master/README.md#html-dir-folder
-// const PAGES_DIR = PATHS.src
 const PAGES_DIR = `${PATHS.src}/pages/`;
 
 const SUB_DIRS = [];
@@ -150,7 +145,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: cssLoaders(),
+        use: cssLoaders('postcss-loader'),
       },
       {
         test: /\.scss$/,
