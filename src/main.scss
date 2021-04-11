@@ -78,6 +78,9 @@ body {
 }
 
 // Modules
+@import '~/ion-rangeslider/css/ion.rangeSlider.css';
+@import '~/swiper/swiper-bundle.min.css';
+@import '~/air-datepicker/dist/css/datepicker.min.css';
 @import './components/svg-icons/svg-icons';
 @import './components/validate-error/validate-error';
 @import './components/stop-scrolling/stop-scrolling';
