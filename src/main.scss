@@ -81,11 +81,12 @@ body {
 @import '~/ion-rangeslider/css/ion.rangeSlider.css';
 @import '~/swiper/swiper-bundle.min.css';
 @import '~/air-datepicker/dist/css/datepicker.min.css';
+@import './pages//index/index';
 @import './components/svg-icons/svg-icons';
 @import './components/validate-error/validate-error';
 @import './components/stop-scrolling/stop-scrolling';
 @import './components/logo/logo';
-@import './pages/index/ui-kit';
+@import './pages/form-elements/form-elements';
 @import './components/block-title/block-title';
 @import './components/textField/textField';
 @import './components/masked-textfield/masked-textfield';
