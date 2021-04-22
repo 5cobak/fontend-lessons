@@ -5,14 +5,15 @@
 
 Страницы сайта:
 
-1. https://5cobak.github.io/toxin/index.html "form-element.page"
-2. https://5cobak.github.io/toxin/cards-page.html "cards page"
-3. https://5cobak.github.io/toxin/headers-&-footers.html "headers & footers"
-4. https://5cobak.github.io/toxin/landing-page.html "Landing-page"
-5. https://5cobak.github.io/toxin/registration-page.html "Registration page"
-6. https://5cobak.github.io/toxin/sign-in-page.html "sign-in page"
-7. https://5cobak.github.io/toxin/room-details.html "Room-details page"
-8. https://5cobak.github.io/toxin/filter-page.html "Filter page"
+1. https://5cobak.github.io/toxin/index.html "главная"
+2. https://5cobak.github.io/toxin/form-elements.html "form-element.page"
+3. https://5cobak.github.io/toxin/cards-page.html "cards page"
+4. https://5cobak.github.io/toxin/headers-&-footers.html "headers & footers"
+5. https://5cobak.github.io/toxin/landing-page.html "Landing-page"
+6. https://5cobak.github.io/toxin/registration-page.html "Registration page"
+7. https://5cobak.github.io/toxin/sign-in-page.html "sign-in page"
+8. https://5cobak.github.io/toxin/room-details.html "Room-details page"
+9. https://5cobak.github.io/toxin/filter-page.html "Filter page"
 
 ## Команды для начала работы, дев-разрабоки, сборки проекта для продакшена.
 
