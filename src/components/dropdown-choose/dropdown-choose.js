@@ -8,7 +8,7 @@ $(document).ready(() => {
     guestsList.forEach((item) => {
       new DropdownChoose({
         element: item,
-        placeholder: 'Сколько человек',
+        placeholder: 'Сколько гостей',
         titles: ['взрослые', 'дети', 'младенцы'],
         declinations: [
           ['взрослый', 'взрослых', 'взрослых'],

@@ -7,7 +7,7 @@
   white-space: pre-wrap;
   flex: 0 0 auto;
   @media (max-width: $sm-desktop-width) {
-    padding: 120px 0;
+    padding: 50px 0;
   }
   @media (max-width: $phone-width) {
     font-size: 12px;
@@ -15,7 +15,7 @@
   }
   &__content {
     padding-top: 100px;
-    padding-bottom: 140px;
+    padding-bottom: 95px;
     display: flex;
     justify-content: space-between;
     @media (max-width: $sm-desktop-width) {
@@ -31,7 +31,7 @@
     }
   }
   &__logo {
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     @media (max-width: $sm-desktop-width) {
       margin-bottom: 0;
     }

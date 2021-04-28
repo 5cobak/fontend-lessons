@@ -7,8 +7,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     @media (max-width: $phone-width) {
       padding-top: 5px;
       padding-bottom: 5px;
@@ -112,10 +112,10 @@
   }
   &__list-item {
     display: inline-flex;
-    margin-right: 10px;
+    margin-right: 20px;
     cursor: pointer;
     &_dropdown {
-      margin-right: 25px;
+      margin-right: 28px;
       &:after {
         content: '';
         display: inline-block;
