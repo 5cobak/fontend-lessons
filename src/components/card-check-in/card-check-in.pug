@@ -28,7 +28,7 @@ mixin card-check-in()
                     )
           .card-check-in__item.card-check-in__item_margin-b-16
             +radio-buttons({title: ''})
-          .card-check-in__item.card-check-in__item_margin-b-10
+          .card-check-in__item.card-check-in__item_margin-b-14
             +masked-textfield(
                     {
                       title: 'Дата рождения',
@@ -58,8 +58,8 @@ mixin card-check-in()
                   )
           .card-check-in__item.card-check-in__item_margin-b-20
             +toggle-buttons({title: ''})
-          button.button.button_big.card-check-in__button-pay Перейти к оплате
+          button.button.button_big.card-check-in__button-pay Зарегистрироваться
           .card-check-in__sign-in 
             span.card-check-in__sign-in-text
               | Уже есть аккаунт на Toxin
-            a(href="sign-in-page.html").button.button_white Войти
+            a(href="sign-in-page.html").button.button_white.button_bigger Войти
