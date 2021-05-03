@@ -37,11 +37,11 @@ block content
                 span.block-title
                   | Гости
                 +dropdown-choose({className: 'js-dropdown-guests', title: 'Гости'})
-              .filter-page__form-block.filter-page__form-block_margin-30
+              .filter-page__form-block.filter-page__form-block_margin-25
                 +range-slider({title: 'Диапазон цены', interval: '5000₽ - 10000₽'})
                 span.filter-page__range-description
-                  | Стоимость за сутки пребывания в отеле
-              .filter-page__form-block.filter-page__form-block_margin-30
+                  | Стоимость за сутки пребывания в номере
+              .filter-page__form-block.filter-page__form-block_margin-25
                 +checkbox-buttons({
                   title: 'Правила дома',
                   items: [
@@ -59,7 +59,7 @@ block content
                     },
                     {
                       title: 'Помощник для инвалидов',
-                      description: 'На 1 этаже вас встретит специалист  и проводит до номера.'
+                      description: 'На 1 этаже вас встретит специалист и проводит до номера.'
                     }
                   ]})
               .filter-page__form-block.filter-page__form-block_margin-30
