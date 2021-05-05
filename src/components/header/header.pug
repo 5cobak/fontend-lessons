@@ -8,23 +8,23 @@ mixin header({isEntered})
         nav.header__nav
           ul.header__list
             li.header__list-item
-              a.header__link(href="https://mock-adress" aria-label="информация о нас")
+              a.header__link(href="/mock-address/change-me" aria-label="информация о нас")
                 | О нас
 
             li.header__list-item.header__list-item_dropdown
-              a.header__link(href="https://mock-adress" aria-label="информация о нас")
+              a.header__link(href="/mock-address/change-me" aria-label="информация о нас")
                 | Услуги
 
             li.header__list-item
-              a.header__link(href="https://mock-adress" aria-label="информация о нас")
+              a.header__link(href="/mock-address/change-me" aria-label="информация о нас")
                 | Вакансии
 
             li.header__list-item
-              a.header__link(href="https://mock-adress" aria-label="информация о нас")
+              a.header__link(href="/mock-address/change-me" aria-label="информация о нас")
                 | Новости
 
             li.header__list-item.header__list-item_dropdown
-              a.header__link(href="https://mock-adress" aria-label="информация о нас")
+              a.header__link(href="/mock-address/change-me" aria-label="информация о нас")
                 | Соглашения
           if !isEntered
             .header__buttons
@@ -33,7 +33,7 @@ mixin header({isEntered})
               a(href="registration-page.html").button.header__button
                 | Зарегистрироваться
           else 
-            a(href="/mock-adress").header__cabinet
+            a(href="/mock-address/change-me").header__cabinet
               | Юлий Цезарь
         .header__burger.js-header__burger(role="navigation" aria-label="menu")
           .header__burger-layout.js-header__burger-layout  
@@ -42,23 +42,23 @@ mixin header({isEntered})
     nav.header__nav.header__nav_dropdown.js-header__nav_dropdown
         ul.header__list
           li.header__list-item
-            a.header__link(href="https://mock-adress" aria-label="информация о нас")
+            a.header__link(href="/mock-address/change-me" aria-label="информация о нас")
               | О нас
 
           li.header__list-item.header__list-item_dropdown
-            a.header__link(href="https://mock-adress" aria-label="информация о нас")
+            a.header__link(href="/mock-address/change-me" aria-label="информация о нас")
               | Услуги
 
           li.header__list-item
-            a.header__link(href="https://mock-adress" aria-label="информация о нас")
+            a.header__link(href="/mock-address/change-me" aria-label="информация о нас")
               | Вакансии
 
           li.header__list-item
-            a.header__link(href="https://mock-adress" aria-label="информация о нас")
+            a.header__link(href="/mock-address/change-me" aria-label="информация о нас")
               | Новости
 
           li.header__list-item.header__list-item_dropdown
-            a.header__link(href="https://mock-adress" aria-label="информация о нас")
+            a.header__link(href="/mock-address/change-me" aria-label="информация о нас")
               | Соглашения
         if !isEntered
           a(href="sign-in-page.html").button.button_white.header__button
@@ -67,5 +67,5 @@ mixin header({isEntered})
           a(href="registration-page.html").button.header__button
             | Зарегистрироваться
         else 
-          a(href="/mock-adress").header__cabinet
+          a(href="/mock-address/change-me").header__cabinet
             | Юлий Цезарь
