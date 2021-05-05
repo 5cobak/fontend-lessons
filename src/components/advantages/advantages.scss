@@ -7,7 +7,7 @@
     border-bottom: 1px solid rgba(31, 32, 65, 0.1);
     position: relative;
     &:not(:first-child) {
-      margin-top: 20px;
+      margin-top: 19px;
       @media (max-width: $phone-width) {
         margin-top: 10px;
       }
@@ -23,6 +23,7 @@
     }
   }
   &__svg {
+    margin-left: 5px;
     max-width: 38px;
     max-height: 38px;
     position: absolute;
@@ -33,7 +34,7 @@
     flex-direction: column;
     line-height: 24px;
     white-space: pre-wrap;
-    margin-left: 55px;
+    margin-left: 57px;
     max-width: 200px;
     @media (max-width: $phone-width) {
       line-height: 20px;

@@ -5,10 +5,13 @@
   justify-content: space-between;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: calc(100vh - 20px);
   padding-top: 70px;
+  min-height: calc(900px - 70px);
   @media (min-width: $sm-desktop-width) {
     background-size: cover;
+  }
+  @media (max-width: $sm-desktop-width) {
+    min-height: calc(100vh - 20px);
   }
   &__main {
     display: flex;

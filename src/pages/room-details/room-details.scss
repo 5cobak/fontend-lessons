@@ -3,7 +3,7 @@
 .room-details {
   &__room-photos {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2.15fr 1fr;
 
     overflow: hidden;
     @media (max-width: $desktop-width) {
@@ -64,8 +64,8 @@
   &__main {
     display: flex;
     justify-content: space-between;
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 69px;
+    padding-bottom: 60px;
     @media (max-width: $sm-desktop-width) {
       display: block;
     }
@@ -75,7 +75,13 @@
     }
   }
   &__block {
+    &:not(:last-child) {
+      margin-right: 104px;
+    }
     @media (max-width: $phone-width) {
+      &:not(:last-child) {
+        margin-right: 0;
+      }
       margin-bottom: 50px;
     }
   }
@@ -91,7 +97,6 @@
   }
   &__info-head {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 30px;
     @media (max-width: $table-width) {
       display: grid;
@@ -99,13 +104,13 @@
       grid-column-gap: 18px;
     }
     @media (max-width: $phone-width) {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-row-gap: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
   &__reviews {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
   }
   &__reviews-head {
     display: flex;
@@ -123,9 +128,9 @@
   }
   &__rules-block {
     display: flex;
-    justify-content: space-between;
   }
   &__cancel-rule {
+    margin-left: 70px;
     max-width: 340px;
     @media (max-width: $phone-width) {
       margin-left: 5px;

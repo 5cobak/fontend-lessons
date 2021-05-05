@@ -9,7 +9,7 @@
     min-width: 300px;
   }
   &__content {
-    padding: 40px 30px 40px;
+    padding: 40px 28px 40px;
     @media (max-width: $phone-width) {
       padding: 30px 20px 30px;
     }
@@ -42,6 +42,8 @@
   &__head-num {
     font-size: 24px;
     line-height: 30px;
+    display: inline-block;
+    margin-right: 7px;
     @media (max-width: $phone-width) {
       font-size: 20px;
       line-height: 15px;
@@ -76,7 +78,7 @@
   &__calculation {
     font-size: 14px;
     color: $text-color-brightness-75;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     @media (max-width: $phone-width) {
       font-size: 12px;
       margin-bottom: 20px;
@@ -94,7 +96,8 @@
     }
   }
   &__calc-info {
-    margin-left: 5px;
+    margin-left: 10px;
+    margin-bottom: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
