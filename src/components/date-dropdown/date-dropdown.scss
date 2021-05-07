@@ -23,13 +23,6 @@
       }
     }
   }
-
-  &__input {
-    line-height: 18px;
-    @media (max-width: $phone-width) {
-      line-height: 15px;
-    }
-  }
   &__input {
     cursor: pointer;
     font-size: 14px;
@@ -39,6 +32,8 @@
     transition: $tr-fast;
     width: 100%;
     max-width: 150px;
+    line-height: 18px;
+    caret-color: transparent; 
     @media (max-width: $phone-width) {
       max-width: 130px;
       font-size: 12px;

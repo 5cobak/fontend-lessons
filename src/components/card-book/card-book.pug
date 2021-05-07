@@ -13,55 +13,56 @@ mixin card-book(details)
           span.card-book__head-sum
             | #{priceForOneDay}₽ 
           | в сутки
-      .card-book__block
-        +date-dropdown({
-              classNameFirstInput: 'js-date-masked js-card-book__dropdown-input', 
-              classNameSecondInput: 'js-date-masked', 
-              title: 'прибытие', 
-              titleSecond: 'выезд'
-              })
-      .card-book__block
-        span.block-title
-          | Гости
-        +dropdown-choose({className: 'js-dropdown-guests', title:'Гости'})
+      form.card__form
+        .card-book__block
+          +date-dropdown({
+                classNameFirstInput: "js-date-masked js-card-book__dropdown-input", 
+                classNameSecondInput: "js-date-masked", 
+                title: "прибытие", 
+                titleSecond: "выезд"
+                })
+        .card-book__block
+          span.block-title
+            | Гости
+          +dropdown-choose({className: "js-dropdown-guests", title:"Гости"})
 
-      .card-book__block
-        .card-book__calculation
-          .card-book__calc-item
-            span.card-book__price-for-one-day.js-card-book__price-for-one-day
-              | #{priceForOneDay}₽ х 
-              span.card-book__days.js-card-book__days
-                | 0 суток
-            span.card-book__calc-sum.js-card-book__clean-sum
+        .card-book__block
+          .card-book__calculation
+            .card-book__calc-item
+              span.card-book__price-for-one-day.js-card-book__price-for-one-day
+                | #{priceForOneDay}₽ х 
+                span.card-book__days.js-card-book__days
+                  | 0 суток
+              span.card-book__calc-sum.js-card-book__clean-sum
+                | 0
+                span.card-book__rub
+                  | ₽
+            .card-book__calc-item
+              span.card-book__calc-option
+                | Сбор за услуги: 
+                span.card-book__discount.js-card-book__discount
+                  | скидка #{discount}
+                  span.card-book__rub
+                    | ₽
+              span.card-book__calc-info
+                | i
+              span.card-book__tax.js-card-book__tax
+                | #{taxes[0]}
+                span.card-book__rub
+                | ₽
+            .card-book__calc-item
+              span.card-book__calc-option
+                | Сбор за доп. услуги
+              span.card-book__calc-info
+                | i
+              span.card-book__tax.js-card-book__tax
+                | #{taxes[1]}₽
+          .card-book__calc-total
+            span.card-book__total
+              | Итого 
+            span.card-book__dotted-line
+            span.card-book__total-price.js-card-book__total-price
               | 0
               span.card-book__rub
                 | ₽
-          .card-book__calc-item
-            span.card-book__calc-option
-              | Сбор за услуги: 
-              span.card-book__discount.js-card-book__discount
-                | скидка #{discount}
-                span.card-book__rub
-                  | ₽
-            span.card-book__calc-info
-              | i
-            span.card-book__tax.js-card-book__tax
-              | #{taxes[0]}
-              span.card-book__rub
-              | ₽
-          .card-book__calc-item
-            span.card-book__calc-option
-              | Сбор за доп. услуги
-            span.card-book__calc-info
-              | i
-            span.card-book__tax.js-card-book__tax
-              | #{taxes[1]}₽
-        .card-book__calc-total
-          span.card-book__total
-            | Итого 
-          span.card-book__dotted-line
-          span.card-book__total-price.js-card-book__total-price
-            | 0
-            span.card-book__rub
-              | ₽
         button.button.button_big Забронировать

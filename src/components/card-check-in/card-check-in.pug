@@ -9,55 +9,55 @@ mixin card-check-in()
           .card-check-in__item.card-check-in__item_margin-b-10
             +textField(
                       {
-                        title: '', 
-                        placeholder: 'Имя', 
-                        type: 'text', 
+                        title: "", 
+                        placeholder: "Имя", 
+                        type: "text", 
                         required: true,
-                        pat: '[A-Za-zА-Яа-яЁё]{3,}'
+                        pat: "[A-Za-zА-Яа-яЁё]{3,}"
                       }
                     )
           .card-check-in__item.card-check-in__item_margin-b-10
             +textField(
                       {
-                        title: '', 
-                        placeholder: 'Фамилия', 
-                        type: 'text', 
+                        title: "", 
+                        placeholder: "Фамилия", 
+                        type: "text", 
                         required: true,
-                        pat: '[A-Za-zА-Яа-яЁё]{3,}'
+                        pat: "[A-Za-zА-Яа-яЁё]{3,}"
                       }
                     )
           .card-check-in__item.card-check-in__item_margin-b-16
-            +radio-buttons({title: ''})
+            +radio-buttons({title: ""})
           .card-check-in__item.card-check-in__item_margin-b-14
             +masked-textfield(
                     {
-                      title: 'Дата рождения',
-                      placeholder: 'ДД.ММ.ГГГГ', 
-                      type: 'text', 
-                      className: 'js-date-masked'
+                      title: "Дата рождения",
+                      placeholder: "ДД.ММ.ГГГГ", 
+                      type: "text", 
+                      className: "js-date-masked"
                     }
                   )
           .card-check-in__item.card-check-in__item_margin-b-10
             +textField(
                     {
-                      title: 'Данные для входа в сервис', 
-                      placeholder: 'Email', 
-                      type: 'email', 
+                      title: "Данные для входа в сервис", 
+                      placeholder: "Email", 
+                      type: "email", 
                       required: true,
                     }
                   )
           .card-check-in__item.card-check-in__item_margin-b-10
             +textField(
                     {
-                      title: '', 
-                      placeholder: 'Пароль', 
-                      type: 'password', 
+                      title: "", 
+                      placeholder: "Пароль", 
+                      type: "password", 
                       required: true,
-                      pat: '(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'
+                      pat: "(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
                     }
                   )
           .card-check-in__item.card-check-in__item_margin-b-20
-            +toggle-buttons({title: ''})
+            +toggle-buttons({title: ""})
           button.button.button_big.card-check-in__button-pay Зарегистрироваться
           .card-check-in__sign-in 
             span.card-check-in__sign-in-text

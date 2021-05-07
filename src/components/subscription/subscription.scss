@@ -9,6 +9,9 @@
       }
     }
   }
+  &__form {
+    position: relative;
+  }
   &__input {
     display: block;
     width: 100%;
@@ -20,10 +23,6 @@
     font-size: 14px;
     color: $text-color-brightness-75;
     font-family: $font-family-primary;
-    background-image: url('./assets/img/arrow-forward.jpg');
-    background-repeat: no-repeat;
-    background-position-x: 96%;
-    background-position-y: 50%;
     &::placeholder {
       font-size: 14px;
       color: $text-color-brightness-25;
@@ -36,5 +35,18 @@
         color: $text-color-brightness-75;
       }
     }
+  }
+  &__button {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-image: url('./assets/img/arrow-forward.jpg');
+    background-color: transparent;
+    width: 46px; 
+    height: 45px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }

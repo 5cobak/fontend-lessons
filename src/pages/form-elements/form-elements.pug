@@ -21,12 +21,12 @@ include ../../components/review/review
 include ../../components/card-room/card-room
 
 block head
-  link(rel='apple-touch-icon' sizes='180x180' href='assets/favicons/apple-touch-icon.png')
-  link(rel='icon' type='image/png' sizes='32x32' href='assets/favicons/favicon-32x32.png')
-  link(rel='icon' type='image/png' sizes='16x16' href='assets/favicons/favicon-16x16.png')
-  link(rel='manifest' href='assets/favicons/site.webmanifest')
+  link(rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png")
+  link(rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png")
+  link(rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png")
+  link(rel="manifest" href="assets/favicons/site.webmanifest")
 block content
-  svg.logo.logo_gray(role='image' aria-label='toxin-logo')
+  svg.logo.logo_gray(role="image" aria-label="toxin-logo")
     use(xlink:href="#logo-gray")
   main.ui-kit
     .container
@@ -35,34 +35,34 @@ block content
             .col
               +textField(
                 {
-                  title: 'text field', 
-                  placeholder: 'Email', 
-                  type: 'email', 
+                  title: "text field", 
+                  placeholder: "Email", 
+                  type: "email", 
                   required: true
                 }
               )
               +masked-textfield(
                 {
-                  title: 'masked text field',
-                  placeholder: 'ДД.ММ.ГГГГ', 
-                  type: 'text', 
-                  className: 'js-date-masked'
+                  title: "masked text field",
+                  placeholder: "ДД.ММ.ГГГГ", 
+                  type: "text", 
+                  className: "js-date-masked"
                 }
               )
               span.block-title dropdown
-              +dropdown-choose({className: 'js-dropdown-guests', title:'dropdown'})
-              +date-dropdown({classNameFirstInput: 'js-date-masked js-date-dropdown__input', 
-              classNameSecondInput: 'js-date-masked',
-              title: 'date dropdown', 
-              titleSecond: 'date dropdown'})
+              +dropdown-choose({className: "js-dropdown-guests", title:"dropdown"})
+              +date-dropdown({classNameFirstInput: "js-date-masked js-date-dropdown__input", 
+              classNameSecondInput: "js-date-masked",
+              title: "date dropdown", 
+              titleSecond: "date dropdown"})
               span.block-title filter date dropdown
-              +filter-date({className: 'js-filter-date', title: 'filter date dropdown'})
-              +subscription({title: 'subscription', placeholder: 'Email'})
+              +filter-date({className: "js-filter-date", title: "filter date dropdown"})
+              +subscription({title: "subscription", placeholder: "Email"})
               span.block-title dropdown
-              +dropdown-choose({className: 'js-dropdown-beds', title: 'dropdown'})
+              +dropdown-choose({className: "js-dropdown-beds", title: "dropdown"})
               +expand-list({
-                title: 'expandable checkbox list',
-                className: 'js-expand-list',
+                title: "expandable checkbox list",
+                className: "js-expand-list",
                 items: [
                   "Завтрак",
                   "Письменный стол",
@@ -75,58 +75,58 @@ block content
 
             .col
               +checkbox-buttons({
-                title: 'checkbox buttons',
+                title: "checkbox buttons",
                 items: [
-                  'Можно курить',
-                  'Можно с питомцами',
-                  'Можно пригласить гостей (до 10 человек)',
+                  "Можно курить",
+                  "Можно с питомцами",
+                  "Можно пригласить гостей (до 10 человек)",
                 ]
                 })
               span.block-title.block-title_margin-b-16 radio button
-              +radio-buttons({title: 'radio buttons'})
+              +radio-buttons({title: "radio buttons"})
               span.block-title.block-title_margin-b-16 toggle
               +toggle-buttons()
               .block-title.block-title_margin-b-16 like buttons
-              +like-button({className: '', count: 0})
+              +like-button({className: "", count: 0})
               .block-title.block-title_margin-b-16 rate button
               +rate-buttons()
               +rich-list({
-                title: 'rich checkbox buttons',
+                title: "rich checkbox buttons",
                 items: [
                   {
-                    title: 'Широкий коридор',
-                    description: 'Ширина коридоров в номере не менее 91 см.'
+                    title: "Широкий коридор",
+                    description: "Ширина коридоров в номере не менее 91 см."
                   },
                   {
-                    title: 'Помощник для инвалидов',
-                    description: 'На 1 этаже вас встретит специалист  и проводит до номера.'
+                    title: "Помощник для инвалидов",
+                    description: "На 1 этаже вас встретит специалист  и проводит до номера."
                   }
                 ]
               })
             .col
-              +range-slider({title: 'range slider', interval: '5000₽ - 10000₽'})
+              +range-slider({title: "range slider", interval: "5000₽ - 10000₽"})
               .block-title.block-title_margin-b-16 buttons
               br
-              a(href='/mock-adress/').button click me
+              a(href="/mock-adress/").button click me
               br
               br 
-              a(href='/mock-adress/').button.button_white click me
+              a(href="/mock-adress/").button.button_white click me
               br
               br
-              a(href='/mock-adress/').button.button_no-bg click me
+              a(href="/mock-adress/").button.button_no-bg click me
               br
               br
-              button(type='submit').button.button_big перейти к оплате
+              button(type="submit").button.button_big перейти к оплате
               br
               .block-title.block-title_margin-b-16 pagination
               br
               +pagination()
               +bullet-list({
-                title: 'bullet list',
+                title: "bullet list",
                 items: [
-                  'Нельзя с питомцами',
-                  'Без вечеринок и мероприятий',
-                  'Время прибытия — после 13:00, а выезд до 12:00',
+                  "Нельзя с питомцами",
+                  "Без вечеринок и мероприятий",
+                  "Время прибытия — после 13:00, а выезд до 12:00",
                 ]
               })
           .row
@@ -134,23 +134,23 @@ block content
               .col
                 +advantages({items: [
                   {
-                    title: 'Комфорт',
-                    description: 'Шумопоглощающие стены',
-                    href: '#insert-emoticon'
+                    title: "Комфорт",
+                    description: "Шумопоглощающие стены",
+                    href: "#insert-emoticon"
                   },
                   {
-                    title: 'Удобство',
-                    description: 'Окно в каждой из спален',
-                    href: '#location-city'
+                    title: "Удобство",
+                    description: "Окно в каждой из спален",
+                    href: "#location-city"
                   },
 
                 ]})
               .col
                 +review({
-                  src: 'images/maga.png',
-                  name: 'Мурад Сарафанов',
-                  date: '5 дней назад',
-                  text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. \nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.',
+                  src: "images/maga.png",
+                  name: "Мурад Сарафанов",
+                  date: "5 дней назад",
+                  text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. \nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.",
                   like: 11
                 })
 

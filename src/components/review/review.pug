@@ -1,11 +1,11 @@
 mixin review({src: path, name, date, text, like})
   .review
     .review__head
-      img.review__avatar(src=require('./' + path).default alt="guest")
+      img.review__avatar(src=require("./" + path).default alt="guest")
       .review__head-text
         .review__name #{name}
         .review__date #{date}
     .review__content
-      +like-button({className: 'review__like', count: like})
+      +like-button({className: "review__like", count: like})
       .reiview__article
         p.review__text #{text}

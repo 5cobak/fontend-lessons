@@ -8,7 +8,7 @@ mixin card-room(images,roomDetails)
         .swiper-wrapper
           each val, index in images
             .swiper-slide.card-room__slide
-              img(src=require('./images/' + val.src ).default alt="фотография конматы").card-room__slider-img
+              img(src=require("./images/" + val.src ).default alt="фотография конматы").card-room__slider-img
     .card-room__content
       .card-room__head
         span.card-room__number

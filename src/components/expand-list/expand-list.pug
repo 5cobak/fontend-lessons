@@ -1,12 +1,12 @@
 mixin expand-list({title, className, items})
-  .expand-list(class=className tabindex='0')
+  .expand-list(class=className tabindex="0")
     label.expand-list__main-label
       span.block-title.expand-list__title.js-expand-list__title #{title}
       .expand-list__dropdown.js-expand-list__dropdown
         each val in items
           label.expand-list__item
             input(type="checkbox").expand-list__checkbox.js-expand-list__checkbox
-            span.expand-list__custom-checkbox(tabindex='0') 
+            span.expand-list__custom-checkbox(tabindex="0") 
             span.expand-list__text
               | #{val}
         

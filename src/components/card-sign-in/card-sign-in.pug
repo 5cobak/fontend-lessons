@@ -7,9 +7,9 @@ mixin card-sing-in()
         .card-sing-in__item.card-sing-in__item_margin-b-10
           +textField(
             {
-              title: '', 
-              placeholder: 'Email', 
-              type: 'email', 
+              title: "", 
+              placeholder: "Email", 
+              type: "email", 
               required: true
 
             }
@@ -17,11 +17,10 @@ mixin card-sing-in()
         .card-sing-in__item.card-sing-in__item_margin-b-30
           +textField(
             {
-              title: '', 
-              placeholder: 'Пароль', 
-              type: 'text', 
+              title: "", 
+              placeholder: "Пароль", 
+              type: "password", 
               required: true,
-              pat: '(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'
             }
           )
         button.button.button_big.card-sing-in__button-in Войти

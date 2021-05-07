@@ -2,11 +2,11 @@ mixin date-dropdown({classNameFirstInput, classNameSecondInput, title, titleSeco
   .date-dropdown
     label.date-dropdown__label
       span.block-title #{title}
-      input(type="text" placeholder="ДД.ММ.ГГГГ" class=classNameFirstInput readonly required).date-dropdown__input
+      input(type="text" placeholder="ДД.ММ.ГГГГ" class=`${classNameFirstInput} js-inputDisabled` ).date-dropdown__input
       svg.date-dropdown__arrow
         use(xlink:href="#expand-more")
     label.date-dropdown__label
       span.block-title #{titleSecond}
-      input(type="text" placeholder="ДД.ММ.ГГГГ" class=classNameSecondInput readonly required).date-dropdown__input
+      input(type="text" placeholder="ДД.ММ.ГГГГ" class=`${classNameSecondInput} js-inputDisabled` ).date-dropdown__input
       svg.date-dropdown__arrow
         use(xlink:href="#expand-more")

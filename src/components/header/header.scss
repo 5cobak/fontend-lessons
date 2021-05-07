@@ -136,6 +136,9 @@
     font-size: 14px;
     line-height: 17px;
     color: $text-color-brightness-50;
+    &:visited {
+      color:rgba(185, 101, 185, 0.98)
+    }
   }
   &__button {
     margin-right: 20px;

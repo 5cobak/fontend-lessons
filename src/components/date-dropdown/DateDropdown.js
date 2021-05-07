@@ -1,6 +1,18 @@
 export default class DateDropdown {
   constructor(inputs) {
     this.init(inputs);
+    this.disableInputEvent();
+  }
+
+  disableInputEvent() {
+    const handlerInput = (e) => {
+      if (e.keyCode === 9) return true;
+      e.preventDefault();
+      return false;
+    };
+
+    const inputs = document.querySelectorAll('.js-inputDisabled');
+    inputs.forEach((input) => input.addEventListener('keydown', handlerInput));
   }
 
   getDaysLag() {
@@ -30,7 +42,6 @@ export default class DateDropdown {
 
   addEventsOnSelect(formattedDate, ...rest) {
     const $secondInput = $(rest[1].el.parentElement.nextSibling.querySelector('input'));
-
     this.formatDate(formattedDate, $secondInput);
 
     this.getDaysLag();
@@ -88,6 +99,11 @@ export default class DateDropdown {
 
       $buttonAccess.on('mouseup', hideDatePicker.bind(null, $firstInput));
     });
+  }
+
+  keydownHandler(e) {
+    e.preventDefault();
+    return false;
   }
 
   init(inputs) {

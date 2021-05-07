@@ -69,6 +69,9 @@
   }
   &__link {
     color: $text-color-brightness-75;
+    &:visited {
+      color:rgba(185, 101, 185, 0.98)
+    }
   }
   &__subscribe {
     padding-top: 5px;

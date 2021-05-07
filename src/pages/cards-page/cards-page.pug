@@ -17,13 +17,13 @@ include ../../components/card-sign-in/card-sign-in
 include ../../components/card-room/card-room
 
 block head
-  link(rel='apple-touch-icon' sizes='180x180' href='assets/favicons/apple-touch-icon.png')
-  link(rel='icon' type='image/png' sizes='32x32' href='assets/favicons/favicon-32x32.png')
-  link(rel='icon' type='image/png' sizes='16x16' href='assets/favicons/favicon-16x16.png')
-  link(rel='manifest' href='assets/favicons/site.webmanifest')
+  link(rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png")
+  link(rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png")
+  link(rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png")
+  link(rel="manifest" href="assets/favicons/site.webmanifest")
 
 block content
-  svg.logo.logo_grey(role='image' aria-label='toxin logo')
+  svg.logo.logo_grey(role="image" aria-label="toxin logo")
     use(xlink:href="#logo-gray")
   main.cards-page
     .container
@@ -33,10 +33,10 @@ block content
         .cards-page__card
           +card-book({
             number: 888,
-            type: 'люкс',
-            priceForOneDay: '9 990',
-            discount: '2 179',
-            taxes: ['1 000', '300']
+            type: "люкс",
+            priceForOneDay: "9 990",
+            discount: "2 179",
+            taxes: ["1 000", "300"]
           })
         .cards-page__card 
           .js-datepicker-inline
@@ -46,28 +46,28 @@ block content
           +card-check-in()
         .cards-page__card
           +card-room([
-          {src: 'room-2.jpg'},
-          {src: 'room-2.jpg'},
-          {src: 'room-2.jpg'},
-          {src: 'room-2.jpg'}
+          {src: "room-2.jpg"},
+          {src: "room-2.jpg"},
+          {src: "room-2.jpg"},
+          {src: "room-2.jpg"}
           ],
           {
-            type: 'люкс',
+            type: "люкс",
             number: 888,
-            priceForOneDay: '9 990',
+            priceForOneDay: "9 990",
             reviews: 145
           })
         .cards-page__card
           +card-room([
-          {src: 'room-1.jpg'},
-          {src: 'room-1.jpg'},
-          {src: 'room-1.jpg'},
-          {src: 'room-1.jpg'}
+          {src: "room-1.jpg"},
+          {src: "room-1.jpg"},
+          {src: "room-1.jpg"},
+          {src: "room-1.jpg"}
           ],
           {
-            type: 'люкс',
+            type: "люкс",
             number: 888,
-            priceForOneDay: '9 990',
+            priceForOneDay: "9 990",
             reviews: 145
           })
         

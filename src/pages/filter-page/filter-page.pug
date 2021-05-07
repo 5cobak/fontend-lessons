@@ -16,10 +16,10 @@ include ../../components/card-room/card-room
 include ../../components/rate-buttons/rate-buttons
 include ../../components/pagination/pagination
 block head
-  link(rel='apple-touch-icon' sizes='180x180' href='assets/favicons/apple-touch-icon.png')
-  link(rel='icon' type='image/png' sizes='32x32' href='assets/favicons/favicon-32x32.png')
-  link(rel='icon' type='image/png' sizes='16x16' href='assets/favicons/favicon-16x16.png')
-  link(rel='manifest' href='assets/favicons/site.webmanifest')
+  link(rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png")
+  link(rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png")
+  link(rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png")
+  link(rel="manifest" href="assets/favicons/site.webmanifest")
 
 block content
   +header({isEntered: false})
@@ -32,44 +32,44 @@ block content
               .filter-page__form-block.filter-page__form-block_margin-20
                 span.block-title
                   | Даты пребывания в отеле
-                +filter-date({className: '', title: 'Даты пребывания в отеле'})
+                +filter-date({className: "", title: "Даты пребывания в отеле"})
               .filter-page__form-block.filter-page__form-block_margin-30
                 span.block-title
                   | Гости
-                +dropdown-choose({className: 'js-dropdown-guests', title: 'Гости'})
+                +dropdown-choose({className: "js-dropdown-guests", title: "Гости"})
               .filter-page__form-block.filter-page__form-block_margin-25
-                +range-slider({title: 'Диапазон цены', interval: '5000₽ - 10000₽'})
+                +range-slider({title: "Диапазон цены", interval: "5000₽ - 10000₽"})
                 span.filter-page__range-description
                   | Стоимость за сутки пребывания в номере
               .filter-page__form-block.filter-page__form-block_margin-25
                 +checkbox-buttons({
-                  title: 'Правила дома',
+                  title: "Правила дома",
                   items: [
-                    'Можно курить',
-                    'Можно с питомцами',
-                    'Можно пригласить гостей (до 10 человек)',
+                    "Можно курить",
+                    "Можно с питомцами",
+                    "Можно пригласить гостей (до 10 человек)",
                   ]})
               .filter-page__form-block.filter-page__form-block_margin-30
                 +rich-list({
-                  title: 'Доступность',
+                  title: "Доступность",
                   items: [
                     {
-                      title: 'Широкий коридор',
-                      description: 'Ширина коридоров в номере не менее 91 см.'
+                      title: "Широкий коридор",
+                      description: "Ширина коридоров в номере не менее 91 см."
                     },
                     {
-                      title: 'Помощник для инвалидов',
-                      description: 'На 1 этаже вас встретит специалист и проводит до номера.'
+                      title: "Помощник для инвалидов",
+                      description: "На 1 этаже вас встретит специалист и проводит до номера."
                     }
                   ]})
               .filter-page__form-block.filter-page__form-block_margin-30
                 span.block-title
                   | Удобства номера
-                +dropdown-choose({className: 'js-dropdown-beds', title: 'Гости'})
+                +dropdown-choose({className: "js-dropdown-beds", title: "Гости"})
               .filter-page__form-block.filter-page__form-block_margin-30
                 +expand-list({
-                 title: 'Дополнительные удобства',
-                 className: 'js-expand-list',
+                 title: "Дополнительные удобства",
+                 className: "js-expand-list",
                  items: [
                   "Завтрак",
                   "Письменный стол",
@@ -85,147 +85,147 @@ block content
                 | Номера, которые мы для вас подобрали
               .filter-page__rooms
                  +card-room([
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'}
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"}
                   ],
                   {
-                    type: 'люкс',
+                    type: "люкс",
                     number: 888,
-                    priceForOneDay: '9 990',
+                    priceForOneDay: "9 990",
                     reviews: 145
                   })
                  +card-room([
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'}
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"}
                   ],
                   {
-                    type: 'люкс',
+                    type: "люкс",
                     number: 888,
-                    priceForOneDay: '9 990',
+                    priceForOneDay: "9 990",
                     reviews: 145
                   })
                  +card-room([
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'}
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"}
                   ],
                   {
-                    type: 'люкс',
+                    type: "люкс",
                     number: 888,
-                    priceForOneDay: '9 990',
+                    priceForOneDay: "9 990",
                     reviews: 145
                   })
                  +card-room([
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'}
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"}
                   ],
                   {
-                    type: 'люкс',
+                    type: "люкс",
                     number: 888,
-                    priceForOneDay: '9 990',
+                    priceForOneDay: "9 990",
                     reviews: 145
                   })
                  +card-room([
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'}
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"}
                   ],
                   {
-                    type: 'люкс',
+                    type: "люкс",
                     number: 888,
-                    priceForOneDay: '9 990',
+                    priceForOneDay: "9 990",
                     reviews: 145
                   })
                  +card-room([
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'}
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"}
                   ],
                   {
-                    type: 'люкс',
+                    type: "люкс",
                     number: 888,
-                    priceForOneDay: '9 990',
+                    priceForOneDay: "9 990",
                     reviews: 145
                   })
                  +card-room([
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'}
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"}
                   ],
                   {
-                    type: 'люкс',
+                    type: "люкс",
                     number: 888,
-                    priceForOneDay: '9 990',
+                    priceForOneDay: "9 990",
                     reviews: 145
                   })
                  +card-room([
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'}
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"}
                   ],
                   {
-                    type: 'люкс',
+                    type: "люкс",
                     number: 888,
-                    priceForOneDay: '9 990',
+                    priceForOneDay: "9 990",
                     reviews: 145
                   })
                  +card-room([
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'}
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"}
                   ],
                   {
-                    type: 'люкс',
+                    type: "люкс",
                     number: 888,
-                    priceForOneDay: '9 990',
+                    priceForOneDay: "9 990",
                     reviews: 145
                   })
                  +card-room([
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'}
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"}
                   ],
                   {
-                    type: 'люкс',
+                    type: "люкс",
                     number: 888,
-                    priceForOneDay: '9 990',
+                    priceForOneDay: "9 990",
                     reviews: 145
                   })
                  +card-room([
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'}
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"}
                   ],
                   {
-                    type: 'люкс',
+                    type: "люкс",
                     number: 888,
-                    priceForOneDay: '9 990',
+                    priceForOneDay: "9 990",
                     reviews: 145
                   })
                  +card-room([
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'},
-                  {src: 'room-2.jpg'}
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"},
+                  {src: "room-2.jpg"}
                   ],
                   {
-                    type: 'люкс',
+                    type: "люкс",
                     number: 888,
-                    priceForOneDay: '9 990',
+                    priceForOneDay: "9 990",
                     reviews: 145
                   })
               .filter-page__pagination
