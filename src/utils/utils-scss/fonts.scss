@@ -11,16 +11,3 @@
   font-weight: $bold;
   font-style: normal;
 }
-
-@font-face {
-  font-family: 'OpenSans';
-  src: url('./assets/fonts/open-sans/open-sans-regular.woff2'), url('./assets/fonts/open-sans/open-sans-regular.woff');
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'OpenSans';
-  src: url('./assets/fonts/open-sans/open-sans-bold.woff2'), url('./assets/fonts/open-sans/open-sans-bold.woff');
-  font-weight: $bold;
-  font-style: normal;
-}

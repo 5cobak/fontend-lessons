@@ -1,38 +1,8 @@
 .rate-buttons {
   display: flex;
 
-  &__label {
-    display: flex;
-
-    &:focus {
-      outline: 2px solid $primary-color;
-    }
-  }
-
-  &__input {
-    display: none;
-  }
-
   &__svg {
-    width: 24px;
-    height: 24px;
-
-    &:last-child {
-      width: 0;
-      height: 0;
-      opacity: 0;
-    }
-  }
-
-  &__input:checked + &__star &__svg {
-    width: 0;
-    height: 0;
-    opacity: 0;
-  }
-
-  &__input:checked + &__star &__svg:last-child {
-    width: 24px;
-    height: 24px;
-    opacity: 1;
+    max-width: 24px;
+    max-height: 24px;
   }
 }

@@ -11,7 +11,6 @@ import './components/datepicker/datepicker';
 import './components/filter-date/filter-date';
 import './components/expand-list/expand-list';
 import './components/like-button/like-button';
-import './components/rate-buttons/rate-buttons';
 import './components/range-slider/range-slider';
 import './components/pagination/pagination';
 import './components/card-book/card-book';
