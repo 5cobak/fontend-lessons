@@ -1,4 +1,4 @@
-export default class ExpandList {
+class ExpandList {
   constructor(els) {
     this.els = els;
     this.init();
@@ -27,3 +27,5 @@ export default class ExpandList {
     this.addEvents();
   }
 }
+
+export default ExpandList;

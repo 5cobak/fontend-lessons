@@ -1,4 +1,4 @@
-export default class CalendarPickerInline {
+class CalendarPickerInline {
   constructor(els) {
     this.els = els;
     this.init();
@@ -25,3 +25,5 @@ export default class CalendarPickerInline {
     this.createCalendar();
   }
 }
+
+export default CalendarPickerInline;

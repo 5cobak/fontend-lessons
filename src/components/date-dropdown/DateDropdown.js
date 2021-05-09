@@ -1,4 +1,4 @@
-export default class DateDropdown {
+class DateDropdown {
   constructor(inputs) {
     this.init(inputs);
     this.disableInputEvent();
@@ -110,3 +110,5 @@ export default class DateDropdown {
     this.createDateDropdown(inputs);
   }
 }
+
+export default DateDropdown;

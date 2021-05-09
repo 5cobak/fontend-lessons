@@ -3,6 +3,7 @@ import '~/air-datepicker/dist/js/datepicker.min';
 import '~/inputmask/dist/jquery.inputmask.min';
 import './components/mask/mask';
 import '~/ion-rangeslider/js/ion.rangeSlider';
+
 import './main.scss';
 import './js/plugins/simplePagination.js';
 import './components/date-dropdown/date-dropdown';

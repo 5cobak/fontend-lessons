@@ -2,7 +2,7 @@ import declination from '../helpers/declination';
 
 const Chart = require('chart.js');
 
-export default class CircleDiagram {
+class CircleDiagram {
   constructor(parent) {
     this.mainEl = parent;
     this.init();
@@ -62,3 +62,5 @@ export default class CircleDiagram {
     this.createCircleDiagram();
   }
 }
+
+export default CircleDiagram;

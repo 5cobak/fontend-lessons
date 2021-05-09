@@ -1,4 +1,4 @@
-export default class LikeButton {
+class LikeButton {
   constructor($elem) {
     this.$elem = $elem;
     this.countLike = +$elem.find('.js-like-button__likes').text();
@@ -32,3 +32,5 @@ export default class LikeButton {
     this.addEvents();
   }
 }
+
+export default LikeButton;

@@ -1,4 +1,4 @@
-export default class FilterDate {
+class FilterDate {
   constructor(elem) {
     this.input = elem;
     this.init();
@@ -57,3 +57,5 @@ export default class FilterDate {
     this.createDatepicker();
   }
 }
+
+export default FilterDate;

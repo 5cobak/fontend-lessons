@@ -1,4 +1,4 @@
-export default class MaskInput {
+class MaskInput {
   constructor(inputs) {
     this.inputs = inputs;
     this.init();
@@ -69,3 +69,5 @@ export default class MaskInput {
     this.setMask();
   }
 }
+
+export default MaskInput;

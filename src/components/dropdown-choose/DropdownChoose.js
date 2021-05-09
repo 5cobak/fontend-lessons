@@ -1,6 +1,6 @@
 import declination from '../helpers/declination';
 
-export default class DropdownChoose {
+class DropdownChoose {
   constructor({ element, placeholder, titles, declinations, maxWidth, textLength, buttons }) {
     this.init(element, placeholder, titles, declinations, maxWidth, textLength, buttons);
   }
@@ -246,3 +246,5 @@ export default class DropdownChoose {
     this.setEventsForButtons();
   }
 }
+
+export default DropdownChoose;

@@ -1,4 +1,4 @@
-export default class RangeSlider {
+class RangeSlider {
   constructor(inputs) {
     this.inputs = inputs;
     this.init();
@@ -35,3 +35,5 @@ export default class RangeSlider {
     this.createRangeSlider();
   }
 }
+
+export default RangeSlider;

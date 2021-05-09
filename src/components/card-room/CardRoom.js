@@ -1,6 +1,6 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
 
-export default class CardRoom {
+class CardRoom {
   constructor(elementsList) {
     this.elementsList = elementsList;
     this.init();
@@ -25,3 +25,5 @@ export default class CardRoom {
     this.createSwiper();
   }
 }
+
+export default CardRoom;

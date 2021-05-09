@@ -1,7 +1,7 @@
 import DateDropdown from '../date-dropdown/DateDropdown';
 import declination from '../helpers/declination';
 
-export default class PriceCalculator {
+class PriceCalculator {
   constructor(parent) {
     this.init(parent);
   }
@@ -59,3 +59,5 @@ export default class PriceCalculator {
     this.dateDropdown = ExtendedDropdown;
   }
 }
+
+export default PriceCalculator;
