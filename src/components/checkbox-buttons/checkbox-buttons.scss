@@ -1,50 +1,60 @@
 .checkbox-buttons {
   display: block;
   max-width: 222px;
-  user-select: none;
   cursor: pointer;
+  user-select: none;
+
   &__item {
     margin-bottom: 10px;
     display: flex;
+
     &:last-child {
       margin-bottom: 0;
     }
+
     @media (max-width: $phone-width) {
       margin-bottom: 5px;
     }
   }
+
   &__custom-checkbox {
+    margin-right: 10px;
     display: inline-block;
     width: 20px;
-    height: 20px;
     min-width: 20px;
+    height: 20px;
     min-height: 20px;
     border: $border-input;
     border-radius: 4px;
-    margin-right: 10px;
+
     @media (max-width: $phone-width) {
       margin-right: 5px;
     }
+
     &:focus {
       border: $border-input-hover;
     }
   }
+
   &__text {
     font-size: 14px;
-    color: $text-color-brightness-50;
-    white-space: pre-wrap;
     line-height: 20px;
+    white-space: pre-wrap;
+    color: $text-color-brightness-50;
+
     @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
+
   &__checkbox {
     display: none;
   }
+
   input:checked + span {
-    border-color: $primary-color;
     background-image: url('./assets/img/vector.jpg');
     background-repeat: no-repeat;
     background-position: 50% 50%;
+    border-color: $primary-color;
   }
 }

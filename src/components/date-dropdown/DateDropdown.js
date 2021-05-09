@@ -92,7 +92,7 @@ export default class DateDropdown {
       const $clearButton = $calendarEl.find('.datepicker--button');
       const $buttonsParent = $calendarEl.find('.datepicker--buttons');
 
-      $buttonsParent.append('<span class="datepicker--button-access">Применить</span>');
+      $buttonsParent.append('<span class="datepicker--button">Применить</span>');
       $clearButton.on('click', clearInputVal.bind(null, $secondInput));
 
       const $buttonAccess = $clearButton.next();

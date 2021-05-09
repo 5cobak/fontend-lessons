@@ -1,52 +1,60 @@
 .subscription {
   display: block;
   max-width: 320px;
-  &:hover & {
-    &__input {
-      border: $border-input-hover;
-      &::placeholder {
-        color: $text-color-brightness-75;
-      }
-    }
-  }
-  &__form {
-    position: relative;
-  }
+
   &__input {
+    padding: 12px 40px 12px 15px;
     display: block;
     width: 100%;
     max-width: 266px;
+    font-family: $font-family-primary;
+    font-size: 14px;
+    color: $text-color-brightness-75;
     border: $border-input;
     border-radius: 4px;
     transition: $tr-fast;
-    padding: 12px 40px 12px 15px;
-    font-size: 14px;
-    color: $text-color-brightness-75;
-    font-family: $font-family-primary;
+
     &::placeholder {
       font-size: 14px;
       color: $text-color-brightness-25;
       transition: $tr-fast;
     }
+
     &:focus {
-      outline: none;
       border: $border-input-hover;
+      outline: none;
+
       &::placeholder {
         color: $text-color-brightness-75;
       }
     }
   }
+
+  &:hover & {
+    &__input {
+      border: $border-input-hover;
+
+      &::placeholder {
+        color: $text-color-brightness-75;
+      }
+    }
+  }
+
+  &__form {
+    position: relative;
+  }
+
   &__button {
-    display: inline-block;
     position: absolute;
     right: 0;
     bottom: 0;
-    background-image: url('./assets/img/arrow-forward.jpg');
-    background-color: transparent;
-    width: 46px; 
+    display: inline-block;
+    width: 46px;
     height: 45px;
-    cursor: pointer;
+    background-color: transparent;
+    background-image: url('./assets/img/arrow-forward.jpg');
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
   }
 }

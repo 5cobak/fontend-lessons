@@ -1,98 +1,115 @@
 .expand-list {
   display: block;
   max-width: 266px;
-  user-select: none;
   cursor: pointer;
+  user-select: none;
   $self: &;
+
   &:focus {
     outline: 2px solid $primary-color;
   }
+
   &__title {
-    cursor: pointer;
     display: flex;
-    font-size: 12px;
     justify-content: space-between;
     align-items: center;
-    &:after {
-      content: '';
+    font-size: 12px;
+    cursor: pointer;
+
+    &::after {
+      margin-right: 20px;
+      margin-bottom: 0;
       display: block;
       width: 12px;
       height: 8px;
       opacity: 0.7;
+      content: '';
       background-image: url('assets/img/expand-more.svg');
       background-repeat: no-repeat;
       background-position: center;
       transition: $tr-fast;
-      margin-right: 20px;
-      margin-bottom: 0;
+
       @media (max-width: $phone-width) {
         margin-right: 10px;
       }
+
       @media (max-width: $phone-width) {
         font-size: 10px;
       }
     }
+
     &_active {
-      &:after {
+      &::after {
         transform: rotate(180deg);
       }
     }
   }
+
   &__dropdown {
     top: 100%;
-    max-height: 0;
     overflow: hidden;
+    max-height: 0;
     transition: $tr-fast;
+
     &_active {
       padding-top: 10px;
       max-height: 1000px;
     }
+
     label {
       line-height: 1;
     }
   }
+
   &__item {
-    cursor: pointer;
     padding-bottom: 10px;
     display: flex;
     align-items: flex-start;
+    cursor: pointer;
+
     &:last-child {
       margin-bottom: 0;
     }
   }
+
   &__custom-checkbox {
+    margin-right: 10px;
     display: inline-block;
     width: 20px;
-    height: 20px;
     min-width: 20px;
+    height: 20px;
     min-height: 20px;
     border: $border-input;
     border-radius: 4px;
-    margin-right: 10px;
 
     &:focus {
       border: $border-input-hover;
     }
+
     @media (max-width: $phone-width) {
       margin-right: 5px;
     }
   }
+
   &__text {
     font-size: 14px;
-    color: $text-color-brightness-50;
     line-height: 20px;
     white-space: pre-wrap;
+    color: $text-color-brightness-50;
+
     @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
+
   &__checkbox {
     display: none;
   }
+
   &__checkbox:checked + span {
-    border-color: $primary-color;
     background-image: url('./assets/img/vector.jpg');
     background-repeat: no-repeat;
     background-position: 50% 50%;
+    border-color: $primary-color;
   }
 }

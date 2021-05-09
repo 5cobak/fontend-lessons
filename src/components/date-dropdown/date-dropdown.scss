@@ -1,59 +1,69 @@
 .date-dropdown {
   $self: &;
+
+  display: flex;
   width: 100%;
   max-width: 320px;
-  user-select: none;
-  display: flex;
   justify-content: space-between;
+  user-select: none;
+
   @media (max-width: $phone-width) {
     max-width: 100%;
   }
+
   &__label {
     position: relative;
     display: inline-flex;
     flex-direction: column;
+
     @media (max-width: $table-width) {
       &:first-child {
         margin-right: 10px;
       }
     }
+
     @media (max-width: $table-width) {
       &:first-child {
         margin-right: 10px;
       }
     }
   }
+
   &__input {
-    cursor: pointer;
-    font-size: 14px;
-    border: $border-input;
-    border-radius: 4px;
     padding: 12px 15px;
-    transition: $tr-fast;
     width: 100%;
     max-width: 150px;
+    font-size: 14px;
     line-height: 18px;
-    caret-color: transparent; 
+    border: $border-input;
+    border-radius: 4px;
+    transition: $tr-fast;
+    cursor: pointer;
+    caret-color: transparent;
+
     @media (max-width: $phone-width) {
+      padding: 10px 12px;
       max-width: 130px;
       font-size: 12px;
-      padding: 10px 12px;
     }
+
     &:focus {
-      outline: none;
       border: $border-input-hover;
+      outline: none;
     }
+
     &:hover {
       border: $border-input-hover;
     }
   }
+
   &__arrow {
-    max-width: 12px;
-    min-width: 12px;
-    max-height: 12px;
     position: absolute;
-    right: 15px;
     top: calc(50% + 4px);
+    right: 15px;
+    min-width: 12px;
+    max-width: 12px;
+    max-height: 12px;
     fill: $text-color-brightness-50;
   }
 }

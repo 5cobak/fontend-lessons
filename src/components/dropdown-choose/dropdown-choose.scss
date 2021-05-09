@@ -1,150 +1,173 @@
 .dropdown-choose {
+  position: relative;
+  font-size: 14px;
   border: $border-input;
   border-radius: 4px;
-  font-size: 14px;
-  user-select: none;
   transition: $tr-fast;
-  position: relative;
+  user-select: none;
+
   @media (max-width: $phone-width) {
     font-size: 12px;
   }
+
   &:hover {
     border: $border-input-hover;
   }
+
   &:focus {
     border: $border-input-hover;
   }
+
   &_active {
     border: $border-input-hover;
     box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   }
+
   &__title {
-    text-transform: uppercase;
     font-family: $font-family-primary;
-    font-weight: $bold;
     font-size: 12px;
+    font-weight: $bold;
+    text-transform: uppercase;
+
     @media (max-width: $phone-width) {
       font-size: 10px;
     }
   }
+
   &__upper-field {
-    padding: 12px 15px;
     position: relative;
-    color: $text-color-brightness-75;
-    line-height: 18px;
+    padding: 12px 15px;
     font-family: $font-family-primary;
+    line-height: 18px;
+    color: $text-color-brightness-75;
     background-color: #fff;
     border-radius: 4px;
     cursor: pointer;
   }
+
   &__arrow {
     position: absolute;
-    border-left: 2px solid $text-color-brightness-50;
-    border-bottom: 2px solid $text-color-brightness-50;
+    top: calc(50% - 7px);
+    right: 17px;
     width: 8px;
     height: 8px;
-    right: 17px;
-    top: calc(50% - 7px);
-    transform: rotate(-45deg);
+    border-left: 2px solid $text-color-brightness-50;
+    border-bottom: 2px solid $text-color-brightness-50;
     transition: $tr-fast;
+    transform: rotate(-45deg);
+
     &_active {
-      transform: rotate(135deg);
       top: calc(50% - 4px);
+      transform: rotate(135deg);
     }
   }
+
   &__menu {
     position: absolute;
+    z-index: 100;
     top: calc(100% - 2px);
     left: -1px;
-    width: 100%;
-    z-index: 100;
-    opacity: 0;
-    max-height: 0;
     overflow: hidden;
-    transition: opacity $tr-fast;
-    transition-timing-function: ease-in-out;
+    width: 100%;
+    width: calc(100% + 2px);
+    max-height: 0;
+    opacity: 0;
     background-color: #fff;
     border: $border-input-hover;
-    border-bottom: none;
     border-top: none;
-    border-bottom-left-radius: 4px;
+    border-bottom: none;
     border-bottom-right-radius: 4px;
-    width: calc(100% + 2px);
+    border-bottom-left-radius: 4px;
+    transition: opacity $tr-fast;
+    transition-timing-function: ease-in-out;
+
     &_active {
-      border-top: $border-input-hover;
-      border-bottom: $border-input-hover;
       max-height: 500px;
       opacity: 1;
+      border-top: $border-input-hover;
+      border-bottom: $border-input-hover;
     }
   }
+
   &__item {
     padding: 0 7px 7px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     &:first-child {
       padding-top: 6px;
     }
   }
+
   &__item-count {
     font-family: $font-family-primary;
-    font-weight: $bold;
     font-size: 12px;
+    font-weight: $bold;
   }
+
   &__item-text {
+    max-width: 50%;
     font-family: $font-family-primary;
+    font-size: 12px;
+    line-height: 15px;
     font-weight: $bold;
     text-transform: uppercase;
-    font-size: 12px;
-    max-width: 50%;
-    line-height: 15px;
+
     @media (max-width: $phone-width) {
       font-size: 10px;
     }
   }
+
   &__count-block {
     display: flex;
+    min-width: 92px;
     justify-content: space-between;
     align-items: center;
-    min-width: 92px;
   }
 
   &__plus,
   &__minus {
+    display: flex;
     width: 30px;
     height: 30px;
-    border: $border-input-hover;
-    border-radius: 50%;
-    display: flex;
     justify-content: center;
     align-items: center;
+    border: $border-input-hover;
+    border-radius: 50%;
     cursor: pointer;
+
     &_noactive {
       border: 1px solid $text-color-brightness-25;
       cursor: initial;
     }
   }
+
   &__buttons {
+    padding: 14px 7px 15px 7px;
     display: flex;
     justify-content: space-between;
-    padding: 14px 7px 15px 7px;
-    text-transform: uppercase;
     font-family: $font-family-primary;
-    font-weight: $bold;
     font-size: 12px;
+    font-weight: $bold;
+    text-transform: uppercase;
+
     @media (max-width: $phone-width) {
       font-size: 10px;
     }
   }
+
   &__btn-clear {
-    cursor: pointer;
     color: $text-color-brightness-50;
+    cursor: pointer;
+
     &_hidden {
       visibility: hidden;
     }
   }
+
   &__btn-access {
-    cursor: pointer;
     color: $primary-color;
+    cursor: pointer;
   }
 }

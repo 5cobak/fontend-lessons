@@ -1,48 +1,59 @@
 .review {
   max-width: 710px;
+
   &:not(:last-child) {
     margin-bottom: 25px;
   }
+
   &__head {
-    display: flex;
     margin-bottom: 10px;
+    display: flex;
     line-height: 24px;
   }
+
   &__name {
     font-family: $font-family-primary;
-    font-weight: $bold;
     font-size: 14px;
+    font-weight: $bold;
     color: $text-color-brightness-75;
+
     @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
+
   &__date {
     font-size: 14px;
     color: $text-color-brightness-75;
+
     @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
+
   &__avatar {
+    margin-right: 10px;
     max-width: 44px;
     max-height: 44px;
     border-radius: 50%;
-    margin-right: 10px;
   }
+
   &__content {
     display: flex;
   }
+
   &__like {
     margin-top: 5px;
     margin-right: 15px;
     margin-left: 5px;
   }
+
   &__text {
     font-size: 14px;
-    color: $text-color-brightness-75;
-    white-space: pre-wrap;
     line-height: 24px;
+    white-space: pre-wrap;
+    color: $text-color-brightness-75;
+
     @media (max-width: $phone-width) {
       font-size: 12px;
     }

@@ -1,9 +1,10 @@
 .registration-page {
   background-image: url('pages/registration-page/images/landing-page-bg-2.jpg');
-  background-size: cover;
   background-repeat: no-repeat;
-  background-origin: content-box;
   background-position: center;
+  background-origin: content-box;
+  background-size: cover;
+
   &__main {
     padding: 18px 0;
     display: flex;

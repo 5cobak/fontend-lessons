@@ -1,79 +1,92 @@
 .header {
   $self: &;
+
+  position: relative;
   background-color: $bg-color-primary;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-  position: relative;
+
   &__content {
+    padding-top: 12px;
+    padding-bottom: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 12px;
-    padding-bottom: 12px;
+
     @media (max-width: $phone-width) {
       padding-top: 5px;
       padding-bottom: 5px;
     }
   }
+
   &__nav-shadow {
-    display: none;
     position: absolute;
     z-index: 900;
     top: 100%;
     right: 0;
+    display: none;
     width: 100%;
     max-width: 0;
     min-height: 100vh;
-    transition: 0.1;
     background-color: rgba(185, 101, 185, 0.98);
+    transition: 0.1;
+
     @media (max-width: $sm-desktop-width) {
       display: block;
     }
+
     &_active {
-      transition: $tr-mid;
       max-width: 100%;
+      transition: $tr-mid;
     }
   }
+
   &__nav {
     display: flex;
     align-items: center;
+
     @media (max-width: $sm-desktop-width) {
       display: none;
       text-align: center;
     }
+
     &_dropdown {
-      overflow: hidden;
-      min-height: 100vh;
-      width: 100%;
-      max-width: 0;
-      transition: $tr-fast;
       position: absolute;
-      background-color: $bg-color-primary;
       z-index: 1000;
       top: 100%;
       right: 0;
+      overflow: hidden;
+      width: 100%;
+      max-width: 0;
+      min-height: 100vh;
+      background-color: $bg-color-primary;
+      transition: $tr-fast;
+
       @media (max-width: $sm-desktop-width) {
         display: block;
       }
+
       &-active {
         max-width: 80%;
       }
       #{$self}__list {
-        display: block;
         margin-bottom: 10px;
+        display: block;
         text-align: center;
       }
       #{$self}__list-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px 0;
         margin: 0;
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border-radius: 2px;
         transition: $tr-fast;
-        &:after {
-          margin-left: 10px;
+
+        &::after {
           margin-bottom: 4px;
+          margin-left: 10px;
         }
+
         &:hover {
           background-color: $primary-color;
           #{$self}__link {
@@ -85,6 +98,7 @@
         display: inline-block;
         font-size: 18px;
         vertical-align: center;
+
         @media (max-width: $phone-width) {
           font-size: 16px;
         }
@@ -95,112 +109,129 @@
         justify-content: center;
       }
       #{$self}__button {
-        display: inline-block;
         margin-bottom: 20px;
+        display: inline-block;
       }
       #{$self}__cabinet {
+        padding: 20px 10px;
         display: inline-block;
         min-width: 50%;
         border: none;
         border-top: 1px solid rgba(31, 32, 65, 0.1);
-        padding: 20px 10px;
       }
     }
   }
+
   &__list {
     display: inline-flex;
   }
+
   &__list-item {
-    display: inline-flex;
     margin-right: 20px;
+    display: inline-flex;
     cursor: pointer;
+
     &_dropdown {
       margin-right: 28px;
-      &:after {
-        content: '';
+
+      &::after {
+        margin-top: 4px;
+        margin-left: 10px;
         display: inline-block;
         min-width: 8px;
-        min-height: 8px;
         max-width: 8px;
+        min-height: 8px;
         max-height: 8px;
+        content: '';
         border: 2px solid $text-color-brightness-50;
         border-top: none;
         border-left: none;
         transform: rotate(45deg);
-        margin-left: 10px;
-        margin-top: 4px;
       }
     }
   }
+
   &__link {
     font-size: 14px;
     line-height: 17px;
     color: $text-color-brightness-50;
+
     &:visited {
-      color:rgba(185, 101, 185, 0.98)
+      color: rgba(185, 101, 185, 0.98);
     }
   }
+
   &__button {
     margin-right: 20px;
     padding: 10px 20px;
+
     @media (max-width: $sm-desktop-width) {
       margin-right: 0;
     }
+
     &:last-child {
       margin-right: 0;
     }
   }
+
   &__cabinet {
+    padding: 10px 0 10px 20px;
     font-size: 14px;
     line-height: 17px;
     color: $text-color-brightness-50;
     border-left: 1px solid rgba(31, 32, 65, 0.1);
-    padding: 10px 0 10px 20px;
+
     @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
+
   &__burger {
+    position: relative;
     display: none;
     min-width: 30px;
     min-height: 30px;
-    position: relative;
     cursor: pointer;
+
     @media (max-width: $sm-desktop-width) {
       display: block;
     }
   }
+
   &__burger-layout {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
     display: none;
     width: 30px;
     height: 3px;
     background-color: $primary-color;
-    position: absolute;
-    top: 50%;
-    z-index: 10;
     border-radius: 50px;
-    &:after {
-      content: '';
-      display: block;
-      width: 30px;
-      height: 3px;
-      background-color: $primary-color;
+
+    &::after {
       position: absolute;
+      z-index: 10;
       top: -9px;
-      z-index: 10;
-      border-radius: 50px;
-    }
-    &:before {
-      content: '';
       display: block;
       width: 30px;
       height: 3px;
+      content: '';
       background-color: $primary-color;
-      position: absolute;
-      top: 8px;
-      z-index: 10;
       border-radius: 50px;
     }
+
+    &::before {
+      position: absolute;
+      z-index: 10;
+      top: 8px;
+      display: block;
+      width: 30px;
+      height: 3px;
+      content: '';
+      background-color: $primary-color;
+      border-radius: 50px;
+    }
+
     &_active {
       top: 0;
       height: 30px;
@@ -208,19 +239,22 @@
       border: 2px solid $primary-color;
       border-radius: 50%;
       transition: $tr-fast;
-      &:after {
+
+      &::after {
+        top: calc(50% - 1px);
+        left: 3px;
+        width: 20px;
         transform: rotate(45deg);
-        top: calc(50% - 1px);
-        width: 20px;
-        left: 3px;
       }
-      &:before {
-        transform: rotate(-45deg);
+
+      &::before {
         top: calc(50% - 1px);
         left: 3px;
         width: 20px;
+        transform: rotate(-45deg);
       }
     }
+
     @media (max-width: $sm-desktop-width) {
       display: block;
     }

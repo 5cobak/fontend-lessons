@@ -1,9 +1,10 @@
 .sign-in-page {
   background-image: url('pages/sign-in-page/images/landing-page-bg-2.jpg');
-  background-size: cover;
   background-repeat: no-repeat;
-  background-origin: content-box;
   background-position: center;
+  background-origin: content-box;
+  background-size: cover;
+
   &__main {
     padding: 171px 0 173px 0;
     display: flex;

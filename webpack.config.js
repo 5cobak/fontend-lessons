@@ -36,7 +36,6 @@ const cssLoaders = (extra) => {
   if (extra) {
     loaders.push(extra);
   }
-  
   return loaders;
 };
 

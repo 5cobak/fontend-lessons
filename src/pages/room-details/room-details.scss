@@ -4,16 +4,18 @@
   &__room-photos {
     display: grid;
     grid-template-columns: 2.15fr 1fr;
-
     overflow: hidden;
+
     @media (max-width: $desktop-width) {
       max-height: 485px;
     }
+
     @media (max-width: $sm-desktop-width) {
-      max-height: 100%;
       display: block;
+      max-height: 100%;
     }
   }
+
   &__photo {
     @media (max-width: $sm-desktop-width) {
       border: 5px solid #fff;
@@ -28,124 +30,155 @@
       max-height: 485px;
     }
   }
+
   &__another-photos {
     @media (max-width: $sm-desktop-width) {
       display: flex;
     }
+
     @media (max-width: $table-width) {
       display: block;
     }
   }
+
   &__another-photo {
     min-width: 100%;
     min-height: 50%;
+
     @media (max-width: $desktop-width) {
       max-height: calc(485px / 2);
     }
+
     @media (max-width: $sm-desktop-width) {
       min-width: 50%;
     }
+
     @media (max-width: $table-width) {
       min-width: 100%;
     }
   }
+
   &__title {
-    text-transform: initial;
+    margin-bottom: 20px;
     font-size: 19px;
     line-height: 23px;
-    margin-bottom: 20px;
+    text-transform: initial;
+
     &_margin-l-20 {
       margin-left: 20px;
     }
+
     @media (max-width: $phone-width) {
       font-size: 15px;
     }
   }
+
   &__main {
-    display: flex;
-    justify-content: space-between;
     padding-top: 69px;
     padding-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+
     @media (max-width: $sm-desktop-width) {
       display: block;
     }
+
     @media (max-width: $sm-desktop-width) {
-      max-width: $table-width;
       margin: 0 auto;
+      max-width: $table-width;
     }
   }
+
   &__block {
     &:not(:last-child) {
       margin-right: 104px;
     }
+
     @media (max-width: $phone-width) {
       &:not(:last-child) {
         margin-right: 0;
       }
+
       margin-bottom: 50px;
     }
   }
+
   &__text-content {
     border-bottom: 1px solid rgba(31, 32, 65, 0.1);
   }
+
   &__info {
     margin-bottom: 10px;
+
     @media (max-width: $sm-desktop-width) {
       margin: 0;
       margin-bottom: 30px;
     }
   }
+
   &__info-head {
-    display: flex;
     margin-bottom: 30px;
+    display: flex;
+
     @media (max-width: $table-width) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 18px;
     }
+
     @media (max-width: $phone-width) {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
   }
+
   &__reviews {
     margin-bottom: 32px;
   }
+
   &__reviews-head {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
   }
+
   &__reviews-count {
     font-size: 14px;
     line-height: 14px;
     color: $text-color-brightness-50;
+
     @media (max-width: $phone-width) {
       font-size: 12px;
       line-height: 12px;
     }
   }
+
   &__rules-block {
     display: flex;
   }
+
   &__cancel-rule {
     margin-left: 70px;
     max-width: 340px;
+
     @media (max-width: $phone-width) {
       margin-left: 5px;
     }
   }
+
   &__cancel-text {
-    white-space: pre-wrap;
     font-size: 14px;
     line-height: 24px;
+    white-space: pre-wrap;
     color: $text-color-brightness-75;
+
     @media (max-width: $phone-width) {
       font-size: 12px;
       line-height: 20px;
     }
   }
+
   &__aside {
     @media (max-width: $sm-desktop-width) {
       display: flex;

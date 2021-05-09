@@ -1,26 +1,31 @@
 .block-title {
-  text-transform: uppercase;
-  font-family: $font-family-primary;
-  font-weight: $bold;
-  font-size: 12px;
-  display: inline-block;
-  line-height: 15px;
   margin-bottom: 5px;
+  display: inline-block;
+  font-family: $font-family-primary;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: $bold;
   white-space: pre-wrap;
+  text-transform: uppercase;
   color: $text-color;
+
   @media (max-width: $phone-width) {
+    margin-bottom: 3px;
     font-size: 10px;
     line-height: 12px;
-    margin-bottom: 3px;
   }
+
   &_margin-b-16 {
     margin-bottom: 16px;
+
     @media (max-width: $phone-width) {
       margin-bottom: 13px;
     }
   }
+
   &_margin-b-20 {
     margin-bottom: 20px;
+
     @media (max-width: $phone-width) {
       margin-bottom: 15px;
     }

@@ -2,118 +2,135 @@
 @import './mixins.scss';
 
 .button {
-  display: inline-block;
   padding: 15px 20px;
+  display: inline-block;
+  font-family: $font-family-primary;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: $bold;
+  text-transform: uppercase;
+  color: $button-text-color-primary;
   background: $button-color-primary;
   border-radius: 22px;
-  color: $button-text-color-primary;
-  text-transform: uppercase;
-  font-family: $font-family-primary;
-  font-weight: $bold;
-  font-size: 12px;
   transition: $tr-fast;
   cursor: pointer;
-  line-height: 1;
+
   @media (max-width: $phone-width) {
     font-size: 10px;
   }
+
   &:hover {
     opacity: 0.5;
   }
+
   &_subscribe {
     position: absolute;
-    right: 0;
     top: calc(50% - 10px);
+    right: 0;
     padding: 0;
     border-radius: none;
   }
+
   &_big {
     position: relative;
+    overflow: hidden;
     width: 100%;
     max-width: 320px;
-    overflow: hidden;
+
     &:hover {
       opacity: 0.9;
     }
-    &:after {
-      content: '';
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 10px;
       display: block;
+      width: 20px;
+      min-height: 100%;
+      content: '';
       background-image: url('assets/img/arrow-forward.svg');
       background-repeat: no-repeat;
       background-position: center;
-      position: absolute;
-      right: 10px;
-      top: 0;
-      width: 20px;
-
-      min-height: 100%;
     }
   }
+
   &_bigger {
     padding: 15px 26px;
   }
+
   &_white {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
     position: relative;
     z-index: 10;
-    transition: $tr-fast;
-    color: $button-text-color-secondary;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 12px;
+    color: $button-text-color-secondary;
     background: none;
+    transition: $tr-fast;
+    cursor: pointer;
+
     @media (max-width: $phone-width) {
       font-size: 10px;
     }
-    &:before {
-      content: '';
+
+    &::before {
       position: absolute;
-      background: $button-text-color-secondary;
-      left: 0;
+      z-index: -1;
+      top: 0;
       right: 0;
       bottom: 0;
-      top: 0;
-      z-index: -1;
+      left: 0;
+      content: '';
+      background: $button-text-color-secondary;
       border-radius: 22px;
       transition: $tr-fast;
     }
-    &:after {
-      content: '';
+
+    &::after {
       position: absolute;
-      left: 2px;
+      z-index: -1;
+      top: 2px;
       right: 2px;
       bottom: 2px;
-      top: 2px;
-      z-index: -1;
-      border-radius: 22px;
+      left: 2px;
+      content: '';
       background: #fff;
+      border-radius: 22px;
       transition: $tr-fast;
     }
+
     &:hover {
       opacity: 1;
-      &:before {
+
+      &::before {
         opacity: 0.5;
       }
     }
   }
+
   &_no-bg {
-    background: none;
     padding: 0;
-    border-radius: 0;
     color: $button-text-color-secondary;
+    background: none;
+    border-radius: 0;
+
     &:hover {
       opacity: 1;
       color: $text-color-brightness-50;
     }
   }
+
   &_no-bg-grey {
     color: $text-color-brightness-50;
+
     &:hover {
       color: $text-color-brightness-50;
       background: none;
     }
   }
+
   &_margin-r {
     margin-bottom: 19px;
   }

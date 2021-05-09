@@ -1,16 +1,18 @@
 .ui-kit {
   margin-top: 140px;
   margin-bottom: 130px;
+
   &__first-row {
+    margin-bottom: 54px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 18px;
-    margin-bottom: 54px;
   }
+
   &__last-row {
+    margin-bottom: 54px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 18px;
-    margin-bottom: 54px;
   }
 }

@@ -1,92 +1,104 @@
 .circle-diagram {
   display: flex;
   align-items: flex-end;
+
   @media (max-width: $table-width) {
     display: block;
   }
+
   @media (max-width: $phone-width) {
     display: flex;
     align-items: center;
   }
+
   &__container {
-    width: 126px;
-    height: 125px;
     position: relative;
     display: flex;
+    width: 126px;
+    height: 125px;
     justify-content: center;
     align-items: center;
   }
+
   &__wrapper {
     position: absolute;
     z-index: 10;
     width: 125px;
     height: 124px;
   }
+
   &__voices {
     position: relative;
     top: -9px;
     left: -2px;
-    white-space: pre-wrap;
-    text-align: center;
     max-width: 70px;
     max-height: 35px;
+    font-family: $font-family-primary;
     font-size: 16px;
     line-height: 15px;
-    color: $primary-color;
-    font-family: $font-family-primary;
     font-weight: $bold;
+    text-align: center;
+    white-space: pre-wrap;
+    color: $primary-color;
+
     i {
       font-size: 24px;
       line-height: 29px;
       font-style: normal;
     }
   }
+
   &__list {
+    margin-left: 26px;
     display: block;
     max-width: 180px;
-    margin-left: 26px;
     font-size: 14px;
     line-height: 24px;
     color: $text-color-brightness-75;
+
     @media (max-width: $phone-width) {
       font-size: 12px;
       line-height: 20px;
     }
   }
+
   &__list-item {
     display: flex;
     align-items: flex-start;
     white-space: pre-wrap;
+
+    &::before {
+      margin-top: 5px;
+      margin-right: 5px;
+      display: block;
+      width: 10px;
+      height: 10px;
+      content: '';
+      border-radius: 50%;
+    }
+
     &:first-child {
-      &:before {
+      &::before {
         background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
       }
     }
+
     &:nth-child(2) {
-      &:before {
+      &::before {
         background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
       }
     }
+
     &:nth-child(3) {
-      &:before {
+      &::before {
         background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       }
     }
+
     &:nth-child(4) {
-      &:before {
+      &::before {
         background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
       }
-    }
-    &:before {
-      content: '';
-      display: block;
-      max-width: 10px;
-      min-width: 10px;
-      min-height: 10px;
-      max-height: 10px;
-      border-radius: 50%;
-      margin-right: 5px;
-      margin-top: 5px;
     }
   }
 }
