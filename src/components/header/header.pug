@@ -28,9 +28,10 @@ mixin header({isEntered})
                 | Соглашения
           if !isEntered
             .header__buttons
-              a(href="sign-in-page.html").button.button_white.header__button
-                | Войти
-              a(href="registration-page.html").button.header__button
+              span.header__button-wrap
+                a(href="sign-in-page.html").button.button_white.button_small
+                  | Войти
+              a(href="registration-page.html").button.button_small
                 | Зарегистрироваться
           else 
             a(href="/mock-address/change-me").header__cabinet
@@ -61,10 +62,11 @@ mixin header({isEntered})
             a.header__link(href="/mock-address/change-me" aria-label="информация о нас")
               | Соглашения
         if !isEntered
-          a(href="sign-in-page.html").button.button_white.header__button
-            | Войти
+          span.header__button-wrap
+            a(href="sign-in-page.html").button.button_white.button_small
+              | Войти
           br
-          a(href="registration-page.html").button.header__button
+          a(href="registration-page.html").button.button_small
             | Зарегистрироваться
         else 
           a(href="/mock-address/change-me").header__cabinet
