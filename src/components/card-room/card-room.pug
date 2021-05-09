@@ -16,7 +16,7 @@ mixin card-room(images,roomDetails)
           span.card-room__head-num
             | #{roomDetails.number}
           span.card-room__type
-            | #{roomDetails.type}
+            | #{roomDetails.type ? roomDetails.type : ''}
         span.card-room__head-price
           span.card-room__head-sum
             | #{roomDetails.priceForOneDay}₽ 

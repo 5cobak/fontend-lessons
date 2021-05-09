@@ -80,7 +80,7 @@ export default class DateDropdown {
         onSelect: addEventsOnSelect,
         clearButton: true,
         navTitles: {
-          days: 'MM<br>yyyy',
+          days: 'MM yyyy',
         },
       });
       that.datepicker = $firstInput.datepicker().data('datepicker');

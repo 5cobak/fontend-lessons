@@ -29,12 +29,16 @@ export default class FilterDate {
     const hideDatePicker = this.hideDatePicker.bind(this);
     const setNewFormat = this.setNewFormat.bind(this);
     const formatDate = this.formatDate.bind(this);
+
     this.input.datepicker({
       showEvent: 'click',
       offset: 5,
       range: true,
       clearButton: true,
       dateFormat: 'd M',
+      navTitles: {
+        days: 'MM yyyy',
+      },
       onSelect: formatDate,
       onHide: setNewFormat,
     });
@@ -42,7 +46,7 @@ export default class FilterDate {
     this.calendar = input.datepicker().data('datepicker').$datepicker;
     const $clearButton = this.calendar.find('.datepicker--button');
     const $buttonsParent = this.calendar.find('.datepicker--buttons');
-    $buttonsParent.append('<span class="datepicker--button-access">Применить</span>');
+    $buttonsParent.append('<span class="datepicker--button">Применить</span>');
 
     const $buttonAccess = $clearButton.next();
 

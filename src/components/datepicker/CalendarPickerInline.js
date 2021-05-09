@@ -11,7 +11,7 @@ export default class CalendarPickerInline {
         inline: true,
         clearButton: true,
         navTitles: {
-          days: 'MM<br>yyyy',
+          days: 'MM yyyy',
         },
       });
 
