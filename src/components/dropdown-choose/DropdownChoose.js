@@ -7,7 +7,7 @@ class DropdownChoose {
 
   createEl(element) {
     const dropdown = document.createElement('div');
-    dropdown.className = 'dropdown-choose';
+    dropdown.className = 'dropdown-choose js-dropdown-choose';
     dropdown.tabIndex = 0;
     dropdown.style.maxWidth = `${this.maxWidth}px`;
     element.append(dropdown);
@@ -16,9 +16,9 @@ class DropdownChoose {
 
   createUpperField() {
     const upperField = `
-    <div class='dropdown-choose__upper-field'>
-      <span class='dropdown-choose__main-text'>${this.placeholder}</span>
-      <div class='dropdown-choose__arrow'></div>
+    <div class='dropdown-choose__upper-field js-dropdown-choose__upper-field'>
+      <span class='dropdown-choose__main-text js-dropdown-choose__main-text'>${this.placeholder}</span>
+      <div class='dropdown-choose__arrow js-dropdown-choose__arrow'></div>
     </div>
     `;
     this.parentElement.insertAdjacentHTML('afterbegin', upperField);
@@ -26,21 +26,21 @@ class DropdownChoose {
 
   createMenu() {
     const menu = document.createElement('div');
-    menu.className = 'dropdown-choose__menu';
+    menu.className = 'dropdown-choose__menu js-dropdown-choose__menu';
     this.parentElement.append(menu);
     return menu;
   }
 
   createPlusMinus() {
     this.plusMinusEl = `
-    <div class='dropdown-choose__count-block'>
-      <div class='dropdown-choose__minus dropdown-choose__minus_no-active'>
+    <div class='dropdown-choose__count-block js-dropdown-choose__count-block'>
+      <div class='dropdown-choose__minus js-dropdown-choose__minus dropdown-choose__minus_no-active'>
         -
       </div>
-      <div class='dropdown-choose__item-count'>
+      <div class='dropdown-choose__item-count js-dropdown-choose__item-count'>
         0
       </div>
-      <div class='dropdown-choose__plus'>
+      <div class='dropdown-choose__plus js-dropdown-choose__plus'>
         +
       </div>
     </div>
@@ -51,8 +51,8 @@ class DropdownChoose {
     this.createPlusMinus();
     const itemsArray = items.map(
       (item) => `
-      <div class='dropdown-choose__item'>
-        <div class='dropdown-choose__item-text'>
+      <div class='dropdown-choose__item js-dropdown-choose__item'>
+        <div class='dropdown-choose__item-text js-dropdown-choose__item-text'>
           ${item}
         </div>
         ${this.plusMinusEl}
@@ -66,24 +66,25 @@ class DropdownChoose {
     if (!this.isButtons) return;
 
     this.buttons = `
-      <div class='dropdown-choose__buttons'>
-        <div class='dropdown-choose__btn-clear dropdown-choose__btn-clear_hidden'>Отчистить</div>
-        <div class='dropdown-choose__btn-access'>Применить</div>
+      <div class='dropdown-choose__buttons js-dropdown-choose__buttons'>
+        <div class='dropdown-choose__btn-clear js-dropdown-choose__btn-clear dropdown-choose__btn-clear_hidden'>Отчистить</div>
+        <div class='dropdown-choose__btn-access js-dropdown-choose__btn-access'>Применить</div>
       </div>
     `;
   }
 
   showCurrentDropdown(e) {
-    const targetField = e.target.closest('.dropdown-choose__upper-field');
+    const target = e.target.closest('.js-dropdown-choose__upper-field');
 
-    if (!targetField) return;
-    const menu = this.parentElement.querySelector('.dropdown-choose__menu');
-    const arrow = this.parentElement.querySelector('.dropdown-choose__arrow');
+    if (!target) return;
+    const menu = this.parentElement.querySelector('.js-dropdown-choose__menu');
+    const arrow = this.parentElement.querySelector('.js-dropdown-choose__arrow');
+    const textField = target;
 
-    this.parentElement.classList.add('dropdown-choose_active');
-    menu.classList.add('dropdown-choose__menu_active');
-    arrow.classList.add('dropdown-choose__arrow_active');
-    targetField.classList.add('dropdown-choose__upper-field_active');
+    this.parentElement.classList.toggle('dropdown-choose_active');
+    menu.classList.toggle('dropdown-choose__menu_active');
+    arrow.classList.toggle('dropdown-choose__arrow_active');
+    textField.classList.toggle('dropdown-choose__upper-field_active');
   }
 
   addEventsByClickOnItems() {
@@ -92,13 +93,12 @@ class DropdownChoose {
   }
 
   hideAllDropdowns(e) {
-    const target = e.target.closest('.dropdown-choose');
-
+    const target = e.target.closest('.js-dropdown-choose');
     if (target === this.parentElement) return;
 
-    const targetField = this.parentElement.querySelector('.dropdown-choose__upper-field');
-    const menu = this.parentElement.querySelector('.dropdown-choose__menu');
-    const arrow = this.parentElement.querySelector('.dropdown-choose__arrow');
+    const targetField = this.parentElement.querySelector('.js-dropdown-choose__upper-field');
+    const menu = this.parentElement.querySelector('.js-dropdown-choose__menu');
+    const arrow = this.parentElement.querySelector('.js-dropdown-choose__arrow');
 
     this.parentElement.classList.remove('dropdown-choose_active');
     menu.classList.remove('dropdown-choose__menu_active');
@@ -113,7 +113,7 @@ class DropdownChoose {
 
   getStringMultiVariant(items) {
     return items.map((item, index) => {
-      const count = item.querySelector('.dropdown-choose__item-count').innerText;
+      const count = item.querySelector('.js-dropdown-choose__item-count').innerText;
       if (count === 0) {
         return null;
       } else {
@@ -125,7 +125,7 @@ class DropdownChoose {
 
   getLastItemVal(items) {
     const lastItem = items[items.length - 1];
-    const count = lastItem.querySelector('.dropdown-choose__item-count').innerText;
+    const count = lastItem.querySelector('.js-dropdown-choose__item-count').innerText;
     if (count === 0) {
       return null;
     } else {
@@ -141,16 +141,16 @@ class DropdownChoose {
   }
 
   changeText() {
-    const items = this.menu.querySelectorAll('.dropdown-choose__item');
-    const upperField = this.parentElement.querySelector('.dropdown-choose__upper-field');
-    const upperFieldText = upperField.querySelector('.dropdown-choose__main-text');
-    const buttonClear = this.parentElement.querySelector('.dropdown-choose__btn-clear');
+    const items = this.menu.querySelectorAll('.js-dropdown-choose__item');
+    const upperField = this.parentElement.querySelector('.js-dropdown-choose__upper-field');
+    const upperFieldText = upperField.querySelector('.js-dropdown-choose__main-text');
+    const buttonClear = this.parentElement.querySelector('.js-dropdown-choose__btn-clear');
 
     items.map = [].map;
     items.reduce = [].reduce;
     let currentItems = [];
 
-    const countElements = this.menu.querySelectorAll('.dropdown-choose__item-count');
+    const countElements = this.menu.querySelectorAll('.js-dropdown-choose__item-count');
     countElements.map = [].map;
     countElements.reduce = [].reduce;
     const sumOfCounts = countElements.map((item) => Number(item.innerText)).reduce((acc, item) => acc + item);
@@ -160,10 +160,12 @@ class DropdownChoose {
 
     if (buttonClear) {
       if (this.totalCount === 0) buttonClear.classList.add('dropdown-choose__btn-clear_hidden');
-      else if (this.totalCount > 0) buttonClear.classList.add('dropdown-choose__btn-clear_hidden');
+      else if (this.totalCount > 0) {
+        buttonClear.classList.remove('dropdown-choose__btn-clear_hidden');
+      }
     }
 
-    let formattedItems = currentItems.filter((item) => item[0] !== '0').join(',');
+    let formattedItems = currentItems.filter((item) => item[0] !== '0').join(', ');
 
     if (formattedItems.length >= this.textLength) {
       formattedItems = `${formattedItems.slice(0, this.textLength)}...`;
@@ -177,8 +179,8 @@ class DropdownChoose {
   handleIncrement(e) {
     const plus = e.currentTarget;
     const item = plus.parentElement;
-    const countItem = item.querySelector('.dropdown-choose__item-count');
-    const minus = item.querySelector('.dropdown-choose__minus');
+    const countItem = item.querySelector('.js-dropdown-choose__item-count');
+    const minus = item.querySelector('.js-dropdown-choose__minus');
 
     let count = Number(countItem.innerText);
     minus.classList.remove('dropdown-choose__minus_no-active');
@@ -191,25 +193,25 @@ class DropdownChoose {
   handleDecrement(e) {
     const minus = e.currentTarget;
     const item = minus.parentElement;
-    const countItem = item.querySelector('.dropdown-choose__item-count');
+    const countItem = item.querySelector('.js-dropdown-choose__item-count');
     let count = Number(countItem.innerText);
     if (count === 0) return;
     count -= 1;
     countItem.innerHTML = count;
 
-    if (count === 0) $(minus).addClass('dropdown-choose__minus_no-active');
+    if (count === 0) minus.classList.add('dropdown-choose__minus_no-active');
 
     this.changeText();
   }
 
   setEventsForPlusMinus() {
-    const items = this.menu.querySelectorAll('.dropdown-choose__item');
+    const items = this.menu.querySelectorAll('.js-dropdown-choose__item');
     const handleIncrement = this.handleIncrement.bind(this);
     const handleDecrement = this.handleDecrement.bind(this);
 
     items.forEach((item) => {
-      const plus = item.querySelector('.dropdown-choose__plus');
-      const minus = item.querySelector('.dropdown-choose__minus');
+      const plus = item.querySelector('.js-dropdown-choose__plus');
+      const minus = item.querySelector('.js-dropdown-choose__minus');
 
       plus.addEventListener('click', handleIncrement);
       minus.addEventListener('click', handleDecrement);
@@ -218,9 +220,9 @@ class DropdownChoose {
 
   clearUpperTextField() {
     const { menu } = this;
-    const itemCounts = menu.querySelectorAll('.dropdown-choose__item-count');
-    const mainText = this.parentElement.querySelector('.dropdown-choose__main-text');
-    const clearBtn = menu.querySelector('.dropdown-choose__btn-clear');
+    const itemCounts = menu.querySelectorAll('.js-dropdown-choose__item-count');
+    const mainText = this.parentElement.querySelector('.js-dropdown-choose__main-text');
+    const clearBtn = menu.querySelector('.js-dropdown-choose__btn-clear');
     itemCounts.map = [].map;
     itemCounts.map((item) => {
       const newItems = item;
@@ -228,17 +230,18 @@ class DropdownChoose {
       return newItems;
     });
 
-    const minuses = menu.querySelectorAll('.dropdown-choose__minus');
+    const minuses = menu.querySelectorAll('.js-dropdown-choose__minus');
     minuses.forEach((item) => item.classList.add('dropdown-choose__minus_no-active'));
     mainText.innerText = this.placeholder;
-    $(clearBtn).addClass('dropdown-choose__btn-clear_hidden');
+    clearBtn.classList.add('dropdown-choose__btn-clear_hidden');
   }
 
   hideDropdownMenu() {
     const { menu } = this;
-    const mainText = this.parentElement.querySelector('.dropdown-choose__main-text');
+    const mainText = this.parentElement.querySelector('.js-dropdown-choose__main-text');
     const upperField = mainText.parentElement;
-    const arrow = this.parentElement.querySelector('.dropdown-choose__arrow');
+    const arrow = this.parentElement.querySelector('.js-dropdown-choose__arrow');
+
     upperField.parentElement.classList.remove('dropdown-choose_active');
     menu.classList.remove('dropdown-choose__menu_active');
     arrow.classList.remove('dropdown-choose__arrow_active');
@@ -250,8 +253,8 @@ class DropdownChoose {
 
     const { menu } = this;
 
-    const clearBtn = menu.querySelector('.dropdown-choose__btn-clear');
-    const accessBtn = menu.querySelector('.dropdown-choose__btn-access');
+    const clearBtn = menu.querySelector('.js-dropdown-choose__btn-clear');
+    const accessBtn = menu.querySelector('.js-dropdown-choose__btn-access');
 
     const clearUpperTextField = this.clearUpperTextField.bind(this);
     const hideDropdownMenu = this.hideDropdownMenu.bind(this);

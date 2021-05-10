@@ -104,12 +104,9 @@
         }
       }
       #{$self}__buttons {
-        
         display: flex;
         flex-direction: column;
-        
         justify-content: space-between;
-        
       }
       #{$self}__button {
         margin-bottom: 20px;
@@ -167,6 +164,7 @@
   &__button-wrap {
     margin-right: 20px;
     display: inline-block;
+
     @media (max-width: $sm-desktop-width) {
       margin-right: 0;
       margin-bottom: 20px;

@@ -9,10 +9,8 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
     "test": "jest",
     "deploy": "gh-pages -d dist",
-    "lint:ts": "eslint .",
-    "format:js": "eslint . fix--",
-    "lint:scss": "stylelint \"**/*.scss\"",
-    "format:scss": "stylelint \"**/*.scss\" fix--"
+    "lint:js": "eslint .",
+    "lint:scss": "stylelint \"**/*.scss\""
   },
   "browsersList": "> 0.25%, not dead",
   "author": "Arslanov Ismagil",

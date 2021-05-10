@@ -15,7 +15,7 @@ $(document).ready(() => {
           ['младенец', 'младенцев', 'младенцев'],
         ],
         maxWidth: 320,
-        textLength: 25,
+        textLength: 20,
         buttons: true,
       });
     });
@@ -36,7 +36,7 @@ $(document).ready(() => {
           ['ванная комната', 'ванные комнаты', 'ванных комнат'],
         ],
         maxWidth: 266,
-        textLength: 25,
+        textLength: 20,
       });
     });
   }
