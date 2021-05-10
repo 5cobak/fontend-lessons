@@ -10,9 +10,8 @@ $(document).ready(() => {
         element: item,
         placeholder: 'Сколько гостей',
         titles: ['взрослые', 'дети', 'младенцы'],
+        mainDeclination: ['Гость', 'Гостей', 'Гость'],
         declinations: [
-          ['взрослый', 'взрослых', 'взрослых'],
-          ['дитё', 'детей', 'детей'],
           ['младенец', 'младенцев', 'младенцев'],
         ],
         maxWidth: 320,
@@ -38,7 +37,6 @@ $(document).ready(() => {
         ],
         maxWidth: 266,
         textLength: 25,
-        buttons: false,
       });
     });
   }

@@ -1,8 +1,8 @@
 import declination from '../helpers/declination';
 
 class DropdownChoose {
-  constructor({ element, placeholder, titles, declinations, maxWidth, textLength, buttons }) {
-    this.init(element, placeholder, titles, declinations, maxWidth, textLength, buttons);
+  constructor({ element, placeholder, titles, mainDeclination, declinations, maxWidth, textLength, buttons }) {
+    this.init(element, placeholder, titles, mainDeclination, declinations, maxWidth, textLength, buttons);
   }
 
   createEl(element) {
@@ -34,7 +34,7 @@ class DropdownChoose {
   createPlusMinus() {
     this.plusMinusEl = `
     <div class='dropdown-choose__count-block'>
-      <div class='dropdown-choose__minus dropdown-choose__minus_noactive'>
+      <div class='dropdown-choose__minus dropdown-choose__minus_no-active'>
         -
       </div>
       <div class='dropdown-choose__item-count'>
@@ -77,35 +77,70 @@ class DropdownChoose {
     const targetField = e.target.closest('.dropdown-choose__upper-field');
 
     if (!targetField) return;
-    const menu = targetField.parentElement.querySelector('.dropdown-choose__menu');
-    const arrow = targetField.parentElement.querySelector('.dropdown-choose__arrow');
-    $(targetField.parentElement).toggleClass('dropdown-choose_active');
-    $(menu).toggleClass('dropdown-choose__menu_active');
-    $(arrow).toggleClass('dropdown-choose__arrow_active');
-    $(targetField).toggleClass('dropdown-choose__upper-field_active');
+    const menu = this.parentElement.querySelector('.dropdown-choose__menu');
+    const arrow = this.parentElement.querySelector('.dropdown-choose__arrow');
+
+    this.parentElement.classList.add('dropdown-choose_active');
+    menu.classList.add('dropdown-choose__menu_active');
+    arrow.classList.add('dropdown-choose__arrow_active');
+    targetField.classList.add('dropdown-choose__upper-field_active');
+  }
+
+  addEventsByClickOnItems() {
+    const showCurrentDropdown = this.showCurrentDropdown.bind(this);
+    this.parentElement.addEventListener('click', showCurrentDropdown);
   }
 
   hideAllDropdowns(e) {
     const target = e.target.closest('.dropdown-choose');
-    if (target) return;
-    const $targetField = $('.dropdown-choose__upper-field');
-    const $menu = $('.dropdown-choose__menu');
-    const $arrow = $('.dropdown-choose__arrow');
 
-    $($targetField).parent().removeClass('dropdown-choose_active');
-    $($menu).removeClass('dropdown-choose__menu_active');
-    $($arrow).removeClass('dropdown-choose__arrow_active');
-    $($targetField).removeClass('dropdown-choose__upper-field_active');
+    if (target === this.parentElement) return;
+
+    const targetField = this.parentElement.querySelector('.dropdown-choose__upper-field');
+    const menu = this.parentElement.querySelector('.dropdown-choose__menu');
+    const arrow = this.parentElement.querySelector('.dropdown-choose__arrow');
+
+    this.parentElement.classList.remove('dropdown-choose_active');
+    menu.classList.remove('dropdown-choose__menu_active');
+    arrow.classList.remove('dropdown-choose__arrow_active');
+    targetField.classList.remove('dropdown-choose__upper-field_active');
   }
 
-  addEventsByClickOnItems() {
+  addEventsForHide() {
     const hideAll = this.hideAllDropdowns.bind(this);
-    const showCurrent = this.showCurrentDropdown.bind(this);
-    $(document).on('click', hideAll);
-    $(this.parentElement).on('click', showCurrent);
+    document.addEventListener('click', hideAll);
   }
 
-  changeTextInUpperField() {
+  getStringMultiVariant(items) {
+    return items.map((item, index) => {
+      const count = item.querySelector('.dropdown-choose__item-count').innerText;
+      if (count === 0) {
+        return null;
+      } else {
+        const declinedWord = `${count} ${declination(count, this.declinations[index])}`;
+        return declinedWord;
+      }
+    });
+  }
+
+  getLastItemVal(items) {
+    const lastItem = items[items.length - 1];
+    const count = lastItem.querySelector('.dropdown-choose__item-count').innerText;
+    if (count === 0) {
+      return null;
+    } else {
+      const declinedWord = `${count} ${declination(count, this.declinations[0])}`;
+      return declinedWord;
+    }
+  }
+
+  getStringSingleVariant(items) {
+    const currentItems = [`${this.totalCount} ${declination(this.totalCount, this.mainDeclination)}`];
+    currentItems.push(this.getLastItemVal(items));
+    return currentItems;
+  }
+
+  changeText() {
     const items = this.menu.querySelectorAll('.dropdown-choose__item');
     const upperField = this.parentElement.querySelector('.dropdown-choose__upper-field');
     const upperFieldText = upperField.querySelector('.dropdown-choose__main-text');
@@ -115,51 +150,45 @@ class DropdownChoose {
     items.reduce = [].reduce;
     let currentItems = [];
 
-    currentItems = items.map((item, index) => {
-      const count = item.querySelector('.dropdown-choose__item-count').innerText;
-      if (count === 0) {
-        return false;
-      } else {
-        const declinedWord = `${count} ${declination(count, this.declinations[index])}`;
-        return declinedWord;
-      }
-    });
-    this.totalCount = 0;
     const countElements = this.menu.querySelectorAll('.dropdown-choose__item-count');
     countElements.map = [].map;
     countElements.reduce = [].reduce;
-    const sumOfCounts = countElements.map((item) => +item.innerText).reduce((acc, item) => acc + item);
+    const sumOfCounts = countElements.map((item) => Number(item.innerText)).reduce((acc, item) => acc + item);
     this.totalCount = sumOfCounts;
+    if (this.mainDeclination) currentItems = this.getStringSingleVariant(items);
+    else currentItems = this.getStringMultiVariant(items);
 
-    if (this.totalCount === 0) $(buttonClear).addClass('dropdown-choose__btn-clear_hidden');
-    else if (this.totalCount > 0) $(buttonClear).removeClass('dropdown-choose__btn-clear_hidden');
-
-    let rightItems = currentItems.filter((item) => item[0] !== '0').join(',');
-
-    if (rightItems.length > this.textLength) {
-      rightItems = `${rightItems.slice(0, this.textLength)}...`;
+    if (buttonClear) {
+      if (this.totalCount === 0) buttonClear.classList.add('dropdown-choose__btn-clear_hidden');
+      else if (this.totalCount > 0) buttonClear.classList.add('dropdown-choose__btn-clear_hidden');
     }
 
-    upperFieldText.innerHTML = rightItems;
+    let formattedItems = currentItems.filter((item) => item[0] !== '0').join(',');
 
-    if (rightItems.length < 1) upperFieldText.innerHTML = this.placeholder;
+    if (formattedItems.length >= this.textLength) {
+      formattedItems = `${formattedItems.slice(0, this.textLength)}...`;
+    }
+
+    upperFieldText.innerHTML = formattedItems;
+
+    if (formattedItems.length < 1) upperFieldText.innerHTML = this.placeholder;
   }
 
-  incrementCount(e) {
+  handleIncrement(e) {
     const plus = e.currentTarget;
     const item = plus.parentElement;
     const countItem = item.querySelector('.dropdown-choose__item-count');
     const minus = item.querySelector('.dropdown-choose__minus');
 
     let count = Number(countItem.innerText);
-    $(minus).removeClass('dropdown-choose__minus_no-active');
+    minus.classList.remove('dropdown-choose__minus_no-active');
     count += 1;
 
     countItem.innerHTML = count;
-    this.changeTextInUpperField();
+    this.changeText();
   }
 
-  decrementCount(e) {
+  handleDecrement(e) {
     const minus = e.currentTarget;
     const item = minus.parentElement;
     const countItem = item.querySelector('.dropdown-choose__item-count');
@@ -169,20 +198,21 @@ class DropdownChoose {
     countItem.innerHTML = count;
 
     if (count === 0) $(minus).addClass('dropdown-choose__minus_no-active');
-    this.changeTextInUpperField();
+
+    this.changeText();
   }
 
   setEventsForPlusMinus() {
     const items = this.menu.querySelectorAll('.dropdown-choose__item');
-    const increment = this.incrementCount.bind(this);
-    const decrement = this.decrementCount.bind(this);
+    const handleIncrement = this.handleIncrement.bind(this);
+    const handleDecrement = this.handleDecrement.bind(this);
 
     items.forEach((item) => {
       const plus = item.querySelector('.dropdown-choose__plus');
       const minus = item.querySelector('.dropdown-choose__minus');
 
-      plus.addEventListener('click', increment);
-      minus.addEventListener('click', decrement);
+      plus.addEventListener('click', handleIncrement);
+      minus.addEventListener('click', handleDecrement);
     });
   }
 
@@ -199,7 +229,7 @@ class DropdownChoose {
     });
 
     const minuses = menu.querySelectorAll('.dropdown-choose__minus');
-    minuses.forEach((item) => item.classList.add('dropdown-choose__minus_noactive'));
+    minuses.forEach((item) => item.classList.add('dropdown-choose__minus_no-active'));
     mainText.innerText = this.placeholder;
     $(clearBtn).addClass('dropdown-choose__btn-clear_hidden');
   }
@@ -209,13 +239,15 @@ class DropdownChoose {
     const mainText = this.parentElement.querySelector('.dropdown-choose__main-text');
     const upperField = mainText.parentElement;
     const arrow = this.parentElement.querySelector('.dropdown-choose__arrow');
-    $(upperField.parentElement).removeClass('dropdown-choose_active');
-    $(menu).removeClass('dropdown-choose__menu_active');
-    $(arrow).removeClass('dropdown-choose__arrow_active');
-    $(upperField).removeClass('dropdown-choose__upper-field_active');
+    upperField.parentElement.classList.remove('dropdown-choose_active');
+    menu.classList.remove('dropdown-choose__menu_active');
+    arrow.classList.remove('dropdown-choose__arrow_active');
+    upperField.classList.remove('dropdown-choose__upper-field_active');
   }
 
   setEventsForButtons() {
+    if (!this.isButtons) return;
+
     const { menu } = this;
 
     const clearBtn = menu.querySelector('.dropdown-choose__btn-clear');
@@ -224,12 +256,13 @@ class DropdownChoose {
     const clearUpperTextField = this.clearUpperTextField.bind(this);
     const hideDropdownMenu = this.hideDropdownMenu.bind(this);
 
-    $(clearBtn).on('click', clearUpperTextField);
-    $(accessBtn).on('click', hideDropdownMenu);
+    clearBtn.addEventListener('click', clearUpperTextField);
+    accessBtn.addEventListener('click', hideDropdownMenu);
   }
 
-  init(element, placeholder, titles, declinations, maxWidth, textLength, buttons) {
+  init(element, placeholder, titles, mainDeclination, declinations, maxWidth, textLength, buttons) {
     this.placeholder = placeholder;
+    this.mainDeclination = mainDeclination || null;
     this.declinations = declinations;
     this.textLength = textLength;
     this.isButtons = buttons;
@@ -239,6 +272,7 @@ class DropdownChoose {
     this.createUpperField();
     this.menu = this.createMenu();
     this.addEventsByClickOnItems();
+    this.addEventsForHide();
     this.items = this.createItems(titles);
     this.createButtons();
     this.menu.insertAdjacentHTML('afterbegin', [this.items, this.buttons].join(''));
