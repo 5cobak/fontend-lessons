@@ -75,6 +75,6 @@
     "masonry-layout": "^4.2.2",
     "source-map": "^0.7.3",
     "stylelint-scss": "^3.19.0",
-    "swiper": "^6.4.5"
+    "swiper": "^6.5.1"
   }
 }
