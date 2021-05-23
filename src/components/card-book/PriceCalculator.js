@@ -17,11 +17,16 @@ class PriceCalculator {
 
     taxes.map = [].map;
     const taxWithDiscount = parseFloat(taxes[0].innerHTML.replace(/\s/g, '').match(/\d+/));
-    const taxesSum = taxes.map((tax) => parseFloat(tax.innerHTML.replace(/\s/g, ''))).reduce((acc, val) => acc + val);
+    const taxesSum = taxes
+      .map((tax) => parseFloat(tax.innerHTML.replace(/\s/g, '')))
+      .reduce((acc, val) => acc + val);
     let cleanSum = daysLag * priceForOneDayNum;
     let totalSum = cleanSum + taxesSum - discountNum;
     if (discountNum) {
       totalSum += taxWithDiscount;
+    }
+    if (!daysLag) {
+      totalSum = 0;
     }
     totalSum = `${totalSum}`.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
     cleanSum = `${cleanSum}`.replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
@@ -43,7 +48,10 @@ class PriceCalculator {
     const rub = '<span class="card-book__rub">₽</span>';
 
     daysEl.innerHTML = '';
-    daysEl.insertAdjacentHTML('beforeEnd', `${data.daysLag} ${declination(data.daysLag, ['сутки', 'суток', 'суток'])}`);
+    daysEl.insertAdjacentHTML(
+      'beforeEnd',
+      `${data.daysLag} ${declination(data.daysLag, ['сутки', 'суток', 'суток'])}`,
+    );
     cleanSumEl.innerHTML = '';
     cleanSumEl.insertAdjacentHTML('beforeEnd', `${data.cleanSum}${rub}`);
     totalSumEl.innerHTML = '';

@@ -1,6 +1,7 @@
 import FilterDate from './FilterDate';
 
 $(document).ready(() => {
-  const $inputs = $('.js-filter-date__input');
-  new FilterDate($inputs);
+  const inputs = document.querySelectorAll('.js-filter-date__input');
+
+  inputs.forEach((input) => new FilterDate(input));
 });

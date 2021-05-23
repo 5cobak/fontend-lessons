@@ -1,10 +1,10 @@
 class CalendarPickerInline {
   constructor(els) {
     this.els = els;
-    this.init();
+    this._init();
   }
 
-  createCalendar() {
+  _createCalendar() {
     this.els.forEach((item) => {
       $(item).datepicker({
         range: true,
@@ -21,8 +21,8 @@ class CalendarPickerInline {
     });
   }
 
-  init() {
-    this.createCalendar();
+  _init() {
+    this._createCalendar();
   }
 }
 

@@ -87,7 +87,8 @@
     border: none;
   }
 
-  &--button {
+  &--button,
+  &--button-access {
     display: inline-block;
     height: auto;
     flex: none;
@@ -173,6 +174,10 @@
   &:hover {
     color: #fff;
   }
+}
+
+.datepicker--cell.-focus-:not(.-current-, .-selected-) {
+  background: none;
 }
 
 .datepicker--cell.-current-.-in-range- {

@@ -1,7 +1,5 @@
 {
   "cSpell.enabled": true,
-  "cSpell.words": [
-    "favicons",
-    "swipers"
-  ]
+  "cSpell.words": ["favicons", "swipers"],
+  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
 }

@@ -1,25 +1,21 @@
 class DateDropdown {
   constructor(inputs) {
-    this.init(inputs);
-    this.disableInputEvent();
+    this._init(inputs);
   }
 
-  disableInputEvent() {
-    const handlerInput = (e) => {
-      if (e.keyCode === 9) return true;
-      e.preventDefault();
-      return false;
-    };
-
-    const inputs = document.querySelectorAll('.js-inputDisabled');
-    inputs.forEach((input) => input.addEventListener('keydown', handlerInput));
-  }
-
-  getDaysLag() {
-    const date1 = this.inputs[0].value.split('.').map((item) => Number(item));
-    const date2 = this.inputs[0].parentElement.nextSibling
-      .querySelector('input')
-      .value.split('.')
+  _getDaysLag() {
+    if (!this.$firstInput.val()) {
+      this.daysLag = 0;
+      if (this.callback) this.callback(this.daysLag);
+      return;
+    }
+    const date1 = this.$firstInput
+      .val()
+      .split('.')
+      .map((item) => Number(item));
+    const date2 = this.$secondInput
+      .val()
+      .split('.')
       .map((item) => Number(item));
 
     const firstDate = new Date(date1[2], date1[1] - 1, date1[0]);
@@ -27,87 +23,122 @@ class DateDropdown {
 
     if (Number.isNaN(secondDate.getTime())) return;
 
-    const daysLag = Math.ceil(Math.abs(secondDate.getTime() - firstDate.getTime()) / (1000 * 3600 * 24));
+    const daysLag = Math.ceil(
+      Math.abs(secondDate.getTime() - firstDate.getTime()) / (1000 * 3600 * 24),
+    );
 
     this.daysLag = daysLag;
     if (this.callback) this.callback(this.daysLag);
   }
 
-  formatDate(formattedDate, input) {
+  _handlerInput(e) {
+    if (e.keyCode === 9) return true;
+    e.preventDefault();
+    return false;
+  }
+
+  _handlerClickFirstInput() {
+    this.isDatepickerActive = !this.isDatepickerActive;
+    if (!this.isDatepickerActive) {
+      this.$datepicker.hide();
+    }
+  }
+
+  _handleClickSecondInput() {
+    this.isDatepickerActive = !this.isDatepickerActive;
+    this.$datepicker.show();
+    if (!this.isDatepickerActive) {
+      this.$datepicker.hide();
+    }
+  }
+
+  _formatDate(formattedDate, input) {
     const secondDate = formattedDate.split(',')[1];
     this.formattedDate = formattedDate;
     if (!secondDate) return;
     input.val(secondDate);
   }
 
-  addEventsOnSelect(formattedDate, ...rest) {
-    const $secondInput = $(rest[1].el.parentElement.nextSibling.querySelector('input'));
-    this.formatDate(formattedDate, $secondInput);
-
-    this.getDaysLag();
+  _hideDatepicker() {
+    this.$datepicker.hide();
   }
 
-  showDatepicker(e) {
-    const $firstInput = $(e.target.parentElement.previousSibling.querySelector('input'));
+  _handlerSelect(formattedDate) {
+    this._formatDate(formattedDate, this.$secondInput);
 
-    $firstInput.trigger('click');
+    this._getDaysLag();
   }
 
-  clearInputVal($secondInput) {
-    $secondInput.val('');
-  }
+  _createDateDropdown() {
+    const handlerSelect = this._handlerSelect.bind(this);
+    this.$firstInput = $(this.input);
+    this.$secondInput = this.$firstInput.parent().next().find('input');
+    this.isDatepickerActive = false;
 
-  hideDatePicker($firstInput) {
-    $firstInput.datepicker().data('datepicker').hide();
-  }
-
-  createDateDropdown(inputs) {
-    const that = this;
-    this.inputs = inputs;
-    const showDatepicker = this.showDatepicker.bind(this);
-    const addEventsOnSelect = this.addEventsOnSelect.bind(this);
-    const clearInputVal = this.clearInputVal.bind(this);
-    const hideDatePicker = this.hideDatePicker.bind(this);
-
-    this.inputs.forEach((input) => {
-      const $firstInput = $(input);
-      const $secondInput = $firstInput.parent().next().find('input');
-
-      $firstInput.datepicker({
-        showEvent: 'click',
-        offset: 5,
-        range: true,
-        onSelect: addEventsOnSelect,
-        clearButton: true,
-        navTitles: {
-          days: 'MM yyyy',
-        },
-      });
-      that.datepicker = $firstInput.datepicker().data('datepicker');
-
-      const $calendarEl = $firstInput.datepicker().data('datepicker').$datepicker;
-
-      $secondInput.on('click', showDatepicker);
-
-      const $clearButton = $calendarEl.find('.datepicker--button');
-      const $buttonsParent = $calendarEl.find('.datepicker--buttons');
-
-      $buttonsParent.append('<span class="datepicker--button">Применить</span>');
-      $clearButton.on('click', clearInputVal.bind(null, $secondInput));
-
-      const $buttonAccess = $clearButton.next();
-
-      $buttonAccess.on('mouseup', hideDatePicker.bind(null, $firstInput));
+    this.$firstInput.datepicker({
+      showEvent: 'click',
+      offset: 5,
+      range: true,
+      onSelect: handlerSelect,
+      clearButton: true,
+      minDate: new Date(),
+      navTitles: {
+        days: 'MM yyyy',
+      },
     });
+
+    this.$datepicker = this.$firstInput.datepicker().data('datepicker');
+
+    this.$calendarEl = this.$firstInput.datepicker().data('datepicker').$datepicker;
+
+    this.$clearButton = this.$calendarEl.find('.datepicker--button');
+    this.$buttonsParent = this.$calendarEl.find('.datepicker--buttons');
+    this.$buttonsParent.append('<span class="datepicker--button-access">Применить</span>');
+    this.$buttonAccess = this.$clearButton.next();
   }
 
-  keydownHandler(e) {
-    e.preventDefault();
-    return false;
+  _handlerClickClearButton() {
+    this.$secondInput.val('');
+    this.$firstInput.val('');
+    this._getDaysLag();
   }
 
-  init(inputs) {
-    this.createDateDropdown(inputs);
+  _handlerClickAccessButton() {
+    this.isDatepickerActive = false;
+    this._hideDatepicker();
+  }
+
+  _handlerClickOutside(e) {
+    const { target } = e;
+
+    const isTargetNotInput = target !== this.$firstInput && target !== this.$secondInput;
+    if (isTargetNotInput) {
+      this.isDatepickerActive = false;
+    }
+  }
+
+  _addEvents() {
+    const handlerInput = this._handlerInput.bind(this);
+    const handleClickSecondInput = this._handleClickSecondInput.bind(this);
+    const handlerClickClearButton = this._handlerClickClearButton.bind(this);
+    const handlerClickAccessButton = this._handlerClickAccessButton.bind(this);
+    const handlerClickFirstInput = this._handlerClickFirstInput.bind(this);
+    const handlerClickOutside = this._handlerClickOutside.bind(this);
+    this.$clearButton.on('click', handlerClickClearButton);
+
+    this.$secondInput.on('click', handleClickSecondInput);
+    this.$secondInput.on('keydown', handlerInput);
+    this.$firstInput.on('keydown', handlerInput);
+    this.$firstInput.on('click', handlerClickFirstInput);
+    this.$buttonAccess.on('mouseup', handlerClickAccessButton);
+    $(document).on('click', handlerClickOutside);
+  }
+
+  _init(input) {
+    this.isShowed = false;
+    this.input = input;
+    this._createDateDropdown();
+    this._addEvents();
   }
 }
 
