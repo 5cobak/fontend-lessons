@@ -1,10 +1,10 @@
 class MaskInput {
   constructor(inputs) {
     this.inputs = inputs;
-    this.init();
+    this._init();
   }
 
-  appendErrorMessage(message, element) {
+  _appendErrorMessage(message, element) {
     const err = `
           <div class="validate-error">${message}</div>
         `;
@@ -12,16 +12,16 @@ class MaskInput {
     element.parentElement.insertAdjacentHTML('beforeend', err);
   }
 
-  deleteErrorMessage(element) {
+  _deleteErrorMessage(element) {
     const err = element.parentElement.querySelector('.validate-error');
     if (err) err.remove();
   }
 
-  validateDate(value, element) {
+  _validateDate(value, element) {
     const input = element;
     const arrD = value.split('.');
-    const deleteError = this.deleteErrorMessage.bind(this);
-    const appendError = this.appendErrorMessage.bind(this);
+    const deleteError = this._deleteErrorMessage.bind(this);
+    const appendError = this._appendErrorMessage.bind(this);
     arrD[1] -= 1;
 
     const date = new Date(arrD[2], arrD[1], arrD[0]);
@@ -50,9 +50,9 @@ class MaskInput {
     }
   }
 
-  setMask() {
+  _setMask() {
     const elements = this.inputs;
-    const validate = this.validateDate.bind(this);
+    const validate = this._validateDate.bind(this);
     elements.forEach((item) => {
       $(item).inputmask('99.99.9999', {
         placeholder: 'ДД.ММ.ГГГГ',
@@ -65,8 +65,8 @@ class MaskInput {
     });
   }
 
-  init() {
-    this.setMask();
+  _init() {
+    this._setMask();
   }
 }
 
