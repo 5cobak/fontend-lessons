@@ -70,6 +70,7 @@ class DateDropdown {
   }
 
   _createDateDropdown() {
+    if (!this.input) return;
     const handlerSelect = this._handlerSelect.bind(this);
     this.$firstInput = $(this.input);
     this.$secondInput = this.$firstInput.parent().next().find('input');
