@@ -3,10 +3,10 @@ import declination from '../helpers/declination';
 
 class PriceCalculator {
   constructor(parent) {
-    this.init(parent);
+    this._init(parent);
   }
 
-  calculate(daysLag) {
+  _calculate(daysLag) {
     const card = this.parent;
 
     const priceForOneDayStr = card.querySelector('.js-card-book__price-for-one-day').innerHTML;
@@ -44,7 +44,7 @@ class PriceCalculator {
     const cleanSumEl = card.querySelector('.js-card-book__clean-sum');
     const daysEl = card.querySelector('.js-card-book__days');
     const totalSumEl = card.querySelector('.js-card-book__total-price');
-    const data = this.calculate(this.dateDropdown.daysLag);
+    const data = this._calculate(this.dateDropdown.daysLag);
     const rub = '<span class="card-book__rub">₽</span>';
 
     daysEl.innerHTML = '';
@@ -58,7 +58,7 @@ class PriceCalculator {
     totalSumEl.insertAdjacentHTML('beforeEnd', `${data.totalSum}${rub}`);
   }
 
-  init(parent) {
+  _init(parent) {
     this.parent = parent;
     const inputs = this.parent.querySelectorAll('.js-card-book__dropdown-input');
     const customDateDropdown = {};
