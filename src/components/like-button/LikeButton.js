@@ -1,34 +1,37 @@
 class LikeButton {
-  constructor($elem) {
-    this.$elem = $elem;
-    this.countLike = +$elem.find('.js-like-button__likes').text();
-    this.init();
+  constructor(button) {
+    this.$button = $(button);
+    this.countLike = +this.$button.find('.js-like-button__likes').text();
+    this._init();
   }
 
-  toggleLike() {
-    const { $elem } = this;
-    if (!$elem.hasClass('like-button_active')) {
-      $elem.find('.js-like-button__like').css('opacity', '0');
-      $elem.find('.js-like-button__like-favorite').css('opacity', '1');
+  _toggleLike() {
+    const { $button } = this;
+    if (!$button.hasClass('like-button_active')) {
+      $button.find('.js-like-button__like').css('opacity', '0');
+      $button.find('.js-like-button__like-favorite').css('opacity', '1');
       this.countLike += 1;
-      $elem.find('.js-like-button__likes').text(this.countLike);
+      $button.find('.js-like-button__likes').text(this.countLike);
     } else {
-      $elem.find('.js-like-button__like').css('opacity', '1');
-      $elem.find('.js-like-button__like-favorite').css('opacity', '0');
+      $button.find('.js-like-button__like').css('opacity', '1');
+      $button.find('.js-like-button__like-favorite').css('opacity', '0');
       this.countLike -= 1;
-      $elem.find('.js-like-button__likes').text(this.countLike);
+      $button.find('.js-like-button__likes').text(this.countLike);
     }
-    $elem.toggleClass('like-button_active');
+    $button.toggleClass('like-button_active');
+  }
+
+  _handlerClick() {
+    this._toggleLike();
   }
 
   addEvents() {
-    const { $elem } = this;
-    const toggleLike = this.toggleLike.bind(this);
+    const handlerClick = this._handlerClick.bind(this);
 
-    $elem.on('click', toggleLike);
+    this.$button.on('click', handlerClick);
   }
 
-  init() {
+  _init() {
     this.addEvents();
   }
 }
