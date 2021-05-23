@@ -1,30 +1,37 @@
 export default class Burger {
-  constructor(parents) {
-    this.parents = parents;
-    this.init();
+  constructor(parent) {
+    this.parent = parent;
+    this._init();
   }
 
-  hideShowMenu(e) {
-    const burger = e.target.closest('.js-header__burger');
-
-    const layout = burger.querySelector('.js-header__burger-layout');
-    const headerDropdown = burger.closest('.js-header').querySelector('.js-header__nav_dropdown');
-    const shadow = burger.closest('.js-header').querySelector('.js-header__nav-shadow');
-    $(layout).toggleClass('header__burger-layout_active');
-    $(headerDropdown).toggleClass('header__nav_dropdown-active');
-    $(shadow).toggleClass('header__nav-shadow_active');
-    $('body').toggleClass('stop-scrolling');
+  _toggleMenu() {
+    this.burgerLayout.classList.toggle('header__burger-layout_active');
+    this.headerDropdown.classList.toggle('header__nav_dropdown-active');
+    this.shadow.classList.toggle('header__nav-shadow_active');
+    document.body.classList.toggle('stop-scrolling');
   }
 
-  addEvents() {
-    const hideShowMenu = this.hideShowMenu.bind(this);
-    this.parents.forEach((header) => {
-      const burger = header.querySelector('.js-header__burger');
-      $(burger).on('click', hideShowMenu);
-    });
+  _handlerClickBurger(e) {
+    this._toggleMenu(e);
   }
 
-  init() {
-    this.addEvents();
+  _handlerClickOnShadow() {
+    this._toggleMenu();
+  }
+
+  _addEvents() {
+    const handlerClickBurger = this._handlerClickBurger.bind(this);
+    const handlerClickOnShadow = this._handlerClickOnShadow.bind(this);
+
+    this.burger.addEventListener('click', handlerClickBurger);
+    this.shadow.addEventListener('click', handlerClickOnShadow);
+  }
+
+  _init() {
+    this.burger = this.parent.querySelector('.js-header__burger');
+    this.burgerLayout = this.burger.querySelector('.js-header__burger-layout');
+    this.shadow = this.parent.querySelector('.js-header__nav-shadow');
+    this.headerDropdown = this.parent.querySelector('.js-header__nav_dropdown');
+    this._addEvents();
   }
 }

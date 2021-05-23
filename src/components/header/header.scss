@@ -29,6 +29,7 @@
     min-height: 100vh;
     background-color: rgba(185, 101, 185, 0.98);
     transition: 0.1;
+    cursor: pointer;
 
     @media (max-width: $sm-desktop-width) {
       display: block;
