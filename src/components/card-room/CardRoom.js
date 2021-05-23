@@ -3,10 +3,10 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 class CardRoom {
   constructor(elementsList) {
     this.elementsList = elementsList;
-    this.init();
+    this._init();
   }
 
-  createSwiper() {
+  _createSwiper() {
     this.elementsList.forEach((domEl) => {
       Swiper.use([Navigation, Pagination]);
       new Swiper(domEl, {
@@ -21,8 +21,8 @@ class CardRoom {
     });
   }
 
-  init() {
-    this.createSwiper();
+  _init() {
+    this._createSwiper();
   }
 }
 

@@ -10,6 +10,7 @@ class CalendarPickerInline {
         range: true,
         inline: true,
         clearButton: true,
+        minDate: new Date(),
         navTitles: {
           days: 'MM yyyy',
         },

@@ -5,10 +5,10 @@ const Chart = require('chart.js');
 class CircleDiagram {
   constructor(parent) {
     this.mainEl = parent;
-    this.init();
+    this._init();
   }
 
-  injectReviews() {
+  _injectReviews() {
     const { mainEl } = this;
 
     const { voices } = mainEl.dataset;
@@ -19,7 +19,7 @@ class CircleDiagram {
     voicesEl.insertAdjacentHTML('beforeEnd', voicesText);
   }
 
-  createCircleDiagram() {
+  _createCircleDiagram() {
     const el = this.mainEl.querySelector('#CircleDiagram');
     if (!el) return;
     const gradientOrange = el.getContext('2d').createLinearGradient(0, 0, 0, 100);
@@ -57,9 +57,9 @@ class CircleDiagram {
     });
   }
 
-  init() {
-    this.injectReviews();
-    this.createCircleDiagram();
+  _init() {
+    this._injectReviews();
+    this._createCircleDiagram();
   }
 }
 

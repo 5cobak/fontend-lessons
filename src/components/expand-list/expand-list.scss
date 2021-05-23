@@ -1,12 +1,16 @@
 .expand-list {
   display: block;
   max-width: 266px;
-  cursor: pointer;
   user-select: none;
   $self: &;
 
   &:focus {
     outline: 2px solid $primary-color;
+  }
+
+  &__title-wrapper {
+    cursor: initial;
+    margin-bottom: 20px;
   }
 
   &__title {
@@ -52,7 +56,6 @@
     transition: $tr-fast;
 
     &_active {
-      padding-top: 10px;
       max-height: 1000px;
     }
 
