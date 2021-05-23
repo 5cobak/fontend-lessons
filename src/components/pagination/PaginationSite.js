@@ -1,10 +1,10 @@
 class PaginationSite {
   constructor($elem) {
     this.$elem = $elem;
-    this.init();
+    this._init();
   }
 
-  createPagination() {
+  _createPagination() {
     this.$elem.pagination({
       items: 15,
       itemsOnPage: 1,
@@ -16,8 +16,8 @@ class PaginationSite {
     });
   }
 
-  init() {
-    this.createPagination();
+  _init() {
+    this._createPagination();
   }
 }
 
