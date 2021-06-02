@@ -27,14 +27,15 @@
 
   &--nav-action {
     &:first-child {
-      background-image: url('assets/img/arrow-forward.jpg');
+      background-image: url('assets/img/arrow-forward-colored.svg');
       background-repeat: no-repeat;
       background-position: center;
       transform: rotate(-180deg);
+      visibility: visible;
     }
 
     &:last-child {
-      background-image: url('assets/img/arrow-forward.jpg');
+      background-image: url('assets/img/arrow-forward-colored.svg');
       background-repeat: no-repeat;
       background-position: center;
     }
@@ -117,6 +118,10 @@
   }
 }
 
+div.datepicker--cell.-selected-.-focus- {
+  background: $button-color-primary;
+}
+
 .datepicker--cell.-range-from-.-selected- {
   position: relative;
   z-index: 2;
@@ -176,7 +181,7 @@
   }
 }
 
-.datepicker--cell.-focus-:not(.-current-, .-selected-) {
+.datepicker--cell.-focus-:not(.-current-, .-selected-):not(:in-range) {
   background: none;
 }
 

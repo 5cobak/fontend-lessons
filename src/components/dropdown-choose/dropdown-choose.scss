@@ -138,6 +138,7 @@
     cursor: pointer;
 
     &_no-active {
+      color: $text-color-brightness-25;
       border: 1px solid $text-color-brightness-25;
       cursor: initial;
     }

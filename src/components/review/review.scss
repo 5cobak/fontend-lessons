@@ -33,9 +33,11 @@
 
   &__avatar {
     margin-right: 10px;
-    max-width: 44px;
-    max-height: 44px;
+    max-width: 47px;
+    max-height: 47px;
+    border: 2px solid white;
     border-radius: 50%;
+    filter: drop-shadow(0 10px 20px rgba(31, 32, 65, 0.1));
   }
 
   &__content {
