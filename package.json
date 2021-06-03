@@ -10,7 +10,7 @@
     "test": "jest",
     "deploy": "gh-pages -d dist",
     "lint:js": "eslint . --fix",
-    "lint:scss": "stylelint \"**/*.scss\""
+    "lint:scss": "stylelint \"**/*.scss\" --fix"
   },
   "browsersList": "> 0.25%, not dead",
   "author": "Arslanov Ismagil",

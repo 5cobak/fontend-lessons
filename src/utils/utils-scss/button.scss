@@ -3,20 +3,20 @@
 .button {
   padding: 15px 20px;
   display: inline-block;
+  overflow-x: hidden;
+  max-width: 210px;
   font-family: $font-family-primary;
   font-size: 12px;
   line-height: 1;
   font-weight: $bold;
+  white-space: nowrap;
   text-transform: uppercase;
+  text-overflow: ellipsis;
   color: $button-text-color-primary;
   background: $button-color-primary;
   border-radius: 22px;
   transition: $tr-fast;
   cursor: pointer;
-  white-space: nowrap;
-  max-width: 210px;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
 
   @media screen and (min-width: $sm-desktop-width) and (max-width: $md-desktop-width) {
     max-width: 140px;
@@ -44,8 +44,8 @@
     overflow: hidden;
     width: 100%;
     max-width: 320px;
-    overflow: hidden;
     text-overflow: ellipsis;
+
     &:hover {
       overflow: visible;
       opacity: 0.9;
@@ -73,25 +73,17 @@
     position: relative;
     z-index: 10;
     display: inline-flex;
+    overflow: hidden;
+    max-width: 100px;
     justify-content: space-between;
     align-items: center;
     font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     color: $button-text-color-secondary;
     background: none;
     transition: $tr-fast;
     cursor: pointer;
-    max-width: 100px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    &:hover {
-      opacity: 1;
-
-      &::before {
-        opacity: 0.5;
-      }
-    }
 
     @media (max-width: $phone-width) {
       font-size: 10px;
@@ -122,15 +114,24 @@
       border-radius: 22px;
       transition: $tr-fast;
     }
+
+    &:hover {
+      opacity: 1;
+
+      &::before {
+        opacity: 0.5;
+      }
+    }
   }
 
   &_small {
     padding: 10px 20px;
+
     @media screen and (min-width: $sm-desktop-width) and (max-width: $md-desktop-width) {
-      font-size: 9px;
       padding: 5px 10px;
       display: flex;
       align-items: center;
+      font-size: 9px;
     }
   }
 

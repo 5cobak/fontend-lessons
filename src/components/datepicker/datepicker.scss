@@ -27,11 +27,11 @@
 
   &--nav-action {
     &:first-child {
+      visibility: visible;
       background-image: url('assets/img/arrow-forward-colored.svg');
       background-repeat: no-repeat;
       background-position: center;
       transform: rotate(-180deg);
-      visibility: visible;
     }
 
     &:last-child {
@@ -180,12 +180,12 @@ div.datepicker--cell.-selected-.-focus- {
 }
 
 .datepicker--cell.-current- {
+  position: relative;
+  z-index: 1;
+  font-weight: bold;
   color: #fff;
   background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
   border-radius: 50%;
-  position: relative;
-  font-weight: bold;
-  z-index: 1;
 
   &:hover {
     color: #fff;
@@ -201,6 +201,7 @@ div.datepicker--cell.-selected-.-focus- {
   z-index: 2;
   color: #fff;
   background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+
   &::after {
     display: none;
   }
