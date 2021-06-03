@@ -10,10 +10,8 @@ $(document).ready(() => {
         element: item,
         placeholder: 'Сколько гостей',
         titles: ['взрослые', 'дети', 'младенцы'],
-        mainDeclination: ['Гость', 'Гостей', 'Гость'],
-        declinations: [
-          ['младенец', 'младенцев', 'младенцев'],
-        ],
+        mainDeclination: ['Гость', 'Гостя', 'Гостей'],
+        declinations: [['младенец', 'младенцев', 'младенцев']],
         maxWidth: 320,
         textLength: 20,
         buttons: true,
