@@ -6,6 +6,7 @@ export default class Burger {
 
   _toggleMenu() {
     this.burgerLayout.classList.toggle('header__burger-layout_active');
+    this.burger.classList.toggle('header__burger_active');
     this.headerDropdown.classList.toggle('header__nav_dropdown-active');
     this.shadow.classList.toggle('header__nav-shadow_active');
     document.body.classList.toggle('stop-scrolling');
