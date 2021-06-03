@@ -1,8 +1,26 @@
 import declination from '../helpers/declination';
 
 class DropdownChoose {
-  constructor({ element, placeholder, titles, mainDeclination, declinations, maxWidth, textLength, buttons }) {
-    this._init(element, placeholder, titles, mainDeclination, declinations, maxWidth, textLength, buttons);
+  constructor({
+    element,
+    placeholder,
+    titles,
+    mainDeclination,
+    declinations,
+    maxWidth,
+    textLength,
+    buttons,
+  }) {
+    this._init(
+      element,
+      placeholder,
+      titles,
+      mainDeclination,
+      declinations,
+      maxWidth,
+      textLength,
+      buttons,
+    );
   }
 
   _createEl(element) {
@@ -57,7 +75,7 @@ class DropdownChoose {
         </div>
         ${this.plusMinusEl}
       </div>
-      `
+      `,
     );
     return itemsArray.join('');
   }
@@ -67,7 +85,7 @@ class DropdownChoose {
 
     this.buttons = `
       <div class='dropdown-choose__buttons js-dropdown-choose__buttons'>
-        <div class='dropdown-choose__btn-clear js-dropdown-choose__btn-clear dropdown-choose__btn-clear_hidden'>Отчистить</div>
+        <div class='dropdown-choose__btn-clear js-dropdown-choose__btn-clear dropdown-choose__btn-clear_hidden'>Очистить</div>
         <div class='dropdown-choose__btn-access js-dropdown-choose__btn-access'>Применить</div>
       </div>
     `;
@@ -135,7 +153,9 @@ class DropdownChoose {
   }
 
   _getStringSingleVariant(items) {
-    const currentItems = [`${this.totalCount} ${declination(this.totalCount, this.mainDeclination)}`];
+    const currentItems = [
+      `${this.totalCount} ${declination(this.totalCount, this.mainDeclination)}`,
+    ];
     currentItems.push(this._getLastItemVal(items));
     return currentItems;
   }
@@ -153,7 +173,9 @@ class DropdownChoose {
     const countElements = this.menu.querySelectorAll('.js-dropdown-choose__item-count');
     countElements.map = [].map;
     countElements.reduce = [].reduce;
-    const sumOfCounts = countElements.map((item) => Number(item.innerText)).reduce((acc, item) => acc + item);
+    const sumOfCounts = countElements
+      .map((item) => Number(item.innerText))
+      .reduce((acc, item) => acc + item);
     this.totalCount = sumOfCounts;
     if (this.mainDeclination) currentItems = this._getStringSingleVariant(items);
     else currentItems = this._getStringMultiVariant(items);
@@ -263,7 +285,16 @@ class DropdownChoose {
     accessBtn.addEventListener('click', hideDropdownMenu);
   }
 
-  _init(element, placeholder, titles, mainDeclination, declinations, maxWidth, textLength, buttons) {
+  _init(
+    element,
+    placeholder,
+    titles,
+    mainDeclination,
+    declinations,
+    maxWidth,
+    textLength,
+    buttons,
+  ) {
     this.placeholder = placeholder;
     this.mainDeclination = mainDeclination || null;
     this.declinations = declinations;
