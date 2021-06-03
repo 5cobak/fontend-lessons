@@ -19,8 +19,11 @@
 
   &__form {
     margin-right: 60px;
-    // padding-top: 10px;
     max-width: 266px;
+
+    @media screen and (max-width: $phone-width) {
+      margin-right: 0;
+    }
   }
 
   &__form-input {
