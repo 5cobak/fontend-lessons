@@ -40,6 +40,11 @@
     font-weight: $bold;
     white-space: pre;
     color: $text-color-brightness-75;
+    max-width: 203px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: $tr-fast;
+    white-space: break-spaces;
 
     @media (max-width: $phone-width) {
       font-size: 10px;
