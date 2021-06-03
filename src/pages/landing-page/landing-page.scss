@@ -12,10 +12,6 @@
     background-size: cover;
   }
 
-  @media (max-width: $sm-desktop-width) {
-    min-height: calc(100vh - 20px);
-  }
-
   &__main {
     display: flex;
     justify-content: space-between;

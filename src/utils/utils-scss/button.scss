@@ -13,13 +13,22 @@
   border-radius: 22px;
   transition: $tr-fast;
   cursor: pointer;
+  white-space: nowrap;
+  max-width: 210px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 
-  @media (max-width: $phone-width) {
-    font-size: 10px;
+  @media screen and (min-width: $sm-desktop-width) and (max-width: $md-desktop-width) {
+    max-width: 140px;
   }
 
   &:hover {
     opacity: 0.5;
+  }
+
+  @media (max-width: $phone-width) {
+    font-size: 10px;
+    // overflow: visible;
   }
 
   &_subscribe {
@@ -34,8 +43,11 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-
+    max-width: 320px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     &:hover {
+      overflow: visible;
       opacity: 0.9;
     }
 
@@ -57,10 +69,6 @@
     padding: 15px 26px;
   }
 
-  &_small {
-    padding: 10px 20px;
-  }
-
   &_white {
     position: relative;
     z-index: 10;
@@ -72,6 +80,18 @@
     background: none;
     transition: $tr-fast;
     cursor: pointer;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      opacity: 1;
+
+      &::before {
+        opacity: 0.5;
+      }
+    }
 
     @media (max-width: $phone-width) {
       font-size: 10px;
@@ -102,13 +122,15 @@
       border-radius: 22px;
       transition: $tr-fast;
     }
+  }
 
-    &:hover {
-      opacity: 1;
-
-      &::before {
-        opacity: 0.5;
-      }
+  &_small {
+    padding: 10px 20px;
+    @media screen and (min-width: $sm-desktop-width) and (max-width: $md-desktop-width) {
+      font-size: 9px;
+      padding: 5px 10px;
+      display: flex;
+      align-items: center;
     }
   }
 
