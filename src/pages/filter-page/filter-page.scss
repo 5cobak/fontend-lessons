@@ -60,11 +60,11 @@
 
   &__rooms-title {
     margin-bottom: 20px;
+    max-width: 530px;
     font-family: $font-family-primary;
     font-size: 24px;
     line-height: 29px;
     font-weight: $bold;
-    max-width: 530px;
 
     @media (max-width: $phone-width) {
       font-size: 20px;

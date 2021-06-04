@@ -1,28 +1,38 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
+import declination from '../helpers/declination';
 
 class CardRoom {
-  constructor(elementsList) {
-    this.elementsList = elementsList;
+  constructor(cardRoomEl) {
+    this.cardRoomEl = cardRoomEl;
     this._init();
   }
 
   _createSwiper() {
-    this.elementsList.forEach((domEl) => {
-      Swiper.use([Navigation, Pagination]);
-      new Swiper(domEl, {
-        pagination: {
-          el: '.swiper-pagination',
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      });
+    Swiper.use([Navigation, Pagination]);
+    new Swiper(this.carousel, {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
     });
   }
 
+  _declineReviewText() {
+    const declinedText = declination(this.reviewsNum, ['Отзыв', 'Отзыва', 'Отзывов']);
+
+    this.reviewsText.innerHTML = `${declinedText}`;
+  }
+
   _init() {
+    this.carousel = this.cardRoomEl.querySelector('.js-swiper-container');
+    this.reviewsText = this.cardRoomEl.querySelector('.js-card-room__reviews-text');
+    this.reviewsNum = this.cardRoomEl.querySelector('.js-card-room__reviews-num').innerHTML;
     this._createSwiper();
+    this._declineReviewText();
   }
 }
 

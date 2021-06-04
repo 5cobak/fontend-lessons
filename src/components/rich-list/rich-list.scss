@@ -34,17 +34,17 @@
   &__head {
     margin-bottom: 5px;
     display: inline-block;
+    overflow: hidden;
+    max-width: 203px;
     font-family: $font-family-primary;
     font-size: 14px;
     line-height: 18px;
     font-weight: $bold;
     white-space: pre;
-    color: $text-color-brightness-75;
-    max-width: 203px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: $tr-fast;
     white-space: break-spaces;
+    text-overflow: ellipsis;
+    color: $text-color-brightness-75;
+    transition: $tr-fast;
 
     @media (max-width: $phone-width) {
       font-size: 10px;

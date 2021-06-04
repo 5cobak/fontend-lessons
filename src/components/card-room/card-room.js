@@ -1,7 +1,7 @@
 import CardRoom from './CardRoom';
 
 $(document).ready(() => {
-  const swipersRoom = document.querySelectorAll('.js-swiper-container');
+  const cardRoomEls = document.querySelectorAll('.js-card-room');
 
-  new CardRoom(swipersRoom);
+  cardRoomEls.forEach((cardRoomEl) => new CardRoom(cardRoomEl));
 });
