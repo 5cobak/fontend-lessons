@@ -13,4 +13,5 @@ mixin circle-diagram(data)
     ul.circle-diagram__list
       each val in voices
         li.circle-diagram__list-item
-          | #{val.grade}
+          span.circle-diagram__item-text
+            | #{val.grade}

@@ -63,9 +63,8 @@
   }
 
   &__list-item {
-    display: flex;
+    display: inline-flex;
     align-items: flex-start;
-    white-space: pre-wrap;
 
     &::before {
       margin-top: 5px;
@@ -73,8 +72,11 @@
       display: block;
       width: 10px;
       height: 10px;
+      min-width: 10px;
+      min-height: 10px;
       content: '';
       border-radius: 50%;
+      text-overflow: ellipsis;
     }
 
     &:first-child {
@@ -100,5 +102,12 @@
         background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
       }
     }
+  }
+
+  &__item-text {
+    max-width: 170px;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }

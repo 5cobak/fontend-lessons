@@ -63,7 +63,9 @@
     font-size: 19px;
     line-height: 23px;
     text-transform: initial;
-
+    white-space: pre-line;
+    text-overflow: ellipsis;
+    max-width: 300px;
     &_margin-l-20 {
       margin-left: 20px;
     }
@@ -100,6 +102,13 @@
       }
 
       margin-bottom: 50px;
+    }
+
+    &:first-child {
+      max-width: 300px;
+    }
+    &:last-child {
+      max-width: 311px;
     }
   }
 
