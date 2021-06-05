@@ -87,7 +87,18 @@
   }
 
   &__link {
+    display: inline-block;
+    overflow-x: hidden;
+    max-width: 92px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     color: $text-color-brightness-75;
+    transition: $tr-fast;
+
+    &:hover {
+      max-width: 150px;
+      white-space: pre-line;
+    }
 
     &:visited {
       color: rgba(185, 101, 185, 0.98);
@@ -135,7 +146,12 @@
   }
 
   &__copyright {
+    display: inline-block;
+    overflow-x: hidden;
+    max-width: 400px;
     line-height: 17px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   &__social {

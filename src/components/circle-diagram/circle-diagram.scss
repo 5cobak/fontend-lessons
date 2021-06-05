@@ -63,8 +63,9 @@
   }
 
   &__list-item {
-    display: inline-flex;
+    display: flex;
     align-items: flex-start;
+    white-space: pre-wrap;
 
     &::before {
       margin-top: 5px;
@@ -76,7 +77,6 @@
       min-height: 10px;
       content: '';
       border-radius: 50%;
-      text-overflow: ellipsis;
     }
 
     &:first-child {
@@ -105,9 +105,10 @@
   }
 
   &__item-text {
-    max-width: 170px;
-    overflow-x: hidden;
-    white-space: nowrap;
+    display: inline-block;
+    max-width: 150px;
+    overflow: hidden;
+    white-space: pre-line;
     text-overflow: ellipsis;
   }
 }

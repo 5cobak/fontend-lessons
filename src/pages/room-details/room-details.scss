@@ -60,12 +60,13 @@
 
   &__title {
     margin-bottom: 20px;
+    max-width: 340px;
     font-size: 19px;
     line-height: 23px;
-    text-transform: initial;
     white-space: pre-line;
+    text-transform: initial;
     text-overflow: ellipsis;
-    max-width: 300px;
+
     &_margin-l-20 {
       margin-left: 20px;
     }
@@ -107,6 +108,7 @@
     &:first-child {
       max-width: 300px;
     }
+
     &:last-child {
       max-width: 311px;
     }
