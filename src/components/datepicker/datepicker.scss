@@ -34,6 +34,10 @@
       transform: rotate(-180deg);
     }
 
+    &:first-child.-disabled- {
+      pointer-events: none;
+    }
+
     &:last-child {
       background-image: url('assets/img/arrow-forward-colored.svg');
       background-repeat: no-repeat;
@@ -98,22 +102,14 @@
     font-weight: $bold;
     text-transform: uppercase;
     cursor: pointer;
-
+    color: $primary-color;
     @media (max-width: $phone-width) {
       font-size: 10px;
     }
 
-    &:last-child {
+    &:hover {
+      background: none;
       color: $primary-color;
-    }
-
-    &:first-child {
-      color: $text-color-brightness-50;
-
-      &:hover {
-        color: $text-color-brightness-50;
-        background: none;
-      }
     }
   }
 }
@@ -169,14 +165,24 @@ div.datepicker--cell.-selected-.-focus- {
 }
 
 .datepicker--cell.-selected-,
-.datepicker--cell.-selected-.-current- {
+.datepicker--cell.-selected-.-current-,
+.datepicker--cell.-selected-.-other-month- {
   font-family: $font-family-primary;
   font-weight: $bold;
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
 }
 
-.datepicker--cell.-in-range- {
+.-selected-.-focus-.datepicker--cell-day.-other-month- {
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+}
+
+.datepicker--cell.-in-range-,
+.-in-range-.datepicker--cell-day.-other-month- {
   background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25));
+  color: $text-color-brightness-50;
+  &:hover {
+    background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25));
+  }
 }
 
 .datepicker--cell.-current- {
@@ -189,11 +195,16 @@ div.datepicker--cell.-selected-.-focus- {
 
   &:hover {
     color: #fff;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
   }
 }
 
-.datepicker--cell.-focus-:not(.-current-, .-selected-):not(:in-range) {
+.datepicker--cell.-focus- {
   background: none;
+}
+
+.datepicker--cell.datepicker--cell-day.-day-in-range-.-focus- {
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
 }
 
 .datepicker--cell.datepicker--cell-day.-in-range-.-current- {

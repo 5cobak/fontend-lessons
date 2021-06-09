@@ -91,7 +91,7 @@ class DateDropdown {
     this.$datepicker = this.$firstInput.datepicker().data('datepicker');
 
     this.$calendarEl = this.$firstInput.datepicker().data('datepicker').$datepicker;
-
+    console.log(this.$calendarEl);
     this.$clearButton = this.$calendarEl.find('.datepicker--button');
     this.$buttonsParent = this.$calendarEl.find('.datepicker--buttons');
     this.$buttonsParent.append('<span class="datepicker--button-access">Применить</span>');
