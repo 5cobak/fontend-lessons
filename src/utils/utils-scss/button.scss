@@ -3,20 +3,19 @@
 .button {
   padding: 15px 20px;
   display: inline-block;
-  overflow-x: hidden;
   max-width: 210px;
   font-family: $font-family-primary;
   font-size: 12px;
   line-height: 1;
   font-weight: $bold;
-  white-space: nowrap;
   text-transform: uppercase;
-  text-overflow: ellipsis;
   color: $button-text-color-primary;
   background: $button-color-primary;
   border-radius: 22px;
   transition: $tr-fast;
   cursor: pointer;
+
+  overflow-wrap: break-word;
 
   @media screen and (min-width: $sm-desktop-width) and (max-width: $md-desktop-width) {
     max-width: 140px;
@@ -28,7 +27,6 @@
 
   @media (max-width: $phone-width) {
     font-size: 10px;
-    // overflow: visible;
   }
 
   &_subscribe {
@@ -39,15 +37,17 @@
     border-radius: none;
   }
 
+  &_with-icon {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
   &_big {
     position: relative;
-    overflow: hidden;
     width: 100%;
     max-width: 320px;
-    text-overflow: ellipsis;
 
     &:hover {
-      overflow: visible;
       opacity: 0.9;
     }
 
@@ -59,7 +59,7 @@
       width: 20px;
       min-height: 100%;
       content: '';
-      background-image: url('assets/img/arrow-forward.svg');
+      background-image: url('~img/arrow-forward.svg');
       background-repeat: no-repeat;
       background-position: center;
     }
@@ -73,13 +73,12 @@
     position: relative;
     z-index: 10;
     display: inline-flex;
-    overflow: hidden;
-    max-width: 100px;
+    flex-wrap: wrap;
+    max-width: 150px;
+
     justify-content: space-between;
     align-items: center;
     font-size: 12px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     color: $button-text-color-secondary;
     background: none;
     transition: $tr-fast;

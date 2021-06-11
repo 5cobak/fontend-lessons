@@ -1,3 +1,7 @@
+import 'ion-rangeslider/css/ion.rangeSlider.css';
+
+import './range-slider.scss';
+
 class RangeSlider {
   constructor(input) {
     this.input = input;

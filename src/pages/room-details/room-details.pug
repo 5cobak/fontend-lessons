@@ -19,7 +19,35 @@ block head
   link(rel="manifest" href="assets/favicons/site.webmanifest")
 
 block content
-  +header({isEntered: false})
+  +header({routes: [
+            {
+              text: 'О нас',
+              active: false,
+              href: '/mock-address/change-me'
+            },
+            {
+              text: 'Услуги',
+              active: false,
+              href: '/mock-address/change-me',
+              dropdown: true
+            },
+            {
+              text: 'Вакансии',
+              active: false,
+              href: '/mock-address/change-me'
+            },
+            {
+              text: 'Новости',
+              active: false,
+              href: '/mock-address/change-me'
+            },
+            {
+              text: 'Соглашения',
+              active: false,
+              href: '/mock-address/change-me',
+              dropdown: true
+            },
+          ],isEntered: false})
   .content
     .room-details
       .room-details__room-photos
@@ -33,7 +61,7 @@ block content
             section.room-details__info
               .room-details__info-head
                 .room-details__block
-                  span.block-title.room-details__title
+                  span.room-details__title
                     | Сведения о номере
                   +advantages({items: [
                           {
@@ -54,7 +82,7 @@ block content
 
                         ]})
                 .room-details__block
-                  span.block-title.room-details__title
+                  span.room-details__title
                     | Впечатления от номера
                   +circle-diagram({
                     voices: [
@@ -78,7 +106,7 @@ block content
                   })
               .room-details__reviews
                 .room-details__reviews-head
-                  span.room-details__title.block-title
+                  span.room-details__title
                     | Отзывы посетителей номера
                   span.room-details__reviews-count
                     | 2 отзыва
@@ -100,7 +128,6 @@ block content
               .room-details__rules-block
                 +bullet-list({
                   title: "Правила", 
-                  className: "room-details__title room-details__title_margin-l-20",
                   items: [
                     "Нельзя с питомцами",
                     "Без вечеринок и мероприятий",
@@ -108,7 +135,7 @@ block content
                   ]
               })
                 .room-details__cancel-rule
-                  span.block-title.room-details__title
+                  span.room-details__title
                     | Отмена
                   p.room-details__cancel-text
                     | Бесплатная отмена в течение 48 ч. После
@@ -127,9 +154,3 @@ block content
 
 
   +footer()
-
-
-
-
-block script
-  script

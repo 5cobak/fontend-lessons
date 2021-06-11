@@ -50,12 +50,6 @@
     align-items: center;
 
     @media (max-width: $sm-desktop-width) {
-      padding-bottom: 20px;
-      display: none;
-      text-align: center;
-    }
-
-    &_dropdown {
       position: fixed;
       z-index: 1000;
       top: 0;
@@ -68,12 +62,9 @@
       background-color: $bg-color-primary;
       border-top: 3px solid #b866b8;
       transition: $tr-fast;
+      display: block;
 
-      @media (max-width: $sm-desktop-width) {
-        display: block;
-      }
-
-      &-active {
+      &_active {
         max-width: 80%;
       }
       #{$self}__list {
@@ -83,7 +74,6 @@
       }
       #{$self}__list-item {
         margin: 0;
-        padding: 20px 0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -104,16 +94,13 @@
       }
       #{$self}__link {
         display: inline-block;
+        width: 100%;
         font-size: 18px;
         vertical-align: center;
-
+        padding: 20px 0;
         @media (max-width: $phone-width) {
           font-size: 16px;
         }
-      }
-      #{$self}__button {
-        margin-bottom: 20px;
-        display: inline-block;
       }
       #{$self}__cabinet {
         padding: 20px 10px;
@@ -127,20 +114,29 @@
 
   &__list {
     display: inline-flex;
+    flex-wrap: wrap;
   }
 
   &__list-item {
-    margin-right: 20px;
+    margin-right: 23px;
     display: inline-flex;
     background-color: white;
     cursor: pointer;
+  }
 
-    &_dropdown {
-      margin-right: 28px;
+  &__link {
+    font-size: 14px;
+    line-height: 17px;
+    color: $text-color-brightness-50;
+    display: inline-flex;
 
+    &_active {
+      font-weight: bold;
+    }
+    &_droppable {
       &::after {
         margin-top: 4px;
-        margin-left: 10px;
+        margin-left: 12px;
         display: inline-block;
         min-width: 8px;
         max-width: 8px;
@@ -151,32 +147,13 @@
         border-top: none;
         border-left: none;
         transform: rotate(45deg);
+
+        @media (max-width: $sm-desktop-width) {
+          margin-top: 0;
+          margin-bottom: 2px;
+        }
       }
     }
-  }
-
-  &__link {
-    overflow-x: hidden;
-    max-width: 92px;
-    font-size: 14px;
-    line-height: 17px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    color: $text-color-brightness-50;
-    transition: $tr-fast;
-
-    &:hover {
-      overflow: visible;
-      overflow-x: visible;
-      max-width: 150px;
-      white-space: pre-line;
-    }
-
-    @media screen and (max-width: $sm-desktop-width) {
-      overflow-x: visible;
-      max-width: 150px;
-    }
-
     &:visited {
       color: rgba(185, 101, 185, 0.98);
     }
@@ -200,6 +177,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @media screen and (max-width: $sm-desktop-width) {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
   }
 
   &__cabinet {

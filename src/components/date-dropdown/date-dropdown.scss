@@ -12,11 +12,12 @@
   }
 
   &__label {
-    position: relative;
     display: inline-flex;
     flex-direction: column;
+    max-width: 150px;
 
     @media (max-width: $table-width) {
+      max-width: 130px;
       &:first-child {
         margin-right: 10px;
       }
@@ -26,6 +27,16 @@
       &:first-child {
         margin-right: 10px;
       }
+    }
+  }
+
+  &__input-wrap {
+    position: relative;
+    display: inline-block;
+    max-width: 150px;
+
+    @media (max-width: $phone-width) {
+      max-width: 130px;
     }
   }
 
@@ -61,7 +72,7 @@
 
   &__arrow {
     position: absolute;
-    top: calc(50% + 4px);
+    top: calc(50% - 6px);
     right: 15px;
     min-width: 12px;
     max-width: 12px;

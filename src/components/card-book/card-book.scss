@@ -42,11 +42,8 @@
 
   &__number {
     font-size: 14px;
-    display: inline-block;
     max-width: 50%;
-    overflow: hidden;
-    white-space: pre-line;
-    text-overflow: ellipsis;
+    overflow-wrap: break-word;
     @media (max-width: $phone-width) {
       font-size: 12px;
     }
@@ -54,9 +51,9 @@
 
   &__head-num {
     margin-right: 7px;
-    display: inline-block;
     font-size: 24px;
     line-height: 30px;
+    overflow-wrap: break-word;
     @media (max-width: $phone-width) {
       font-size: 20px;
       line-height: 15px;
@@ -67,7 +64,7 @@
     font-size: 14px;
     line-height: 15px;
     color: $primary-color;
-
+    overflow-wrap: break-word;
     @media (max-width: $phone-width) {
       font-size: 12px;
     }
@@ -78,10 +75,9 @@
     font-size: 12px;
     line-height: 18px;
     color: $text-color-brightness-50;
-
+    overflow-wrap: break-word;
     display: inline-block;
     max-width: 50%;
-    white-space: pre-line;
 
     @media (max-width: $phone-width) {
       font-size: 12px;
@@ -99,7 +95,7 @@
   }
 
   &__calculation {
-    margin-bottom: 50px;
+    margin-bottom: 45px;
     font-size: 14px;
     color: $text-color-brightness-75;
 
@@ -180,10 +176,9 @@
 
   &__total {
     display: inline-block;
-    max-width: 150px;
-    overflow: hidden;
-    white-space: pre-line;
-    text-overflow: ellipsis;
+    line-height: 17px;
+    max-width: 50%;
+    overflow-wrap: break-word;
   }
 
   &__total-price {

@@ -19,7 +19,7 @@
 
   &__content {
     padding-top: 96px;
-    padding-bottom: 95px;
+    padding-bottom: 97px;
     display: flex;
     justify-content: space-between;
 
@@ -46,9 +46,8 @@
     }
   }
 
-  &__achivement {
+  &__achievement {
     line-height: 24px;
-    white-space: pre-wrap;
 
     @media (max-width: $sm-desktop-width) {
       display: none;
@@ -74,32 +73,34 @@
   }
 
   &__list-title {
+    display: inline-block;
     margin-bottom: 23px;
+    font-family: $font-family-primary;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: $bold;
+    white-space: pre-wrap;
+    text-transform: uppercase;
+    color: $text-color;
+    overflow-wrap: break-word;
   }
 
   &__list-item {
     margin-bottom: 21px;
     line-height: 17px;
-
     &:last-child {
       margin-bottom: 0;
     }
   }
 
   &__link {
-    display: inline-block;
-    overflow-x: hidden;
-    max-width: 92px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     color: $text-color-brightness-75;
     transition: $tr-fast;
+    overflow-wrap: break-word;
 
-    &:hover {
-      max-width: 150px;
-      white-space: pre-line;
+    &_active {
+      font-weight: bold;
     }
-
     &:visited {
       color: rgba(185, 101, 185, 0.98);
     }
@@ -108,19 +109,31 @@
   &__subscribe {
     padding-top: 5px;
     width: 260px;
-
     @media (max-width: $sm-desktop-width) {
       display: none;
     }
   }
 
   &__subscribe-title {
-    margin-bottom: 20px;
+    font-family: $font-family-primary;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: $bold;
+
+    text-transform: uppercase;
+    color: $text-color;
+    overflow-wrap: break-word;
+    display: inline-block;
+    margin-bottom: 18px;
   }
 
   &__subscribe-text {
     line-height: 24px;
-    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+
+  &__form-wrap {
+    margin-top: 22px;
   }
 
   &__basement {
@@ -146,12 +159,9 @@
   }
 
   &__copyright {
-    display: inline-block;
-    overflow-x: hidden;
     max-width: 400px;
     line-height: 17px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    overflow-wrap: break-word;
   }
 
   &__social {
@@ -163,7 +173,7 @@
   &__social-link {
     margin-right: 20px;
     display: inline-block;
-
+    line-height: 17px;
     &:last-child {
       margin-right: 0;
     }

@@ -1,4 +1,5 @@
 import jQueryBridget from 'jquery-bridget';
+import './cards.scss';
 
 const Masonry = require('masonry-layout');
 

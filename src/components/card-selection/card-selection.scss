@@ -36,11 +36,11 @@
   }
 
   &__block {
-    &_margin-b-15 {
-      margin-bottom: 15px;
+    &_margin-b-20 {
+      margin-bottom: 22px;
 
       @media (max-width: $phone-width) {
-        margin-bottom: 0;
+        margin-bottom: 10px;
       }
     }
 

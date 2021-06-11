@@ -28,7 +28,7 @@
   &--nav-action {
     &:first-child {
       visibility: visible;
-      background-image: url('assets/img/arrow-forward-colored.svg');
+      background-image: url('~img/arrow-forward-colored.svg');
       background-repeat: no-repeat;
       background-position: center;
       transform: rotate(-180deg);
@@ -39,7 +39,7 @@
     }
 
     &:last-child {
-      background-image: url('assets/img/arrow-forward-colored.svg');
+      background-image: url('~img/arrow-forward-colored.svg');
       background-repeat: no-repeat;
       background-position: center;
     }

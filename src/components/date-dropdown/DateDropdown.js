@@ -56,6 +56,7 @@ class DateDropdown {
     const secondDate = formattedDate.split(',')[1];
     this.formattedDate = formattedDate;
     if (!secondDate) return;
+
     input.val(secondDate);
   }
 
@@ -73,7 +74,7 @@ class DateDropdown {
     if (!this.input) return;
     const handlerSelect = this._handlerSelect.bind(this);
     this.$firstInput = $(this.input);
-    this.$secondInput = this.$firstInput.parent().next().find('input');
+    this.$secondInput = this.$firstInput.parent().parent().next().find('input');
     this.isDatepickerActive = false;
 
     this.$firstInput.datepicker({
@@ -91,7 +92,7 @@ class DateDropdown {
     this.$datepicker = this.$firstInput.datepicker().data('datepicker');
 
     this.$calendarEl = this.$firstInput.datepicker().data('datepicker').$datepicker;
-    console.log(this.$calendarEl);
+
     this.$clearButton = this.$calendarEl.find('.datepicker--button');
     this.$buttonsParent = this.$calendarEl.find('.datepicker--buttons');
     this.$buttonsParent.append('<span class="datepicker--button-access">Применить</span>');

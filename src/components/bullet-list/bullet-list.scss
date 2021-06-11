@@ -1,6 +1,13 @@
 .bullet-list {
   max-width: 292px;
 
+  &__title {
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-weight: bold;
+    margin-bottom: 18px;
+    margin-left: 20px;
+  }
   &__li {
     margin-bottom: 10px;
     display: flex;

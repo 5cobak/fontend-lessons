@@ -147,7 +147,7 @@
   }
 
   &__buttons {
-    padding: 14px 7px 15px 7px;
+    padding: 14px 7px 15px 15px;
     display: flex;
     justify-content: space-between;
     font-family: $font-family-primary;
@@ -161,7 +161,7 @@
   }
 
   &__btn-clear {
-    color: $text-color-brightness-50;
+    color: $primary-color;
     cursor: pointer;
 
     &_hidden {

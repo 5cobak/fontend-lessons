@@ -1,6 +1,5 @@
 .block-title {
   margin-bottom: 5px;
-  display: inline-block;
   font-family: $font-family-primary;
   font-size: 12px;
   line-height: 15px;
@@ -8,25 +7,10 @@
   white-space: pre-wrap;
   text-transform: uppercase;
   color: $text-color;
+  overflow-wrap: break-word;
   @media (max-width: $phone-width) {
     margin-bottom: 3px;
     font-size: 10px;
     line-height: 12px;
-  }
-
-  &_margin-b-16 {
-    margin-bottom: 16px;
-
-    @media (max-width: $phone-width) {
-      margin-bottom: 13px;
-    }
-  }
-
-  &_margin-b-20 {
-    margin-bottom: 20px;
-
-    @media (max-width: $phone-width) {
-      margin-bottom: 15px;
-    }
   }
 }

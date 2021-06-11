@@ -1,6 +1,6 @@
 mixin bullet-list({title,className, items}) 
   .bullet-list
-    span.block-title.block-title_margin-b-16(class=className) #{title}
+    span.bullet-list__title #{title}
     ul.bullet-list__ul
       each val in items
         li.bullet-list__li

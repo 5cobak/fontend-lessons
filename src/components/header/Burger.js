@@ -7,7 +7,7 @@ export default class Burger {
   _toggleMenu() {
     this.burgerLayout.classList.toggle('header__burger-layout_active');
     this.burger.classList.toggle('header__burger_active');
-    this.headerDropdown.classList.toggle('header__nav_dropdown-active');
+    this.menu.classList.toggle('header__nav_active');
     this.shadow.classList.toggle('header__nav-shadow_active');
     document.body.classList.toggle('stop-scrolling');
   }
@@ -32,7 +32,7 @@ export default class Burger {
     this.burger = this.parent.querySelector('.js-header__burger');
     this.burgerLayout = this.burger.querySelector('.js-header__burger-layout');
     this.shadow = this.parent.querySelector('.js-header__nav-shadow');
-    this.headerDropdown = this.parent.querySelector('.js-header__nav_dropdown');
+    this.menu = this.parent.querySelector('.js-header__nav');
     this._addEvents();
   }
 }

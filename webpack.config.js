@@ -7,7 +7,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-const fs = require('fs');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -28,10 +27,7 @@ const optimization = () => {
 const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
 
 const cssLoaders = (extra) => {
-  const loaders = [
-    'style-loader',
-    'css-loader',
-  ];
+  const loaders = ['style-loader', 'css-loader'];
 
   if (extra) {
     loaders.push(extra);
@@ -73,43 +69,36 @@ const PATHS = {
 
 const PAGES_DIR = `${PATHS.src}/pages/`;
 
-const SUB_DIRS = [];
-
-function deepGetDirectories(distPath) {
-  return fs
-    .readdirSync(distPath)
-    .filter((file) => {
-      SUB_DIRS.push(file);
-      return fs.statSync(`${distPath}/${file}`).isDirectory();
-    })
-    .reduce(
-      (all, subDir) => [
-        ...all,
-        ...fs
-          .readdirSync(`${distPath}/${subDir}`)
-          .map((e) => `${subDir}/${e}`)
-          .filter((e) => e.endsWith('.pug')),
-      ],
-      []
-    );
-}
-
-const PAGES_WITH_DIR = deepGetDirectories(PAGES_DIR);
+const ASSET_PATH = process.env.ASSET_PATH || '/';
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    main: ['@babel/polyfill', './index.js'],
+    common: ['@babel/polyfill', './common.js'],
+    index: ['@babel/polyfill', './pages/index/index.js'],
+    landing: ['@babel/polyfill', './pages/landing/landing.js'],
+    cards: ['@babel/polyfill', './pages/cards/cards.js'],
+    // filterPage: ['@babel/polyfill', './pages/filter/filterPage.js'],
+    // formElements: ['@babel/polyfill', './pages/form-elements/form-elements.js'],
+    // headersFooters: ['@babel/polyfill', './pages/header-&-footers/headersFooters.js'],
+    // registrationPage: ['@babel/polyfill', './pages/registration/registrationPage.js'],
+    // roomDetails: ['@babel/polyfill', './pages/room-details/roomDetails.js'],
   },
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
+    publicPath: ASSET_PATH,
   },
   resolve: {
     extensions: ['.jsx', '.ts', '.js'],
     alias: {
       '~': path.resolve(__dirname, 'node_modules/'),
+      src: path.resolve(__dirname, 'src/'),
+      utils: path.resolve(__dirname, 'src/utils/'),
+      components: path.resolve(__dirname, 'src/components/'),
+      img: path.resolve(__dirname, 'src/assets/img/'),
+      fonts: path.resolve(__dirname, 'src/assets/fonts/'),
     },
   },
   optimization: optimization(),
@@ -126,14 +115,29 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [{ from: `${PATHS.src}/assets/favicons/`, to: 'assets/favicons' }],
     }),
-    ...PAGES_WITH_DIR.map(
-      (page) =>
-        new HTMLWebpackPlugin({
-          template: `${PAGES_DIR}/${page}`,
-          filename: `${page.substring(page.lastIndexOf('/') + 1, page.length).replace(/\.pug/, '.html')}`,
-          minify: false,
-        })
-    ),
+    ...[
+      new HTMLWebpackPlugin({
+        template: `${PAGES_DIR}/index/index.pug`,
+        filename: 'index.html',
+        chunks: ['index'],
+        minify: false,
+      }),
+
+      new HTMLWebpackPlugin({
+        template: `${PAGES_DIR}/landing/landing.pug`,
+        filename: 'landing.html',
+        chunks: ['common', 'landing'],
+        minify: false,
+      }),
+
+      new HTMLWebpackPlugin({
+        template: `${PAGES_DIR}/cards/cards.pug`,
+        filename: 'cards.html',
+        chunks: ['cards'],
+        minify: false,
+      }),
+    ],
+
     new MiniCssExtractPlugin({
       filename: filename('css'),
       linkType: false,
