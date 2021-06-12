@@ -1,6 +1,4 @@
-import 'ion-rangeslider/css/ion.rangeSlider.css';
-
-import './range-slider.scss';
+import '~/ion-rangeslider/js/ion.rangeSlider';
 
 class RangeSlider {
   constructor(input) {

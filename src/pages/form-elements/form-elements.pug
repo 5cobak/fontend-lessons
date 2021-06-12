@@ -1,7 +1,7 @@
 extends ../main
 
-include ../../components/textField/textField.pug
-include ../../components/masked-textfield/masked-textfield.pug
+include ../../components/text-field/text-field.pug
+include ../../components/masked-text-field/masked-text-field.pug
 include ../../components/dropdown-choose/dropdown-choose.pug
 include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/filter-date/filter-date.pug
@@ -28,12 +28,12 @@ block head
 block content
   svg.logo.logo_gray(role="image" aria-label="toxin-logo")
     use(xlink:href="#logo-gray")
-  main.ui-kit
+  main.form-elements
     .container
         .row
-          .ui-kit__first-row
+          .form-elements__first-row
             .col
-              +textField(
+              +text-field(
                 {
                   title: "text field", 
                   placeholder: "Email", 
@@ -41,7 +41,7 @@ block content
                   required: true
                 }
               )
-              +masked-textfield(
+              +masked-text-field(
                 {
                   title: "masked text field",
                   placeholder: "ДД.ММ.ГГГГ", 
@@ -130,7 +130,7 @@ block content
                 ]
               })
           .row
-            .ui-kit__last-row
+            .form-elements__last-row
               .col
                 +advantages({items: [
                   {

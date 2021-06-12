@@ -38,7 +38,8 @@
     }
   }
 
-  &__logo {
+  &__link-logo {
+    display: inline-block;
     margin-bottom: 14px;
 
     @media (max-width: $sm-desktop-width) {

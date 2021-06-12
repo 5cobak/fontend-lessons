@@ -1,0 +1,12 @@
+mixin text-field({title, type, placeholder, required, pat})
+  label.text-field
+    span.block-title #{title}
+    input.text-field__input(
+      type=type 
+      name=type
+      placeholder=placeholder
+      pattern=pat 
+      required=required
+    )
+
+

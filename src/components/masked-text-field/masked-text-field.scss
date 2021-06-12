@@ -1,0 +1,43 @@
+.masked-text-field {
+  display: block;
+  max-width: 320px;
+
+  &__input {
+    padding: 12px 15px;
+    width: 100%;
+    font-family: $font-family-primary;
+    font-size: 14px;
+    color: $text-color-brightness-75;
+    border: $border-input;
+    border-radius: 4px;
+    transition: $tr-fast;
+
+    @media (max-width: $phone-width) {
+      font-size: 12px;
+    }
+
+    &::placeholder {
+      color: $text-color-brightness-25;
+      transition: $tr-fast;
+    }
+
+    &:focus {
+      border: $border-input-hover;
+      outline: none;
+
+      &::placeholder {
+        color: $text-color-brightness-75;
+      }
+    }
+  }
+
+  &:hover & {
+    &__input {
+      border: $border-input-hover;
+
+      &::placeholder {
+        color: $text-color-brightness-75;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-.masked-textfield {
+.text-field {
   display: block;
   max-width: 320px;
 
@@ -12,11 +12,8 @@
     border-radius: 4px;
     transition: $tr-fast;
 
-    @media (max-width: $phone-width) {
-      font-size: 12px;
-    }
-
     &::placeholder {
+      font-size: 14px;
       color: $text-color-brightness-25;
       transition: $tr-fast;
     }
@@ -27,6 +24,14 @@
 
       &::placeholder {
         color: $text-color-brightness-75;
+      }
+    }
+
+    @media (max-width: $phone-width) {
+      font-size: 12px;
+
+      &::placeholder {
+        font-size: 12px;
       }
     }
   }

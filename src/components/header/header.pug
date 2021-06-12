@@ -3,13 +3,13 @@ mixin header({routes, isEntered})
     .container
       .header__content
         a(href="index.html").header__logo-link
-          svg(class="logo logo_colored header__logo" aria-label="toxin logo")
+          svg(class="logo logo_colored" aria-label="toxin logo")
             use(xlink:href="#logo-colored")
         nav.header__nav.js-header__nav
           ul.header__list
             each route in routes
               li.header__list-item
-                a.header__link(href="/mock-address/change-me" class=`${route.active ? 'header__link_active' : null} ${route.dropdown ? 'header__link_droppable' : null}`)
+                a.header__link(href="/mock-address/change-me" class=`${route.active ? 'header__link_active' : ''} ${route.dropdown ? 'header__link_dropping-out' : ''}`)
                   | #{route.text}
           if !isEntered
             .header__buttons
@@ -22,5 +22,5 @@ mixin header({routes, isEntered})
             a(href="/mock-address/change-me").header__cabinet
               | Юлий Цезарь
         .header__nav-shadow.js-header__nav-shadow
-        .header__burger.js-header__burger(role="navigation" aria-label="menu")
+        button(type="button").header__burger.js-header__burger(aria-label="menu")
           .header__burger-layout.js-header__burger-layout  

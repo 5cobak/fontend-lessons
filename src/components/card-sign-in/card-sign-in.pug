@@ -1,11 +1,11 @@
-mixin card-sing-in()
-  .card-sing-in
-    .card-sing-in__content
-      h1.card-sing-in__title
+mixin card-sign-in()
+  .card-sign-in
+    .card-sign-in__content
+      h1.card-sign-in__title
         | Войти
-      form.card-sing-in__form
-        .card-sing-in__item.card-sing-in__item_margin-b-10
-          +textField(
+      form.card-sign-in__form
+        .card-sign-in__item.card-sign-in__item_margin-b-10
+          +text-field(
             {
               title: "", 
               placeholder: "Email", 
@@ -14,8 +14,8 @@ mixin card-sing-in()
 
             }
           )
-        .card-sing-in__item.card-sing-in__item_margin-b-20
-          +textField(
+        .card-sign-in__item.card-sign-in__item_margin-b-20
+          +text-field(
             {
               title: "", 
               placeholder: "Пароль", 
@@ -23,9 +23,9 @@ mixin card-sing-in()
               required: true,
             }
           )
-        .card-sing-in__item.card-sing-in__item_margin-b-32
+        .card-sign-in__item.card-sign-in__item_margin-b-32
           button.button.button_big.button_with-icon Войти
-        .card-sing-in__check-in 
-          span.card-sing-in__check-in-text
+        .card-sign-in__check-in 
+          span.card-sign-in__check-in-text
             | Нет аккаунта на Toxin?
           a(href="registration-page.html").button.button_white Создать

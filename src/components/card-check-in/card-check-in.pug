@@ -7,7 +7,7 @@ mixin card-check-in()
             h1.card-check-in__title
               | Регистрация аккаунта
           .card-check-in__item.card-check-in__item_margin-b-10
-            +textField(
+            +text-field(
                       {
                         title: "", 
                         placeholder: "Имя", 
@@ -17,7 +17,7 @@ mixin card-check-in()
                       }
                     )
           .card-check-in__item.card-check-in__item_margin-b-10
-            +textField(
+            +text-field(
                       {
                         title: "", 
                         placeholder: "Фамилия", 
@@ -29,7 +29,7 @@ mixin card-check-in()
           .card-check-in__item.card-check-in__item_margin-b-16
             +radio-buttons({title: ""})
           .card-check-in__item.card-check-in__item_margin-b-14
-            +masked-textfield(
+            +masked-text-field(
                     {
                       title: "Дата рождения",
                       placeholder: "ДД.ММ.ГГГГ", 
@@ -38,7 +38,7 @@ mixin card-check-in()
                     }
                   )
           .card-check-in__item.card-check-in__item_margin-b-10
-            +textField(
+            +text-field(
                     {
                       title: "Данные для входа в сервис", 
                       placeholder: "Email", 
@@ -47,7 +47,7 @@ mixin card-check-in()
                     }
                   )
           .card-check-in__item.card-check-in__item_margin-b-10
-            +textField(
+            +text-field(
                     {
                       title: "", 
                       placeholder: "Пароль", 

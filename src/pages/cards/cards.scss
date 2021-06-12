@@ -1,14 +1,14 @@
 @import '~utils/utils-scss/vars.scss';
 @import '~utils/utils-scss/reset.scss';
 @import '~utils/utils-scss/fonts.scss';
+@import '~utils/utils-scss/button.scss';
 @import '~src/main.scss';
 @import '~components/card-book/card-book';
 @import '~air-datepicker/dist/css/datepicker.min.css';
-@import '~utils/utils-scss/button.scss';
 @import '~components/svg-icons/svg-icons';
 @import '~components/logo/logo';
 @import '~components/block-title/block-title';
-@import '~components/masked-textfield/masked-textfield';
+@import '~components/masked-text-field/masked-text-field';
 @import '~components/dropdown-choose/dropdown-choose';
 @import '~components/date-dropdown/date-dropdown';
 @import '~components/datepicker/datepicker';
@@ -18,6 +18,9 @@
 @import '~components/card-sign-in/card-sign-in';
 @import '~components/text-field/text-field';
 @import '~components/subscription/subscription';
+@import '~components/card-room/card-room';
+@import '~components/rate-buttons/rate-buttons';
+@import '~components/toggle-buttons/toggle-buttons';
 
 .cards-page {
   width: 100%;

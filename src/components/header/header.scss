@@ -18,10 +18,6 @@
     }
   }
 
-  &__logo-link {
-    margin-right: 20px;
-  }
-
   &__nav-shadow {
     position: fixed;
     z-index: 900;
@@ -48,8 +44,9 @@
   &__nav {
     display: flex;
     align-items: center;
-
+    margin-left: 10px;
     @media (max-width: $sm-desktop-width) {
+      margin-left: 0;
       position: fixed;
       z-index: 1000;
       top: 0;
@@ -63,6 +60,7 @@
       border-top: 3px solid #b866b8;
       transition: $tr-fast;
       display: block;
+      text-align: center;
 
       &_active {
         max-width: 80%;
@@ -133,7 +131,7 @@
     &_active {
       font-weight: bold;
     }
-    &_droppable {
+    &_dropping-out {
       &::after {
         margin-top: 4px;
         margin-left: 12px;
@@ -203,12 +201,12 @@
     min-width: 30px;
     min-height: 30px;
     cursor: pointer;
-
+    background: none;
     &_active {
       position: fixed;
       z-index: 1002;
-      top: 15px;
-      right: 20px;
+      top: 18px;
+      right: 10px;
 
       @media screen and (max-width: $phone-width) {
         right: 10px;
@@ -224,6 +222,7 @@
     position: absolute;
     z-index: 10;
     top: 50%;
+    left: -3px;
     display: none;
     width: 30px;
     height: 3px;

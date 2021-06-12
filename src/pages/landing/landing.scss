@@ -1,15 +1,14 @@
 @import '~air-datepicker/dist/css/datepicker.min.css';
 @import '~utils/utils-scss/button.scss';
+@import '~src/main.scss';
 @import '~components/svg-icons/svg-icons';
-@import '~components/logo/logo';
 @import '~components/block-title/block-title';
-@import '~components/masked-textfield/masked-textfield';
+@import '~components/masked-text-field/masked-text-field';
 @import '~components/dropdown-choose/dropdown-choose';
 @import '~components/date-dropdown/date-dropdown';
 @import '~components/datepicker/datepicker';
 @import '~components/radio-buttons/radio-buttons';
 @import '~components/card-selection/card-selection';
-@import '~components/subscription/subscription';
 
 .landing-page {
   padding-top: 70px;

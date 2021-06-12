@@ -1,4 +1,21 @@
-@import '../../utils/utils-scss/vars.scss';
+@import '~air-datepicker/dist/css/datepicker.min.css';
+@import '~utils/utils-scss/vars.scss';
+@import '~utils/utils-scss/reset.scss';
+@import '~utils/utils-scss/fonts.scss';
+@import '~src/main.scss';
+@import '~components/svg-icons/svg-icons';
+@import '~components/block-title/block-title';
+@import '~components/masked-text-field/masked-text-field';
+@import '~components/filter-date/filter-date';
+@import '~components/dropdown-choose/dropdown-choose';
+@import '~components/datepicker/datepicker';
+@import '~components/rich-list/rich-list';
+@import '~components/card-room/card-room';
+@import '~components/rate-buttons/rate-buttons';
+@import '~components/range-slider/range-slider';
+@import '~components/checkbox-buttons/checkbox-buttons';
+@import '~components/expand-list/expand-list';
+@import '~components/pagination/pagination';
 
 .filter-page {
   &__main {

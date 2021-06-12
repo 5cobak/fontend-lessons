@@ -1,4 +1,27 @@
-.ui-kit {
+@import '~air-datepicker/dist/css/datepicker.min.css';
+@import '~src/main';
+@import '~components/text-field/text-field';
+@import '~components/logo/logo';
+@import '~components/range-slider/range-slider';
+@import '~components/svg-icons/svg-icons';
+@import '~components/masked-text-field/masked-text-field';
+@import '~components/block-title/block-title';
+@import '~components/date-dropdown/date-dropdown';
+@import '~components/filter-date/filter-date';
+@import '~components/dropdown-choose/dropdown-choose';
+@import '~components/expand-list/expand-list';
+@import '~components/checkbox-buttons/checkbox-buttons';
+@import '~components/radio-buttons/radio-buttons';
+@import '~components/toggle-buttons/toggle-buttons';
+@import '~components/like-button/like-button';
+@import '~components/rate-buttons/rate-buttons';
+@import '~components/rich-list/rich-list';
+@import '~components/review/review';
+@import '~components/pagination/pagination';
+@import '~components/bullet-list/bullet-list';
+@import '~components/advantages/advantages';
+
+.form-elements {
   margin-top: 140px;
   margin-bottom: 130px;
 

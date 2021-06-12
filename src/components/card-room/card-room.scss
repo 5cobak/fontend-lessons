@@ -1,3 +1,5 @@
+@import '~/swiper/swiper-bundle.min.css';
+
 .card-room {
   $self: &;
 
@@ -18,8 +20,9 @@
           opacity: 1;
         }
       }
-      #{$self}__button-next,
-      #{$self}__button-prev {
+
+      .swiper-button-next,
+      .swiper-button-prev {
         opacity: 1;
       }
 
@@ -30,6 +33,11 @@
   }
 
   &__pagination {
+    padding-right: 15px;
+    text-align: right;
+  }
+
+  .swiper-pagination {
     padding-right: 15px;
     text-align: right;
   }
@@ -67,8 +75,7 @@
       height: 100%;
       opacity: 0;
       content: '';
-      box-shadow:
-        -50px 0 50px 23px rgba(0, 0, 0, 0.25) inset,
+      box-shadow: -50px 0 50px 23px rgba(0, 0, 0, 0.25) inset,
         50px 0 50px 23px rgba(0, 0, 0, 0.25) inset;
       transition: $tr-fast;
     }
@@ -78,8 +85,8 @@
     display: block;
   }
 
-  #{$self}__button-prev,
-  #{$self}__button-next {
+  .swiper-button-prev,
+  .swiper-button-next {
     top: 22px;
     height: 100%;
     opacity: 0;

@@ -1,4 +1,15 @@
-@import '../../utils/utils-scss/vars.scss';
+@import '~utils/utils-scss/vars.scss';
+@import '~src/main.scss';
+@import '~components/advantages/advantages';
+@import '~components/circle-diagram/circle-diagram';
+@import '~components/card-book/card-book';
+@import '~components/date-dropdown/date-dropdown';
+@import '~components/dropdown-choose/dropdown-choose';
+@import '~components/review/review';
+@import '~components/like-button/like-button';
+@import '~components/bullet-list/bullet-list';
+@import '~components/svg-icons/svg-icons';
+@import '~components/block-title/block-title';
 
 .room-details {
   &__room-photos {

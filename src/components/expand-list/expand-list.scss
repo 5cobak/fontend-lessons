@@ -28,7 +28,7 @@
       height: 8px;
       opacity: 0.7;
       content: '';
-      background-image: url('assets/img/expand-more.svg');
+      background-image: url('~img/expand-more.svg');
       background-repeat: no-repeat;
       background-position: center;
       transition: $tr-fast;
@@ -110,7 +110,7 @@
   }
 
   &__checkbox:checked + span {
-    background-image: url('./assets/img/vector.svg');
+    background-image: url('~img/vector.svg');
     background-repeat: no-repeat;
     background-position: 50% 50%;
     border-color: $primary-color;

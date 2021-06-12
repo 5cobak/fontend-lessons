@@ -1,11 +1,13 @@
 @import '~utils/utils-scss/vars.scss';
 @import '~utils/utils-scss/reset.scss';
 @import '~utils/utils-scss/fonts.scss';
-@import '~src/main.scss';
 
 .index {
   &__list {
     margin-top: 20px;
+    font-family: $font-family-primary;
+    font-size: 20px;
+    text-align: center;
   }
 
   &__list-item {
