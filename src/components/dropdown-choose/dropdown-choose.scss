@@ -1,4 +1,5 @@
 .dropdown-choose {
+  $self: &;
   position: relative;
   font-size: 14px;
   border: $border-input;
@@ -21,6 +22,18 @@
   &_active {
     border: $border-input-hover;
     box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+
+    #{$self}__menu {
+      max-height: 500px;
+      opacity: 1;
+      border-top: $border-input-hover;
+      border-bottom: $border-input-hover;
+    }
+
+    #{$self}__arrow {
+      top: calc(50% - 4px);
+      transform: rotate(135deg);
+    }
   }
 
   &__title {
@@ -34,17 +47,24 @@
     }
   }
 
-  &__upper-field {
+  &__upper-field-wrap {
     position: relative;
-    padding: 12px 15px;
     overflow: hidden;
     font-family: $font-family-primary;
     line-height: 18px;
-    text-overflow: ellipsis;
     color: $text-color-brightness-75;
     background-color: #fff;
     border-radius: 4px;
     cursor: pointer;
+    caret-color: transparent;
+  }
+
+  &__upper-field {
+    padding: 12px 15px;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+    color: $text-color-brightness-75;
   }
 
   &__arrow {
@@ -57,11 +77,6 @@
     border-bottom: 2px solid $text-color-brightness-50;
     transition: $tr-fast;
     transform: rotate(-45deg);
-
-    &_active {
-      top: calc(50% - 4px);
-      transform: rotate(135deg);
-    }
   }
 
   &__menu {
@@ -82,13 +97,6 @@
     border-bottom-left-radius: 4px;
     transition: opacity $tr-fast;
     transition-timing-function: ease-in-out;
-
-    &_active {
-      max-height: 500px;
-      opacity: 1;
-      border-top: $border-input-hover;
-      border-bottom: $border-input-hover;
-    }
   }
 
   &__item {
@@ -138,8 +146,9 @@
     border: $border-input-hover;
     border-radius: 50%;
     cursor: pointer;
+    background: none;
 
-    &_no-active {
+    &_not-active {
       color: $text-color-brightness-25;
       border: 1px solid $text-color-brightness-25;
       cursor: initial;
@@ -169,7 +178,7 @@
     }
   }
 
-  &__btn-access {
+  &__btn-success {
     color: $primary-color;
     cursor: pointer;
   }

@@ -1,6 +1,6 @@
 class DateDropdown {
-  constructor(inputs) {
-    this._init(inputs);
+  constructor(dateDropdownEl) {
+    this._init(dateDropdownEl);
   }
 
   _getDaysLag() {
@@ -53,8 +53,8 @@ class DateDropdown {
   }
 
   _formatDate(formattedDate, input) {
-    const secondDate = formattedDate.split(',')[1];
     this.formattedDate = formattedDate;
+    const secondDate = formattedDate.split(',')[1];
     if (!secondDate) return;
 
     input.val(secondDate);
@@ -66,6 +66,8 @@ class DateDropdown {
 
   _handlerSelect(formattedDate) {
     this._formatDate(formattedDate, this.$secondInput);
+    const firstDate = this.formattedDate.split(',')[0];
+    this.input.value = firstDate;
 
     this._getDaysLag();
   }
@@ -95,8 +97,10 @@ class DateDropdown {
 
     this.$clearButton = this.$calendarEl.find('.datepicker--button');
     this.$buttonsParent = this.$calendarEl.find('.datepicker--buttons');
-    this.$buttonsParent.append('<span class="datepicker--button-access">Применить</span>');
-    this.$buttonAccess = this.$clearButton.next();
+    this.$buttonsParent.append(
+      '<button type="button" class="datepicker--button-success">Применить</button>',
+    );
+    this.$buttonsuccess = this.$clearButton.next();
   }
 
   _handlerClickClearButton() {
@@ -105,7 +109,7 @@ class DateDropdown {
     this._getDaysLag();
   }
 
-  _handlerClickAccessButton() {
+  _handlerClickSuccessButton() {
     this.isDatepickerActive = false;
     this._hideDatepicker();
   }
@@ -123,7 +127,7 @@ class DateDropdown {
     const handlerInput = this._handlerInput.bind(this);
     const handleClickSecondInput = this._handleClickSecondInput.bind(this);
     const handlerClickClearButton = this._handlerClickClearButton.bind(this);
-    const handlerClickAccessButton = this._handlerClickAccessButton.bind(this);
+    const handlerClickSuccessButton = this._handlerClickSuccessButton.bind(this);
     const handlerClickFirstInput = this._handlerClickFirstInput.bind(this);
     const handlerClickOutside = this._handlerClickOutside.bind(this);
     this.$clearButton.on('click', handlerClickClearButton);
@@ -132,13 +136,13 @@ class DateDropdown {
     this.$secondInput.on('keydown', handlerInput);
     this.$firstInput.on('keydown', handlerInput);
     this.$firstInput.on('click', handlerClickFirstInput);
-    this.$buttonAccess.on('mouseup', handlerClickAccessButton);
+    this.$buttonsuccess.on('mouseup', handlerClickSuccessButton);
     $(document).on('click', handlerClickOutside);
   }
 
-  _init(input) {
+  _init(dateDropdownEl) {
     this.isShowed = false;
-    this.input = input;
+    this.input = dateDropdownEl.querySelector('input');
     this._createDateDropdown();
     this._addEvents();
   }

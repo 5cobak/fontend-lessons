@@ -29,30 +29,36 @@
     }
   }
 
-  &__item {
-    &_margin-b-10 {
-      margin-bottom: 10px;
-    }
+  &__name {
+    margin-bottom: 10px;
+  }
 
-    &_margin-b-14 {
-      margin-bottom: 14px;
-    }
+  &__surname {
+    margin-bottom: 10px;
+  }
 
-    &_margin-b-16 {
-      margin-bottom: 16px;
-    }
+  &__gender {
+    margin-bottom: 18px;
+  }
 
-    &_margin-b-25 {
-      margin-bottom: 25px;
-    }
+  &__birthday {
+    margin-bottom: 14px;
+  }
 
-    &_margin-b-30 {
-      margin-bottom: 30px;
-    }
+  &__email {
+    margin-bottom: 10px;
+  }
 
-    &_margin-b-20 {
-      margin-bottom: 20px;
-    }
+  &__password {
+    margin-bottom: 10px;
+  }
+
+  &__offer {
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    margin-bottom: 32px;
   }
 
   &__sign-in {

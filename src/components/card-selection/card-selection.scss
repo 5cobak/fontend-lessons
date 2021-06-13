@@ -35,17 +35,15 @@
     }
   }
 
-  &__block {
-    &_margin-b-20 {
-      margin-bottom: 22px;
+  &__dates {
+    margin-bottom: 22px;
 
-      @media (max-width: $phone-width) {
-        margin-bottom: 10px;
-      }
+    @media (max-width: $phone-width) {
+      margin-bottom: 10px;
     }
+  }
 
-    &_margin-b-30 {
-      margin-bottom: 30px;
-    }
+  &__guests {
+    margin-bottom: 30px;
   }
 }

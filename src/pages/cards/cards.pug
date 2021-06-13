@@ -23,10 +23,10 @@ block head
   link(rel="manifest" href="assets/favicons/site.webmanifest")
 
 block content
-  svg.logo.logo_grey(role="image" aria-label="toxin logo")
+  svg.logo.logo_grey(aria-label="toxin logo")
     use(xlink:href="#logo-gray")
   main.cards-page
-    .container
+    .cards-page__container
       .cards-page__content.js-cards-page__content
         .cards-page__card
           +card-selection()

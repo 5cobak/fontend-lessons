@@ -5,6 +5,10 @@
   background-color: $bg-color-primary;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
 
+  &__container {
+    @include container;
+  }
+
   &__content {
     padding-top: 12px;
     padding-bottom: 12px;
@@ -42,25 +46,26 @@
   }
 
   &__nav {
+    margin-left: 10px;
     display: flex;
     align-items: center;
-    margin-left: 10px;
+
     @media (max-width: $sm-desktop-width) {
-      margin-left: 0;
       position: fixed;
       z-index: 1000;
       top: 0;
       right: 0;
       bottom: 0;
+      margin-left: 0;
+      display: block;
       overflow-y: scroll;
       width: 100%;
       max-width: 0;
       height: 100vh;
+      text-align: center;
       background-color: $bg-color-primary;
       border-top: 3px solid #b866b8;
       transition: $tr-fast;
-      display: block;
-      text-align: center;
 
       &_active {
         max-width: 80%;
@@ -91,11 +96,12 @@
         }
       }
       #{$self}__link {
+        padding: 20px 0;
         display: inline-block;
         width: 100%;
         font-size: 18px;
         vertical-align: center;
-        padding: 20px 0;
+
         @media (max-width: $phone-width) {
           font-size: 16px;
         }
@@ -123,14 +129,15 @@
   }
 
   &__link {
+    display: inline-flex;
     font-size: 14px;
     line-height: 17px;
     color: $text-color-brightness-50;
-    display: inline-flex;
 
     &_active {
       font-weight: bold;
     }
+
     &_dropping-out {
       &::after {
         margin-top: 4px;
@@ -152,6 +159,7 @@
         }
       }
     }
+
     &:visited {
       color: rgba(185, 101, 185, 0.98);
     }
@@ -177,9 +185,9 @@
     justify-content: space-between;
 
     @media screen and (max-width: $sm-desktop-width) {
+      margin-bottom: 20px;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 20px;
     }
   }
 
@@ -200,8 +208,9 @@
     display: none;
     min-width: 30px;
     min-height: 30px;
-    cursor: pointer;
     background: none;
+    cursor: pointer;
+
     &_active {
       position: fixed;
       z-index: 1002;

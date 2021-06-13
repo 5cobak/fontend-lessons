@@ -20,6 +20,10 @@
   background-repeat: no-repeat;
   background-position: center;
 
+  &__container {
+    @include container;
+  }
+
   @media (min-width: $sm-desktop-width) {
     background-size: cover;
   }

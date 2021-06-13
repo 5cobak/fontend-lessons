@@ -9,7 +9,6 @@ export default class Burger {
     this.burger.classList.toggle('header__burger_active');
     this.menu.classList.toggle('header__nav_active');
     this.shadow.classList.toggle('header__nav-shadow_active');
-    document.body.classList.toggle('stop-scrolling');
   }
 
   _handlerClickBurger(e) {

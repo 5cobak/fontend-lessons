@@ -21,7 +21,7 @@
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: baseline;
     font-family: $font-family-primary;
     line-height: 17px;
     font-weight: $bold;
@@ -41,9 +41,10 @@
   }
 
   &__number {
-    font-size: 14px;
     max-width: 50%;
+    font-size: 14px;
     overflow-wrap: break-word;
+
     @media (max-width: $phone-width) {
       font-size: 12px;
     }
@@ -54,6 +55,7 @@
     font-size: 24px;
     line-height: 30px;
     overflow-wrap: break-word;
+
     @media (max-width: $phone-width) {
       font-size: 20px;
       line-height: 15px;
@@ -65,19 +67,20 @@
     line-height: 15px;
     color: $primary-color;
     overflow-wrap: break-word;
+
     @media (max-width: $phone-width) {
       font-size: 12px;
     }
   }
 
   &__head-price {
+    display: inline-block;
+    max-width: 50%;
     font-family: $font-family-primary;
     font-size: 12px;
     line-height: 18px;
     color: $text-color-brightness-50;
     overflow-wrap: break-word;
-    display: inline-block;
-    max-width: 50%;
 
     @media (max-width: $phone-width) {
       font-size: 12px;
@@ -89,6 +92,7 @@
     font-family: $font-family-primary;
     font-size: 14px;
     font-weight: $bold;
+
     @media (max-width: $phone-width) {
       font-size: 12px;
     }
@@ -154,6 +158,7 @@
   &__calc-total {
     margin-bottom: 25px;
     display: flex;
+    align-items: baseline;
     font-family: $font-family-primary;
     line-height: 12px;
     font-weight: $bold;
@@ -176,8 +181,8 @@
 
   &__total {
     display: inline-block;
-    line-height: 17px;
     max-width: 50%;
+    line-height: 17px;
     overflow-wrap: break-word;
   }
 

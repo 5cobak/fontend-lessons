@@ -4,62 +4,66 @@ mixin card-check-in()
       form.card-check-in__form
         fieldset.card-check-in__form-fieldset
           legend.card-check-in__form-legend
-            h1.card-check-in__title
+            span.card-check-in__title
               | Регистрация аккаунта
-          .card-check-in__item.card-check-in__item_margin-b-10
+          .card-check-in__name
             +text-field(
                       {
                         title: "", 
                         placeholder: "Имя", 
-                        type: "text", 
+                        type: "text",
+                        name: "name-input",
                         required: true,
                         pat: "[A-Za-zА-Яа-яЁё]{3,}"
                       }
                     )
-          .card-check-in__item.card-check-in__item_margin-b-10
+          .card-check-in__surname
             +text-field(
                       {
                         title: "", 
                         placeholder: "Фамилия", 
-                        type: "text", 
+                        type: "text",
+                        name: "surname-input",
                         required: true,
                         pat: "[A-Za-zА-Яа-яЁё]{3,}"
                       }
                     )
-          .card-check-in__item.card-check-in__item_margin-b-16
+          .card-check-in__gender
             +radio-buttons({title: ""})
-          .card-check-in__item.card-check-in__item_margin-b-14
+          .card-check-in__birthday
             +masked-text-field(
                     {
                       title: "Дата рождения",
                       placeholder: "ДД.ММ.ГГГГ", 
-                      type: "text", 
-                      className: "js-date-masked"
+                      type: "text",
+                      name: "birthday-input"
                     }
                   )
-          .card-check-in__item.card-check-in__item_margin-b-10
+          .card-check-in__email
             +text-field(
                     {
                       title: "Данные для входа в сервис", 
                       placeholder: "Email", 
-                      type: "email", 
+                      type: "email",
+                      name: "email-input",
                       required: true,
                     }
                   )
-          .card-check-in__item.card-check-in__item_margin-b-10
+          .card-check-in__password
             +text-field(
                     {
                       title: "", 
                       placeholder: "Пароль", 
-                      type: "password", 
+                      type: "password",
+                      name: "password-input",
                       required: true,
                     }
                   )
-          .card-check-in__item.card-check-in__item_margin-b-20
+          .card-check-in__offer
             +toggle-buttons({title: ""})
-          .card-check-in__item.card-check-in__item_margin-b-30
-            button.button.button_big.button_with-icon Зарегистрироваться
+          .card-check-in__button
+            button(type="submit").button.button_big.button_with-icon Зарегистрироваться
           .card-check-in__sign-in 
             span.card-check-in__sign-in-text
               | Уже есть аккаунт на Toxin
-            a(href="sign-in-page.html").button.button_white.button_bigger Войти
+            a(href="sign-in.html").button.button_white.button_bigger Войти

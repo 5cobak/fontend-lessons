@@ -2,12 +2,13 @@
   max-width: 292px;
 
   &__title {
-    display: inline-block;
-    overflow-wrap: break-word;
-    font-weight: bold;
     margin-bottom: 18px;
     margin-left: 20px;
+    display: inline-block;
+    font-weight: bold;
+    overflow-wrap: break-word;
   }
+
   &__li {
     margin-bottom: 10px;
     display: flex;

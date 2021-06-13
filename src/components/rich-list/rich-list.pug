@@ -1,6 +1,7 @@
 mixin rich-list({title, items}) 
   .rich-list
-    span.block-title.block-title_margin-b-16 #{title}
+    .rich-list__title-wrap
+      span.block-title #{title}
     ul.rich-list__ul
       each val in items
         li.rich-list__li

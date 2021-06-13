@@ -2,10 +2,12 @@
 @import '~utils/utils-scss/reset.scss';
 @import '~utils/utils-scss/fonts.scss';
 @import '~utils/utils-scss/button.scss';
+@import '~utils/utils-scss/mixins.scss';
 @import '~components/header/header';
 @import '~components/footer/footer';
 @import '~components/logo/logo';
 @import '~components/subscription/subscription';
+@import '~components/block-title/block-title';
 
 html {
   height: 100%;

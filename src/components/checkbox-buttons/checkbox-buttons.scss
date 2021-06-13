@@ -4,6 +4,10 @@
   cursor: pointer;
   user-select: none;
 
+  &__title-wrap {
+    margin-bottom: 16px;
+  }
+
   &__item {
     margin-bottom: 10px;
     display: flex;

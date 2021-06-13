@@ -8,6 +8,7 @@
   text-transform: uppercase;
   color: $text-color;
   overflow-wrap: break-word;
+
   @media (max-width: $phone-width) {
     margin-bottom: 3px;
     font-size: 10px;

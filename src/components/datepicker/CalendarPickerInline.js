@@ -18,7 +18,7 @@ class CalendarPickerInline {
 
       const $calendarEl = $(item).datepicker().data('datepicker').$datepicker;
       const $buttonsParent = $calendarEl.find('.datepicker--buttons');
-      $buttonsParent.append('<span class="datepicker--button">Применить</span>');
+      $buttonsParent.append('<button type="button" class="datepicker--button">Применить</button>');
     });
   }
 

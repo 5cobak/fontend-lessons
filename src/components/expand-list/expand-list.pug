@@ -1,7 +1,7 @@
 mixin expand-list({title, className, items})
   .expand-list(class=className tabindex="0")
     .expand-list__title-wrapper
-      span.block-title.expand-list__title.js-expand-list__title #{title}
+      span.expand-list__title.js-expand-list__title #{title}
     .expand-list__dropdown.js-expand-list__dropdown
       each val in items
         label.expand-list__item

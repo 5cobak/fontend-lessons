@@ -12,6 +12,9 @@
 @import '~components/block-title/block-title';
 
 .room-details {
+  &__container {
+    @include container;
+  }
   &__room-photos {
     display: grid;
     grid-template-columns: 2.15fr 1fr;
@@ -70,14 +73,14 @@
   }
 
   &__title {
-    display: inline-block;
     margin-bottom: 20px;
+    display: inline-block;
     max-width: 340px;
     font-size: 19px;
     line-height: 23px;
-    overflow-wrap: break-word;
-    margin-bottom: 20px;
     font-weight: bold;
+    overflow-wrap: break-word;
+
     &_margin-l-20 {
       margin-left: 20px;
     }

@@ -25,6 +25,10 @@
   margin-top: 140px;
   margin-bottom: 130px;
 
+  &__container {
+    @include container;
+  }
+
   &__first-row {
     margin-bottom: 54px;
     display: grid;

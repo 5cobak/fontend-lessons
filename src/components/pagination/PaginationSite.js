@@ -12,7 +12,8 @@ class PaginationSite {
       edges: 1,
       cssStyle: 'light-theme',
       prevText: '',
-      nextText: '<svg class="pagination__arrow-forward" role="image" aria-label="icon next page"><use xlink:href="#arrow-forward"></use></svg>',
+      nextText:
+        '<svg class="pagination__arrow-forward"><use xlink:href="#arrow-forward"></use></svg>',
     });
   }
 

@@ -22,18 +22,16 @@
     }
   }
 
-  &__item {
-    &_margin-b-10 {
-      margin-bottom: 10px;
-    }
+  &__email {
+    margin-bottom: 10px;
+  }
 
-    &_margin-b-20 {
-      margin-bottom: 20px;
-    }
+  &__password {
+    margin-bottom: 20px;
+  }
 
-    &_margin-b-32 {
-      margin-bottom: 32px;
-    }
+  &__button {
+    margin-bottom: 30px;
   }
 
   &__check-in {

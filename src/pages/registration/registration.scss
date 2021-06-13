@@ -7,12 +7,16 @@
 @import '~components/radio-buttons/radio-buttons';
 @import '~components/masked-text-field/masked-text-field';
 
-.registration-page {
+.registration {
   background-image: url('./images/landing-page-bg-2.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-origin: content-box;
   background-size: cover;
+
+  &__container {
+    @include container;
+  }
 
   &__main {
     padding: 18px 0;

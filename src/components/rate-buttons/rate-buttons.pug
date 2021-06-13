@@ -3,10 +3,10 @@ mixin rate-buttons({rate})
     each val in [1,2,3,4,5]
       if val > rate
         .rate-buttons__star
-          svg.rate-buttons__svg(role="image" aria-label="rate-star")
+          svg.rate-buttons__svg
             use(xlink:href="#star_border").rate-buttons__star
       else 
         .rate-buttons__star
-          svg.rate-buttons__svg(role="image" aria-label="rate-star")
+          svg.rate-buttons__svg
             use(xlink:href="#star").rate-buttons__star
       

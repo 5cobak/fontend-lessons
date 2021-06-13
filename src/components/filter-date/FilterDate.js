@@ -59,20 +59,20 @@ class FilterDate {
     this.calendar = this.$input.datepicker().data('datepicker').$datepicker;
     this.$clearButton = this.calendar.find('.datepicker--button');
     const $buttonsParent = this.calendar.find('.datepicker--buttons');
-    $buttonsParent.append('<span class="datepicker--button-access">Применить</span>');
+    $buttonsParent.append('<span class="datepicker--button-success">Применить</span>');
 
-    this.$buttonAccess = this.$clearButton.next();
+    this.$buttonsuccess = this.$clearButton.next();
   }
 
-  _handlerMouseUpAccessButton() {
+  _handlerMouseUpsuccessButton() {
     this.$datepicker.hide();
   }
 
   _addEvents() {
-    const handlerMouseUpAccessButton = this._handlerMouseUpAccessButton.bind(this);
+    const handlerMouseUpsuccessButton = this._handlerMouseUpsuccessButton.bind(this);
     const handlerClickInput = this._handlerClickInput.bind(this);
     this.$input.on('click', handlerClickInput);
-    this.$buttonAccess.on('mouseup', handlerMouseUpAccessButton);
+    this.$buttonsuccess.on('mouseup', handlerMouseUpsuccessButton);
   }
 
   _init() {

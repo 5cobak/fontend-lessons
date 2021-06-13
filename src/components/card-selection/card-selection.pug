@@ -4,18 +4,16 @@ mixin card-selection()
       form.card-selection__form
         fieldset.card-selection__form-fieldset
           legend.card-selection__form-legend
-            h1.card-selection__title 
+            span.card-selection__title 
               | Найдем номера под ваши пожелания
-          .card-selection__block.card-selection__block_margin-b-20
+          .card-selection__dates
             +date-dropdown({
-              classNameFirstInput: "js-date-masked js-date-dropdown__input", 
-              classNameSecondInput: "js-date-masked",
               title: "прибытие", 
               titleSecond: "выезд"
               })
-          .card-selection__block.card-selection__block_margin-b-30
-            h4.block-title
+          .card-selection__guests
+            span.block-title
               | Гости
-            +dropdown-choose({className: "js-dropdown-guests", title:"Гости"})
-          button.button.button_big.button_with-icon
+            +dropdown-choose({className: "dropdown-guests js-dropdown-guests", title:"Гости"})
+          button(type="submit").button.button_big.button_with-icon
             | подобрать номер 

@@ -52,24 +52,24 @@ block content
             },
           ],isEntered: false})
   .content
-    .filter-page
-      main.filter-page__main
-        .container
-          .filter-page__content
-            form.filter-page__form
-              .filter-page__form-block.filter-page__form-block_margin-20
+    .filter
+      main.filter__main
+        .filter__container
+          .filter__content
+            form.filter__form
+              .filter__dates
                 span.block-title
                   | Даты пребывания в отеле 
                 +filter-date({className: "", title: "Даты пребывания в отеле"})
-              .filter-page__form-block.filter-page__form-block_margin-30
+              .filter__guests
                 span.block-title
                   | Гости
                 +dropdown-choose({className: "js-dropdown-guests", title: "Гости"})
-              .filter-page__form-block.filter-page__form-block_margin-25
+              .filter__price
                 +range-slider({title: "Диапазон цены", interval: "5000₽ - 10000₽"})
-                span.filter-page__range-description
+                span.filter__range-description
                   | Стоимость за сутки пребывания в номере
-              .filter-page__form-block.filter-page__form-block_margin-25
+              .filter__rules
                 +checkbox-buttons({
                   title: "Правила дома",
                   items: [
@@ -77,7 +77,7 @@ block content
                     "Можно с питомцами",
                     "Можно пригласить гостей (до 10 человек)",
                   ]})
-              .filter-page__form-block.filter-page__form-block_margin-30
+              .filter__availability
                 +rich-list({
                   title: "Доступность",
                   items: [
@@ -90,11 +90,11 @@ block content
                       description: "На 1 этаже вас встретит специалист и проводит до номера."
                     }
                   ]})
-              .filter-page__form-block.filter-page__form-block_margin-30
+              .filter__comfort
                 span.block-title
                   | Удобства номера
                 +dropdown-choose({className: "js-dropdown-beds", title: "Гости"})
-              .filter-page__form-block.filter-page__form-block_margin-30
+              .filter__additional-comfort 
                 +expand-list({
                  title: "Дополнительные удобства",
                  className: "js-expand-list",
@@ -108,10 +108,10 @@ block content
                 ]
                })
 
-            .filter-page__rooms-container
-              h1.filter-page__rooms-title
+            .filter__rooms-container
+              h1.filter__rooms-title
                 | Номера, которые мы для вас подобрали
-              .filter-page__rooms
+              .filter__rooms
                  +card-room([
                   {src: "room-1.jpg"},
                   {src: "room-1.jpg"},
@@ -258,7 +258,7 @@ block content
                     reviews: 55,
                     rate: 3
                   })
-              .filter-page__pagination
+              .filter__pagination
                 +pagination()
 
   +footer()

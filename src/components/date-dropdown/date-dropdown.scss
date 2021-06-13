@@ -3,7 +3,6 @@
 
   display: flex;
   width: 100%;
-  max-width: 320px;
   justify-content: space-between;
   user-select: none;
 
@@ -13,37 +12,22 @@
 
   &__label {
     display: inline-flex;
+    max-width: 50%;
     flex-direction: column;
-    max-width: 150px;
 
-    @media (max-width: $table-width) {
-      max-width: 130px;
-      &:first-child {
-        margin-right: 10px;
-      }
-    }
-
-    @media (max-width: $table-width) {
-      &:first-child {
-        margin-right: 10px;
-      }
+    &:first-child {
+      margin-right: 20px;
     }
   }
 
   &__input-wrap {
     position: relative;
     display: inline-block;
-    max-width: 150px;
-
-    @media (max-width: $phone-width) {
-      max-width: 130px;
-    }
   }
 
   &__input {
     padding: 12px 15px;
     width: 100%;
-    max-width: 150px;
     font-family: $font-family-primary;
     font-size: 14px;
     line-height: 18px;
@@ -54,9 +38,12 @@
     cursor: pointer;
     caret-color: transparent;
 
+    // &::placeholder {
+    //   color: $text-color-brightness-75;
+    // }
+
     @media (max-width: $phone-width) {
       padding: 10px 12px;
-      max-width: 130px;
       font-size: 12px;
     }
 

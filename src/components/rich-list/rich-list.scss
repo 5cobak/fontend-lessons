@@ -5,6 +5,10 @@
   cursor: pointer;
   user-select: none;
 
+  &__title-wrap {
+    margin-bottom: 15px;
+  }
+
   &__li {
     margin-bottom: 7px;
 
@@ -32,7 +36,7 @@
   }
 
   &__head {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     display: inline-block;
     overflow: hidden;
     max-width: 203px;

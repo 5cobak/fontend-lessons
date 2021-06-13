@@ -93,7 +93,7 @@
   }
 
   &--button,
-  &--button-access {
+  &--button-success {
     display: inline-block;
     height: auto;
     flex: none;
@@ -101,15 +101,17 @@
     font-size: 12px;
     font-weight: $bold;
     text-transform: uppercase;
-    cursor: pointer;
     color: $primary-color;
+    cursor: pointer;
+    background: none;
+
     @media (max-width: $phone-width) {
       font-size: 10px;
     }
 
     &:hover {
-      background: none;
       color: $primary-color;
+      background: none;
     }
   }
 }
@@ -178,8 +180,9 @@ div.datepicker--cell.-selected-.-focus- {
 
 .datepicker--cell.-in-range-,
 .-in-range-.datepicker--cell-day.-other-month- {
-  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25));
   color: $text-color-brightness-50;
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25));
+
   &:hover {
     background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25));
   }

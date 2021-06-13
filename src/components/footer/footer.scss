@@ -8,6 +8,10 @@
   background-color: #fff;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
 
+  &__container {
+    @include container;
+  }
+
   @media (max-width: $sm-desktop-width) {
     padding: 50px 0;
   }
@@ -39,8 +43,8 @@
   }
 
   &__link-logo {
-    display: inline-block;
     margin-bottom: 14px;
+    display: inline-block;
 
     @media (max-width: $sm-desktop-width) {
       margin-bottom: 0;
@@ -74,8 +78,8 @@
   }
 
   &__list-title {
-    display: inline-block;
     margin-bottom: 23px;
+    display: inline-block;
     font-family: $font-family-primary;
     font-size: 12px;
     line-height: 15px;
@@ -89,6 +93,7 @@
   &__list-item {
     margin-bottom: 21px;
     line-height: 17px;
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -102,6 +107,7 @@
     &_active {
       font-weight: bold;
     }
+
     &:visited {
       color: rgba(185, 101, 185, 0.98);
     }
@@ -110,22 +116,22 @@
   &__subscribe {
     padding-top: 5px;
     width: 260px;
+
     @media (max-width: $sm-desktop-width) {
       display: none;
     }
   }
 
   &__subscribe-title {
+    margin-bottom: 18px;
+    display: inline-block;
     font-family: $font-family-primary;
     font-size: 12px;
     line-height: 15px;
     font-weight: $bold;
-
     text-transform: uppercase;
     color: $text-color;
     overflow-wrap: break-word;
-    display: inline-block;
-    margin-bottom: 18px;
   }
 
   &__subscribe-text {
@@ -165,16 +171,17 @@
     overflow-wrap: break-word;
   }
 
-  &__social {
+  &__social-list {
     @media (max-width: $sm-desktop-width) {
       margin-top: 20px;
     }
   }
 
-  &__social-link {
-    margin-right: 20px;
+  &__social-item {
+    margin-right: 21px;
     display: inline-block;
     line-height: 17px;
+
     &:last-child {
       margin-right: 0;
     }

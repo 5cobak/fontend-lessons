@@ -11,6 +11,20 @@
   border-radius: 4px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
 
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 22px;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+
+    &::after {
+      font-size: 12px;
+      font-weight: bold;
+      color: #fff;
+    }
+  }
+
   &__slider {
     position: relative;
 
@@ -75,7 +89,8 @@
       height: 100%;
       opacity: 0;
       content: '';
-      box-shadow: -50px 0 50px 23px rgba(0, 0, 0, 0.25) inset,
+      box-shadow:
+        -50px 0 50px 23px rgba(0, 0, 0, 0.25) inset,
         50px 0 50px 23px rgba(0, 0, 0, 0.25) inset;
       transition: $tr-fast;
     }
@@ -83,20 +98,6 @@
 
   &__slider-img {
     display: block;
-  }
-
-  .swiper-button-prev,
-  .swiper-button-next {
-    top: 22px;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-
-    &::after {
-      font-size: 12px;
-      font-weight: bold;
-      color: #fff;
-    }
   }
 
   &__content {

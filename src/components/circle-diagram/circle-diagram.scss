@@ -72,8 +72,8 @@
       margin-right: 5px;
       display: block;
       width: 10px;
-      height: 10px;
       min-width: 10px;
+      height: 10px;
       min-height: 10px;
       content: '';
       border-radius: 50%;
@@ -106,8 +106,8 @@
 
   &__item-text {
     display: inline-block;
-    max-width: 150px;
     overflow: hidden;
+    max-width: 150px;
     white-space: pre-line;
     text-overflow: ellipsis;
   }

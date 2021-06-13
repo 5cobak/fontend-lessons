@@ -5,6 +5,7 @@ class DropdownChoose {
     element,
     placeholder,
     titles,
+    inputName,
     mainDeclination,
     declinations,
     maxWidth,
@@ -15,6 +16,7 @@ class DropdownChoose {
       element,
       placeholder,
       titles,
+      inputName,
       mainDeclination,
       declinations,
       maxWidth,
@@ -34,8 +36,8 @@ class DropdownChoose {
 
   _createUpperField() {
     const upperField = `
-    <div class='dropdown-choose__upper-field js-dropdown-choose__upper-field'>
-      <span class='dropdown-choose__main-text js-dropdown-choose__main-text'>${this.placeholder}</span>
+    <div class='dropdown-choose__upper-field-wrap js-dropdown-choose__upper-field-wrap'>
+      <input name=${this.inputName} class='dropdown-choose__upper-field js-dropdown-choose__upper-field' value='${this.placeholder}'/>
       <div class='dropdown-choose__arrow js-dropdown-choose__arrow'></div>
     </div>
     `;
@@ -52,15 +54,15 @@ class DropdownChoose {
   _createPlusMinus() {
     this.plusMinusEl = `
     <div class='dropdown-choose__count-block js-dropdown-choose__count-block'>
-      <div class='dropdown-choose__minus js-dropdown-choose__minus dropdown-choose__minus_no-active'>
+      <button type='button' class='dropdown-choose__minus js-dropdown-choose__minus dropdown-choose__minus_not-active'>
         -
-      </div>
+      </button>
       <div class='dropdown-choose__item-count js-dropdown-choose__item-count'>
         0
       </div>
-      <div class='dropdown-choose__plus js-dropdown-choose__plus'>
+      <button type='button' class='dropdown-choose__plus js-dropdown-choose__plus'>
         +
-      </div>
+      </button>
     </div>
     `;
   }
@@ -86,23 +88,17 @@ class DropdownChoose {
     this.buttons = `
       <div class='dropdown-choose__buttons js-dropdown-choose__buttons'>
         <div class='dropdown-choose__btn-clear js-dropdown-choose__btn-clear dropdown-choose__btn-clear_hidden'>Очистить</div>
-        <div class='dropdown-choose__btn-access js-dropdown-choose__btn-access'>Применить</div>
+        <div class='dropdown-choose__btn-success js-dropdown-choose__btn-success'>Применить</div>
       </div>
     `;
   }
 
   _showCurrentDropdown(e) {
-    const target = e.target.closest('.js-dropdown-choose__upper-field');
-
-    if (!target) return;
-    const menu = this.parentElement.querySelector('.js-dropdown-choose__menu');
-    const arrow = this.parentElement.querySelector('.js-dropdown-choose__arrow');
-    const textField = target;
+    const { target } = e;
+    const isClickOnUpperField = target !== this.input && target !== this.arrow;
+    if (isClickOnUpperField) return;
 
     this.parentElement.classList.toggle('dropdown-choose_active');
-    menu.classList.toggle('dropdown-choose__menu_active');
-    arrow.classList.toggle('dropdown-choose__arrow_active');
-    textField.classList.toggle('dropdown-choose__upper-field_active');
   }
 
   _addEventsByClickOnItems() {
@@ -114,14 +110,7 @@ class DropdownChoose {
     const target = e.target.closest('.js-dropdown-choose');
     if (target === this.parentElement) return;
 
-    const targetField = this.parentElement.querySelector('.js-dropdown-choose__upper-field');
-    const menu = this.parentElement.querySelector('.js-dropdown-choose__menu');
-    const arrow = this.parentElement.querySelector('.js-dropdown-choose__arrow');
-
     this.parentElement.classList.remove('dropdown-choose_active');
-    menu.classList.remove('dropdown-choose__menu_active');
-    arrow.classList.remove('dropdown-choose__arrow_active');
-    targetField.classList.remove('dropdown-choose__upper-field_active');
   }
 
   _addEventsForHide() {
@@ -163,7 +152,6 @@ class DropdownChoose {
   _changeText() {
     const items = this.menu.querySelectorAll('.js-dropdown-choose__item');
     const upperField = this.parentElement.querySelector('.js-dropdown-choose__upper-field');
-    const upperFieldText = upperField.querySelector('.js-dropdown-choose__main-text');
     const buttonClear = this.parentElement.querySelector('.js-dropdown-choose__btn-clear');
 
     items.map = [].map;
@@ -193,9 +181,9 @@ class DropdownChoose {
       formattedItems = `${formattedItems.slice(0, this.textLength)}...`;
     }
 
-    upperFieldText.innerHTML = formattedItems;
+    upperField.value = formattedItems;
 
-    if (formattedItems.length < 1) upperFieldText.innerHTML = this.placeholder;
+    if (formattedItems.length < 1) upperField.value = this.placeholder;
   }
 
   _handleIncrement(e) {
@@ -205,7 +193,7 @@ class DropdownChoose {
     const minus = item.querySelector('.js-dropdown-choose__minus');
 
     let count = Number(countItem.innerText);
-    minus.classList.remove('dropdown-choose__minus_no-active');
+    minus.classList.remove('dropdown-choose__minus_not-active');
     count += 1;
 
     countItem.innerHTML = count;
@@ -221,7 +209,7 @@ class DropdownChoose {
     count -= 1;
     countItem.innerHTML = count;
 
-    if (count === 0) minus.classList.add('dropdown-choose__minus_no-active');
+    if (count === 0) minus.classList.add('dropdown-choose__minus_not-active');
 
     this._changeText();
   }
@@ -253,21 +241,16 @@ class DropdownChoose {
     });
 
     const minuses = menu.querySelectorAll('.js-dropdown-choose__minus');
-    minuses.forEach((item) => item.classList.add('dropdown-choose__minus_no-active'));
+    minuses.forEach((item) => item.classList.add('dropdown-choose__minus_not-active'));
     mainText.innerText = this.placeholder;
     clearBtn.classList.add('dropdown-choose__btn-clear_hidden');
   }
 
-  _hideDropdownMenu() {
-    const { menu } = this;
-    const mainText = this.parentElement.querySelector('.js-dropdown-choose__main-text');
-    const upperField = mainText.parentElement;
-    const arrow = this.parentElement.querySelector('.js-dropdown-choose__arrow');
+  _hideDropdownMenu(e) {
+    const { target } = e;
 
-    upperField.parentElement.classList.remove('dropdown-choose_active');
-    menu.classList.remove('dropdown-choose__menu_active');
-    arrow.classList.remove('dropdown-choose__arrow_active');
-    upperField.classList.remove('dropdown-choose__upper-field_active');
+    if (target === this.parentElement) return;
+    this.parentElement.classList.remove('dropdown-choose_active');
   }
 
   _setEventsForButtons() {
@@ -276,19 +259,20 @@ class DropdownChoose {
     const { menu } = this;
 
     const clearBtn = menu.querySelector('.js-dropdown-choose__btn-clear');
-    const accessBtn = menu.querySelector('.js-dropdown-choose__btn-access');
+    const successBtn = menu.querySelector('.js-dropdown-choose__btn-success');
 
     const clearUpperTextField = this._clearUpperTextField.bind(this);
     const hideDropdownMenu = this._hideDropdownMenu.bind(this);
 
     clearBtn.addEventListener('click', clearUpperTextField);
-    accessBtn.addEventListener('click', hideDropdownMenu);
+    successBtn.addEventListener('click', hideDropdownMenu);
   }
 
   _init(
     element,
     placeholder,
     titles,
+    inputName,
     mainDeclination,
     declinations,
     maxWidth,
@@ -299,11 +283,14 @@ class DropdownChoose {
     this.mainDeclination = mainDeclination || null;
     this.declinations = declinations;
     this.textLength = textLength;
+    this.inputName = inputName;
     this.isButtons = buttons;
     this.maxWidth = maxWidth;
     this.parentElement = this._createEl(element);
     this.totalCount = 0;
     this._createUpperField();
+    this.input = this.parentElement.querySelector('.js-dropdown-choose__upper-field');
+    this.arrow = this.parentElement.querySelector('.js-dropdown-choose__arrow');
     this.menu = this._createMenu();
     this._addEventsByClickOnItems();
     this._addEventsForHide();

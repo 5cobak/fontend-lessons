@@ -1,6 +1,7 @@
 mixin checkbox-buttons({title, items})
   .checkbox-buttons
-    span.block-title.block-title_margin-b-16 #{title}
+    .checkbox-buttons__title-wrap
+      span.block-title #{title}
     each val in items
       label.checkbox-buttons__item
         input(type="checkbox").checkbox-buttons__checkbox

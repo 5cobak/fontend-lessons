@@ -1,46 +1,46 @@
 .like-button {
   position: relative;
+  padding: 0 5px 0 7px;
   display: inline-flex;
-  flex-wrap: wrap;
   width: 38px;
   max-width: 38px;
+  flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
   font-family: $font-family-primary;
   background-color: #fff;
+  border: 1px solid $text-color-brightness-25;
   border-radius: 10px;
   transition: $tr-fast;
   cursor: pointer;
   user-select: none;
-  border: 1px solid $text-color-brightness-25;
-  padding: 0 5px 0 7px;
 
   &__like {
+    position: absolute;
+    left: 5px;
     width: 10px;
     height: 10px;
-    left: 5px;
     transition: $tr-fast;
-    position: absolute;
   }
 
   &__like-favorite {
     position: absolute;
     left: 0;
+    left: 5px;
     width: 10px;
     height: 10px;
     opacity: 0;
     transition: $tr-fast;
-    left: 5px;
   }
 
   &__likes {
     display: inline-block;
     max-width: 70%;
     font-size: 12px;
-    overflow-wrap: break-word;
     line-height: normal;
     color: $text-color-brightness-25;
     transition: $tr-fast;
+    overflow-wrap: break-word;
   }
 
   &_active {
