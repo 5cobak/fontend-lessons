@@ -17,6 +17,7 @@
   &__container {
     @include container;
   }
+
   &__room-photos {
     display: grid;
     grid-template-columns: 2.15fr 1fr;

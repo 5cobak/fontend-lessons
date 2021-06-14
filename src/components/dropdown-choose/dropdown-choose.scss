@@ -1,5 +1,6 @@
 .dropdown-choose {
   $self: &;
+
   position: relative;
   font-size: 14px;
   border: $border-input;
@@ -61,11 +62,11 @@
 
   &__upper-field {
     padding: 12px 15px;
-    outline: none;
     width: 100%;
-    cursor: pointer;
-    color: $text-color-brightness-75;
     font-family: $font-family-primary;
+    color: $text-color-brightness-75;
+    outline: none;
+    cursor: pointer;
   }
 
   &__arrow {
@@ -144,10 +145,10 @@
     height: 30px;
     justify-content: center;
     align-items: center;
+    background: none;
     border: $border-input-hover;
     border-radius: 50%;
     cursor: pointer;
-    background: none;
 
     &_not-active {
       color: $text-color-brightness-25;
