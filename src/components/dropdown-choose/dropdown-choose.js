@@ -10,6 +10,7 @@ $(document).ready(() => {
         element: item,
         placeholder: 'Сколько гостей',
         titles: ['взрослые', 'дети', 'младенцы'],
+        inputName: 'input-guests',
         mainDeclination: ['Гость', 'Гостя', 'Гостей'],
         declinations: [['младенец', 'младенцев', 'младенцев']],
         textLength: 20,
@@ -27,6 +28,7 @@ $(document).ready(() => {
         element: item,
         placeholder: 'Сколько спален',
         titles: ['спальни', 'кровати', 'ванные комнаты'],
+        inputName: 'input-comforts',
         declinations: [
           ['спальня', 'спальни', 'спальня'],
           ['кровать', 'кровати', 'кроватей'],

@@ -60,10 +60,10 @@ class PriceCalculator {
 
   _init(parent) {
     this.parent = parent;
-    const inputs = this.parent.querySelectorAll('.js-card-book__dropdown-input');
+    const dropdownEl = this.parent.querySelector('.js-date-dropdown');
     const customDateDropdown = {};
     customDateDropdown.callback = this.injectHTML.bind(this);
-    const ExtendedDropdown = Object.assign(new DateDropdown(inputs), customDateDropdown);
+    const ExtendedDropdown = Object.assign(new DateDropdown(dropdownEl), customDateDropdown);
     this.dateDropdown = ExtendedDropdown;
   }
 }
