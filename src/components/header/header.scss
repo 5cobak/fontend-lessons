@@ -122,10 +122,16 @@
   }
 
   &__list-item {
+    display: inline-block;
+    max-width: 150px;
     margin-right: 23px;
     display: inline-flex;
     background-color: white;
     cursor: pointer;
+
+    @media screen and (max-width: $sm-desktop-width) {
+      width: 100%;
+    }
   }
 
   &__link {
@@ -133,6 +139,7 @@
     font-size: 14px;
     line-height: 17px;
     color: $text-color-brightness-50;
+    overflow-wrap: break-word;
 
     &_active {
       font-weight: bold;

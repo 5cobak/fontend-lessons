@@ -23,6 +23,11 @@
     font-weight: bold;
     font-weight: $bold;
     text-align: center;
+    pointer-events: none;
+
+    &:hover {
+      background: none;
+    }
   }
 
   &--nav-action {
@@ -92,8 +97,7 @@
     border: none;
   }
 
-  &--button,
-  &--button-success {
+  &--button {
     display: inline-block;
     height: auto;
     flex: none;
@@ -104,14 +108,15 @@
     color: $primary-color;
     background: none;
     cursor: pointer;
+    transition: $tr-fast;
+
+    &:hover {
+      color: $text-color-brightness-50;
+      background: none;
+    }
 
     @media (max-width: $phone-width) {
       font-size: 10px;
-    }
-
-    &:hover {
-      color: $primary-color;
-      background: none;
     }
   }
 }
@@ -176,6 +181,16 @@ div.datepicker--cell.-selected-.-focus- {
 
 .-selected-.-focus-.datepicker--cell-day.-other-month- {
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+}
+
+.datepicker--cell.-disabled- {
+  color: $text-color-brightness-50;
+  pointer-events: none;
+}
+
+.datepicker--cell.-other-month- {
+  color: $text-color-brightness-25;
+  pointer-events: none;
 }
 
 .datepicker--cell.-in-range-,

@@ -2,18 +2,17 @@ mixin card-selection()
   .card-selection
     .card-selection__content
       form.card-selection__form
-        fieldset.card-selection__form-fieldset
-          legend.card-selection__form-legend
-            span.card-selection__title 
-              | Найдем номера под ваши пожелания
-          .card-selection__dates
-            +date-dropdown({
-              title: "прибытие", 
-              titleSecond: "выезд"
-              })
-          .card-selection__guests
-            span.block-title
-              | Гости
-            +dropdown-choose({className: "dropdown-guests js-dropdown-guests", title:"Гости"})
-          button(type="submit").button.button_big.button_with-icon
-            | подобрать номер 
+        legend.card-selection__form-legend
+          span.card-selection__title 
+            | Найдем номера под ваши пожелания
+        .card-selection__dates
+          +date-dropdown({
+            title: "прибытие", 
+            titleSecond: "выезд"
+            })
+        .card-selection__guests
+          span.block-title
+            | Гости
+          +dropdown-choose({className: "dropdown-guests js-dropdown-guests", title:"Гости"})
+        button(type="submit").button.button_big.button_with-icon
+          | подобрать номер 

@@ -1,6 +1,7 @@
 mixin range-slider({title, interval})
   .range-slider
-    .range-slider__head 
-      span.block-title #{title}
+    .range-slider__head
+      if title
+        span.range-slider__title #{title}
       span.range-slider__values.js-range-slider__values #{interval}
     input.js-range-slider__input.range-slider__input

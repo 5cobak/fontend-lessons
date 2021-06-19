@@ -1,12 +1,17 @@
 .subscription {
   display: block;
-  max-width: 320px;
+  position: relative;
+
+  &__title {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
 
   &__input {
     padding: 12px 40px 12px 15px;
     display: block;
     width: 100%;
-    max-width: 266px;
     font-family: $font-family-primary;
     font-size: 14px;
     color: $text-color-brightness-75;
@@ -38,11 +43,6 @@
         color: $text-color-brightness-75;
       }
     }
-  }
-
-  &__form {
-    position: relative;
-    max-width: 266px;
   }
 
   &__button {

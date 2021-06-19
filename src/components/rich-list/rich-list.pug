@@ -1,7 +1,8 @@
 mixin rich-list({title, items}) 
   .rich-list
     .rich-list__title-wrap
-      span.block-title #{title}
+      if title
+        span.rich-list__title #{title}
     ul.rich-list__ul
       each val in items
         li.rich-list__li

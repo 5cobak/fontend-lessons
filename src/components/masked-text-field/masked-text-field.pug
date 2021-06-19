@@ -1,4 +1,5 @@
 mixin masked-text-field({title, name, placeholder,className})
   label.masked-text-field
-    span.block-title #{title}
+    if title
+      span.masked-text-field__title #{title}
     input.masked-text-field__input.js-masked-text-field__input(type=type placeholder=placeholder name=name)

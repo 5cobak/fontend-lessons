@@ -59,7 +59,7 @@ class FilterDate {
     this.calendar = this.$input.datepicker().data('datepicker').$datepicker;
     this.$clearButton = this.calendar.find('.datepicker--button');
     const $buttonsParent = this.calendar.find('.datepicker--buttons');
-    $buttonsParent.append('<span class="datepicker--button-success">Применить</span>');
+    $buttonsParent.append('<button class="button button_no-bg">Применить</button>');
 
     this.$buttonsuccess = this.$clearButton.next();
   }

@@ -46,10 +46,6 @@
     width: 100%;
     max-width: 320px;
 
-    &:hover {
-      opacity: 0.9;
-    }
-
     &::after {
       position: absolute;
       top: 0;
@@ -139,21 +135,12 @@
     border-radius: 0;
 
     &:hover {
+      color: $text-color-brightness-50;
       opacity: 1;
-      color: $text-color-brightness-50;
     }
   }
 
-  &_no-bg-grey {
-    color: $text-color-brightness-50;
-
-    &:hover {
-      color: $text-color-brightness-50;
-      background: none;
-    }
-  }
-
-  &_margin-r {
-    margin-bottom: 19px;
+  &_hidden {
+    visibility: hidden;
   }
 }

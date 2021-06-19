@@ -3,6 +3,12 @@
 .range-slider {
   max-width: 266px;
 
+  &__title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+  }
+
   &__head {
     margin-bottom: 20px;
     display: flex;

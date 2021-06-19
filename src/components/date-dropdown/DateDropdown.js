@@ -98,7 +98,7 @@ class DateDropdown {
     this.$clearButton = this.$calendarEl.find('.datepicker--button');
     this.$buttonsParent = this.$calendarEl.find('.datepicker--buttons');
     this.$buttonsParent.append(
-      '<button type="button" class="datepicker--button-success">Применить</button>',
+      '<button type="button" class="button button_no-bg">Применить</button>',
     );
     this.$buttonsuccess = this.$clearButton.next();
   }

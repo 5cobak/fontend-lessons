@@ -2,6 +2,12 @@
   display: block;
   max-width: 320px;
 
+  &__title {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
   &__input {
     padding: 12px 15px;
     width: 100%;
