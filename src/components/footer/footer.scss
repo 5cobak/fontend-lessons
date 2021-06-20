@@ -43,10 +43,11 @@
   }
 
   &__link-logo {
-    display: inline-block;
     margin-bottom: 14px;
+    display: inline-block;
     max-width: 105px;
     max-height: 48px;
+
     @media (max-width: $sm-desktop-width) {
       margin-bottom: 0;
     }

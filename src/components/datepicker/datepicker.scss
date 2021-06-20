@@ -107,8 +107,8 @@
     text-transform: uppercase;
     color: $primary-color;
     background: none;
-    cursor: pointer;
     transition: $tr-fast;
+    cursor: pointer;
 
     &:hover {
       color: $text-color-brightness-50;
@@ -184,13 +184,13 @@ div.datepicker--cell.-selected-.-focus- {
 }
 
 .datepicker--cell.-disabled- {
-  color: $text-color-brightness-50;
   pointer-events: none;
+  color: $text-color-brightness-50;
 }
 
 .datepicker--cell.-other-month- {
-  color: $text-color-brightness-25;
   pointer-events: none;
+  color: $text-color-brightness-25;
 }
 
 .datepicker--cell.-in-range-,

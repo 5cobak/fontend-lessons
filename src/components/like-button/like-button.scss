@@ -1,6 +1,7 @@
 .like-button {
   position: relative;
   $self: &;
+
   padding: 0 10px 0 7px;
   display: inline-flex;
   min-height: 20px;
@@ -32,10 +33,10 @@
   }
 
   &__likes {
+    margin-left: 15px;
     display: inline-block;
     max-width: 70%;
     font-size: 12px;
-    margin-left: 15px;
     line-height: normal;
     color: $text-color-brightness-25;
     transition: transform $tr-fast;
