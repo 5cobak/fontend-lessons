@@ -28,7 +28,6 @@ class DropdownChoose {
   _createEl(element) {
     const dropdown = document.createElement('div');
     dropdown.className = 'dropdown-choose js-dropdown-choose';
-    dropdown.tabIndex = 0;
     dropdown.style.maxWidth = `${this.maxWidth}px`;
     element.append(dropdown);
     return dropdown;
@@ -93,7 +92,7 @@ class DropdownChoose {
     `;
   }
 
-  _showCurrentDropdown(e) {
+  _handlerClickDropdown(e) {
     const { target } = e;
     const isClickOnUpperField = target !== this.input && target !== this.arrow;
     if (isClickOnUpperField) return;
@@ -101,12 +100,22 @@ class DropdownChoose {
     this.parentElement.classList.toggle('dropdown-choose_active');
   }
 
-  _addEventsByClickOnItems() {
-    const showCurrentDropdown = this._showCurrentDropdown.bind(this);
-    this.parentElement.addEventListener('click', showCurrentDropdown);
+  _addEventsOnClickDropdown() {
+    const handlerClickDropdown = this._handlerClickDropdown.bind(this);
+    this.parentElement.addEventListener('click', handlerClickDropdown);
   }
 
-  _hideAllDropdowns(e) {
+  _handlerFocusOnUpperField(e) {
+    if (e.key !== 'Tab') return;
+    this.parentElement.classList.toggle('dropdown-choose_active');
+  }
+
+  _addEventsOnInput() {
+    this._handlerFocusOnUpperField = this._handlerFocusOnUpperField.bind(this);
+    this.input.addEventListener('keydown', this._handlerFocusOnUpperField);
+  }
+
+  _handlerClickOutSide(e) {
     const target = e.target.closest('.js-dropdown-choose');
     if (target === this.parentElement) return;
 
@@ -114,8 +123,8 @@ class DropdownChoose {
   }
 
   _addEventsForHide() {
-    const hideAll = this._hideAllDropdowns.bind(this);
-    document.addEventListener('click', hideAll);
+    const handlerClickOutSide = this._handlerClickOutSide.bind(this);
+    document.addEventListener('click', handlerClickOutSide);
   }
 
   _getStringMultiVariant(items) {
@@ -185,7 +194,7 @@ class DropdownChoose {
     if (formattedItems.length < 1) upperField.value = this.placeholder;
   }
 
-  _handleIncrement(e) {
+  _handlerIncrement(e) {
     const plus = e.currentTarget;
     const item = plus.parentElement;
     const countItem = item.querySelector('.js-dropdown-choose__item-count');
@@ -199,7 +208,7 @@ class DropdownChoose {
     this._changeText();
   }
 
-  _handleDecrement(e) {
+  _handlerDecrement(e) {
     const minus = e.currentTarget;
     const item = minus.parentElement;
     const countItem = item.querySelector('.js-dropdown-choose__item-count');
@@ -215,19 +224,19 @@ class DropdownChoose {
 
   _setEventsForPlusMinus() {
     const items = this.menu.querySelectorAll('.js-dropdown-choose__item');
-    const handleIncrement = this._handleIncrement.bind(this);
-    const handleDecrement = this._handleDecrement.bind(this);
+    const handlerIncrement = this._handlerIncrement.bind(this);
+    const handlerDecrement = this._handlerDecrement.bind(this);
 
     items.forEach((item) => {
       const plus = item.querySelector('.js-dropdown-choose__plus');
       const minus = item.querySelector('.js-dropdown-choose__minus');
 
-      plus.addEventListener('click', handleIncrement);
-      minus.addEventListener('click', handleDecrement);
+      plus.addEventListener('click', handlerIncrement);
+      minus.addEventListener('click', handlerDecrement);
     });
   }
 
-  _clearUpperTextField() {
+  _handlerClickButtonClear() {
     const { menu } = this;
     const itemCounts = menu.querySelectorAll('.js-dropdown-choose__item-count');
     const upperField = this.parentElement.querySelector('.js-dropdown-choose__upper-field');
@@ -244,21 +253,24 @@ class DropdownChoose {
     this.buttonClear.classList.add('button_hidden');
   }
 
-  _hideDropdownMenu(e) {
-    const { target } = e;
+  _handlerBlur() {
+    this.parentElement.classList.remove('dropdown-choose_active');
+  }
 
-    if (target === this.parentElement) return;
+  _handlerClickSuccessButton() {
     this.parentElement.classList.remove('dropdown-choose_active');
   }
 
   _setEventsForButtons() {
     if (!this.isButtons) return;
 
-    const clearUpperTextField = this._clearUpperTextField.bind(this);
-    const hideDropdownMenu = this._hideDropdownMenu.bind(this);
+    const handlerClickButtonClear = this._handlerClickButtonClear.bind(this);
+    const handlerBlur = this._handlerBlur.bind(this);
+    const handlerClickSuccessButton = this._handlerClickSuccessButton.bind(this);
 
-    this.buttonClear.addEventListener('click', clearUpperTextField);
-    this.buttonSuccess.addEventListener('click', hideDropdownMenu);
+    this.buttonClear.addEventListener('click', handlerClickButtonClear);
+    this.buttonSuccess.addEventListener('click', handlerClickSuccessButton);
+    this.buttonSuccess.addEventListener('blur', handlerBlur);
   }
 
   _init(
@@ -285,7 +297,8 @@ class DropdownChoose {
     this.input = this.parentElement.querySelector('.js-dropdown-choose__upper-field');
     this.arrow = this.parentElement.querySelector('.js-dropdown-choose__arrow');
     this.menu = this._createMenu();
-    this._addEventsByClickOnItems();
+    this._addEventsOnInput();
+    this._addEventsOnClickDropdown();
     this._addEventsForHide();
     this.items = this._createItems(titles);
     this._createButtons();
