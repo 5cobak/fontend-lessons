@@ -67,11 +67,7 @@
   &_white {
     position: relative;
     z-index: 10;
-    display: inline-flex;
     max-width: 150px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
     font-size: 12px;
     color: $button-text-color-secondary;
     background: none;

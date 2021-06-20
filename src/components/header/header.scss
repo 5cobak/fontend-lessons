@@ -22,6 +22,11 @@
     }
   }
 
+  &__logo-link {
+    max-width: 105px;
+    max-height: 48px;
+  }
+
   &__nav-shadow {
     position: fixed;
     z-index: 900;
@@ -125,17 +130,15 @@
     display: inline-block;
     max-width: 150px;
     margin-right: 23px;
-    display: inline-flex;
     background-color: white;
     cursor: pointer;
 
     @media screen and (max-width: $sm-desktop-width) {
-      width: 100%;
+      max-width: 100%;
     }
   }
 
   &__link {
-    display: inline-flex;
     font-size: 14px;
     line-height: 17px;
     color: $text-color-brightness-50;

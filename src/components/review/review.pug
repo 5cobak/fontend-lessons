@@ -6,5 +6,6 @@ mixin review({src: path, name, date, text, like})
         .review__name #{name}
         .review__date #{date}
     .review__content
-      +like-button({className: "review__like", count: like})
+      .review__like-wrap
+        +like-button({count: like})
       p.review__text #{text}

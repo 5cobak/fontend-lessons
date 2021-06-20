@@ -1,10 +1,9 @@
 .like-button {
   position: relative;
-  padding: 0 5px 0 7px;
+  $self: &;
+  padding: 0 10px 0 7px;
   display: inline-flex;
-  width: 38px;
-  max-width: 38px;
-  flex-wrap: wrap;
+  min-height: 20px;
   justify-content: flex-end;
   align-items: center;
   font-family: $font-family-primary;
@@ -25,7 +24,6 @@
 
   &__like-favorite {
     position: absolute;
-    left: 0;
     left: 5px;
     width: 10px;
     height: 10px;
@@ -37,13 +35,22 @@
     display: inline-block;
     max-width: 70%;
     font-size: 12px;
+    margin-left: 15px;
     line-height: normal;
     color: $text-color-brightness-25;
-    transition: $tr-fast;
+    transition: transform $tr-fast;
     overflow-wrap: break-word;
   }
 
   &_active {
+    #{$self}__like {
+      opacity: 0;
+    }
+
+    #{$self}__like-favorite {
+      opacity: 1;
+    }
+
     svg {
       transform: rotateZ(-360deg);
       animation-name: changeSize;
