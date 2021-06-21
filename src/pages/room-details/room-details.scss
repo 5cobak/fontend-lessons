@@ -112,6 +112,10 @@
   &__block {
     &:not(:last-child) {
       margin-right: 104px;
+
+      @media screen and (max-width: $md-desktop-width) {
+        margin-right: 20px;
+      }
     }
 
     @media (max-width: $phone-width) {
@@ -141,6 +145,10 @@
     @media (max-width: $sm-desktop-width) {
       margin: 0;
       margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: $md-desktop-width) {
+      margin-right: 10px;
     }
   }
 

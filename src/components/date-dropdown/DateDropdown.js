@@ -109,7 +109,8 @@ class DateDropdown {
     this._getDaysLag();
   }
 
-  _handlerClickSuccessButton() {
+  _handlerClickSuccessButton(e) {
+    e.stopPropagation();
     this.isDatepickerActive = false;
     this._hideDatepicker();
   }

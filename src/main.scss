@@ -36,6 +36,9 @@ html {
 body {
   margin: 0;
   padding: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 *,
@@ -46,13 +49,6 @@ body {
 
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
-}
-
-.wrapper {
-  margin: 0 auto;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
 }
 
 .content {

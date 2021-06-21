@@ -56,6 +56,10 @@
     line-height: 24px;
     color: $text-color-brightness-75;
 
+    @media screen and (max-width: $table-width) {
+      margin-left: 0;
+    }
+
     @media (max-width: $phone-width) {
       font-size: 12px;
       line-height: 20px;
