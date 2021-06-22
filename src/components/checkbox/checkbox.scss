@@ -1,0 +1,414 @@
+.checkbox {
+  display: block;
+  max-width: 222px;
+  cursor: pointer;
+  user-select: none;
+  $self: &;
+
+  &__title-wrap {
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    display: flex;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: $phone-width) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__custom-checkbox {
+    margin-right: 10px;
+    display: inline-block;
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    min-height: 20px;
+    border: $border-input;
+    border-radius: 4px;
+
+    @media (max-width: $phone-width) {
+      margin-right: 5px;
+    }
+
+    &:focus {
+      border: $border-input-hover;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 20px;
+    white-space: pre-wrap;
+    color: $text-color-brightness-50;
+
+    @media (max-width: $phone-width) {
+      font-size: 12px;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  input:checked + span {
+    background-image: url('~img/vector.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-color: $primary-color;
+  }
+
+  &_described {
+    max-width: 264px;
+
+    #{$self}__title-wrap {
+      margin-bottom: 13px;
+    }
+
+    #{$self}__title {
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    #{$self}__item {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    #{$self}__label {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    #{$self}__custom-checkbox {
+      margin-right: 10px;
+      display: inline-block;
+      min-width: 20px;
+      min-height: 20px;
+      border: $border-input;
+      border-radius: 4px;
+
+      &:focus {
+        border: $border-input-hover;
+      }
+    }
+
+    #{$self}__text-title {
+      display: inline-block;
+      overflow: hidden;
+      max-width: 203px;
+      font-family: $font-family-primary;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: $bold;
+      white-space: pre;
+      white-space: break-spaces;
+      text-overflow: ellipsis;
+      color: $text-color-brightness-75;
+      transition: $tr-fast;
+
+      @media (max-width: $phone-width) {
+        font-size: 10px;
+      }
+    }
+
+    #{$self}__description {
+      font-size: 12px;
+      line-height: 14px;
+      white-space: pre-wrap;
+      color: $text-color-brightness-50;
+
+      @media (max-width: $phone-width) {
+        font-size: 10px;
+        line-height: 12px;
+      }
+    }
+
+    input {
+      display: none;
+    }
+
+    input:checked + span {
+      background-image: url('~img/vector.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      border-color: $primary-color;
+    }
+  }
+
+  &_dropping-out {
+    max-width: 266px;
+
+    &:focus {
+      outline: 2px solid $primary-color;
+    }
+
+    &__dropdown {
+      display: block;
+    }
+
+    #{$self}__title {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &::after {
+        margin-right: 20px;
+        margin-bottom: 0;
+        display: block;
+        width: 12px;
+        height: 8px;
+        opacity: 0.7;
+        content: '';
+        background-image: url('~img/expand-more.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: $tr-fast;
+
+        @media (max-width: $phone-width) {
+          margin-right: 10px;
+        }
+
+        @media (max-width: $phone-width) {
+          font-size: 10px;
+        }
+      }
+
+      &_active {
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    #{$self}__item {
+      padding-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      cursor: pointer;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    #{$self}__custom-checkbox {
+      margin-right: 10px;
+      display: inline-block;
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
+      min-height: 20px;
+      border: $border-input;
+      border-radius: 4px;
+
+      &:focus {
+        border: $border-input-hover;
+      }
+
+      @media (max-width: $phone-width) {
+        margin-right: 5px;
+      }
+    }
+
+    #{$self}__text {
+      font-size: 14px;
+      line-height: 20px;
+      white-space: pre-wrap;
+      color: $text-color-brightness-50;
+
+      @media (max-width: $phone-width) {
+        font-size: 12px;
+      }
+    }
+
+    #{$self}__checkbox {
+      display: none;
+    }
+
+    #{$self}__checkbox:checked + span {
+      background-image: url('~img/vector.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      border-color: $primary-color;
+    }
+  }
+
+  &_switchable {
+    position: relative;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+
+    #{$self}__list {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    #{$self}__item {
+      margin-bottom: 0;
+
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+
+    @media (max-width: $phone-width) {
+      font-size: 12px;
+    }
+
+    #{$self}__label {
+      margin-right: 20px;
+      display: inline-flex;
+      align-items: center;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    #{$self}__input {
+      position: absolute;
+      visibility: hidden;
+      cursor: pointer;
+      &:checked ~ #{$self}__checkmark {
+        border-color: $primary-color;
+        background-image: none;
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      &:checked ~ label {
+        color: $text-color;
+      }
+      &:checked ~ #{$self}__text {
+        color: $text-color-brightness-75;
+      }
+    }
+
+    #{$self}__checkmark {
+      margin-right: 10px;
+      display: flex;
+      width: 20px;
+      max-width: 20px;
+      height: 20px;
+      max-height: 20px;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      border: 1px solid $text-color-brightness-25;
+      border-radius: 50%;
+
+      @media (max-width: $phone-width) {
+        margin-right: 5px;
+      }
+
+      &:focus {
+        border: $border-input-hover;
+      }
+
+      &::after {
+        display: block;
+        width: 12px;
+        height: 12px;
+        opacity: 0;
+        content: '';
+        background: $button-color-primary;
+        border-radius: 50%;
+        transition: $tr-fast;
+      }
+    }
+
+    #{$self}__text {
+      color: $text-color-brightness-50;
+    }
+  }
+
+  &_oval {
+    max-width: 100%;
+    #{$self}__label {
+      display: inline-flex;
+      justify-content: center;
+      align-items: flex-start;
+      cursor: pointer;
+    }
+
+    #{$self}__checkbox {
+      display: none;
+      &:checked ~ #{$self}__checkmark {
+        border-color: $primary-color;
+        background-image: none;
+        &::after {
+          left: calc(100% - 15px);
+          background: $button-color-primary;
+        }
+      }
+      &:checked ~ #{$self}__subtitle {
+        color: $text-color-brightness-75;
+      }
+    }
+
+    #{$self}__checkmark {
+      position: relative;
+      margin-right: 10px;
+      display: inline-flex;
+      overflow: hidden;
+      min-width: 40px;
+      min-height: 20px;
+      justify-content: flex-start;
+      align-items: center;
+      border: 1px solid $text-color-brightness-25;
+      border-radius: 10px;
+      transition: $tr-fast;
+
+      &:focus {
+        border: $border-input-hover;
+      }
+
+      &::after {
+        position: absolute;
+        left: 3px;
+        display: block;
+        width: 12px;
+        height: 12px;
+        content: '';
+        background: $text-color-brightness-25;
+        border-radius: 50%;
+        transition: $tr-fast;
+      }
+    }
+
+    #{$self}__subtitle {
+      font-size: 14px;
+      line-height: 20px;
+      white-space: pre-wrap;
+      color: $text-color-brightness-75;
+
+      @media (max-width: $phone-width) {
+        font-size: 12px;
+      }
+    }
+  }
+}

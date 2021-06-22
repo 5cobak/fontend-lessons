@@ -1,0 +1,60 @@
+mixin checkbox({title, items, type})
+  .checkbox(class=`${type ? 'checkbox_' + type : ''}`)
+    if !type
+      .checkbox__title-wrap
+        if title
+          span.checkbox__title #{title}
+      ul.checkbox__list
+      each val in items
+        li.checkbox__item
+          label.checkbox__item
+            input(type="checkbox").checkbox__checkbox
+            span.checkbox__custom-checkbox(tabindex="0")
+            span.checkbox__text
+              | #{val}
+    if type === 'described'
+      .checkbox__title-wrap
+        if title
+          span.checkbox__title #{title}
+      ul.checkbox__list
+        each val in items
+          li.checkbox__item
+            label.checkbox__label
+              input(type="checkbox").checkbox__checkbox
+              span.checkbox__custom-checkbox(tabindex="0")
+              span.checkbox__text
+                span.checkbox__text-title #{val.title}
+                br
+                p.checkbox__description
+                  | #{val.description}
+    if type === 'dropping-out'
+      details.checkbox__dropdown
+        summary.checkbox__title.js-checkbox__title #{title}
+        ul.checkbox__list
+          each val in items
+            li.checkbox-button__item
+              label.checkbox__item
+                input(type="checkbox").checkbox__checkbox.js-checkbox__checkbox
+                span.checkbox__custom-checkbox(tabindex="0") 
+                span.checkbox__text
+                  | #{val}
+    if type === 'switchable'
+      ul.checkbox__list
+        each val in items
+          li.checkbox__item
+            label.checkbox__label
+              input(type="radio" name="radio" checked=val.checked).checkbox__input
+              span.checkbox__checkmark(tabindex="0")
+              span.checkbox__text
+                | #{val}
+    if type === 'oval'
+      .checkbox__container
+        ul.checkbox__list
+          each val in items
+            li.checkbox__item
+              label.checkbox__label 
+                input.checkbox__checkbox(type="checkbox")
+                span.checkbox__checkmark(tabindex="0")
+                span.checkbox__subtitle
+                  | #{val} 
+    

@@ -1,24 +1,22 @@
 extends ../template
 
-include ../../components/text-field/text-field.pug
-include ../../components/masked-text-field/masked-text-field.pug
-include ../../components/dropdown-choose/dropdown-choose.pug
-include ../../components/date-dropdown/date-dropdown.pug
-include ../../components/filter-date/filter-date.pug
-include ../../components/subscription/subscription.pug
-include ../../components/expand-list/expand-list.pug
-include ../../components/checkbox-buttons/checkbox-buttons.pug
-include ../../components/radio-buttons/radio-buttons.pug
-include ../../components/toggle-buttons/toggle-buttons.pug
-include ../../components/like-button/like-button
-include ../../components/rate-buttons/rate-buttons
-include ../../components/range-slider/range-slider
-include ../../components/pagination/pagination
-include ../../components/rich-list/rich-list
-include ../../components/bullet-list/bullet-list
-include ../../components/advantages/advantages
-include ../../components/review/review
-include ../../components/card-room/card-room
+include ~components/text-field/text-field.pug
+include ~components/masked-text-field/masked-text-field.pug
+include ~components/dropdown-choose/dropdown-choose.pug
+include ~components/date-dropdown/date-dropdown.pug
+include ~components/filter-date/filter-date.pug
+include ~components/subscription/subscription.pug
+include ~components/checkbox/checkbox.pug
+include ~components/radio-buttons/radio-buttons.pug
+include ~components/toggle-buttons/toggle-buttons.pug
+include ~components/like-button/like-button
+include ~components/rate/rate
+include ~components/range-slider/range-slider
+include ~components/pagination/pagination
+include ~components/bullet-list/bullet-list
+include ~components/advantages/advantages
+include ~components/review/review
+include ~components/card-room/card-room
 
 block head
 block content
@@ -56,9 +54,9 @@ block content
               +subscription({title: "subscription", placeholder: "Email"})
               span.block-title dropdown
               +dropdown-choose({className: "js-dropdown-beds", title: "dropdown"})
-              +expand-list({
+              +checkbox({
                 title: "expandable checkbox list",
-                className: "js-expand-list",
+                type: "dropping-out",
                 items: [
                   "Завтрак",
                   "Письменный стол",
@@ -69,7 +67,7 @@ block content
                 ]
                })
             .col
-              +checkbox-buttons({
+              +checkbox({
                 title: "checkbox buttons",
                 items: [
                   "Можно курить",
@@ -78,14 +76,21 @@ block content
                 ]
                 })
               span.block-title.block-title_margin-b-16 radio button
-              +radio-buttons({title: "radio buttons"})
+              +checkbox({type: 'switchable', items: [{
+                  title: 'Мужчина',
+                  checked: true
+                },
+                {
+                  title: 'Женщина',
+                }
+              ]})
               span.block-title.block-title_margin-b-16 toggle
-              +toggle-buttons()
+              +checkbox({type: 'oval', items: ['Получать спецпредложения']})
               .block-title.block-title_margin-b-16 like buttons
               +like-button({className: "", count: 0})
               .block-title.block-title_margin-b-16 rate button
-              +rate-buttons({rate: 3})
-              +rich-list({
+              +rate({rate: 3})
+              +checkbox({
                 title: "rich checkbox buttons",
                 items: [
                   {
@@ -96,19 +101,20 @@ block content
                     title: "Помощник для инвалидов",
                     description: "На 1 этаже вас встретит специалист  и проводит до номера."
                   }
-                ]
+                ],
+                type: "described"
               })
             .col
               +range-slider({title: "range slider", interval: "5000₽ - 10000₽"})
               .block-title.block-title_margin-b-16 buttons
               br
-              a(href="/mock-adress/").button click me
+              a(href="/mock-address/").button click me
               br
               br 
-              a(href="/mock-adress/").button.button_white click me
+              a(href="/mock-address/").button.button_white click me
               br
               br
-              a(href="/mock-adress/").button.button_no-bg click me
+              a(href="/mock-address/").button.button_no-bg click me
               br
               br
               button(type="submit").button.button_big перейти к оплате

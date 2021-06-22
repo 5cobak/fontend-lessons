@@ -2,9 +2,8 @@ mixin card-selection()
   .card-selection
     .card-selection__content
       form.card-selection__form
-        legend.card-selection__form-legend
-          span.card-selection__title 
-            | Найдем номера под ваши пожелания
+        h1.card-selection__title 
+          | Найдем номера под ваши пожелания
         .card-selection__dates
           +date-dropdown({
             title: "прибытие", 

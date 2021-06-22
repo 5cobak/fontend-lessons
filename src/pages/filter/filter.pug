@@ -1,20 +1,18 @@
 extends ../template
 
-include ../../components/header/header
-include ../../components/footer/footer
-include ../../components/subscription/subscription
-include ../../components/text-field/text-field
-include ../../components/radio-buttons/radio-buttons
-include ../../components/date-dropdown/date-dropdown
-include ../../components/dropdown-choose/dropdown-choose
-include ../../components/filter-date/filter-date
-include ../../components/range-slider/range-slider
-include ../../components/checkbox-buttons/checkbox-buttons
-include ../../components/rich-list/rich-list
-include ../../components/expand-list/expand-list
-include ../../components/card-room/card-room
-include ../../components/rate-buttons/rate-buttons
-include ../../components/pagination/pagination
+include ~components/header/header
+include ~components/footer/footer
+include ~components/subscription/subscription
+include ~components/text-field/text-field
+include .~components/radio-buttons/radio-buttons
+include ~components/date-dropdown/date-dropdown
+include ~components/dropdown-choose/dropdown-choose
+include ~components/filter-date/filter-date
+include ~components/range-slider/range-slider
+include ~components/checkbox/checkbox
+include ~components/card-room/card-room
+include ~components/rate/rate
+include ~components/pagination/pagination
 block head
 block content
   +header({routes: [
@@ -59,13 +57,13 @@ block content
               .filter__guests
                 span.block-title
                   | Гости
-                +dropdown-choose({className: "js-dropdown-guests", title: "Гости"})
+                +dropdown-choose({className: "dropdown-guests js-dropdown-guests", title: "Гости"})
               .filter__price
                 +range-slider({title: "Диапазон цены", interval: "5000₽ - 10000₽"})
                 span.filter__range-description
                   | Стоимость за сутки пребывания в номере
               .filter__rules
-                +checkbox-buttons({
+                +checkbox({
                   title: "Правила дома",
                   items: [
                     "Можно курить",
@@ -73,8 +71,9 @@ block content
                     "Можно пригласить гостей (до 10 человек)",
                   ]})
               .filter__availability
-                +rich-list({
+                +checkbox({
                   title: "Доступность",
+                  type: "described",
                   items: [
                     {
                       title: "Широкий коридор",
@@ -88,11 +87,11 @@ block content
               .filter__comfort
                 span.block-title
                   | Удобства номера
-                +dropdown-choose({className: "js-dropdown-beds", title: "Гости"})
+                +dropdown-choose({className: "dropdown-beds js-dropdown-beds", title: "Гости"})
               .filter__additional-comfort 
-                +expand-list({
+                +checkbox({
                  title: "Дополнительные удобства",
-                 className: "js-expand-list",
+                 type: "expandable",
                  items: [
                   "Завтрак",
                   "Письменный стол",
