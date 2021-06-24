@@ -46,7 +46,7 @@ mixin checkbox({title, items, type})
               input(type="radio" name="radio" checked=val.checked).checkbox__input
               span.checkbox__checkmark(tabindex="0")
               span.checkbox__text
-                | #{val}
+                | #{val.title}
     if type === 'oval'
       .checkbox__container
         ul.checkbox__list
