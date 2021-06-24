@@ -1,6 +1,5 @@
-.pagination-wrap {
-  margin-right: 13px;
-
+.pagination {
+  text-align: center;
   @media screen and (max-width: $sm-desktop-width) {
     margin-right: 0;
   }
@@ -17,7 +16,7 @@
   height: 18px;
 }
 
-.pagination-wrap__text {
+.pagination__text {
   margin: 0 auto;
   display: inline-block;
   overflow: hidden;

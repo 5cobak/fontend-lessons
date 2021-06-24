@@ -5,9 +5,8 @@ mixin circle-diagram(data)
   .circle-diagram(data-voices=sumVoices())
     .circle-diagram__container
       .circle-diagram__voices
-        i.circle-diagram__num 
+        .circle-diagram__num 
           | 0
-        br
       .circle-diagram__wrapper
         canvas(id="CircleDiagram")
     ul.circle-diagram__list

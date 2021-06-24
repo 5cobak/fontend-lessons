@@ -1,10 +1,10 @@
-class PaginationSite {
+class paginationSite {
   constructor($elem) {
     this.$elem = $elem;
     this._init();
   }
 
-  _createPagination() {
+  _createpagination() {
     this.$elem.pagination({
       items: 15,
       itemsOnPage: 1,
@@ -18,8 +18,8 @@ class PaginationSite {
   }
 
   _init() {
-    this._createPagination();
+    this._createpagination();
   }
 }
 
-export default PaginationSite;
+export default paginationSite;

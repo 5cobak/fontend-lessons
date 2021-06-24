@@ -41,11 +41,10 @@ class PriceCalculator {
 
   injectHTML() {
     const card = this.parent;
-    const cleanSumEl = card.querySelector('.js-card-book__clean-sum');
+    const cleanSumEl = card.querySelector('.js-card-book__calc-sum');
     const daysEl = card.querySelector('.js-card-book__days');
     const totalSumEl = card.querySelector('.js-card-book__total-price');
     const data = this._calculate(this.dateDropdown.daysLag);
-    const rub = '<span class="card-book__rub">₽</span>';
 
     daysEl.innerHTML = '';
     daysEl.insertAdjacentHTML(
@@ -53,9 +52,9 @@ class PriceCalculator {
       `${data.daysLag} ${declination(data.daysLag, ['сутки', 'суток', 'суток'])}`,
     );
     cleanSumEl.innerHTML = '';
-    cleanSumEl.insertAdjacentHTML('beforeEnd', `${data.cleanSum}${rub}`);
+    cleanSumEl.insertAdjacentHTML('beforeEnd', `${data.cleanSum}₽`);
     totalSumEl.innerHTML = '';
-    totalSumEl.insertAdjacentHTML('beforeEnd', `${data.totalSum}${rub}`);
+    totalSumEl.insertAdjacentHTML('beforeEnd', `${data.totalSum}₽`);
   }
 
   _init(parent) {

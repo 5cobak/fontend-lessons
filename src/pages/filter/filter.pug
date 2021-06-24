@@ -14,6 +14,8 @@ include ~components/card-room/card-room
 include ~components/rate/rate
 include ~components/pagination/pagination
 block head
+  meta(name="description" content="Отель, поиск и подбор номеров с дополнительные опциями")
+  meta(name="keywords" content="Отель, номера с детскими кроватками, номера с питомцами, номера где можно курить")
 block content
   +header({routes: [
             {
@@ -253,6 +255,7 @@ block content
                     rate: 3
                   })
               .filter__pagination
-                +pagination()
+                .filter__pagination-wrapper
+                  +pagination()
   +footer()
 

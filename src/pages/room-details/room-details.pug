@@ -13,6 +13,8 @@ include ~components/like-button/like-button
 include ~components/bullet-list/bullet-list
 
 block head
+  meta(name="description" content="Отель, подробная информация о комнате в отеле")
+  meta(name="keywords" content="Отель, удобства номера, отзывы номера, расчет стоимости номера в отеле, бронирование номера")
 block content
   +header({routes: [
             {
@@ -110,14 +112,16 @@ block content
                   name: "Мурад Сарафанов",
                   date: "5 дней назад",
                   text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.",
-                  like: 11
+                  like: 11,
+                  alt: "Мурад Сарафонов клиент токсина"
                 })
                 +review({
                   src: "images/patric.png",
                   name: "Патрисия Стёклышкина",
                   date: "Неделю назад",
                   text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать,\nкаждый день новое блюдо и десерт как комплимент",
-                  like: 2
+                  like: 2,
+                  alt: "Патрисия Стёклышкина клиент токсина"
                   }
                   )
               .room-details__rules-block
@@ -137,7 +141,7 @@ block content
                     | этого при отмене не позднее чем за 5 дн. до
                     | прибытия вы получите полный возврат за
                     | вычетом сбора за услуги.
-            aside.room-details__aside
+            .room-details__booking
               +card-book({
                 number: 888,
                 type: "люкс",

@@ -2,18 +2,18 @@ mixin card-book(details)
   -var {number, type, priceForOneDay, discount, taxes} = details
   .card-book.js-card-book
     .card-book__content
-      .card-book__head
-        span.card-book__number
+      .card-book__info
+        span.card-book__room-number
           | № 
-          span.card-book__head-num
+          span.card-book__num-sign
             | #{number}
           span.card-book__type
             | #{type} 
-        span.card-book__head-price
-          span.card-book__head-sum
+        span.card-book__price-wrapper
+          span.card-book__price
             | #{priceForOneDay}₽ 
           | в сутки
-      form.card__form
+      form.card-book__form
         .card-book__block
           +date-dropdown({
                 title: "прибытие", 
@@ -31,7 +31,7 @@ mixin card-book(details)
                 | #{priceForOneDay}₽ х 
                 span.card-book__days.js-card-book__days
                   | 0 суток
-              span.card-book__calc-sum.js-card-book__clean-sum
+              span.card-book__calc-sum.js-card-book__calc-sum
                 | 0
                 span.card-book__rub
                   | ₽
@@ -40,14 +40,10 @@ mixin card-book(details)
                 | Сбор за услуги: 
                 span.card-book__discount.js-card-book__discount
                   | скидка #{discount}
-                  span.card-book__rub
-                    | ₽
               span.card-book__calc-info
                 | i
               span.card-book__tax.js-card-book__tax
                 | #{taxes[0]}
-                span.card-book__rub
-                | ₽
             .card-book__calc-item
               span.card-book__calc-option
                 | Сбор за доп. услуги
@@ -60,7 +56,5 @@ mixin card-book(details)
               | Итого 
             span.card-book__line
             span.card-book__total-price.js-card-book__total-price
-              | 0
-              span.card-book__rub
-                | ₽
+              | 0₽
         button(type="submit").button.button_big.button_with-icon Забронировать

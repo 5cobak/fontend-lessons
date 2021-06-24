@@ -2,23 +2,23 @@ mixin card-room(images,roomDetails)
   .card-room.js-card-room
     .card-room__slider
       .swiper-container.js-swiper-container
-        .swiper-pagination
-        .swiper-button-prev
-        .swiper-button-next
         .swiper-wrapper
           each val, index in images
             .swiper-slide.card-room__slide
               img(src=require("./images/" + val.src ).default alt="фотография комнаты").card-room__slider-img
+        .swiper-button-prev
+        .swiper-button-next
+        .swiper-pagination
     .card-room__content
-      .card-room__head
-        span.card-room__number
+      .card-room__room-info
+        span.card-room__number-wrapper
           | № 
-          span.card-room__head-num
+          span.card-room__number
             | #{roomDetails.number}
           span.card-room__type
             | #{roomDetails.type ? roomDetails.type : ''}
-        span.card-room__head-price
-          span.card-room__head-sum
+        span.card-room__room-price
+          span.card-room__price
             | #{roomDetails.priceForOneDay}₽ 
           | в сутки
       .card-room__bottom

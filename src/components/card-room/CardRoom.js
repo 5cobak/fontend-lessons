@@ -1,4 +1,4 @@
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper from 'swiper/bundle';
 import declination from '../helpers/declination';
 
 class CardRoom {
@@ -8,8 +8,8 @@ class CardRoom {
   }
 
   _createSwiper() {
-    Swiper.use([Navigation, Pagination]);
     new Swiper(this.carousel, {
+      loop: true,
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
