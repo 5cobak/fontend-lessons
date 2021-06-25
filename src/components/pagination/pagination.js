@@ -1,4 +1,4 @@
-import PaginationSite from './paginationSite';
+import PaginationSite from './PaginationSite';
 
 $(document).ready(() => {
   const $paginationParent = $('.js-pagination__container');
