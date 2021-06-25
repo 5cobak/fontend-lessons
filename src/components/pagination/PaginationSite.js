@@ -1,4 +1,4 @@
-class paginationSite {
+class PaginationSite {
   constructor($elem) {
     this.$elem = $elem;
     this._init();
@@ -22,4 +22,4 @@ class paginationSite {
   }
 }
 
-export default paginationSite;
+export default PaginationSite;
