@@ -90,11 +90,10 @@ block content
                 span.block-title
                   | Удобства номера
                 +dropdown-choose({className: "dropdown-beds js-dropdown-beds", title: "Гости"})
-              .filter__additional-comfort 
-                +checkbox({
-                 title: "Дополнительные удобства",
-                 type: "expandable",
-                 items: [
+              +checkbox({
+                title: "expandable checkbox list",
+                type: "dropping-out",
+                items: [
                   "Завтрак",
                   "Письменный стол",
                   "Стул для кормления",

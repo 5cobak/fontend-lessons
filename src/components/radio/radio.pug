@@ -1,0 +1,10 @@
+mixin radio({items})
+	.radio
+		ul.radio__list
+			each val in items
+				li.radio__item
+					label.radio__label
+						input(type="radio" name="radio" checked=val.checked).radio__input
+						span.radio__checkmark(tabindex="0")
+						span.radio__text
+							| #{val.title}

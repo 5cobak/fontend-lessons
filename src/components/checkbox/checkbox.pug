@@ -38,15 +38,6 @@ mixin checkbox({title, items, type})
                 span.checkbox__custom-checkbox(tabindex="0") 
                 span.checkbox__text
                   | #{val}
-    if type === 'switchable'
-      ul.checkbox__list
-        each val in items
-          li.checkbox__item
-            label.checkbox__label
-              input(type="radio" name="radio" checked=val.checked).checkbox__input
-              span.checkbox__checkmark(tabindex="0")
-              span.checkbox__text
-                | #{val.title}
     if type === 'oval'
       .checkbox__container
         ul.checkbox__list

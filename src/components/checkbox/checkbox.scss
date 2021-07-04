@@ -10,9 +10,9 @@
   }
 
   &__title {
-    text-transform: uppercase;
-    font-weight: bold;
     font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 
   &__item {
@@ -254,98 +254,6 @@
     }
   }
 
-  &_switchable {
-    position: relative;
-    align-items: center;
-    font-size: 14px;
-    cursor: pointer;
-    user-select: none;
-
-    #{$self}__list {
-      display: inline-flex;
-      align-items: center;
-    }
-
-    #{$self}__item {
-      margin-bottom: 0;
-
-      &:first-child {
-        margin-right: 20px;
-      }
-    }
-
-    @media (max-width: $phone-width) {
-      font-size: 12px;
-    }
-
-    #{$self}__label {
-      margin-right: 20px;
-      display: inline-flex;
-      align-items: center;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
-    #{$self}__input {
-      position: absolute;
-      visibility: hidden;
-      cursor: pointer;
-      &:checked ~ #{$self}__checkmark {
-        border-color: $primary-color;
-        background-image: none;
-        &::after {
-          opacity: 1;
-        }
-      }
-
-      &:checked ~ label {
-        color: $text-color;
-      }
-      &:checked ~ #{$self}__text {
-        color: $text-color-brightness-75;
-      }
-    }
-
-    #{$self}__checkmark {
-      margin-right: 10px;
-      display: flex;
-      width: 20px;
-      max-width: 20px;
-      height: 20px;
-      max-height: 20px;
-      justify-content: center;
-      align-items: center;
-      background-color: #fff;
-      border: 1px solid $text-color-brightness-25;
-      border-radius: 50%;
-
-      @media (max-width: $phone-width) {
-        margin-right: 5px;
-      }
-
-      &:focus {
-        border: $border-input-hover;
-      }
-
-      &::after {
-        display: block;
-        width: 12px;
-        height: 12px;
-        opacity: 0;
-        content: '';
-        background: $button-color-primary;
-        border-radius: 50%;
-        transition: $tr-fast;
-      }
-    }
-
-    #{$self}__text {
-      color: $text-color-brightness-50;
-    }
-  }
-
   &_oval {
     max-width: 100%;
     #{$self}__label {
@@ -358,8 +266,9 @@
     #{$self}__checkbox {
       display: none;
       &:checked ~ #{$self}__checkmark {
-        border-color: $primary-color;
         background-image: none;
+        border-color: $primary-color;
+
         &::after {
           left: calc(100% - 15px);
           background: $button-color-primary;
