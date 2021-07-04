@@ -61,21 +61,21 @@
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2",
-    "stylelint-scss": "^3.19.0"
+    "stylelint-scss": "^3.19.0",
+    "source-map": "^0.7.3",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.11",
+    "autoprefixer": "^10.2.5"
   },
   "dependencies": {
     "inputmask": "^5.0.5",
     "air-datepicker": "^2.2.3",
-    "autoprefixer": "^10.2.5",
     "chart.js": "^2.9.4",
-    "css-mqpacker": "^7.0.0",
-    "cssnano": "^4.1.11",
     "focus-visible": "^5.2.0",
     "ion-rangeslider": "^2.3.1",
     "jquery": "^3.5.1",
     "jquery-bridget": "^2.0.1",
     "masonry-layout": "^4.2.2",
-    "source-map": "^0.7.3",
     "swiper": "^6.7.1"
   }
 }
