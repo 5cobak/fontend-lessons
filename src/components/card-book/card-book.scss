@@ -1,3 +1,7 @@
+@import '~components/date-dropdown/date-dropdown';
+@import '~components/datepicker/datepicker';
+@import '~components/dropdown-choose/dropdown-choose';
+
 .card-book {
   width: 380px;
   background-color: $bg-color-primary;
@@ -10,7 +14,7 @@
   }
 
   &__content {
-    padding: 40px 28px 40px;
+    padding: 40px 28px 30px;
 
     @media (max-width: $phone-width) {
       padding: 30px 20px 30px;
@@ -24,7 +28,7 @@
     align-items: baseline;
     font-family: $font-family-primary;
     line-height: 17px;
-    font-weight: $bold;
+    font-weight: $font-weight-bold;
 
     @media (max-width: $phone-width) {
       margin-bottom: 15px;
@@ -91,7 +95,7 @@
   &__price {
     font-family: $font-family-primary;
     font-size: 14px;
-    font-weight: $bold;
+    font-weight: $font-weight-bold;
 
     @media (max-width: $phone-width) {
       font-size: 12px;
@@ -161,7 +165,7 @@
     align-items: baseline;
     font-family: $font-family-primary;
     line-height: 12px;
-    font-weight: $bold;
+    font-weight: $font-weight-bold;
   }
 
   &__calc-option {

@@ -6,32 +6,22 @@
 @import '~utils/utils-scss/mixins.scss';
 @import '~components/header/header';
 @import '~components/footer/footer';
-@import '~components/logo/logo';
-@import '~components/subscription/subscription';
-@import '~components/block-title/block-title';
+@import '~components/svg-icons/svg-icons';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html {
   height: 100%;
   font-family: $font-family-primary;
   font-size: $main-font-size;
   line-height: $line-height-primary;
-  font-weight: $normal;
+  font-weight: $font-weight-normal;
   color: $text-color;
   background-color: #fff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media screen and (max-width: $table-width) {
-    font-size: 16px;
-  }
-
-  @media screen and (max-width: $phone-width) {
-    font-size: 15px;
-  }
-
-  @media screen and (max-width: $sm-phone-width) {
-    font-size: 14px;
-  }
 }
 
 body {
@@ -40,10 +30,4 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
 }

@@ -3,6 +3,9 @@
 
 .index {
   &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
     margin-top: 20px;
     font-family: $font-family-primary;
     font-size: 20px;
@@ -11,5 +14,9 @@
 
   &__list-item {
     margin-bottom: 10px;
+  }
+
+  &__link {
+    text-decoration: none;
   }
 }

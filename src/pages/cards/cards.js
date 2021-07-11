@@ -1,5 +1,5 @@
 import jQueryBridget from 'jquery-bridget';
-import '~/air-datepicker/dist/js/datepicker.min';
+
 import 'components/card-room/card-room';
 import 'components/date-dropdown/date-dropdown';
 import 'components/dropdown-choose/dropdown-choose';

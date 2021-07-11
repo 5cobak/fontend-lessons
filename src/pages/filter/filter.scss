@@ -3,14 +3,10 @@
 @import '~utils/utils-scss/normalize.scss';
 @import '~utils/utils-scss/fonts.scss';
 @import '~src/main.scss';
-@import '~components/svg-icons/svg-icons';
-@import '~components/block-title/block-title';
-@import '~components/masked-text-field/masked-text-field';
 @import '~components/filter-date/filter-date';
 @import '~components/dropdown-choose/dropdown-choose';
 @import '~components/datepicker/datepicker';
 @import '~components/card-room/card-room';
-@import '~components/rate/rate';
 @import '~components/range-slider/range-slider';
 @import '~components/checkbox/checkbox';
 @import '~components/pagination/pagination';
@@ -109,7 +105,7 @@
     font-family: $font-family-primary;
     font-size: 24px;
     line-height: 29px;
-    font-weight: $bold;
+    font-weight: $font-weight-bold;
 
     @media (max-width: $phone-width) {
       font-size: 20px;

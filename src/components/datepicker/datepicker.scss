@@ -21,7 +21,7 @@
     font-family: $font-family-primary;
     font-size: 19px;
     font-weight: bold;
-    font-weight: $bold;
+    font-weight: $font-weight-bold;
     text-align: center;
     pointer-events: none;
 
@@ -84,7 +84,7 @@
     min-height: 40px;
     font-family: $font-family-primary;
     font-size: 12px;
-    font-weight: $bold;
+    font-weight: $font-weight-bold;
     text-transform: initial;
     color: $primary-color;
   }
@@ -103,7 +103,7 @@
     flex: none;
     font-family: $font-family-primary;
     font-size: 12px;
-    font-weight: $bold;
+    font-weight: $font-weight-bold;
     text-transform: uppercase;
     color: $primary-color;
     background: none;
@@ -175,7 +175,7 @@ div.datepicker--cell.-selected-.-focus- {
 .datepicker--cell.-selected-.-current-,
 .datepicker--cell.-selected-.-other-month- {
   font-family: $font-family-primary;
-  font-weight: $bold;
+  font-weight: $font-weight-bold;
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
 }
 

@@ -1,3 +1,7 @@
+@import '~components/subscription/subscription';
+@import '~components/logo/logo';
+@import '~components/block-title/block-title';
+
 .footer {
   $self: &;
 
@@ -87,7 +91,7 @@
     font-family: $font-family-primary;
     font-size: 12px;
     line-height: 15px;
-    font-weight: $bold;
+    font-weight: $font-weight-bold;
     white-space: pre-wrap;
     text-transform: uppercase;
     color: $text-color;
@@ -133,7 +137,7 @@
     font-family: $font-family-primary;
     font-size: 12px;
     line-height: 15px;
-    font-weight: $bold;
+    font-weight: $font-weight-bold;
     text-transform: uppercase;
     color: $text-color;
     overflow-wrap: break-word;

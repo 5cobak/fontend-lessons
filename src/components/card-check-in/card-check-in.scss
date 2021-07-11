@@ -1,3 +1,10 @@
+@import '~utils/utils-scss/button.scss';
+@import '~components/text-field/text-field';
+@import '~components/toggle-buttons/toggle-buttons';
+@import '~components/checkbox/checkbox';
+@import '~components/radio/radio';
+@import '~components/masked-text-field/masked-text-field';
+
 .card-check-in {
   margin-left: 5px;
   width: 100%;
@@ -21,7 +28,7 @@
     font-family: $font-family-primary;
     font-size: 24px;
     line-height: 29px;
-    font-weight: $bold;
+    font-weight: $font-weight-bold;
 
     @media (max-width: $phone-width) {
       margin-bottom: 10px;

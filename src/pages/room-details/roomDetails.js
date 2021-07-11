@@ -1,5 +1,3 @@
-import '~/air-datepicker/dist/js/datepicker.min';
-
 import './room-details.scss';
 
 import 'components/circle-diagram/circle-diagram';

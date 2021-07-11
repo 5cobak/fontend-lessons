@@ -1,3 +1,5 @@
+import '~/air-datepicker/dist/js/datepicker.min';
+
 class CalendarPickerInline {
   constructor(els) {
     this.els = els;

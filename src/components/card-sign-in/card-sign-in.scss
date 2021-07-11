@@ -1,3 +1,6 @@
+@import '~components/text-field/text-field';
+@import '~components/toggle-buttons/toggle-buttons';
+
 .card-sign-in {
   width: 100%;
   width: 380px;
@@ -15,7 +18,7 @@
     margin-bottom: 18px;
     font-family: $font-family-primary;
     font-size: 24px;
-    font-weight: $bold;
+    font-weight: $font-weight-bold;
 
     @media (max-width: $phone-width) {
       margin-bottom: 10px;

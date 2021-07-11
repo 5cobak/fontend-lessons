@@ -1,3 +1,5 @@
+import '~/air-datepicker/dist/js/datepicker.min';
+
 class DateDropdown {
   constructor(dateDropdownEl) {
     this._init(dateDropdownEl);

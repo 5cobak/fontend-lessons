@@ -1,3 +1,5 @@
+import '~/air-datepicker/dist/js/datepicker.min';
+
 class FilterDate {
   constructor(elem) {
     this.$input = $(elem);
