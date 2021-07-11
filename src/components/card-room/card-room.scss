@@ -89,8 +89,7 @@
       height: 100%;
       opacity: 0;
       content: '';
-      box-shadow:
-        -50px 0 50px 23px rgba(0, 0, 0, 0.25) inset,
+      box-shadow: -50px 0 50px 23px rgba(0, 0, 0, 0.25) inset,
         50px 0 50px 23px rgba(0, 0, 0, 0.25) inset;
       transition: $tr-fast;
     }
@@ -101,7 +100,7 @@
   }
 
   &__content {
-    padding: 23px 16px 19px 20px;
+    padding: 23px 16px 13px 20px;
   }
 
   &__room-info {
@@ -169,7 +168,7 @@
   &__bottom {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
   }
 
   &__reviews {

@@ -46,108 +46,109 @@ block content
               dropdown: true
             },
           ],isEntered: false})
-  .content
-    .room-details
-      .room-details__room-photos
-        img(src=require("./images/room-d-1.jpg").default alt="Спальня" class="room-details__main-photo room-details__photo")
-        .room-details__another-photos
-          img(src=require("./images/room-d-2.jpg").default alt="Детская спальня" class="room-details__another-photo room-details__photo")
-          img(src=require("./images/room-d-3.jpg").default alt="Гостиная " class="room-details__another-photo room-details__photo")
-      .room-details__text-content
-        .room-details__container
-          main.room-details__main 
-            section.room-details__info
-              .room-details__info-head
-                .room-details__block
-                  span.room-details__title
-                    | Сведения о номере
-                  +advantages({items: [
-                          {
-                            title: "Комфорт",
-                            description: "Шумопоглащиющие стены",
-                            href: "#insert-emoticon"
-                          },
-                          {
-                            title: "Удобство",
-                            description: "Окно в каждой из спален",
-                            href: "#location-city"
-                          },
-                          {
-                            title: "Уют",
-                            description: "Номер оснащен камином",
-                            href: "#whatshot"
-                          },
-
-                        ]})
-                .room-details__block
-                  span.room-details__title
-                    | Впечатления от номера
-                  +circle-diagram({
-                    voices: [
-                       {
-                        grade: "Великолепно",
-                        num: 130
+  main.room-details
+    .room-details__room-photos
+      img(src=require("./images/room-d-1.jpg").default alt="Спальня" class="room-details__main-photo room-details__photo")
+      .room-details__another-photos
+        img(src=require("./images/room-d-2.jpg").default alt="Детская спальня" class="room-details__another-photo room-details__photo")
+        img(src=require("./images/room-d-3.jpg").default alt="Гостиная " class="room-details__another-photo room-details__photo")
+    .room-details__text-content
+      .room-details__container
+        section.room-details__info
+          .room-details__info-head
+            .room-details__block
+              span.room-details__title
+                | Сведения о номере
+              +advantages({items: [
+                      {
+                        title: "Комфорт",
+                        description: "Шумопоглащиющие стены",
+                        href: "#insert-emoticon"
                       },
                       {
-                        grade: "Хорошо",
-                        num: 65
+                        title: "Удобство",
+                        description: "Окно в каждой из спален",
+                        href: "#location-city"
                       },
-                       {
-                        grade: "Удовлетворительно",
-                        num: 65
+                      {
+                        title: "Уют",
+                        description: "Номер оснащен камином",
+                        href: "#whatshot"
                       },
-                       {
-                        grade: "Разочарован",
-                        num: 0
-                      },
-                    ]
-                  })
-              .room-details__reviews
-                .room-details__reviews-head
-                  span.room-details__title
-                    | Отзывы посетителей номера
-                  span.room-details__reviews-count
-                    | 2 отзыва
-                +review({
-                  src: "images/maga.png",
-                  name: "Мурад Сарафанов",
-                  date: "5 дней назад",
-                  text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.",
-                  like: 11,
-                  alt: "Мурад Сарафонов клиент токсина"
-                })
-                +review({
-                  src: "images/patric.png",
-                  name: "Патрисия Стёклышкина",
-                  date: "Неделю назад",
-                  text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать,\nкаждый день новое блюдо и десерт как комплимент",
-                  like: 2,
-                  alt: "Патрисия Стёклышкина клиент токсина"
-                  }
-                  )
-              .room-details__rules-block
-                +bullet-list({
-                  title: "Правила", 
-                  items: [
-                    "Нельзя с питомцами",
-                    "Без вечеринок и мероприятий",
-                    "Время прибытия — после 13:00, а выезд до 12:00",
-                  ]
+
+                    ]})
+            .room-details__block
+              span.room-details__title
+                | Впечатления от номера
+              +circle-diagram({
+                voices: [
+                    {
+                    grade: "Великолепно",
+                    num: 130
+                  },
+                  {
+                    grade: "Хорошо",
+                    num: 65
+                  },
+                    {
+                    grade: "Удовлетворительно",
+                    num: 65
+                  },
+                    {
+                    grade: "Разочарован",
+                    num: 0
+                  },
+                ]
               })
-                .room-details__cancel-rule
-                  span.room-details__title
-                    | Отмена
-                  p.room-details__cancel-text
-                    | Бесплатная отмена в течение 48 ч. После
-                    | этого при отмене не позднее чем за 5 дн. до
-                    | прибытия вы получите полный возврат за
-                    | вычетом сбора за услуги.
-            .room-details__booking
-              +card-book({
-                number: 888,
-                type: "люкс",
-                priceForOneDay: "9 990",
-                discount: "2 179",
-                taxes: ["1 000", "300"]
-              })
+          .room-details__reviews
+            .room-details__reviews-head
+              span.room-details__title
+                | Отзывы посетителей номера
+              span.room-details__reviews-count
+                | 2 отзыва
+            +review({
+              src: "images/maga.png",
+              name: "Мурад Сарафанов",
+              date: "5 дней назад",
+              text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.",
+              like: 11,
+              alt: "Мурад Сарафонов клиент токсина"
+            })
+            +review({
+              src: "images/patric.png",
+              name: "Патрисия Стёклышкина",
+              date: "Неделю назад",
+              text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать,\nкаждый день новое блюдо и десерт как комплимент",
+              like: 2,
+              alt: "Патрисия Стёклышкина клиент токсина"
+              }
+              )
+          .room-details__rules-block
+            .room-details__rules
+              span.room-details__title.room-details__title_with-offset
+                | Правила
+              +bullet-list({
+                title: "Правила", 
+                items: [
+                  "Нельзя с питомцами",
+                  "Без вечеринок и мероприятий",
+                  "Время прибытия — после 13:00, а выезд до 12:00",
+                ]
+            })
+            .room-details__cancel
+              span.room-details__title
+                | Отмена
+              p.room-details__cancel-text
+                | Бесплатная отмена в течение 48 ч. После
+                | этого при отмене не позднее чем за 5 дн. до
+                | прибытия вы получите полный возврат за
+                | вычетом сбора за услуги.
+        .room-details__booking
+          +card-book({
+            number: 888,
+            type: "люкс",
+            priceForOneDay: "9 990",
+            discount: "2 179",
+            taxes: ["1 000", "300"]
+          })
   +footer()

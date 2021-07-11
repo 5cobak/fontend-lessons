@@ -1,8 +1,8 @@
 mixin advantages({items})
   .advantages
-    ul.advantages__ul 
+    ul.advantages__list 
       each val, index in items
-        li.advantages__li
+        li.advantages__item
           svg.advantages__svg
             use(xlink:href=items[index].href)
           span.advantages__text

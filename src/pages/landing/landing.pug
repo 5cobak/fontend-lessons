@@ -41,14 +41,12 @@ block content
               dropdown: true
             },
           ],isEntered: false})
-  .content
-    .landing-page
-      .landing-page__container
-        main.landing-page__main
-          +card-selection()
-      .landing-page__container
-        p.landing-page__description
-          | Лучшие номера для вашей работы,
-          | отдыха и просто вдохновения
+  main.landing-page
+    .landing-page__container
+        +card-selection()
+    .landing-page__container
+      p.landing-page__description
+        | Лучшие номера для вашей работы,
+        | отдыха и просто вдохновения
   +footer()
 

@@ -1,8 +1,6 @@
 mixin bullet-list({title,className, items}) 
-  .bullet-list
-    span.bullet-list__title #{title}
-    ul.bullet-list__ul
-      each val in items
-        li.bullet-list__li
-          span.bullet-list__text
-            | #{val}
+  ul.bullet-list
+    each val in items
+      li.bullet-list__item
+        span.bullet-list__text
+          | #{val}

@@ -1,5 +1,6 @@
 @import '~air-datepicker/dist/css/datepicker.min.css';
 @import '~utils/utils-scss/vars.scss';
+@import '~utils/utils-scss/normalize.scss';
 @import '~utils/utils-scss/fonts.scss';
 @import '~src/main.scss';
 @import '~components/svg-icons/svg-icons';
@@ -15,12 +16,11 @@
 @import '~components/pagination/pagination';
 
 .filter {
+  flex: 1 0 auto;
+  border-bottom: 1px solid rgba(31, 32, 65, 0.25);
+
   &__container {
     @include container;
-  }
-
-  &__main {
-    border-bottom: 1px solid rgba(31, 32, 65, 0.25);
   }
 
   &__content {
@@ -103,6 +103,7 @@
   }
 
   &__rooms-title {
+    margin: 0;
     margin-bottom: 20px;
     max-width: 530px;
     font-family: $font-family-primary;

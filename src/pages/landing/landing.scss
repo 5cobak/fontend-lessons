@@ -7,7 +7,6 @@
 @import '~components/dropdown-choose/dropdown-choose';
 @import '~components/date-dropdown/date-dropdown';
 @import '~components/datepicker/datepicker';
-@import '~components/radio-buttons/radio-buttons';
 @import '~components/card-selection/card-selection';
 
 .landing-page {
@@ -34,6 +33,7 @@
   }
 
   &__description {
+    margin: 0;
     padding-bottom: 20px;
     overflow-wrap: break-word;
     font-size: 14px;
