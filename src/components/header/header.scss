@@ -109,6 +109,7 @@
         font-size: 18px;
         vertical-align: center;
         text-decoration: none;
+
         @media (max-width: $phone-width) {
           font-size: 16px;
         }
@@ -143,9 +144,10 @@
   &__link {
     font-size: 14px;
     line-height: 17px;
+    text-decoration: none;
     color: $text-color-brightness-50;
     overflow-wrap: break-word;
-    text-decoration: none;
+
     &_active {
       font-weight: bold;
     }
@@ -216,12 +218,12 @@
   }
 
   &__burger {
-    border: none;
     position: relative;
     display: none;
     min-width: 30px;
     min-height: 30px;
     background: none;
+    border: none;
     cursor: pointer;
 
     &_active {

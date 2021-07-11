@@ -8,15 +8,15 @@
   font-size: 12px;
   line-height: 1;
   font-weight: $font-weight-bold;
+  text-decoration: none;
   text-transform: uppercase;
   color: $button-text-color-primary;
   background: $button-color-primary;
-  border-radius: 22px;
   border: none;
+  border-radius: 22px;
   transition: $tr-fast;
   cursor: pointer;
   overflow-wrap: break-word;
-  text-decoration: none;
 
   @media screen and (min-width: $sm-desktop-width) and (max-width: $md-desktop-width) {
     max-width: 140px;
@@ -38,9 +38,9 @@
     background-image: url('~img/arrow-forward-colored.svg');
     background-repeat: no-repeat;
     background-position: center;
-    cursor: pointer;
-    border-radius: 0;
     border: none;
+    border-radius: 0;
+    cursor: pointer;
   }
 
   &_with-icon {

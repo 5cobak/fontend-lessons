@@ -58,8 +58,9 @@
   }
 
   &__achievement {
-    line-height: 24px;
     margin: 0;
+    line-height: 24px;
+
     @media (max-width: $sm-desktop-width) {
       display: none;
     }
@@ -70,11 +71,12 @@
   }
 
   &__list {
-    padding: 0;
     margin: 0;
+    padding: 0;
     padding-top: 5px;
     width: 200px;
     list-style: none;
+
     @media (max-width: $md-desktop-width) {
       margin-right: 5px;
       width: auto;
@@ -108,10 +110,10 @@
   }
 
   &__link {
+    text-decoration: none;
     color: $text-color-brightness-75;
     transition: $tr-fast;
     overflow-wrap: break-word;
-    text-decoration: none;
 
     &_active {
       font-weight: bold;
@@ -144,9 +146,9 @@
   }
 
   &__subscribe-text {
+    margin: 0;
     line-height: 24px;
     overflow-wrap: break-word;
-    margin: 0;
   }
 
   &__form-wrap {
@@ -184,6 +186,7 @@
   &__social-list {
     margin: 0;
     padding: 0;
+
     @media (max-width: $sm-desktop-width) {
       margin-top: 20px;
     }
