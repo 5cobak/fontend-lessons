@@ -1,6 +1,6 @@
 include ~components/like-button/like-button
 
-mixin review({src: path, name, date, text, like, alt})
+mixin review({ src: path, name, date, text, like, alt })
   .review
     .review__head
       img.review__avatar(src=require("./" + path).default alt=alt)

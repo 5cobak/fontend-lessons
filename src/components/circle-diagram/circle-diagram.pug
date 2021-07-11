@@ -1,5 +1,5 @@
 mixin circle-diagram(data)
-  -var {voices} = data
+  -var { voices } = data
   -var voicesNum = 0;
   -function sumVoices(){return voices.map((item) => item.num).reduce((acc, item)=>acc+item)}
   .circle-diagram(data-voices=sumVoices())
