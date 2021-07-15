@@ -35,10 +35,8 @@
 
 1. [chart.js](https://www.chartjs.org) - библиотека для круговой диаграммы
 2. [cssnano](https://www.chartjs.org) - postcss библиотека минификации css
-3. [autoprefixer](https://github.com/postcss/autoprefixer) -
-   postcss библиотека добавления вендорных префиксов для css свойств
-4. [focus-visible](https://github.com/WICG/focus-visible) - postcss библиотека для установки outline при табуляции
-5. [jquery](https://github.com/jquery/jquery) - jquery
-6. [jquery-bridget](https://www.npmjs.com/package/jquery-bridget) - библиотека, которая требуется для подключения некоторых плагинов, такие как swiper
-7. [masonry](https://github.com/SnapKit/Masonry) - библиотека для кирпичной кладки
-8. [swiper](https://github.com/nolimits4web/swiper) - библиотека для слайдера
+3. [focus-visible](https://github.com/WICG/focus-visible) - postcss библиотека для установки outline при табуляции
+4. [jquery](https://github.com/jquery/jquery) - jquery
+5. [jquery-bridget](https://www.npmjs.com/package/jquery-bridget) - библиотека, которая требуется для подключения некоторых плагинов, такие как swiper
+6. [masonry](https://github.com/SnapKit/Masonry) - библиотека для кирпичной кладки
+7. [swiper](https://github.com/nolimits4web/swiper) - библиотека для слайдера
