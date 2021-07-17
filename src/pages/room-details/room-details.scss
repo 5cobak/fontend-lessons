@@ -1,6 +1,7 @@
 @import '~air-datepicker/dist/css/datepicker.min.css';
 @import '~utils/utils-scss/vars.scss';
 @import '~src/main.scss';
+@import '~components/photo-preview/photo-preview';
 @import '~components/advantages/advantages';
 @import '~components/circle-diagram/circle-diagram';
 @import '~components/card-book/card-book';
@@ -10,59 +11,6 @@
 .room-details {
   &__container {
     @include container;
-
-    padding-top: 69px;
-    padding-bottom: 60px;
-    display: flex;
-    justify-content: space-between;
-
-    @media (max-width: $sm-desktop-width) {
-      display: block;
-    }
-
-    @media (max-width: $sm-desktop-width) {
-      margin: 0 auto;
-      max-width: $table-width;
-    }
-  }
-
-  &__room-photos {
-    display: flex;
-
-    @media (max-width: $sm-desktop-width) {
-      flex-wrap: wrap;
-    }
-  }
-
-  &__photo {
-    @media (max-width: $sm-desktop-width) {
-      border: 5px solid #fff;
-    }
-  }
-
-  &__main-photo {
-    display: block;
-    width: 70%;
-
-    @media (max-width: $sm-desktop-width) {
-      width: 100%;
-    }
-  }
-
-  &__another-photos {
-    @media (max-width: $sm-desktop-width) {
-      display: flex;
-    }
-  }
-
-  &__another-photo {
-    display: block;
-    height: 50%;
-
-    @media (max-width: $sm-desktop-width) {
-      width: 50%;
-      height: 100%;
-    }
   }
 
   &__title {
@@ -109,8 +57,20 @@
     }
   }
 
-  &__text-content {
-    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+  &__content {
+    padding-top: 69px;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $sm-desktop-width) {
+      display: block;
+    }
+
+    @media (max-width: $sm-desktop-width) {
+      padding-top: 30px;
+      max-width: $table-width;
+    }
   }
 
   &__info {

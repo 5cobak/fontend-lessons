@@ -6,6 +6,7 @@ include ~components/card-book/card-book
 include ~components/advantages/advantages
 include ~components/circle-diagram/circle-diagram
 include ~components/review/review
+include ~components/photo-preview/photo-preview
 include ~components/bullet-list/bullet-list
 
 block head
@@ -43,13 +44,9 @@ block content
             },
           ],isEntered: false})
   main.room-details
-    .room-details__room-photos
-      img(src=require("./images/room-d-1.jpg").default alt="Спальня" class="room-details__main-photo room-details__photo")
-      .room-details__another-photos
-        img(src=require("./images/room-d-2.jpg").default alt="Детская спальня" class="room-details__another-photo room-details__photo")
-        img(src=require("./images/room-d-3.jpg").default alt="Гостиная " class="room-details__another-photo room-details__photo")
-    .room-details__text-content
-      .room-details__container
+    +photo-preview()
+    .room-details__container
+      .room-details__content
         section.room-details__info
           .room-details__info-head
             .room-details__block

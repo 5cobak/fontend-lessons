@@ -10,6 +10,7 @@
   white-space: pre-wrap;
   color: $text-color-brightness-75;
   background-color: #fff;
+  border-top: 1px solid rgba(31, 32, 65, 0.1);
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
 
   &__container {

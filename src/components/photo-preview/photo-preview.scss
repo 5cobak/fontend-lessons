@@ -1,0 +1,46 @@
+.photo-preview {
+  display: flex;
+  height: 485px;
+
+  @media (max-width: $sm-desktop-width) {
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  &__photo {
+    @media (max-width: $sm-desktop-width) {
+      height: auto;
+      border: 5px solid #fff;
+    }
+  }
+
+  &__main-photo {
+    display: block;
+    width: 68%;
+    height: 100%;
+
+    @media (max-width: $sm-desktop-width) {
+      width: 100%;
+    }
+  }
+
+  &__another-photos {
+    width: 32%;
+
+    @media (max-width: $sm-desktop-width) {
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  &__another-photo {
+    display: block;
+    width: 100%;
+    height: 50%;
+
+    @media (max-width: $sm-desktop-width) {
+      width: 50%;
+      height: 100%;
+    }
+  }
+}
