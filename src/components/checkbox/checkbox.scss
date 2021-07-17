@@ -1,7 +1,6 @@
 .checkbox {
   display: block;
   max-width: 222px;
-  cursor: pointer;
   user-select: none;
   $self: &;
 
@@ -23,7 +22,6 @@
 
   &__item {
     margin-bottom: 10px;
-    display: flex;
 
     &:last-child {
       margin-bottom: 0;
@@ -32,6 +30,11 @@
     @media (max-width: $phone-width) {
       margin-bottom: 5px;
     }
+  }
+
+  &__label {
+    display: flex;
+    cursor: pointer;
   }
 
   &__custom-checkbox {
@@ -200,23 +203,30 @@
           font-size: 10px;
         }
       }
+    }
 
-      &_active {
+    #{$self}__dropdown[open] {
+      #{$self}__title {
         &::after {
           transform: rotate(180deg);
         }
       }
     }
 
-    #{$self}__item {
-      padding-bottom: 10px;
+    #{$self}__list {
       display: flex;
+      flex-direction: column;
       align-items: flex-start;
-      cursor: pointer;
+    }
 
+    #{$self}__item {
       &:last-child {
         margin-bottom: 0;
       }
+    }
+
+    #{$self}__label {
+      display: flex;
     }
 
     #{$self}__custom-checkbox {
@@ -267,7 +277,6 @@
       display: inline-flex;
       justify-content: center;
       align-items: flex-start;
-      cursor: pointer;
     }
 
     #{$self}__checkbox {

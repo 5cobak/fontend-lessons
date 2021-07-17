@@ -7,7 +7,7 @@ mixin checkbox({ title, items, type })
       ul.checkbox__list
         each val in items
           li.checkbox__item
-            label.checkbox__item
+            label.checkbox__label
               input(type="checkbox").checkbox__checkbox
               span.checkbox__custom-checkbox(tabindex="0")
               span.checkbox__text
@@ -31,8 +31,8 @@ mixin checkbox({ title, items, type })
         summary.checkbox__title.js-checkbox__title #{title}
         ul.checkbox__list
           each val in items
-            li.checkbox-button__item
-              label.checkbox__item
+            li.checkbox__item
+              label.checkbox__label
                 input(type="checkbox").checkbox__checkbox.js-checkbox__checkbox
                 span.checkbox__custom-checkbox(tabindex="0") 
                 span.checkbox__text
