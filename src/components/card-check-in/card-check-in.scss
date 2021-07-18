@@ -20,6 +20,10 @@
 
   &__content {
     padding: 40px 30px 30px 30px;
+
+    @media screen and (max-width: $phone-width) {
+      padding: 15px 15px 15px;
+    }
   }
 
   &__title {
