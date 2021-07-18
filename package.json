@@ -67,14 +67,15 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "inputmask": "^5.0.5",
     "air-datepicker": "^2.2.3",
     "chart.js": "^2.9.4",
     "focus-visible": "^5.2.0",
+    "inputmask": "^5.0.5",
     "ion-rangeslider": "^2.3.1",
     "jquery": "^3.5.1",
     "jquery-bridget": "^2.0.1",
     "masonry-layout": "^4.2.2",
+    "normalize.css": "^8.0.1",
     "swiper": "^6.7.1"
   }
 }
