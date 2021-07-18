@@ -75,7 +75,6 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    common: ['@babel/polyfill', './common.js'],
     index: ['@babel/polyfill', './pages/index/index.js'],
     landing: ['@babel/polyfill', './pages/landing/landing.js'],
     cards: ['@babel/polyfill', './pages/cards/cards.js'],
@@ -124,14 +123,12 @@ module.exports = {
         chunks: ['index'],
         minify: false,
       }),
-
       new HTMLWebpackPlugin({
         template: `${PAGES_DIR}/landing/landing.pug`,
         filename: 'landing.html',
-        chunks: ['common', 'landing'],
+        chunks: ['landing'],
         minify: false,
       }),
-
       new HTMLWebpackPlugin({
         template: `${PAGES_DIR}/cards/cards.pug`,
         filename: 'cards.html',
@@ -141,7 +138,7 @@ module.exports = {
       new HTMLWebpackPlugin({
         template: `${PAGES_DIR}/filter/filter.pug`,
         filename: 'filter.html',
-        chunks: ['common', 'filter'],
+        chunks: ['filter'],
         minify: false,
       }),
       new HTMLWebpackPlugin({
@@ -159,19 +156,19 @@ module.exports = {
       new HTMLWebpackPlugin({
         template: `${PAGES_DIR}/room-details/room-details.pug`,
         filename: 'room-details.html',
-        chunks: ['common', 'roomDetails'],
+        chunks: ['roomDetails'],
         minify: false,
       }),
       new HTMLWebpackPlugin({
         template: `${PAGES_DIR}/registration/registration.pug`,
         filename: 'registration.html',
-        chunks: ['common', 'registration'],
+        chunks: ['registration'],
         minify: false,
       }),
       new HTMLWebpackPlugin({
         template: `${PAGES_DIR}/sign-in/sign-in.pug`,
         filename: 'sign-in.html',
-        chunks: ['common', 'signIn'],
+        chunks: ['signIn'],
         minify: false,
       }),
     ],
