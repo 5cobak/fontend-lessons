@@ -12,17 +12,12 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  &__container {
-    @include container;
-  }
-
   @media (min-width: $sm-desktop-width) {
     background-size: cover;
   }
 
-  &__main {
-    display: flex;
-    justify-content: space-between;
+  &__container {
+    @include container;
   }
 
   &__room-selection {
