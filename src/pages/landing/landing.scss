@@ -1,4 +1,6 @@
-@import '~utils/scss/main.scss';
+@import '~utils/scss/main';
+@import '~components/header/header';
+@import '~components/footer/footer';
 @import '~components/card-selection/card-selection';
 
 .landing-page {
