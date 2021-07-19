@@ -213,9 +213,9 @@
     padding: 10px 0 10px 20px;
     font-size: 14px;
     line-height: 17px;
+    text-decoration: none;
     color: $text-color-brightness-50;
     border-left: 1px solid rgba(31, 32, 65, 0.1);
-    text-decoration: none;
 
     @media (max-width: $phone-width) {
       font-size: 12px;
