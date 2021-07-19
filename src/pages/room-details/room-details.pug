@@ -14,35 +14,7 @@ block head
   meta(name="description" content="Отель, подробная информация о комнате в отеле")
   meta(name="keywords" content="Отель, удобства номера, отзывы номера, расчет стоимости номера в отеле, бронирование номера")
 block content
-  +header({routes: [
-            {
-              text: 'О нас',
-              active: false,
-              href: '/mock-address/change-me'
-            },
-            {
-              text: 'Услуги',
-              active: false,
-              href: '/mock-address/change-me',
-              dropdown: true
-            },
-            {
-              text: 'Вакансии',
-              active: false,
-              href: '/mock-address/change-me'
-            },
-            {
-              text: 'Новости',
-              active: false,
-              href: '/mock-address/change-me'
-            },
-            {
-              text: 'Соглашения',
-              active: false,
-              href: '/mock-address/change-me',
-              dropdown: true
-            },
-          ],isEntered: false})
+  +header()
   main.room-details
     +photo-preview()
     .room-details__container
@@ -52,32 +24,33 @@ block content
             .room-details__block
               span.room-details__title
                 | Сведения о номере
-              +advantages({items: [
-                      {
-                        title: "Комфорт",
-                        description: "Шумопоглащиющие стены",
-                        href: "#insert-emoticon"
-                      },
-                      {
-                        title: "Удобство",
-                        description: "Окно в каждой из спален",
-                        href: "#location-city"
-                      },
-                      {
-                        title: "Уют",
-                        description: "Номер оснащен камином",
-                        href: "#whatshot"
-                      },
+              +advantages({
+                items: [
+                  {
+                    title: "Комфорт",
+                    description: "Шумопоглащиющие стены",
+                    href: "#insert-emoticon"
+                  },
+                  {
+                    title: "Удобство",
+                    description: "Окно в каждой из спален",
+                    href: "#location-city"
+                  },
+                  {
+                    title: "Уют",
+                    description: "Номер оснащен камином",
+                    href: "#whatshot"
+                  },
 
-                    ]})
+            ]})
             .room-details__block
               span.room-details__title
                 | Впечатления от номера
               +circle-diagram({
                 voices: [
-                    {
-                    grade: "Великолепно",
-                    num: 130
+                  {
+                  grade: "Великолепно",
+                  num: 130
                   },
                   {
                     grade: "Хорошо",
@@ -91,7 +64,7 @@ block content
                     grade: "Разочарован",
                     num: 0
                   },
-                ]
+                    ]
               })
           .room-details__reviews
             .room-details__reviews-head

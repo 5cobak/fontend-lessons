@@ -9,35 +9,7 @@ block head
   meta(name="description" content="Отель, регистрация в сервисе Toxin")
   meta(name="keywords" content="Отель, регистрация")
 block content
-  +header({routes: [
-            {
-              text: 'О нас',
-              active: false,
-              href: '/mock-address/change-me'
-            },
-            {
-              text: 'Услуги',
-              active: false,
-              href: '/mock-address/change-me',
-              dropdown: true
-            },
-            {
-              text: 'Вакансии',
-              active: false,
-              href: '/mock-address/change-me'
-            },
-            {
-              text: 'Новости',
-              active: false,
-              href: '/mock-address/change-me'
-            },
-            {
-              text: 'Соглашения',
-              active: false,
-              href: '/mock-address/change-me',
-              dropdown: true
-            },
-          ],isEntered: false})
+  +header()
   main.registration
     .registration__container
       .registration__card

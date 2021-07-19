@@ -1,0 +1,12 @@
+[
+  { text: 'О нас', active: 'false', href: '/mock-address/change-me' },
+  { text: 'Услуги', active: 'false', href: '/mock-address/change-me', dropdown: 'true' },
+  { text: 'Вакансии', active: 'false', href: '/mock-address/change-me' },
+  { text: 'Новости', active: 'false', href: '/mock-address/change-me' },
+  {
+    text: 'Соглашения',
+    active: 'false',
+    href: '/mock-address/change-me',
+    dropdown: 'true',
+  },
+];

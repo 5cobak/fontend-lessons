@@ -15,35 +15,7 @@ block head
   meta(name="description" content="Отель, поиск и подбор номеров с дополнительные опциями")
   meta(name="keywords" content="Отель, номера с детскими кроватками, номера с питомцами, номера где можно курить")
 block content
-  +header({routes: [
-            {
-              text: 'О нас',
-              active: false,
-              href: '/mock-address/change-me'
-            },
-            {
-              text: 'Услуги',
-              active: false,
-              href: '/mock-address/change-me',
-              dropdown: true
-            },
-            {
-              text: 'Вакансии',
-              active: false,
-              href: '/mock-address/change-me'
-            },
-            {
-              text: 'Новости',
-              active: false,
-              href: '/mock-address/change-me'
-            },
-            {
-              text: 'Соглашения',
-              active: false,
-              href: '/mock-address/change-me',
-              dropdown: true
-            },
-          ],isEntered: false})
+  +header()
   .filter
     .filter__container
       .filter__content
@@ -51,7 +23,7 @@ block content
           .filter__dates
             span.block-title
               | Даты пребывания в отеле 
-            +filter-date({className: "", title: "Даты пребывания в отеле"})
+            +filter-date({ className: "", title: "Даты пребывания в отеле"} )
           .filter__guests
             span.block-title
               | Гости
@@ -103,152 +75,152 @@ block content
           h1.filter__rooms-title
             | Номера, которые мы для вас подобрали
           .filter__rooms
-              +card-room([
-              {src: "room-1.jpg"},
-              {src: "room-1.jpg"},
-              {src: "room-1.jpg"},
-              {src: "room-1.jpg"}
-              ],
-              {
-                type: "люкс",
-                number: 888,
-                priceForOneDay: "9 990",
-                reviews: 145,
-                rate: 5
-              })
-              +card-room([
-              {src: "room-2.jpg"},
-              {src: "room-2.jpg"},
-              {src: "room-2.jpg"},
-              {src: "room-2.jpg"}
-              ],
-              {
-                number: 840,
-                priceForOneDay: "9 990",
-                reviews: 65,
-                rate: 4
-              })
-              +card-room([
-              {src: "room-3.jpg"},
-              {src: "room-3.jpg"},
-              {src: "room-3.jpg"},
-              {src: "room-3.jpg"}
-              ],
-              {
-                type: "люкс",
-                number: 980,
-                priceForOneDay: "8 500",
-                reviews: 35,
-                rate: 3
-              })
-              +card-room([
-              {src: "room-4.jpg"},
-              {src: "room-4.jpg"},
-              {src: "room-4.jpg"},
-              {src: "room-4.jpg"}
-              ],
-              {
-                number: 856,
-                priceForOneDay: "7 300",
-                reviews: 19,
-                rate: 5
-              })
-              +card-room([
-              {src: "room-5.jpg"},
-              {src: "room-5.jpg"},
-              {src: "room-5.jpg"},
-              {src: "room-5.jpg"}
-              ],
-              {
-                number: 740,
-                priceForOneDay: "6 000",
-                reviews: 44,
-                rate: 4
-              })
-              +card-room([
-              {src: "room-6.jpg"},
-              {src: "room-6.jpg"},
-              {src: "room-6.jpg"},
-              {src: "room-6.jpg"}
-              ],
-              {
-                number: 982,
-                priceForOneDay: "5 800",
-                reviews: 56,
-                rate: 3
-              })
-              +card-room([
-              {src: "room-7.jpg"},
-              {src: "room-7.jpg"},
-              {src: "room-7.jpg"},
-              {src: "room-7.jpg"}
-              ],
-              {
-                number: 678,
-                priceForOneDay: "5 500",
-                reviews: 45,
-                rate: 5
-              })
-              +card-room([
-              {src: "room-8.jpg"},
-              {src: "room-8.jpg"},
-              {src: "room-8.jpg"},
-              {src: "room-8.jpg"}
-              ],
-              {
-                number: 450,
-                priceForOneDay: "5 300",
-                reviews: 39,
-                rate: 4
-              })
-              +card-room([
-              {src: "room-9.jpg"},
-              {src: "room-9.jpg"},
-              {src: "room-9.jpg"},
-              {src: "room-9.jpg"}
-              ],
-              {
-                number: 350,
-                priceForOneDay: "5 000",
-                reviews: 77,
-                rate: 3
-              })
-              +card-room([
-              {src: "room-10.jpg"},
-              {src: "room-10.jpg"},
-              {src: "room-10.jpg"},
-              {src: "room-10.jpg"}
-              ],
-              {
-                number: 666,
-                priceForOneDay: "5 000",
-                reviews: 25,
-                rate: 5
-              })
-              +card-room([
-              {src: "room-11.jpg"},
-              {src: "room-11.jpg"},
-              {src: "room-11.jpg"},
-              {src: "room-11.jpg"}
-              ],
-              {
-                number: 444,
-                priceForOneDay: "5 000",
-                reviews: 15,
-                rate: 3
-              })
-              +card-room([
-              {src: "room-12.jpg"},
-              {src: "room-12.jpg"},
-              {src: "room-12.jpg"},
-              {src: "room-12.jpg"}
-              ],
-              {
-                number: 352,
-                priceForOneDay: "5 000",
-                reviews: 55,
-                rate: 3
-              })
+            +card-room([
+            { src: "room-1.jpg"},
+            { src: "room-1.jpg"},
+            { src: "room-1.jpg"},
+            { src: "room-1.jpg"}
+            ],
+            {
+              type: "люкс",
+              number: 888,
+              priceForOneDay: "9 990",
+              reviews: 145,
+              rate: 5
+            })
+            +card-room([
+            { src: "room-2.jpg"},
+            { src: "room-2.jpg"},
+            { src: "room-2.jpg"},
+            { src: "room-2.jpg"}
+            ],
+            {
+              number: 840,
+              priceForOneDay: "9 990",
+              reviews: 65,
+              rate: 4
+            })
+            +card-room([
+            { src: "room-3.jpg"},
+            { src: "room-3.jpg"},
+            { src: "room-3.jpg"},
+            { src: "room-3.jpg"}
+            ],
+            {
+              type: "люкс",
+              number: 980,
+              priceForOneDay: "8 500",
+              reviews: 35,
+              rate: 3
+            })
+            +card-room([
+            { src: "room-4.jpg"},
+            { src: "room-4.jpg"},
+            { src: "room-4.jpg"},
+            { src: "room-4.jpg"}
+            ],
+            {
+              number: 856,
+              priceForOneDay: "7 300",
+              reviews: 19,
+              rate: 5
+            })
+            +card-room([
+            { src: "room-5.jpg"},
+            { src: "room-5.jpg"},
+            { src: "room-5.jpg"},
+            { src: "room-5.jpg"}
+            ],
+            {
+              number: 740,
+              priceForOneDay: "6 000",
+              reviews: 44,
+              rate: 4
+            })
+            +card-room([
+            { src: "room-6.jpg"},
+            { src: "room-6.jpg"},
+            { src: "room-6.jpg"},
+            { src: "room-6.jpg"}
+            ],
+            {
+              number: 982,
+              priceForOneDay: "5 800",
+              reviews: 56,
+              rate: 3
+            })
+            +card-room([
+            { src: "room-7.jpg"},
+            { src: "room-7.jpg"},
+            { src: "room-7.jpg"},
+            { src: "room-7.jpg"}
+            ],
+            {
+              number: 678,
+              priceForOneDay: "5 500",
+              reviews: 45,
+              rate: 5
+            })
+            +card-room([
+            { src: "room-8.jpg"},
+            { src: "room-8.jpg"},
+            { src: "room-8.jpg"},
+            { src: "room-8.jpg"}
+            ],
+            {
+              number: 450,
+              priceForOneDay: "5 300",
+              reviews: 39,
+              rate: 4
+            })
+            +card-room([
+            { src: "room-9.jpg"},
+            { src: "room-9.jpg"},
+            { src: "room-9.jpg"},
+            { src: "room-9.jpg"}
+            ],
+            {
+              number: 350,
+              priceForOneDay: "5 000",
+              reviews: 77,
+              rate: 3
+            })
+            +card-room([
+            { src: "room-10.jpg"},
+            { src: "room-10.jpg"},
+            { src: "room-10.jpg"},
+            { src: "room-10.jpg"}
+            ],
+            {
+              number: 666,
+              priceForOneDay: "5 000",
+              reviews: 25,
+              rate: 5
+            })
+            +card-room([
+            { src: "room-11.jpg"},
+            { src: "room-11.jpg"},
+            { src: "room-11.jpg"},
+            { src: "room-11.jpg"}
+            ],
+            {
+              number: 444,
+              priceForOneDay: "5 000",
+              reviews: 15,
+              rate: 3
+            })
+            +card-room([
+            { src: "room-12.jpg"},
+            { src: "room-12.jpg"},
+            { src: "room-12.jpg"},
+            { src: "room-12.jpg"}
+            ],
+            {
+              number: 352,
+              priceForOneDay: "5 000",
+              reviews: 55,
+              rate: 3
+            })
           .filter__pagination
             .filter__pagination-wrapper
               +pagination()

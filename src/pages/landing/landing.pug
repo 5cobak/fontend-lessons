@@ -9,35 +9,7 @@ block head
   meta(name="description", content="Отель, поиск номеров")
   meta(name="keywords" content="отель, бронирование, комнаты, отдых")
 block content
-  +header({routes: [
-            {
-              text: 'О нас',
-              active: false,
-              href: '/mock-address/change-me'
-            },
-            {
-              text: 'Услуги',
-              active: false,
-              href: '/mock-address/change-me',
-              dropdown: true
-            },
-            {
-              text: 'Вакансии',
-              active: false,
-              href: '/mock-address/change-me'
-            },
-            {
-              text: 'Новости',
-              active: false,
-              href: '/mock-address/change-me'
-            },
-            {
-              text: 'Соглашения',
-              active: false,
-              href: '/mock-address/change-me',
-              dropdown: true
-            },
-          ],isEntered: false})
+  +header()
   main.landing-page
     .landing-page__container
       .landing-page__room-selection
@@ -47,4 +19,3 @@ block content
         | Лучшие номера для вашей работы,
         | отдыха и просто вдохновения
   +footer()
-

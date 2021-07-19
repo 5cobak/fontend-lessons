@@ -1,26 +1,43 @@
-mixin header({ routes, isEntered })
+mixin header( user = null )
+  -
+    const routes = [
+      { text: 'О нас', active: false, href: '/mock-address/change-me' },
+      { text: 'Услуги', active: false, href: '/mock-address/change-me', dropdown: true },
+      { text: 'Вакансии', active: false, href: '/mock-address/change-me' },
+      { text: 'Новости', active: false, href: '/mock-address/change-me' },
+      {
+        text: 'Соглашения',
+        active: false,
+        href: '/mock-address/change-me',
+        dropdown: true,
+      },
+    ]
+
   header.header.js-header
     .header__container
       .header__content
-        a(href="index.html").header__logo-link
-          svg(class="logo logo_colored" aria-label="toxin logo")
-            use(xlink:href="#logo-colored")
+        a.header__logo-link(href='index.html')
+          svg.logo.logo_colored(aria-label='toxin logo')
+            use(xlink:href='#logo-colored')
         nav.header__nav.js-header__nav
           ul.header__list
             each route in routes
               li.header__list-item
-                a.header__link(href="/mock-address/change-me" class=`${route.active ? 'header__link_active' : ''} ${route.dropdown ? 'header__link_dropping-out' : ''}`)
+                a.header__link(
+                  href='/mock-address/change-me',
+                  class=`${route.active ? "header__link_active" : ""} ${route.dropdown ? "header__link_dropping-out" : ""}`
+                )
                   | #{route.text}
-          if !isEntered
+          if !user
             .header__buttons
               span.header__button-wrap
-                a(href="sign-in.html").button.button_white.button_small
+                a.button.button_white.button_small(href='sign-in.html')
                   | Войти
-              a(href="registration.html").button.button_small
+              a.button.button_small(href='registration.html')
                 | Зарегистрироваться
-          else 
-            a(href="/mock-address/change-me").header__cabinet
+          else
+            a.header__user(href='/mock-address/change-me')
               | Юлий Цезарь
         .header__nav-shadow.js-header__nav-shadow
-        button(type="button" aria-label="menu").header__burger.js-header__burger
-          .header__burger-layout.js-header__burger-layout  
+        button.header__burger.js-header__burger(type='button', aria-label='menu')
+          .header__burger-layout.js-header__burger-layout 

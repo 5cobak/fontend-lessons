@@ -9,38 +9,11 @@ block head
   meta(name="description" content="Отель, авторизация в сервисе Toxin")
   meta(name="keywords" content="Отель, Toxin, вход в аккаунт, вход в личный кабинет, авторизация")
 block content
-  +header({routes: [
-            {
-              text: 'О нас',
-              active: false,
-              href: '/mock-address/change-me'
-            },
-            {
-              text: 'Услуги',
-              active: false,
-              href: '/mock-address/change-me',
-              dropdown: true
-            },
-            {
-              text: 'Вакансии',
-              active: false,
-              href: '/mock-address/change-me'
-            },
-            {
-              text: 'Новости',
-              active: false,
-              href: '/mock-address/change-me'
-            },
-            {
-              text: 'Соглашения',
-              active: false,
-              href: '/mock-address/change-me',
-              dropdown: true
-            },
-          ],isEntered: false})
+  +header()
   .content
     .sign-in
       .sign-in__container
         main.sign-in__main
           +card-sign-in()
+  
   +footer()

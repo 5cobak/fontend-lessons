@@ -44,16 +44,16 @@ block content
                 }
               )
               span.block-title dropdown
-              +dropdown-choose({className: "js-dropdown-guests", title:"dropdown"})
+              +dropdown-choose({ className: "js-dropdown-guests", title:"dropdown" })
               +date-dropdown({classNameFirstInput: "js-date-masked js-date-dropdown__input", 
               classNameSecondInput: "js-date-masked",
               title: "date dropdown", 
-              titleSecond: "date dropdown"})
+              titleSecond: "date dropdown" })
               span.block-title filter date dropdown
-              +filter-date({className: "js-filter-date", title: "filter date dropdown"})
-              +subscription({title: "subscription", placeholder: "Email"})
+              +filter-date({ className: "js-filter-date", title: "filter date dropdown" })
+              +subscription({title: "subscription", placeholder: "Email" })
               span.block-title dropdown
-              +dropdown-choose({className: "js-dropdown-beds", title: "dropdown"})
+              +dropdown-choose({ className: "js-dropdown-beds", title: "dropdown" })
               +checkbox({
                 title: "expandable checkbox list",
                 type: "dropping-out",
@@ -85,11 +85,11 @@ block content
                 }
               ]})
               span.block-title.block-title_margin-b-16 toggle
-              +checkbox({type: 'oval', items: ['Получать спецпредложения']})
+              +checkbox({ type: 'oval', items: ['Получать спецпредложения'] })
               .block-title.block-title_margin-b-16 like buttons
-              +like-button({className: "", count: 0})
+              +like-button({ className: "", count: 0 })
               .block-title.block-title_margin-b-16 rate button
-              +rate({rate: 3})
+              +rate({ rate: 3 })
               +checkbox({
                 title: "rich checkbox buttons",
                 items: [
@@ -105,7 +105,7 @@ block content
                 type: "detailed"
               })
             .col
-              +range-slider({title: "range slider", interval: "5000₽ - 10000₽"})
+              +range-slider({ title: "range slider", interval: "5000₽ - 10000₽" })
               .block-title.block-title_margin-b-16 buttons
               br
               a(href="/mock-address/").button click me
