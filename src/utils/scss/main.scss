@@ -18,13 +18,13 @@ html {
   line-height: $line-height-primary;
   font-weight: $font-weight-normal;
   color: $text-color;
-  background-color: #fff;
+  background-color: $bg-color-primary;
 }
 
 body {
   margin: 0;
   padding: 0;
   display: flex;
-  min-height: 100vh;
+  min-height: 100%;
   flex-direction: column;
 }

@@ -3,6 +3,7 @@ include ~components/masked-text-field/masked-text-field
 include ~components/toggle-buttons/toggle-buttons
 include ~components/checkbox/checkbox
 include ~components/radio/radio
+include ~components/button/button
 
 mixin card-check-in()
   .card-check-in
@@ -74,8 +75,16 @@ mixin card-check-in()
         .card-check-in__offer
           +checkbox({type: 'oval', items: ['Получать спецпредложения']})
         .card-check-in__button
-          button(type="submit").button.button_big.button_with-icon Зарегистрироваться
+          +button({
+            type: 'submit',
+            modifiers: 'button_big button_with-icon',
+            text: 'Зарегистрироваться'
+          })
         .card-check-in__sign-in 
           span.card-check-in__sign-in-text
             | Уже есть аккаунт на Toxin
-          a(href="sign-in.html").button.button_white.button_bigger Войти
+          +button({
+            href: 'sign-in.html',
+            modifiers: 'button_white button_bigger',
+            text: 'Войти'
+          })

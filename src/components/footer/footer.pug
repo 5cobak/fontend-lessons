@@ -1,4 +1,5 @@
 include ~components/subscription/subscription
+include ~components/logo/logo
 
 mixin footer()
   footer.footer
@@ -6,8 +7,7 @@ mixin footer()
       .footer__content
         .footer__block-text
           a(href="index.html").footer__link-logo
-            svg.logo.logo_colored
-              use(xlink:href="#logo-colored")
+            +logo()
           p.footer__achievement
             | Бронирование номеров в лучшем
             | отеле 2019 года по версии

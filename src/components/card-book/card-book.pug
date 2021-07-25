@@ -1,5 +1,6 @@
 include ~components/date-dropdown/date-dropdown
 include ~components/dropdown-choose/dropdown-choose
+include ~components/button/button
 
 mixin card-book(details)
   -var { number, type, priceForOneDay, discount, taxes } = details
@@ -60,4 +61,8 @@ mixin card-book(details)
             span.card-book__line
             span.card-book__total-price.js-card-book__total-price
               | 0₽
-        button(type="submit").button.button_big.button_with-icon Забронировать
+        +button({
+          type: 'submit',
+          modifiers: 'button_big button_with-icon',
+          text: 'Забронировать'
+        })

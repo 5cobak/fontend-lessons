@@ -10,7 +10,7 @@
   background-position: center;
   background-origin: content-box;
   background-size: cover;
-
+  flex: 1 0 auto;
   &__container {
     @include container;
   }

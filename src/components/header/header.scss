@@ -31,29 +31,6 @@
     max-height: 48px;
   }
 
-  &__nav-shadow {
-    position: fixed;
-    z-index: 900;
-    top: 0;
-    right: 0;
-    display: none;
-    width: 100%;
-    max-width: 0;
-    min-height: 100vh;
-    background-color: rgba(185, 101, 185, 0.98);
-    transition: 0.1;
-    cursor: pointer;
-
-    @media (max-width: $sm-desktop-width) {
-      display: block;
-    }
-
-    &_active {
-      max-width: 100%;
-      transition: $tr-mid;
-    }
-  }
-
   &__nav {
     margin-left: 10px;
     display: flex;
@@ -123,6 +100,29 @@
         border: none;
         border-top: 1px solid rgba(31, 32, 65, 0.1);
       }
+    }
+  }
+
+  &__nav-shadow {
+    position: fixed;
+    z-index: 900;
+    top: 0;
+    right: 0;
+    display: none;
+    width: 100%;
+    max-width: 0;
+    min-height: 100vh;
+    background-color: rgba(185, 101, 185, 0.98);
+    transition: 0.1s;
+    cursor: pointer;
+
+    @media (max-width: $sm-desktop-width) {
+      display: block;
+    }
+
+    &_active {
+      max-width: 100%;
+      transition: $tr-mid;
     }
   }
 

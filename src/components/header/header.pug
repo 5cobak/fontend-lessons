@@ -1,3 +1,6 @@
+include ~components/button/button
+include ~components/logo/logo
+
 mixin header( user = null )
   -
     const routes = [
@@ -17,8 +20,7 @@ mixin header( user = null )
     .header__container
       .header__content
         a.header__logo-link(href='index.html')
-          svg.logo.logo_colored(aria-label='toxin logo')
-            use(xlink:href='#logo-colored')
+          +logo()
         nav.header__nav.js-header__nav
           ul.header__list
             each route in routes
@@ -31,10 +33,18 @@ mixin header( user = null )
           if !user
             .header__buttons
               span.header__button-wrap
-                a.button.button_white.button_small(href='sign-in.html')
-                  | Войти
-              a.button.button_small(href='registration.html')
-                | Зарегистрироваться
+                +button({
+                  type: 'link',
+                  href: 'sign-in.html',
+                  text: 'Войти',
+                  modifiers: 'button_white button_small'
+                })
+              +button({
+                type: 'link',
+                href: 'registration.html',
+                text: 'Зарегистрироваться',
+                modifiers: 'button_small'
+              })
           else
             a.header__user(href='/mock-address/change-me')
               | Юлий Цезарь

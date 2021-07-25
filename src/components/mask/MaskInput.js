@@ -1,3 +1,5 @@
+import '~/inputmask/dist/jquery.inputmask.min';
+
 class MaskInput {
   constructor(inputs) {
     this.inputs = inputs;

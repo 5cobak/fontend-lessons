@@ -1,5 +1,6 @@
 include ~components/date-dropdown/date-dropdown
 include ~components/dropdown-choose/dropdown-choose
+include ~components/button/button
 
 mixin card-selection()
   .card-selection
@@ -16,5 +17,8 @@ mixin card-selection()
           span.block-title
             | Гости
           +dropdown-choose({className: "dropdown-guests js-dropdown-guests", title:"Гости"})
-        button(type="submit").button.button_big.button_with-icon
-          | подобрать номер 
+        +button({
+          type: "submit",
+          modifiers: "button_big button_with-icon",
+          text: "Подобрать номер"
+        })

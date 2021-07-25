@@ -11,6 +11,8 @@
 @import '~components/bullet-list/bullet-list';
 
 .room-details {
+  flex: 1 0 auto;
+
   &__container {
     @include container;
   }
