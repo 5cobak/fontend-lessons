@@ -16,8 +16,23 @@ class RangeSlider {
     domValues.innerHTML = `${from.innerHTML}₽ - ${to.innerHTML}₽`;
   }
 
-  _createRangeSlider() {
-    const writeValues = this._writeValues.bind(this);
+  _bindHandlers() {
+    this._handleChange = this._handleChange.bind(this);
+    this._handleFinish = this._handleChange.bind(this);
+  }
+
+  _handleChange() {
+    this._writeValues();
+  }
+
+  _handleFinish() {
+    this._writeValues();
+  }
+
+  _init() {
+    this._bindHandlers();
+    const handleChange = this._handleChange;
+    const handleFinish = this._handleFinish;
     const $input = $(this.input);
 
     $input.ionRangeSlider({
@@ -27,14 +42,10 @@ class RangeSlider {
       max: 15000,
       from: 5000,
       to: 10000,
-      onFinish: writeValues,
-      onChange: writeValues,
+      onFinish: handleChange,
+      onChange: handleFinish,
       hide_min_max: true,
     });
-  }
-
-  _init() {
-    this._createRangeSlider();
   }
 }
 

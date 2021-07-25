@@ -111,7 +111,6 @@ class DropdownChoose {
   }
 
   _addEventsOnInput() {
-    this._handlerFocusOnUpperField = this._handlerFocusOnUpperField.bind(this);
     this.input.addEventListener('keydown', this._handlerFocusOnUpperField);
   }
 
@@ -123,8 +122,7 @@ class DropdownChoose {
   }
 
   _addEventsForHide() {
-    const handlerClickOutSide = this._handlerClickOutSide.bind(this);
-    document.addEventListener('click', handlerClickOutSide);
+    document.addEventListener('click', this.handlerClickOutSide);
   }
 
   _getStringMultiVariant(items) {
@@ -224,15 +222,13 @@ class DropdownChoose {
 
   _setEventsForPlusMinus() {
     const items = this.menu.querySelectorAll('.js-dropdown-choose__item');
-    const handlerIncrement = this._handlerIncrement.bind(this);
-    const handlerDecrement = this._handlerDecrement.bind(this);
 
     items.forEach((item) => {
       const plus = item.querySelector('.js-dropdown-choose__plus');
       const minus = item.querySelector('.js-dropdown-choose__minus');
 
-      plus.addEventListener('click', handlerIncrement);
-      minus.addEventListener('click', handlerDecrement);
+      plus.addEventListener('click', this.handlerIncrement);
+      minus.addEventListener('click', this.handlerDecrement);
     });
   }
 
@@ -264,13 +260,19 @@ class DropdownChoose {
   _setEventsForButtons() {
     if (!this.isButtons) return;
 
-    const handlerClickButtonClear = this._handlerClickButtonClear.bind(this);
-    const handlerBlur = this._handlerBlur.bind(this);
-    const handlerClickSuccessButton = this._handlerClickSuccessButton.bind(this);
+    this.buttonClear.addEventListener('click', this.handlerClickButtonClear);
+    this.buttonSuccess.addEventListener('click', this.handlerClickSuccessButton);
+    this.buttonSuccess.addEventListener('blur', this.handlerBlur);
+  }
 
-    this.buttonClear.addEventListener('click', handlerClickButtonClear);
-    this.buttonSuccess.addEventListener('click', handlerClickSuccessButton);
-    this.buttonSuccess.addEventListener('blur', handlerBlur);
+  _bindHandlers() {
+    this.handlerClickButtonClear = this._handlerClickButtonClear.bind(this);
+    this.handlerBlur = this._handlerBlur.bind(this);
+    this.handlerClickSuccessButton = this._handlerClickSuccessButton.bind(this);
+    this.handlerIncrement = this._handlerIncrement.bind(this);
+    this.handlerDecrement = this._handlerDecrement.bind(this);
+    this.handlerClickOutSide = this._handlerClickOutSide.bind(this);
+    this._handlerFocusOnUpperField = this._handlerFocusOnUpperField.bind(this);
   }
 
   _init(

@@ -19,12 +19,14 @@ class Header {
     this._toggleMenu();
   }
 
-  _addEvents() {
-    const handlerClickBurger = this._handlerClickBurger.bind(this);
-    const handlerClickOnShadow = this._handlerClickOnShadow.bind(this);
+  _bindHandlers() {
+    this.handlerClickBurger = this._handlerClickBurger.bind(this);
+    this.handlerClickOnShadow = this._handlerClickOnShadow.bind(this);
+  }
 
-    this.burger.addEventListener('click', handlerClickBurger);
-    this.shadow.addEventListener('click', handlerClickOnShadow);
+  _addEvents() {
+    this.burger.addEventListener('click', this.handlerClickBurger);
+    this.shadow.addEventListener('click', this.handlerClickOnShadow);
   }
 
   _init() {
@@ -32,6 +34,7 @@ class Header {
     this.burgerLayout = this.burger.querySelector('.js-header__burger-layout');
     this.shadow = this.parent.querySelector('.js-header__nav-shadow');
     this.menu = this.parent.querySelector('.js-header__nav');
+    this._bindHandlers();
     this._addEvents();
   }
 }

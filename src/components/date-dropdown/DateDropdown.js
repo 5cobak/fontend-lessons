@@ -73,7 +73,7 @@ class DateDropdown {
     this.$buttonsParent.append(
       '<button type="button" class="button button_no-bg">Применить</button>',
     );
-    this.$buttonsuccess = this.$clearButton.next();
+    this.$buttonSuccess = this.$clearButton.next();
   }
 
   _handlerInput(e) {
@@ -134,32 +134,35 @@ class DateDropdown {
     this.$datepicker.hide();
   }
 
-  _addEvents() {
-    const handlerInput = this._handlerInput.bind(this);
-    const handleClickSecondInput = this._handleClickSecondInput.bind(this);
-    const handlerClickClearButton = this._handlerClickClearButton.bind(this);
-    const handlerClickSuccessButton = this._handlerClickSuccessButton.bind(this);
-    const handlerClickFirstInput = this._handlerClickFirstInput.bind(this);
-    const handlerClickOutside = this._handlerClickOutside.bind(this);
-    const handlerFocusOnInput = this._handlerFocusOnInput.bind(this);
-    const handlerBlurInput = this._handlerBlurInput.bind(this);
-    this.$clearButton.on('click', handlerClickClearButton);
+  _bindHandlers() {
+    this.handlerInput = this._handlerInput.bind(this);
+    this.handleClickSecondInput = this._handleClickSecondInput.bind(this);
+    this.handlerClickClearButton = this._handlerClickClearButton.bind(this);
+    this.handlerClickSuccessButton = this._handlerClickSuccessButton.bind(this);
+    this.handlerClickFirstInput = this._handlerClickFirstInput.bind(this);
+    this.handlerClickOutside = this._handlerClickOutside.bind(this);
+    this.handlerFocusOnInput = this._handlerFocusOnInput.bind(this);
+    this.handlerBlurInput = this._handlerBlurInput.bind(this);
+  }
 
-    this.$secondInput.on('click', handleClickSecondInput);
-    this.$secondInput.on('keydown', handlerInput);
-    this.$secondInput.on('focus', handlerFocusOnInput);
-    this.$secondInput.on('blur', handlerBlurInput);
-    this.$firstInput.on('keydown', handlerInput);
-    this.$firstInput.on('focus', handlerFocusOnInput);
-    this.$firstInput.on('click', handlerClickFirstInput);
-    this.$buttonsuccess.on('mouseup', handlerClickSuccessButton);
-    $(document).on('click', handlerClickOutside);
+  _addEvents() {
+    this.$clearButton.on('click', this.handlerClickClearButton);
+    this.$secondInput.on('click', this.handleClickSecondInput);
+    this.$secondInput.on('keydown', this.handlerInput);
+    this.$secondInput.on('focus', this.handlerFocusOnInput);
+    this.$secondInput.on('blur', this.handlerBlurInput);
+    this.$firstInput.on('keydown', this.handlerInput);
+    this.$firstInput.on('focus', this.handlerFocusOnInput);
+    this.$firstInput.on('click', this.handlerClickFirstInput);
+    this.$buttonSuccess.on('mouseup', this.handlerClickSuccessButton);
+    $(document).on('click', this.handlerClickOutside);
   }
 
   _init(dateDropdownEl) {
     this.isShowed = false;
     this.input = dateDropdownEl.querySelector('input');
     this._createDateDropdown();
+    this._bindHandlers();
     this._addEvents();
   }
 }

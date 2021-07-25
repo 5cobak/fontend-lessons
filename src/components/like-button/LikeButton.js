@@ -21,14 +21,17 @@ class LikeButton {
     this._toggleLike();
   }
 
-  addEvents() {
-    const handlerClick = this._handlerClick.bind(this);
+  _bindHandlers() {
+    this.handlerClick = this._handlerClick.bind(this);
+  }
 
-    this.$button.on('click', handlerClick);
+  _addEvents() {
+    this.$button.on('click', this.handlerClick);
   }
 
   _init() {
-    this.addEvents();
+    this._bindHandlers();
+    this._addEvents();
   }
 }
 
