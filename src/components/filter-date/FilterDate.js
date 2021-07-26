@@ -24,7 +24,7 @@ class FilterDate {
     this._formatDate(formattedDate);
   }
 
-  _handlerClickInput() {
+  _handlerInputClick() {
     this.isDatepickerActive = !this.isDatepickerActive;
     if (!this.isDatepickerActive) {
       this.$datepicker.hide();
@@ -39,8 +39,9 @@ class FilterDate {
 
   _createDatepicker() {
     if (!this.$input) return;
-    const handlerHide = this._handlerHide.bind(this);
-    const handlerSelect = this._handlerSelect.bind(this);
+    this._bindHandlers();
+    const handlerHide = this._handlerHide;
+    const handlerSelect = this._handlerSelect;
     this.isDatepickerActive = false;
 
     this.$input.datepicker({
@@ -63,18 +64,23 @@ class FilterDate {
     const $buttonsParent = this.calendar.find('.datepicker--buttons');
     $buttonsParent.append('<button class="button button_no-bg">Применить</button>');
 
-    this.$buttonsuccess = this.$clearButton.next();
+    this.$buttonSuccess = this.$clearButton.next();
   }
 
-  _handlerMouseUpsuccessButton() {
+  _handlerButtonSuccessMouseUp() {
     this.$datepicker.hide();
   }
 
+  _bindHandlers() {
+    this._handlerButtonSuccessMouseUp = this._handlerButtonSuccessMouseUp.bind(this);
+    this._handlerInputClick = this._handlerInputClick.bind(this);
+    this._handlerHide = this._handlerHide.bind(this);
+    this._handlerSelect = this._handlerSelect.bind(this);
+  }
+
   _addEvents() {
-    const handlerMouseUpsuccessButton = this._handlerMouseUpsuccessButton.bind(this);
-    const handlerClickInput = this._handlerClickInput.bind(this);
-    this.$input.on('click', handlerClickInput);
-    this.$buttonsuccess.on('mouseup', handlerMouseUpsuccessButton);
+    this.$input.on('click', this._handlerInputClick);
+    this.$buttonSuccess.on('mouseup', this._handlerButtonSuccessMouseUp);
   }
 
   _init() {

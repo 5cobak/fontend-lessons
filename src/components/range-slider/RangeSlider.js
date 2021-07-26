@@ -8,12 +8,12 @@ class RangeSlider {
 
   _writeValues() {
     const parentEl = this.input.parentElement;
-    const domValues = parentEl.querySelector('.js-range-slider__values');
+    const values = parentEl.querySelector('.js-range-slider__values');
 
     const from = parentEl.querySelector('.irs-from');
     const to = parentEl.querySelector('.irs-to');
 
-    domValues.innerHTML = `${from.innerHTML}₽ - ${to.innerHTML}₽`;
+    values.innerHTML = `${from.innerHTML}₽ - ${to.innerHTML}₽`;
   }
 
   _bindHandlers() {
@@ -42,8 +42,8 @@ class RangeSlider {
       max: 15000,
       from: 5000,
       to: 10000,
-      onFinish: handleChange,
-      onChange: handleFinish,
+      onFinish: handleFinish,
+      onChange: handleChange,
       hide_min_max: true,
     });
   }

@@ -14,7 +14,7 @@ $(document).ready(() => {
         mainDeclination: ['Гость', 'Гостя', 'Гостей'],
         declinations: [['младенец', 'младенцев', 'младенцев']],
         textLength: 20,
-        buttons: true,
+        withButtons: true,
       });
     });
   }
