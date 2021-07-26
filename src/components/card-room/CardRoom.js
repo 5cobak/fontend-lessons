@@ -8,7 +8,7 @@ class CardRoom {
   }
 
   _createSwiper() {
-    new Swiper(this.carousel, {
+    new Swiper(this.swiperContainer, {
       loop: true,
       pagination: {
         el: '.swiper-pagination',
@@ -28,7 +28,7 @@ class CardRoom {
   }
 
   _init() {
-    this.carousel = this.cardRoomEl.querySelector('.js-swiper-container');
+    this.swiperContainer = this.cardRoomEl.querySelector('.js-swiper-container');
     this.reviewsText = this.cardRoomEl.querySelector('.js-card-room__reviews-text');
     this.reviewsNum = this.cardRoomEl.querySelector('.js-card-room__reviews-num').innerHTML;
     this._createSwiper();

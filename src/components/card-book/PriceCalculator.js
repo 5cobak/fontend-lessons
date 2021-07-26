@@ -41,28 +41,28 @@ class PriceCalculator {
 
   injectHTML() {
     const card = this.parent;
-    const cleanSumEl = card.querySelector('.js-card-book__calc-sum');
-    const daysEl = card.querySelector('.js-card-book__days');
-    const totalSumEl = card.querySelector('.js-card-book__total-price');
+    const calcSum = card.querySelector('.js-card-book__calc-sum');
+    const days = card.querySelector('.js-card-book__days');
+    const totalPrice = card.querySelector('.js-card-book__total-price');
     const data = this._calculate(this.dateDropdown.daysLag);
 
-    daysEl.innerHTML = '';
-    daysEl.insertAdjacentHTML(
+    days.innerHTML = '';
+    days.insertAdjacentHTML(
       'beforeEnd',
       `${data.daysLag} ${declination(data.daysLag, ['сутки', 'суток', 'суток'])}`,
     );
-    cleanSumEl.innerHTML = '';
-    cleanSumEl.insertAdjacentHTML('beforeEnd', `${data.cleanSum}₽`);
-    totalSumEl.innerHTML = '';
-    totalSumEl.insertAdjacentHTML('beforeEnd', `${data.totalSum}₽`);
+    calcSum.innerHTML = '';
+    calcSum.insertAdjacentHTML('beforeEnd', `${data.cleanSum}₽`);
+    totalPrice.innerHTML = '';
+    totalPrice.insertAdjacentHTML('beforeEnd', `${data.totalSum}₽`);
   }
 
   _init(parent) {
     this.parent = parent;
-    const dropdownEl = this.parent.querySelector('.js-date-dropdown');
+    const dateDropdown = this.parent.querySelector('.js-date-dropdown');
     const customDateDropdown = {};
     customDateDropdown.callback = this.injectHTML.bind(this);
-    const ExtendedDropdown = Object.assign(new DateDropdown(dropdownEl), customDateDropdown);
+    const ExtendedDropdown = Object.assign(new DateDropdown(dateDropdown), customDateDropdown);
     this.dateDropdown = ExtendedDropdown;
   }
 }
