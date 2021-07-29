@@ -16,7 +16,7 @@ class RangeSlider {
     values.innerHTML = `${from.innerHTML}₽ - ${to.innerHTML}₽`;
   }
 
-  _bindHandlers() {
+  _bindhandles() {
     this._handleChange = this._handleChange.bind(this);
     this._handleFinish = this._handleChange.bind(this);
   }
@@ -30,7 +30,7 @@ class RangeSlider {
   }
 
   _init() {
-    this._bindHandlers();
+    this._bindhandles();
     const handleChange = this._handleChange;
     const handleFinish = this._handleFinish;
     const $input = $(this.input);

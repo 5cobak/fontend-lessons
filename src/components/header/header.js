@@ -11,22 +11,22 @@ class Header {
     this.navShadow.classList.toggle('header__nav-shadow_active');
   }
 
-  _handlerBurgerClick() {
+  _handleBurgerClick() {
     this._toggleMenu();
   }
 
-  _handlerShadowClick() {
+  _handleShadowClick() {
     this._toggleMenu();
   }
 
-  _bindHandlers() {
-    this._handlerBurgerClick = this._handlerBurgerClick.bind(this);
-    this._handlerShadowClick = this._handlerShadowClick.bind(this);
+  _bindhandles() {
+    this._handleBurgerClick = this._handleBurgerClick.bind(this);
+    this._handleShadowClick = this._handleShadowClick.bind(this);
   }
 
-  _addEvents() {
-    this.burger.addEventListener('click', this._handlerBurgerClick);
-    this.navShadow.addEventListener('click', this._handlerShadowClick);
+  _addEventHandlers() {
+    this.burger.addEventListener('click', this._handleBurgerClick);
+    this.navShadow.addEventListener('click', this._handleShadowClick);
   }
 
   _init() {
@@ -34,8 +34,8 @@ class Header {
     this.burgerLayout = this.burger.querySelector('.js-header__burger-layout');
     this.navShadow = this.parent.querySelector('.js-header__nav-shadow');
     this.nav = this.parent.querySelector('.js-header__nav');
-    this._bindHandlers();
-    this._addEvents();
+    this._bindhandles();
+    this._addEventHandlers();
   }
 }
 

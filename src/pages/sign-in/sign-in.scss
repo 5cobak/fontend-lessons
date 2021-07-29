@@ -5,12 +5,13 @@
 @import '~components/card-sign-in/card-sign-in';
 
 .sign-in {
+  flex: 1 0 auto;
   background-image: url('./images/landing-page-bg-2.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-origin: content-box;
   background-size: cover;
-  flex: 1 0 auto;
+
   &__container {
     @include container;
   }

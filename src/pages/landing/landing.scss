@@ -6,12 +6,12 @@
 .landing-page {
   padding-top: 70px;
   display: flex;
+  flex: 1 0 auto;
   flex-direction: column;
   justify-content: space-between;
   background-image: url('./images/landing-page-bg.jpg');
   background-repeat: no-repeat;
   background-position: center;
-  flex: 1 0 auto;
 
   @media (min-width: $sm-desktop-width) {
     background-size: cover;
@@ -32,11 +32,11 @@
   &__description {
     margin: 0;
     padding-bottom: 20px;
-    overflow-wrap: break-word;
     font-size: 14px;
     line-height: 24px;
     text-align: right;
     white-space: pre-wrap;
     color: $text-color-brightness-75;
+    overflow-wrap: break-word;
   }
 }

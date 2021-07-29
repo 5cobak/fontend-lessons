@@ -91,7 +91,7 @@ class DropdownChoose {
     `;
   }
 
-  _handlerDropdownClick(e) {
+  _handleDropdownClick(e) {
     const { target } = e;
     const isClickOnUpperField = target !== this.upperField && target !== this.arrow;
     if (isClickOnUpperField) return;
@@ -99,28 +99,28 @@ class DropdownChoose {
     this.parentElement.classList.toggle('dropdown-choose_active');
   }
 
-  _addEventsOnClickDropdown() {
-    this.parentElement.addEventListener('click', this._handlerDropdownClick);
+  _addEventHandlersOnClickDropdown() {
+    this.parentElement.addEventListener('click', this._handleDropdownClick);
   }
 
-  _handlerUpperFieldFocus(e) {
+  _handleUpperFieldFocus(e) {
     if (e.key !== 'Tab') return;
     this.parentElement.classList.toggle('dropdown-choose_active');
   }
 
-  _addEventsOnInput() {
-    this.upperField.addEventListener('keydown', this._handlerUpperFieldFocus);
+  _addEventHandlersOnInput() {
+    this.upperField.addEventListener('keydown', this._handleUpperFieldFocus);
   }
 
-  _handlerClickOutside(e) {
+  _handleClickOutside(e) {
     const target = e.target.closest('.js-dropdown-choose');
     if (target === this.parentElement) return;
 
     this.parentElement.classList.remove('dropdown-choose_active');
   }
 
-  _addEventsForHide() {
-    document.addEventListener('click', this._handlerClickOutside);
+  _addEventHandlersForHide() {
+    document.addEventListener('click', this._handleClickOutside);
   }
 
   _getStringMultiVariant(items) {
@@ -190,7 +190,7 @@ class DropdownChoose {
     if (formattedItems.length < 1) upperField.value = this.placeholder;
   }
 
-  _handlerIncrement(e) {
+  _handleIncrement(e) {
     const plus = e.currentTarget;
     const item = plus.parentElement;
     const countItem = item.querySelector('.js-dropdown-choose__item-count');
@@ -204,7 +204,7 @@ class DropdownChoose {
     this._changeText();
   }
 
-  _handlerDecrement(e) {
+  _handleDecrement(e) {
     const minus = e.currentTarget;
     const item = minus.parentElement;
     const countItem = item.querySelector('.js-dropdown-choose__item-count');
@@ -225,12 +225,12 @@ class DropdownChoose {
       const plus = item.querySelector('.js-dropdown-choose__plus');
       const minus = item.querySelector('.js-dropdown-choose__minus');
 
-      plus.addEventListener('click', this._handlerIncrement);
-      minus.addEventListener('click', this._handlerDecrement);
+      plus.addEventListener('click', this._handleIncrement);
+      minus.addEventListener('click', this._handleDecrement);
     });
   }
 
-  _handlerButtonClearClick() {
+  _handleButtonClearClick() {
     const { menu } = this;
     const itemCounts = menu.querySelectorAll('.js-dropdown-choose__item-count');
     const upperField = this.parentElement.querySelector('.js-dropdown-choose__upper-field');
@@ -247,31 +247,31 @@ class DropdownChoose {
     this.buttonClear.classList.add('button_hidden');
   }
 
-  _handlerInputBlur() {
+  _handleInputBlur() {
     this.parentElement.classList.remove('dropdown-choose_active');
   }
 
-  _handlerSuccessButtonClick() {
+  _handleSuccessButtonClick() {
     this.parentElement.classList.remove('dropdown-choose_active');
   }
 
   _setEventsForButtons() {
     if (!this.withButtons) return;
 
-    this.buttonClear.addEventListener('click', this._handlerButtonClearClick);
-    this.buttonSuccess.addEventListener('click', this._handlerSuccessButtonClick);
-    this.buttonSuccess.addEventListener('blur', this._handlerBlur);
+    this.buttonClear.addEventListener('click', this._handleButtonClearClick);
+    this.buttonSuccess.addEventListener('click', this._handleSuccessButtonClick);
+    this.buttonSuccess.addEventListener('blur', this._handleBlur);
   }
 
-  _bindHandlers() {
-    this._handlerButtonClearClick = this._handlerButtonClearClick.bind(this);
-    this._handlerBlur = this._handlerInputBlur.bind(this);
-    this._handlerSuccessButtonClick = this._handlerSuccessButtonClick.bind(this);
-    this._handlerIncrement = this._handlerIncrement.bind(this);
-    this._handlerDecrement = this._handlerDecrement.bind(this);
-    this._handlerClickOutside = this._handlerClickOutside.bind(this);
-    this._handlerUpperFieldFocus = this._handlerUpperFieldFocus.bind(this);
-    this._handlerDropdownClick = this._handlerDropdownClick.bind(this);
+  _bindhandles() {
+    this._handleButtonClearClick = this._handleButtonClearClick.bind(this);
+    this._handleBlur = this._handleInputBlur.bind(this);
+    this._handleSuccessButtonClick = this._handleSuccessButtonClick.bind(this);
+    this._handleIncrement = this._handleIncrement.bind(this);
+    this._handleDecrement = this._handleDecrement.bind(this);
+    this._handleClickOutside = this._handleClickOutside.bind(this);
+    this._handleUpperFieldFocus = this._handleUpperFieldFocus.bind(this);
+    this._handleDropdownClick = this._handleDropdownClick.bind(this);
   }
 
   _init(
@@ -305,10 +305,10 @@ class DropdownChoose {
       this.buttonClear = buttonClear;
       this.buttonSuccess = buttonSuccess;
     }
-    this._bindHandlers();
-    this._addEventsOnInput();
-    this._addEventsOnClickDropdown();
-    this._addEventsForHide();
+    this._bindhandles();
+    this._addEventHandlersOnInput();
+    this._addEventHandlersOnClickDropdown();
+    this._addEventHandlersForHide();
     this._setEventsForPlusMinus();
     this._setEventsForButtons();
   }

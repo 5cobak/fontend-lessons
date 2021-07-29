@@ -20,18 +20,18 @@ class FilterDate {
     this._setNewFormat();
   }
 
-  _handlerSelect(formattedDate) {
+  _handleSelect(formattedDate) {
     this._formatDate(formattedDate);
   }
 
-  _handlerInputClick() {
+  _handleInputClick() {
     this.isDatepickerActive = !this.isDatepickerActive;
     if (!this.isDatepickerActive) {
       this.$datepicker.hide();
     }
   }
 
-  _handlerHide() {
+  _handleHide() {
     this.isDatepickerActive = false;
     if (!this.setNewFormat) return;
     this.setNewFormat();
@@ -39,9 +39,9 @@ class FilterDate {
 
   _createDatepicker() {
     if (!this.$input) return;
-    this._bindHandlers();
-    const handlerHide = this._handlerHide;
-    const handlerSelect = this._handlerSelect;
+    this._bindhandles();
+    const handleHide = this._handleHide;
+    const handleSelect = this._handleSelect;
     this.isDatepickerActive = false;
 
     this.$input.datepicker({
@@ -54,8 +54,8 @@ class FilterDate {
         days: 'MM yyyy',
       },
       minDate: new Date(),
-      onSelect: handlerSelect,
-      onHide: handlerHide,
+      onSelect: handleSelect,
+      onHide: handleHide,
     });
 
     this.$datepicker = this.$input.datepicker().data('datepicker');
@@ -67,25 +67,25 @@ class FilterDate {
     this.$buttonSuccess = this.$clearButton.next();
   }
 
-  _handlerButtonSuccessMouseUp() {
+  _handleButtonSuccessMouseUp() {
     this.$datepicker.hide();
   }
 
-  _bindHandlers() {
-    this._handlerButtonSuccessMouseUp = this._handlerButtonSuccessMouseUp.bind(this);
-    this._handlerInputClick = this._handlerInputClick.bind(this);
-    this._handlerHide = this._handlerHide.bind(this);
-    this._handlerSelect = this._handlerSelect.bind(this);
+  _bindhandles() {
+    this._handleButtonSuccessMouseUp = this._handleButtonSuccessMouseUp.bind(this);
+    this._handleInputClick = this._handleInputClick.bind(this);
+    this._handleHide = this._handleHide.bind(this);
+    this._handleSelect = this._handleSelect.bind(this);
   }
 
-  _addEvents() {
-    this.$input.on('click', this._handlerInputClick);
-    this.$buttonSuccess.on('mouseup', this._handlerButtonSuccessMouseUp);
+  _addEventHandlers() {
+    this.$input.on('click', this._handleInputClick);
+    this.$buttonSuccess.on('mouseup', this._handleButtonSuccessMouseUp);
   }
 
   _init() {
     this._createDatepicker();
-    this._addEvents();
+    this._addEventHandlers();
   }
 }
 
