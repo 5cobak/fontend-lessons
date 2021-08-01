@@ -5,7 +5,6 @@ class Header {
   }
 
   _toggleMenu() {
-    this.burgerLayout.classList.toggle('header__burger-layout_active');
     this.burger.classList.toggle('header__burger_active');
     this.nav.classList.toggle('header__nav_active');
     this.navShadow.classList.toggle('header__nav-shadow_active');
