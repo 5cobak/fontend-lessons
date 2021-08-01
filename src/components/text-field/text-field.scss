@@ -1,12 +1,14 @@
 @import '~components/button/button';
 
 .text-field {
+  $self: &;
+
+  position: relative;
   display: block;
   max-width: 320px;
-  position: relative;
 
   &:hover & {
-    &__input {
+    #{$self}__input {
       border: $border-input-hover;
 
       &::placeholder {
