@@ -1,14 +1,4 @@
 .logo {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  min-width: 48px;
+  max-width: 105px;
   max-height: 48px;
-
-  &_colored {
-    position: initial;
-    width: 100%;
-    min-width: 105px;
-    height: 100%;
-  }
 }
