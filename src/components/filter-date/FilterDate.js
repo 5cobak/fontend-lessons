@@ -1,5 +1,17 @@
 import '~/air-datepicker/dist/js/datepicker.min';
 
+const config = {
+  showEvent: 'click',
+  offset: 5,
+  range: true,
+  clearButton: true,
+  dateFormat: 'd M',
+  navTitles: {
+    days: 'MM yyyy',
+  },
+  minDate: new Date(),
+};
+
 class FilterDate {
   constructor(elem, { inputId }) {
     this.$input = $(elem);
@@ -9,19 +21,8 @@ class FilterDate {
   _getConfig() {
     const handleHide = this._handleHide;
     const handleSelect = this._handleSelect;
-    return {
-      showEvent: 'click',
-      offset: 5,
-      range: true,
-      clearButton: true,
-      dateFormat: 'd M',
-      navTitles: {
-        days: 'MM yyyy',
-      },
-      minDate: new Date(),
-      onSelect: handleSelect,
-      onHide: handleHide,
-    };
+    const newConfig = { ...config, onSelect: handleSelect, onHide: handleHide };
+    return newConfig;
   }
 
   _hideDatePicker() {
@@ -68,10 +69,10 @@ class FilterDate {
     this.$buttonSuccess = this.$clearButton.next();
   }
 
-  _createDatepicker(config) {
+  _createDatepicker(datepickerConfig) {
     this.isDatepickerActive = false;
 
-    this.$datepickerInstance = this.$input.datepicker(config).data('datepicker');
+    this.$datepickerInstance = this.$input.datepicker(datepickerConfig).data('datepicker');
 
     this.calendar = this.$datepickerInstance.$datepicker;
   }

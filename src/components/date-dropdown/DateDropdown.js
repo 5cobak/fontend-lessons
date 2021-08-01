@@ -1,24 +1,25 @@
 import '~/air-datepicker/dist/js/datepicker.min';
 
+const config = {
+  showEvent: 'click',
+  offset: 5,
+  range: true,
+  clearButton: true,
+  minDate: new Date(),
+  navTitles: {
+    days: 'MM yyyy',
+  },
+};
+
 class DateDropdown {
   constructor(dateDropdown) {
     this._init(dateDropdown);
   }
 
   _getConfig() {
-    const handlerSelect = this._handlerSelect;
-
-    return {
-      showEvent: 'click',
-      offset: 5,
-      range: true,
-      onSelect: handlerSelect,
-      clearButton: true,
-      minDate: new Date(),
-      navTitles: {
-        days: 'MM yyyy',
-      },
-    };
+    const handleSelect = this._handleSelect;
+    const newConfig = { ...config, onSelect: handleSelect };
+    return newConfig;
   }
 
   _getDaysLag() {
@@ -81,21 +82,21 @@ class DateDropdown {
     this.$buttonSuccess = this.$clearButton.next();
   }
 
-  _createDateDropdown(config) {
+  _createDateDropdown(datepickerConfig) {
     this.isDatepickerActive = false;
 
-    this.$datepickerInstance = this.$firstInput.datepicker(config).data('datepicker');
+    this.$datepickerInstance = this.$firstInput.datepicker(datepickerConfig).data('datepicker');
 
     this.$calendar = this.$datepickerInstance.$datepicker;
   }
 
-  _handlerInput(e) {
+  _handleInput(e) {
     if (e.keyCode === 9) return true;
     e.preventDefault();
     return false;
   }
 
-  _handlerClickFirstInput() {
+  _handleClickFirstInput() {
     this.isDatepickerActive = !this.isDatepickerActive;
     if (!this.isDatepickerActive) {
       this.$datepickerInstance.hide();
@@ -110,7 +111,7 @@ class DateDropdown {
     }
   }
 
-  _handlerSelect(formattedDate) {
+  _handleSelect(formattedDate) {
     this._formatDate(formattedDate, this.$secondInput);
     const firstDate = this.formattedDate.split(',')[0];
     this.input.value = firstDate;
@@ -118,19 +119,19 @@ class DateDropdown {
     this._getDaysLag();
   }
 
-  _handlerClickClearButton() {
+  _handleClickClearButton() {
     this.$secondInput.val('');
     this.$firstInput.val('');
     this._getDaysLag();
   }
 
-  _handlerClickSuccessButton(e) {
+  _handleClickSuccessButton(e) {
     e.stopPropagation();
     this.isDatepickerActive = false;
     this._hideDatepicker();
   }
 
-  _handlerClickOutside(e) {
+  _handleClickOutside(e) {
     const { target } = e;
 
     const isTargetNotInput = target !== this.$firstInput && target !== this.$secondInput;
@@ -139,24 +140,24 @@ class DateDropdown {
     }
   }
 
-  _handlerFocusOnInput() {
+  _handleFocusOnInput() {
     this.$datepickerInstance.show();
   }
 
-  _handlerBlurInput() {
+  _handleBlurInput() {
     this.$datepickerInstance.hide();
   }
 
   _bindHandlers() {
-    this._handlerSelect = this._handlerSelect.bind(this);
-    this.handlerInput = this._handlerInput.bind(this);
+    this._handleSelect = this._handleSelect.bind(this);
+    this.handlerInput = this._handleInput.bind(this);
     this.handleClickSecondInput = this._handleClickSecondInput.bind(this);
-    this.handlerClickClearButton = this._handlerClickClearButton.bind(this);
-    this.handlerClickSuccessButton = this._handlerClickSuccessButton.bind(this);
-    this.handlerClickFirstInput = this._handlerClickFirstInput.bind(this);
-    this.handlerClickOutside = this._handlerClickOutside.bind(this);
-    this.handlerFocusOnInput = this._handlerFocusOnInput.bind(this);
-    this.handlerBlurInput = this._handlerBlurInput.bind(this);
+    this.handlerClickClearButton = this._handleClickClearButton.bind(this);
+    this.handlerClickSuccessButton = this._handleClickSuccessButton.bind(this);
+    this.handlerClickFirstInput = this._handleClickFirstInput.bind(this);
+    this.handlerClickOutside = this._handleClickOutside.bind(this);
+    this.handlerFocusOnInput = this._handleFocusOnInput.bind(this);
+    this.handlerBlurInput = this._handleBlurInput.bind(this);
   }
 
   _addEventHandlers() {
