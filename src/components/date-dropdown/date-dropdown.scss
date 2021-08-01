@@ -2,7 +2,6 @@
   $self: &;
 
   display: flex;
-  width: 100%;
   justify-content: space-between;
   user-select: none;
 
@@ -71,9 +70,8 @@
     position: absolute;
     top: calc(50% - 6px);
     right: 15px;
-    min-width: 12px;
-    max-width: 12px;
-    max-height: 12px;
+    width: 12px;
+    height: 12px;
     fill: $text-color-brightness-50;
   }
 }

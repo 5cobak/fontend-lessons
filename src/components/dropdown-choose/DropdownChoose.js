@@ -11,7 +11,7 @@ class DropdownChoose {
     declinations,
     maxWidth,
     textLength,
-    buttons,
+    withButtons,
   }) {
     this._init({
       element,
@@ -23,7 +23,7 @@ class DropdownChoose {
       declinations,
       maxWidth,
       textLength,
-      buttons,
+      withButtons,
     });
   }
 
@@ -293,6 +293,7 @@ class DropdownChoose {
     this.textLength = textLength;
     this.inputName = inputName;
     this.withButtons = withButtons;
+
     this.parentElement = this._createEl(element);
     this.totalCount = 0;
     this._createUpperField(inputId);
@@ -301,6 +302,7 @@ class DropdownChoose {
     this.menu = this._createMenu();
     this.items = this._createItems(titles);
     this._createButtons();
+
     this.menu.insertAdjacentHTML('afterbegin', [this.items, this.buttonsHTMLStr].join(''));
     if (this.withButtons) {
       this.buttons = this.parentElement.querySelector('.js-dropdown-choose__buttons');

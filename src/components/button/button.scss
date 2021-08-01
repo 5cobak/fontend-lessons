@@ -6,7 +6,6 @@
   max-width: 210px;
   font-family: $font-family-primary;
   font-size: 12px;
-  line-height: 1;
   font-weight: $font-weight-bold;
   text-decoration: none;
   text-transform: uppercase;
@@ -108,7 +107,6 @@
       content: '';
       background: #fff;
       border-radius: 22px;
-      transition: $tr-fast;
     }
 
     &:hover {
@@ -125,8 +123,6 @@
 
     @media screen and (min-width: $sm-desktop-width) and (max-width: $md-desktop-width) {
       padding: 5px 10px;
-      display: flex;
-      align-items: center;
       font-size: 9px;
     }
   }
