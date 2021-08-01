@@ -3,7 +3,7 @@ include ~components/like-button/like-button
 mixin review({ src: path, name, date, text, like, alt })
   .review
     .review__head
-      img.review__avatar(src=require("./" + path).default alt=alt)
+      img(src=require("./" + path).default alt=alt).review__avatar
       .review__head-text
         .review__name #{name}
         .review__date #{date}

@@ -44,21 +44,21 @@ mixin footer()
                 | Навигация
             each route in routes.nav
               li.footer__list-item
-                a.footer__link(href="/mock-address/change-me")
+                a(href="/mock-address/change-me").footer__link
                   | #{route.text}
           ul.footer__list
             span.footer__list-title
                   | О нас
             each route in routes.aboutUs
               li.footer__list-item
-                a.footer__link(href="/mock-address/change-me")
+                a(href="/mock-address/change-me").footer__link
                   | #{route.text}   
           ul.footer__list
             span.footer__list-title
               | Служба поддержки
             each route in routes.support
               li.footer__list-item
-                a.footer__link(href="/mock-address/change-me")
+                a(href="/mock-address/change-me").footer__link
                   | #{route.text}
         .footer__subscribe
           span.footer__subscribe-title
@@ -79,7 +79,7 @@ mixin footer()
         .footer__basement-content
           span.footer__copyright
             | Copyright © 2018 Toxin отель. Все права защищены.
-          ul.footer__social-list(aria-label="Социальные сети")
+          ul(aria-label="Социальные сети").footer__social-list
             each route in routes.social
               li.footer__social-item
                 a(href="/mock-address/change-me" target="_blank" rel="noreferrer noopener").footer__social-link

@@ -14,7 +14,7 @@ mixin header( user = null )
   header.header.js-header
     .header__container
       .header__content
-        a.header__logo-link(href='index.html')
+        a(href='index.html').header__logo-link
           +logo()
         nav.header__nav.js-header__nav
           ul.header__list
@@ -41,8 +41,8 @@ mixin header( user = null )
                 modifiers: 'button_small'
               })
           else
-            a.header__user(href='/mock-address/change-me')
+            a(href='/mock-address/change-me').header__user
               | Юлий Цезарь
         .header__nav-shadow.js-header__nav-shadow
-        button.header__burger.js-header__burger(type='button', aria-label='menu')
+        button(type='button', aria-label='menu').header__burger.js-header__burger
           .header__burger-layout.js-header__burger-layout 

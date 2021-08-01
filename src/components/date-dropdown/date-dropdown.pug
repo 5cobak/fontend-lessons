@@ -1,13 +1,15 @@
 mixin date-dropdown({ classNameFirstInput, classNameSecondInput, title, titleSecond })
   .date-dropdown.js-date-dropdown
     label.date-dropdown__label
-      span.date-dropdown__title #{title}
+      span.date-dropdown__title
+        | #{title}
       span.date-dropdown__input-wrap
         input(autocomplete="off" type="text" placeholder="ДД.ММ.ГГГГ" name="start-date-input").date-dropdown__input
         svg.date-dropdown__arrow
           use(xlink:href="#expand-more")
     label.date-dropdown__label
-      span.date-dropdown__title #{titleSecond}
+      span.date-dropdown__title
+        | #{titleSecond}
       span.date-dropdown__input-wrap
         input(autocomplete="off" type="text" placeholder="ДД.ММ.ГГГГ" name="end-date-input").date-dropdown__input
         svg.date-dropdown__arrow

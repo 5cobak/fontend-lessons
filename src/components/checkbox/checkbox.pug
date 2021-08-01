@@ -34,7 +34,7 @@ mixin checkbox({ title, items, type })
             li.checkbox__item
               label.checkbox__label
                 input(type="checkbox").checkbox__checkbox.js-checkbox__checkbox
-                span.checkbox__custom-checkbox(tabindex="0") 
+                span(tabindex="0").checkbox__custom-checkbox
                 span.checkbox__text
                   | #{val}
     if type === 'oval'
@@ -43,8 +43,8 @@ mixin checkbox({ title, items, type })
           each val in items
             li.checkbox__item
               label.checkbox__label 
-                input.checkbox__checkbox(type="checkbox")
-                span.checkbox__checkmark(tabindex="0")
+                input(type="checkbox").checkbox__checkbox
+                span(tabindex="0").checkbox__checkmark
                 span.checkbox__subtitle
                   | #{val} 
     
