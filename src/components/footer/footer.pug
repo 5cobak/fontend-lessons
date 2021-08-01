@@ -2,6 +2,32 @@ include ~components/subscription/subscription
 include ~components/logo/logo
 
 mixin footer()
+  -
+    const routes = {
+      nav: [
+        { text: 'О нас' },
+        { text: 'Новости'},
+        { text: 'Служба поддержки'},
+        { text: 'Услуги'},
+      ],
+      aboutUs: [
+        { text: 'О сервисе' },
+        { text: 'Наша команда'},
+        { text: 'Вакансии'},
+        { text: 'Инвесторы'},
+      ],
+      support: [
+        { text: 'Соглашения' },
+        { text: 'Сообщества'},
+        { text: 'Вакансии'},
+        { text: 'Связь с нами'},
+      ],
+      social: [
+        { xlinkHref:  '#twitter'},
+        { xlinkHref:  '#facebook'},
+        { xlinkHref:  '#inst'},
+      ]
+    }
   footer.footer
     .footer__container
       .footer__content
@@ -16,45 +42,24 @@ mixin footer()
           ul.footer__list
             span.footer__list-title
                 | Навигация
-            li.footer__list-item
-              a.footer__link(href="/mock-address/change-me")
-                | О нас
-            li.footer__list-item
-              a.footer__link(href="/mock-address/change-me")
-                | Новости
-            li.footer__list-item
-              a.footer__link(href="/mock-address/change-me")
-                | Служба поддержки
-            li.footer__list-item
-              a.footer__link(href="/mock-address/change-me")
-                | Услуги
+            each route in routes.nav
+              li.footer__list-item
+                a.footer__link(href="/mock-address/change-me")
+                  | #{route.text}
           ul.footer__list
             span.footer__list-title
                   | О нас
-            li.footer__list-item
-              a.footer__link(href="/mock-address/change-me")
-                | О сервисе
-            li.footer__list-item
-              a.footer__link(href="/mock-address/change-me")
-                | Наша команда
-            li.footer__list-item
-              a.footer__link(href="/mock-address/change-me")
-                | Вакансии
-            li.footer__list-item
-              a.footer__link(href="/mock-address/change-me")
-                | Инвесторы    
+            each route in routes.aboutUs
+              li.footer__list-item
+                a.footer__link(href="/mock-address/change-me")
+                  | #{route.text}   
           ul.footer__list
             span.footer__list-title
               | Служба поддержки
-            li.footer__list-item
-              a.footer__link(href="/mock-address/change-me")
-                | Соглашения
-            li.footer__list-item
-              a.footer__link(href="/mock-address/change-me")
-                | Сообщества
-            li.footer__list-item
-              a.footer__link(href="/mock-address/change-me")
-                | Связь с нами 
+            each route in routes.support
+              li.footer__list-item
+                a.footer__link(href="/mock-address/change-me")
+                  | #{route.text}
         .footer__subscribe
           span.footer__subscribe-title
             | Подписка
@@ -69,16 +74,9 @@ mixin footer()
           span.footer__copyright
             | Copyright © 2018 Toxin отель. Все права защищены.
           ul.footer__social-list(aria-label="Социальные сети")
-            li.footer__social-item
-              a(href="/mock-address/change-me" target="_blank" rel="noreferrer noopener").footer__social-link
-                svg.footer__soc-icon
-                  use(xlink:href="#twitter")
-            li.footer__social-item
-              a(href="/mock-address/change-me" target="_blank" rel="noreferrer noopener").footer__social-link
-                svg.footer__soc-icon
-                  use(xlink:href="#facebook")
-            li.footer__social-item
-              a(href="/mock-address/change-me" target="_blank" rel="noreferrer noopener").footer__social-link
-                svg.footer__soc-icon
-                  use(xlink:href="#inst")
+            each route in routes.social
+              li.footer__social-item
+                a(href="/mock-address/change-me" target="_blank" rel="noreferrer noopener").footer__social-link
+                  svg.footer__soc-icon
+                    use(xlink:href=route.xlinkHref)
 

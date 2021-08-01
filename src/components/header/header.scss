@@ -56,11 +56,13 @@
       &_active {
         max-width: 80%;
       }
+
       #{$self}__list {
         margin-bottom: 10px;
         display: block;
         text-align: center;
       }
+
       #{$self}__list-item {
         margin: 0;
         display: flex;
@@ -81,6 +83,7 @@
           }
         }
       }
+
       #{$self}__link {
         padding: 20px 0;
         display: inline-block;
