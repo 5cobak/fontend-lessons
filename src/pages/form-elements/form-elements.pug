@@ -5,7 +5,6 @@ include ~components/masked-text-field/masked-text-field.pug
 include ~components/dropdown-choose/dropdown-choose.pug
 include ~components/date-dropdown/date-dropdown.pug
 include ~components/filter-date/filter-date.pug
-include ~components/subscription/subscription.pug
 include ~components/checkbox/checkbox.pug
 include ~components/radio/radio.pug
 include ~components/toggle-buttons/toggle-buttons.pug
@@ -51,7 +50,6 @@ block content
               titleSecond: "date dropdown" })
               span.block-title filter date dropdown
               +filter-date({ className: "js-filter-date", title: "filter date dropdown" })
-              +subscription({title: "subscription", placeholder: "Email" })
               span.block-title dropdown
               +dropdown-choose({ className: "js-dropdown-beds", title: "dropdown" })
               +checkbox({

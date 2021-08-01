@@ -1,5 +1,5 @@
-include ~components/subscription/subscription
 include ~components/logo/logo
+include ~components/text-field/text-field
 
 mixin footer()
   -
@@ -67,7 +67,13 @@ mixin footer()
             | Получайте специальные 
             | предложения и новости сервиса
           .footer__form-wrap
-            +subscription({title: "", placeholder: "Email", required: true})
+            form.footer__form
+              +text-field({
+                type: 'email',
+                placeholder: 'Email',
+                button: true,
+                required: true
+              })
     .footer__basement
       .footer__container
         .footer__basement-content

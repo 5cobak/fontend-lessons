@@ -1,4 +1,6 @@
-mixin text-field({ title, type, name, placeholder, required, pat })
+include ~components/button/button
+
+mixin text-field({ title, type='', name, placeholder, required, pat, button=false })
   label.text-field
     if title
       span.text-field__title #{title}
@@ -9,5 +11,7 @@ mixin text-field({ title, type, name, placeholder, required, pat })
       pattern=pat 
       required=required
     )
-
+    if button
+      .text-field__button-wrap
+        +button({ type: 'submit', modifiers: 'button_subscribe'})
 

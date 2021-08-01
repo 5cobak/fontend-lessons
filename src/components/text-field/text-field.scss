@@ -1,6 +1,9 @@
+@import '~components/button/button';
+
 .text-field {
   display: block;
   max-width: 320px;
+  position: relative;
 
   &:hover & {
     &__input {
@@ -50,5 +53,11 @@
         font-size: 12px;
       }
     }
+  }
+
+  &__button-wrap {
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }
