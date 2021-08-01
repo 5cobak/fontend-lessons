@@ -1,6 +1,6 @@
 class Header {
-  constructor(parent) {
-    this.parent = parent;
+  constructor(header) {
+    this.header = header;
     this._init();
   }
 
@@ -29,10 +29,10 @@ class Header {
   }
 
   _init() {
-    this.burger = this.parent.querySelector('.js-header__burger');
+    this.burger = this.header.querySelector('.js-header__burger');
     this.burgerLayout = this.burger.querySelector('.js-header__burger-layout');
-    this.navShadow = this.parent.querySelector('.js-header__nav-shadow');
-    this.nav = this.parent.querySelector('.js-header__nav');
+    this.navShadow = this.header.querySelector('.js-header__nav-shadow');
+    this.nav = this.header.querySelector('.js-header__nav');
     this._bindHandlers();
     this._addEventHandlers();
   }
