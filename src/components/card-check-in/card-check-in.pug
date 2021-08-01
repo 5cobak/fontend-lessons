@@ -9,8 +9,7 @@ mixin card-check-in()
   .card-check-in
     .card-check-in__content
       form.card-check-in__form
-        legend.card-check-in__form-legend
-          h1.card-check-in__title
+        h1.card-check-in__title
             | Регистрация аккаунта
         .card-check-in__name
           +text-field(
@@ -74,7 +73,7 @@ mixin card-check-in()
                 )
         .card-check-in__offer
           +checkbox({type: 'oval', items: ['Получать спецпредложения']})
-        .card-check-in__button
+        .card-check-in__button-wrap
           +button({
             type: 'submit',
             modifiers: 'button_big button_with-icon',

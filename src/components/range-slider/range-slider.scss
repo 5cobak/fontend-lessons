@@ -3,17 +3,17 @@
 .range-slider {
   max-width: 266px;
 
-  &__title {
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
   &__head {
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 
   &__values {

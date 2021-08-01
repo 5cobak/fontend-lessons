@@ -17,20 +17,20 @@ class LikeButton {
     $button.toggleClass('like-button_active');
   }
 
-  _handleClick() {
+  _handlerClick() {
     this._toggleLike();
   }
 
-  _bindhandles() {
-    this.handleClick = this._handleClick.bind(this);
+  _bindHandlers() {
+    this.handlerClick = this._handlerClick.bind(this);
   }
 
   _addEventHandlers() {
-    this.$button.on('click', this.handleClick);
+    this.$button.on('click', this.handlerClick);
   }
 
   _init() {
-    this._bindhandles();
+    this._bindHandlers();
     this._addEventHandlers();
   }
 }

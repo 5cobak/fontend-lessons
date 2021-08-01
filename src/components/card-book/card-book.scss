@@ -36,14 +36,6 @@
     }
   }
 
-  &__block {
-    margin-bottom: 15px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
   &__room-number {
     max-width: 50%;
     font-size: 14px;
@@ -102,6 +94,20 @@
     }
   }
 
+  &__block {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__block-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+  }
+
   &__calculation {
     margin-bottom: 45px;
     font-size: 14px;
@@ -132,6 +138,11 @@
     white-space: pre-line;
   }
 
+  &__tax {
+    margin-left: auto;
+    display: block;
+  }
+
   &__calc-info {
     margin-bottom: 6px;
     margin-left: 10px;
@@ -150,13 +161,14 @@
     }
   }
 
-  &__tax {
-    margin-left: auto;
-    display: block;
-  }
-
   &__calc-sum {
     margin-left: auto;
+  }
+
+  &__calc-option {
+    display: inline-block;
+    max-width: 214px;
+    white-space: pre-line;
   }
 
   &__calc-total {
@@ -166,12 +178,6 @@
     font-family: $font-family-primary;
     line-height: 12px;
     font-weight: $font-weight-bold;
-  }
-
-  &__calc-option {
-    display: inline-block;
-    max-width: 214px;
-    white-space: pre-line;
   }
 
   &__line {

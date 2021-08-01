@@ -2,6 +2,16 @@
   display: block;
   max-width: 320px;
 
+  &:hover & {
+    &__input {
+      border: $border-input-hover;
+
+      &::placeholder {
+        color: $text-color-brightness-75;
+      }
+    }
+  }
+
   &__title {
     font-size: 12px;
     font-weight: bold;
@@ -38,16 +48,6 @@
 
       &::placeholder {
         font-size: 12px;
-      }
-    }
-  }
-
-  &:hover & {
-    &__input {
-      border: $border-input-hover;
-
-      &::placeholder {
-        color: $text-color-brightness-75;
       }
     }
   }

@@ -20,6 +20,12 @@
     }
   }
 
+  &__title {
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
   &__input-wrap {
     position: relative;
     display: inline-block;

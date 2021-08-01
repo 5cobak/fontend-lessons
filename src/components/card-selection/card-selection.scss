@@ -2,7 +2,6 @@
 @import '~components/dropdown-choose/dropdown-choose';
 @import '~components/date-dropdown/date-dropdown';
 @import '~components/datepicker/datepicker';
-@import '~components/block-title/block-title';
 
 .card-selection {
   width: 100%;
@@ -52,5 +51,11 @@
 
   &__guests {
     margin-bottom: 32px;
+  }
+
+  &__guests-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
   }
 }

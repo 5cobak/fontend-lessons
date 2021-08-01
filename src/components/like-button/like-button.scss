@@ -44,28 +44,25 @@
   }
 
   &_active {
+    &::after {
+      background: $button-color-primary;
+      transition: $tr-fast;
+    }
+
     #{$self}__like {
       opacity: 0;
     }
 
     #{$self}__like-favorite {
       opacity: 1;
-    }
-
-    svg {
       transform: rotateZ(-360deg);
       animation-name: changeSize;
       animation-duration: $tr-fast;
       fill: $primary-color;
     }
 
-    span {
+    #{$self}__likes {
       color: $primary-color;
-    }
-
-    &::after {
-      background: $button-color-primary;
-      transition: $tr-fast;
     }
   }
 }

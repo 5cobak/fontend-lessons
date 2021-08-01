@@ -13,6 +13,15 @@
     line-height: 24px;
   }
 
+  &__avatar {
+    margin-right: 10px;
+    max-width: 47px;
+    max-height: 47px;
+    border: 2px solid white;
+    border-radius: 50%;
+    filter: drop-shadow(0 10px 20px rgba(31, 32, 65, 0.1));
+  }
+
   &__name {
     font-family: $font-family-primary;
     font-size: 14px;
@@ -31,15 +40,6 @@
     @media (max-width: $phone-width) {
       font-size: 12px;
     }
-  }
-
-  &__avatar {
-    margin-right: 10px;
-    max-width: 47px;
-    max-height: 47px;
-    border: 2px solid white;
-    border-radius: 50%;
-    filter: drop-shadow(0 10px 20px rgba(31, 32, 65, 0.1));
   }
 
   &__content {

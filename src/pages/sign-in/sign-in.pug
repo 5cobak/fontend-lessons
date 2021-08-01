@@ -10,10 +10,9 @@ block head
   meta(name="keywords" content="Отель, Toxin, вход в аккаунт, вход в личный кабинет, авторизация")
 block content
   +header()
-  .content
-    .sign-in
-      .sign-in__container
-        main.sign-in__main
-          +card-sign-in()
+  main.sign-in
+    .sign-in__container
+      content.sign-in__content
+        +card-sign-in()
   
   +footer()

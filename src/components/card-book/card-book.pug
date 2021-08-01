@@ -24,9 +24,9 @@ mixin card-book(details)
                 titleSecond: "выезд"
                 })
         .card-book__block
-          span.block-title
+          label(for='input-guests').card-book__block-title
             | Гости
-          +dropdown-choose({className: "dropdown-guests js-dropdown-guests", title:"Гости"})
+          +dropdown-choose({ className: "dropdown-guests js-dropdown-guests", title: "Гости" })
 
         .card-book__block
           .card-book__calculation

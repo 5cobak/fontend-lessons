@@ -21,15 +21,15 @@ block content
       .filter__content
         form.filter__form
           .filter__dates
-            span.block-title
-              | Даты пребывания в отеле 
-            +filter-date({ className: "", title: "Даты пребывания в отеле"} )
+            label(for='input-filter-dates').filter__block-title
+              | Даты пребывания в отеле
+            +filter-date()
           .filter__guests
-            span.block-title
+            label(for='input-guests').filter__block-title
               | Гости
-            +dropdown-choose({className: "dropdown-guests js-dropdown-guests", title: "Гости"})
+            +dropdown-choose({ className: "dropdown-guests js-dropdown-guests", title: "Гости" })
           .filter__price
-            +range-slider({title: "Диапазон цены", interval: "5000₽ - 10000₽"})
+            +range-slider({ title: "Диапазон цены", interval: "5000₽ - 10000₽" })
             span.filter__range-description
               | Стоимость за сутки пребывания в номере
           .filter__rules
@@ -55,9 +55,9 @@ block content
                 }
               ]})
           .filter__comfort
-            span.block-title
+            label(for='input-comforts').filter__block-title
               | Удобства номера
-            +dropdown-choose({className: "dropdown-beds js-dropdown-beds", title: "Гости"})
+            +dropdown-choose({ className: "dropdown-beds js-dropdown-beds", title: "Гости" })
           +checkbox({
             title: "expandable checkbox list",
             type: "dropping-out",
@@ -222,6 +222,5 @@ block content
               rate: 3
             })
           .filter__pagination
-            .filter__pagination-wrapper
-              +pagination()
+            +pagination()
   +footer()
