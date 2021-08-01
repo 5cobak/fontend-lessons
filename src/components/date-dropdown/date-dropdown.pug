@@ -11,6 +11,6 @@ mixin date-dropdown({ title, titleSecond })
       span.date-dropdown__title
         | #{titleSecond}
       span.date-dropdown__input-wrap
-        input(autocomplete="off" type="text" placeholder="ДД.ММ.ГГГГ" name="end-date-input").date-dropdown__input
+        input(autocomplete="off" type="text" placeholder="ДД.ММ.ГГГГ" name="end-date-input").date-dropdown__input.date-dropdown_input-second.js-date-dropdown_input-second
         svg.date-dropdown__arrow
           use(xlink:href="#expand-more")

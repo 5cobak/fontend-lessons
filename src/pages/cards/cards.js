@@ -4,7 +4,6 @@ import '~/inputmask/dist/jquery.inputmask.min';
 
 import 'components/card-room/card-room';
 import 'components/dropdown-choose/dropdown-choose';
-import 'components/datepicker/datepicker';
 
 import './cards.scss';
 

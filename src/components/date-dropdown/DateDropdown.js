@@ -1,8 +1,24 @@
 import '~/air-datepicker/dist/js/datepicker.min';
 
 class DateDropdown {
-  constructor(dateDropdownEl) {
-    this._init(dateDropdownEl);
+  constructor(dateDropdown) {
+    this._init(dateDropdown);
+  }
+
+  _getConfig() {
+    const handlerSelect = this._handlerSelect;
+
+    return {
+      showEvent: 'click',
+      offset: 5,
+      range: true,
+      onSelect: handlerSelect,
+      clearButton: true,
+      minDate: new Date(),
+      navTitles: {
+        days: 'MM yyyy',
+      },
+    };
   }
 
   _getDaysLag() {
@@ -42,38 +58,35 @@ class DateDropdown {
   }
 
   _hideDatepicker() {
-    this.$datepicker.hide();
+    this.$datepickerInstance.hide();
   }
 
-  _createDateDropdown() {
-    if (!this.input) return;
-    const handlerSelect = this._handlerSelect.bind(this);
+  _findInputs() {
     this.$firstInput = $(this.input);
-    this.$secondInput = this.$firstInput.parent().parent().next().find('input');
-    this.isDatepickerActive = false;
+    this.$secondInput = $(this.dateDropdown).find('.js-date-dropdown_input-second');
+  }
 
-    this.$firstInput.datepicker({
-      showEvent: 'click',
-      offset: 5,
-      range: true,
-      onSelect: handlerSelect,
-      clearButton: true,
-      minDate: new Date(),
-      navTitles: {
-        days: 'MM yyyy',
-      },
-    });
+  _findButton() {
+    this.$clearButton = this.$calendar.find('.datepicker--button');
+    this.$buttonsParent = this.$calendar.find('.datepicker--buttons');
+  }
 
-    this.$datepicker = this.$firstInput.datepicker().data('datepicker');
-
-    this.$calendarEl = this.$firstInput.datepicker().data('datepicker').$datepicker;
-
-    this.$clearButton = this.$calendarEl.find('.datepicker--button');
-    this.$buttonsParent = this.$calendarEl.find('.datepicker--buttons');
+  _appendButtonSuccess() {
     this.$buttonsParent.append(
       '<button type="button" class="button button_no-bg">Применить</button>',
     );
+  }
+
+  _findButtonSuccess() {
     this.$buttonSuccess = this.$clearButton.next();
+  }
+
+  _createDateDropdown(config) {
+    this.isDatepickerActive = false;
+
+    this.$datepickerInstance = this.$firstInput.datepicker(config).data('datepicker');
+
+    this.$calendar = this.$datepickerInstance.$datepicker;
   }
 
   _handlerInput(e) {
@@ -85,15 +98,15 @@ class DateDropdown {
   _handlerClickFirstInput() {
     this.isDatepickerActive = !this.isDatepickerActive;
     if (!this.isDatepickerActive) {
-      this.$datepicker.hide();
+      this.$datepickerInstance.hide();
     }
   }
 
   _handleClickSecondInput() {
     this.isDatepickerActive = !this.isDatepickerActive;
-    this.$datepicker.show();
+    this.$datepickerInstance.show();
     if (!this.isDatepickerActive) {
-      this.$datepicker.hide();
+      this.$datepickerInstance.hide();
     }
   }
 
@@ -127,14 +140,15 @@ class DateDropdown {
   }
 
   _handlerFocusOnInput() {
-    this.$datepicker.show();
+    this.$datepickerInstance.show();
   }
 
   _handlerBlurInput() {
-    this.$datepicker.hide();
+    this.$datepickerInstance.hide();
   }
 
   _bindHandlers() {
+    this._handlerSelect = this._handlerSelect.bind(this);
     this.handlerInput = this._handlerInput.bind(this);
     this.handleClickSecondInput = this._handleClickSecondInput.bind(this);
     this.handlerClickClearButton = this._handlerClickClearButton.bind(this);
@@ -158,11 +172,16 @@ class DateDropdown {
     $(document).on('click', this.handlerClickOutside);
   }
 
-  _init(dateDropdownEl) {
-    this.isShowed = false;
-    this.input = dateDropdownEl.querySelector('input');
-    this._createDateDropdown();
+  _init(dateDropdown) {
+    this.dateDropdown = dateDropdown;
+    this.input = dateDropdown.querySelector('input');
     this._bindHandlers();
+    this.config = this._getConfig();
+    this._findInputs();
+    this._createDateDropdown(this.config);
+    this._findButton();
+    this._appendButtonSuccess();
+    this._findButtonSuccess();
     this._addEventHandlers();
   }
 }

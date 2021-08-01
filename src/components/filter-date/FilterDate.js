@@ -6,6 +6,24 @@ class FilterDate {
     this._init(inputId);
   }
 
+  _getConfig() {
+    const handleHide = this._handleHide;
+    const handleSelect = this._handleSelect;
+    return {
+      showEvent: 'click',
+      offset: 5,
+      range: true,
+      clearButton: true,
+      dateFormat: 'd M',
+      navTitles: {
+        days: 'MM yyyy',
+      },
+      minDate: new Date(),
+      onSelect: handleSelect,
+      onHide: handleHide,
+    };
+  }
+
   _hideDatePicker() {
     this.$input.datepicker().data('datepicker').hide();
   }
@@ -20,75 +38,74 @@ class FilterDate {
     this._setNewFormat();
   }
 
-  _handlerSelect(formattedDate) {
+  _handleSelect(formattedDate) {
     this._formatDate(formattedDate);
   }
 
-  _handlerInputClick() {
+  _handleInputClick() {
     this.isDatepickerActive = !this.isDatepickerActive;
     if (!this.isDatepickerActive) {
-      this.$datepicker.hide();
+      this.$datepickerInstance.hide();
     }
   }
 
-  _handlerHide() {
+  _handleHide() {
     this.isDatepickerActive = false;
     if (!this.setNewFormat) return;
     this.setNewFormat();
   }
 
-  _createDatepicker() {
-    if (!this.$input) return;
-    this._bindHandlers();
-    const handlerHide = this._handlerHide;
-    const handlerSelect = this._handlerSelect;
-    this.isDatepickerActive = false;
-
-    this.$input.datepicker({
-      showEvent: 'click',
-      offset: 5,
-      range: true,
-      clearButton: true,
-      dateFormat: 'd M',
-      navTitles: {
-        days: 'MM yyyy',
-      },
-      minDate: new Date(),
-      onSelect: handlerSelect,
-      onHide: handlerHide,
-    });
-
-    this.$input.attr('id', this.inputId);
-
-    this.$datepicker = this.$input.datepicker().data('datepicker');
-    this.calendar = this.$input.datepicker().data('datepicker').$datepicker;
+  _findButton() {
     this.$clearButton = this.calendar.find('.datepicker--button');
-    const $buttonsParent = this.calendar.find('.datepicker--buttons');
-    $buttonsParent.append('<button class="button button_no-bg">Применить</button>');
+    this.$buttonsParent = this.calendar.find('.datepicker--buttons');
+  }
 
+  _appendButtonSuccess() {
+    this.$buttonsParent.append('<button class="button button_no-bg">Применить</button>');
+  }
+
+  _findButtonSuccess() {
     this.$buttonSuccess = this.$clearButton.next();
   }
 
-  _handlerButtonSuccessMouseUp() {
-    this.$datepicker.hide();
+  _createDatepicker(config) {
+    this.isDatepickerActive = false;
+
+    this.$datepickerInstance = this.$input.datepicker(config).data('datepicker');
+
+    this.calendar = this.$datepickerInstance.$datepicker;
+  }
+
+  _setAttr() {
+    this.$input.attr('id', this.inputId);
+  }
+
+  _handleButtonSuccessMouseUp() {
+    this.$datepickerInstance.hide();
   }
 
   _bindHandlers() {
-    this._handlerButtonSuccessMouseUp = this._handlerButtonSuccessMouseUp.bind(this);
-    this._handlerInputClick = this._handlerInputClick.bind(this);
-    this._handlerHide = this._handlerHide.bind(this);
-    this._handlerSelect = this._handlerSelect.bind(this);
+    this._handleButtonSuccessMouseUp = this._handleButtonSuccessMouseUp.bind(this);
+    this._handleInputClick = this._handleInputClick.bind(this);
+    this._handleHide = this._handleHide.bind(this);
+    this._handleSelect = this._handleSelect.bind(this);
   }
 
   _addEventHandlers() {
-    this.$input.on('click', this._handlerInputClick);
-    this.$buttonSuccess.on('mouseup', this._handlerButtonSuccessMouseUp);
+    this.$input.on('click', this._handleInputClick);
+    this.$buttonSuccess.on('mouseup', this._handleButtonSuccessMouseUp);
   }
 
   _init(inputId) {
     this.inputId = inputId;
-    this._createDatepicker();
+    this._bindHandlers();
+    this.config = this._getConfig();
+    this._createDatepicker(this.config);
+    this._findButton();
+    this._appendButtonSuccess();
+    this._findButtonSuccess();
     this._addEventHandlers();
+    this._setAttr();
   }
 }
 
